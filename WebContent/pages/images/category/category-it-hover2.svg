@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+    <defs>
+        <style>
+            .cls-1,.cls-2,.cls-3{fill:none}.cls-2,.cls-3{stroke:#5c3fbf;stroke-linejoin:round;stroke-width:2px}.cls-3{stroke:#ffc200;stroke-linecap:round}
+        </style>
+    </defs>
+    <g id="그룹_4811" data-name="그룹 4811" transform="translate(-1412 -630)">
+        <path id="사각형_2964" d="M0 0h70v70H0z" class="cls-1" data-name="사각형 2964" transform="translate(1412 630)"/>
+        <g id="그룹_4788" data-name="그룹 4788" transform="translate(1215 434)">
+            <path id="사각형_2955" d="M0 0h44v39H0z" class="cls-2" data-name="사각형 2955" transform="translate(210 212)"/>
+            <path id="선_642" d="M0 0h40" class="cls-2" data-name="선 642" transform="translate(212 218)"/>
+            <path id="선_643" d="M0 0h2" class="cls-2" data-name="선 643" transform="translate(213 215)"/>
+            <path id="선_644" d="M0 0h2" class="cls-2" data-name="선 644" transform="translate(216 215)"/>
+            <path id="선_645" d="M0 0h2" class="cls-2" data-name="선 645" transform="translate(219 215)"/>
+            <path id="패스_2095" d="M226 240l-6-5 6-5" class="cls-3" data-name="패스 2095"/>
+            <path id="패스_2096" d="M238 240l6-5-6-5" class="cls-3" data-name="패스 2096"/>
+            <path id="선_646" d="M6 0L0 16" class="cls-3" data-name="선 646" transform="translate(229 227)"/>
+        </g>
+    </g>
+</svg>
