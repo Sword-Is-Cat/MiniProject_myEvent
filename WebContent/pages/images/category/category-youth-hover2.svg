@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+    <defs>
+        <style>
+            .cls-1,.cls-2,.cls-3,.cls-4,.cls-5{fill:none}.cls-2,.cls-3{stroke:#ffc200}.cls-2,.cls-4{stroke-miterlimit:10}.cls-2,.cls-3,.cls-4,.cls-5{stroke-width:2px}.cls-3,.cls-5{stroke-linejoin:round}.cls-4,.cls-5{stroke:#5c3fbf}
+        </style>
+    </defs>
+    <g id="그룹_4810" data-name="그룹 4810" transform="translate(-1272 -630)">
+        <path id="사각형_2963" d="M0 0h70v70H0z" class="cls-1" data-name="사각형 2963" transform="translate(1272 630)"/>
+        <g id="그룹_4789" data-name="그룹 4789" transform="translate(991.31 430.83)">
+            <path id="패스_2097" d="M324.064 245.6c0 1.849-1.805 3.732-4.032 4.205s-4.032-.643-4.032-2.492 1.805-3.732 4.032-4.205 4.032.642 4.032 2.492z" class="cls-2" data-name="패스 2097" transform="translate(3.953 4.105)"/>
+            <path id="패스_2098" d="M323 247.88V228c2.3 5.257 5.76 2.628 5.76 9.216" class="cls-3" data-name="패스 2098" transform="translate(5.018 1.825)"/>
+            <path id="패스_2099" d="M302.064 237.6c0 1.849-1.805 3.732-4.032 4.2s-4.032-.638-4.032-2.487 1.805-3.732 4.032-4.205 4.032.642 4.032 2.492z" class="cls-4" data-name="패스 2099" transform="translate(.608 2.889)"/>
+            <path id="패스_2100" d="M315.064 233.6c0 1.849-1.805 3.732-4.032 4.205s-4.032-.643-4.032-2.492 1.805-3.732 4.032-4.205 4.032.642 4.032 2.492z" class="cls-4" data-name="패스 2100" transform="translate(2.585 2.281)"/>
+            <path id="패스_2101" d="M315.977 235.88V216L301 220.608v19.88" class="cls-5" data-name="패스 2101" transform="translate(1.673)"/>
+            <path id="선_647" d="M15 0L0 4" class="cls-5" data-name="선 647" transform="translate(302.69 222.17)"/>
+            <path id="선_648" d="M0 0v7" class="cls-5" data-name="선 648" transform="translate(293.69 217.17)"/>
+            <path id="선_649" d="M7 0H0" class="cls-5" data-name="선 649" transform="translate(289.69 220.17)"/>
+            <path id="선_650" d="M0 0v7" class="cls-5" data-name="선 650" transform="translate(337.69 247.17)"/>
+            <path id="선_651" d="M7 0H0" class="cls-5" data-name="선 651" transform="translate(333.69 250.17)"/>
+            <path id="선_652" d="M0 0v7" class="cls-5" data-name="선 652" transform="translate(308.69 248.17)"/>
+            <path id="선_653" d="M7 0H0" class="cls-5" data-name="선 653" transform="translate(304.69 252.17)"/>
+            <path id="선_654" d="M0 0v7" class="cls-5" data-name="선 654" transform="translate(332.69 217.17)"/>
+            <path id="선_655" d="M7 0H0" class="cls-5" data-name="선 655" transform="translate(328.69 220.17)"/>
+        </g>
+    </g>
+</svg>
