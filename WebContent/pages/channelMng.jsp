@@ -1,6 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-
-    pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 
  
 
@@ -296,7 +294,42 @@
 
 				<a href=""><p id="p"><i class="fa fa-users"></i>&nbsp;&nbsp;채널삭제</p></a><br>
 
-				
+				<div class="col-sm-5 portfolio-static-item">
+				<div class="grid">
+					<figure class="m-0 effect-oscar">
+						<img src="images/thumnail/03.jpg" alt="">
+						<figcaption>
+							<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a>
+							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/thumnail/03.jpg"><i
+									class="fa fa-search"></i></a>
+						</figcaption>
+					</figure>
+					<div class="portfolio-static-desc">
+						<h3>[드림플러스 월간 IT 트렌드] 언택트, 뉴 노멀의 시대</h3>
+						<span><a href="#">Ui Elements</a></span>
+					</div>
+				</div>
+				<!--/ grid end -->
+			</div>
+			<!--/ item 3 end -->
+
+			<div class="col-sm-5 portfolio-static-item">
+				<div class="grid">
+					<figure class="m-0 effect-oscar">
+						<img src="images/thumnail/04.jpg" alt="">
+						<figcaption>
+							<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a>
+							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/thumnail/04.jpg"><i
+									class="fa fa-search"></i></a>
+						</figcaption>
+					</figure>
+					<div class="portfolio-static-desc">
+						<h3>렉처시리즈#1(작은 팀으로 큰 일을 한다는 것)</h3>
+						<span><a href="#">Media Elements</a></span>
+					</div>
+				</div>
+				<!--/ grid end -->
+			</div>
 
 				<!-- <button><a href=""></a>행사 개설</button> -->
 
@@ -381,7 +414,5 @@
  
 
 </body>
-
- 
 
 </html>
