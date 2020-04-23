@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Icon/채널CRM/purple/소형@2x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icon/채널CRM/purple/소형" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-6-Copy" transform="translate(2.000000, 1.466667)" fill="#5C3FBF">
+            <g id="Group-7" transform="translate(7.000000, 8.533333)">
+                <path d="M4.5,0 C6.98528137,0 9,2.01471863 9,4.5 C9,6.98528137 6.98528137,9 4.5,9 C2.01471863,9 0,6.98528137 0,4.5 C0,2.01471863 2.01471863,0 4.5,0 Z M6.40186475,2.64123794 L4.18364283,4.85945986 L2.98118563,3.65700266 C2.74154572,3.41736275 2.35301267,3.41736275 2.11337276,3.65700266 C1.87373286,3.89664256 1.87373286,4.28517562 2.11337276,4.52481552 L3.7497364,6.16117916 C3.9893763,6.40081907 4.37790936,6.40081907 4.61754927,6.16117916 L7.26967762,3.50905081 C7.50931753,3.2694109 7.50931753,2.88087785 7.26967762,2.64123794 C7.03003771,2.40159803 6.64150466,2.40159803 6.40186475,2.64123794 Z" id="Combined-Shape"></path>
+            </g>
+            <rect id="Rectangle" x="0" y="0.533333333" width="13" height="2"></rect>
+            <rect id="Rectangle-Copy-5" x="0" y="4.53333333" width="13" height="2"></rect>
+            <rect id="Rectangle-Copy-6" x="0" y="8.53333333" width="5" height="2"></rect>
+        </g>
+    </g>
+</svg>
