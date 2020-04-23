@@ -248,7 +248,7 @@
 						<h3 class="widget-title">채널이름aaa</h3>
 						<p>채널설명</p>
 						<br />
-						<p><a href="#" class="project-btn btn btn-primary">Project Link</a></p>
+						<p><a href="#" class="project-btn btn btn-primary">신청하기</a></p>
 					</div>
 				</div>
 			</div>
