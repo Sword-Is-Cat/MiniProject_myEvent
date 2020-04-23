@@ -2221,7 +2221,11 @@ ul.arrow li:before {
 }
 
 .banner-title-content h2 {
+<<<<<<< HEAD
   color: #fff;
+=======
+  color: #000;
+>>>>>>> 789812c15c130a1917368a5dcac8be54064d9a9f
   font-size: 36px;
 }
 
@@ -2236,6 +2240,7 @@ ul.arrow li:before {
   color: #ccc;
 }
 
+<<<<<<< HEAD
 /* About Us */
 .about-message {
   background: #f4f4f4;
@@ -2245,6 +2250,9 @@ ul.arrow li:before {
 .about-message ul li a {
   color: #6A6A6A;
 }
+=======
+
+>>>>>>> 789812c15c130a1917368a5dcac8be54064d9a9f
 
 /* Services */
 /* Call to Action */
@@ -3136,6 +3144,7 @@ a.close-styler {
   #main-slide .carousel-indicators {
     bottom: 0;
   }
+<<<<<<< HEAD
   /* About */
   .about {
     padding-top: 40px;
@@ -3143,6 +3152,9 @@ a.close-styler {
   .about.angle:before {
     position: relative;
   }
+=======
+  
+>>>>>>> 789812c15c130a1917368a5dcac8be54064d9a9f
   /* Service */
   .service-content {
     display: inline-block;
@@ -3279,7 +3291,10 @@ a.close-styler {
     height: 250px;
   }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 789812c15c130a1917368a5dcac8be54064d9a9f
 /* Custom, iPhone Retina */
 
 /*# sourceMappingURL=maps/style.css.map */
