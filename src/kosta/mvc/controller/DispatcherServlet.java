@@ -6,10 +6,10 @@ import java.util.Map;
 
 import javax.servlet.ServletContext;
 /**
- * View의 모든 요청을 중앙집중적으로 관리하기 위한
- * FrontController의 역할이다
- * :요청을 받아 Model(Service - BusinessLogic, DAO)쪽으로 전달하고 그 결과를 받아서
- * 결과View로 이동하는 역할
+ * View�쓽 紐⑤뱺 �슂泥��쓣 以묒븰吏묒쨷�쟻�쑝濡� 愿�由ы븯湲� �쐞�븳
+ * FrontController�쓽 �뿭�븷�씠�떎
+ * :�슂泥��쓣 諛쏆븘 Model(Service - BusinessLogic, DAO)履쎌쑝濡� �쟾�떖�븯怨� 洹� 寃곌낵瑜� 諛쏆븘�꽌
+ * 寃곌낵View濡� �씠�룞�븯�뒗 �뿭�븷
  */
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -46,7 +46,7 @@ public class DispatcherServlet extends HttpServlet {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			request.setAttribute("errorMsg", "에러메세지");
+			request.setAttribute("errorMsg", "error here");
 			request.getRequestDispatcher("errorView/error.jsp").forward(request, response);
 
 		}

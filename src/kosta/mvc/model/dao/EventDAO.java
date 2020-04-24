@@ -23,4 +23,10 @@ public class EventDAO {
 			e.printStackTrace();
 		}
 	}
+	
+	public int insertEvent(EventDAO event) {
+		
+		
+		return 0;
+	}
 }
