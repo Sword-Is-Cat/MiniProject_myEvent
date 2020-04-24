@@ -6,10 +6,10 @@ import java.util.Map;
 
 import javax.servlet.ServletContext;
 /**
- * ViewÀÇ ¸ğµç ¿äÃ»À» Áß¾ÓÁıÁßÀûÀ¸·Î °ü¸®ÇÏ±â À§ÇÑ
- * FrontControllerÀÇ ¿ªÇÒÀÌ´Ù
- * :¿äÃ»À» ¹Ş¾Æ Model(Service - BusinessLogic, DAO)ÂÊÀ¸·Î Àü´ŞÇÏ°í ±× °á°ú¸¦ ¹Ş¾Æ¼­
- * °á°úView·Î ÀÌµ¿ÇÏ´Â ¿ªÇÒ
+ * Viewì˜ ëª¨ë“  ìš”ì²­ì„ ì¤‘ì•™ì§‘ì¤‘ì ìœ¼ë¡œ ê´€ë¦¬í•˜ê¸° ìœ„í•œ
+ * FrontControllerì˜ ì—­í• ì´ë‹¤
+ * :ìš”ì²­ì„ ë°›ì•„ Model(Service - BusinessLogic, DAO)ìª½ìœ¼ë¡œ ì „ë‹¬í•˜ê³  ê·¸ ê²°ê³¼ë¥¼ ë°›ì•„ì„œ
+ * ê²°ê³¼Viewë¡œ ì´ë™í•˜ëŠ” ì—­í• 
  */
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -46,7 +46,7 @@ public class DispatcherServlet extends HttpServlet {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			request.setAttribute("errorMsg", "¿¡·¯¸Ş¼¼Áö");
+			request.setAttribute("errorMsg", "ì—ëŸ¬ë©”ì„¸ì§€");
 			request.getRequestDispatcher("errorView/error.jsp").forward(request, response);
 
 		}
