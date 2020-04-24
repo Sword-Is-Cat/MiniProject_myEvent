@@ -6,10 +6,10 @@ import java.util.Map;
 
 import javax.servlet.ServletContext;
 /**
- * ViewÀÇ ¸ğµç ¿äÃ»À» Áß¾ÓÁıÁßÀûÀ¸·Î °ü¸®ÇÏ±â À§ÇÑ
- * FrontControllerÀÇ ¿ªÇÒÀÌ´Ù
- * :¿äÃ»À» ¹Ş¾Æ Model(Service - BusinessLogic, DAO)ÂÊÀ¸·Î Àü´ŞÇÏ°í ±× °á°ú¸¦ ¹Ş¾Æ¼­
- * °á°úView·Î ÀÌµ¿ÇÏ´Â ¿ªÇÒ
+ * Viewï¿½ì“½ ï§â‘¤ë±º ï¿½ìŠ‚ï§£ï¿½ï¿½ì“£ ä»¥ë¬’ë¸°ï§ë¬’ì¨·ï¿½ìŸ»ï¿½ì‘æ¿¡ï¿½ æ„¿ï¿½ç”±Ñ‹ë¸¯æ¹²ï¿½ ï¿½ìï¿½ë¸³
+ * FrontControllerï¿½ì“½ ï¿½ë¿­ï¿½ë¸·ï¿½ì” ï¿½ë–
+ * :ï¿½ìŠ‚ï§£ï¿½ï¿½ì“£ è«›ì†ë¸˜ Model(Service - BusinessLogic, DAO)ï§ŸìŒì‘æ¿¡ï¿½ ï¿½ìŸ¾ï¿½ë––ï¿½ë¸¯æ€¨ï¿½ æ´¹ï¿½ å¯ƒê³Œë‚µç‘œï¿½ è«›ì†ë¸˜ï¿½ê½Œ
+ * å¯ƒê³Œë‚µViewæ¿¡ï¿½ ï¿½ì” ï¿½ë£ï¿½ë¸¯ï¿½ë’— ï¿½ë¿­ï¿½ë¸·
  */
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -46,7 +46,7 @@ public class DispatcherServlet extends HttpServlet {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			request.setAttribute("errorMsg", "¿¡·¯¸Ş¼¼Áö");
+			request.setAttribute("errorMsg", "error here");
 			request.getRequestDispatcher("errorView/error.jsp").forward(request, response);
 
 		}
