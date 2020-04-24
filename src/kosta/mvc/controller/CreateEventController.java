@@ -6,24 +6,26 @@ import javax.servlet.http.HttpServletResponse;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
+import kosta.mvc.vo.Category;
+import kosta.mvc.vo.Channel;
+import kosta.mvc.vo.Event;
+
 public class CreateEventController implements Controller {
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse rsponse) throws Exception {
-		
-		String saveDir=request.getServletContext().getRealPath("/eventImage");
-		
-		int maxSize= 1024*1024*100;//100M
-		String encoding="UTF-8";
-		
-		MultipartRequest m = 
-				new MultipartRequest(request, saveDir,maxSize, encoding,
-						   new DefaultFileRenamePolicy());
-		
-		//request ¿¸º€µ«¥¬ µ•¿Ã≈Õ ¿Ø»øº∫ √º≈©
-		
+
+		String saveDir = request.getServletContext().getRealPath("/eventImage");
+
+		int maxSize = 1024 * 1024 * 100;// 100M
+		String encoding = "UTF-8";
+
+		MultipartRequest m = new MultipartRequest(request, saveDir, maxSize, encoding, new DefaultFileRenamePolicy());
+
 		String eventName = m.getParameter("eventName");
-		String chNo = m.getParameter("chNo");
+		int cateNo = Integer.parseInt(m.getParameter("cateNo"));
+		int chNo = Integer.parseInt(m.getParameter("chNo"));
+		int evBookMax = Integer.parseInt(m.getParameter("evBookMax"));
 		String description = m.getParameter("description");
 		String evBookStartDate = m.getParameter("evBookStartDate");
 		String evBookStartTime = m.getParameter("evBookStartTime");
@@ -39,46 +41,45 @@ public class CreateEventController implements Controller {
 		String detailAddress = m.getParameter("detailAddress");
 		String extraAddress = m.getParameter("extraAddress");
 		String Addr = "";
-		
-		if(eventName==null || eventName.equals("") ||
-				chNo==null || chNo.equals("") ||
-				description==null || description.equals("") ||
-				evStartDate==null || evStartDate.equals("") ||
-				evStartTime==null || evStartTime.equals("") ||
-				evEndDate==null || evEndDate.equals("") ||
-				evEndTime==null || evEndTime.equals("")) {
-			
-			throw new RuntimeException("¿‘∑¬∞™¿Ã √Ê∫–«œ¡ˆ æ Ω¿¥œ¥Ÿ..");
+
+		if (eventName == null || eventName.equals("") || description == null
+				|| description.equals("") || evStartDate == null || evStartDate.equals("") || evStartTime == null
+				|| evStartTime.equals("") || evEndDate == null || evEndDate.equals("") || evEndTime == null
+				|| evEndTime.equals("")) {
+
+			throw new RuntimeException("ÏûÖÎ†•Í∞íÏù¥ Î∂ÄÏ°±Ìï©ÎãàÎã§");
 		}
 		
-		if(postalCode==null || postalCode.equals("")) {
-			/*ø¬∂Û¿Œ«‡ªÁ*/
+		Category category = new Category();
+		category.setCateNo(cateNo);
+		Channel channel = new Channel();
+		channel.setChNo(chNo);
+
+		if (postalCode == null || postalCode.equals("")) {
 			Addr = "Online";
-		}else {
+		} else {
 			Addr = postalCode + roadAddress + detailAddress + extraAddress;
 		}
-		
-//		evBookStartDate==null || evBookStartDate.equals("") ||
-//				evBookStartTime==null || evBookStartTime.equals("") ||
-//				evBookEndDate==null || evBookEndDate.equals("") ||
-//				evBookEndTime==null || evBookEndTime.equals("") ||
-		
-//		EventVO event = new EventVO(modelNum, modelName, 
-//				                         Integer.parseInt(price), 
-//				                         description, password);
-		
-//		if( m.getFilesystemName("evImage")!=null) {
-//			//∆ƒ¿œ √∑∫Œµ«æ˙¥Ÿ∏È
-//			event.setEvImage(m.getFilesystemName("evImage"));
-//		}
-//		
-//		if( m.getFilesystemName("evImageDetail")!=null) {
-//			//∆ƒ¿œ √∑∫Œµ«æ˙¥Ÿ∏È
-//			event.setEvImageDetail(m.getFilesystemName("evImageDetail"));
-//		}
-		
+
+		if (evBookStartDate == null || evBookStartDate.equals("") || evBookStartTime == null
+				|| evBookStartTime.equals("") || evBookEndDate == null || evBookEndDate.equals("")
+				|| evBookEndTime == null || evBookEndTime.equals("")) {
+
+			
+		}
+
+		Event event = new Event();
+
+		if (m.getFilesystemName("evImage") != null) {
+			event.setEvImg(m.getFilesystemName("evImage"));
+		}
+
+		if (m.getFilesystemName("evImageDetail") != null) {
+			event.setEvImgDetail(m.getFilesystemName("evImageDetail"));
+		}
+
 //		EventsService.insert(event);
-		ModelAndView mv = new ModelAndView(true,"front");
+		ModelAndView mv = new ModelAndView(true, "front");
 		return mv;
 	}
 
