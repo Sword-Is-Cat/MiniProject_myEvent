@@ -7,14 +7,14 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Properties;
 
-public class EventDAO {
+public class ChBoardDAO {
 	Connection con;
 	Statement st;
 	PreparedStatement ps;
 	ResultSet rs;
 	Properties pro = new Properties();
 	
-	public EventDAO() {
+	public ChBoardDAO() {
 
 		InputStream input = getClass().getClassLoader().getResourceAsStream("kosta/mvc/model/dao/sqlQuery.properties");
 		try {
