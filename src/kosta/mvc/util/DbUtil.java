@@ -10,12 +10,12 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 /**
- * DB¿¬µ¿À» À§ÇÑ ·Îµå, ¿¬°á, ´İ±â ±â´É Å¬·¡½º
+ * DBì—°ë™ì„ ìœ„í•œ ë¡œë“œ, ì—°ê²°, ë‹«ê¸° ê¸°ëŠ¥ í´ë˜ìŠ¤
  * */
 public class DbUtil {
 	static DataSource ds ;
     /**
-     * ·Îµå
+     * ë¡œë“œ
      * */
 	static {
 		try {
@@ -27,14 +27,14 @@ public class DbUtil {
 	}
 	
 	/**
-	 * ¿¬°á
+	 * ì—°ê²°
 	 * */
 	public static Connection getConnection() throws SQLException{
 		return  ds.getConnection();
 	} 
 	
 	/**
-	 * ´İ±â (insert, update ,delete ÀÎ°æ¿ì )
+	 * ë‹«ê¸° (insert, update ,delete ì¸ê²½ìš° )
 	 * */
 	public static void dbClose(Statement st, Connection con){
 		try {
@@ -46,7 +46,7 @@ public class DbUtil {
 	}
 	
 	/**
-	 * ´İ±â(select ÀÎ°æ¿ì)
+	 * ë‹«ê¸°(select ì¸ê²½ìš°)
 	 * */
     public static void dbClose(ResultSet rs , Statement st, Connection con){
     	try {

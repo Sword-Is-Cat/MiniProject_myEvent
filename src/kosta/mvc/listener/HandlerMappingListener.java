@@ -13,8 +13,8 @@ import javax.servlet.annotation.WebListener;
 import kosta.mvc.controller.Controller;
 
 /**
- * »ç¿ëÀÚ ¿äÃ»¿¡ ÇØ´çÇÏ´Â key¿¡ µû¸¥ °´Ã¼¸¦ ¹Ì¸® »ı¼ºÇØ¼­ Map¿¡ ÀúÀåÇÑ ÈÄ ¸ğµç ¿µ¿ª¿¡¼­ »ç¿ëÇÒ ¼ö ÀÖµµ·Ï application
- * scope¿¡
+ * ì‚¬ìš©ì ìš”ì²­ì— í•´ë‹¹í•˜ëŠ” keyì— ë”°ë¥¸ ê°ì²´ë¥¼ ë¯¸ë¦¬ ìƒì„±í•´ì„œ Mapì— ì €ì¥í•œ í›„ ëª¨ë“  ì˜ì—­ì—ì„œ ì‚¬ìš©í•  ìˆ˜ ìˆë„ë¡ application
+ * scopeì—
  */
 
 @WebListener
@@ -28,7 +28,7 @@ public class HandlerMappingListener implements ServletContextListener {
 		Map<String, Controller> map = new HashMap<String, Controller>();
 		ServletContext application = e.getServletContext();
 
-		// key¿¡ ÇØ´çÇÏ´Â classNameÀ» °ü¸®ÇÏ´Â properties¹®¼­·Îµù
+		// keyì— í•´ë‹¹í•˜ëŠ” classNameì„ ê´€ë¦¬í•˜ëŠ” propertiesë¬¸ì„œë¡œë”©
 		String fileName = application.getInitParameter("fileName");
 		ResourceBundle rb = ResourceBundle.getBundle(fileName);
 
@@ -37,7 +37,7 @@ public class HandlerMappingListener implements ServletContextListener {
 			for (String key : keys) {
 				String value = rb.getString(key);
 				// System.out.println(key +" = "+ value);
-				// String value¸¦ °´Ã¼¸í(Controller)À¸·Î ¸¸µé¾î¼­ Map¿¡ ÀúÀå
+				// String valueë¥¼ ê°ì²´ëª…(Controller)ìœ¼ë¡œ ë§Œë“¤ì–´ì„œ Mapì— ì €ì¥
 				Controller controller = (Controller) Class.forName(value).newInstance();
 
 				map.put(key, controller);
@@ -46,7 +46,7 @@ public class HandlerMappingListener implements ServletContextListener {
 			ex.printStackTrace();
 		}
 
-		// application¿µ¿ª¿¡ ÀúÀåÇÑ´Ù
+		// applicationì˜ì—­ì— ì €ì¥í•œë‹¤
 		application.setAttribute("map", map);
 
 	}
