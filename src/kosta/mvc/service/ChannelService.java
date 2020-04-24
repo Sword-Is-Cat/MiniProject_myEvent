@@ -1,6 +1,7 @@
 package kosta.mvc.service;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import kosta.mvc.model.dao.ChannelDAO;
 import kosta.mvc.vo.Channel;
@@ -11,6 +12,12 @@ public class ChannelService {
 
 	public static void insertChannel(Channel chan) throws SQLException {
 		int result = ChanDAO.insertChannel(chan);
-		if(result == 0) throw new SQLException("µî·ÏµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+		if(result == 0) throw new SQLException("ë“±ë¡ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 	}
+
+	public static List<Channel> selectAll() throws SQLException {
+		List<Channel> list = ChanDAO.selectAllChannel();
+		return list;
+	}
+
 }

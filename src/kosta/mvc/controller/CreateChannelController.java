@@ -6,9 +6,9 @@ import javax.servlet.http.HttpServletResponse;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
-import kosta.mvc.model.dao.ChannelDAO;
 import kosta.mvc.service.ChannelService;
 import kosta.mvc.vo.Channel;
+import kosta.mvc.vo.User;
 
 public class CreateChannelController implements Controller{
 	public CreateChannelController() {}
@@ -22,22 +22,25 @@ public class CreateChannelController implements Controller{
 		MultipartRequest m = new MultipartRequest(request, saveDir, maxSize, encoding, new DefaultFileRenamePolicy());
 		
 		String chNo = m.getParameter("chNo");
-		String user = m.getParameter("user");
+		String userNo = m.getParameter("user");
 		String chName = m.getParameter("chName");
+		String chImg = m.getParameter("chImg");
 		String chStatus = m.getParameter("cStatus");
 		String chDescription = m.getParameter("chDescription");
 		
 		if(chNo==null || chNo.equals("")||
-				user==null || user.equals("")||
+				userNo==null || userNo.equals("")||
 				chName==null || chName.equals("")||
 				chStatus==null || chStatus.equals("")||
 				chDescription==null || chDescription.equals("")) {
-			throw new RuntimeException("ÀÔ·Â°ªÀÌ ÃæºĞÇÏÁö ¾Ê½À´Ï´Ù."); // DispatcherServletÀÇ catch ºÎºĞÀ¸·Î ³Ñ¾î°£´Ù.
+			throw new RuntimeException("ì…ë ¥ê°’ì´ ì¶©ë¶„í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤."); // DispatcherServletï¿½ï¿½ catch ï¿½Îºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾î°£ï¿½ï¿½.
 		}
 		
-		Channel chan = new Channel(user, chName, chImg, chDescription)
+		User user = new User();
+		user.setUserNo(Integer.parseInt(userNo));
+		Channel chan = new Channel(user, chName, chImg, chDescription);
 		
-		// Ã¤³Î ÀÌ¹ÌÁö ÆÄÀÏÀÌ Ã·ºÎµÇ¾ú´Ù¸é
+		// Ã¤ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã·ï¿½ÎµÇ¾ï¿½ï¿½Ù¸ï¿½
 		if(m.getFilesystemName("chImg")!=null) {
 			chan.setChlmg(m.getFilesystemName("chImg"));
 		}
@@ -46,7 +49,7 @@ public class CreateChannelController implements Controller{
 		
 		ModelAndView mv = new ModelAndView(true, "chan");
 		
-		return null;
+		return mv;
 	}
 
 }
