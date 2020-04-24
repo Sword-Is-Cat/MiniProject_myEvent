@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 import kosta.mvc.util.DbUtil;
-import kosta.mvc.vo.ChannelVO;
+import kosta.mvc.vo.Channel;
 
 public class ChannelDAO {
 	Properties pro = new Properties();
@@ -22,7 +22,7 @@ public class ChannelDAO {
 		}
 	}
 	
-	public int insertChannel(ChannelVO channel) throws SQLException {
+	public int insertChannel(Channel channel) throws SQLException {
 		Connection con = DbUtil.getConnection();
 		PreparedStatement ps = null;
 		int result = 0;
@@ -32,7 +32,7 @@ public class ChannelDAO {
 			ps.setInt(1, channel.getChNo());
 			ps.setInt(2, channel.getUser().getUserNo());
 			ps.setString(3, channel.getChName());
-			ps.setString(4, channel.getChlmg());
+			ps.setString(4, channel.getChImg());
 			ps.setInt(5, channel.getChStatus());
 			ps.setString(6, channel.getChDescription());
 			
@@ -43,3 +43,4 @@ public class ChannelDAO {
 		return result;
 	}
 }
+
