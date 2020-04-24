@@ -9,4 +9,10 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  	<context-param>
+		<param-name>fileName</param-name>
+		<param-value>kosta/mvc/listener/ActionMapping</param-value>
+		<!-- 자바소스에서 ResourseBundle로 로딩 할것이기 때문에 확장자 .properties 생략가능 -->
+	</context-param>
 </web-app>
