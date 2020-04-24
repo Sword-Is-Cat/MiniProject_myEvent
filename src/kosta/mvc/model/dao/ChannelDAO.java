@@ -1,5 +1,26 @@
 package kosta.mvc.model.dao;
 
-public class ChannelDAO {
+import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Properties;
 
+public class ChannelDAO {
+	Connection con;
+	Statement st;
+	PreparedStatement ps;
+	ResultSet rs;
+	Properties pro = new Properties();
+	
+	public ChannelDAO() {
+
+		InputStream input = getClass().getClassLoader().getResourceAsStream("kosta/mvc/model/dao/sqlQuery.properties");
+		try {
+			pro.load(input);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
