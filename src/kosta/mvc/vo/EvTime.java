@@ -3,6 +3,7 @@ package kosta.mvc.vo;
 import java.sql.Timestamp;
 
 public class EvTime {
+
 	private int evNo;
 	private Timestamp evCreateTime;
 	private Timestamp evStartTime;
@@ -27,12 +28,12 @@ public class EvTime {
 		this.evBookEndTime = evBookEndTime;
 	}
 
-
 	public EvTime(int evNo, Timestamp evCreateTime, Timestamp evStartTime, Timestamp evEndTime, Timestamp evBookStartTime,
 			Timestamp evBookEndTime) {
 		this(evStartTime, evEndTime, evBookStartTime, evBookEndTime);
 		this.evNo = evNo;
 		this.evCreateTime = evCreateTime;
+
 	}
 
 	public int getEvNo() {
@@ -84,4 +85,5 @@ public class EvTime {
 	}
 	
 	
+
 }

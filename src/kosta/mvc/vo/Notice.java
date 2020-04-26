@@ -12,12 +12,12 @@ public class Notice {
 	public Notice() {}
 
 	/**
-	 * 공지사항 게시용
+	 * 怨듭��궗�빆 寃뚯떆�슜
 	 * @param noticeSubject
 	 * @param noticeContent
 	 */
 	public Notice(String noticeSubject, String noticeContent) {
-		super();
+		//super();
 		this.noticeSubject = noticeSubject;
 		this.noticeContent = noticeContent;
 	}
