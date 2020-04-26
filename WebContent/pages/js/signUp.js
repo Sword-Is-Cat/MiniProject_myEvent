@@ -94,15 +94,18 @@ $(function(){
 	
 	$('#userPwd').on('change', function(){
 		if($('#userPwd').val() == $('#userPwdChk').val()){
-			$('#userPwdChkResult').html("");
-		}		
+			$('#userPwdChkResult').css('visibility' ,'hidden');
+		}else{
+			$('#userPwdChkResult').css('visibility' ,'visible');
+		}
 	});
 	
 	$('#userPwdChk').on('change', function(){
-		console.log($('#userPwd').val()+":"+$('#userPwdChk'));
 		if($('#userPwd').val() == $('#userPwdChk').val()){
-			$('#userPwdChkResult').html("");
-		}		
+			$('#userPwdChkResult').css('visibility' ,'hidden');
+		}else{
+			$('#userPwdChkResult').css('visibility' ,'visible');
+		}	
 	});	
 	
 	$('#submit').on("click", function(){

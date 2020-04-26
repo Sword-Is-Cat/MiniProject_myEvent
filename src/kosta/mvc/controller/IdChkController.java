@@ -10,7 +10,7 @@ public class IdChkController implements Controller {
 	
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String userId = request.getParameter("userId");
+		String userId = request.getParameter("userId").toLowerCase();
 		if(userId.equals("") || userId==null)throw new Exception("아이디를 입력해주세요.");
 		int result = userService.idDuplicationChk(userId);
 		request.setAttribute("idChk", result);
