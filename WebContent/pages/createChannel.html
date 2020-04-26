@@ -87,8 +87,8 @@
 
 				<div class="row">
 					<div class="col-md-7">
-						<form id="contact-form" action="front?command=createChannel" method="post"
-							role="form">
+						<form id="contact-form" action="../front?key=createChannel" method="post"
+							role="form"  enctype="multipart/form-data">
 							<div class="row">
 								<div class="col-md-8">
 									<div class="form-group">
@@ -100,7 +100,7 @@
 									<div class="form-group">
 										<label> 개설자 </label> <input class="form-control" name="userNo"
 											id="user" placeholder="userId param" type="text" required
-											readonly>
+											><!-- readonly 추가해 -->
 									</div>
 								</div>
 							</div>

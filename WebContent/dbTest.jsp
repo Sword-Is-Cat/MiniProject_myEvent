@@ -11,7 +11,8 @@
 <body>
 <h1>
  1. 연결 test: <%=DbUtil.getConnection() %>
- 2. 채널검색: <%
+ 2. 채널검색: 
+ 	<%
  	ChannelDAO dao = new ChannelDAO();
  	out.print(dao.selectAllChannel());
 	%>

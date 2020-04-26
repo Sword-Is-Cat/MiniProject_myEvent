@@ -28,10 +28,10 @@ public class CreateChannelController implements Controller{
 		String chStatus = m.getParameter("cStatus");
 		String chDescription = m.getParameter("chDescription");
 		
-		if(chNo==null || chNo.equals("")||
-				userNo==null || userNo.equals("")||
+		if(chNo==null || chNo.equals("")|| // 없고
+				userNo==null || userNo.equals("")|| // 없는거로 뜬다.
 				chName==null || chName.equals("")||
-				chStatus==null || chStatus.equals("")||
+				chStatus==null || chStatus.equals("")|| // 없다.
 				chDescription==null || chDescription.equals("")) {
 			throw new RuntimeException("입력값이 충분하지 않습니다."); // DispatcherServlet�� catch �κ����� �Ѿ��.
 		}
@@ -47,7 +47,7 @@ public class CreateChannelController implements Controller{
 		
 		ChannelService.insertChannel(chan);
 		
-		ModelAndView mv = new ModelAndView(true, "chan");
+		ModelAndView mv = new ModelAndView(true, "channelList.jsp");
 		
 		return mv;
 	}
