@@ -186,52 +186,21 @@
 							<div class="row">
 								<div class="col-md-8">
 									<div class="form-group">
+										<label> 카테고리 </label> <select class="form-control"
+											name="cateNo" id="cateNo" placeholder="" type="select"
+											required>
+											<option value='0'>없는 카테고리</option>
+											<option>여기를 catelist를 땡겨와서</option>
+											<option>option value=${cateNo}로 설정하고</option>
+											<option>c:foreach로 뿌려줍시다</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
 										<label> 정원 </label> <input class="form-control"
 											name="evBookMax" id="evBookMax" placeholder="" type="text"
 											required>
-									</div>
-								</div>
-								<div class="col-md-8">
-									<div class="form-group">
-										<label> 카테고리 </label> <input class="form-control"
-											name="cateNo" id="cateNo" placeholder="" type="select"
-											required>
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
-										<option>4</option>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-8">
-									<div class="form-group">
-										<label> 행사명 </label> <input class="form-control"
-											name="eventName" id="name" placeholder="" type="text"
-											required>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<label> 개설채널 </label> <input class="form-control"
-											name="chName" id="channel" type="text" value="chName param"
-											required readonly> <input name="chNo" id='chNo'
-											type='hidden' value="chNo param">
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-4">
-									<div class="form-group">
-										<label> 행사 이미지 </label> <input type="file" name="evImage"
-											id="file" accept="image/gif, image/jpeg, image/png">
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<label> 행사 상세 이미지 </label> <input type="file"
-											name="evImageDetail" id="file"
-											accept="image/gif, image/jpeg, image/png">
 									</div>
 								</div>
 							</div>
@@ -241,62 +210,52 @@
 									placeholder="" rows="10" required></textarea>
 							</div>
 
-
-							<h3>행사 접수 기간</h3>
 							<div class="row">
-								<div class="col-md-4">
+								<div class="col-md-6">
 									<div class="form-group">
-										<label> 접수 시작일 </label> <input class="form-control"
-											name="evBookStartDate" id="evBookStartTime" type="date">
+										<label> 행사 이미지 </label> <input type="file" name="evImage"
+											id="file" accept="image/gif, image/jpeg, image/png">
 									</div>
 								</div>
-								<div class="col-md-3.5">
+								<div class="col-md-6">
 									<div class="form-group">
-										<label> 시간 </label> <input class="form-control"
-											name="evBookStartTime" id="evBookStartTime" type="time">
+										<label> 행사 상세 이미지 </label> <input type="file"
+											name="evImageDetail" id="file"
+											accept="image/gif, image/jpeg, image/png">
 									</div>
 								</div>
 							</div>
+
+							<h3>행사 접수 기간</h3>
 							<div class="row">
-								<div class="col-md-4">
+								<div class="col-md-6">
 									<div class="form-group">
-										<label> 접수 종료일 </label> <input class="form-control"
-											name="evBookEndDate" id="evBookEndTime" type="date">
+										<label> 접수 시작 </label> <input class="form-control"
+											name="evBookStart" id="evBookStartTime" type="datetime-local">
 									</div>
 								</div>
-								<div class="col-md-3.5">
+								<div class="col-md-6">
 									<div class="form-group">
-										<label> 시간 </label> <input class="form-control"
-											name="evBookEndTime" id="evBookStartTime" type="time">
+										<label> 접수 종료 </label> <input class="form-control"
+											name="evBookEnd" id="evBookEndTime" type="datetime-local">
 									</div>
 								</div>
 							</div>
 							<h3>행사 진행 기간</h3>
 							<div class="row">
-								<div class="col-md-4">
+								<div class="col-md-6">
 									<div class="form-group">
-										<label> 행사 시작일 </label> <input class="form-control"
-											name="evStartDate" id="evBookStartTime" type="date" required>
+										<label> 행사 시작 </label> <input class="form-control"
+											name="evStart" id="evBookStartTime" type="datetime-local"
+											required>
 									</div>
 								</div>
-								<div class="col-md-3.5">
+
+								<div class="col-md-6">
 									<div class="form-group">
-										<label> 시간 </label> <input class="form-control"
-											name="evStartTime" id="evBookStartTime" type="time" required>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-4">
-									<div class="form-group">
-										<label> 행사 종료일 </label> <input class="form-control"
-											name="evEndDate" id="evBookEndTime" type="date" required>
-									</div>
-								</div>
-								<div class="col-md-3.5">
-									<div class="form-group">
-										<label> 시간 </label> <input class="form-control"
-											name="evEndTime" id="evBookStartTime" type="time" required>
+										<label> 행사 종료 </label> <input class="form-control"
+											name="evEnd" id="evBookEndTime" type="datetime-local"
+											required>
 									</div>
 								</div>
 							</div>
@@ -321,6 +280,23 @@
 											type="text"> <input
 											class="col-lg-4 col-md-4 col-sm-8 col-xs-8" id="extraAddress"
 											name="extraAddress" type="text"><br> <br>
+									</div>
+								</div>
+							</div>
+							<h3>행사 담당자 연락처</h3>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label> 휴대폰 </label> <input class="form-control"
+											name="evPhone" id="name" placeholder="010-0000-0000"
+											type="text" required>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label> 이메일 </label> <input class="form-control"
+											name="evEmail" id="channel" type="text"
+											placeholder="abcde@abcde.com" required>
 									</div>
 								</div>
 							</div>
