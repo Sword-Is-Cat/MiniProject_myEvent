@@ -25,7 +25,6 @@ public class DispatcherServlet extends HttpServlet {
 
 	@Override
 	public void init() throws ServletException {
-
 		ServletContext application = super.getServletContext();
 		map = (Map<String, Controller>) application.getAttribute("map");
 	}
@@ -33,10 +32,9 @@ public class DispatcherServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String key = request.getParameter("key");
-
+		
 		if(key==null || key.equals(""))key="list";
 		Controller controller= map.get(key);
-
 		try {
 			ModelAndView mv = controller.handleRequest(request, response);
 			if (mv.isRedirect()) {
@@ -47,7 +45,7 @@ public class DispatcherServlet extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 			request.setAttribute("errorMsg", "에러메세지");
-			request.getRequestDispatcher("errorView/error.jsp").forward(request, response);
+			request.getRequestDispatcher("/pages/404.html").forward(request, response);
 
 		}
 	}

@@ -1,5 +1,7 @@
 package kosta.mvc.vo;
 
+import java.sql.Timestamp;
+
 public class ChBoard {
 	private int chBoardNo;
 	private User user;
@@ -7,7 +9,7 @@ public class ChBoard {
 	private String chBoardContent;
 	private int chBoardStar;
 	private int chBoardStatus;
-	private long chBoardTime;
+	private Timestamp chBoardTime;
 	
 	public ChBoard() {}
 
@@ -28,7 +30,7 @@ public class ChBoard {
 
 
 	public ChBoard(int chBoardNo, User user, Channel channel, String chBoardContent, int chBoardStar, int chBoardStatus,
-			long chBoardTime) {
+			Timestamp chBoardTime) {
 		this(user, channel, chBoardContent, chBoardStar);
 		this.chBoardNo = chBoardNo;
 		this.chBoardStatus = chBoardStatus;
@@ -96,12 +98,12 @@ public class ChBoard {
 	}
 
 
-	public long getChBoardTime() {
+	public Timestamp getChBoardTime() {
 		return chBoardTime;
 	}
 
 
-	public void setChBoardTime(long chBoardTime) {
+	public void setChBoardTime(Timestamp chBoardTime) {
 		this.chBoardTime = chBoardTime;
 	}
 	
