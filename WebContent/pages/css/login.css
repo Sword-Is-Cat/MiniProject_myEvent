@@ -1,0 +1,19 @@
+.textLabel{
+	margin-top:1em;
+	display:block;
+}
+#postcode{
+	margin-top:0px;
+}
+#submit{
+	display:block;
+	margin:auto;
+}
+#userId{
+	display:block;
+	margin:auto;
+}
+#userPwd{
+	display:block;
+	margin:auto;
+}
