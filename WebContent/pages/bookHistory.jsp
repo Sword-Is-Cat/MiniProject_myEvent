@@ -14,7 +14,7 @@
 <!-- header -->
 
 <style>
-	.mainContainer {padding-bottom:50px;}
+	.mainContainer {padding:50px 0px;}
 	.menuSubnav{
 	    border-bottom: 2px solid #f8f8f8;
 	    flex-direction: row;
@@ -176,13 +176,7 @@
     
     
     <!-- 여기서부터 원본 -->
-		<!-- book history top -->
-		<div class="row">
-			<div class="col-md-12 heading text-center">
-				<h2 class="title2" style="text-align: center;  font-weight: bold;">참가 행사 목록<span class="title-desc"></span></h2>
-			</div>
-		</div><!-- Title row end -->
-<!-- <hr>  -->
+
 
 <div class="container mainContainer">
 	<div class="col s12 d-flex justify-content-between">
