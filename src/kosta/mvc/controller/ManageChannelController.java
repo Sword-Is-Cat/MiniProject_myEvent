@@ -8,16 +8,17 @@ import javax.servlet.http.HttpServletResponse;
 import kosta.mvc.service.ChannelService;
 import kosta.mvc.vo.Channel;
 
-public class SelectChannelController implements Controller{
+public class ManageChannelController implements Controller {
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		List<Channel> list = ChannelService.selectAll();
+		List<Channel> list = ChannelService.manageChannel();
 		request.setAttribute("list", list);
 		
 		ModelAndView mv = new ModelAndView();
-		mv.setRedirect(false);
-		mv.setViewName("/pages/channelList.jsp");
+		mv.setRedirect(true);
+		mv.setViewName("/pages/ChannelMng.jsp");
 		return mv;
 	}
+
 }

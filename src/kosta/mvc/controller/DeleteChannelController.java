@@ -1,23 +1,24 @@
 package kosta.mvc.controller;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kosta.mvc.service.ChannelService;
-import kosta.mvc.vo.Channel;
 
-public class SelectChannelController implements Controller{
+public class DeleteChannelController implements Controller {
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		List<Channel> list = ChannelService.selectAll();
-		request.setAttribute("list", list);
+		int chNo = Integer.parseInt(request.getParameter("chNo"));
+		String path = request.getServletContext().getRealPath("/channelImg");
+		
+		ChannelService.deleteChannel(chNo, path);
 		
 		ModelAndView mv = new ModelAndView();
-		mv.setRedirect(false);
-		mv.setViewName("/pages/channelList.jsp");
+		mv.setRedirect(true);
+		mv.setViewName("front"); // 내 채널 리스트로 수정해야됨.
+		
 		return mv;
 	}
+
 }

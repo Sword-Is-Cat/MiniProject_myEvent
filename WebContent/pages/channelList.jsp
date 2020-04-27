@@ -1,3 +1,5 @@
+<%@page import="kosta.mvc.service.ChannelService"%>
+<%@page import="java.util.List"%>
 <%@page import="kosta.mvc.model.dao.ChannelDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="kosta.mvc.vo.Channel"%>
@@ -6,7 +8,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="path" value="${pageContext.request.contextPath}" scope="application"/>
-
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -112,168 +113,33 @@
 <br>
 
 <!-- channalList start -->
-<c:choose>
-    <c:when test="${empty requestScope.list}">
-	   <tr>
-        <td colspan="5">
-            <p align="center"><b><span style="font-size:9pt;">등록된 상품이 없습니다.</span></b></p>
-        </td>
-    </tr>
-    </c:when>
-<c:otherwise>
-<c:forEach items="${requestScope.list}" var="channel">
+<%List<Channel> chList = ChannelService.selectAll();%>
+
 <section id="main-container" class="portfolio-static">
 	<div class="container">
 		<div class="row">
+		<c:forEach items="<%=chList%>" var="channel">
 			<div class="col-sm-4 portfolio-static-item">
 				<div class="grid">
 					<figure class="m-0 effect-oscar">
 						<img src="https://eventusstorage.blob.core.windows.net/evs/Image/event/16764/ProjectInfo/Cover/e3f492fb160d420ca4483e56964b710d.jpg?fixed" alt="">
 						<figcaption>
-							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/portfolio/portfolio-bg1.jpg"><i
+							<a class="view icon-pentagon" data-rel="prettyPhoto" href="front?key=channelDetail&chNo=${channel.chNo}"><i
 									class="fa fa-search"></i></a>
 						</figcaption>
 					</figure>
 					<div class="portfolio-static-desc">
-					<a href="#"><h3 id="eTitle" class="eTitle">${channel.chName}</h3></a>
-					<a href="#" class="desc">${channel.chDescription}</a>
+					<a href="${pageContext.request.contextPath}/front?key=channelDetail&chNo=${channel.chNo}"><h3 id="eTitle" class="eTitle">${channel.chName}</h3></a>
+					<a href="${pageContext.request.contextPath}/front?key=channelDetail&chNo=${channel.chNo}" class="desc">${channel.chDescription}</a>
 					</div>
 				</div>
 				<!--/ grid end -->
 			</div>
+			</c:forEach>
 			<!--/ item 1 end -->
-
-			<div class="col-sm-4 portfolio-static-item">
-				<div class="grid">
-					<figure class="m-0 effect-oscar">
-						<img src="https://eventusstorage.blob.core.windows.net/evs/Image/tentuplay/16716/ProjectInfo/Cover/a447a98ed1c142359cf6444ace7908ac.jpg?fixed" alt="">
-						<figcaption>
-							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/portfolio/portfolio-bg2.jpg"><i
-									class="fa fa-search"></i></a>
-						</figcaption>
-					</figure>
-					<div class="portfolio-static-desc">
-					<a href="#"><h3 id="eTitle" class="eTitle">채널이름</h3></a>
-					<a href="#" class="desc">[DREAMPLUS Insight Night(인싸 나잇)] 인싸 스타트업 대표님들의 인사이트 강연(키튼플래닛, 홈핏)</a>
-					</div>
-				</div>
-				<!--/ grid end -->
-			</div>
-			<!--/ item 2 end -->
-
-			<div class="col-sm-4 portfolio-static-item">
-				<div class="grid">
-					<figure class="m-0 effect-oscar">
-						<img src="https://eventusstorage.blob.core.windows.net/evs/Image/dreamplusgangnam/16372/ProjectInfo/Cover/489df4119075489c986f6ea646545124.jpg?fixed" alt="">
-						<figcaption>
-							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/portfolio/portfolio-bg3.jpg"><i
-									class="fa fa-search"></i></a>
-						</figcaption>
-					</figure>
-					<div class="portfolio-static-desc">
-						<h3>Your Business</h3>
-						<span><a href="#">Ui Elements</a></span>
-					</div>
-				</div>
-				<!--/ grid end -->
-			</div>
-			<!--/ item 3 end -->
-
-			<div class="col-sm-4 portfolio-static-item">
-				<div class="grid">
-					<figure class="m-0 effect-oscar">
-						<img src="images/portfolio/portfolio4.jpg" alt="">
-						<figcaption>
-							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/portfolio/portfolio-bg1.jpg"><i
-									class="fa fa-search"></i></a>
-						</figcaption>
-					</figure>
-					<div class="portfolio-static-desc">
-						<h3>Prego Match</h3>
-						<span><a href="#">Media Elements</a></span>
-					</div>
-				</div>
-				<!--/ grid end -->
-			</div>
-			<!--/ item 4 end -->
-
-			<div class="col-sm-4 portfolio-static-item">
-				<div class="grid">
-					<figure class="m-0 effect-oscar">
-						<img src="images/portfolio/portfolio5.jpg" alt="">
-						<figcaption>
-							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/portfolio/portfolio-bg2.jpg"><i
-									class="fa fa-search"></i></a>
-						</figcaption>
-					</figure>
-					<div class="portfolio-static-desc">
-						<h3>Fashion Brand</h3>
-						<span><a href="#">Graphics Media</a></span>
-					</div>
-				</div>
-				<!--/ grid end -->
-			</div>
-			<!--/ item 5 end -->
-
-			<div class="col-sm-4 portfolio-static-item">
-				<div class="grid">
-					<figure class="m-0 effect-oscar">
-						<img src="images/portfolio/portfolio6.jpg" alt="">
-						<figcaption>
-							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/portfolio/portfolio-bg3.jpg"><i
-									class="fa fa-search"></i></a>
-						</figcaption>
-					</figure>
-					<div class="portfolio-static-desc">
-						<h3>The Insidage</h3>
-						<span><a href="#">Material Design</a></span>
-					</div>
-				</div>
-				<!--/ grid end -->
-			</div>
-			<!--/ item 6 end -->
-
-			<div class="col-sm-4 portfolio-static-item">
-				<div class="grid">
-					<figure class="m-0 effect-oscar">
-						<img src="images/portfolio/portfolio7.jpg" alt="">
-						<figcaption>
-							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/portfolio/portfolio-bg1.jpg"><i
-									class="fa fa-search"></i></a>
-						</figcaption>
-					</figure>
-					<div class="portfolio-static-desc">
-						<h3>Light Carpet</h3>
-						<span><a href="#">Mockup</a></span>
-					</div>
-				</div>
-				<!--/ grid end -->
-			</div>
-			<!--/ item 7 end -->
-
-			<div class="col-sm-4 portfolio-static-item">
-				<div class="grid">
-					<figure class="m-0 effect-oscar">
-						<img src="images/portfolio/portfolio8.jpg" alt="">
-						<figcaption>
-							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/portfolio/portfolio-bg2.jpg"><i
-									class="fa fa-search"></i></a>
-						</figcaption>
-					</figure>
-					<div class="portfolio-static-desc">
-						<h3>Amazing Keyboard</h3>
-						<span><a href="#">Photography</a></span>
-					</div>
-				</div>
-				<!--/ grid end -->
-			</div>
-			<!--/ item 8 end -->
-
 		</div><!-- Content row end -->
 	</div><!-- Container end -->
-	</c:forEach>
-	</c:otherwise>
-    </c:choose>
+
 </section><!-- Portfolio end -->
 
 <div class="gap-40"></div>
