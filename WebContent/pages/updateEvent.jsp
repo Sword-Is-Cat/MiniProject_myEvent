@@ -95,7 +95,7 @@
 
 				<div class="row">
 					<div class="col-md-7">
-						<form id="contact-form" action="/front?key=createEvent"
+						<form id="contact-form" action="../front?key=updateEvent"
 							method="post" role="form">
 							<div class="row">
 								<div class="col-md-8">
@@ -124,7 +124,7 @@
 											<c:forEach items='<%=cateList%>'
 												var='listCate'>
 												<c:choose>
-													<c:when test="${listCate.cateNo==param.cate.cateNo}">
+													<c:when test="${listCate.cateNo==param.event.cate.cateNo}">
 														<option value="${listCate.cateNo}" selected>${listCate.cateName}</option>
 													</c:when>
 													<c:otherwise>
@@ -140,7 +140,7 @@
 									<div class="form-group">
 										<label> 정원 </label> <input class="form-control"
 											name="evBookMax" id="evBookMax" placeholder="" type="text"
-											value="evBookMax param" required>
+											value="${param.event.evBookMax}" required>
 									</div>
 								</div>
 							</div>
