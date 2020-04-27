@@ -8,9 +8,7 @@ public class Channel {
    private int chStatus;
    private String chDescription;
    
-   
    public Channel(){}
-   
    
    public Channel(User user, String chName, String chImg, String chDescription) {
 	super();
@@ -18,10 +16,10 @@ public class Channel {
 	this.chName = chName;
 	this.chImg = chImg;
 	this.chDescription = chDescription;
-}
+   }
 
 
-public Channel(int chNo, User user, String chName, String chImg, int chStatus, String chDescription) {
+   public Channel(int chNo, User user, String chName, String chImg, int chStatus, String chDescription) {
       this(user, chName, chImg, chDescription);
       this.chNo = chNo;
       this.chStatus = chStatus;

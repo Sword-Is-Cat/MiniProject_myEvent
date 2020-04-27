@@ -25,13 +25,13 @@
 	        <h3 class="widget-title">My Event</h3>
 	        <div class="latest-post-items media">
 	          <div class="latest-post-content media-body">
-	            <h4><a href="#">회사소개</a></h4>
+	            <h4><a href="about.jsp">회사소개</a></h4>
 	          </div>
 	        </div><!-- 1st Latest Post end -->
 
 	        <div class="latest-post-items media">
 	          <div class="latest-post-content media-body">
-	            <h4><a href="#">서비스소개</a></h4>
+	            <h4><a href="about.jsp">서비스소개</a></h4>
 	           
 	          </div>
 	        </div><!-- 2nd Latest Post end -->
@@ -43,7 +43,7 @@
 	        </div><!-- 3rd Latest Post end -->
 	        <div class="latest-post-items media">
 	          <div class="latest-post-content media-body">
-	            <h4><a href="#">공지사항</a></h4>
+	            <h4><a href="notice.jsp">공지사항</a></h4>
 	          </div>
 	        </div><!-- 3rd Latest Post end -->
 	        <div class="latest-post-items media">
@@ -67,7 +67,7 @@
                         <span>
                             평일 10~17시
                         </span>
-                        <a class="ml-2 font-weight-500 black-text" style="text-decoration:underline" href="https://event-us.channel.io/" target="_blank">
+                        <a class="ml-2 font-weight-500 black-text" style="text-decoration:underline" href="" target="_blank">
                             1:1 문의하기
                         </a>
                     </div>

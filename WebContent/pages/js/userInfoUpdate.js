@@ -58,35 +58,7 @@ $(function(){
 		return location.href.substring( hostIndex, location.href.indexOf('/', hostIndex + 1) );
 	};
 	
-	//아이디 중복체크
-	$('#idChk').click(function(){
-		if($('#userId').val() == null || $('#userId').val() == ""){
-			alert('아이디를 입력해주세요');
-			return false;
-		}
-		
-		let params = "key=idChk&userId="+$('#userId').val();
-		$.ajax({
-			dataType : "text",
-			url : getContextPath()+"/front?"+params,
-			success : function(result){
-				if(result==1){
-					alert("중복된 아이디입니다.");
-				}else{
-					$("#submit").removeAttr("disabled");
-					$("#submit").html("가입하기");
-					alert("사용 가능한 아이디입니다.");
-				}
-			}
-		});
-	});
-	
-	$('#userId').on("change", function(){
-		$("#submit").attr("disabled", true);
-		$("#submit").html("아이디 중복체크를 해주세요");
-	});
-	
-	$('#userPwd').on('keyup', function(){
+	$('#userPwd').on('change', function(){
 		if($('#userPwd').val() == $('#userPwdChk').val()){
 			$('#userPwdChkResult').css('visibility' ,'hidden');
 		}else{
@@ -94,7 +66,7 @@ $(function(){
 		}
 	});
 	
-	$('#userPwdChk').on('keyup', function(){
+	$('#userPwdChk').on('change', function(){
 		if($('#userPwd').val() == $('#userPwdChk').val()){
 			$('#userPwdChkResult').css('visibility' ,'hidden');
 		}else{

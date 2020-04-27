@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-  <title>My Event :: Çà»ç¿Í ÇÔ²² ÇÏ´Â ¸ðµç ¼ø°£</title>
+  <title>My Event :: í–‰ì‚¬ì™€ í•¨ê»˜ í•˜ëŠ” ëª¨ë“  ìˆœê°„</title>
 
    <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
   <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
 	<!-- FontAwesome -->
-  <link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
+    <link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
 	<!-- Animation -->
 	<link rel="stylesheet" href="plugins/animate.css">
 	<!-- Prettyphoto -->
@@ -61,20 +61,20 @@
 <div class="container">
 			<div class="cols 12">
 				<div class="subTopMenu d-flex justify-content-end">
-					<ul class="subMenu">
-					<li class="nav-item active"><a class="nav-link" href="#" role="button" href="#">·Î±×ÀÎ</a></li>
-					<li class="nav-item active"><a class="nav-link" href="#" role="button" href="#">·Î±×¾Æ¿ô</a></li>
-					<li class="nav-item active"><a class="nav-link" href="#" role="button"  href="#">È¸¿ø°¡ÀÔ</a></li>
+				<ul class="subMenu">
+					<li class="nav-item active"><a class="nav-link" href="login.jsp" role="button" >ë¡œê·¸ì¸</a></li>
+					<li class="nav-item active"><a class="nav-link" href="index.jsp" role="button">ë¡œê·¸ì•„ì›ƒ</a></li>
+					<li class="nav-item active"><a class="nav-link" href="signUp.jsp" role="button">íšŒì›ê°€ìž…</a></li>
 					<li class="nav-item dropdown active">
 						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false">
-							¸¶ÀÌÆäÀÌÁö
+							ë§ˆì´íŽ˜ì´ì§€
 						</a>
 						<div class="dropdown-menu" style="border: 1.5px solid #222; border-radius: 10px;">
-							<a class="dropdown-item" href="index.html">ÀüÃ¼ ½ÅÃ»³»¿ª</a>
-							<a class="dropdown-item" href="index-2.html">°ü½É Çà»ç ¸ñ·Ï</a>
-							<a class="dropdown-item" href="index-3.html">³»°¡ ¾´ ±Û</a>
-							<a class="dropdown-item" href="index-4.html">È¸¿ø Á¤º¸ ¼öÁ¤</a>
+							<a class="dropdown-item" href="index.html">ì „ì²´ ì‹ ì²­ë‚´ì—­</a>
+							<a class="dropdown-item" href="interestEvent.jsp">ê´€ì‹¬ í–‰ì‚¬ ëª©ë¡</a>
+							<a class="dropdown-item" href="myWrite.jsp">ë‚´ê°€ ì“´ ê¸€</a>
+							<a class="dropdown-item" href="changeUserInfo.jsp">íšŒì› ì •ë³´ ìˆ˜ì •</a>
 						</div>
 					</li>
 				</ul>
@@ -143,7 +143,7 @@
 		<div class="row">
 			<div class="col-md-12 heading">
 				</span>
-				<h2 class="title">°¡Àå ÀÎ±âÀÖ´Â Ä«Å×°í¸® <span class="title-desc">°ü½ÉÁö¼ö°¡ °¡Àå ³ôÀº ÀÎ±â Ä«Å×°í¸®´Â ¿©±â¼­ Ã£¾Æº¸¼¼¿ä!</span></h2>
+				<h2 class="title">ê°€ìž¥ ì¸ê¸°ìžˆëŠ” ì¹´í…Œê³ ë¦¬ <span class="title-desc">ê´€ì‹¬ì§€ìˆ˜ê°€ ê°€ìž¥ ë†’ì€ ì¸ê¸° ì¹´í…Œê³ ë¦¬ëŠ” ì—¬ê¸°ì„œ ì°¾ì•„ë³´ì„¸ìš”!</span></h2>
 			</div>
 		</div><!-- Title row end -->
 
@@ -155,7 +155,7 @@
 					<div class="service-content text-center">
 						<a href="#">
 							<img src="images/category/category-business-hover2.svg"></span>
-							<h3>»ç¾÷/Ã¢¾÷</h3>
+							<h3>ì‚¬ì—…/ì°½ì—…</h3>
 						</a>
 					</div>
 				</div>
@@ -165,7 +165,7 @@
 					<div class="service-content text-center">
 						<a href="#">
 							<img src="images/category/category-culture-hover2.svg"></span>
-							<h3>¹®È­/¿¹¼ú</h3>
+							<h3>ë¬¸í™”/ì˜ˆìˆ </h3>
 						</a>
 
 					</div>
@@ -176,7 +176,7 @@
 					<div class="service-content text-center" >
 						<a href="#">
 							<img src="images/category/category-marketing-hover2.svg"></span>
-							<h3>¸¶ÄÉÆÃ/È«º¸</h3>
+							<h3>ë§ˆì¼€íŒ…/í™ë³´</h3>
 						</a>
 
 					</div>
@@ -187,7 +187,7 @@
 					<div class="service-content text-center">
 						<a href="#">
 							<img src="images/category/category-tech-hover2.svg"></span>
-							<h3>°úÇÐ/±â¼ú</h3>
+							<h3>ê³¼í•™/ê¸°ìˆ </h3>
 						</a>
 
 					</div>
@@ -199,7 +199,7 @@
 					<div class="service-content text-center">
 						<a href="#">
 							<img src="images/category/category-communite-hover2.svg"></span>
-							<h3>Ä¿¹Â´ÏÆ¼</h3>
+							<h3>ì»¤ë®¤ë‹ˆí‹°</h3>
 						</a>
 
 					</div>
@@ -210,7 +210,7 @@
 					<div class="service-content text-center">
 						<a href="#">
 							<img src="images/category/category-social-hover2.svg"></span>
-							<h3>ºñ¿µ¸®/¼Ò¼È</h3>
+							<h3>ë¹„ì˜ë¦¬/ì†Œì…œ</h3>
 						</a>
 
 					</div>
@@ -221,7 +221,7 @@
 					<div class="service-content text-center">
 						<a href="#">
 							<img src="images/category/category-youth-hover2.svg"></span>
-							<h3>Ã»Ãá/Ã»³â</h3>
+							<h3>ì²­ì¶˜/ì²­ë…„</h3>
 						</a>
 					</div>
 				</div>
@@ -231,7 +231,7 @@
 					<div class="service-content text-center" style="width:70px;">
 						<a href="#">
 							<img src="images/category/category-it-hover2.svg"></span>
-							<h3>IT/°³¹ß</h3>
+							<h3>IT/ê°œë°œ</h3>
 						</a>	
 					</div>
 				</div>
@@ -250,7 +250,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 heading">
-				<h2 class="title">¿À´Ã ÀÌ Çà»ç ¾î¶§¿ä? <span class="title-desc">Áö±Ý °¡Àå ÀÎ±â ÀÖ´Â Çà»çµé¸¸ ¸ð¾Ò½À´Ï´Ù
+				<h2 class="title">ì˜¤ëŠ˜ ì´ í–‰ì‚¬ ì–´ë•Œìš”? <span class="title-desc">ì§€ê¸ˆ ê°€ìž¥ ì¸ê¸° ìžˆëŠ” í–‰ì‚¬ë“¤ë§Œ ëª¨ì•˜ìŠµë‹ˆë‹¤
 </span></h2>
 				
 			</div>
@@ -268,7 +268,7 @@
 						</figcaption>
 					</figure>
 					<div class="portfolio-static-desc">
-						<h3>ÀÌº¥ÅÍ½º ¿þºñ³ª, ÇÏ·ç¸¸¿¡ »Ç°³±â!</h3>
+						<h3>ì´ë²¤í„°ìŠ¤ ì›¨ë¹„ë‚˜, í•˜ë£¨ë§Œì— ë½€ê°œê¸°!</h3>
 						<span><a href="#"></a></span>
 					</div>
 				</div>
@@ -287,7 +287,7 @@
 						</figcaption>
 					</figure>
 					<div class="portfolio-static-desc">
-						<h3>[ÇÃ¸®Åä] ¿Ü±¹°è Ãë¾÷ ÄÁ¼³ÅÏÆ® '¸¶Â÷Ä«ÇÇ'ÀÇ ÇÕ°ÝÇÏ´Â ·¹Áê¸Þ & Ä¿¹ö·¹ÅÍ</h3>
+						<h3>[í”Œë¦¬í† ] ì™¸êµ­ê³„ ì·¨ì—… ì»¨ì„¤í„´íŠ¸ 'ë§ˆì°¨ì¹´í”¼'ì˜ í•©ê²©í•˜ëŠ” ë ˆì¥¬ë©” & ì»¤ë²„ë ˆí„°</h3>
 						<span><a href="#"></a></span>
 					</div>
 				</div>
@@ -306,7 +306,7 @@
 						</figcaption>
 					</figure>
 					<div class="portfolio-static-desc">
-						<h3>[µå¸²ÇÃ·¯½º ¿ù°£ IT Æ®·»µå] ¾ðÅÃÆ®, ´º ³ë¸ÖÀÇ ½Ã´ë</h3>
+						<h3>[ë“œë¦¼í”ŒëŸ¬ìŠ¤ ì›”ê°„ IT íŠ¸ë Œë“œ] ì–¸íƒíŠ¸, ë‰´ ë…¸ë©€ì˜ ì‹œëŒ€</h3>
 						<span><a href="#"> </a></span>
 					</div>
 				</div>
@@ -325,7 +325,7 @@
 						</figcaption>
 					</figure>
 					<div class="portfolio-static-desc">
-						<h3>·ºÃ³½Ã¸®Áî#1(ÀÛÀº ÆÀÀ¸·Î Å« ÀÏÀ» ÇÑ´Ù´Â °Í)</h3>
+						<h3>ë ‰ì²˜ì‹œë¦¬ì¦ˆ#1(ìž‘ì€ íŒ€ìœ¼ë¡œ í° ì¼ì„ í•œë‹¤ëŠ” ê²ƒ)</h3>
 						<span><a href="#"> </a></span>
 					</div>
 				</div>
@@ -344,7 +344,7 @@
 			<div class="container">
 		<div class="row">
 			<div class="col-md-12 heading">
-				<h2 class="title">AI ÃßÃµ <span class="title-desc">È¸¿ø°¡ÀÔ ÈÄ¿¡ ´õ¿í Á¤±³ÇÑ ÃßÃµÀ» ¸¸³ªº¸¼¼¿ä!
+				<h2 class="title">AI ì¶”ì²œ <span class="title-desc">íšŒì›ê°€ìž… í›„ì— ë”ìš± ì •êµí•œ ì¶”ì²œì„ ë§Œë‚˜ë³´ì„¸ìš”!
 </span></h2>
 				
 			</div>
@@ -362,7 +362,7 @@
 						</figcaption>
 					</figure>
 					<div class="portfolio-static-desc">
-						<h3>ÀÌº¥ÅÍ½º ¿þºñ³ª, ÇÏ·ç¸¸¿¡ »Ç°³±â!</h3>
+						<h3>ì´ë²¤í„°ìŠ¤ ì›¨ë¹„ë‚˜, í•˜ë£¨ë§Œì— ë½€ê°œê¸°!</h3>
 						<span><a href="#"></a></span>
 					</div>
 				</div>
@@ -381,7 +381,7 @@
 						</figcaption>
 					</figure>
 					<div class="portfolio-static-desc">
-						<h3>[ÇÃ¸®Åä] ¿Ü±¹°è Ãë¾÷ ÄÁ¼³ÅÏÆ® '¸¶Â÷Ä«ÇÇ'ÀÇ ÇÕ°ÝÇÏ´Â ·¹Áê¸Þ & Ä¿¹ö·¹ÅÍ</h3>
+						<h3>[í”Œë¦¬í† ] ì™¸êµ­ê³„ ì·¨ì—… ì»¨ì„¤í„´íŠ¸ 'ë§ˆì°¨ì¹´í”¼'ì˜ í•©ê²©í•˜ëŠ” ë ˆì¥¬ë©” & ì»¤ë²„ë ˆí„°</h3>
 						<span><a href="#"></a></span>
 					</div>
 				</div>
@@ -400,7 +400,7 @@
 						</figcaption>
 					</figure>
 					<div class="portfolio-static-desc">
-						<h3>[µå¸²ÇÃ·¯½º ¿ù°£ IT Æ®·»µå] ¾ðÅÃÆ®, ´º ³ë¸ÖÀÇ ½Ã´ë</h3>
+						<h3>[ë“œë¦¼í”ŒëŸ¬ìŠ¤ ì›”ê°„ IT íŠ¸ë Œë“œ] ì–¸íƒíŠ¸, ë‰´ ë…¸ë©€ì˜ ì‹œëŒ€</h3>
 						<span><a href="#"></a></span>
 					</div>
 				</div>
@@ -419,7 +419,7 @@
 						</figcaption>
 					</figure>
 					<div class="portfolio-static-desc">
-						<h3>·ºÃ³½Ã¸®Áî#1(ÀÛÀº ÆÀÀ¸·Î Å« ÀÏÀ» ÇÑ´Ù´Â °Í)</h3>
+						<h3>ë ‰ì²˜ì‹œë¦¬ì¦ˆ#1(ìž‘ì€ íŒ€ìœ¼ë¡œ í° ì¼ì„ í•œë‹¤ëŠ” ê²ƒ)</h3>
 						<span><a href="#"></a></span>
 					</div>
 				</div>
@@ -441,36 +441,36 @@
                 <div class="row">
                     <div class="col s12 m6 l6 wow slideInLeft">
                         <a href="/Account/Login?ReturnUrl=CreateEvent" target="_blank">
-                            <img class="py-1" src="images/footer_banner_eventcreate01.png" width="100%" alt="Çà»ç°³¼³! ÀÌº¥ÅÍ½º·Î °£ÆíÇÏ°Ô Çà»ç ¸ðÁýÀ» ½ÃÀÛÇÏ¼¼¿ä!" style="max-height:205px;height:100%" />
+                            <img class="py-1" src="images/footer_banner_eventcreate01.png" width="100%" alt="í–‰ì‚¬ê°œì„¤! ì´ë²¤í„°ìŠ¤ë¡œ ê°„íŽ¸í•˜ê²Œ í–‰ì‚¬ ëª¨ì§‘ì„ ì‹œìž‘í•˜ì„¸ìš”!" style="max-height:205px;height:100%" />
                         </a>
                     </div>
                     <div class="col s12 m6 l6 wow slideInRight">
                         <a href="/l/NewsLetter" target="_blank">
-                            <img class="py-1" src="images/footer_banner_newletter01.png" width="100%" alt="´º½º·¹ÅÍ ½ÅÃ»ÇÏ±â! °ü½ÉºÐ¾ßÀÇ Çà»ç ¼Ò½ÄÀ» °¡Àå ¸ÕÀú Á¢ÇÏ¼¼¿ä!" style="max-height:205px;height:100%" />
+                            <img class="py-1" src="images/footer_banner_newletter01.png" width="100%" alt="ë‰´ìŠ¤ë ˆí„° ì‹ ì²­í•˜ê¸°! ê´€ì‹¬ë¶„ì•¼ì˜ í–‰ì‚¬ ì†Œì‹ì„ ê°€ìž¥ ë¨¼ì € ì ‘í•˜ì„¸ìš”!" style="max-height:205px;height:100%" />
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 <!--/ Image block end -->
-<!--°øÁö»çÇ× start-->
+<!--ê³µì§€ì‚¬í•­ start-->
     <div class="footer-copyright white hide-on-small-only" style="padding:15px 0;border-top: 1px solid #e5e5e5;border-bottom: 1px solid #e5e5e5">
         <div class="container main-container">
             <div class="row">
                 <div class="col s12 col l7 ">
                     <div class="no-text-overflow" style="line-height:45px">
                         <span class="txt-14 font-weight-500">
-                            <a class="eventus-purple-text" href="#">°øÁö»çÇ×</a>
+                            <a class="eventus-purple-text" href="#">ê³µì§€ì‚¬í•­</a>
                             <span class="px-3 black-text">|</span>
                             <a class="black-text" href="/Notice/62">
-                                ¸ÞÀÏ ¹ß¼Û Áö¿¬ º¹±¸ ¾È³»
+                                ë©”ì¼ ë°œì†¡ ì§€ì—° ë³µêµ¬ ì•ˆë‚´
                             </a>
                         </span>
                     </div>
                 </div>
             </div>
         </div>
-    </div><!--°øÁö»çÇ×end-->
+    </div><!--ê³µì§€ì‚¬í•­end-->
     
 <!-- footer -->
 <c:import url="footer.jsp"></c:import>
