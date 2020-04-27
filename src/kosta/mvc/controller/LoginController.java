@@ -23,7 +23,6 @@ public class LoginController implements Controller {
 		String dbUserId = dbUser.getUserId().toLowerCase();
 		String dbUserPwd = dbUser.getUserPwd().toLowerCase();
 		
-		System.out.println(userId+":"+userPwd+":"+dbUserId+":"+dbUserPwd);
 		if(userId.equals(dbUserId) && userPwd.equals(dbUserPwd)) {
 			//session에 값들 추가
 			HttpSession session = request.getSession();
