@@ -1,12 +1,12 @@
-<!-- <%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
- -->
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-  <title>My Event :: í–‰ì‚¬ì™€ í•¨ê»˜ í•˜ëŠ” ëª¨ë“  ìˆœê°„</title>
+  <title>My Event :: Çà»ç¿Í ÇÔ²² ÇÏ´Â ¸ğµç ¼ø°£</title>
 
    <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -62,19 +62,19 @@
 			<div class="cols 12">
 				<div class="subTopMenu d-flex justify-content-end">
 					<ul class="subMenu">
-					<li class="nav-item active"><a class="nav-link" href="#" role="button" href="#">ë¡œê·¸ì¸</a></li>
-					<li class="nav-item active"><a class="nav-link" href="#" role="button" href="#">ë¡œê·¸ì•„ì›ƒ</a></li>
-					<li class="nav-item active"><a class="nav-link" href="#" role="button"  href="#">íšŒì›ê°€ì…</a></li>
+					<li class="nav-item active"><a class="nav-link" href="#" role="button" href="#">·Î±×ÀÎ</a></li>
+					<li class="nav-item active"><a class="nav-link" href="#" role="button" href="#">·Î±×¾Æ¿ô</a></li>
+					<li class="nav-item active"><a class="nav-link" href="#" role="button"  href="#">È¸¿ø°¡ÀÔ</a></li>
 					<li class="nav-item dropdown active">
 						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false">
-							ë§ˆì´í˜ì´ì§€
+							¸¶ÀÌÆäÀÌÁö
 						</a>
 						<div class="dropdown-menu" style="border: 1.5px solid #222; border-radius: 10px;">
-							<a class="dropdown-item" href="index.html">ì „ì²´ ì‹ ì²­ë‚´ì—­</a>
-							<a class="dropdown-item" href="index-2.html">ê´€ì‹¬ í–‰ì‚¬ ëª©ë¡</a>
-							<a class="dropdown-item" href="index-3.html">ë‚´ê°€ ì“´ ê¸€</a>
-							<a class="dropdown-item" href="index-4.html">íšŒì› ì •ë³´ ìˆ˜ì •</a>
+							<a class="dropdown-item" href="index.html">ÀüÃ¼ ½ÅÃ»³»¿ª</a>
+							<a class="dropdown-item" href="index-2.html">°ü½É Çà»ç ¸ñ·Ï</a>
+							<a class="dropdown-item" href="index-3.html">³»°¡ ¾´ ±Û</a>
+							<a class="dropdown-item" href="index-4.html">È¸¿ø Á¤º¸ ¼öÁ¤</a>
 						</div>
 					</li>
 				</ul>
@@ -82,11 +82,12 @@
 		</div><!--cols12 end-->
 	</div><!--container end-->
 <!--subTopMenu end-->	
-
-<div id="banner-area">
+<c:import url="header.jsp"/>
+<!-- Banner area start -->
+<!-- <div id="banner-area">
 	<img src="images/banner/banner1.jpg" alt="" />
 	<div class="parallax-overlay"></div>
-	<!-- Subpage title start -->
+	Subpage title start
 	<div class="banner-title-content">
 		<div class="text-center">
 			<h2>About Us</h2>
@@ -97,7 +98,7 @@
 				</ol>
 			</nav>
 		</div>
-	</div><!-- Subpage title end -->
+	</div> --><!-- Subpage title end -->
 </div><!-- Banner area end -->
 
 <!-- Main container start -->
@@ -146,10 +147,10 @@
 				<div class="tab-content" id="v-pills-tabContent">
 					<div class="tab-pane pl-sm-5 fade show active animated fadeInLeft" id="tab_1" role="tabpanel">
 						<i class="fa fa-trophy icon-xl text-primary mb-4"></i>
-						<h3>ìµœê³ ì˜ í–‰ì‚¬ ê°œìµœ í”Œë«í¼</h3>
-						<p>ë§ˆì´ì´ë²¤íŠ¸ëŠ” 2020ë…„ì— ì„¤ë¦½ëœ ì´ë²¤íŠ¸ í…Œí¬ í”„ë¡œì íŠ¸ì…ë‹ˆë‹¤. 
-							ê¸°ì¡´ì˜ í–‰ì‚¬ ì‹œì¥ì— ITì™€ í”Œë«í¼ì„ ì ‘ëª©í•´ í˜ì‹ ì„ ë§Œë“¤ì–´ê°€ê³  ì‹¶ìŠµë‹ˆë‹¤. 
-							ë‚´ê°€ ì›í•˜ëŠ” í–‰ì‚¬ë¥¼ ê°œìµœí•˜ê±°ë‚˜ ì°¸ì—¬í•  ìˆ˜ ìˆëŠ” í”Œë«í¼ "ë§ˆì´ì´ë²¤íŠ¸"ë¥¼ ìš´ì˜í•˜ê³  ìˆìŠµë‹ˆë‹¤.</p>
+						<h3>ÃÖ°íÀÇ Çà»ç °³ÃÖ ÇÃ·§Æû</h3>
+						<p>¸¶ÀÌÀÌº¥Æ®´Â 2020³â¿¡ ¼³¸³µÈ ÀÌº¥Æ® Å×Å© ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù. 
+							±âÁ¸ÀÇ Çà»ç ½ÃÀå¿¡ IT¿Í ÇÃ·§ÆûÀ» Á¢¸ñÇØ Çõ½ÅÀ» ¸¸µé¾î°¡°í ½Í½À´Ï´Ù. 
+							³»°¡ ¿øÇÏ´Â Çà»ç¸¦ °³ÃÖÇÏ°Å³ª Âü¿©ÇÒ ¼ö ÀÖ´Â ÇÃ·§Æû "¸¶ÀÌÀÌº¥Æ®"¸¦ ¿î¿µÇÏ°í ÀÖ½À´Ï´Ù.</p>
 					</div>
 					<div class="tab-pane pl-sm-5 fade animated fadeInLeft" id="tab_2" role="tabpanel">
 						<i class="fa fa-briefcase icon-xl text-primary mb-4"></i>
@@ -212,7 +213,7 @@
 							<span class="img-bottom"></span>
 						</div>
 						<div class="team-content">
-							<h3>ë°°ì§€í˜œ</h3>
+							<h3>¹èÁöÇı</h3>
 							<p>Web Designer</p>
 							<div class="team-social">
 								<a class="fb" href="#"><i class="fa fa-facebook"></i></a>
@@ -233,7 +234,7 @@
 							<span class="img-bottom"></span>
 						</div>
 						<div class="team-content">
-							<h3>ì¥í™ë²”</h3>
+							<h3>ÀåÈ«¹ü</h3>
 							<p>Web Designer</p>
 							<div class="team-social">
 								<a class="fb" href="#"><i class="fa fa-facebook"></i></a>
@@ -254,7 +255,7 @@
 							<span class="img-bottom"></span>
 						</div>
 						<div class="team-content">
-							<h3>ê¹€ì§€ì•ˆ</h3>
+							<h3>±èÁö¾È</h3>
 							<p>Web Designer</p>
 							<div class="team-social">
 								<a class="fb" href="#"><i class="fa fa-facebook"></i></a>
@@ -275,7 +276,7 @@
 							<span class="img-bottom"></span>
 						</div>
 						<div class="team-content">
-							<h3>ê¹€íš¨ì§„</h3>
+							<h3>±èÈ¿Áø</h3>
 							<p>Web Designer</p>
 							<div class="team-social">
 								<a class="fb" href="#"><i class="fa fa-facebook"></i></a>
@@ -296,7 +297,7 @@
 							<span class="img-bottom"></span>
 						</div>
 						<div class="team-content">
-							<h3>ë°•ì •ì˜</h3>
+							<h3>¹ÚÁ¤ÀÇ</h3>
 							<p>Web Designer</p>
 							<div class="team-social">
 								<a class="fb" href="#"><i class="fa fa-facebook"></i></a>
@@ -317,199 +318,8 @@
 	</div><!-- 2nd container end -->
 </section>
 <!--/ Main container end -->
-
-	<!-- Footer start -->
-	<footer id="footer" class="footer">
-	  <div class="container">
-	    <div class="row">
-	      <div class="col-md-4 col-sm-12 footer-widget">
-	        <h3 class="widget-title">Recent Posts</h3>
-	        <div class="latest-post-items media">
-	          <div class="latest-post-content media-body">
-	            <h4><a href="#">Bulgaria claims to find Europe's 'oldest town'</a></h4>
-	            <p class="post-meta">
-	              <span class="author">Posted by John Doe</span>
-	              <span class="post-meta-cat">in<a href="#"> Blog</a></span>
-	            </p>
-	          </div>
-	        </div><!-- 1st Latest Post end -->
-
-	        <div class="latest-post-items media">
-	          <div class="latest-post-content media-body">
-	            <h4><a href="#">Few Answers in Case of Murdered Law Professor</a></h4>
-	            <p class="post-meta">
-	              <span class="date"><i class="icon icon-calendar"></i> Mar 15, 2015</span>
-	              <span class="post-meta-comments"><i class="icon icon-bubbles4"></i> <a href="#">03</a></span>
-	            </p>
-	          </div>
-	        </div><!-- 2nd Latest Post end -->
-
-	        <div class="latest-post-items media">
-	          <div class="latest-post-content media-body">
-	            <h4><a href="#">Over the year we have lots of experience in our field</a></h4>
-	            <p class="post-meta">
-	              <span class="date"><i class="icon icon-calendar"></i> Apr 17, 2015</span>
-	              <span class="post-meta-comments"><i class="icon icon-bubbles4"></i> <a href="#">14</a></span>
-	            </p>
-	          </div>
-	        </div><!-- 3rd Latest Post end -->
-
-	      </div>
-	      <!--/ End Recent Posts-->
-
-
-	      <div class="col-md-4 col-sm-12 footer-widget">
-	        <h3 class="widget-title">Flickr Photos</h3>
-
-	        <div class="img-gallery">
-	          <div class="img-container">
-	            <a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/1.jpg">
-	              <img src="images/gallery/1.jpg" alt="">
-	            </a>
-	            <a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/2.jpg">
-	              <img src="images/gallery/2.jpg" alt="">
-	            </a>
-	            <a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/3.jpg">
-	              <img src="images/gallery/3.jpg" alt="">
-	            </a>
-	            <a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/4.jpg">
-	              <img src="images/gallery/4.jpg" alt="">
-	            </a>
-	            <a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/5.jpg">
-	              <img src="images/gallery/5.jpg" alt="">
-	            </a>
-	            <a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/6.jpg">
-	              <img src="images/gallery/6.jpg" alt="">
-	            </a>
-	            <a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/6.jpg">
-	              <img src="images/gallery/7.jpg" alt="">
-	            </a>
-	            <a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/6.jpg">
-	              <img src="images/gallery/8.jpg" alt="">
-	            </a>
-	            <a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/6.jpg">
-	              <img src="images/gallery/9.jpg" alt="">
-	            </a>
-	          </div>
-	        </div>
-	      </div>
-	      <!--/ end flickr -->
-
-	      <div class="col-md-3 col-sm-12 footer-widget footer-about-us">
-	        <h3 class="widget-title">About Craft</h3>
-	        <p>We are a awward winning multinational company. We believe in quality and standard worldwide.</p>
-	        <h4>Address</h4>
-	        <p>1102 Saint Marys, Junction City, KS</p>
-	        <div class="row">
-	          <div class="col-md-6">
-	            <h4>Email:</h4>
-	            <p>info@craftbd.com</p>
-	          </div>
-	          <div class="col-md-6">
-	            <h4>Phone No.</h4>
-	            <p>+(785) 238-4131</p>
-	          </div>
-	        </div>
-	        <form action="#" role="form">
-	          <div class="input-group subscribe">
-	            <input type="email" class="form-control" placeholder="Email Address" required="">
-	            <span class="input-group-addon">
-	              <button class="btn" type="submit"><i class="fa fa-envelope-o"> </i></button>
-	            </span>
-	          </div>
-	        </form>
-	      </div>
-	      <!--/ end about us -->
-
-	    </div><!-- Row end -->
-	  </div><!-- Container end -->
-	</footer><!-- Footer end -->
-
-
-	<!-- Copyright start -->
-	<section id="copyright" class="copyright angle">
-	  <div class="container">
-	    <div class="row">
-	      <div class="col-md-12 text-center">
-	        <ul class="footer-social unstyled">
-	          <li>
-	            <a title="Twitter" href="#">
-	              <span class="icon-pentagon wow bounceIn"><i class="fa fa-twitter"></i></span>
-	            </a>
-	            <a title="Facebook" href="#">
-	              <span class="icon-pentagon wow bounceIn"><i class="fa fa-facebook"></i></span>
-	            </a>
-	            <a title="Google+" href="#">
-	              <span class="icon-pentagon wow bounceIn"><i class="fa fa-google-plus"></i></span>
-	            </a>
-	            <a title="linkedin" href="#">
-	              <span class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
-	            </a>
-	            <a title="Pinterest" href="#">
-	              <span class="icon-pentagon wow bounceIn"><i class="fa fa-pinterest"></i></span>
-	            </a>
-	            <a title="Skype" href="#">
-	              <span class="icon-pentagon wow bounceIn"><i class="fa fa-skype"></i></span>
-	            </a>
-	            <a title="Dribble" href="#">
-	              <span class="icon-pentagon wow bounceIn"><i class="fa fa-dribbble"></i></span>
-	            </a>
-	          </li>
-	        </ul>
-	      </div>
-	    </div>
-	    <!--/ Row end -->
-	    <div class="row">
-	      <div class="col-md-12 text-center">
-	        <div class="copyright-info">
-	          &copy; Copyright 2019 Themefisher. <span>Designed by <a
-	              href="https://themefisher.com">Themefisher.com</a></span>
-	        </div>
-	      </div>
-	    </div>
-	    <!--/ Row end -->
-	    <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix position-fixed">
-	      <button class="btn btn-primary" title="Back to Top"><i class="fa fa-angle-double-up"></i></button>
-	    </div>
-	  </div>
-	  <!--/ Container end -->
-	</section>
-	<!--/ Copyright end -->
-
-</div><!-- Body inner end -->
-
-<!-- jQuery -->
-<script src="plugins/jQuery/jquery.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="plugins/bootstrap/bootstrap.min.js"></script>
-<!-- Style Switcher -->
-<script type="text/javascript" src="plugins/style-switcher.js"></script>
-<!-- Owl Carousel -->
-<script type="text/javascript" src="plugins/owl/owl.carousel.js"></script>
-<!-- PrettyPhoto -->
-<script type="text/javascript" src="plugins/jquery.prettyPhoto.js"></script>
-<!-- Bxslider -->
-<script type="text/javascript" src="plugins/flex-slider/jquery.flexslider.js"></script>
-<!-- CD Hero slider -->
-<script type="text/javascript" src="plugins/cd-hero/cd-hero.js"></script>
-<!-- Isotope -->
-<script type="text/javascript" src="plugins/isotope.js"></script>
-<script type="text/javascript" src="plugins/ini.isotope.js"></script>
-<!-- Wow Animation -->
-<script type="text/javascript" src="plugins/wow.min.js"></script>
-<!-- Eeasing -->
-<script type="text/javascript" src="plugins/jquery.easing.1.3.js"></script>
-<!-- Counter -->
-<script type="text/javascript" src="plugins/jquery.counterup.min.js"></script>
-<!-- Waypoints -->
-<script type="text/javascript" src="plugins/waypoints.min.js"></script>
-<!-- google map -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
-<script src="plugins/google-map/gmap.js"></script>
-
-<!-- Main Script -->
-<script src="js/script.js"></script>
-
+<!-- footer -->
+<c:import url="footer.jsp"></c:import>
 </body>
 
 </html>

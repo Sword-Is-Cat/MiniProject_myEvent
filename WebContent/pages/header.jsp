@@ -91,7 +91,9 @@
 
 <!-- Header start -->
 <header id="header" class="header" role="banner">
-	<a class="navbar-brand navbar-bg" href="index.html"><img class="img-fluid float-right mainLogo" src="images/mainLogo2.jpg" width="40%" alt="logo"></a>
+	<div class="nav justify-content-end">
+	<a class="navbar-brand navbar-bg" href="index.jsp"><img class="mainLogo d-flex justify-content-end"" src="images/mainLogo2.jpg" width="40%" alt="logo"></a>
+	</div>
 	<div class="container">
 		
 		<nav class="navbar navbar-expand-lg mainMenu">
@@ -120,7 +122,7 @@
 						</a>
 					</li>
 					<li class="nav-item active">
-						<a class="nav-link" href="#" role="button">
+						<a class="nav-link" href="about.jsp" role="button">
 							회사소개
 						</a>
 					</li>
