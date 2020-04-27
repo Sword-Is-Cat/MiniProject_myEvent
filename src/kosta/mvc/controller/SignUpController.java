@@ -14,7 +14,7 @@ public class SignUpController implements Controller {
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String userId = request.getParameter("userId");
+		String userId = request.getParameter("userId").toLowerCase();
 		String userPwd = request.getParameter("userPwd");
 		String userName = request.getParameter("userName");
 		

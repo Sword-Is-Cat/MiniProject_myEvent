@@ -194,9 +194,8 @@
 <!-- Portfolio start -->
 <section id="main-container" class="portfolio portfolio-box">
 	<div class="container">
-
-		<form class="contact-form" id="signUpForm" action="../front" method="post"><!-- SignUp Form start -->
-			<label class="textLabel" for="userId">아이디</label><br>
+		<form class="contact-form" id="signUpForm" action="${pageContext.request.contextPath}/front" method="post"><!-- SignUp Form start -->
+			<label class="textLabel" for="userId">아이디</label>
 			<input class="form-control form-control-lg col-lg-4 col-md-4 col-sm-8 col-xs-8" id="userId" name="userId" placeholder="아이디" type="text">
 			<button class="btn btn-primary solid blank" id="idChk" type="button">아이디 중복체크</button> <br>
 			<label class="textLabel" for="userPwd">비밀번호</label>
@@ -220,7 +219,6 @@
 			<input class="form-control form-control-lg" id="userEmail" name="userEmail" placeholder="Email" type="text"><br>
 			<label for="userCategory">선호 카테고리를 선택해주세요</label><br>
 			<%List<Category> cateList = CategoryService.selectAll();%>
-			<%Category cate = cateList.get(0); %>
 			${cate.cateNo}
 			<fieldset>
 				<c:forEach items="<%=cateList%>" var="category" varStatus="status">

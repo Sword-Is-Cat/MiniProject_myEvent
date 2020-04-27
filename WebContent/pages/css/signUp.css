@@ -24,5 +24,6 @@
 	display:inline;
 }
 #userPwdChkResult{
+	visibility:hidden;
 	color:red;
 }
