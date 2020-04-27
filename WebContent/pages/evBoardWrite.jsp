@@ -57,27 +57,27 @@
  <c:import url="headerTop.jsp"/>
 <!--subTopMenu end-->	
 
-<c:import url="header.jsp"></c:import>
+<c:import url="header.jsp"/>
     <br>
     <b><font size="8"  color="#000000">QNA등록</font></b>
     <br>
     
-    <form method="post" action=" EvBoard?command=insert" name="board" enctype="multipart/form-data">
-    <input type="hidden" name="command" value="insert"/>
+    <form method="post" action="../front?key=EvBoard" name="board" enctype="multipart/form-data">
+    <input type="hidden" name="command" value="evBoaradinsert"/>
     <input type="hidden" name="User_id" value="${sessionScope.sessionID}">
     <table width="700" border="3" bordercolor="lightgray" align="center">
         <tr>
             <td id="title">작성자</td>
             <td>${sessionScope.sessionID}</td>
         </tr>
-        <td id="title">행사종류</td>
-       		  <td><input type="radio" name="chclass" value=""/>행사종류
-        	<input type="radio" name="chclass" value=""/>행사종류
-        	<input type="radio" name="chclass" value=""/>행사종류
-        	<input type="radio" name="chclass" value=""/>행사종류
-        	<input type="radio" name="chclass" value=""/>행사종류
-        	<input type="radio" name="chclass" value=""/>행사종류
-       </td> 
+<!--         <td id="title">행사종류</td> -->
+<!--        		  <td><input type="radio" name="chclass" value=""/>행사종류 -->
+<!--         	<input type="radio" name="chclass" value=""/>행사종류 -->
+<!--         	<input type="radio" name="chclass" value=""/>행사종류 -->
+<!--         	<input type="radio" name="chclass" value=""/>행사종류 -->
+<!--         	<input type="radio" name="chclass" value=""/>행사종류 -->
+<!--         	<input type="radio" name="chclass" value=""/>행사종류 -->
+<!--        </td>  -->
             <tr>
          	
             <td id="title">
@@ -108,7 +108,9 @@
         </tr>
     </table>    
     </form>
+<<<<<<< HEAD
 <!-- footer -->
 <c:import url="footer.jsp"></c:import>
+
 </body>
 </html>
