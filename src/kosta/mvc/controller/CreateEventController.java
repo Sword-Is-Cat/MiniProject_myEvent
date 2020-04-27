@@ -52,8 +52,6 @@ public class CreateEventController implements Controller {
 		
 		evStarts = evStarts.replace('T', ' ')+":00";
 		evEnds = evEnds.replace('T', ' ')+":00";
-		System.out.println(evStarts);
-		System.out.println(evEnds);
 
 		Category category = new Category();
 		category.setCateNo(cateNo);
@@ -102,7 +100,7 @@ public class CreateEventController implements Controller {
 
 		new EventDAO().insertEvent(event);
 
-		ModelAndView mv = new ModelAndView(false, "front");
+		ModelAndView mv = new ModelAndView(false, "pages/event.jsp");
 		return mv;
 	}
 

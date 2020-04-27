@@ -29,7 +29,6 @@
     
     <!-- DBCP기술 적용하기 -->
     <!-- <Resource name="jdbc/myOracle" 
-<<<<<<< HEAD
               auth="Container"
               type="javax.sql.DataSource" 
               driverClassName="oracle.jdbc.OracleDriver"
@@ -46,8 +45,8 @@
               type="javax.sql.DataSource" 
               driverClassName="oracle.jdbc.OracleDriver"
               url="jdbc:oracle:thin:@localhost:1521:XE"
-              username="localevent" 
-              password="localevent" 
+              username="jang" 
+              password="jang" 
               maxTotal="20" 
               maxIdle="10"
               maxWaitMillis="-1"/>
