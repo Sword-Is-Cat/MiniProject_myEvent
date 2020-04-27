@@ -219,7 +219,6 @@
 			<input class="form-control form-control-lg" id="userEmail" name="userEmail" placeholder="Email" type="text"><br>
 			<label for="userCategory">선호 카테고리를 선택해주세요</label><br>
 			<%List<Category> cateList = CategoryService.selectAll();%>
-			<%Category cate = cateList.get(0); %>
 			${cate.cateNo}
 			<fieldset>
 				<c:forEach items="<%=cateList%>" var="category" varStatus="status">

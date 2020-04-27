@@ -49,16 +49,19 @@
 	<link rel="apple-touch-icon-precomposed" href="img/favicon/favicon-54x54.png">
 	
 	<!-- login	.css -->
-  	<!-- <link rel="stylesheet" href="css/login.css"> -->
-	<style>
-		form{
-			margin:auto;
-		}
-		#loginBtn{
-			margin-left:10px;
-			margin-right:40px;
-		}
-	</style>
+  	<link rel="stylesheet" href="css/login.css">
+  	
+  	<!-- <script src="js/login.js"></script> -->
+  	<script>
+  	$(function(){
+  		if(${sessionScope.status != null}) {
+  			alert("잘못된 접근입니다");
+  			location.href="${pageContext.request.contextPath}/pages/index.jsp";
+  		}
+  		
+  		
+  	});
+  	</script>
 	
 	  
 </head>

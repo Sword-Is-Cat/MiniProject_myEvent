@@ -16,6 +16,9 @@ public class LoginController implements Controller {
 		String userPwd = request.getParameter("userPwd");
 		
 		User dbUser = usersDAO.selectById(userId);
+		//아이디가 없을떄 
+		if(dbUser == null) return new ModelAndView(true, request.getContextPath()+"/pages/loginFail.jsp");
+		
 		String dbUserId = dbUser.getUserId();
 		String dbUserPwd = dbUser.getUserPwd();
 		
@@ -23,14 +26,12 @@ public class LoginController implements Controller {
 			//session에 값들 추가
 			HttpSession session = request.getSession();
 			session.setAttribute("userName", dbUser.getUserName());
-			session.setAttribute("status", dbUser.getUserStatus());
-			
-			ModelAndView mv = new ModelAndView(true, request.getContextPath()+"/pages/index.jsp");
-			return mv;
+			session.setAttribute("status", dbUser.getUserStatus());			
+			 
+			return new ModelAndView(true, request.getContextPath()+"/pages/index.jsp");
 		}else {
 			
-			ModelAndView mv = new ModelAndView(true, request.getContextPath()+"/pages/loginFail.jsp");
-			return mv;
+			return new ModelAndView(true, request.getContextPath()+"/pages/loginFail.jsp");
 		}
 		
 	}
