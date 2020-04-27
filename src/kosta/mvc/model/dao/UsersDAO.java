@@ -104,4 +104,26 @@ public class UsersDAO {
 		User user = this.selectById(userId);
 		return (user==null) ? 0 : 1;
 	}
+
+	public int update(Connection con, User user) throws SQLException {
+		int result=0;
+		
+		try {
+			//UPDATE users SET userPwd=?, userName=?, userAddr=?, userPhone=?, userEmail=? WHERE userNo=?
+			String sql=pro.getProperty("userUpdate");
+			ps=con.prepareStatement(sql);
+			ps.setString(1, user.getUserPwd());
+			ps.setString(2, user.getUserName());
+			ps.setString(3, user.getUserAddr());
+			ps.setString(4, user.getUserPhone());
+			ps.setString(5, user.getUserEmail());
+			ps.setInt(6, user.getUserNo());
+			
+			result = ps.executeUpdate();
+		}finally {
+			DbUtil.dbClose(ps);
+		}
+		
+		return result;
+	}
 }

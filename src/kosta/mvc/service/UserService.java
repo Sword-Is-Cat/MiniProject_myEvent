@@ -1,10 +1,12 @@
 package kosta.mvc.service;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
 import kosta.mvc.model.dao.FavoriteCateDAO;
 import kosta.mvc.model.dao.UsersDAO;
+import kosta.mvc.util.DbUtil;
 import kosta.mvc.vo.User;
 
 public class UserService {
@@ -34,6 +36,29 @@ public class UserService {
 
 	public static User selectById(String userId) throws SQLException {		
 		return usersDAO.selectById(userId);
+	}
+
+	public static int userInfoUpdate(User user, List<Integer> cateNo) throws SQLException {
+		int result=0;
+		Connection con=null;
+		
+		try {
+		con = DbUtil.getConnection();
+		con.setAutoCommit(false);
+		
+
+		result = usersDAO.update(con, user);
+		if(result==0)throw new SQLException("유저 정보 수정에 실패하였습니다");
+		
+		result = favoriteCateDAO.delete(user.getUserNo());
+		
+		result = favoriteCateDAO.insert(con, user.getUserNo(), cateNo);
+		
+		con.commit();
+		}finally {
+			DbUtil.dbClose(con);
+		}
+		return result;
 	}
 	
 }

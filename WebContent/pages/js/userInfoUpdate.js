@@ -27,7 +27,7 @@ $(function(){
 		                }
 
 		                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-		                document.getElementById('postcode').value = data.zonecode;
+		                document.getElementById('postalCode').value = data.zonecode;
 		                document.getElementById("roadAddress").value = roadAddr;
 		                
 		                // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
@@ -61,22 +61,29 @@ $(function(){
 	$('#userPwd').on('change', function(){
 		if($('#userPwd').val() == $('#userPwdChk').val()){
 			$('#userPwdChkResult').css('visibility' ,'hidden');
+			$('#submit').attr('disabled', false);
+			$('#submit').text('수정하기');
 		}else{
 			$('#userPwdChkResult').css('visibility' ,'visible');
+			$('#submit').attr('disabled', true);
+			$('#submit').text('비밀번호를 확인해 주세요');
 		}
 	});
 	
 	$('#userPwdChk').on('change', function(){
 		if($('#userPwd').val() == $('#userPwdChk').val()){
 			$('#userPwdChkResult').css('visibility' ,'hidden');
+			$('#submit').attr('disabled', false);
+			$('#submit').text('수정하기');
 		}else{
 			$('#userPwdChkResult').css('visibility' ,'visible');
+			$('#submit').attr('disabled', true);
+			$('#submit').text('비밀번호를 확인해 주세요');
 		}	
 	});	
 	
 	$('#submit').on("click", function(){
-		if($('#userId').val() == null || $('#userId').val() == "" ||
-				$('#userPwd').val() == null || $('#userPwd').val() == "" ||
+		if(	$('#userPwd').val() == null || $('#userPwd').val() == "" ||
 				$('#userPwdChk').val() == null || $('#userPwdChk').val() == "" ||
 				$('#userName').val() == null || $('#userName').val() == "" ||
 				$('#roadAddress').val() == null || $('#roadAddress').val() == "" ||

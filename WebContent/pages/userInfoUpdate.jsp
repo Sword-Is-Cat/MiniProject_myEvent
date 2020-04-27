@@ -48,9 +48,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 
   <!-- KAKAO 주소 API -->
+ 	<script src="pages/js/userInfoUpdate.js"></script>
 	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	
-	<script src="pages/js/userInfoUpdate.js"></script>
+	
 	<script>
 		$(function(){
 			$('#userName').val('${requestScope.user.userName}');
@@ -66,7 +67,7 @@
 		
 
 	</script>
-	  
+	 
 </head>
 
 <body>
@@ -109,7 +110,7 @@
 			<input type="button" id="userAddrBtn" value="우편번호 찾기"><br>
 			<input class="col-lg-4 col-md-4 col-sm-8 col-xs-8" id="roadAddress" name="reaodAddress" placeholder="도로명주소" type="text" readonly>
 			<span id="guide" style="color:#999;display:none"></span>
-			<input class="col-lg-4 col-md-4 col-sm-8 col-xs-8" id="extraAddress" name="extraAddress" type="text" disabled>
+			<input class="col-lg-4 col-md-4 col-sm-8 col-xs-8" id="extraAddress" name="extraAddress" type="text" readonly>
 			<input class="col-lg-6 col-md-6 col-sm-10 col-xs-10" id="detailAddress" name="detailAddress" placeholder="상세주소" type="text"><br><br>
 			
 			<!-- 주소끝 -->
@@ -127,10 +128,10 @@
 					<label for="cate${category.cateNo}">${category.cateName}</label>
 				</c:forEach>
 			</fieldset>			
-			<input type="hidden" name="key" value="userInfoUpdate">
+			<input type="hidden" name="key" value="doUserInfoUpdate">
 			<input type="hidden" name="cateCount" value="<%=cateList.size()%>"><!-- 카테고리 카운트 value에 넣어야함 -->
 			<br>
-			<button class="btn btn-primary solid blank" id="submit" type="submit" disabled>아이디 중복체크를 해주세요</button>
+			<button class="btn btn-primary solid blank" id="submit" type="submit" disabled>비밀번호를 확인해 주세요</button>
 		</form><!-- userInfoUpdate Form end -->
 	</div><!-- Container end -->
 </section><!-- 회원정보 변경 end -->

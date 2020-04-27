@@ -13,6 +13,8 @@ public class UserInfoUpdateController implements Controller {
 		HttpSession session = request.getSession();
 		if(session.getAttribute("status")==null)return new ModelAndView(true, "pages/loginFirst.html");
 		String userId = (String) session.getAttribute("userId");
+		
+		//가입하는 서비스 구문 넣기
 		User user = UserService.selectById(userId);
 		
 		//제공할 필요 없는 정보 삭제 (-1은 무효값)
