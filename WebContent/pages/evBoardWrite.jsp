@@ -108,7 +108,7 @@
         </tr>
     </table>    
     </form>
-<<<<<<< HEAD
+
 <!-- footer -->
 <c:import url="footer.jsp"></c:import>
 

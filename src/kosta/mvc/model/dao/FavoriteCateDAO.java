@@ -52,19 +52,53 @@ public class FavoriteCateDAO {
 		
 	}
 	
-	public int insert(Connection con, PreparedStatement ps, int userNo, List<String> cateName) throws SQLException {
+	public int insert(Connection con, int userNo, List<Integer> cateNo) throws SQLException {
 		int result=0;
 		
-		for(String name : cateName) {
+		try {
 			String sql = pro.getProperty("cateInsert");
+			con = DbUtil.getConnection();
+			
+			for(int catNo : cateNo) {				
+				ps = con.prepareStatement(sql);
+				
+				ps.setInt(1, userNo);
+				ps.setInt(2, catNo);
+				
+				result += ps.executeUpdate();
+			}
+			
+			return result;
+			
+		}finally {
+			DbUtil.dbClose(ps, con);
+		}	
+	}
+	
+	public int delete(Connection con, int userNo) throws SQLException {
+		int result=0;
+		try {
+			String sql = pro.getProperty("favCateDelete");
 			ps = con.prepareStatement(sql);
-			
 			ps.setInt(1, userNo);
-			ps.setString(2, name);
-			
-			result += ps.executeUpdate();
+			result = ps.executeUpdate();
+		}finally {
+			DbUtil.dbClose(ps);
 		}
-		
-		return result;		
+		return result;
+	}
+	
+	public int delete(int userNo) throws SQLException {
+		int result=0;
+		try {
+			con=DbUtil.getConnection();
+			String sql = pro.getProperty("favCateDelete");
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, userNo);
+			result = ps.executeUpdate();
+		}finally {
+			DbUtil.dbClose(ps);
+		}
+		return result;
 	}
 }

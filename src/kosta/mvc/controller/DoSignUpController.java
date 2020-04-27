@@ -10,7 +10,7 @@ import kosta.mvc.service.CategoryService;
 import kosta.mvc.service.UserService;
 import kosta.mvc.vo.User;
 
-public class SignUpController implements Controller {
+public class DoSignUpController implements Controller {
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
