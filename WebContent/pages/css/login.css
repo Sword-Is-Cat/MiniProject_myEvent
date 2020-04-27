@@ -2,10 +2,21 @@ form{
 	margin:auto;
 }
 #loginBtn{
-	display:block;
-	margin:auto;
+	margin-left:10px;
+	margin-right:40px;
 }
-#goSignUp{
-	font-size:15px;
-	font-color:blue;
+
+/*---------jiahn add-------------*/
+.loginMain {
+	margin:50px auto 100px;;
+	padding-top:50px;
+	border-top: 1px solid #e5e5e5;
+	
 }
+.loginTitle {
+	
+	color: #8d71dd!important;
+	text-align:center;
+}
+
+

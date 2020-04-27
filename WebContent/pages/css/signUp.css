@@ -1,3 +1,4 @@
+/*------- 기존 css----------*/
 .textLabel{
 	margin-top:1em;
 	display:block;
@@ -26,4 +27,16 @@
 #userPwdChkResult{
 	visibility:hidden;
 	color:red;
+}
+
+/*------------jiahn add-----------------*/
+section {
+ 	margin-top:50px;
+ 	padding-top:10px!important;
+ 	border-top : 1px solid #e5e5e5;	
+}
+.signUpTitle {
+	/* font-size: 16px; */
+	color: #8d71dd !important;
+	text-align:center;
 }

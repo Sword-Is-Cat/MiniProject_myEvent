@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-  <title>My Event :: Çà»ç¿Í ÇÔ²² ÇÏ´Â ¸ðµç ¼ø°£</title>
+  <title>My Event :: í–‰ì‚¬ì™€ í•¨ê»˜ í•˜ëŠ” ëª¨ë“  ìˆœê°„</title>
 
    <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
   <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
 	<!-- FontAwesome -->
-  <link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
+    <link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
 	<!-- Animation -->
 	<link rel="stylesheet" href="plugins/animate.css">
 	<!-- Prettyphoto -->
@@ -32,12 +32,6 @@
 	<!-- Style Swicther -->
 	<link id="style-switch" href="css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
 
-	<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-    <!--[if lt IE 9]>
-      <script src="plugins/html5shiv.js"></script>
-      <script src="plugins/respond.min.js"></script>
-    <![endif]-->
-
   <!-- Main Stylesheet -->
   <link href="css/style.css" rel="stylesheet">
   <link href="css/defaultStyle.css" rel="stylesheet">
@@ -48,58 +42,16 @@
 	<link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
  <!-- webFont -->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-<style>
-	*,.title-desc,h1,h2,h3,h4,h5,h6,p {
-		//font-family: 'Noto Sans KR', sans-serif ;
-	}
-</style>
+
 </head>
 
 <body>
 	<div class="body-inner">
 <!--subTopMenu-->
-<div class="container">
-			<div class="cols 12">
-				<div class="subTopMenu d-flex justify-content-end">
-					<ul class="subMenu">
-					<li class="nav-item active"><a class="nav-link" href="#" role="button" href="#">·Î±×ÀÎ</a></li>
-					<li class="nav-item active"><a class="nav-link" href="#" role="button" href="#">·Î±×¾Æ¿ô</a></li>
-					<li class="nav-item active"><a class="nav-link" href="#" role="button"  href="#">È¸¿ø°¡ÀÔ</a></li>
-					<li class="nav-item dropdown active">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">
-							¸¶ÀÌÆäÀÌÁö
-						</a>
-						<div class="dropdown-menu" style="border: 1.5px solid #222; border-radius: 10px;">
-							<a class="dropdown-item" href="index.html">ÀüÃ¼ ½ÅÃ»³»¿ª</a>
-							<a class="dropdown-item" href="index-2.html">°ü½É Çà»ç ¸ñ·Ï</a>
-							<a class="dropdown-item" href="index-3.html">³»°¡ ¾´ ±Û</a>
-							<a class="dropdown-item" href="index-4.html">È¸¿ø Á¤º¸ ¼öÁ¤</a>
-						</div>
-					</li>
-				</ul>
-			</div><!--subTopMenu-->
-		</div><!--cols12 end-->
-	</div><!--container end-->
+<c:import url="headerTop.jsp"/>
 <!--subTopMenu end-->	
 <c:import url="header.jsp"/>
-<!-- Banner area start -->
-<!-- <div id="banner-area">
-	<img src="images/banner/banner1.jpg" alt="" />
-	<div class="parallax-overlay"></div>
-	Subpage title start
-	<div class="banner-title-content">
-		<div class="text-center">
-			<h2>About Us</h2>
-			<nav aria-label="breadcrumb">
-				<ol class="breadcrumb justify-content-center">
-					<li class="breadcrumb-item"><a href="#">Home</a></li>
-					<li class="breadcrumb-item text-white" aria-current="page">About Us</li>
-				</ol>
-			</nav>
-		</div>
-	</div> --><!-- Subpage title end -->
-</div><!-- Banner area end -->
+
 
 <!-- Main container start -->
 <section id="main-container">
@@ -147,10 +99,10 @@
 				<div class="tab-content" id="v-pills-tabContent">
 					<div class="tab-pane pl-sm-5 fade show active animated fadeInLeft" id="tab_1" role="tabpanel">
 						<i class="fa fa-trophy icon-xl text-primary mb-4"></i>
-						<h3>ÃÖ°íÀÇ Çà»ç °³ÃÖ ÇÃ·§Æû</h3>
-						<p>¸¶ÀÌÀÌº¥Æ®´Â 2020³â¿¡ ¼³¸³µÈ ÀÌº¥Æ® Å×Å© ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù. 
-							±âÁ¸ÀÇ Çà»ç ½ÃÀå¿¡ IT¿Í ÇÃ·§ÆûÀ» Á¢¸ñÇØ Çõ½ÅÀ» ¸¸µé¾î°¡°í ½Í½À´Ï´Ù. 
-							³»°¡ ¿øÇÏ´Â Çà»ç¸¦ °³ÃÖÇÏ°Å³ª Âü¿©ÇÒ ¼ö ÀÖ´Â ÇÃ·§Æû "¸¶ÀÌÀÌº¥Æ®"¸¦ ¿î¿µÇÏ°í ÀÖ½À´Ï´Ù.</p>
+						<h3>ìµœê³ ì˜ í–‰ì‚¬ ê°œìµœ í”Œëž«í¼</h3>
+						<p>ë§ˆì´ì´ë²¤íŠ¸ëŠ” 2020ë…„ì— ì„¤ë¦½ëœ ì´ë²¤íŠ¸ í…Œí¬ í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤. 
+							ê¸°ì¡´ì˜ í–‰ì‚¬ ì‹œìž¥ì— ITì™€ í”Œëž«í¼ì„ ì ‘ëª©í•´ í˜ì‹ ì„ ë§Œë“¤ì–´ê°€ê³  ì‹¶ìŠµë‹ˆë‹¤. 
+							ë‚´ê°€ ì›í•˜ëŠ” í–‰ì‚¬ë¥¼ ê°œìµœí•˜ê±°ë‚˜ ì°¸ì—¬í•  ìˆ˜ ìžˆëŠ” í”Œëž«í¼ "ë§ˆì´ì´ë²¤íŠ¸"ë¥¼ ìš´ì˜í•˜ê³  ìžˆìŠµë‹ˆë‹¤.</p>
 					</div>
 					<div class="tab-pane pl-sm-5 fade animated fadeInLeft" id="tab_2" role="tabpanel">
 						<i class="fa fa-briefcase icon-xl text-primary mb-4"></i>
@@ -213,7 +165,7 @@
 							<span class="img-bottom"></span>
 						</div>
 						<div class="team-content">
-							<h3>¹èÁöÇý</h3>
+							<h3>ë°°ì§€í˜œ</h3>
 							<p>Web Designer</p>
 							<div class="team-social">
 								<a class="fb" href="#"><i class="fa fa-facebook"></i></a>
@@ -234,7 +186,7 @@
 							<span class="img-bottom"></span>
 						</div>
 						<div class="team-content">
-							<h3>ÀåÈ«¹ü</h3>
+							<h3>ìž¥í™ë²”</h3>
 							<p>Web Designer</p>
 							<div class="team-social">
 								<a class="fb" href="#"><i class="fa fa-facebook"></i></a>
@@ -255,7 +207,7 @@
 							<span class="img-bottom"></span>
 						</div>
 						<div class="team-content">
-							<h3>±èÁö¾È</h3>
+							<h3>ê¹€ì§€ì•ˆ</h3>
 							<p>Web Designer</p>
 							<div class="team-social">
 								<a class="fb" href="#"><i class="fa fa-facebook"></i></a>
@@ -276,7 +228,7 @@
 							<span class="img-bottom"></span>
 						</div>
 						<div class="team-content">
-							<h3>±èÈ¿Áø</h3>
+							<h3>ê¹€íš¨ì§„</h3>
 							<p>Web Designer</p>
 							<div class="team-social">
 								<a class="fb" href="#"><i class="fa fa-facebook"></i></a>
@@ -297,7 +249,7 @@
 							<span class="img-bottom"></span>
 						</div>
 						<div class="team-content">
-							<h3>¹ÚÁ¤ÀÇ</h3>
+							<h3>ë°•ì •ì˜</h3>
 							<p>Web Designer</p>
 							<div class="team-social">
 								<a class="fb" href="#"><i class="fa fa-facebook"></i></a>
