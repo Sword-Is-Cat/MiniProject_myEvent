@@ -39,6 +39,10 @@ public class User {
 		this.userJoinDate = userJoinDate;
 		this.userStatus = userStatus;
 	}
+	
+	public User(int userNo) {
+		this.userNo = userNo;
+	}
 	public int getUserNo() {
 		return userNo;
 	}

@@ -1,5 +1,13 @@
+<%@page import="kosta.mvc.service.ChannelService"%>
+<%@page import="java.util.List"%>
+<%@page import="kosta.mvc.model.dao.ChannelDAO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="kosta.mvc.vo.Channel"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:set var="path" value="${pageContext.request.contextPath}" scope="application"/>
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -77,24 +85,36 @@
 
 <body>
 
-	<!-- Style switcher start -->
-	<div class="style-switch-wrapper">
-		<div class="style-switch-button">
-			<i class="fa fa-sliders"></i>
-		</div>
-		<h3>Style Options</h3>
-		<button id="preset1" class="btn btn-sm btn-primary"></button>
-		<button id="preset2" class="btn btn-sm btn-primary"></button>
-		<button id="preset3" class="btn btn-sm btn-primary"></button>
-		<button id="preset4" class="btn btn-sm btn-primary"></button>
-		<button id="preset5" class="btn btn-sm btn-primary"></button>
-		<button id="preset6" class="btn btn-sm btn-primary"></button>
-		<br/><br/>
-		<a class="btn btn-sm btn-primary close-styler float-right">Close X</a>
-	</div>
-	<!-- Style switcher end -->
+<!--subTopMenu-->
+<div class="container">
+			<div class="cols 12">
+				<div class="subTopMenu d-flex justify-content-end">
+				<ul class="subMenu">
+					<li class="nav-item active"><a class="nav-link" href="login.jsp" role="button" >로그인</a></li>
+					<li class="nav-item active"><a class="nav-link" href="index.jsp" role="button">로그아웃</a></li>
+					<li class="nav-item active"><a class="nav-link" href="signUp.jsp" role="button">회원가입</a></li>
+					<li class="nav-item dropdown active">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false">
+							마이페이지
+						</a>
+						<div class="dropdown-menu" style="border: 1.5px solid #222; border-radius: 10px;">
+							<a class="dropdown-item" href="index.html">전체 신청내역</a>
+							<a class="dropdown-item" href="interestEvent.jsp">관심 행사 목록</a>
+							<a class="dropdown-item" href="myWrite.jsp">내가 쓴 글</a>
+							<a class="dropdown-item" href="changeUserInfo.jsp">회원 정보 수정</a>
+						</div>
+					</li>
+				</ul>
+			</div><!--subTopMenu-->
+		</div><!--cols12 end-->
+	</div><!--container end-->
+<!--subTopMenu end-->	
+
+<c:import url="header.jsp"></c:import>
 
 	<div class="body-inner">
+
 
 
 		<!-- channel list top -->
@@ -105,188 +125,40 @@
 		</div><!-- Title row end -->
 <br>
 
-<!-- Portfolio start -->
+<!-- channalList start -->
+<%List<Channel> chList = ChannelService.selectAll();%>
+
 <section id="main-container" class="portfolio-static">
 	<div class="container">
 		<div class="row">
+		<c:forEach items="<%=chList%>" var="channel">
 			<div class="col-sm-4 portfolio-static-item">
 				<div class="grid">
 					<figure class="m-0 effect-oscar">
 						<img src="https://eventusstorage.blob.core.windows.net/evs/Image/event/16764/ProjectInfo/Cover/e3f492fb160d420ca4483e56964b710d.jpg?fixed" alt="">
 						<figcaption>
-							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/portfolio/portfolio-bg1.jpg"><i
+							<a class="view icon-pentagon" data-rel="prettyPhoto" href="front?key=channelDetail&chNo=${channel.chNo}"><i
 									class="fa fa-search"></i></a>
 						</figcaption>
 					</figure>
 					<div class="portfolio-static-desc">
-					<a href="#"><h3 id="eTitle" class="eTitle">채널이름</h3></a>
-					<a href="#" class="desc">[EVENT-US] 이벤터스 웨비나, 하루만에 뽀개기!</a>
+					<a href="${pageContext.request.contextPath}/front?key=channelDetail&chNo=${channel.chNo}"><h3 id="eTitle" class="eTitle">${channel.chName}</h3></a>
+					<a href="${pageContext.request.contextPath}/front?key=channelDetail&chNo=${channel.chNo}" class="desc">${channel.chDescription}</a>
 					</div>
 				</div>
 				<!--/ grid end -->
 			</div>
+			</c:forEach>
 			<!--/ item 1 end -->
-
-			<div class="col-sm-4 portfolio-static-item">
-				<div class="grid">
-					<figure class="m-0 effect-oscar">
-						<img src="https://eventusstorage.blob.core.windows.net/evs/Image/tentuplay/16716/ProjectInfo/Cover/a447a98ed1c142359cf6444ace7908ac.jpg?fixed" alt="">
-						<figcaption>
-							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/portfolio/portfolio-bg2.jpg"><i
-									class="fa fa-search"></i></a>
-						</figcaption>
-					</figure>
-					<div class="portfolio-static-desc">
-					<a href="#"><h3 id="eTitle" class="eTitle">채널이름</h3></a>
-					<a href="#" class="desc">[DREAMPLUS Insight Night(인싸 나잇)] 인싸 스타트업 대표님들의 인사이트 강연(키튼플래닛, 홈핏)</a>
-					</div>
-				</div>
-				<!--/ grid end -->
-			</div>
-			<!--/ item 2 end -->
-
-			<div class="col-sm-4 portfolio-static-item">
-				<div class="grid">
-					<figure class="m-0 effect-oscar">
-						<img src="https://eventusstorage.blob.core.windows.net/evs/Image/dreamplusgangnam/16372/ProjectInfo/Cover/489df4119075489c986f6ea646545124.jpg?fixed" alt="">
-						<figcaption>
-							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/portfolio/portfolio-bg3.jpg"><i
-									class="fa fa-search"></i></a>
-						</figcaption>
-					</figure>
-					<div class="portfolio-static-desc">
-						<h3>Your Business</h3>
-						<span><a href="#">Ui Elements</a></span>
-					</div>
-				</div>
-				<!--/ grid end -->
-			</div>
-			<!--/ item 3 end -->
-
-			<div class="col-sm-4 portfolio-static-item">
-				<div class="grid">
-					<figure class="m-0 effect-oscar">
-						<img src="images/portfolio/portfolio4.jpg" alt="">
-						<figcaption>
-							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/portfolio/portfolio-bg1.jpg"><i
-									class="fa fa-search"></i></a>
-						</figcaption>
-					</figure>
-					<div class="portfolio-static-desc">
-						<h3>Prego Match</h3>
-						<span><a href="#">Media Elements</a></span>
-					</div>
-				</div>
-				<!--/ grid end -->
-			</div>
-			<!--/ item 4 end -->
-
-			<div class="col-sm-4 portfolio-static-item">
-				<div class="grid">
-					<figure class="m-0 effect-oscar">
-						<img src="images/portfolio/portfolio5.jpg" alt="">
-						<figcaption>
-							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/portfolio/portfolio-bg2.jpg"><i
-									class="fa fa-search"></i></a>
-						</figcaption>
-					</figure>
-					<div class="portfolio-static-desc">
-						<h3>Fashion Brand</h3>
-						<span><a href="#">Graphics Media</a></span>
-					</div>
-				</div>
-				<!--/ grid end -->
-			</div>
-			<!--/ item 5 end -->
-
-			<div class="col-sm-4 portfolio-static-item">
-				<div class="grid">
-					<figure class="m-0 effect-oscar">
-						<img src="images/portfolio/portfolio6.jpg" alt="">
-						<figcaption>
-							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/portfolio/portfolio-bg3.jpg"><i
-									class="fa fa-search"></i></a>
-						</figcaption>
-					</figure>
-					<div class="portfolio-static-desc">
-						<h3>The Insidage</h3>
-						<span><a href="#">Material Design</a></span>
-					</div>
-				</div>
-				<!--/ grid end -->
-			</div>
-			<!--/ item 6 end -->
-
-			<div class="col-sm-4 portfolio-static-item">
-				<div class="grid">
-					<figure class="m-0 effect-oscar">
-						<img src="images/portfolio/portfolio7.jpg" alt="">
-						<figcaption>
-							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/portfolio/portfolio-bg1.jpg"><i
-									class="fa fa-search"></i></a>
-						</figcaption>
-					</figure>
-					<div class="portfolio-static-desc">
-						<h3>Light Carpet</h3>
-						<span><a href="#">Mockup</a></span>
-					</div>
-				</div>
-				<!--/ grid end -->
-			</div>
-			<!--/ item 7 end -->
-
-			<div class="col-sm-4 portfolio-static-item">
-				<div class="grid">
-					<figure class="m-0 effect-oscar">
-						<img src="images/portfolio/portfolio8.jpg" alt="">
-						<figcaption>
-							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/portfolio/portfolio-bg2.jpg"><i
-									class="fa fa-search"></i></a>
-						</figcaption>
-					</figure>
-					<div class="portfolio-static-desc">
-						<h3>Amazing Keyboard</h3>
-						<span><a href="#">Photography</a></span>
-					</div>
-				</div>
-				<!--/ grid end -->
-			</div>
-			<!--/ item 8 end -->
-
 		</div><!-- Content row end -->
 	</div><!-- Container end -->
+
 </section><!-- Portfolio end -->
 
 <div class="gap-40"></div>
 </div><!-- Body inner end -->
-
-<!-- jQuery -->
-<script src="plugins/jQuery/jquery.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="plugins/bootstrap/bootstrap.min.js"></script>
-<!-- Style Switcher -->
-<script type="text/javascript" src="plugins/style-switcher.js"></script>
-<!-- PrettyPhoto -->
-<script type="text/javascript" src="plugins/jquery.prettyPhoto.js"></script>
-<!-- Bxslider -->
-<script type="text/javascript" src="plugins/flex-slider/jquery.flexslider.js"></script>
-<!-- Isotope -->
-<script type="text/javascript" src="plugins/isotope.js"></script>
-<script type="text/javascript" src="plugins/ini.isotope.js"></script>
-<!-- Wow Animation -->
-<script type="text/javascript" src="plugins/wow.min.js"></script>
-<!-- Eeasing -->
-<script type="text/javascript" src="plugins/jquery.easing.1.3.js"></script>
-<!-- Counter -->
-<script type="text/javascript" src="plugins/jquery.counterup.min.js"></script>
-<!-- Waypoints -->
-<script type="text/javascript" src="plugins/waypoints.min.js"></script>
-<!-- google map -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
-<script src="plugins/google-map/gmap.js"></script>
-
-<!-- Main Script -->
-<script src="js/script.js"></script>
+<!-- footer -->
+<c:import url="footer.jsp"></c:import>
 
 </body>
 

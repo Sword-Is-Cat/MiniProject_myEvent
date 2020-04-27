@@ -98,9 +98,9 @@
 			<div class="cols 12">
 				<div class="subTopMenu d-flex justify-content-end">
 					<ul class="subMenu">
-					<li class="nav-item active"><a class="nav-link" href="#" role="button" href="#">로그인</a></li>
-					<li class="nav-item active"><a class="nav-link" href="#" role="button" href="#">로그아웃</a></li>
-					<li class="nav-item active"><a class="nav-link" href="#" role="button"  href="#">회원가입</a></li>
+					<li class="nav-item active"><a class="nav-link" href="login.jsp" role="button" >로그인</a></li>
+					<li class="nav-item active"><a class="nav-link" href="index.jsp" role="button">로그아웃</a></li>
+					<li class="nav-item active"><a class="nav-link" href="signUp.jsp" role="button">회원가입</a></li>
 					<li class="nav-item dropdown active">
 						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false">
@@ -108,9 +108,9 @@
 						</a>
 						<div class="dropdown-menu" style="border: 1.5px solid #222; border-radius: 10px;">
 							<a class="dropdown-item" href="index.html">전체 신청내역</a>
-							<a class="dropdown-item" href="index-2.html">관심 행사 목록</a>
-							<a class="dropdown-item" href="index-3.html">내가 쓴 글</a>
-							<a class="dropdown-item" href="index-4.html">회원 정보 수정</a>
+							<a class="dropdown-item" href="interestEvent.jsp">관심 행사 목록</a>
+							<a class="dropdown-item" href="myWrite.jsp">내가 쓴 글</a>
+							<a class="dropdown-item" href="changeUserInfo.jsp">회원 정보 수정</a>
 						</div>
 					</li>
 				</ul>
@@ -132,7 +132,7 @@
                             </a>
                         </div>
                         <div class="mypage-topnav__tab">
-                            <a href="">
+                            <a href="interestEvent.jsp">
                                 관심 행사 목록
                             </a>
                         </div>
@@ -142,7 +142,7 @@
                             </a>
                         </div>
                         <div class="mypage-topnav__tab">
-                            <a href="">
+                            <a href="createEvent.html">
                                 회원정보 설정
                             </a>
                         </div>
@@ -199,6 +199,7 @@
 	</div>
 </div><!-- container end -->
 
-<c:import url="footer.jsp"/>
+<!-- footer -->
+<c:import url="footer.jsp"></c:import>
 </body>
 </html>
