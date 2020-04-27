@@ -56,6 +56,22 @@ public class DbUtil {
 			e.printStackTrace();
 		}
 	}
+    
+    public static void dbClose(Connection con){
+    	try {
+  		  if(con!=null) con.close();
+  		}catch (SQLException e) {
+  			e.printStackTrace();
+  		}
+	}
+    
+    public static void dbClose(Statement st){
+		try {
+		  if(st!=null) st.close();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }
 
 

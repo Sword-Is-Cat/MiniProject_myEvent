@@ -1,5 +1,7 @@
 package kosta.mvc.vo;
 
+import java.sql.Timestamp;
+
 public class User {
 	private int userNo;
 	private String userId;
@@ -8,7 +10,7 @@ public class User {
 	private String userAddr;
 	private String userPhone;
 	private String userEmail;
-	private long userJoinDate;
+	private Timestamp userJoinDate;
 	private int userStatus;
 	
 	public User() {};
@@ -31,7 +33,7 @@ public class User {
 		this.userEmail = userEmail;
 	}
 	public User(int userNo, String userId, String userPwd, String userName, String userAddr, String userPhone,
-			String userEmail, long userJoinDate, int userStatus) {
+			String userEmail, Timestamp userJoinDate, int userStatus) {
 		this(userId, userPwd, userName, userAddr, userPhone, userEmail);
 		this.userNo = userNo;
 		this.userJoinDate = userJoinDate;
@@ -79,10 +81,10 @@ public class User {
 	public void setUserEmail(String userEmail) {
 		this.userEmail = userEmail;
 	}
-	public long getUserJoinDate() {
+	public Timestamp getUserJoinDate() {
 		return userJoinDate;
 	}
-	public void setUserJoinDate(long userJoinDate) {
+	public void setUserJoinDate(Timestamp userJoinDate) {
 		this.userJoinDate = userJoinDate;
 	}
 	public int getUserStatus() {

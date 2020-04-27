@@ -28,6 +28,17 @@
     -->
     
     <!-- DBCP기술 적용하기 -->
+    <!-- <Resource name="jdbc/myOracle" 
+              auth="Container"
+              type="javax.sql.DataSource" 
+              driverClassName="oracle.jdbc.OracleDriver"
+              url="jdbc:oracle:thin:@192.168.0.145:1521:XE"
+              username="jang" 
+              password="jang" 
+              maxTotal="20" 
+              maxIdle="10"
+              maxWaitMillis="-1"/> -->
+              
     <Resource name="jdbc/myOracle" 
               auth="Container"
               type="javax.sql.DataSource" 
@@ -38,20 +49,6 @@
               maxTotal="20" 
               maxIdle="10"
               maxWaitMillis="-1"/>
-<<<<<<< HEAD
-              
-    <!-- <Resource name="jdbc/myOracle" 
-              auth="Container"
-              type="javax.sql.DataSource" 
-              driverClassName="oracle.jdbc.OracleDriver"
-              url="jdbc:oracle:thin:@localhost:1521:XE"
-              username="localevent" 
-              password="localevent" 
-              maxTotal="20" 
-              maxIdle="10"
-              maxWaitMillis="-1"/> -->
-=======
->>>>>>> branch 'master' of https://github.com/Sword-Is-Cat/MiniProject_myEvent.git
               
 </Context>
 
