@@ -47,7 +47,8 @@ public class EvBoardDAO {
            ps.setInt(2, evBoard.getEvBoardParentNo());
            ps.setString(3, evBoard.getEvBoardContent());
            ps.setTimestamp(4, evBoard.getEvBoardTime());
-           ps.setInt(5, evBoard.getEvBoardStatus()); 
+           ps.setInt(5, evBoard.getEvBoardStatus());
+           ps.setInt (6, evBoard.getEvBoardStatus());
    		result = ps.executeUpdate();
    		}finally{
    			DbUtil.dbClose( ps, con);
@@ -71,7 +72,8 @@ public class EvBoardDAO {
          ps.setInt(2, evBoard.getEvBoardParentNo());
          ps.setString(3, evBoard.getEvBoardContent());
          ps.setTimestamp(4, evBoard.getEvBoardTime());
-         ps.setInt(5, evBoard.getEvBoardStatus()); 
+         ps.setInt(5, evBoard.getEvBoardStatus());
+         ps.setInt (6, evBoard.getEvBoardStatus());
            result = ps.executeUpdate();
    }finally {
       DbUtil.dbClose( ps, con);

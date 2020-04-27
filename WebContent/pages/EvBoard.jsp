@@ -44,8 +44,8 @@
             <tr heigh="30">
                 <td>글번호</td>
                  <td>종류</td>
-                <td>제목${EvBoard.title }</td>
-                <td>작성자${EvBoard.user}</td>
+                <td>제목</td>
+                <td>작성자</td>
                 <td>작성일</td>
                 <td>조회수</td>
             </tr>    
