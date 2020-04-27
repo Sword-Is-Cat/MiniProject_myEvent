@@ -40,7 +40,7 @@ public class CreateEventController implements Controller {
 		String jibunAddress = m.getParameter("jibunAddress");
 		String detailAddress = m.getParameter("detailAddress");
 		String extraAddress = m.getParameter("extraAddress");
-		String Addr = "";
+		String evAddr = "";
 
 		if (eventName == null || eventName.equals("") || description == null
 				|| description.equals("") || evStartDate == null || evStartDate.equals("") || evStartTime == null
@@ -56,9 +56,9 @@ public class CreateEventController implements Controller {
 		channel.setChNo(chNo);
 
 		if (postalCode == null || postalCode.equals("")) {
-			Addr = "Online";
+			evAddr = "Online";
 		} else {
-			Addr = postalCode + roadAddress + detailAddress + extraAddress;
+			evAddr = postalCode + roadAddress + detailAddress + extraAddress;
 		}
 
 		if (evBookStartDate == null || evBookStartDate.equals("") || evBookStartTime == null

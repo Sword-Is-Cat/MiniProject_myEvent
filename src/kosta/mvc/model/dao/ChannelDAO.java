@@ -30,8 +30,8 @@ public class ChannelDAO {
 		Connection con = DbUtil.getConnection();
 		PreparedStatement ps = null;
 		int result = 0;
-		String sql = pro.getProperty("insertChannel");
 		try {
+			String sql = pro.getProperty("insertChannel");
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, channel.getUser().getUserNo());
 			ps.setString(2, channel.getChName());
@@ -92,6 +92,7 @@ public class ChannelDAO {
 		try {
 			con = DbUtil.getConnection();
 			ps = con.prepareStatement(sql);
+			rs=ps.executeQuery();
 			
 			Channel channel;
 			HashMap<Integer, User> userMap = new HashMap<Integer, User>();
@@ -124,5 +125,34 @@ public class ChannelDAO {
 			DbUtil.dbClose(rs, ps, con);
 		}
 		return list;
+	}
+
+	public Channel selectByChNo(int chNo, User userId) throws SQLException{
+		Connection con = DbUtil.getConnection();
+		PreparedStatement ps =null;
+		ResultSet rs =null;
+		Channel channel =null;
+		String sql=pro.getProperty("channelDetail");
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, chNo);
+			rs = ps.executeQuery();
+			
+			
+			UsersDAO usersDAO = new UsersDAO();
+			User user = usersDAO.selectById(userId.getUserId());
+			
+			if(rs.next()) {
+				String chName = rs.getString("userName");
+				String chImg = rs.getString("chImg");
+				int chStatus = rs.getInt("chStatus");
+				String chDescription = rs.getString("chDescription");
+				
+				channel = new Channel(chNo, user, chName, chImg, chStatus, chDescription);
+			}
+		} finally {
+			DbUtil.dbClose(ps, con);
+		}
+		return null;
 	}
 }

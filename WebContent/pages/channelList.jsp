@@ -1,5 +1,12 @@
+<%@page import="kosta.mvc.model.dao.ChannelDAO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="kosta.mvc.vo.Channel"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:set var="path" value="${pageContext.request.contextPath}" scope="application"/>
+
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -76,7 +83,6 @@
 </head>
 
 <body>
-
 	<!-- Style switcher start -->
 	<div class="style-switch-wrapper">
 		<div class="style-switch-button">
@@ -105,7 +111,17 @@
 		</div><!-- Title row end -->
 <br>
 
-<!-- Portfolio start -->
+<!-- channalList start -->
+<c:choose>
+    <c:when test="${empty requestScope.list}">
+	   <tr>
+        <td colspan="5">
+            <p align="center"><b><span style="font-size:9pt;">등록된 상품이 없습니다.</span></b></p>
+        </td>
+    </tr>
+    </c:when>
+<c:otherwise>
+<c:forEach items="${requestScope.list}" var="channel">
 <section id="main-container" class="portfolio-static">
 	<div class="container">
 		<div class="row">
@@ -119,8 +135,8 @@
 						</figcaption>
 					</figure>
 					<div class="portfolio-static-desc">
-					<a href="#"><h3 id="eTitle" class="eTitle">채널이름</h3></a>
-					<a href="#" class="desc">[EVENT-US] 이벤터스 웨비나, 하루만에 뽀개기!</a>
+					<a href="#"><h3 id="eTitle" class="eTitle">${channel.chName}</h3></a>
+					<a href="#" class="desc">${channel.chDescription}</a>
 					</div>
 				</div>
 				<!--/ grid end -->
@@ -255,6 +271,9 @@
 
 		</div><!-- Content row end -->
 	</div><!-- Container end -->
+	</c:forEach>
+	</c:otherwise>
+    </c:choose>
 </section><!-- Portfolio end -->
 
 <div class="gap-40"></div>

@@ -16,8 +16,7 @@ public class SelectChannelController implements Controller{
 		request.setAttribute("list", list);
 		
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("front/channelList.jsp");
+		mv.setViewName(request.getServletContext().getContextPath()+"/pages/channelList.jsp");
 		return mv;
 	}
-	
 }

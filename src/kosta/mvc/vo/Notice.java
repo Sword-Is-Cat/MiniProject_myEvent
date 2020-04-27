@@ -1,27 +1,29 @@
 package kosta.mvc.vo;
 
+import java.sql.Timestamp;
+
 public class Notice {
 	private int noticeNo;
 	private String noticeSubject;
 	private String noticeContent;
-	private long noticeTime;
+	private Timestamp noticeTime;
 	private int noticeStatus;
 	
 	public Notice() {}
 
 	/**
-	 * 공지사항 게시용
+	 * 怨듭��궗�빆 寃뚯떆�슜
 	 * @param noticeSubject
 	 * @param noticeContent
 	 */
 	public Notice(String noticeSubject, String noticeContent) {
-		super();
+		//super();
 		this.noticeSubject = noticeSubject;
 		this.noticeContent = noticeContent;
 	}
 
 
-	public Notice(int noticeNo, String noticeSubject, String noticeContent, long noticeTime, int noticeStatus) {
+	public Notice(int noticeNo, String noticeSubject, String noticeContent, Timestamp noticeTime, int noticeStatus) {
 		super();
 		this.noticeNo = noticeNo;
 		this.noticeSubject = noticeSubject;
@@ -54,11 +56,11 @@ public class Notice {
 		this.noticeContent = noticeContent;
 	}
 
-	public long getNoticeTime() {
+	public Timestamp getNoticeTime() {
 		return noticeTime;
 	}
 
-	public void setNoticeTime(long noticeTime) {
+	public void setNoticeTime(Timestamp noticeTime) {
 		this.noticeTime = noticeTime;
 	}
 

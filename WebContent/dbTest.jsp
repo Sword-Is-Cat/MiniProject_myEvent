@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1>
- 1. 연결 test: <%=DbUtil.getConnection() %>
+ 1. 연결 test: <%=DbUtil.getConnection() %><br>
  2. 채널검색: 
  	<%
  	ChannelDAO dao = new ChannelDAO();

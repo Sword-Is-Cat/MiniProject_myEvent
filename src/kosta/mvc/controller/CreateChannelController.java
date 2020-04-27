@@ -21,35 +21,33 @@ public class CreateChannelController implements Controller{
 		
 		MultipartRequest m = new MultipartRequest(request, saveDir, maxSize, encoding, new DefaultFileRenamePolicy());
 		
-		String chNo = m.getParameter("chNo");
-		String userNo = m.getParameter("user");
+		String userNo = m.getParameter("userNo");
 		String chName = m.getParameter("chName");
 		String chImg = m.getParameter("chImg");
-		String chStatus = m.getParameter("cStatus");
 		String chDescription = m.getParameter("chDescription");
 		
-		if(chNo==null || chNo.equals("")|| // 없고
-				userNo==null || userNo.equals("")|| // 없는거로 뜬다.
-				chName==null || chName.equals("")||
-				chStatus==null || chStatus.equals("")|| // 없다.
+		if(chName==null || chName.equals("")||
 				chDescription==null || chDescription.equals("")) {
 			throw new RuntimeException("입력값이 충분하지 않습니다."); // DispatcherServlet�� catch �κ����� �Ѿ��.
 		}
 		
 		User user = new User();
 		user.setUserNo(Integer.parseInt(userNo));
-		Channel chan = new Channel(user, chName, chImg, chDescription);
 		
-		// ä�� �̹��� ������ ÷�εǾ��ٸ�
+		Channel chan = new Channel();
+		chan.setUser(user);
+		chan.setChName(chName);
+		chan.setChlmg(chImg);
+		chan.setChDescription(chDescription);
+		
 		if(m.getFilesystemName("chImg")!=null) {
 			chan.setChlmg(m.getFilesystemName("chImg"));
 		}
 		
 		ChannelService.insertChannel(chan);
 		
-		ModelAndView mv = new ModelAndView(true, "channelList.jsp");
+		ModelAndView mv = new ModelAndView(true, request.getServletContext().getContextPath()+"/pages/channelList.jsp");
 		
 		return mv;
 	}
-
 }
