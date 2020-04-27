@@ -89,118 +89,33 @@
 </head>
 
 <body>
-
-	<!-- Style switcher start -->
-	<div class="style-switch-wrapper">
-		<div class="style-switch-button">
-			<i class="fa fa-sliders"></i>
-		</div>
-		<h3>Style Options</h3>
-		<button id="preset1" class="btn btn-sm btn-primary"></button>
-		<button id="preset2" class="btn btn-sm btn-primary"></button>
-		<button id="preset3" class="btn btn-sm btn-primary"></button>
-		<button id="preset4" class="btn btn-sm btn-primary"></button>
-		<button id="preset5" class="btn btn-sm btn-primary"></button>
-		<button id="preset6" class="btn btn-sm btn-primary"></button>
-		<br/><br/>
-		<a class="btn btn-sm btn-primary close-styler float-right">Close X</a>
-	</div>
-	<!-- Style switcher end -->
-
-	<div class="body-inner">
-
-<!-- Header start -->
-<header id="header" class="fixed-top header" role="banner">
-	<a class="navbar-brand navbar-bg" href="index.html"><img class="img-fluid float-right" src="images/logo.png" alt="logo"></a>
-	<div class="container">
-		<nav class="navbar navbar-expand-lg navbar-dark">
-			<button class="navbar-toggler ml-auto border-0 rounded-0 text-white" type="button" data-toggle="collapse"
-				data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="fa fa-bars"></span>
-			</button>
-
-			<div class="collapse navbar-collapse text-center" id="navigation">
-				<ul class="navbar-nav ml-auto">
+<!--subTopMenu-->
+<div class="container">
+			<div class="cols 12">
+				<div class="subTopMenu d-flex justify-content-end">
+				<ul class="subMenu">
+					<li class="nav-item active"><a class="nav-link" href="login.jsp" role="button" >로그인</a></li>
+					<li class="nav-item active"><a class="nav-link" href="index.jsp" role="button">로그아웃</a></li>
+					<li class="nav-item active"><a class="nav-link" href="signUp.jsp" role="button">회원가입</a></li>
 					<li class="nav-item dropdown active">
 						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false">
-							Home
+							마이페이지
 						</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="index.html">Homepage 1</a>
-							<a class="dropdown-item" href="index-2.html">Homepage 2</a>
-							<a class="dropdown-item" href="index-3.html">Homepage 3</a>
-							<a class="dropdown-item" href="index-4.html">Homepage 4</a>
+						<div class="dropdown-menu" style="border: 1.5px solid #222; border-radius: 10px;">
+							<a class="dropdown-item" href="index.html">전체 신청내역</a>
+							<a class="dropdown-item" href="interestEvent.jsp">관심 행사 목록</a>
+							<a class="dropdown-item" href="myWrite.jsp">내가 쓴 글</a>
+							<a class="dropdown-item" href="changeUserInfo.jsp">회원 정보 수정</a>
 						</div>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">
-							Company
-						</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="about.html">About Us</a>
-							<a class="dropdown-item" href="service.html">Services</a>
-							<a class="dropdown-item" href="career.html">Career</a>
-							<a class="dropdown-item" href="testimonial.html">Testimonials</a>
-							<a class="dropdown-item" href="faq.html">Faq</a>
-						</div>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">
-							Portfolio
-						</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="portfolio-classic.html">Portfolio Classic</a>
-							<a class="dropdown-item" href="portfolio-static.html">Portfolio Static</a>
-							<a class="dropdown-item" href="portfolio-item.html">Portfolio Single</a>
-						</div>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">
-							Pages
-						</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="team.html">Our Team</a>
-							<a class="dropdown-item" href="about2.html">About Us - 2</a>
-							<a class="dropdown-item" href="service2.html">Services - 2</a>
-							<a class="dropdown-item" href="service-single.html">Services Single</a>
-							<a class="dropdown-item" href="pricing.html">Pricing Table</a>
-							<a class="dropdown-item" href="404.html">404 Page</a>
-						</div>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">
-							Blog
-						</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="blog-rightside.html">Blog with Sidebar</a>
-							<a class="dropdown-item" href="blog-item.html">Blog Single</a>
-						</div>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">
-							Features
-						</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="typography.html">Typography</a>
-							<a class="dropdown-item" href="elements.html">Elements</a>
-						</div>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="contact.html">Contact</a></a>
 					</li>
 				</ul>
-			</div>
-		</nav>
-	</div>
-</header>
-<!--/ Header end -->
+			</div><!--subTopMenu-->
+		</div><!--cols12 end-->
+	</div><!--container end-->
+<!--subTopMenu end-->	
 
+<c:import url="header.jsp"></c:import>
 <div id="banner-area">
 	<img src="images/banner/banner1.jpg" alt="" />
 	<div class="parallax-overlay"></div>
@@ -436,7 +351,8 @@
 	<!--/ Copyright end -->
 
 </div><!-- Body inner end -->
-
+<!-- footer -->
+<c:import url="footer.jsp"></c:import>
 </body>
 
 </html>

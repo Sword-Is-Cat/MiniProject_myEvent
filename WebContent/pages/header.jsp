@@ -92,7 +92,7 @@
 <!-- Header start -->
 <header id="header" class="header" role="banner">
 	<div class="nav justify-content-end">
-	<a class="navbar-brand navbar-bg" href="index.jsp"><img class="mainLogo d-flex justify-content-end"" src="images/mainLogo2.jpg" width="40%" alt="logo"></a>
+	<a class="navbar-brand navbar-bg" href="index.jsp"><img class="mainLogo d-flex justify-content-end" src="images/mainLogo2.jpg" width="40%" alt="logo"></a>
 	</div>
 	<div class="container">
 		
@@ -117,7 +117,7 @@
 
 				<ul class="nav navbar-nav navbar-right ml-auto ">
 					<li class="nav-item active">
-						<a class="nav-link" href="#" role="button" >
+						<a class="nav-link" href="eventList.jsp" role="button" >
 							행사검색
 						</a>
 					</li>
@@ -132,7 +132,7 @@
 						</a>
 					</li>
 					<li class="nav-item active">
-						<a class="nav-link" href="#" role="button">
+						<a class="nav-link" href="createEvent.html" role="button">
 							행사개설
 						</a>
 					</li>

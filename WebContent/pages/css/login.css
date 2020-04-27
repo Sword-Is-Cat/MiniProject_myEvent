@@ -5,3 +5,16 @@ form{
 	margin-left:10px;
 	margin-right:40px;
 }
+
+/*---------jiahn add-------------*/
+.loginMain {
+	margin:50px auto 100px;;
+	padding-top:50px;
+	border-top: 1px solid #e5e5e5;
+	
+}
+.loginTitle {
+	
+	color: #8d71dd!important;
+	text-align:center;
+}

@@ -1,33 +1,23 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
-<html lang="zxx">
-
+<html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <title>관심행사</title>
-  <style>
-  	#listImg{
-		width: 100%;
-		height: 270px;
-	}
-	.sidebar{
-		min-height:270px;
-		width:100%;
-		background-color: #f6f6f6;
-		padding-left:10px;
-	}
-  </style>
-  <!-- mobile responsive meta -->
+	<meta charset="UTF-8">
+  <title>My Event :: 행사와 함께 하는 모든 순간</title>
+
+   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <!-- ** Plugins Needed for the Project ** -->
+   <!-- ** Plugins Needed for the Project ** -->
   <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
   <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
 	<!-- FontAwesome -->
-  <link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
+    <link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
 	<!-- Animation -->
 	<link rel="stylesheet" href="plugins/animate.css">
 	<!-- Prettyphoto -->
@@ -42,55 +32,179 @@
 	<!-- Style Swicther -->
 	<link id="style-switch" href="css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
 
-	<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-    <!--[if lt IE 9]>
-      <script src="plugins/html5shiv.js"></script>
-      <script src="plugins/respond.min.js"></script>
-    <![endif]-->
-
   <!-- Main Stylesheet -->
   <link href="css/style.css" rel="stylesheet">
-  
+  <link href="css/defaultStyle.css" rel="stylesheet">
   <!--Favicon-->
-	<link rel="icon" href="img/favicon/favicon-32x32.png" type="image/x-icon" />
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/favicon/favicon-144x144.png">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/favicon/favicon-72x72.png">
-	<link rel="apple-touch-icon-precomposed" href="img/favicon/favicon-54x54.png">
+	<link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="./images/favicon/144.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="./images/favicon/72.png">
+	<link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
+ <!-- webFont -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+<style>
+  	#listImg{
+		width: 100%;
+		height: 270px;
+	}
+	.sidebar{
+		min-height:270px;
+		width:100%;
+		background-color: #f6f6f6;
+		padding-left:10px;
+	}
+		.mainContainer {padding:50px 0px;}
+	.menuSubnav{
+	    border-bottom: 2px solid #f8f8f8;
+	    flex-direction: row;
+	    font-weight: bold;
+	    font-size: 14px;
+	    text-align: center;
+	    flex-wrap: nowrap;
+	    overflow-x: auto;
+	    overflow-y: hidden;
+	    -webkit-overflow-scrolling: touch;
+	    white-space: nowrap;
+    }
+
+	.menuSubnav__tab--active {
+	    padding: 10px 20px;
+	    border-bottom: 5px solid #8d71dd;
+	    margin-bottom: -2px;
+	    font-size: 16px;
+	}
+	.menuSubnav__tab {
+	
+	    padding: 10px 20px;
+	 }
+	.mypage-nav__section {
+        background-color: #f8f8f8
+    }
+
+    .mypage-topnav {
+        display: flex;
+        flex-direction: row;
+        font-weight: bold;
+        font-size: 16px;
+        text-align: center;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .mypage-topnav__tab > a {
+        color: #979797;
+    }
+
+    .mypage-topnav__tab {
+        width: 168px;
+        padding: 20px;
+    }
+
+    .mypage-topnav__tab--active > a {
+        color: #5c3fbf !important;
+    }
+
+    .mypage-topnav__tab--active {
+        width: 168px;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 20px;
+        background-color: white;
+        border-bottom: 3px solid #ffc200;
+    }
+</style>
 
 </head>
 
 <body>
 
-	<!-- Style switcher start -->
-	<div class="style-switch-wrapper">
-		<div class="style-switch-button">
-			<i class="fa fa-sliders"></i>
-		</div>
-		<h3>Style Options</h3>
-		<button id="preset1" class="btn btn-sm btn-primary"></button>
-		<button id="preset2" class="btn btn-sm btn-primary"></button>
-		<button id="preset3" class="btn btn-sm btn-primary"></button>
-		<button id="preset4" class="btn btn-sm btn-primary"></button>
-		<button id="preset5" class="btn btn-sm btn-primary"></button>
-		<button id="preset6" class="btn btn-sm btn-primary"></button>
-		<br/><br/>
-		<a class="btn btn-sm btn-primary close-styler float-right">Close X</a>
-	</div>
-	<!-- Style switcher end -->
+<!--subTopMenu-->
+<div class="container">
+			<div class="cols 12">
+				<div class="subTopMenu d-flex justify-content-end">
+					<ul class="subMenu">
+					<li class="nav-item active"><a class="nav-link" href="login.jsp" role="button" >로그인</a></li>
+					<li class="nav-item active"><a class="nav-link" href="index.jsp" role="button">로그아웃</a></li>
+					<li class="nav-item active"><a class="nav-link" href="signUp.jsp" role="button">회원가입</a></li>
+					<li class="nav-item dropdown active">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false">
+							마이페이지
+						</a>
+						<div class="dropdown-menu" style="border: 1.5px solid #222; border-radius: 10px;">
+							<a class="dropdown-item" href="index.html">전체 신청내역</a>
+							<a class="dropdown-item" href="interestEvent.jsp">관심 행사 목록</a>
+							<a class="dropdown-item" href="myWrite.jsp">내가 쓴 글</a>
+							<a class="dropdown-item" href="changeUserInfo.jsp">회원 정보 수정</a>
+						</div>
+					</li>
+				</ul>
+			</div><!--subTopMenu-->
+		</div><!--cols12 end-->
+	</div><!--container end-->
+<!--subTopMenu end-->	
 
-	<div class="body-inner">
+<c:import url="header.jsp"></c:import>
+
+<!-- 상단 메뉴 -->
+<div class="mypage-nav">
+    <div class="mypage-nav__section hide-on-small-only">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 ">
+                    <div class="mypage-topnav d-flex flex-row justify-content-start">
+                        <div class="mypage-topnav__tab">
+                            <a href="#" >
+                                전체 신청 내역
+                            </a>
+                        </div>
+                        <div class="mypage-topnav__tab--active">
+                            <a href="interestEvent.jsp">
+                                관심 행사 목록
+                            </a>
+                        </div>
+                        <div class="mypage-topnav__tab">
+                            <a href="">
+                               내가 쓴 글
+                            </a>
+                        </div>
+                        <div class="mypage-topnav__tab">
+                            <a href="">
+                                회원정보 설정
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- mypage nav end -->
+    <!-- subnav start -->
+     <div class="menuSubnav__section mt-xl-4" >
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <div class="menuSubnav d-flex flex-row align-items-start">
+                           
+                            <div class="menuSubnav__tab--active">
+                                <a href="interestEvent.jsp">
+                                    관심 행사 목록
+                                </a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- subnav end -->
+    
 
 <!-- interestEvent item start -->
 <section id="portfolio-item">
-<!-- interest event top -->
-		<div class="row">
-			<div class="col-md-12 heading text-center">
-				<h2 class="title2" style="text-align: center; font-weight: bold;">관심 행사
-				<span class="title-desc"></span>
-				</h2>
-			</div>
-		</div><!-- Title row end -->
-	<div class="container">
+
+	<div class="container mainContainer" >
 		<!-- interestEvent item row start -->
 		<div class="row">
 			<!-- interestEvent item img start -->
@@ -157,43 +271,8 @@
 	</div><!-- Container end -->
 </section><!-- interestEvent item end -->
 
-<div class="gap-40"></div>
-
-	
-
-</div><!-- Body inner end -->
-
-<!-- jQuery -->
-<script src="plugins/jQuery/jquery.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="plugins/bootstrap/bootstrap.min.js"></script>
-<!-- Style Switcher -->
-<script type="text/javascript" src="plugins/style-switcher.js"></script>
-<!-- Owl Carousel -->
-<script type="text/javascript" src="plugins/owl/owl.carousel.js"></script>
-<!-- PrettyPhoto -->
-<script type="text/javascript" src="plugins/jquery.prettyPhoto.js"></script>
-<!-- Bxslider -->
-<script type="text/javascript" src="plugins/flex-slider/jquery.flexslider.js"></script>
-<!-- CD Hero slider -->
-<script type="text/javascript" src="plugins/cd-hero/cd-hero.js"></script>
-<!-- Isotope -->
-<script type="text/javascript" src="plugins/isotope.js"></script>
-<script type="text/javascript" src="plugins/ini.isotope.js"></script>
-<!-- Wow Animation -->
-<script type="text/javascript" src="plugins/wow.min.js"></script>
-<!-- Eeasing -->
-<script type="text/javascript" src="plugins/jquery.easing.1.3.js"></script>
-<!-- Counter -->
-<script type="text/javascript" src="plugins/jquery.counterup.min.js"></script>
-<!-- Waypoints -->
-<script type="text/javascript" src="plugins/waypoints.min.js"></script>
-<!-- google map -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
-<script src="plugins/google-map/gmap.js"></script>
-
-<!-- Main Script -->
-<script src="js/script.js"></script>
+<!-- footer -->
+<c:import url="footer.jsp"></c:import>
 
 </body>
 
