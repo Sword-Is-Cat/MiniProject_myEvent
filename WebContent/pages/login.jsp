@@ -55,11 +55,9 @@
   	<script>
   	$(function(){
   		if(${sessionScope.status != null}) {
-  			alert("잘못된 접근입니다");
+  			alert("이미 로그인 된 상태입니다");
   			location.href="${pageContext.request.contextPath}/pages/index.jsp";
   		}
-  		
-  		
   	});
   	</script>
 	
@@ -209,12 +207,11 @@
 			<input class="form-control form-control-lg" id="userPwd" name="userPwd" placeholder="비밀번호" type="password">
 			</div>
 			
-			<input type="hidden" name="key" value="login">
-			<br>
-			<legend id="buttons">
-				<button class="btn btn-primary solid blank block" id="loginBtn" type="submit">로그인</button> 
-				<button class="btn btn-primary solid blank block" id="signUpBtn" type="submit">회원가입</button> 
-			</legend>
+			<input type="hidden" name="key" value="login"><br>
+			
+			<button class="btn btn-primary solid blank block" id="loginBtn" type="submit">로그인</button><br>
+			<a id="goSignUp" href="${pageContext.request.contextPath}/pages/signUp.jsp">아직 회원이 아니신가요? 회원가입하러가기</a>
+			
 		</form><!-- SignUp Form end -->
 	</div><!-- Container end -->
 </section><!-- Portfolio end -->

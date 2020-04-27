@@ -1,0 +1,19 @@
+.textLabel{
+	margin-top:1em;
+	display:block;
+}
+#postalCode{
+	margin-top:0px;
+}
+#submit{
+	display:block;
+	margin:auto;
+}ay:inline;			
+}
+#userPwd{
+	display:inline;
+}
+#userPwdChkResult{
+	visibility:hidden;
+	color:red;
+}

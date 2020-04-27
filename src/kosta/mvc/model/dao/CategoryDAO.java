@@ -29,46 +29,6 @@ public class CategoryDAO {
 			e.printStackTrace();
 		}
 	}
-
-	public int insert(int userNo, List<Integer> cateNo) throws SQLException {
-		int result=0;
-		
-		try {
-			String sql = pro.getProperty("cateInsert");
-			con = DbUtil.getConnection();
-			
-			for(int catNo : cateNo) {				
-				ps = con.prepareStatement(sql);
-				
-				ps.setInt(1, userNo);
-				ps.setInt(2, catNo);
-				
-				result += ps.executeUpdate();
-			}
-			
-			return result;
-			
-		}finally {
-			DbUtil.dbClose(ps, con);
-		}
-		
-	}
-	
-	public int insert(Connection con, PreparedStatement ps, int userNo, List<String> cateName) throws SQLException {
-		int result=0;
-		
-		for(String name : cateName) {
-			String sql = pro.getProperty("cateInsert");
-			ps = con.prepareStatement(sql);
-			
-			ps.setInt(1, userNo);
-			ps.setString(2, name);
-			
-			result += ps.executeUpdate();
-		}
-		
-		return result;		
-	}
 	
 	public List<Category> selectAll() throws SQLException{
 		List<Category> list = new ArrayList<>();
