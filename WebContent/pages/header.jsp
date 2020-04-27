@@ -5,21 +5,19 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8">
+	<meta charset="UTF-8">
   <title>My Event :: 행사와 함께 하는 모든 순간</title>
 
-  <!-- mobile responsive meta -->
+   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <!-- ** Plugins Needed for the Project ** -->
-  
+   <!-- ** Plugins Needed for the Project ** -->
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
   <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
 	<!-- FontAwesome -->
   <link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
-
 	<!-- Animation -->
 	<link rel="stylesheet" href="plugins/animate.css">
 	<!-- Prettyphoto -->
@@ -43,18 +41,12 @@
   <!-- Main Stylesheet -->
   <link href="css/style.css" rel="stylesheet">
   
-  <!--Favicon-->
-	<link rel="icon" href="img/favicon/favicon-32x32.png" type="image/x-icon" />
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/favicon/favicon-144x144.png">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/favicon/favicon-72x72.png">
-	<link rel="apple-touch-icon-precomposed" href="img/favicon/favicon-54x54.png">
-  <!-- webFont -->
-  	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
 <style>
-	@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css";
-	* {
-		font-family: 'Noto Sans KR', sans-serif !important;
-	}
+	 *,.title-desc,h1,h2,h3,h4,h5,h6,p {
+		font-family: 'Noto Sans KR', sans-serif ;
+	} 
+
 	.navbar-nav .nav-link {
 		color :#000;  
 		padding: 15px 15px 10px !important;
@@ -62,64 +54,75 @@
 	}
 	.navbar-nav .nav-link .subMenu {
 		font-size: 12px!important;
+		position: fixed;
 	}
-	.searchForm {margin: 0 auto;}
+	/*--검색창--*/
+	.form-control:focus {
+	  box-shadow: none;
+	}
+	
+	.form-control-underlined {
+	  border-width: 0;
+	  border-bottom-width: 1px;
+	  border-radius: 0;
+	  padding-left: 0;
+	}
+	.form-control::placeholder {
+	  font-size: 0.95rem;
+	  color: #aaa;
+	  font-style: italic;
+	}
+	.searchForm {margin-left: 30%;}
+	.ipSearch {width:80%!important;}
 	img.mainLogo {padding-top:10px;}
-	.dropdown-item {border:none!important;}
+	.glyphicon-search:before {
+    content: "\f002";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 </style>
 </head>
 
 <body>
-
 	<div class="body-inner">
 
 <!-- Header start -->
 <header id="header" class="header" role="banner">
-	<a class="navbar-brand navbar-bg" href="index.html"><img class="img-fluid float-right mainLogo" src="images/mainLogo2.jpg" width="50%" alt="logo"></a>
+	<div class="nav justify-content-end">
+	<a class="navbar-brand navbar-bg" href="index.jsp"><img class="mainLogo d-flex justify-content-end"" src="images/mainLogo2.jpg" width="40%" alt="logo"></a>
+	</div>
 	<div class="container">
-		<nav class="navbar navbar-expand-lg">
-			<div class="collapse navbar-collapse text-center" id="subNavigation">
-				<ul class="navbar-nav ml-auto subMenu">
-					<li class="nav-item active"><a class="nav-link" href="#" role="button" href="#">로그인</a></li>
-					<li class="nav-item active"><a class="nav-link" href="#" role="button" href="#">로그아웃</a></li>
-					<li class="nav-item active"><a class="nav-link" href="#" role="button"  href="#">회원가입</a></li>
-					<li class="nav-item dropdown active">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">
-							마이페이지
-						</a>
-						<div class="dropdown-menu" style="border: 1.5px solid #222;
-    border-radius: 10px;">
-							<a class="dropdown-item" href="index.html">전체 신청내역</a>
-							<a class="dropdown-item" href="index-2.html">관심 행사 목록</a>
-							<a class="dropdown-item" href="index-3.html">내가 쓴 글</a>
-							<a class="dropdown-item" href="index-4.html">회원 정보 수정</a>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</nav>
+		
 		<nav class="navbar navbar-expand-lg mainMenu">
 			<button class="navbar-toggler ml-auto border-0 rounded-0 text-white" type="button" data-toggle="collapse"
 				data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="fa fa-bars"></span>
 			</button>
 
-			<div class="collapse navbar-collapse text-center" id="navigation">
+			<div class="collapse navbar-collapse text-center d-flex align-items-start" id="navigation">
 				
-				<form class="form-inline my-2 my-lg-2 navbar-right searchForm">
-      				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      				<button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>검색</button>
-    			</form>
+			<form class="form-inline my-2 navbar-right searchForm">
+      				<div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+              			<div class="input-group">
+             				<input type="search" placeholder="행사를 검색해보세요!" aria-describedby="button-addon1" class="form-control border-0 bg-light">
+              				<div class="input-group-append">
+                				<button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+            			</div>
+           			</div>
+         		</div>
+    		</form>
 
-				<ul class="nav navbar-nav navbar-right ml-auto">
+				<ul class="nav navbar-nav navbar-right ml-auto ">
 					<li class="nav-item active">
 						<a class="nav-link" href="#" role="button" >
 							행사검색
 						</a>
 					</li>
 					<li class="nav-item active">
-						<a class="nav-link" href="#" role="button">
+						<a class="nav-link" href="about.jsp" role="button">
 							회사소개
 						</a>
 					</li>
