@@ -5,8 +5,19 @@
 <head>
 <meta charset="EUC-KR">
 <title>footer</title>
+<style>
+	.footer {background: #fdfdfd!important; color : #979797; padding:60px 0 50px!important; border-top: 1px solid #e5e5e5;}
+ 	.footerLast {margin:0 auto; text-align: center;}
+	.footer-widget {color:#979797!important;}
+	.footerLinks a {color:#979797!important;}
+	.latest-post-content h4 a {color:#979797!important;}
+	.footerLinks a:hover, .latest-post-content h4 a:hover {color:#5c3fbf;}
+	.footer .widget-title {color:#979797!important;}
+	#copyright {color:#979797!important; background:#fff;}
+</style>
 </head>
 <body>
+<!-- footer start -->
     <footer id="footer" class="footer">
 	  <div class="container">
 	    <div class="row">
@@ -94,8 +105,12 @@
 	        </div>
 	      
 	      </div>
-		 <div class="row">
-	       <div class="col s12">
+		 
+	      <!--/ end about us -->
+
+	    </div><!-- Row end -->
+<div class="row lastlast">
+	       <div class="footerLast">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="footerLinks">
                             <a href="/Legal/Service">
@@ -119,23 +134,13 @@
                             </a>
                         </div>
                     </div>
-                </div>
-            </div><!--row end-->
-	      <!--/ end about us -->
-
-	    </div><!-- Row end -->
-
+           </div>
+        </div><!--row end-->
 	  </div><!-- Container end -->
-
-	</footer><!-- Footer end -->
-
-<!--footer end-->
-
-
 	<!-- Copyright start -->
-	<section id="copyright" class="">
+	<!--  <section id="copyright" class="">-->
 	  <div class="container">
-	    <div class="row">
+	    <div class="row mt-5">
 	      <div class="col-md-12 text-center">
 	        <ul class="footer-social unstyled">
 	          <li>
@@ -168,7 +173,7 @@
 	    <div class="row">
 	      <div class="col-md-12 text-center">
 	        <div class="copyright-info">
-	          &copy; Copyright 2020 4JO All Rights Reserved.</span>
+	          &copy; Copyright 2020 4조 All Rights Reserved.</span>
 	        </div>
 	      </div>
 	    </div>
@@ -178,13 +183,21 @@
 	    </div>
 	  </div>
 	  <!--/ Container end -->
-	</section>
+<!-- 	</section> -->
 	<!--/ Copyright end -->
+	</footer><!-- Footer end -->
+
+<!--footer end-->
+
+
+	
 
 </div><!-- Body inner end -->
 
-<!-- jQuery -->
+<!-- Bootstrap Table jQuery-->
+
 <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
+<!-- jQuery -->
 <script src="plugins/jQuery/jquery.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="plugins/bootstrap/bootstrap.min.js"></script>
@@ -215,7 +228,6 @@
 
 <!-- Main Script -->
 <script src="js/script.js"></script>
-
 </body>
 
 </html>
