@@ -39,7 +39,7 @@ public class EventDAO {
 
 		String sql = pro.getProperty("insertEvent");
 		String sql2 = pro.getProperty("insertEventTime");
-		int result = 0;
+		int[] result = {0,0};
 		try {
 			con = DbUtil.getConnection();
 			ps = con.prepareStatement(sql);
@@ -55,7 +55,7 @@ public class EventDAO {
 			ps.setString(9, event.getEvPhone());
 			ps.setString(10, event.getEvEmail());
 
-			ps.addBatch();
+			ps.executeUpdate();
 
 			ps = con.prepareStatement(sql2);
 
@@ -64,21 +64,22 @@ public class EventDAO {
 			ps.setTimestamp(3, event.getEvTime().getEvBookStartTime());
 			ps.setTimestamp(4, event.getEvTime().getEvBookEndTime());
 
-			ps.addBatch();
-
-			result = ps.executeBatch()[0];
+			ps.executeUpdate();
 
 		} finally {
 			DbUtil.dbClose(ps, con);
 		}
 
-		return result;
+		return result[0];
 	}
 
 	public int updateEvent(Event event) throws Exception {
 
 		StringBuilder sqle = new StringBuilder();
-		sqle.append("update event set cateNo=?, evName=?, evAddr=?, evBookMax=?, evDescription=?, ");
+		sqle.append("update event set cateNo=?, evName=?, evBookMax=?, evDescription=?, ");
+		if (event.getEvAddr() != null) {
+			sqle.append("evAddr=?, ");
+		}
 		if (event.getEvImg() != null) {
 			sqle.append("evImg=?, ");
 		}
@@ -112,9 +113,11 @@ public class EventDAO {
 			int i = 0;
 			ps.setInt(++i, event.getCategory().getCateNo());
 			ps.setString(++i, event.getEvName());
-			ps.setString(++i, event.getEvAddr());
 			ps.setInt(++i, event.getEvBookMax());
 			ps.setString(++i, event.getEvDescription());
+			if (event.getEvImg() != null) {
+				ps.setString(++i, event.getEvAddr());
+			}
 			if (event.getEvImg() != null) {
 				ps.setString(++i, event.getEvImg());
 			}
