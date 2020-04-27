@@ -114,6 +114,7 @@
 
 								<h3 class="widget-title">개설자</h3>
 								<p>${user.userNo}</p>
+								<p>${channel.user.userId}</p>
 								<p><%=request.getParameter("userId")%></p>
 								<p>
 									<a href="#" class="project-btn btn btn-primary">채널 관리</a>
