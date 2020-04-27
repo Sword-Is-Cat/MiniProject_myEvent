@@ -32,12 +32,6 @@
 	<!-- Style Swicther -->
 	<link id="style-switch" href="css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
 
-	<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-    <!--[if lt IE 9]>
-      <script src="plugins/html5shiv.js"></script>
-      <script src="plugins/respond.min.js"></script>
-    <![endif]-->
-
   <!-- Main Stylesheet -->
   <link href="css/style.css" rel="stylesheet">
   <link href="css/defaultStyle.css" rel="stylesheet">
@@ -47,7 +41,7 @@
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="./images/favicon/72.png">
 	<link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
  <!-- webFont -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
  <style>
 /*---------¿øº»css-----------------*/
   	#btn{

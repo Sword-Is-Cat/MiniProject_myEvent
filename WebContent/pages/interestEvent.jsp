@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<meta charset="UTF-8">
+  <meta charset="UTF-8">
   <title>My Event :: 행사와 함께 하는 모든 순간</title>
 
    <!-- mobile responsive meta -->
@@ -40,8 +40,8 @@
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="./images/favicon/144.png">
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="./images/favicon/72.png">
 	<link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
- <!-- webFont -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <!-- webFont -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 
 <style>
   	#listImg{

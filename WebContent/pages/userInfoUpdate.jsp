@@ -5,23 +5,23 @@
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html lang="zxx">
-
+<html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <title>BizCraft - Responsive Html5 Template</title>
+  <meta charset="UTF-8">
+  <title>My Event :: 행사와 함께 하는 모든 순간</title>
 
-  <!-- mobile responsive meta -->
+   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
- 	<!-- ** Plugins Needed for the Project ** -->
-  	<!-- JQuery -->
+   <!-- ** Plugins Needed for the Project ** -->
+   <!-- JQuery -->
   	<script src="plugins/jQuery/jquery.min.js" ></script>
-  	<!-- Bootstrap -->
-  	<link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
 	<!-- FontAwesome -->
-  	<link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
+    <link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
 	<!-- Animation -->
 	<link rel="stylesheet" href="plugins/animate.css">
 	<!-- Prettyphoto -->
@@ -36,24 +36,19 @@
 	<!-- Style Swicther -->
 	<link id="style-switch" href="css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
 
-	<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-    <!--[if lt IE 9]>
-      <script src="plugins/html5shiv.js"></script>
-      <script src="plugins/respond.min.js"></script>
-    <![endif]-->
+	
 
   <!-- Main Stylesheet -->
   <link href="css/style.css" rel="stylesheet">
-  
-  <!-- SignUp.css -->
-  <link rel="stylesheet" href="pages/css/userInfoUpdate.css">
-  
+  <link href="css/defaultStyle.css" rel="stylesheet">
   <!--Favicon-->
-	<link rel="icon" href="img/favicon/favicon-32x32.png" type="image/x-icon" />
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/favicon/favicon-144x144.png">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/favicon/favicon-72x72.png">
-	<link rel="apple-touch-icon-precomposed" href="img/favicon/favicon-54x54.png">
-	
+	<link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="./images/favicon/144.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="./images/favicon/72.png">
+	<link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
+  <!-- webFont -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
   <!-- KAKAO 주소 API -->
 	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	

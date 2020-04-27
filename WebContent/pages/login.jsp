@@ -46,16 +46,14 @@
 	<link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
  <!-- webFont -->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
 <script>
   	$(function(){
-  		if(${sessionScope.status != null}) {
+  		if(${sessionScope.status} != null) {
   			alert("이미 로그인 된 상태입니다");
   			location.href="${pageContext.request.contextPath}/pages/index.jsp";
   		}
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'master' of https://github.com/Sword-Is-Cat/MiniProject_myEvent.git
   	});
 </script>
 
@@ -63,7 +61,6 @@
 
 <body>
 
-<div class="body-inner">
 <!--subTopMenu-->
 <div class="container">
 			<div class="cols 12">
