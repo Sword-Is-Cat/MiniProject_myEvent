@@ -1,12 +1,10 @@
 package kosta.mvc.vo;
 
-import java.sql.Timestamp;
-
 public class Notice {
 	private int noticeNo;
 	private String noticeSubject;
 	private String noticeContent;
-	private Timestamp noticeTime;
+	private long noticeTime;
 	private int noticeStatus;
 	
 	public Notice() {}
@@ -23,7 +21,7 @@ public class Notice {
 	}
 
 
-	public Notice(int noticeNo, String noticeSubject, String noticeContent, Timestamp noticeTime, int noticeStatus) {
+	public Notice(int noticeNo, String noticeSubject, String noticeContent, long noticeTime, int noticeStatus) {
 		super();
 		this.noticeNo = noticeNo;
 		this.noticeSubject = noticeSubject;
@@ -56,11 +54,11 @@ public class Notice {
 		this.noticeContent = noticeContent;
 	}
 
-	public Timestamp getNoticeTime() {
+	public long getNoticeTime() {
 		return noticeTime;
 	}
 
-	public void setNoticeTime(Timestamp noticeTime) {
+	public void setNoticeTime(long noticeTime) {
 		this.noticeTime = noticeTime;
 	}
 

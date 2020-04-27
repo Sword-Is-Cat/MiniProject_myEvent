@@ -1,14 +1,12 @@
 package kosta.mvc.vo;
 
-import java.sql.Timestamp;
-
 public class EvBoard {
 	private int evBoardNo;
 	private Event event;
 	private User user;
 	private int evBoardParentNo;
 	private String evBoardContent;
-	private Timestamp evBoardTime;
+	private long evBoardTime;
 	private int evBoardStatus;
 	
 	public EvBoard() {};
@@ -31,7 +29,7 @@ public class EvBoard {
 
 
 
-	public EvBoard(int evBoardNo, Event event, User user, int evBoardParentNo, String evBoardContent, Timestamp evBoardTime,
+	public EvBoard(int evBoardNo, Event event, User user, int evBoardParentNo, String evBoardContent, long evBoardTime,
 			int evBoardStatus) {
 		this(event, user, evBoardParentNo, evBoardContent);
 		this.evBoardNo = evBoardNo;
@@ -90,12 +88,12 @@ public class EvBoard {
 	}
 
 
-	public Timestamp getEvBoardTime() {
+	public long getEvBoardTime() {
 		return evBoardTime;
 	}
 
 
-	public void setEvBoardTime(Timestamp evBoardTime) {
+	public void setEvBoardTime(long evBoardTime) {
 		this.evBoardTime = evBoardTime;
 	}
 

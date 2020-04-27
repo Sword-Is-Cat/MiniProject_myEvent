@@ -38,6 +38,7 @@
               maxTotal="20" 
               maxIdle="10"
               maxWaitMillis="-1"/>
+<<<<<<< HEAD
               
     <!-- <Resource name="jdbc/myOracle" 
               auth="Container"
@@ -49,6 +50,8 @@
               maxTotal="20" 
               maxIdle="10"
               maxWaitMillis="-1"/> -->
+=======
+>>>>>>> branch 'master' of https://github.com/Sword-Is-Cat/MiniProject_myEvent.git
               
 </Context>
 

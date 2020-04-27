@@ -3,6 +3,13 @@ package kosta.mvc.vo;
 import java.sql.Timestamp;
 
 public class EvTime {
+	public void setEvNo(int evNo) {
+		this.evNo = evNo;
+	}
+
+	public void setEvCreateTime(Timestamp evCreateTime) {
+		this.evCreateTime = evCreateTime;
+	}
 
 	private int evNo;
 	private Timestamp evCreateTime;
@@ -10,16 +17,10 @@ public class EvTime {
 	private Timestamp evEndTime;
 	private Timestamp evBookStartTime;
 	private Timestamp evBookEndTime;
-	
-	public EvTime(){}
 
-	/**
-	 * 이벤트 시간목록 등록용
-	 * @param evStartTime
-	 * @param evEndTime
-	 * @param evBookStartTime
-	 * @param evBookEndTime
-	 */
+	public EvTime() {
+	}
+
 	public EvTime(Timestamp evStartTime, Timestamp evEndTime, Timestamp evBookStartTime, Timestamp evBookEndTime) {
 		super();
 		this.evStartTime = evStartTime;
@@ -28,28 +29,12 @@ public class EvTime {
 		this.evBookEndTime = evBookEndTime;
 	}
 
-	public EvTime(int evNo, Timestamp evCreateTime, Timestamp evStartTime, Timestamp evEndTime, Timestamp evBookStartTime,
-			Timestamp evBookEndTime) {
+	public EvTime(int evNo, Timestamp evCreateTime, Timestamp evStartTime, Timestamp evEndTime,
+			Timestamp evBookStartTime, Timestamp evBookEndTime) {
 		this(evStartTime, evEndTime, evBookStartTime, evBookEndTime);
 		this.evNo = evNo;
 		this.evCreateTime = evCreateTime;
 
-	}
-
-	public int getEvNo() {
-		return evNo;
-	}
-
-	public void setEvNo(int evNo) {
-		this.evNo = evNo;
-	}
-
-	public Timestamp getEvCreateTime() {
-		return evCreateTime;
-	}
-
-	public void setEvCreateTime(Timestamp evCreateTime) {
-		this.evCreateTime = evCreateTime;
 	}
 
 	public Timestamp getEvStartTime() {
@@ -83,7 +68,13 @@ public class EvTime {
 	public void setEvBookEndTime(Timestamp evBookEndTime) {
 		this.evBookEndTime = evBookEndTime;
 	}
-	
-	
+
+	public int getEvNo() {
+		return evNo;
+	}
+
+	public Timestamp getEvCreateTime() {
+		return evCreateTime;
+	}
 
 }

@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -45,7 +44,7 @@ public class NoticeDAO {
 			
 			while(rs.next()) {
 				Notice notice = 
-					new Notice(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getTimestamp(4), rs.getInt(5));
+					new Notice(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getLong(4), rs.getInt(5));
 			
 				list.add(notice);
 			}
@@ -69,7 +68,7 @@ public class NoticeDAO {
 			  ps.setInt(1, notice.getNoticeNo());
 			  ps.setString(2, notice.getNoticeSubject());
 			  ps.setString(3, notice.getNoticeContent());
-			  ps.setTimestamp(4, notice.getNoticeTime());
+			  ps.setLong(4, notice.getNoticeTime());
 			  ps.setInt(5, notice.getNoticeStatus());
 			  
 			  return ps.executeUpdate();
@@ -90,7 +89,7 @@ public class NoticeDAO {
 			ps.setInt(1, notice.getNoticeNo());
 			ps.setString(2, notice.getNoticeSubject());
 			ps.setString(3, notice.getNoticeContent());
-			ps.setTimestamp(4, notice.getNoticeTime());
+			ps.setLong(4, notice.getNoticeTime());
 			ps.setInt(5, notice.getNoticeStatus());
 			
 			result = ps.executeUpdate();
