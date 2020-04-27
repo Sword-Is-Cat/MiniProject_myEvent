@@ -113,34 +113,34 @@
 
 				<div class="row">
 					<div class="col-md-7">
-						<form id="contact-form" action="contact-form.php" method="post"
-							role="form">
+						<form id="contact-form" action="../front?key=createChannel" method="post"
+							role="form" enctype="multipart/form-data">
 							<div class="row">
 								<div class="col-md-8">
 									<div class="form-group">
-										<label> 채널명 </label> <input class="form-control" name="name"
+										<label> 채널명 </label> <input class="form-control" name="chName"
 											id="name" placeholder="" type="text" required>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label> 개설자 </label> <input class="form-control" name="user"
+										<label> 개설자 </label> <input class="form-control" name="userNo"
 											id="user" placeholder="userId param" type="text" required
-											readonly>
+											><!-- readonly 추가해 -->
 									</div>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-4">
 									<div class="form-group">
-										<label> 채널 이미지 </label> <input type="file" name="file"
+										<label> 채널 이미지 </label> <input type="file" name="chImg"
 											id="file" accept="image/gif, image/jpeg, image/png">
 									</div>
 								</div>
 							</div>
 							<div class="form-group">
 								<label> 채널 설명 </label>
-								<textarea class="form-control" name="message" id="message"
+								<textarea class="form-control" name="chDescription" id="chDescription"
 									placeholder="" rows="10" required></textarea>
 							</div>
 							<div class="text-right">

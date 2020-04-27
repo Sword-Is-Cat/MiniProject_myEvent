@@ -91,6 +91,7 @@
 </div>
 <!-- Portfolio start -->
 <section id="main-container" class="portfolio portfolio-box">
+<<<<<<< HEAD
 	
 <div class="container my-xl-7 my-5" id="userSignupSection" v-cloak>
 		<form class="contact-form col l4 s12 mx-auto" id="signUpForm" action="../front" method="post"><!-- SignUp Form start -->
@@ -101,30 +102,43 @@
             </div>
 			<label class="textLabel" for="userId">아이디</label><br>
 			<input class="form-control form-control-lg col-lg-4 col-md-4 col-sm-8 col-xs-8" id="userId" name="userId" placeholder="아이디" type="text">
+=======
+	<div class="container">
+		<form class="contact-form" id="signUpForm" action="${pageContext.request.contextPath}/front" method="post"><!-- SignUp Form start -->
+			<label class="textLabel" for="userId">아이디</label>
+			<input class="form-control form-control-lg col-lg-4 col-md-4 col-sm-8 col-xs-8" id="userId" name="userId" placeholder="아이디를 입력해 주세요" type="text">
+>>>>>>> branch 'master' of https://github.com/Sword-Is-Cat/MiniProject_myEvent.git
 			<button class="btn btn-primary solid blank" id="idChk" type="button">아이디 중복체크</button> <br>
 			<label class="textLabel" for="userPwd">비밀번호</label>
-			<input class="form-control form-control-lg col-lg-4 col-md-4 col-sm-8 col-xs-8" id="userPwd" name="userPwd" placeholder="비밀번호" type="password">
+			<input class="form-control form-control-lg col-lg-4 col-md-4 col-sm-8 col-xs-8" id="userPwd" name="userPwd" placeholder="비밀번호를 입력해 주세요" type="password">
 			<span id="userPwdChkResult">비밀번호를 확인해 주세요</span><br>			
 			<label class="textLabel" for="userPwdChk">비밀번호 확인</label>
-			<input class="form-control form-control-lg col-lg-4 col-md-4 col-sm-8 col-xs-8" id="userPwdChk" name="userPwdChk" placeholder="비밀번호 확인" type="password">
+			<input class="form-control form-control-lg col-lg-4 col-md-4 col-sm-8 col-xs-8" id="userPwdChk" name="userPwdChk" placeholder="비밀번호 확인해 주세요" type="password">
 			<label class="textLabel" for="userName">이름</label>
-			<input class="form-control form-control-lg col-lg-4 col-md-4 col-sm-8 col-xs-8" id="userName" name="userName" placeholder="이름" type="text"><br>
-			<label class="textLabel" for="postalcode">주소</label>
+			<input class="form-control form-control-lg col-lg-4 col-md-4 col-sm-8 col-xs-8" id="userName" name="userName" placeholder="이름을 입력해 주세요" type="text"><br>
+			<!-- 주소 -->
+			<label class="textLabel" for="postalcode">주소</label><br>
 			<input type="text" id="postcode" name="postalCode" placeholder="우편번호" readonly>
 			<input type="button" id="userAddrBtn" value="우편번호 찾기"><br>
 			<input class="col-lg-4 col-md-4 col-sm-8 col-xs-8" id="roadAddress" name="reaodAddress" placeholder="도로명주소" type="text" readonly>
-			<input class="col-lg-4 col-md-4 col-sm-8 col-xs-8" id="jibunAddress" name="jibunAddress" placeholder="지번주소" type="text" readonly>
 			<span id="guide" style="color:#999;display:none"></span>
-			<input class="col-lg-6 col-md-6 col-sm-10 col-xs-10" id="detailAddress" name="detailAddress" placeholder="상세주소" type="text">
-			<input class="col-lg-4 col-md-4 col-sm-8 col-xs-8" id="extraAddress" name="extraAddress" type="text" disabled><br><br>
+			<input class="col-lg-4 col-md-4 col-sm-8 col-xs-8" id="extraAddress" name="extraAddress" type="text" disabled>
+			<input class="col-lg-6 col-md-6 col-sm-10 col-xs-10" id="detailAddress" name="detailAddress" placeholder="상세주소" type="text"><br><br>
+			
+			<!-- 주소끝 -->
 			<label class="textLabel" for="userPhone">전화번호</label>
-			<input class="form-control form-control-lg" id="userPhone" name="userPhone" placeholder="010-XXXX-XXXX" type="text"><br>
+			<input class="form-control form-control-lg" id="userPhone" name="userPhone" placeholder="예시) 010-0000-0000" type="text"><br>
 			<label class="textLabel" for="userEmail">이메일</label>
-			<input class="form-control form-control-lg" id="userEmail" name="userEmail" placeholder="Email" type="text"><br>
+			<input class="form-control form-control-lg" id="userEmail" name="userEmail" placeholder="Email을 입력해 주세요" type="text"><br>
+			
+			<!-- 카테고리 출력 -->
 			<label for="userCategory">선호 카테고리를 선택해주세요</label><br>
 			<%List<Category> cateList = CategoryService.selectAll();%>
+<<<<<<< HEAD
 			<%Category cate = cateList.get(0); %>
 			${cate.cateNo}
+=======
+>>>>>>> branch 'master' of https://github.com/Sword-Is-Cat/MiniProject_myEvent.git
 			<fieldset>
 				<c:forEach items="<%=cateList%>" var="category" varStatus="status">
 					<input type="checkbox" id="cate${category.cateNo}" name="cate${category.cateNo}" value="${category.cateNo}">

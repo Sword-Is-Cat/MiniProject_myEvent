@@ -74,6 +74,7 @@ public class UsersDAO {
 	}
 	
 	public User selectById(String userId) throws SQLException {
+		User user = null;
 		try {
 			String sql = pro.getProperty("selectUserById");
 			con = DbUtil.getConnection();
@@ -82,12 +83,15 @@ public class UsersDAO {
 			ps.setString(1, userId);
 			rs = ps.executeQuery();
 			
-			if(rs.next()) return new User(rs.getInt("userNo"), rs.getString("userId"), rs.getString("userPwd"), rs.getString("userName"), 
+			if(rs.next()) {
+				user = new User(rs.getInt("userNo"), rs.getString("userId"), rs.getString("userPwd"), rs.getString("userName"), 
 					rs.getString("userAddr"), rs.getString("userPhone"), rs.getString("userEmail"), rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
+			}
+			
 		}finally {
 			DbUtil.dbClose(rs, ps, con);
 		}
-		return null;
+		return user;
 	}
 	
 	/**
