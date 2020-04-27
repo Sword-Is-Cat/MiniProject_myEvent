@@ -30,7 +30,7 @@ public class CreateEventController implements Controller {
 		int cateNo = Integer.parseInt(m.getParameter("cateNo"));
 		int chNo = Integer.parseInt(m.getParameter("chNo"));
 		int evBookMax = Integer.parseInt(m.getParameter("evBookMax"));
-		String evDescription = m.getParameter("description");
+		String evDescription = m.getParameter("evDescription");
 		String evBookStarts = m.getParameter("evBookStart");
 		String evBookEnds = m.getParameter("evBookEnd");
 		String evStarts = m.getParameter("evStart");
@@ -90,6 +90,11 @@ public class CreateEventController implements Controller {
 		if (m.getFilesystemName("evImageDetail") != null) {
 			event.setEvImgDetail(m.getFilesystemName("evImageDetail"));
 		}
+		
+		System.out.println(evStart);
+		System.out.println(evEnd);
+		System.out.println(evBookStart);
+		System.out.println(evBookEnd);
 
 		new EventDAO().insertEvent(event);
 
