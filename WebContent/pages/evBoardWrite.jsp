@@ -45,7 +45,7 @@
     <style type="text/css">
         #title{
             height : 16;
-            font-family :'돋움';
+      
             font-size : 12;
             text-align :center;
         }
@@ -54,7 +54,10 @@
     
 </head>
 <body>
- 
+ <c:import url="headerTop.jsp"/>
+<!--subTopMenu end-->	
+
+<c:import url="header.jsp"></c:import>
     <br>
     <b><font size="8"  color="#000000">QNA등록</font></b>
     <br>

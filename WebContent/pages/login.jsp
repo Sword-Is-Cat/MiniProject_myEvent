@@ -62,33 +62,12 @@
 <body>
 
 <!--subTopMenu-->
-<div class="container">
-			<div class="cols 12">
-				<div class="subTopMenu d-flex justify-content-end">
-					<ul class="subMenu">
-					<li class="nav-item active"><a class="nav-link" href="login.jsp" role="button" >로그인</a></li>
-					<li class="nav-item active"><a class="nav-link" href="index.jsp" role="button">로그아웃</a></li>
-					<li class="nav-item active"><a class="nav-link" href="signUp.jsp" role="button">회원가입</a></li>
-					<li class="nav-item dropdown active">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">
-							마이페이지
-						</a>
-						<div class="dropdown-menu" style="border: 1.5px solid #222; border-radius: 10px;">
-							<a class="dropdown-item" href="index.html">전체 신청내역</a>
-							<a class="dropdown-item" href="interestEvent.jsp">관심 행사 목록</a>
-							<a class="dropdown-item" href="myWrite.jsp">내가 쓴 글</a>
-							<a class="dropdown-item" href="changeUserInfo.jsp">회원 정보 수정</a>
-						</div>
-					</li>
-				</ul>
-			</div><!--subTopMenu-->
-		</div><!--cols12 end-->
-	</div><!--container end-->
+<c:import url="headerTop.jsp"/>
 <!--subTopMenu end-->	
 
 <c:import url="header.jsp"></c:import>
-<!-- Portfolio start -->
+
+
 	<div class="container-fluide loginMain">
 		
 		<form class="contact-form  col-lg-4 col-md-4 col-sm-8 col-xs-8" id="loginForm" action="${pageContext.request.contextPath}/front" method="post"><!-- SignUp Form start -->

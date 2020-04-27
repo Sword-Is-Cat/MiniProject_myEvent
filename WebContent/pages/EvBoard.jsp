@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -67,7 +68,12 @@
     
 </head>
 <body>    
- 
+ <c:import url="headerTop.jsp"/>
+<!--subTopMenu end-->	
+
+<c:import url="header.jsp"></c:import>
+
+
 <div id="wrap">
     <br>
     <div id="evboard">

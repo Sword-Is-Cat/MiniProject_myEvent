@@ -51,7 +51,10 @@
 <script src="js/signUp.js"></script>
 
 <body>
+<c:import url="headerTop.jsp"/>
+<!--subTopMenu end-->	
 
+<c:import url="header.jsp"/>
 
 	<div id="banner-area">
 		<img src="images/banner/banner1.jpg" alt="" />

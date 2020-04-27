@@ -18,7 +18,7 @@ public class NoticeService {
 	public static void insert(Notice notice) throws SQLException{
 		int result = noticeDAO.insert(notice);
 		if (result==0) {
-			throw new SQLException("등록되지않았음");//프로젝트시에는 사용자정의 예외 만들어서 사용
+			throw new SQLException("등록되지않았음");
 		}
 	}
 	public static void delete(int noticeNo) throws SQLException{

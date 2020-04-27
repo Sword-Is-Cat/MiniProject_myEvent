@@ -59,40 +59,14 @@
 <body>
 	<div class="body-inner">
 <!--subTopMenu-->
-<div class="container">
-			<div class="cols 12">
-				<div class="subTopMenu d-flex justify-content-end">
-					<ul class="subMenu">
-					<li class="nav-item active"><a class="nav-link" href="#" role="button" href="#">로그인</a></li>
-					<li class="nav-item active"><a class="nav-link" href="#" role="button" href="#">로그아웃</a></li>
-					<li class="nav-item active"><a class="nav-link" href="#" role="button"  href="#">회원가입</a></li>
-					<li class="nav-item dropdown active">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">
-							마이페이지
-						</a>
-						<div class="dropdown-menu" style="border: 1.5px solid #222; border-radius: 10px;">
-							<a class="dropdown-item" href="index.html">전체 신청내역</a>
-							<a class="dropdown-item" href="index-2.html">관심 행사 목록</a>
-							<a class="dropdown-item" href="index-3.html">내가 쓴 글</a>
-							<a class="dropdown-item" href="index-4.html">회원 정보 수정</a>
-						</div>
-					</li>
-				</ul>
-			</div><!--subTopMenu-->
-		</div><!--cols12 end-->
-	</div><!--container end-->
+<c:import url="headerTop.jsp"/>
 <!--subTopMenu end-->	
 
-<c:import url="header.jsp"></c:import>
-<div class="container">
+<c:import url="header.jsp"/>
 
-
-</div>
 <!-- Portfolio start -->
 <section id="main-container" class="portfolio portfolio-box">
-<<<<<<< HEAD
-	
+
 <div class="container my-xl-7 my-5" id="userSignupSection" v-cloak>
 		<form class="contact-form col l4 s12 mx-auto" id="signUpForm" action="../front" method="post"><!-- SignUp Form start -->
 			 <div class="row mb-4">
@@ -102,12 +76,10 @@
             </div>
 			<label class="textLabel" for="userId">아이디</label><br>
 			<input class="form-control form-control-lg col-lg-4 col-md-4 col-sm-8 col-xs-8" id="userId" name="userId" placeholder="아이디" type="text">
-=======
 	<div class="container">
 		<form class="contact-form" id="signUpForm" action="${pageContext.request.contextPath}/front" method="post"><!-- SignUp Form start -->
 			<label class="textLabel" for="userId">아이디</label>
 			<input class="form-control form-control-lg col-lg-4 col-md-4 col-sm-8 col-xs-8" id="userId" name="userId" placeholder="아이디를 입력해 주세요" type="text">
->>>>>>> branch 'master' of https://github.com/Sword-Is-Cat/MiniProject_myEvent.git
 			<button class="btn btn-primary solid blank" id="idChk" type="button">아이디 중복체크</button> <br>
 			<label class="textLabel" for="userPwd">비밀번호</label>
 			<input class="form-control form-control-lg col-lg-4 col-md-4 col-sm-8 col-xs-8" id="userPwd" name="userPwd" placeholder="비밀번호를 입력해 주세요" type="password">
@@ -134,11 +106,10 @@
 			<!-- 카테고리 출력 -->
 			<label for="userCategory">선호 카테고리를 선택해주세요</label><br>
 			<%List<Category> cateList = CategoryService.selectAll();%>
-<<<<<<< HEAD
+
 			<%Category cate = cateList.get(0); %>
 			${cate.cateNo}
-=======
->>>>>>> branch 'master' of https://github.com/Sword-Is-Cat/MiniProject_myEvent.git
+
 			<fieldset>
 				<c:forEach items="<%=cateList%>" var="category" varStatus="status">
 					<input type="checkbox" id="cate${category.cateNo}" name="cate${category.cateNo}" value="${category.cateNo}">

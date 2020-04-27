@@ -70,117 +70,10 @@
 </head>
 
 <body>
-
-	<!-- Style switcher start -->
-	<div class="style-switch-wrapper">
-		<div class="style-switch-button">
-			<i class="fa fa-sliders"></i>
-		</div>
-		<h3>Style Options</h3>
-		<button id="preset1" class="btn btn-sm btn-primary"></button>
-		<button id="preset2" class="btn btn-sm btn-primary"></button>
-		<button id="preset3" class="btn btn-sm btn-primary"></button>
-		<button id="preset4" class="btn btn-sm btn-primary"></button>
-		<button id="preset5" class="btn btn-sm btn-primary"></button>
-		<button id="preset6" class="btn btn-sm btn-primary"></button>
-		<br/><br/>
-		<a class="btn btn-sm btn-primary close-styler float-right">Close X</a>
-	</div>
-	<!-- Style switcher end -->
-
-	<div class="body-inner">
-
-<!-- Header start -->
-<header id="header" class="fixed-top header" role="banner">
-	<a class="navbar-brand navbar-bg" href="index.html"><img class="img-fluid float-right" src="images/logo.png" alt="logo"></a>
-	<div class="container">
-		<nav class="navbar navbar-expand-lg navbar-dark">
-			<button class="navbar-toggler ml-auto border-0 rounded-0 text-white" type="button" data-toggle="collapse"
-				data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="fa fa-bars"></span>
-			</button>
-
-			<div class="collapse navbar-collapse text-center" id="navigation">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item dropdown active">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">
-							Home
-						</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="index.html">Homepage 1</a>
-							<a class="dropdown-item" href="index-2.html">Homepage 2</a>
-							<a class="dropdown-item" href="index-3.html">Homepage 3</a>
-							<a class="dropdown-item" href="index-4.html">Homepage 4</a>
-						</div>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">
-							Company
-						</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="about.html">About Us</a>
-							<a class="dropdown-item" href="service.html">Services</a>
-							<a class="dropdown-item" href="career.html">Career</a>
-							<a class="dropdown-item" href="testimonial.html">Testimonials</a>
-							<a class="dropdown-item" href="faq.html">Faq</a>
-						</div>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">
-							Portfolio
-						</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="portfolio-classic.html">Portfolio Classic</a>
-							<a class="dropdown-item" href="portfolio-static.html">Portfolio Static</a>
-							<a class="dropdown-item" href="portfolio-item.html">Portfolio Single</a>
-						</div>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">
-							Pages
-						</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="team.html">Our Team</a>
-							<a class="dropdown-item" href="about2.html">About Us - 2</a>
-							<a class="dropdown-item" href="service2.html">Services - 2</a>
-							<a class="dropdown-item" href="service-single.html">Services Single</a>
-							<a class="dropdown-item" href="pricing.html">Pricing Table</a>
-							<a class="dropdown-item" href="404.html">404 Page</a>
-						</div>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">
-							Blog
-						</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="blog-rightside.html">Blog with Sidebar</a>
-							<a class="dropdown-item" href="blog-item.html">Blog Single</a>
-						</div>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">
-							Features
-						</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="typography.html">Typography</a>
-							<a class="dropdown-item" href="elements.html">Elements</a>
-						</div>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="contact.html">Contact</a></a>
-					</li>
-				</ul>
-			</div>
-		</nav>
-	</div>
-</header>
-<!--/ Header end -->
+<c:import url="headerTop.jsp"/>
+<!--subTopMenu end-->	
+<div class="body-inner">
+<c:import url="header.jsp"/>
 
 <div id="banner-area">
 	<img src="images/banner/banner1.jpg" alt="" />
@@ -403,37 +296,8 @@
 
 </div><!-- Body inner end -->
 
-<!-- jQuery -->
-<script src="plugins/jQuery/jquery.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="plugins/bootstrap/bootstrap.min.js"></script>
-<!-- Style Switcher -->
-<script type="text/javascript" src="plugins/style-switcher.js"></script>
-<!-- Owl Carousel -->
-<script type="text/javascript" src="plugins/owl/owl.carousel.js"></script>
-<!-- PrettyPhoto -->
-<script type="text/javascript" src="plugins/jquery.prettyPhoto.js"></script>
-<!-- Bxslider -->
-<script type="text/javascript" src="plugins/flex-slider/jquery.flexslider.js"></script>
-<!-- CD Hero slider -->
-<script type="text/javascript" src="plugins/cd-hero/cd-hero.js"></script>
-<!-- Isotope -->
-<script type="text/javascript" src="plugins/isotope.js"></script>
-<script type="text/javascript" src="plugins/ini.isotope.js"></script>
-<!-- Wow Animation -->
-<script type="text/javascript" src="plugins/wow.min.js"></script>
-<!-- Eeasing -->
-<script type="text/javascript" src="plugins/jquery.easing.1.3.js"></script>
-<!-- Counter -->
-<script type="text/javascript" src="plugins/jquery.counterup.min.js"></script>
-<!-- Waypoints -->
-<script type="text/javascript" src="plugins/waypoints.min.js"></script>
-<!-- google map -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
-<script src="plugins/google-map/gmap.js"></script>
-
-<!-- Main Script -->
-<script src="js/script.js"></script>
+<!-- footer-->	
+<c:import url="footer.jsp"/>
 
 </body>
 

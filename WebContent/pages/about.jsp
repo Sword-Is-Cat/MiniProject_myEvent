@@ -42,58 +42,16 @@
 	<link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
  <!-- webFont -->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-<style>
-	*,.title-desc,h1,h2,h3,h4,h5,h6,p {
-		//font-family: 'Noto Sans KR', sans-serif ;
-	}
-</style>
+
 </head>
 
 <body>
 	<div class="body-inner">
 <!--subTopMenu-->
-<div class="container">
-			<div class="cols 12">
-				<div class="subTopMenu d-flex justify-content-end">
-					<ul class="subMenu">
-					<li class="nav-item active"><a class="nav-link" href="#" role="button" href="#">로그인</a></li>
-					<li class="nav-item active"><a class="nav-link" href="#" role="button" href="#">로그아웃</a></li>
-					<li class="nav-item active"><a class="nav-link" href="#" role="button"  href="#">회원가입</a></li>
-					<li class="nav-item dropdown active">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">
-							마이페이지
-						</a>
-						<div class="dropdown-menu" style="border: 1.5px solid #222; border-radius: 10px;">
-							<a class="dropdown-item" href="index.html">전체 신청내역</a>
-							<a class="dropdown-item" href="index-2.html">관심 행사 목록</a>
-							<a class="dropdown-item" href="index-3.html">내가 쓴 글</a>
-							<a class="dropdown-item" href="index-4.html">회원 정보 수정</a>
-						</div>
-					</li>
-				</ul>
-			</div><!--subTopMenu-->
-		</div><!--cols12 end-->
-	</div><!--container end-->
+<c:import url="headerTop.jsp"/>
 <!--subTopMenu end-->	
 <c:import url="header.jsp"/>
-<!-- Banner area start -->
-<!-- <div id="banner-area">
-	<img src="images/banner/banner1.jpg" alt="" />
-	<div class="parallax-overlay"></div>
-	Subpage title start
-	<div class="banner-title-content">
-		<div class="text-center">
-			<h2>About Us</h2>
-			<nav aria-label="breadcrumb">
-				<ol class="breadcrumb justify-content-center">
-					<li class="breadcrumb-item"><a href="#">Home</a></li>
-					<li class="breadcrumb-item text-white" aria-current="page">About Us</li>
-				</ol>
-			</nav>
-		</div>
-	</div> --><!-- Subpage title end -->
-</div><!-- Banner area end -->
+
 
 <!-- Main container start -->
 <section id="main-container">
