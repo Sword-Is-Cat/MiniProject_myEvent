@@ -21,7 +21,7 @@ public class NoticeUpdateController implements Controller {
 		NoticeService.update(notice);
 		ModelAndView mv = new ModelAndView(); //생성자 통해서 초기화할것인지
 		mv.setRedirect(true);
-		mv.setViewName("???");
+		mv.setViewName("front?key=insertNotice");
 		return mv;
 		
 	}
