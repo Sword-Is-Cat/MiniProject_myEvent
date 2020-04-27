@@ -33,7 +33,7 @@ throw new SQLException("모델번호에 해당하는 정보를 검색할수 없�
 }
    
    public static void insert(EvBoard evBoard) throws SQLException{
-		int result = EvBoardDAO.insert(evBoard);
+		int result = EvBoardDAO.evBoardinsert(evBoard);
 		if (result==0) {
 			throw new SQLException("등록되지않음");
 		}

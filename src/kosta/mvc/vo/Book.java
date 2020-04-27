@@ -1,10 +1,12 @@
 package kosta.mvc.vo;
 
+import java.sql.Timestamp;
+
 public class Book {
 	private int bookNo;
 	private User user;
 	private Event event;
-	private long bookTime;
+	private Timestamp bookTime;
 	private int bookStatus;
 	
 	public Book() {}
@@ -20,7 +22,7 @@ public class Book {
 		this.event = event;
 	}
 
-	public Book(int bookNo, User user, Event event, long bookTime, int bookStatus) {
+	public Book(int bookNo, User user, Event event, Timestamp bookTime, int bookStatus) {
 		this(user, event);
 		this.bookNo = bookNo;
 		this.bookTime = bookTime;
@@ -51,11 +53,11 @@ public class Book {
 		this.event = event;
 	}
 
-	public long getBookTime() {
+	public Timestamp getBookTime() {
 		return bookTime;
 	}
 
-	public void setBookTime(long bookTime) {
+	public void setBookTime(Timestamp bookTime) {
 		this.bookTime = bookTime;
 	}
 

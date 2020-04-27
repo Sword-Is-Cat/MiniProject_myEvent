@@ -43,6 +43,7 @@
         <table id="bList" width="800" border="3" bordercolor="lightgray">
             <tr heigh="30">
                 <td>글번호</td>
+                 <td>종류</td>
                 <td>제목${EvBoard.title }</td>
                 <td>작성자${EvBoard.user}</td>
                 <td>작성일</td>

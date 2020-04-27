@@ -12,7 +12,7 @@ import java.util.Properties;
 
 import kosta.mvc.util.DbUtil;
 import kosta.mvc.vo.EvBoard;
-import kosta.mvc.vo.Event;
+
 
 public class EvBoardDAO {
    Connection con;
@@ -35,21 +35,19 @@ public class EvBoardDAO {
    /**
     * 1.게시물등록
     * */
-   public int insert(EvBoard evBoard) throws SQLException {
+   public int evBoardinsert(EvBoard evBoard) throws SQLException {
 	   Connection con =DbUtil.getConnection();
 		PreparedStatement ps =null;
 		int result =0;
-		String sql=pro.getProperty("insert");
+		String sql=pro.getProperty("evBoardinsert");
 		try{
          con=DbUtil.getConnection();
          ps = con.prepareStatement(sql);
          ps.setInt(1, evBoard.getEvBoardNo());
-//         ps.setEvent(2, evBoard.getEvent());
-//           ps.setUser(3, evBoard.getUser());
-           ps.setInt(4, evBoard.getEvBoardParentNo());
-           ps.setString(5, evBoard.getEvBoardContent());
-           ps.setLong(6, evBoard.getEvBoardTime());
-           ps.setInt(7, evBoard.getEvBoardStatus()); 
+           ps.setInt(2, evBoard.getEvBoardParentNo());
+           ps.setString(3, evBoard.getEvBoardContent());
+           ps.setTimestamp(4, evBoard.getEvBoardTime());
+           ps.setInt(5, evBoard.getEvBoardStatus()); 
    		result = ps.executeUpdate();
    		}finally{
    			DbUtil.dbClose( ps, con);
@@ -63,19 +61,17 @@ public class EvBoardDAO {
       /**
        * 수정하기
        */
-   public int update(EvBoard evBoard) throws SQLException {
+   public int evBoardUpdate(EvBoard evBoard) throws SQLException {
       int result=0;
       String sql = pro.getProperty("evBoardUpdate");   
    try {
          con=DbUtil.getConnection();
          ps = con.prepareStatement(sql);
          ps.setInt(1, evBoard.getEvBoardNo());
-//         ps.setEvent(2, evBoard.getEvent());
-//           ps.setUser(3, evBoard.getUser());
-           ps.setInt(4, evBoard.getEvBoardParentNo());
-           ps.setString(5, evBoard.getEvBoardContent());
-           ps.setLong(6, evBoard.getEvBoardTime());
-           ps.setInt(7, evBoard.getEvBoardStatus());
+         ps.setInt(2, evBoard.getEvBoardParentNo());
+         ps.setString(3, evBoard.getEvBoardContent());
+         ps.setTimestamp(4, evBoard.getEvBoardTime());
+         ps.setInt(5, evBoard.getEvBoardStatus()); 
            result = ps.executeUpdate();
    }finally {
       DbUtil.dbClose( ps, con);
@@ -85,7 +81,7 @@ public class EvBoardDAO {
    /**
     * 삭제하기
     */
-   public int delete (int evBoardNo ) throws SQLException {
+   public int evBoardDelete (int evBoardNo ) throws SQLException {
       int result=0;
       String sql=pro.getProperty("evBoardDelete");
       try {

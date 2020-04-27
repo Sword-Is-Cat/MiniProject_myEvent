@@ -6,7 +6,7 @@ a{
 }
 
 a.read-more:hover{
-	color: #327cbc;
+	//color: #327cbc;
 }
 
 
@@ -118,7 +118,7 @@ h2.entry-title a:hover{
 /*-- Logo --*/
 
 .navbar-brand{
-	background: #ee3b24;
+	/* background: #ee3b24; */
 }
 
 .navbar-toggler{

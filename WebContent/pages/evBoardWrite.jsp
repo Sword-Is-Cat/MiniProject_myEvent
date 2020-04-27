@@ -13,6 +13,7 @@
             font-size : 12;
             text-align :center;
         }
+      
     </style>
     
 </head>
@@ -30,14 +31,25 @@
             <td id="title">작성자</td>
             <td>${sessionScope.sessionID}</td>
         </tr>
+        <td id="title">행사종류</td>
+       		  <td><input type="radio" name="chclass" value=""/>행사종류
+        	<input type="radio" name="chclass" value=""/>행사종류
+        	<input type="radio" name="chclass" value=""/>행사종류
+        	<input type="radio" name="chclass" value=""/>행사종류
+        	<input type="radio" name="chclass" value=""/>행사종류
+        	<input type="radio" name="chclass" value=""/>행사종류
+       </td> 
             <tr>
+         	
             <td id="title">
                 제 목
             </td>
+          
             <td>
                 <input name="board_subject" type="text" size="70" maxlength="100" value=""/>
             </td>        
         </tr>
+            
         <tr>
             <td id="title">
                 내 용

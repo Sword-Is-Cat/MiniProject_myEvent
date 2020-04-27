@@ -5,14 +5,85 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8">
+	<meta charset="UTF-8">
   <title>My Event :: 행사와 함께 하는 모든 순간</title>
-<%--    <jsp:include page="header.jsp" flush="false"/>
-   <%@ include file="/jsp/include.jsp" %> --%>
-<c:import url="header.jsp"></c:import>
-</head>
-<body>
 
+   <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+   <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+	<!-- FontAwesome -->
+  <link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
+	<!-- Animation -->
+	<link rel="stylesheet" href="plugins/animate.css">
+	<!-- Prettyphoto -->
+	<link rel="stylesheet" href="plugins/prettyPhoto.css">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="plugins/owl/owl.carousel.css">
+	<link rel="stylesheet" href="plugins/owl/owl.theme.css">
+	<!-- Flexslider -->
+	<link rel="stylesheet" href="plugins/flex-slider/flexslider.css">
+	<!-- Flexslider -->
+	<link rel="stylesheet" href="plugins/cd-hero/cd-hero.css">
+	<!-- Style Swicther -->
+	<link id="style-switch" href="css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="plugins/html5shiv.js"></script>
+      <script src="plugins/respond.min.js"></script>
+    <![endif]-->
+
+  <!-- Main Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/defaultStyle.css" rel="stylesheet">
+  <!--Favicon-->
+	<link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="./images/favicon/144.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="./images/favicon/72.png">
+	<link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
+ <!-- webFont -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<style>
+	*,.title-desc,h1,h2,h3,h4,h5,h6,p {
+		//font-family: 'Noto Sans KR', sans-serif ;
+	}
+</style>
+</head>
+
+<body>
+	<div class="body-inner">
+<!--subTopMenu-->
+<div class="container">
+			<div class="cols 12">
+				<div class="subTopMenu d-flex justify-content-end">
+					<ul class="subMenu">
+					<li class="nav-item active"><a class="nav-link" href="#" role="button" href="#">로그인</a></li>
+					<li class="nav-item active"><a class="nav-link" href="#" role="button" href="#">로그아웃</a></li>
+					<li class="nav-item active"><a class="nav-link" href="#" role="button"  href="#">회원가입</a></li>
+					<li class="nav-item dropdown active">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false">
+							마이페이지
+						</a>
+						<div class="dropdown-menu" style="border: 1.5px solid #222; border-radius: 10px;">
+							<a class="dropdown-item" href="index.html">전체 신청내역</a>
+							<a class="dropdown-item" href="index-2.html">관심 행사 목록</a>
+							<a class="dropdown-item" href="index-3.html">내가 쓴 글</a>
+							<a class="dropdown-item" href="index-4.html">회원 정보 수정</a>
+						</div>
+					</li>
+				</ul>
+			</div><!--subTopMenu-->
+		</div><!--cols12 end-->
+	</div><!--container end-->
+<!--subTopMenu end-->	
+
+<c:import url="header.jsp"></c:import>
 
 <!-- Slider start -->
 <section id="home" class="p-0">
@@ -62,12 +133,10 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-	
+
 	<!--/ Main slider end -->
 </section>
 <!--/ Slider end -->
-
-
 <!-- Service box start -->
 <section id="service" class="">
 	<div class="container">
@@ -78,86 +147,98 @@
 			</div>
 		</div><!-- Title row end -->
 
-		<div class="row "><!--category row-->
-			<div class="col-md-12">
-			<div class="category-1 cols-6" style=" display: flex;justify-content: space-between;">
-			 	<div class="col-sm wow fadeInDown" data-wow-delay=".5s">
+		<div class="row "><!-- category row -->
+			<div class="col s12 mt-3 mt-xl-5" style="width: 100%;    left: auto;    right: auto;">
+            <div class="d-flex   justify-content-between category-main">
+		<div class="part1 justify-content-between" style=" width:47%; display: flex;justify-content: space-between;">
+			 	<div class="wow fadeInDown" data-wow-delay=".5s" style="width:70px">
 					<div class="service-content text-center">
-						<img src="images/category/category-business-hover2.svg"></span>
-						<h3>사업/창업</h3>
-
+						<a href="#">
+							<img src="images/category/category-business-hover2.svg"></span>
+							<h3>사업/창업</h3>
+						</a>
 					</div>
 				</div>
 				<!--/ End first service -->
 
-				<div class="col-sm wow fadeInDown" data-wow-delay=".5s">
+				<div class="wow fadeInDown" data-wow-delay=".5s" style="width:70px">
 					<div class="service-content text-center">
-						<img src="images/category/category-business-hover2.svg"></span>
-						<h3>사업/창업</h3>
+						<a href="#">
+							<img src="images/category/category-culture-hover2.svg"></span>
+							<h3>문화/예술</h3>
+						</a>
 
 					</div>
 				</div>
 				<!--/ End Second service -->
 
-				<div class="col-sm wow fadeInDown" data-wow-delay=".5s">
-					<div class="service-content text-center">
-						<img src="images/category/category-business-hover2.svg"></span>
-						<h3>사업/창업</h3>
+				<div class="wow fadeInDown" data-wow-delay=".5s" style="width:70px">
+					<div class="service-content text-center" >
+						<a href="#">
+							<img src="images/category/category-marketing-hover2.svg"></span>
+							<h3>마케팅/홍보</h3>
+						</a>
 
 					</div>
 				</div>
 				<!--/ End Third service -->
 
-				<div class="col-sm wow fadeInDown" data-wow-delay=".5s">
+				<div class="wow fadeInDown" data-wow-delay=".5s" style="width:70px">
 					<div class="service-content text-center">
-						<img src="images/category/category-business-hover2.svg"></span>
-						<h3>사업/창업</h3>
+						<a href="#">
+							<img src="images/category/category-tech-hover2.svg"></span>
+							<h3>과학/기술</h3>
+						</a>
 
 					</div>
 				</div>
+					</div><!---part1-->
+					<div class="part2 justify-content-between "  style="width:47%; display: flex;justify-content: space-between;">
 
-			 </div><!--category1 end-->
-			<div class="category-2  cols-6" style=" justify-content: space-between; display:flex;"> 
-			 	<div class="col-sm wow fadeInDown" data-wow-delay=".5s">
+			 	<div class=" wow fadeInDown" data-wow-delay=".5s" style="width:70px">
 					<div class="service-content text-center">
-						<img src="images/category/category-business-hover2.svg"></span>
-						<h3>사업/창업</h3>
+						<a href="#">
+							<img src="images/category/category-communite-hover2.svg"></span>
+							<h3>커뮤니티</h3>
+						</a>
 
 					</div>
 				</div>
 				<!--/ End first service -->
 
-				<div class="col-sm wow fadeInDown" data-wow-delay=".5s">
+				<div class="wow fadeInDown" data-wow-delay=".5s" style="width:70px">
 					<div class="service-content text-center">
-						<img src="images/category/category-business-hover2.svg"></span>
-						<h3>사업/창업</h3>
+						<a href="#">
+							<img src="images/category/category-social-hover2.svg"></span>
+							<h3>비영리/소셜</h3>
+						</a>
 
 					</div>
 				</div>
 				<!--/ End Second service -->
 
-				<div class="col-sm wow fadeInDown" data-wow-delay=".5s">
+				<div class=" wow fadeInDown" data-wow-delay=".5s" style="width:70px">
 					<div class="service-content text-center">
-						<img src="images/category/category-business-hover2.svg"></span>
-						<h3>사업/창업</h3>
-
+						<a href="#">
+							<img src="images/category/category-youth-hover2.svg"></span>
+							<h3>청춘/청년</h3>
+						</a>
 					</div>
 				</div>
 				<!--/ End Third service -->
 
-				<div class="col-sm wow fadeInDown" data-wow-delay=".5s">
-					<div class="service-content text-center">
-						<img src="images/category/category-business-hover2.svg"></span>
-						<h3>사업/창업</h3>
-
+				<div class="wow fadeInDown" data-wow-delay=".5s" style="width:70px">
+					<div class="service-content text-center" style="width:70px;">
+						<a href="#">
+							<img src="images/category/category-it-hover2.svg"></span>
+							<h3>IT/개발</h3>
+						</a>	
 					</div>
 				</div>
-
-			 </div><!--category-2 end-->
+</div>
+</div>
 			</div>
 		</div><!--category row end-->
-
-		
 		</div><!-- Content row end -->
 	</div>
 	<!--/ Container end -->
@@ -176,7 +257,7 @@
 		</div> <!-- Title row end -->
 		<!-- img start-->
 		<div class="row">
-			<div class="col-sm-3 portfolio-static-item">
+			<div class="col-sm-3 portfolio-static-item wow fadeInUp" data-wow-delay=".5s">
 				<div class="grid">
 					<figure class="m-0 effect-oscar">
 						<img src="images/thumnail/01.jpg" alt="">
@@ -188,14 +269,14 @@
 					</figure>
 					<div class="portfolio-static-desc">
 						<h3>이벤터스 웨비나, 하루만에 뽀개기!</h3>
-						<span><a href="#">Illustrations</a></span>
+						<span><a href="#"></a></span>
 					</div>
 				</div>
 				<!--/ grid end -->
 			</div>
 			<!--/ item 1 end -->
 
-			<div class="col-sm-3 portfolio-static-item">
+			<div class="col-sm-3 portfolio-static-item  wow fadeInUp" data-wow-delay="1s">
 				<div class="grid">
 					<figure class="m-0 effect-oscar">
 						<img src="images/thumnail/02.jpg" alt="">
@@ -207,14 +288,14 @@
 					</figure>
 					<div class="portfolio-static-desc">
 						<h3>[플리토] 외국계 취업 컨설턴트 '마차카피'의 합격하는 레쥬메 & 커버레터</h3>
-						<span><a href="#">Webdesign</a></span>
+						<span><a href="#"></a></span>
 					</div>
 				</div>
 				<!--/ grid end -->
 			</div>
 			<!--/ item 2 end -->
 
-			<div class="col-sm-3 portfolio-static-item">
+			<div class="col-sm-3 portfolio-static-item wow fadeInUp" data-wow-delay="1.4s">
 				<div class="grid">
 					<figure class="m-0 effect-oscar">
 						<img src="images/thumnail/03.jpg" alt="">
@@ -226,14 +307,14 @@
 					</figure>
 					<div class="portfolio-static-desc">
 						<h3>[드림플러스 월간 IT 트렌드] 언택트, 뉴 노멀의 시대</h3>
-						<span><a href="#">Ui Elements</a></span>
+						<span><a href="#"> </a></span>
 					</div>
 				</div>
 				<!--/ grid end -->
 			</div>
 			<!--/ item 3 end -->
 
-			<div class="col-sm-3 portfolio-static-item">
+			<div class="col-sm-3 portfolio-static-item  wow fadeInUp" data-wow-delay="1.6s">
 				<div class="grid">
 					<figure class="m-0 effect-oscar">
 						<img src="images/thumnail/04.jpg" alt="">
@@ -245,7 +326,7 @@
 					</figure>
 					<div class="portfolio-static-desc">
 						<h3>렉처시리즈#1(작은 팀으로 큰 일을 한다는 것)</h3>
-						<span><a href="#">Media Elements</a></span>
+						<span><a href="#"> </a></span>
 					</div>
 				</div>
 				<!--/ grid end -->
@@ -270,7 +351,7 @@
 		</div> <!-- Title row end -->
 		<!-- img start-->
 		<div class="row">
-			<div class="col-sm-3 portfolio-static-item">
+			<div class="col-sm-3 portfolio-static-item  wow fadeInUp" data-wow-delay=".5s">
 				<div class="grid">
 					<figure class="m-0 effect-oscar">
 						<img src="images/thumnail/01.jpg" alt="">
@@ -282,14 +363,14 @@
 					</figure>
 					<div class="portfolio-static-desc">
 						<h3>이벤터스 웨비나, 하루만에 뽀개기!</h3>
-						<span><a href="#">Illustrations</a></span>
+						<span><a href="#"></a></span>
 					</div>
 				</div>
 				<!--/ grid end -->
 			</div>
 			<!--/ item 1 end -->
 
-			<div class="col-sm-3 portfolio-static-item">
+			<div class="col-sm-3 portfolio-static-item  wow fadeInUp" data-wow-delay="1s">
 				<div class="grid">
 					<figure class="m-0 effect-oscar">
 						<img src="images/thumnail/02.jpg" alt="">
@@ -301,14 +382,14 @@
 					</figure>
 					<div class="portfolio-static-desc">
 						<h3>[플리토] 외국계 취업 컨설턴트 '마차카피'의 합격하는 레쥬메 & 커버레터</h3>
-						<span><a href="#">Webdesign</a></span>
+						<span><a href="#"></a></span>
 					</div>
 				</div>
 				<!--/ grid end -->
 			</div>
 			<!--/ item 2 end -->
 
-			<div class="col-sm-3 portfolio-static-item">
+			<div class="col-sm-3 portfolio-static-item  wow fadeInUp" data-wow-delay="1.4s">
 				<div class="grid">
 					<figure class="m-0 effect-oscar">
 						<img src="images/thumnail/03.jpg" alt="">
@@ -320,14 +401,14 @@
 					</figure>
 					<div class="portfolio-static-desc">
 						<h3>[드림플러스 월간 IT 트렌드] 언택트, 뉴 노멀의 시대</h3>
-						<span><a href="#">Ui Elements</a></span>
+						<span><a href="#"></a></span>
 					</div>
 				</div>
 				<!--/ grid end -->
 			</div>
 			<!--/ item 3 end -->
 
-			<div class="col-sm-3 portfolio-static-item">
+			<div class="col-sm-3 portfolio-static-item  wow fadeInUp" data-wow-delay="1.6s">
 				<div class="grid">
 					<figure class="m-0 effect-oscar">
 						<img src="images/thumnail/04.jpg" alt="">
@@ -339,7 +420,7 @@
 					</figure>
 					<div class="portfolio-static-desc">
 						<h3>렉처시리즈#1(작은 팀으로 큰 일을 한다는 것)</h3>
-						<span><a href="#">Media Elements</a></span>
+						<span><a href="#"></a></span>
 					</div>
 				</div>
 				<!--/ grid end -->
@@ -353,7 +434,6 @@
 	<!--/ Container end -->
 </section>
 <!--/ Feature box end -->
-
 
 <section id="image-block" class="my-xl-6 my-5">
             <div class="container">
@@ -373,10 +453,7 @@
             </div>
         </section>
 <!--/ Image block end -->
-
-
-
-	<!--공지사항 start-->
+<!--공지사항 start-->
     <div class="footer-copyright white hide-on-small-only" style="padding:15px 0;border-top: 1px solid #e5e5e5;border-bottom: 1px solid #e5e5e5">
         <div class="container main-container">
             <div class="row">

@@ -1,13 +1,17 @@
 package kosta.mvc.controller;
 
+import java.sql.Timestamp;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
+import kosta.mvc.model.dao.EventDAO;
 import kosta.mvc.vo.Category;
 import kosta.mvc.vo.Channel;
+import kosta.mvc.vo.EvTime;
 import kosta.mvc.vo.Event;
 
 public class CreateEventController implements Controller {
@@ -22,34 +26,30 @@ public class CreateEventController implements Controller {
 
 		MultipartRequest m = new MultipartRequest(request, saveDir, maxSize, encoding, new DefaultFileRenamePolicy());
 
-		String eventName = m.getParameter("eventName");
+		String evName = m.getParameter("eventName");
 		int cateNo = Integer.parseInt(m.getParameter("cateNo"));
 		int chNo = Integer.parseInt(m.getParameter("chNo"));
 		int evBookMax = Integer.parseInt(m.getParameter("evBookMax"));
-		String description = m.getParameter("description");
-		String evBookStartDate = m.getParameter("evBookStartDate");
-		String evBookStartTime = m.getParameter("evBookStartTime");
-		String evBookEndDate = m.getParameter("evBookEndDate");
-		String evBookEndTime = m.getParameter("evBookEndTime");
-		String evStartDate = m.getParameter("evStartDate");
-		String evStartTime = m.getParameter("evStartTime");
-		String evEndDate = m.getParameter("evEndDate");
-		String evEndTime = m.getParameter("evEndTime");
+		String evDescription = m.getParameter("description");
+		String evBookStarts = m.getParameter("evBookStart");
+		String evBookEnds = m.getParameter("evBookEnd");
+		String evStarts = m.getParameter("evStart");
+		String evEnds = m.getParameter("evEnd");
 		String postalCode = m.getParameter("postalCode");
 		String roadAddress = m.getParameter("roadAddress");
 		String jibunAddress = m.getParameter("jibunAddress");
 		String detailAddress = m.getParameter("detailAddress");
 		String extraAddress = m.getParameter("extraAddress");
+		String evPhone = m.getParameter("evPhone");
+		String evEmail = m.getParameter("evEmail");
 		String evAddr = "";
 
-		if (eventName == null || eventName.equals("") || description == null
-				|| description.equals("") || evStartDate == null || evStartDate.equals("") || evStartTime == null
-				|| evStartTime.equals("") || evEndDate == null || evEndDate.equals("") || evEndTime == null
-				|| evEndTime.equals("")) {
+		if (evName == null || evName.equals("") || evDescription == null || evDescription.equals("") || evStarts == null
+				|| evStarts.equals("") || evEnds == null || evEnds.equals("")) {
 
-			throw new RuntimeException("입력값이 부족합니다");
+			throw new RuntimeException("입력값부족");
 		}
-		
+
 		Category category = new Category();
 		category.setCateNo(cateNo);
 		Channel channel = new Channel();
@@ -61,14 +61,27 @@ public class CreateEventController implements Controller {
 			evAddr = postalCode + roadAddress + detailAddress + extraAddress;
 		}
 
-		if (evBookStartDate == null || evBookStartDate.equals("") || evBookStartTime == null
-				|| evBookStartTime.equals("") || evBookEndDate == null || evBookEndDate.equals("")
-				|| evBookEndTime == null || evBookEndTime.equals("")) {
+		Timestamp evStart = Timestamp.valueOf(evStarts);
+		Timestamp evEnd = Timestamp.valueOf(evEnds);
+		Timestamp evBookStart;
+		Timestamp evBookEnd;
 
-			
+		if (evBookStarts == null || evBookStarts.equals("")) {
+			evBookStart = new Timestamp(System.currentTimeMillis());
+		} else {
+			evBookStart = Timestamp.valueOf(evBookStarts);
+
+		}
+		if (evBookEnds == null || evBookEnds.equals("")) {
+			evBookEnd = evStart;
+		} else {
+			evBookEnd = Timestamp.valueOf(evBookEnds);
 		}
 
-		Event event = new Event();
+		EvTime evTime = new EvTime(evStart, evEnd, evBookStart, evBookEnd);
+
+		Event event = new Event(category, channel, evName, evAddr, evBookMax, evDescription, null, null, evPhone,
+				evEmail, evTime);
 
 		if (m.getFilesystemName("evImage") != null) {
 			event.setEvImg(m.getFilesystemName("evImage"));
@@ -78,7 +91,8 @@ public class CreateEventController implements Controller {
 			event.setEvImgDetail(m.getFilesystemName("evImageDetail"));
 		}
 
-//		EventsService.insert(event);
+		new EventDAO().insertEvent(event);
+
 		ModelAndView mv = new ModelAndView(true, "front");
 		return mv;
 	}
