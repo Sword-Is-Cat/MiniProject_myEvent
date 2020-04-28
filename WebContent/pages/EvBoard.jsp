@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>My Event :: Çà»ç¿Í ÇÔ²² ÇÏ´Â ¸ğµç ¼ø°£</title>
+  <title>My Event :: í–‰ì‚¬ì™€ í•¨ê»˜ í•˜ëŠ” ëª¨ë“  ìˆœê°„</title>
 
    <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,8 +60,6 @@
         }
     </style>
     
-    
-   
     <script type="text/javascript">
         function evBoardWrite(){
             location.href="evBoardWrite.jsp";
@@ -70,55 +68,75 @@
     
 </head>
 <body>    
-
  <c:import url="headerTop.jsp"/>
 <!--subTopMenu end-->	
 
 <c:import url="header.jsp"></c:import>
-<!--                                start              -->
-		
-<!-- 		<div id="evboard" > -->
-<%--         <c:if test="${sessionScope.sessionID!=null}"> --%>
 
-          
-<%--         </c:if>     --%>
-<!--     </div> -->
-<form>
-<div class="container">
-	
 
-<input  type="button" value="±Û¾²±â" OnClick="window.location='evBoardWrite.jsp'">
-
-</div>	
-    
-    </form>
+<div id="wrap">
+    <br>
+    <div id="evboard">
+        <c:if test="${sessionScope.sessionID!=null}">
+            <input type="button" value="ê¸€ì“°ê¸°" onclick="evBoardWrite()"; >
+        
+        </c:if>    
+    </div>
     <br>
     <div id="board">
-        <table align="center" id="bList" width="500" border="3" bordercolor="lightgray">
+        <table id="bList" width="800" border="3" bordercolor="lightgray">
             <tr heigh="30">
-                <td width="80">±Û¹øÈ£</td>
-                 <td>¾ÆÀÌµğ</td>
-                <td >³»¿ë</td>
-                <td>½Ã°£</td>
-                
+                <td>ê¸€ë²ˆí˜¸</td>
+                 <td>ì¢…ë¥˜</td>
+                <td>ì œëª©</td>
+                <td>ì‘ì„±ì</td>
+                <td>ì‘ì„±ì¼</td>
+                <td>ì¡°íšŒìˆ˜</td>
             </tr>    
            
         </table>
     </div>
+    <tbody>
+			<c:choose>
+			    
+				<c:otherwise>
+			<c:forEach items="${list}"  var="notice" varStatus="state">
+			<tr class="accordion-toggle" data-toggle="collapse" data-target="#no${EvBoard.no}" >
+				<td>${EvBoard.no}</td>
+				<td>${EvBoard.title}</td>
+				<td>${EvBoard.user}</td>
+				<td>${EvBoard.date}</td>
+<%-- 				<td>${EvBoard.}</td> --%>
+<%-- 				<td>${EvBoard.delete}</td> --%>
+				
+				
+				
+			</tr>
+			<tr class="accordion-body collapse" id="no5">
+				<td></td>
+				<td >${EvBoard.contents}</td>
+				<td></td>
+				
+			</tr>
+        	</c:forEach>
+        	</c:otherwise>
+        </c:choose>
+		</tbody>
 		
+	</table>
+    <br>
 
-
-
-    
-        <form align="center">
+    <br>
+    <div id="evb">
+        <form>
             <select name="opt">
-            	<option value="1">ÀüÃ¼</option>
-                <option value="2">±Û¹øÈ£</option>
-                <option value="3">Á¦¸ñ</option>
-                <option value="4">ÀÛ¼ºÀÚ</option>
+            	<option value="1">ì „ì²´${evBoardAll }</option>
+                <option value="2">ê¸€ë²ˆí˜¸${evBoardNo }</option>
+                <option value="3">ì œëª©${evBoardtitle }</option>
+                <option value="4">ì‘ì„±ì${evBoardUser }</option>
             </select>
             <input type="text" size="20" name="condition"/>&nbsp;
-            <input type="submit" value="°Ë»ö"/>
+            <input type="submit" value="ê²€ìƒ‰"/>
         </form>    
     </div>
 </div>       
