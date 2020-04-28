@@ -54,7 +54,7 @@
   			location.href="${pageContext.request.contextPath}/pages/index.jsp";
   		}
 
-  	}});
+  	});
 </script>
 
 </head>
