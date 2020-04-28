@@ -18,5 +18,30 @@ form{
 	color: #8d71dd!important;
 	text-align:center;
 }
+.login-btn {
+        width: 100%;
+        line-height: 50px;
+        height: 50px;
+    }
 
+    .input-field .prefix ~ input {
+        margin-left: 0;
+        padding-left: 3rem;
+    }
+.form-control.fcMyEvent {
+	border-radius: 5px;
+}
+
+.btn.btn-info {
+    	border-radius: 5px!important;
+    	padding: 12px 30px!important;
+    	background-color:#5c3fbf!important;
+    	border-color:#5c3fbf!important;
+    	width:100%;
+    }
+
+    button:focus {
+        outline: none;
+        background-color: #ffffff;
+    }
 
