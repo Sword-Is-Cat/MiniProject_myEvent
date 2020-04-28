@@ -52,9 +52,10 @@ public class ChannelService {
 		
 	}
 
-	public static List<Channel> manageChannel() throws SQLException {
-		List<Channel> list = ChanDAO.manageChannel();
-		return list;
+	public static List<Channel> manageChannel(int userNo) throws SQLException {
+		List<Channel> dbChannel = ChanDAO.manageChannel(userNo);
+		if(dbChannel==null) throw new SQLException("채널이 없습니다.");
+		return dbChannel;
 	}
 
 }

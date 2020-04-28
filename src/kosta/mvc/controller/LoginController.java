@@ -12,19 +12,23 @@ public class LoginController implements Controller {
 	UsersDAO usersDAO = new UsersDAO();
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String userId = request.getParameter("userId");
-		String userPwd = request.getParameter("userPwd");
+		String userId = request.getParameter("userId").toLowerCase();
+		String userPwd = request.getParameter("userPwd").toLowerCase();
 		
 		User dbUser = usersDAO.selectById(userId);
+		
 		//아이디가 없을떄 
 		if(dbUser == null) return new ModelAndView(true, request.getContextPath()+"/pages/loginFail.jsp");
 		
-		String dbUserId = dbUser.getUserId();
-		String dbUserPwd = dbUser.getUserPwd();
+		String dbUserId = dbUser.getUserId().toLowerCase();
+		String dbUserPwd = dbUser.getUserPwd().toLowerCase();
 		
+		System.out.println(userId+":"+userPwd+":"+dbUserId+":"+dbUserPwd);
 		if(userId.equals(dbUserId) && userPwd.equals(dbUserPwd)) {
 			//session에 값들 추가
 			HttpSession session = request.getSession();
+			session.setAttribute("userNo", dbUser.getUserNo());
+			session.setAttribute("userId", dbUser.getUserId());
 			session.setAttribute("userName", dbUser.getUserName());
 			session.setAttribute("status", dbUser.getUserStatus());			
 			 

@@ -1,3 +1,6 @@
+<%@page import="java.util.List"%>
+<%@page import="kosta.mvc.service.ChannelService"%>
+<%@page import="kosta.mvc.vo.Channel"%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -63,7 +66,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
+	<!-- <!-- 지혜 js -->
+	<script language=javascript>
+	function sendUpdate(){//수정폼
+		document.requestForm.key.value ="updateChannel";
+		document.requestForm.submit();
+	}
 
+	function sendDelete(){//삭제
+		
+		document.requestForm.key.value ="deleteChannel";
+		document.requestForm.submit();
+	}
+	</script> -->
   <!-- ** Plugins Needed for the Project ** -->
 
   <!-- Bootstrap -->
@@ -178,7 +193,12 @@
 
 <section id="main-container">
 
- 
+ 		<!-- channel list start -->
+ 		
+ 		<%
+ 		int userNo = (int)session.getAttribute("userNo");
+ 		List<Channel> chList = ChannelService.manageChannel(userNo); 
+ 		%>
 
 		<!-- channel manage top -->
 
@@ -224,7 +244,7 @@
 
 				<span class="title-icon classic float-left"><i class="fa fa-users"></i></span>
 
-				<h4 class="title classic">채널이름</h4>
+				<h4 class="title classic">${channel.chName}</h4>
 
 			</div>
 
@@ -277,7 +297,15 @@
 			<div class="col-md-9 col-sm-6">
 
 			<div id="chDesc" class="team team-list wow slideInRight">
-
+			<%-- <!-- 지혜 연습 -->
+				<!-- 수정시 필요한 데이터들을 hidden으로 숨겨놓고 폼 데이터로 보내준다. -->
+				<form name="requestForm" method=post action="<%=request.getContextPath() %>/front">
+				<input type=hidden name="chNo" value="${channel.chNo}">
+				<input type=hidden name="key" value="">
+				<input type=button value="수정하기" onClick="sendUpdate()">
+				<input type=button value="삭제하기" onClick="sendDelete()">
+				</form>
+			<!-- 지혜 연습 끝 --> --%>
 				<h4>개설행사: n개</h4>
 				<div class="cd-full-width btnOpen">
 

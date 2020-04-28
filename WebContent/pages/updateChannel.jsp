@@ -92,8 +92,8 @@
 
 				<div class="row">
 					<div class="col-md-7">
-						<form id="contact-form" action="contact-form.php" method="post"
-							role="form">
+						<form id="contact-form" action="../front?key=updateChannel" method="post"
+							role="form" enctype="multipart/form-data">
 							<div class="row">
 								<div class="col-md-8">
 									<div class="form-group">

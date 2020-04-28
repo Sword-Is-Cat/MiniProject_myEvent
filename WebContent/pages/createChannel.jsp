@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%> 
 
@@ -65,12 +65,12 @@
 		<!-- Subpage title start -->
 		<div class="banner-title-content">
 			<div class="text-center">
-				<h2>Ã¤³Î »ý¼º</h2>
+				<h2>ì±„ë„ ìƒì„±</h2>
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb justify-content-center">
-						<li class="breadcrumb-item"><a href="#"> È¨À¸·Î </a></li>
+						<li class="breadcrumb-item"><a href="#"> í™ˆìœ¼ë¡œ </a></li>
 						<li class="breadcrumb-item text-white" aria-current="page">
-							Ã¤³Î »ý¼º</li>
+							ì±„ë„ ìƒì„±</li>
 					</ol>
 				</nav>
 			</div>
@@ -97,14 +97,14 @@
 							<div class="row">
 								<div class="col-md-8">
 									<div class="form-group">
-										<label> Ã¤³Î¸í </label> <input class="form-control" name="chName"
+										<label> ì±„ë„ëª… </label> <input class="form-control" name="chName"
 											id="name" placeholder="" type="text" required>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label> °³¼³ÀÚ </label> <input class="form-control" name="userNo"
-											type="text" required="required" value='${userNo}' readonly/>
+										<label> ê°œì„¤ìž </label> <input class="form-control" name="userNo"
+											type="text" required="required" value='${sessionScope.userNo}' readonly/>
 											
 									</div>
 								</div>
@@ -112,34 +112,34 @@
 							<div class="row">
 								<div class="col-md-4">
 									<div class="form-group">
-										<label> Ã¤³Î ÀÌ¹ÌÁö </label> <input type="file" name="chImg"
+										<label> ì±„ë„ ì´ë¯¸ì§€ </label> <input type="file" name="chImg"
 											id="file" accept="image/gif, image/jpeg, image/png">
 									</div>
 								</div>
 							</div>
 							<div class="form-group">
-								<label> Ã¤³Î ¼³¸í </label>
+								<label> ì±„ë„ ì„¤ëª… </label>
 								<textarea class="form-control" name="chDescription" id="chDescription"
 									placeholder="" rows="10" required></textarea>
 							</div>
 							<div class="text-right">
 								<br>
 								<button class="btn btn-primary solid blank" type="submit">
-									Ã¤³Î »ý¼º ½ÅÃ»</button>
+									ì±„ë„ ìƒì„± ì‹ ì²­</button>
 							</div>
 						</form>
 					</div>
 
 					<div class="col-md-5">
 						<div class="contact-info">
-							<h2><br>ÁÖÀÇ »çÇ×<br><br></h2>
+							<h2><br>ì£¼ì˜ ì‚¬í•­<br><br></h2>
 							<p>
 							<ul>
-								<li>Ã¤³Î¸íÀº ÇÑ±Û 15ÀÚ±îÁö ÀÔ·Â</li><br>
-								<li>ÀÌ¹ÌÁö´Â *** Mb ±îÁö ¾÷·Îµå</li><br>
-								<li>ÀÌ¹ÌÁö´Â jpg, png, gif ÆÄÀÏ¸¸ µî·ÏÇÒ ¼ö ÀÖ½À´Ï´Ù</li><br>
-								<li>Ã¤³Î ¼³¸íÀº ÇÑ±Û 250ÀÚ±îÁö ÀÔ·Â</li><br>
-								<li>ÇÒ¸»ÀÌ ´õ ÀÖ´ø°¡¿ä</li>
+								<li>ì±„ë„ëª…ì€ í•œê¸€ 15ìžê¹Œì§€ ìž…ë ¥</li><br>
+								<li>ì´ë¯¸ì§€ëŠ” *** Mb ê¹Œì§€ ì—…ë¡œë“œ</li><br>
+								<li>ì´ë¯¸ì§€ëŠ” jpg, png, gif íŒŒì¼ë§Œ ë“±ë¡í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤</li><br>
+								<li>ì±„ë„ ì„¤ëª…ì€ í•œê¸€ 250ìžê¹Œì§€ ìž…ë ¥</li><br>
+								<li>í• ë§ì´ ë” ìžˆë˜ê°€ìš”</li>
 							</ul>
 							</p>
 

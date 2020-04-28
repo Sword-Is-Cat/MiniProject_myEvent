@@ -12,12 +12,13 @@ public class ManageChannelController implements Controller {
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		List<Channel> list = ChannelService.manageChannel();
-		request.setAttribute("list", list);
+		int userNo = Integer.parseInt(request.getParameter("userNo"));
 		
+		List<Channel> channel = ChannelService.manageChannel(userNo);
+		request.setAttribute("channel", channel);
 		ModelAndView mv = new ModelAndView();
-		mv.setRedirect(true);
-		mv.setViewName("/pages/ChannelMng.jsp");
+		mv.setViewName("/pages/channelMng.jsp");
+		
 		return mv;
 	}
 

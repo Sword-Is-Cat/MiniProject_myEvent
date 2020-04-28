@@ -46,7 +46,7 @@
   <link href="css/style.css" rel="stylesheet">
   
   <!-- SignUp.css -->
-  <link rel="stylesheet" href="css/signUp.css">
+  <link rel="stylesheet" href="pages/css/userInfoUpdate.css">
   
   <!--Favicon-->
 	<link rel="icon" href="img/favicon/favicon-32x32.png" type="image/x-icon" />
@@ -57,7 +57,22 @@
   <!-- KAKAO 주소 API -->
 	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	
-	<script src="js/signUp.js"></script>
+	<script src="pages/js/userInfoUpdate.js"></script>
+	<script>
+		$(function(){
+			$('#userName').val('${requestScope.user.userName}');
+			$('#postalCode').val('${requestScope.userAddr[0]}');
+			$('#roadAddress').val('${requestScope.userAddr[1]}');
+			$('#extraAddress').val('${requestScope.userAddr[2]}');
+			$('#detailAddress').val('${requestScope.userAddr[3]}');
+			$('#userPhone').val('${requestScope.user.userPhone}');
+			$('#userEmail').val('${requestScope.user.userEmail}');
+		});
+		
+		//기존값들 설정
+		
+
+	</script>
 	  
 </head>
 
@@ -180,7 +195,7 @@
 	<!-- Subpage title start -->
 	<div class="banner-title-content">
 		<div class="text-center">
-			<h2>회원가입</h2>
+			<h2>내 정보 수정</h2>
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb justify-content-center">
 					<li class="breadcrumb-item"><a href="#">모든 행사를</a></li>
@@ -191,13 +206,10 @@
 	</div><!-- Subpage title end -->
 </div><!-- Banner area end -->
 
-<!-- Portfolio start -->
+<!-- 회원정보 변경 -->
 <section id="main-container" class="portfolio portfolio-box">
 	<div class="container">
-		<form class="contact-form" id="signUpForm" action="${pageContext.request.contextPath}/front" method="post"><!-- SignUp Form start -->
-			<label class="textLabel" for="userId">아이디</label>
-			<input class="form-control form-control-lg col-lg-4 col-md-4 col-sm-8 col-xs-8" id="userId" name="userId" placeholder="아이디를 입력해 주세요" type="text">
-			<button class="btn btn-primary solid blank" id="idChk" type="button">아이디 중복체크</button> <br>
+		<form class="contact-form" id="userInfoUpdateForm" action="${pageContext.request.contextPath}/front" method="post"><!-- userInfoUpdate Form start -->
 			<label class="textLabel" for="userPwd">비밀번호</label>
 			<input class="form-control form-control-lg col-lg-4 col-md-4 col-sm-8 col-xs-8" id="userPwd" name="userPwd" placeholder="비밀번호를 입력해 주세요" type="password">
 			<span id="userPwdChkResult">비밀번호를 확인해 주세요</span><br>			
@@ -207,7 +219,7 @@
 			<input class="form-control form-control-lg col-lg-4 col-md-4 col-sm-8 col-xs-8" id="userName" name="userName" placeholder="이름을 입력해 주세요" type="text"><br>
 			<!-- 주소 -->
 			<label class="textLabel" for="postalcode">주소</label><br>
-			<input type="text" id="postcode" name="postalCode" placeholder="우편번호" readonly>
+			<input type="text" id="postalCode" name="postalCode" placeholder="우편번호" readonly>
 			<input type="button" id="userAddrBtn" value="우편번호 찾기"><br>
 			<input class="col-lg-4 col-md-4 col-sm-8 col-xs-8" id="roadAddress" name="reaodAddress" placeholder="도로명주소" type="text" readonly>
 			<span id="guide" style="color:#999;display:none"></span>
@@ -229,14 +241,13 @@
 					<label for="cate${category.cateNo}">${category.cateName}</label>
 				</c:forEach>
 			</fieldset>			
-			<input type="hidden" name="key" value="signUp">
+			<input type="hidden" name="key" value="userInfoUpdate">
 			<input type="hidden" name="cateCount" value="<%=cateList.size()%>"><!-- 카테고리 카운트 value에 넣어야함 -->
 			<br>
-			<button class="btn btn-primary solid blank" id="submit" type="submit" disabled>아이디 중복체크를 해주세요</button> 
-
-		</form><!-- SignUp Form end -->
+			<button class="btn btn-primary solid blank" id="submit" type="submit" disabled>아이디 중복체크를 해주세요</button>
+		</form><!-- userInfoUpdate Form end -->
 	</div><!-- Container end -->
-</section><!-- Portfolio end -->
+</section><!-- 회원정보 변경 end -->
 
 <div class="gap-40"></div>
 
@@ -342,7 +353,6 @@
 	        </form>
 	      </div>
 	      <!--/ end about us -->
-
 	    </div><!-- Row end -->
 	  </div><!-- Container end -->
 	</footer><!-- Footer end -->
