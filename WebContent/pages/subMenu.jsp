@@ -5,6 +5,9 @@
 <html>
 <head>
 <meta charset="utf-8">
+<!-- jQuery -->
+<script src="plugins/jQuery/jquery.min.js"></script>
+<script src="./js/subMenu.js" ></script>
 
 <style>
 .menuSubnav{
@@ -48,7 +51,15 @@
         color: #5c3fbf !important;
     }
 
-    .mypage-topnav__tab--active {
+  /*   .mypage-topnav__tab--active {
+        width: 168px;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 20px;
+        background-color: white;
+        border-bottom: 3px solid #ffc200;
+    } */
+    .subMenuActive {
         width: 168px;
         font-size: 18px;
         font-weight: bold;
@@ -66,17 +77,22 @@
                 <div class="col s12 ">
                     <div class="mypage-topnav d-flex flex-row justify-content-start">
                         <div class="mypage-topnav__tab">
-                            <a href="channelMng.jsp">
+                            <a class="subMenuList" href="channelMng.jsp">
                                채널 관리
                             </a>
                         </div>
                         <div class="mypage-topnav__tab ">
-                            <a href="bookHistory.jsp" >
+                            <a class="subMenuList"  href="bookHistory.jsp" >
                                신청 행사 목록
                             </a>
                         </div>
+                        <div class="mypage-topnav__tab ">
+                            <a class="subMenuList"  href="interestEvent.jsp" >
+                               관심 행사 목록
+                            </a>
+                        </div>
                         <div class="mypage-topnav__tab">
-                            <a href="userInfoUpdate.jsp">
+                            <a class="subMenuList"  href="userInfoUpdate.jsp">
                                 회원정보 설정
                             </a>
                         </div>

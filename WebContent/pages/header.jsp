@@ -6,42 +6,6 @@
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-  <title>My Event :: ���ъ�� �④� ���� 紐⑤�� ��媛�</title>
-
-   <!-- mobile responsive meta -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-   <!-- ** Plugins Needed for the Project ** -->
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
-  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-	<!-- FontAwesome -->
-  <link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
-	<!-- Animation -->
-	<link rel="stylesheet" href="plugins/animate.css">
-	<!-- Prettyphoto -->
-	<link rel="stylesheet" href="plugins/prettyPhoto.css">
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="plugins/owl/owl.carousel.css">
-	<link rel="stylesheet" href="plugins/owl/owl.theme.css">
-	<!-- Flexslider -->
-	<link rel="stylesheet" href="plugins/flex-slider/flexslider.css">
-	<!-- Flexslider -->
-	<link rel="stylesheet" href="plugins/cd-hero/cd-hero.css">
-	<!-- Style Swicther -->
-	<link id="style-switch" href="css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
-
-	<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-    <!--[if lt IE 9]>
-      <script src="plugins/html5shiv.js"></script>
-      <script src="plugins/respond.min.js"></script>
-    <![endif]-->
-
-  <!-- Main Stylesheet -->
-  <link href="css/style.css" rel="stylesheet">
-  
-
 <style>
 	 *,.title-desc,h1,h2,h3,h4,h5,h6,p {
 		font-family: 'Noto Sans KR', sans-serif ;

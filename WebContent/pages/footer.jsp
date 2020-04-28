@@ -31,14 +31,14 @@
 
 	        <div class="latest-post-items media">
 	          <div class="latest-post-content media-body">
-	            <h4><a href="about.jsp">서비스소개</a></h4>
+	            <h4><a href="about.jsp" onclick="alert('준비중입니다.');return false;">서비스소개</a></h4>
 	           
 	          </div>
 	        </div><!-- 2nd Latest Post end -->
 
 	        <div class="latest-post-items media">
 	          <div class="latest-post-content media-body">
-	            <h4><a href="#">호스트센터</a></h4>
+	            <h4><a href="#" onclick="alert('준비중입니다.');return false;">호스트센터</a></h4>
 	          </div>
 	        </div><!-- 3rd Latest Post end -->
 	        <div class="latest-post-items media">
@@ -48,7 +48,7 @@
 	        </div><!-- 3rd Latest Post end -->
 	        <div class="latest-post-items media">
 	          <div class="latest-post-content media-body">
-	            <h4><a href="#">자주묻는질문</a></h4>
+	            <h4><a href="EvBoard.jsp">자주묻는질문</a></h4>
 	          </div>
 	        </div><!-- 3rd Latest Post end -->
 
