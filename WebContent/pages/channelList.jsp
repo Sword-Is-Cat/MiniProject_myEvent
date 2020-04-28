@@ -105,7 +105,7 @@
 					<figure class="m-0 effect-oscar">
 						<img class="chImg" src="https://eventusstorage.blob.core.windows.net/evs/Image/event/16764/ProjectInfo/Cover/e3f492fb160d420ca4483e56964b710d.jpg?fixed" alt="">
 						<figcaption>
-							<a class="view icon-pentagon" data-rel="prettyPhoto" href="front?key=channelDetail&chNo=${channel.chNo}"><i
+							<a class="view icon-pentagon" data-rel="prettyPhoto" href="${pageContext.request.contextPath}/front?key=channelDetail&chNo=${channel.chNo}"><i
 									class="fa fa-search"></i></a>
 						</figcaption>
 					</figure>

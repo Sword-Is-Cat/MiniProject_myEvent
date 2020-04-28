@@ -39,7 +39,7 @@ public class EventDAO {
 
 		String sql = pro.getProperty("insertEvent");
 		String sql2 = pro.getProperty("insertEventTime");
-		int[] result = {0,0};
+		int result = 0;
 		try {
 			con = DbUtil.getConnection();
 			ps = con.prepareStatement(sql);
@@ -65,12 +65,18 @@ public class EventDAO {
 			ps.setTimestamp(4, event.getEvTime().getEvBookEndTime());
 
 			ps.executeUpdate();
+			
+			ps = con.prepareStatement("select evseq.currval from dual");
+			rs = ps.executeQuery();
+			
+			if(rs.next())
+				result = rs.getInt(1);
 
 		} finally {
-			DbUtil.dbClose(ps, con);
+			DbUtil.dbClose(rs, ps, con);
 		}
 
-		return result[0];
+		return result;
 	}
 
 	public int updateEvent(Event event) throws Exception {
@@ -201,7 +207,7 @@ public class EventDAO {
 				category = new Category(rs.getInt("cateNo"), rs.getString("cateName"));
 				user = new User(rs.getInt("userNo"), rs.getString("userName"), rs.getString("userPwd"),
 						rs.getString("userName"), rs.getString("userAddr"), rs.getString("userPhone"),
-						rs.getString("userEmaill"), rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
+						rs.getString("userEmail"), rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
 				channel = new Channel(rs.getInt("chNo"), user, rs.getString("chName"), rs.getString("chImg"),
 						rs.getInt("chStatus"), rs.getString("chDescription"));
 				evTime = new EvTime(rs.getInt("evNo"), rs.getTimestamp("evCreateTime"), rs.getTimestamp("evStartTime"),
