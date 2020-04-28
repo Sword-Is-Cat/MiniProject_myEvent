@@ -81,13 +81,17 @@
 			<label class="textLabel" for="userId">아이디</label>
 			<input class="form-control form-control-lg col-lg-4 col-md-4 col-sm-8 col-xs-8" id="userId" name="userId" placeholder="아이디를 입력해 주세요" type="text">
 			<button class="btn btn-primary solid blank" id="idChk" type="button">아이디 중복체크</button> <br>
+			
 			<label class="textLabel" for="userPwd">비밀번호</label>
 			<input class="form-control form-control-lg col-lg-4 col-md-4 col-sm-8 col-xs-8" id="userPwd" name="userPwd" placeholder="비밀번호를 입력해 주세요" type="password">
+			
 			<span id="userPwdChkResult">비밀번호를 확인해 주세요</span><br>			
 			<label class="textLabel" for="userPwdChk">비밀번호 확인</label>
 			<input class="form-control form-control-lg col-lg-4 col-md-4 col-sm-8 col-xs-8" id="userPwdChk" name="userPwdChk" placeholder="비밀번호 확인해 주세요" type="password">
+			
 			<label class="textLabel" for="userName">이름</label>
 			<input class="form-control form-control-lg col-lg-4 col-md-4 col-sm-8 col-xs-8" id="userName" name="userName" placeholder="이름을 입력해 주세요" type="text"><br>
+			
 			<!-- 주소 -->
 			<label class="textLabel" for="postalcode">주소</label><br>
 			<input type="text" id="postcode" name="postalCode" placeholder="우편번호" readonly>
