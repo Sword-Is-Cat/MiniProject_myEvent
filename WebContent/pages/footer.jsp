@@ -1,19 +1,47 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>footer</title>
 <style>
-	.footer {background: #fdfdfd!important; color : #979797; padding:60px 0 50px!important; border-top: 1px solid #e5e5e5;}
- 	.footerLast {margin:0 auto; text-align: center;}
-	.footer-widget {color:#979797!important;}
-	.footerLinks a {color:#979797!important;}
-	.latest-post-content h4 a {color:#979797!important;}
-	.footerLinks a:hover, .latest-post-content h4 a:hover {color:#5c3fbf;}
-	.footer .widget-title {color:#979797!important;}
-	#copyright {color:#979797!important; background:#fff;}
+.footer {
+	background: #fdfdfd !important;
+	color: #979797;
+	padding: 60px 0 50px !important;
+	border-top: 1px solid #e5e5e5;
+}
+
+.footerLast {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.footer-widget {
+	color: #979797 !important;
+}
+
+.footerLinks a {
+	color: #979797 !important;
+}
+
+.latest-post-content h4 a {
+	color: #979797 !important;
+}
+
+.footerLinks a:hover, .latest-post-content h4 a:hover {
+	color: #5c3fbf;
+}
+
+.footer .widget-title {
+	color: #979797 !important;
+}
+
+#copyright {
+	color: #979797 !important;
+	background: #fff;
+}
 </style>
 </head>
 <body>

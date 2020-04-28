@@ -10,7 +10,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>My Event :: 행사와 함께 하는 모든 순간</title>
+  <title>My Event :: 행사와 함께하는 모든 순간</title>
 
    <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">

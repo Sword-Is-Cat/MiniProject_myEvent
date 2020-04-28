@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -44,90 +44,92 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 
 <style>
-	.mainContainer {padding:50px 0px;}
-	
-    .menuSubnav__tab--active {
-	    padding: 10px 20px;
-	    border-bottom: 5px solid #8d71dd;
-	    margin-bottom: -2px;
-	    font-size: 16px;
-	}
-	.menuSubnav__tab {
-	
-	    padding: 10px 20px;
-	 }
-	/*------------------기존CSS---------------------------*/
-	table{
-		 width : 100%;
-		/*margin:0 auto;
-		margin-left:15%; */
-	}
-	thead {
-		background-color: rgb(240, 237, 250);
-		color:rgb(92, 98, 208);
-		text-align: center;
-		font-weight: bold;
-	}
+.mainContainer {
+	padding: 50px 0px;
+}
 
+.menuSubnav__tab--active {
+	padding: 10px 20px;
+	border-bottom: 5px solid #8d71dd;
+	margin-bottom: -2px;
+	font-size: 16px;
+}
+
+.menuSubnav__tab {
+	padding: 10px 20px;
+}
+/*------------------기존CSS---------------------------*/
+table {
+	width: 100%;
+	/*margin:0 auto;
+		margin-left:15%; */
+}
+
+thead {
+	background-color: rgb(240, 237, 250);
+	color: rgb(92, 98, 208);
+	text-align: center;
+	font-weight: bold;
+}
 </style>
 
 </head>
 <body>
-<!--subTopMenu-->
-<c:import url="headerTop.jsp"/>
-<!-- mainMenu -->
-<c:import url="header.jsp"/>
+	<!--subTopMenu-->
+	<c:import url="headerTop.jsp" />
+	<!-- mainMenu -->
+	<c:import url="header.jsp" />
 <!-- 상단 메뉴 -->
 
-<c:import url="subMenu.jsp"/>
-    <!-- subnav start -->
-     <div class="menuSubnav__section mt-xl-4" >
-        <div class="container">
-            <div class="row">
-                <div class="col s12">
-                    <div class="menuSubnav d-flex flex-row align-items-start">
-              
-                            <div class="menuSubnav__tab--active">
-                                <a href="#">
-                                    신청 행사 목록
-                                </a>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- subnav end -->
-    
-    <!-- 서브메뉴ㄱㄱ -->
+
+	<c:import url="subMenu.jsp" />
+	<!-- subnav start -->
+	<div class="menuSubnav__section mt-xl-4">
+		<div class="container">
+			<div class="row">
+				<div class="col s12">
+					<div class="menuSubnav d-flex flex-row align-items-start">
+
+						<div class="menuSubnav__tab--active">
+							<a href="#">신청 행사 목록</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- subnav end -->
+
+	 <!-- 서브메뉴ㄱㄱ -->
     <!-- 서브메뉴 끝 -->
     
     
     <!-- 여기서부터 원본 -->
 
 
-<div class="container mainContainer">
-	<div class="col s12 d-flex justify-content-between">
-		<table>
-			<thead>
-				<td>신청일</td>
-				<td>신청행사</td>
-				<td>상세내용</td>
-				<td>상태</td>
-			</thead>
-			<tbody>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-			</tbody>
-		</table>
+	<div class="container mainContainer">
+		<div class="col s12 d-flex justify-content-between">
+			<table>
+				<thead>
+					<td>신청일</td>
+					<td>신청행사</td>
+					<td>상세내용</td>
+					<td>상태</td>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
-</div><!-- container end -->
+	<!-- container end -->
 
-<!-- footer -->
-<c:import url="footer.jsp"></c:import>
+	<!-- footer -->
+	<c:import url="footer.jsp"></c:import>
 </body>
 </html>

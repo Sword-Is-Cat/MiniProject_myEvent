@@ -1,8 +1,8 @@
 <%@page import="kosta.mvc.service.NoticeService"%>
 <%@page import="kosta.mvc.vo.Notice"%>
 <%@page import="java.util.List"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
@@ -11,7 +11,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>My Event :: 행사와 함께 하는 모든 순간</title>
+  <title>My Event :: 행사와 함께하는 모든 순간</title>
 
    <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">

@@ -73,7 +73,7 @@
 			<form class="form-inline my-2 navbar-left searchForm">
       			<div class="bg-light rounded rounded-pill ">
               		<div class="input-group">
-             			<input type="search" placeholder="���щ�� 寃����대낫�몄��!" aria-describedby="button-addon1" class="form-control border-0 bg-light schWindow">
+             			<input type="search" placeholder="검색어를 입력해주세요." aria-describedby="button-addon1" class="form-control border-0 bg-light schWindow">
               			<div class="input-group-append">
                 				<button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
             			</div>
@@ -85,22 +85,22 @@
 				<ul class="nav navbar-nav navbar-right mr-auto ">
 					<li class="nav-item active">
 						<a class="nav-link" href="eventList.jsp" role="button" >
-							���ш���
+							행사검색
 						</a>
 					</li>
 					<li class="nav-item active">
 						<a class="nav-link" href="about.jsp" role="button">
-							���ъ��媛�
+							회사소개
 						</a>
 					</li>
 					<li class="nav-item active">
 						<a class="nav-link" href="bookHistory.jsp" role="button">
-							��泥��댁������
+							신청내역확인
 						</a>
 					</li>
 					<li class="nav-item active">
 						<a class="nav-link" href="createEvent.jsp" role="button">
-							���ш���
+							행사개설
 						</a>
 					</li>
 					
