@@ -46,7 +46,7 @@ public class ChannelDAO {
 	}
 	
 	public int updateChannel(Channel channel) throws Exception{
-		Connection con = null;
+		Connection con = DbUtil.getConnection();
 		PreparedStatement ps = null;
 		
 		/*
@@ -60,7 +60,6 @@ public class ChannelDAO {
 		
 		int result = 0;
 		try {
-			con = DbUtil.getConnection();
 			//ps = con.prepareStatement(sqlc.toString());
 			ps = con.prepareStatement(sql);
 			

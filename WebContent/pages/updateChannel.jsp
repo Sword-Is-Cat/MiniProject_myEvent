@@ -90,7 +90,7 @@
 
 				<div class="row">
 					<div class="col-md-7">
-						<form id="contact-form" action="../front?key=updateChannel" method="post"
+						<form name=updateForm id="contact-form" action="front" method="post"
 							role="form" enctype="multipart/form-data">
 							<div class="row">
 								<div class="col-md-8">

@@ -1,16 +1,9 @@
-<<<<<<< HEAD
 <%@page import="java.util.List"%>
 <%@page import="kosta.mvc.service.ChannelService"%>
 <%@page import="kosta.mvc.vo.Channel"%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
- 
-=======
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
->>>>>>> branch 'master' of https://github.com/Sword-Is-Cat/MiniProject_myEvent.git
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -176,7 +169,7 @@
 		document.requestForm.key.value ="deleteChannel";
 		document.requestForm.submit();
 	}
-	</script> -->
+	</script>
 
   <!-- Bootstrap -->
 
@@ -274,11 +267,11 @@
 <section id="main-container">
 
  		<!-- channel list start -->
- 		
+<%--  		
  		<%
  		int userNo = (int)session.getAttribute("userNo");
  		List<Channel> chList = ChannelService.manageChannel(userNo); 
- 		%>
+ 		%> --%>
 
 		<!-- channel manage top -->
 
@@ -298,7 +291,7 @@
 
 </div>
 <div class="Container mainContainer">
->>>>>>> branch 'master' of https://github.com/Sword-Is-Cat/MiniProject_myEvent.git
+<c:forEach items="${requestScope.chList}" var="channel">
 
 		<!--Isotope filter start -->
 <!-- 
@@ -327,12 +320,7 @@
 
 				<span class="title-icon classic float-left"></span>
 
-<<<<<<< HEAD
-				<h4 class="title classic">${channel.chName}</h4>
-=======
-				<h4 class="title classic">채널이름 <a class="addCh" href="#"></a></h4>
->>>>>>> branch 'master' of https://github.com/Sword-Is-Cat/MiniProject_myEvent.git
-
+				<h4 class="title classic">${channel.chName}<a class="addCh" href="#"></a></h4>
 			</div>
 
 		</div>
@@ -384,15 +372,6 @@
 	<div class="col-md-9 col-sm-6">
 
 			<div id="chDesc" class="team team-list wow slideInRight">
-			<%-- <!-- 吏��� �곗�� -->
-
-				<form name="requestForm" method=post action="<%=request.getContextPath() %>/front">
-				<input type=hidden name="chNo" value="${channel.chNo}">
-				<input type=hidden name="key" value="">
-				<input type=button value="������湲�" onClick="sendUpdate()">
-				<input type=button value="������湲�" onClick="sendDelete()">
-				</form>
-			--%>
 				<h4>媛��ㅽ����: n媛�</h4>
 				<div class="cd-full-width btnOpen">
 
@@ -404,11 +383,15 @@
 				<a href="#0" id="makeEv" class="btn btn-primary solid cd-btn">행사개설</a>
 
 			</div> <!-- .cd-full-width -->	
+			<form name="requestForm" method=post action="<%=request.getContextPath() %>/front">
 				<ul class="list-unstyled chListMenu">
-					<li class=""><a class="chSetting" href="#"><i class="fa fa-users">채널설정</i></a></li>
+				<input type=hidden name="chNo" value="${channel.chNo}">
+				<input type=hidden name="key" value="">
+					<li class=""><a class="chSetting" href="${pageContext.request.contextPath}/front?key=updateChannel&chNo=${channel.chNo}"><i class="fa fa-users" onclick="sendUpdate()">채널설정</i></a></li>
 					<li class=""><a class="chAuthor" href="#"><i class="fa fa-users">권한설정</i></a></li>
-					<li class=""><a class="chDel" href="#"><i class="fa fa-users">채널삭제</i></a></li>
+					<li class=""><a class="chDel" href="${pageContext.request.contextPath}/front?key=deleteChannel&chNo=${channel.chNo}"><i class="fa fa-users" onClick="sendDelete()">채널삭제</i></a></li>
 				</ul>
+			</form>
 			
  		<div class="row d-flex justify-content-between">
 			<div class="col-sm-5 portfolio-static-item">
@@ -456,6 +439,7 @@
 </div><!--col-md-9 col-sm-6 end -->
 
  </div>	<!--/ Container end -->
+</c:forEach>
  </div><!-- main div container end -->
 
 <!-- footer -->
