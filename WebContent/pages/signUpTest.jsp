@@ -61,10 +61,10 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 /*------------jiahn add-----------------*/
-section {
- 	margin-top:50px;
- 	padding-top:10px!important;
- 	border-top : 1px solid #e5e5e5;	
+.signUpMain {
+ 	margin:50px auto 100px;;
+	padding-top:50px;
+	border-top: 1px solid #e5e5e5;
 }
 .signUpTitle {
 	/* font-size: 16px; */
@@ -130,12 +130,12 @@ form {
 
 .form-control {
   border: 1px solid #ccc;
+  
   display: block;
   width: 100%;
   height: 40px;
   padding: 0 20px;
-  border-radius: 20px;
-
+  border-radius: 5px!important;
   background: none; }
   .form-control:focus {
     border: 1px solid #ae3c33; }
@@ -197,31 +197,39 @@ select {
     width: 100%;
     padding-right: 15px;
     padding-left: 15px; } }
+    
+    .btn.btn-info {
+    	border-radius: 5px!important;
+    	padding: 12px 30px!important;
+    	background-color:#5c3fbf!important;
+    	border-color:#5c3fbf!important;
+    }
 
-button#idChk {margin-top:25px;} 
-button#userAddrBtn {margin-top:32px;}
-
+button#idChk {margin-top:25px; width:100%;} 
+button#userAddrBtn {margin-top:32px; width:100%;}
+	.btn.signBtn:hover {
+    	background-color:#fff!important;
+    	border-color:#5c3fbf!important;
+    	color:#5c3fbf!important;
+    	transition:0.2s;
+	}
+.chkIdBtn {width:100%;}	
 
 </style>
 	
 </head>
 <body>
-	<div class="body-inner">
+
 <!--subTopMenu-->
 <c:import url="headerTop.jsp"/>
 <!--subTopMenu end-->	
 
 <c:import url="header.jsp"/>
 
-<!-- Portfolio start -->
-<section id="main-container" class="portfolio portfolio-box">
 
-<div class="container my-xl-7 my-5" id="userSignupSection" v-cloak>
-		<body>
+<div class="container-fluide signUpMain d-flex justify-content-center" id="userSignupSection" v-cloak>
 
-		<div class="wrapper">
-			<div class="inner">
-				<form class="contact-form" id="signUpForm" action="${pageContext.request.contextPath}/front" method="post">
+				<form class="contact-form col-lg-4 col-md-4 col-sm-8 col-xs-8 id="signUpForm" action="${pageContext.request.contextPath}/front" method="post">
 					<div class="col s12 center">
                    	 <h3 class="signUpTitle"> 회원가입</h3>
                 	</div>
@@ -232,7 +240,7 @@ button#userAddrBtn {margin-top:32px;}
 						</div>
 						<div class="form-wrapper">
 							<label for="userId"></label>
-							<button class="btn btn-primary solid blank" id="idChk" type="button">아이디 중복체크</button>
+							<button class="btn btn-info signBtn" id="idChk" type="button">아이디 중복체크</button>
 						</div>
 					</div>
 					<div class="form-wrapper">
@@ -253,7 +261,7 @@ button#userAddrBtn {margin-top:32px;}
 							<input type="text" class="form-control" id="postcode" name="postalCode" placeholder="우편번호" readonly>
 						</div>
 						<div class="form-wrapper">
-							<button class="btn btn-primary solid blank" id="userAddrBtn" type="button">우편번호 찾기</button>
+							<button class="btn btn-info signBtn" id="userAddrBtn" type="button">우편번호 찾기</button>
 						</div>
 					</div>
 					<div class="form-group">
@@ -276,23 +284,14 @@ button#userAddrBtn {margin-top:32px;}
 						<label for="userEmail">Email</label>
 						<input type="text" class="form-control" id="userEmail" name="userEmail" placeholder="E-mail을 입력해 주세요">
 					</div>
-					<div class="checkbox">
+					<div class="chkCategory">
 						<label for="userCategory">선호 카테고리를 선택해주세요</label>
 						<%List<Category> cateList = CategoryService.selectAll();%>
 						<%Category cate = cateList.get(0); %>
 						${cate.cateNo}
-				
 					</div>
-					
 
-					<h5>약관동의</h5>
-					<div class="checkbox">
-						<label>
-							<input type="checkbox"> [필수] 이용약관 및 개인정보 수집 관련 동의
-							<span class="checkmark"></span>
-						</label>
-					</div>
-					<fieldset>
+			<fieldset>
 				<c:forEach items="<%=cateList%>" var="category" varStatus="status">
 					<input type="checkbox" id="cate${category.cateNo}" name="cate${category.cateNo}" value="${category.cateNo}">
 					<label for="cate${category.cateNo}">${category.cateName}</label>
@@ -301,13 +300,19 @@ button#userAddrBtn {margin-top:32px;}
 			<input type="hidden" name="key" value="signUp">
 			<input type="hidden" name="cateCount" value="<%=cateList.size()%>"><!-- 카테고리 카운트 value에 넣어야함 -->
 			
-			<button class="btn btn-primary solid blank" id="submit" type="submit" disabled>아이디 중복체크를 해주세요</button> 
+			
+			<!-- <h5>약관동의</h5>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> [필수] 이용약관 및 개인정보 수집 관련 동의
+							<span class="checkmark"></span>
+						</label>
+					</div> -->
+			<button class="btn btn-info signBtn chkIdBtn" id="submit" type="submit" disabled>아이디 중복체크를 해주세요</button> 
 <!-- <button>회원가입</button> -->
 				</form><!-- SignUp Form end -->
-			</div>
-		</div>
+	
 
-</section><!-- Portfolio end -->
 
 </div><!-- Body inner end -->
 <!-- footer -->

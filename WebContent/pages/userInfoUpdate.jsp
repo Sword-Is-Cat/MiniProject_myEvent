@@ -47,8 +47,10 @@
   <!-- webFont -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 
+	<!-- userInfoUpdate css -->
+	<link href="css/userInfoUpdate.css" rel="stylesheet">
   <!-- KAKAO 주소 API -->
- 	<script src="pages/js/userInfoUpdate.js"></script>
+ 	<script src="./js/userInfoUpdate.js"></script>
 	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	
 	
@@ -75,6 +77,7 @@
 <!--subTopMenu end-->	
 <div class="body-inner">
 <c:import url="header.jsp"/>
+<c:import url="subMenu.jsp"/>
 
 <div id="banner-area">
 	<img src="images/banner/banner1.jpg" alt="" />
@@ -94,49 +97,90 @@
 </div><!-- Banner area end -->
 
 <!-- 회원정보 변경 -->
-<section id="main-container" class="portfolio portfolio-box">
-	<div class="container">
-		<form class="contact-form" id="userInfoUpdateForm" action="${pageContext.request.contextPath}/front" method="post"><!-- userInfoUpdate Form start -->
+
+<div class="container-fluide signUpMain d-flex justify-content-center" id="userInfoUpdateSection" v-cloak>
+<!-- userInfoUpdate Form start -->
+	<form class="contact-form col-lg-4 col-md-4 col-sm-8 col-xs-8" id="userInfoUpdateForm"  action="${pageContext.request.contextPath}/front" method="post">
+		<div class="col s12 center">
+       		 <h3 class="userInfoUpdateTitle"> 회원 정보 수정</h3>
+        </div>
+        
+        
+        <!-- 
 			<label class="textLabel" for="userPwd">비밀번호</label>
 			<input class="form-control form-control-lg col-lg-4 col-md-4 col-sm-8 col-xs-8" id="userPwd" name="userPwd" placeholder="비밀번호를 입력해 주세요" type="password">
-			<span id="userPwdChkResult">비밀번호를 확인해 주세요</span><br>			
+			<span id="userPwdChkResult">비밀번호를 확인해 주세요</span>			
 			<label class="textLabel" for="userPwdChk">비밀번호 확인</label>
 			<input class="form-control form-control-lg col-lg-4 col-md-4 col-sm-8 col-xs-8" id="userPwdChk" name="userPwdChk" placeholder="비밀번호 확인해 주세요" type="password">
-			<label class="textLabel" for="userName">이름</label>
-			<input class="form-control form-control-lg col-lg-4 col-md-4 col-sm-8 col-xs-8" id="userName" name="userName" placeholder="이름을 입력해 주세요" type="text"><br>
-			<!-- 주소 -->
-			<label class="textLabel" for="postalcode">주소</label><br>
-			<input type="text" id="postalCode" name="postalCode" placeholder="우편번호" readonly>
-			<input type="button" id="userAddrBtn" value="우편번호 찾기"><br>
-			<input class="col-lg-4 col-md-4 col-sm-8 col-xs-8" id="roadAddress" name="reaodAddress" placeholder="도로명주소" type="text" readonly>
-			<span id="guide" style="color:#999;display:none"></span>
-			<input class="col-lg-4 col-md-4 col-sm-8 col-xs-8" id="extraAddress" name="extraAddress" type="text" readonly>
-			<input class="col-lg-6 col-md-6 col-sm-10 col-xs-10" id="detailAddress" name="detailAddress" placeholder="상세주소" type="text"><br><br>
-			
-			<!-- 주소끝 -->
-			<label class="textLabel" for="userPhone">전화번호</label>
-			<input class="form-control form-control-lg" id="userPhone" name="userPhone" placeholder="예시) 010-0000-0000" type="text"><br>
-			<label class="textLabel" for="userEmail">이메일</label>
-			<input class="form-control form-control-lg" id="userEmail" name="userEmail" placeholder="Email을 입력해 주세요" type="text"><br>
-			
-			<!-- 카테고리 출력 -->
-			<label for="userCategory">선호 카테고리를 선택해주세요</label><br>
-			<%List<Category> cateList = CategoryService.selectAll();%>
+			 -->
+
+					<div class="form-wrapper">
+						<label for="userPwd">비밀번호</label>
+						<input type="password" class="form-control" id="userPwd" name="userPwd" placeholder="비밀번호를 입력해 주세요">
+					</div>
+					<div class="form-wrapper">
+						<label for="userPwdChk">비밀번호 확인</label>
+						<input type="password" class="form-control" id="userPwdChk" name="userPwdChk" placeholder="비밀번호 확인해 주세요">
+						<span id="userPwdChkResult">비밀번호를 확인해 주세요</span>	
+					</div>
+					
+					<div class="form-wrapper">
+						<label for="userName">이름</label>
+						<input type="password" class="form-control" id="userName" name="userName" placeholder="이름을 입력해 주세요">
+					</div>
+					<div class="form-group">
+						<div class="form-wrapper">
+							<label for="postalcode">주소</label>
+							<input type="text" class="form-control" id="postcode" name="postalCode" placeholder="우편번호" readonly>
+						</div>
+						<div class="form-wrapper">
+							<button class="btn btn-info signBtn" id="userAddrBtn" type="button">우편번호 찾기</button>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="form-wrapper">
+							<input type="text" class="form-control" id="roadAddress" name="reaodAddress" placeholder="도로명주소"  readonly>
+						</div>
+						<div class="form-wrapper">
+							<span id="guide" style="color:#999;display:none"></span>
+							<input class="form-control" id="extraAddress" name="extraAddress" type="text" disabled>
+						</div>
+					</div>
+					<div class="form-wrapper">
+						<input class="form-control" id="detailAddress" name="detailAddress" placeholder="상세주소" type="text">
+					</div>
+					<div class="form-wrapper">
+						<label for="userPhone">전화번호</label>
+						<input type="text" class="form-control" id="userPhone" name="userPhone" placeholder="예) 010-0000-0000">
+					</div>
+					<div class="form-wrapper">
+						<label for="userEmail">Email</label>
+						<input type="text" class="form-control" id="userEmail" name="userEmail" placeholder="E-mail을 입력해 주세요">
+					</div>
+					<div class="chkCategory">
+						<label for="userCategory">선호 카테고리를 선택해주세요</label>
+						<%List<Category> cateList = CategoryService.selectAll();%>
+						<%Category cate = cateList.get(0); %>
+						${cate.cateNo}
+					</div>
+
 			<fieldset>
 				<c:forEach items="<%=cateList%>" var="category" varStatus="status">
 					<input type="checkbox" id="cate${category.cateNo}" name="cate${category.cateNo}" value="${category.cateNo}">
 					<label for="cate${category.cateNo}">${category.cateName}</label>
 				</c:forEach>
 			</fieldset>			
-			<input type="hidden" name="key" value="doUserInfoUpdate">
+			<input type="hidden" name="key" value="signUp">
 			<input type="hidden" name="cateCount" value="<%=cateList.size()%>"><!-- 카테고리 카운트 value에 넣어야함 -->
-			<br>
-			<button class="btn btn-primary solid blank" id="submit" type="submit" disabled>비밀번호를 확인해 주세요</button>
+			
+
+
+			<button class="btn btn-info signBtn chkIdBtn" id="submit" type="submit" disabled>비밀번호를 확인해 주세요</button>
 		</form><!-- userInfoUpdate Form end -->
 	</div><!-- Container end -->
-</section><!-- 회원정보 변경 end -->
+<!-- 회원정보 변경 end -->
 
-<div class="gap-40"></div>
+
 
 </div><!-- Body inner end -->
 

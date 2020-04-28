@@ -60,10 +60,9 @@
 							마이페이지
 						</a>
 						<div class="dropdown-menu" style="border: 1.5px solid #222; border-radius: 10px;">
-							<a class="dropdown-item" href="index.html">전체 신청내역</a>
-							<a class="dropdown-item" href="interestEvent.jsp">관심 행사 목록</a>
-							<a class="dropdown-item" href="myWrite.jsp">내가 쓴 글</a>
-							<a class="dropdown-item" href="changeUserInfo.jsp">회원 정보 수정</a>
+							<a class="dropdown-item" href="channelMng.jsp">채널 관리</a>
+							<a class="dropdown-item" href="bookHistory.jsp">신청 행사 목록</a>
+							<a class="dropdown-item" href="userInfoUpdate.jsp">회원 정보 수정</a>
 						</div>
 					</li>
 				</ul>

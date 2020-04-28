@@ -8,7 +8,7 @@ form{
 
 /*---------jiahn add-------------*/
 .loginMain {
-	margin:50px auto 100px;;
+	margin:0px auto 100px;
 	padding-top:50px;
 	border-top: 1px solid #e5e5e5;
 	
@@ -18,5 +18,31 @@ form{
 	color: #8d71dd!important;
 	text-align:center;
 }
+.login-btn {
+        width: 100%;
+        line-height: 50px;
+        height: 50px;
+    }
 
+    .input-field .prefix ~ input {
+        margin-left: 0;
+        padding-left: 3rem;
+    }
+.form-control.fcMyEvent {
+	border-radius: 5px;
+}
+
+.btn.btn-info.loginBtn {
+    	border-radius: 5px!important;
+    	padding: 12px 30px!important;
+    	background-color:#5c3fbf!important;
+    	border-color:#5c3fbf!important;
+    	width:100%;
+    }
+
+    button:focus {
+        outline: none;
+        background-color: #ffffff;
+    }
+.alignCenter {text-align:center;}
 
