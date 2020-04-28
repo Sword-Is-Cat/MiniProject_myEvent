@@ -6,18 +6,16 @@ import javax.servlet.http.HttpServletResponse;
 import kosta.mvc.model.dao.EventDAO;
 import kosta.mvc.vo.Event;
 
-public class SelectEventController implements Controller {
+public class DeleteEventController implements Controller {
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
+		
 		int evNo = Integer.parseInt(request.getParameter("evNo"));
-		
-		Event event = new EventDAO().selectEventByEvNo(evNo);
-		
-		request.setAttribute("event", event);
-		
-		ModelAndView mv = new ModelAndView(false, "pages/event.jsp");
+
+		new EventDAO().deleteEvent(evNo);
+
+		ModelAndView mv = new ModelAndView(true, "pages/index.jsp");
 		return mv;
 	}
 
