@@ -97,7 +97,7 @@
 	<!-- Subpage title start -->
 	<div class="banner-title-content">
 		<div class="text-center">
-			<h2>행사이름 들어갈 곳</h2>
+			<h2>${requestScope.event.evName}</h2>
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb justify-content-center">
 					<li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -117,11 +117,7 @@
 			<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 				<div class="portfolio-slider">
 					<div class="flexportfolio flexslider">
-						<ul class="slides">
-							<li><img src="images/portfolio/portfolio-bg1.jpg" alt=""></li>
-							<li><img src="images/portfolio/portfolio-bg2.jpg" alt="" /></li>
-							<li><img src="images/portfolio/portfolio-bg3.jpg" alt="" /></li>
-						</ul>
+						<img src="eventImage/${requestScope.event.evImg}" alt="">
 					</div>
 				</div>
 			</div>
@@ -131,12 +127,12 @@
 			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" id="sideBar">
 				<div class="sidebar">
 					<div class="portfolio-desc">
-						<h3 class="widget-title">행사이름aaa</h3>
-						<p>행사카테고리
+						<h3 class="widget-title">${requestScope.event.evName}</h3>
+						<p>${requestScope.event.category.cateName}
 						</p>
 						<br />
-						<h3 class="widget-title">채널이름aaa</h3>
-						<p>채널설명</p>
+						<h3 class="widget-title">${requestScope.event.channel.chName}</h3>
+						<p>${requestScope.event.channel.chDescription}</p>
 						<br />
 						<p><a href="#" class="project-btn btn btn-primary">신청하기</a></p>
 					</div>
@@ -145,21 +141,21 @@
 			<!-- sidebar end -->
 			<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id="evInfo">
 				<div class="col-lg-6 col-md-6 col-sm-8 col-xs-8 float-left">
-					<p>일시</p>
-					<p>일시</p>
-					<p>일시</p>
+					<p>접수</p>
+					<p>${requestScope.event.evTime.evBookStartTime}</p>
+					<p>${requestScope.event.evTime.evBookEndTime}</p>
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-4 col-xs-8 float-left">
-					<p>일시</p>
-					<p>일시</p>
-					<p>일시</p>
+					<p>행사</p>
+					<p>${requestScope.event.evTime.evStartTime}</p>
+					<p>${requestScope.event.evTime.evEndTime}</p>
 				</div>
 				<div class="row" style="border:2px solid; height:800px;">
-					상세내용 div 나중에 확인용 style삭제하기
+					${requestScope.event.evDescription}
 				</div>
 			</div>
 			<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id="qnaBoard" style="border:2px solid; height:200px;">
-				적당한 qnaBoard 나중에 Style지우기
+				${requestScope.event.evAddr}
 				</div>
 		</div><!-- Portfolio item row end -->
 	</div><!-- Container end -->

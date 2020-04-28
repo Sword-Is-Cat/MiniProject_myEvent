@@ -1,12 +1,22 @@
+<<<<<<< HEAD
+<%@page import="java.util.List"%>
+<%@page import="kosta.mvc.service.ChannelService"%>
+<%@page import="kosta.mvc.vo.Channel"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+ 
+=======
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+>>>>>>> branch 'master' of https://github.com/Sword-Is-Cat/MiniProject_myEvent.git
 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-  <title>My Event :: Çà»ç¿Í ÇÔ²² ÇÏ´Â ¸ğµç ¼ø°£</title>
+  <title>My Event :: í–‰ì‚¬ì™€ í•¨ê»˜ í•˜ëŠ” ëª¨ë“  ìˆœê°„</title>
 
    <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,7 +53,7 @@
  <!-- webFont -->
  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
  <style>
-/*---------¿øº»css-----------------*/
+/*---------ì›ë³¸css-----------------*/
   	#btn{
 
   		margin-right: 400px;
@@ -78,7 +88,7 @@
     padding-right: 50px;
     position: relative;
     top: -30px; }
-/*------------Áö¾ÈÃß°¡css----------------------*/
+/*------------ì§€ì•ˆì¶”ê°€css----------------------*/
 	.mainContainer {
 	/* position: relative;
 	top:-50px; */
@@ -146,6 +156,94 @@
 	}
 
   </style>
+
+  <!-- mobile responsive meta -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+
+	<script language=javascript>
+	function sendUpdate(){//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		document.requestForm.key.value ="updateChannel";
+		document.requestForm.submit();
+	}
+
+	function sendDelete(){//ï¿½ï¿½ï¿½ï¿½
+		
+		document.requestForm.key.value ="deleteChannel";
+		document.requestForm.submit();
+	}
+	</script> -->
+
+  <!-- Bootstrap -->
+
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+
+	<!-- FontAwesome -->
+
+  <link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
+
+	<!-- Animation -->
+
+	<link rel="stylesheet" href="plugins/animate.css">
+
+	<!-- Prettyphoto -->
+
+	<link rel="stylesheet" href="plugins/prettyPhoto.css">
+
+	<!-- Owl Carousel -->
+
+	<link rel="stylesheet" href="plugins/owl/owl.carousel.css">
+
+	<link rel="stylesheet" href="plugins/owl/owl.theme.css">
+
+	<!-- Flexslider -->
+
+	<link rel="stylesheet" href="plugins/flex-slider/flexslider.css">
+
+	<!-- Flexslider -->
+
+	<link rel="stylesheet" href="plugins/cd-hero/cd-hero.css">
+
+	<!-- Style Swicther -->
+
+	<link id="style-switch" href="css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
+
+ 
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+
+    <!--[if lt IE 9]>
+
+      <script src="plugins/html5shiv.js"></script>
+
+      <script src="plugins/respond.min.js"></script>
+
+    <![endif]-->
+
+ 
+
+  <!-- Main Stylesheet -->
+
+  <link href="css/style.css" rel="stylesheet">
+
+  
+
+  <!--Favicon-->
+
+	<link rel="icon" href="img/favicon/favicon-32x32.png" type="image/x-icon" />
+
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/favicon/favicon-144x144.png">
+
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/favicon/favicon-72x72.png">
+
+	<link rel="apple-touch-icon-precomposed" href="img/favicon/favicon-54x54.png">
+
+ 
+
 </head>
  
 
@@ -157,9 +255,9 @@
 
 <c:import url="header.jsp"></c:import>
 
-<!-- Ã¤³Î¸ŞÀÎ -->
+<!-- ì±„ë„ë©”ì¸ -->
 
-<!-- Ã¤³Î¸ŞÀÎ end -->
+<!-- ì±„ë„ë©”ì¸ end -->
 <!-- Main container start -->
 <div class="container-fluide bgPart">
 	<div class="bgImg">
@@ -167,8 +265,40 @@
 	
 	</div>
 
+	<!-- Style switcher end -->
+
+ 
+
+<!-- Main container start -->
+
+<section id="main-container">
+
+ 		<!-- channel list start -->
+ 		
+ 		<%
+ 		int userNo = (int)session.getAttribute("userNo");
+ 		List<Channel> chList = ChannelService.manageChannel(userNo); 
+ 		%>
+
+		<!-- channel manage top -->
+
+		<div class="row">
+
+			<div class="col-md-12 heading text-center">
+
+				<h2 class="title2" style="text-align: center; font-weight: bold">ï§¢ï¿½ï¿½ï¿½ æ„¿ï¿½ç”±ï¿½
+
+				<span class="title-desc"></span>
+
+				</h2>
+
+			</div>
+
+		</div><!-- Title row end -->
+
 </div>
 <div class="Container mainContainer">
+>>>>>>> branch 'master' of https://github.com/Sword-Is-Cat/MiniProject_myEvent.git
 
 		<!--Isotope filter start -->
 <!-- 
@@ -178,7 +308,7 @@
 
 				<div class="isotope-nav" data-isotope-nav="isotope">
 					<div class="crCh">
-						<a href="#" data-filter=".make-channel" id="btn">Ã¤³Î °³¼³</a>
+						<a href="#" data-filter=".make-channel" id="btn">ì±„ë„ ê°œì„¤</a>
 					</div>
 
 	
@@ -197,7 +327,11 @@
 
 				<span class="title-icon classic float-left"></span>
 
-				<h4 class="title classic">Ã¤³ÎÀÌ¸§ <a class="addCh" href="#"></a></h4>
+<<<<<<< HEAD
+				<h4 class="title classic">${channel.chName}</h4>
+=======
+				<h4 class="title classic">ì±„ë„ì´ë¦„ <a class="addCh" href="#"></a></h4>
+>>>>>>> branch 'master' of https://github.com/Sword-Is-Cat/MiniProject_myEvent.git
 
 			</div>
 
@@ -221,9 +355,9 @@
 
 					<div class="team-content">
 
-						<h3>°³¼³ÀÚ ÀÌ¸§</h3>
+						<h3>ê°œì„¤ì ì´ë¦„</h3>
 
-						<p>°³¼³ÀÚ email</p>
+						<p>ê°œì„¤ì email</p>
 
 						<div class="team-social">
 
@@ -249,18 +383,31 @@
 
 	<div class="col-md-9 col-sm-6">
 
+			<div id="chDesc" class="team team-list wow slideInRight">
+			<%-- <!-- ï§ï¿½ï¿½ï¿½ ï¿½ê³—ï¿½ï¿½ -->
+
+				<form name="requestForm" method=post action="<%=request.getContextPath() %>/front">
+				<input type=hidden name="chNo" value="${channel.chNo}">
+				<input type=hidden name="key" value="">
+				<input type=button value="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ¹²ï¿½" onClick="sendUpdate()">
+				<input type=button value="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ¹²ï¿½" onClick="sendDelete()">
+				</form>
+			--%>
+				<h4>åª›ï¿½ï¿½ã…½ï¿½ï¿½ï¿½ï¿½: nåª›ï¿½</h4>
+				<div class="cd-full-width btnOpen">
+
 		<div id="chDesc" class="team team-list wow slideInRight">
 
-			<h4>°³¼³Çà»ç: n°³</h4>
+			<h4>ê°œì„¤í–‰ì‚¬: nê°œ</h4>
 			<div class="cd-full-width btnOpen">
 
-				<a href="#0" id="makeEv" class="btn btn-primary solid cd-btn">Çà»ç°³¼³</a>
+				<a href="#0" id="makeEv" class="btn btn-primary solid cd-btn">í–‰ì‚¬ê°œì„¤</a>
 
 			</div> <!-- .cd-full-width -->	
 				<ul class="list-unstyled chListMenu">
-					<li class=""><a class="chSetting" href="#"><i class="fa fa-users">Ã¤³Î¼³Á¤</i></a></li>
-					<li class=""><a class="chAuthor" href="#"><i class="fa fa-users">±ÇÇÑ¼³Á¤</i></a></li>
-					<li class=""><a class="chDel" href="#"><i class="fa fa-users">Ã¤³Î»èÁ¦</i></a></li>
+					<li class=""><a class="chSetting" href="#"><i class="fa fa-users">ì±„ë„ì„¤ì •</i></a></li>
+					<li class=""><a class="chAuthor" href="#"><i class="fa fa-users">ê¶Œí•œì„¤ì •</i></a></li>
+					<li class=""><a class="chDel" href="#"><i class="fa fa-users">ì±„ë„ì‚­ì œ</i></a></li>
 				</ul>
 			
  		<div class="row d-flex justify-content-between">
@@ -275,7 +422,7 @@
 						</figcaption>
 					</figure>
 					<div class="portfolio-static-desc">
-						<h3>[µå¸²ÇÃ·¯½º ¿ù°£ IT Æ®·»µå] ¾ğÅÃÆ®, ´º ³ë¸ÖÀÇ ½Ã´ë</h3>
+						<h3>[ë“œë¦¼í”ŒëŸ¬ìŠ¤ ì›”ê°„ IT íŠ¸ë Œë“œ] ì–¸íƒíŠ¸, ë‰´ ë…¸ë©€ì˜ ì‹œëŒ€</h3>
 						<span><a href="#">Ui Elements</a></span>
 					</div>
 				</div>
@@ -294,7 +441,7 @@
 						</figcaption>
 					</figure>
 					<div class="portfolio-static-desc">
-						<h3>·ºÃ³½Ã¸®Áî#1(ÀÛÀº ÆÀÀ¸·Î Å« ÀÏÀ» ÇÑ´Ù´Â °Í)</h3>
+						<h3>ë ‰ì²˜ì‹œë¦¬ì¦ˆ#1(ì‘ì€ íŒ€ìœ¼ë¡œ í° ì¼ì„ í•œë‹¤ëŠ” ê²ƒ)</h3>
 						<span><a href="#">Media Elements</a></span>
 					</div>
 				</div>

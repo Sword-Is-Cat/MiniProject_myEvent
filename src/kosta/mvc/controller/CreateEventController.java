@@ -37,7 +37,6 @@ public class CreateEventController implements Controller {
 		String evEnds = m.getParameter("evEnd");
 		String postalCode = m.getParameter("postalCode");
 		String roadAddress = m.getParameter("roadAddress");
-		String jibunAddress = m.getParameter("jibunAddress");
 		String detailAddress = m.getParameter("detailAddress");
 		String extraAddress = m.getParameter("extraAddress");
 		String evPhone = m.getParameter("evPhone");
@@ -52,8 +51,6 @@ public class CreateEventController implements Controller {
 		
 		evStarts = evStarts.replace('T', ' ')+":00";
 		evEnds = evEnds.replace('T', ' ')+":00";
-		System.out.println(evStarts);
-		System.out.println(evEnds);
 
 		Category category = new Category();
 		category.setCateNo(cateNo);
@@ -65,22 +62,22 @@ public class CreateEventController implements Controller {
 		} else {
 			evAddr = postalCode + roadAddress + detailAddress + extraAddress;
 		}
-
-		Timestamp evStart = Timestamp.valueOf(evStarts.replace('T', ' '));
-		Timestamp evEnd = Timestamp.valueOf(evEnds.replace('T', ' '));
+		System.out.println(evStarts);
+		Timestamp evStart = Timestamp.valueOf(evStarts);
+		Timestamp evEnd = Timestamp.valueOf(evEnds);
 		Timestamp evBookStart;
 		Timestamp evBookEnd;
 
 		if (evBookStarts == null || evBookStarts.equals("")) {
 			evBookStart = new Timestamp(System.currentTimeMillis());
 		} else {
-			evBookStart = Timestamp.valueOf(evBookStarts.replace('T', ' '));
+			evBookStart = Timestamp.valueOf(evBookStarts.replace('T', ' ')+":00");
 
 		}
 		if (evBookEnds == null || evBookEnds.equals("")) {
 			evBookEnd = evStart;
 		} else {
-			evBookEnd = Timestamp.valueOf(evBookEnds.replace('T', ' '));
+			evBookEnd = Timestamp.valueOf(evBookEnds.replace('T', ' ')+":00");
 		}
 
 		EvTime evTime = new EvTime(evStart, evEnd, evBookStart, evBookEnd);
@@ -100,9 +97,11 @@ public class CreateEventController implements Controller {
 			event.setEvImg("sample.png");
 		}
 
-		new EventDAO().insertEvent(event);
+		
+		int evNo = new EventDAO().insertEvent(event);
 
-		ModelAndView mv = new ModelAndView(false, "front");
+		System.out.println("createEv가 뱉어주는 evNo = "+evNo);
+		ModelAndView mv = new ModelAndView(true, "front?key=selectEvent&evNo="+evNo);
 		return mv;
 	}
 

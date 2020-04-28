@@ -171,47 +171,34 @@ public class ChannelDAO {
 		return channel;
 	}
 
-	public List<Channel> manageChannel() throws SQLException{
-		Connection con = null;
-		PreparedStatement ps = null;
-		ResultSet rs = null;
-		List<Channel> list = new ArrayList<Channel>();
-		String sql = pro.getProperty("manageChannel");
+	public List<Channel> manageChannel(int userNo) throws SQLException{
+		Connection con = DbUtil.getConnection();
+		PreparedStatement ps =null;
+		ResultSet rs =null;
+		List<Channel> list = new ArrayList<>();
+		Channel channel = null;
+		String sql=pro.getProperty("manageChannel");
 		try {
-			con = DbUtil.getConnection();
 			ps = con.prepareStatement(sql);
-			rs=ps.executeQuery();
-			
-			Channel channel;
-			HashMap<Integer, User> userMap = new HashMap<Integer, User>();
-			
+			ps.setInt(1, userNo);
+			rs = ps.executeQuery();
 			while(rs.next()) {
-				int chNo = rs.getInt("chNo");
+				int chNo = rs.getInt(2);
+				String chName = rs.getString(3);
+				String chImg = rs.getString(4);
+				int chStatus = rs.getInt(5);
+				String chDescription = rs.getString(6);
 				
-				int userNo = rs.getInt("userNo");
-				User user;
-				if(userMap.get(userNo)!=null) {
-					user = userMap.get(userNo);
-				} else {
-					/*
-					 * String userName = rs.getString("userName"); String userEmail =
-					 * rs.getString("userEmail"); user = new User(userNo, userName, userEmail);
-					 * userMap.put(userNo, user);
-					 */
-					user = new User(userNo);
-				}
+				User user2 = new User(userNo);
 				
-				String chName = rs.getString("chName");
-				String chImg = rs.getString("chImg");
-				int chStatus = rs.getInt("chStatus");
-				String chDescription = rs.getString("chDescription");
-				
-				channel = new Channel(chNo, user, chName, chImg, chStatus, chDescription);
+				channel = new Channel(chNo, user2, chName, chImg, chStatus, chDescription);
 				list.add(channel);
 			}
 		} finally {
-			DbUtil.dbClose(rs, ps, con);
+			DbUtil.dbClose(ps, con);
 		}
 		return list;
 	}
+
+	
 }
