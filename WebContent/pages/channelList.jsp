@@ -13,7 +13,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>My Event :: 青荤客 窃膊 窍绰 葛电 鉴埃</title>
+  <title>My Event :: 頄夓偓鞕� 頃粯 頃橂姅 氇摖 靾滉皠</title>
 
    <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,7 +49,7 @@
 	<link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
   <!-- webFont -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-  	<!--恋啊 父电 style -->
+  	<!--臁旉皜 毵岆摖 style -->
   <style>
   	.option{
   		color: "navy";
@@ -88,7 +88,7 @@
 		<!-- channel list top -->
 		<div class="row">
 			<div class="col-md-12 heading text-center">
-				<h2 class="title2" style="text-align: center;  font-weight: bold;">盲澄 格废<span class="title-desc"></span></h2>
+				<h2 class="title2" style="text-align: center;  font-weight: bold;">毂勲剱 氇╇<span class="title-desc"></span></h2>
 			</div>
 		</div><!-- Title row end -->
 <br>

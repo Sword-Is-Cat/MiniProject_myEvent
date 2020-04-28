@@ -6,7 +6,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>My Event :: 青荤客 窃膊 窍绰 葛电 鉴埃</title>
+  <title>My Event :: 頄夓偓鞕� 頃粯 頃橂姅 氇摖 靾滉皠</title>
 
    <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,7 +53,7 @@
 
 	<div class="gap-50 p-3">
 	<div class="row justify-content-center p-3">
-		<caption>傍瘤荤亲 殿废</caption>
+		<caption>瓿奠靷暛 霌彪</caption>
 	</div>
 		<div class="row justify-content-center">
 			
@@ -62,17 +62,17 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group">
-								<label>力格</label>
+								<label>鞝滊</label>
 								<input class="form-control" name="subject" id="subject" placeholder="" required>
 							</div>
 						</div>
 					</div>
 					<div class="form-group">
-						<label>郴侩</label>
+						<label>雮挫毄</label>
 						<textarea class="form-control" name="message" id="message" placeholder="" rows="10" required></textarea>
 					</div>
 					<div class="text-center"><br>
-						<button class="btn btn-primary solid blank" type="submit">殿废窍扁</button>
+						<button class="btn btn-primary solid blank" type="submit">霌彪頃橁赴</button>
 					</div>
 				</form>
 			</div>

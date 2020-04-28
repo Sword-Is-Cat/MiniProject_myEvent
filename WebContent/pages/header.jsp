@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-  <title>My Event :: За»зїН ЗФІІ ЗПґВ ёрµз јш°Ј</title>
+  <title>My Event :: пїЅпїЅпїЅСЉпїЅпїЅ пїЅв‘ЈпїЅ пїЅпїЅпїЅпїЅ п§Џв‘¤пїЅпїЅ пїЅпїЅеЄ›пїЅ</title>
 
    <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -56,7 +56,7 @@
 		font-size: 12px!important;
 		position: fixed;
 	}
-	/*--°Л»цГў--*/
+	/*--еЇѓпїЅпїЅпїЅп§ЎпїЅ--*/
 	.form-control:focus {
 	  box-shadow: none;
 	}
@@ -109,7 +109,7 @@
 			<form class="form-inline my-2 navbar-left searchForm">
       			<div class="bg-light rounded rounded-pill ">
               		<div class="input-group">
-             			<input type="search" placeholder="За»зё¦ °Л»цЗШєёјјїд!" aria-describedby="button-addon1" class="form-control border-0 bg-light schWindow">
+             			<input type="search" placeholder="пїЅпїЅпїЅС‰пїЅпїЅ еЇѓпїЅпїЅпїЅпїЅлЊЂл‚«пїЅлЄ„пїЅпїЅ!" aria-describedby="button-addon1" class="form-control border-0 bg-light schWindow">
               			<div class="input-group-append">
                 				<button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
             			</div>
@@ -121,22 +121,22 @@
 				<ul class="nav navbar-nav navbar-right mr-auto ">
 					<li class="nav-item active">
 						<a class="nav-link" href="eventList.jsp" role="button" >
-							За»з°Л»ц
+							пїЅпїЅпїЅС€пїЅпїЅпїЅ
 						</a>
 					</li>
 					<li class="nav-item active">
 						<a class="nav-link" href="about.jsp" role="button">
-							Иё»зјТ°і
+							пїЅпїЅпїЅСЉпїЅпїЅеЄ›пїЅ
 						</a>
 					</li>
 					<li class="nav-item active">
 						<a class="nav-link" href="bookHistory.jsp" role="button">
-							ЅЕГ»і»їЄИ®АО
+							пїЅпїЅп§ЈпїЅпїЅлЊЃпїЅпїЅпїЅпїЅпїЅпїЅ
 						</a>
 					</li>
 					<li class="nav-item active">
 						<a class="nav-link" href="createEvent.jsp" role="button">
-							За»з°іјі
+							пїЅпїЅпїЅС€пїЅпїЅпїЅ
 						</a>
 					</li>
 					

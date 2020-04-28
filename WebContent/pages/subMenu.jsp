@@ -67,17 +67,17 @@
                     <div class="mypage-topnav d-flex flex-row justify-content-start">
                         <div class="mypage-topnav__tab">
                             <a href="channelMng.jsp">
-                               √§≥Œ ∞¸∏Æ
+                               Ï±ÑÎÑê Í¥ÄÎ¶¨
                             </a>
                         </div>
                         <div class="mypage-topnav__tab ">
                             <a href="bookHistory.jsp" >
-                               Ω≈√ª «‡ªÁ ∏Ò∑œ
+                               Ïã†Ï≤≠ ÌñâÏÇ¨ Î™©Î°ù
                             </a>
                         </div>
                         <div class="mypage-topnav__tab">
                             <a href="userInfoUpdate.jsp">
-                                »∏ø¯¡§∫∏ º≥¡§
+                                ÌöåÏõêÏ†ïÎ≥¥ ÏÑ§Ï†ï
                             </a>
                         </div>
                     </div>

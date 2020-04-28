@@ -9,7 +9,7 @@
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-  <title>My Event :: วเป็ฟอ วิฒฒ วฯดย ธ๐ต็ ผ๘ฐฃ</title>
+  <title>My Event :: ํ–์ฌ์€ ํ•จ๊ป ํ•๋” ๋ชจ๋“  ์๊ฐ</title>
 
    <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -62,7 +62,7 @@
 				<h2>${channel.chName}</h2>
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb justify-content-center">
-						<li class="breadcrumb-item"><a href="#"> ศจภธทฮ </a></li>
+						<li class="breadcrumb-item"><a href="#"> ํ์ผ๋ก </a></li>
 						<li class="breadcrumb-item text-white" aria-current="page">
 							${channel.chNo}</li>
 					</ol>
@@ -104,12 +104,12 @@
 								</p>
 								<br />
 
-								<h3 class="widget-title">ฐณผณภฺ</h3>
+								<h3 class="widget-title">๊ฐ์ค์</h3>
 								<p>${user.userNo}</p>
 								<p>${channel.user.userId}</p>
 								<p><%=request.getParameter("userId")%></p>
 								<p>
-									<a href="#" class="project-btn btn btn-primary">รคณฮ ฐüธฎ</a>
+									<a href="#" class="project-btn btn btn-primary">์ฑ๋ ๊ด€๋ฆฌ</a>
 								</p>
 							</div>
 						</div>
@@ -126,7 +126,7 @@
 		<section id="main-container" class="portfolio-static">
 			<div class="container">
 				<div class="row">
-					<h2 class="widget-title">ม๘วเม฿ภฮ วเป็</h2>
+					<h2 class="widget-title">์งํ–์ค‘์ธ ํ–์ฌ</h2>
 				</div>
 				<div class="row">
 					<div class="col-sm-3 portfolio-static-item">
@@ -220,7 +220,7 @@
 		
 			<div class="container">
 				<div class="row">
-					<h2 class="widget-title">มพทแตศ วเป็</h2>
+					<h2 class="widget-title">์ข…๋ฃ๋ ํ–์ฌ</h2>
 				</div>
 				<div class="row">
 					<div class="col-sm-3 portfolio-static-item">

@@ -169,7 +169,7 @@
 		document.requestForm.key.value ="deleteChannel";
 		document.requestForm.submit();
 	}
-	</script> -->
+	</script>
 
   <!-- Bootstrap -->
 

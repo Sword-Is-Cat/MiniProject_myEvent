@@ -5,7 +5,7 @@
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-<title>My Event :: гЮ╩Г©м гт╡╡ го╢б ╦П╣Г ╪Ь╟ё</title>
+<title>My Event :: М√┴Л┌╛Л≥─ М∙╗Й╩≤ М∙≤К┼■ К╙╗К⌠═ Л┬°Й╟└</title>
 <!--Favicon-->
 	<link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="./images/favicon/144.png">
@@ -28,7 +28,7 @@
 	
 	    padding: 10px 20px;
 	 }
-	/*------------------╠Ба╦CSS---------------------------*/
+	/*------------------Й╦╟Л║╢CSS---------------------------*/
 	table{
 		 width : 100%;
 		/*margin:0 auto;
@@ -49,7 +49,7 @@
 <c:import url="headerTop.jsp"/>
 <!-- mainMenu -->
 <c:import url="header.jsp"/>
-<!-- ╩С╢э ╦ч╢╨ -->
+<!-- Л┐│К▀╗ К╘■К┴╢ -->
 
 <c:import url="subMenu.jsp"/>
     <!-- subnav start -->
@@ -61,7 +61,7 @@
               
                             <div class="menuSubnav__tab--active">
                                 <a href="#">
-                                    ╫ец╩ гЮ╩Г ╦Я╥о
+                                    Л▀═Л╡╜ М√┴Л┌╛ К╙╘К║²
                                 </a>
                             </div>
                     </div>
@@ -71,21 +71,21 @@
     </div>
     <!-- subnav end -->
     
-    <!-- ╪╜╨Й╦ч╢╨╓║╓║ -->
-    <!-- ╪╜╨Й╦ч╢╨ Ё║ -->
+    <!-- Л└°К╦▄К╘■К┴╢Ц└╠Ц└╠ -->
+    <!-- Л└°К╦▄К╘■К┴╢ К│² -->
     
     
-    <!-- ©╘╠Б╪╜╨нем ©Ь╨╩ -->
+    <!-- Л≈╛Й╦╟Л└°К╤─М└╟ Л⌡░КЁ╦ -->
 
 
 <div class="container mainContainer">
 	<div class="col s12 d-flex justify-content-between">
 		<table>
 			<thead>
-				<td>╫ец╩юо</td>
-				<td>╫ец╩гЮ╩Г</td>
-				<td>╩С╪╪Ё╩©К</td>
-				<td>╩Себ</td>
+				<td>Л▀═Л╡╜Л²╪</td>
+				<td>Л▀═Л╡╜М√┴Л┌╛</td>
+				<td>Л┐│Л└╦К┌╢Л ╘</td>
+				<td>Л┐│М┐°</td>
 			</thead>
 			<tbody>
 				<tr>

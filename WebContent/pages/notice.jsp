@@ -11,7 +11,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>My Event :: Çà»ç¿Í ÇÔ²² ÇÏ´Â ¸ðµç ¼ø°£</title>
+  <title>My Event :: í–‰ì‚¬ì™€ í•¨ê»˜ í•˜ëŠ” ëª¨ë“  ìˆœê°„</title>
 
    <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -62,15 +62,15 @@
 	<div class="gap-50 p-3"></div>
 	<div class="row justify-content-center">
 	<div class="col-md-8">
-	<caption>°øÁö»çÇ×</caption>
+	<caption>ê³µì§€ì‚¬í•­</caption>
 	<table class="table table-hover">
 	
 		<thead>
 			<tr>
-				<th>¹øÈ£</th>
-				<th>Á¦¸ñ</th>
-				<th>³¯Â¥</th>
-				<th class="noticeDelete">»èÁ¦</th>
+				<th>ë²ˆí˜¸</th>
+				<th>ì œëª©</th>
+				<th>ë‚ ì§œ</th>
+				<th class="noticeDelete">ì‚­ì œ</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -81,7 +81,7 @@
 				<td>${notice.no}</td>
 				<td>${notice.title}</td>
 				<td>${notice.date}</td>
-				<td class="noticeDelete"><input type="button" value="»èÁ¦"/></td>
+				<td class="noticeDelete"><input type="button" value="ì‚­ì œ"/></td>
 				
 			</tr>
 			<tr class="accordion-body collapse" id="no5">

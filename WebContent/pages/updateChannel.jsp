@@ -7,7 +7,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>My Event :: Çà»ç¿Í ÇÔ²² ÇÏ´Â ¸ðµç ¼ø°£</title>
+  <title>My Event :: í–‰ì‚¬ì™€ í•¨ê»˜ í•˜ëŠ” ëª¨ë“  ìˆœê°„</title>
 
    <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -63,12 +63,12 @@
 		<!-- Subpage title start -->
 		<div class="banner-title-content">
 			<div class="text-center">
-				<h2>Ã¤³Î Á¤º¸ º¯°æ</h2>
+				<h2>ì±„ë„ ì •ë³´ ë³€ê²½</h2>
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb justify-content-center">
-						<li class="breadcrumb-item"><a href="#"> È¨À¸·Î </a></li>
+						<li class="breadcrumb-item"><a href="#"> í™ˆìœ¼ë¡œ </a></li>
 						<li class="breadcrumb-item text-white" aria-current="page">
-							Ã¤³Î Á¤º¸ º¯°æ</li>
+							ì±„ë„ ì •ë³´ ë³€ê²½</li>
 					</ol>
 				</nav>
 			</div>
@@ -95,13 +95,13 @@
 							<div class="row">
 								<div class="col-md-8">
 									<div class="form-group">
-										<label> Ã¤³Î¸í </label> <input class="form-control" name="chName"
+										<label> ì±„ë„ëª… </label> <input class="form-control" name="chName"
 											id="chName" type="text" required value=${channel.chName}>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label> °³¼³ÀÚ </label> <input class="form-control" name="userNo"
+										<label> ê°œì„¤ìž </label> <input class="form-control" name="userNo"
 											id="userNo" type="text" required
 											readonly placeholder=${channel.userNo}>
 									</div>
@@ -110,20 +110,20 @@
 							<div class="row">
 								<div class="col-md-4">
 									<div class="form-group">
-										<label> Ã¤³Î ÀÌ¹ÌÁö </label><input type="file" name="chImg"
+										<label> ì±„ë„ ì´ë¯¸ì§€ </label><input type="file" name="chImg"
 											id="chImg" accept="image/gif, image/jpeg, image/png">
 									</div>
 								</div>
 							</div>
 							<div class="form-group">
-								<label> Ã¤³Î ¼³¸í </label>
+								<label> ì±„ë„ ì„¤ëª… </label>
 								<textarea class="form-control" name="chDescription" id="chDescription"
 									placeholder="" rows="10" required>${channel.chDescription}</textarea>
 							</div>
 							<div class="text-right">
 								<br>
 								<button class="btn btn-primary solid blank" type="submit">
-									Ã¤³Î Á¤º¸ ¼öÁ¤</button>
+									ì±„ë„ ì •ë³´ ìˆ˜ì •</button>
 							</div>
 						</form>
 					</div>
@@ -131,21 +131,21 @@
 					<div class="col-md-5">
 						<div class="contact-info">
 							<h2>
-								<br>ÁÖÀÇ »çÇ×<br> <br>
+								<br>ì£¼ì˜ ì‚¬í•­<br> <br>
 							</h2>
 							<p>
 							<ul>
-								<li>Ã¤³Î¸íÀº ÇÑ±Û 15ÀÚ±îÁö ÀÔ·Â</li>
+								<li>ì±„ë„ëª…ì€ í•œê¸€ 15ìžê¹Œì§€ ìž…ë ¥</li>
 								<br>
-								<li>ÀÌ¹ÌÁö´Â *** Mb ±îÁö ¾÷·Îµå</li>
+								<li>ì´ë¯¸ì§€ëŠ” *** Mb ê¹Œì§€ ì—…ë¡œë“œ</li>
 								<br>
-								<li>ÀÌ¹ÌÁö´Â jpg, png, gif ÆÄÀÏ¸¸ µî·ÏÇÒ ¼ö ÀÖ½À´Ï´Ù
+								<li>ì´ë¯¸ì§€ëŠ” jpg, png, gif íŒŒì¼ë§Œ ë“±ë¡í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤
 								<br>
-								»õ ÀÌ¹ÌÁö¸¦ Ã·ºÎÇÏÁö ¾ÊÀ¸¸é ±âÁ¸ ÀÌ¹ÌÁö°¡ À¯ÁöµË´Ï´Ù</li>
+								ìƒˆ ì´ë¯¸ì§€ë¥¼ ì²¨ë¶€í•˜ì§€ ì•Šìœ¼ë©´ ê¸°ì¡´ ì´ë¯¸ì§€ê°€ ìœ ì§€ë©ë‹ˆë‹¤</li>
 								<br>
-								<li>Ã¤³Î ¼³¸íÀº ÇÑ±Û 250ÀÚ±îÁö ÀÔ·Â</li>
+								<li>ì±„ë„ ì„¤ëª…ì€ í•œê¸€ 250ìžê¹Œì§€ ìž…ë ¥</li>
 								<br>
-								<li>ÇÒ¸»ÀÌ ´õ ÀÖ´ø°¡¿ä</li>
+								<li>í• ë§ì´ ë” ìžˆë˜ê°€ìš”</li>
 							</ul>
 							</p>
 

@@ -5,7 +5,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>My Event :: Çà»ç¿Í ÇÔ²² ÇÏ´Â ¸ðµç ¼ø°£</title>
+  <title>My Event :: í–‰ì‚¬ì™€ í•¨ê»˜ í•˜ëŠ” ëª¨ë“  ìˆœê°„</title>
 
    <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -65,19 +65,19 @@
 		<!-- interest event top -->
 		<div class="row">
 			<div class="col-md-12 heading text-center">
-				<h2 class="title2" style="text-align: center; font-weight: bold;">Âü°¡ÀÚ ¸ñ·Ï
-				<span class="title-desc">Çà»çÀÌ¸§</span>
+				<h2 class="title2" style="text-align: center; font-weight: bold;">ì°¸ê°€ìž ëª©ë¡
+				<span class="title-desc">í–‰ì‚¬ì´ë¦„</span>
 				</h2>
 			</div>
 		</div><!-- Title row end -->
 <hr>
 <table id="table" class="table">
 	<thead>
-		<td>ÀÌ¸§</td>
+		<td>ì´ë¦„</td>
 		<td>ID</td>
-		<td>¿¬¶ôÃ³</td>
-		<td>°áÁ¦³»¿ª</td>
-		<td>»óÅÂ</td>
+		<td>ì—°ë½ì²˜</td>
+		<td>ê²°ì œë‚´ì—­</td>
+		<td>ìƒíƒœ</td>
 	</thead>
 	<tbody>
 		<tr>

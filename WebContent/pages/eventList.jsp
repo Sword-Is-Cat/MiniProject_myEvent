@@ -5,7 +5,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>My Event :: ���� �Բ� �ϴ� ��� ����</title>
+  <title>My Event :: 행사와 함께 하는 모든 순간</title>
 
    <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,7 +41,7 @@
 	<link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
   <!-- webFont -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-  	<!--���� ���� style -->
+  	<!--졔가 만든 style -->
   <style>
   	.option{
   		color: "navy";
@@ -117,7 +117,7 @@
 
 <c:import url="header.jsp"></c:import>
 
-<h4 style="margin-left:15%">�� n���� �˻� ����� �ֽ��ϴ�.</h4>
+<h4 style="margin-left:15%">총 n개의 검색 결과가 있습니다.</h4>
 <!-- Portfolio start -->
 <section id="main-container" class="portfolio-static">
 	<div class="container">
@@ -134,9 +134,9 @@
 					</figure>
 					<div class="portfolio-static-desc">
 					<table>
-						<tr><td><a href="#"><h3 id="eTitle" class="eTitle">[EVENT-US] �̺��ͽ� ����, �Ϸ縸�� �ǰ���!</h3></a></td></tr>
-						<tr><td><a href="#">���Ⱓ</a></td></tr>
-						<tr><td><a href="#">��/����</a></td></tr>
+						<tr><td><a href="#"><h3 id="eTitle" class="eTitle">[EVENT-US] 이벤터스 웨비나, 하루만에 뽀개기!</h3></a></td></tr>
+						<tr><td><a href="#">행사기간</a></td></tr>
+						<tr><td><a href="#">유/무료</a></td></tr>
 					</table>
 						
 					</div>
@@ -157,9 +157,9 @@
 					</figure>
 					<div class="portfolio-static-desc">
 					<table>
-						<tr><td><a href="#"><h3 id="eTitle" class="eTitle">[DREAMPLUS Insight Night(�ν� ����)] �ν� ��ŸƮ�� ��ǥ�Ե��� �λ���Ʈ ����(Űư�÷���, Ȩ��)</h3></a></td></tr>
-						<tr><td><a href="#">���Ⱓ</a></td></tr>
-						<tr><td><a href="#">��/����</a></td></tr>
+						<tr><td><a href="#"><h3 id="eTitle" class="eTitle">[DREAMPLUS Insight Night(인싸 나잇)] 인싸 스타트업 대표님들의 인사이트 강연(키튼플래닛, 홈핏)</h3></a></td></tr>
+						<tr><td><a href="#">행사기간</a></td></tr>
+						<tr><td><a href="#">유/무료</a></td></tr>
 					</table>
 					</div>
 				</div>
