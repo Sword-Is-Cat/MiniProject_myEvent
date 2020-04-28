@@ -10,13 +10,12 @@ public class DeleteEventController implements Controller {
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
 		int evNo = Integer.parseInt(request.getParameter("evNo"));
 
-		Event event = new EventDAO().selectEventByEvNo(evNo);
+		new EventDAO().deleteEvent(evNo);
 
-		request.setAttribute("event", event);
-
-		ModelAndView mv = new ModelAndView(false, "pages/updateEvent.jsp");
+		ModelAndView mv = new ModelAndView(true, "pages/index.jsp");
 		return mv;
 	}
 
