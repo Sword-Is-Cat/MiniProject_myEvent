@@ -72,7 +72,8 @@
 	  color: #aaa;
 	  font-style: italic;
 	}
-	.searchForm {margin-left: 30%;}
+	.searchForm {margin-left: 0%; width: auto; padding-left:0;}
+	.schWindow {margin-left:20px; padding-left:10px;}
 	.ipSearch {width:80%!important;}
 	img.mainLogo {padding-top:10px;}
 	.glyphicon-search:before {
@@ -102,20 +103,22 @@
 				<span class="fa fa-bars"></span>
 			</button>
 
-			<div class="collapse navbar-collapse text-center d-flex align-items-start" id="navigation">
-				
-			<form class="form-inline my-2 navbar-right searchForm">
-      				<div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
-              			<div class="input-group">
-             				<input type="search" placeholder="행사를 검색해보세요!" aria-describedby="button-addon1" class="form-control border-0 bg-light">
-              				<div class="input-group-append">
+			<div class="collapse navbar-collapse text-center d-flex justify-content-between" id="navigation">
+			<div class="row col s2"></div>
+	<div class="row col s5 p-3 align-self-center">
+			<form class="form-inline my-2 navbar-left searchForm">
+      			<div class="bg-light rounded rounded-pill ">
+              		<div class="input-group">
+             			<input type="search" placeholder="행사를 검색해보세요!" aria-describedby="button-addon1" class="form-control border-0 bg-light schWindow">
+              			<div class="input-group-append">
                 				<button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
             			</div>
            			</div>
          		</div>
     		</form>
-
-				<ul class="nav navbar-nav navbar-right ml-auto ">
+</div>
+<div class="row d-flex justify-content-end">
+				<ul class="nav navbar-nav navbar-right mr-auto ">
 					<li class="nav-item active">
 						<a class="nav-link" href="eventList.jsp" role="button" >
 							행사검색
@@ -138,6 +141,7 @@
 					</li>
 					
 				</ul>
+</div>
 			</div>
 		</nav>
 	</div><!--container end-->
