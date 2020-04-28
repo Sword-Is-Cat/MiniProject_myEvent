@@ -1,3 +1,4 @@
+<%@page import="kosta.mvc.model.dao.NoticeDAO"%>
 <%@page import="kosta.mvc.vo.User"%>
 <%@page import="kosta.mvc.vo.Channel"%>
 <%@page import="kosta.mvc.model.dao.ChannelDAO"%>
@@ -35,7 +36,7 @@
 	%> --%>
 <br>
 4. 채널삭제
- 	<%
+<%--  	<%
 		try{
 			dao.deleteChannel(16);
 			out.print("삭제성공");
@@ -43,6 +44,9 @@
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	%> 
+	%>  --%>
+	<%NoticeDAO dao0 = new NoticeDAO();
+	out.print(dao0.selectAll());%>
+	
 </body>
 </html>

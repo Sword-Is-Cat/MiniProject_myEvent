@@ -55,7 +55,7 @@ public class EventDAO {
 			ps.setString(9, event.getEvPhone());
 			ps.setString(10, event.getEvEmail());
 
-			ps.addBatch();
+			ps.executeUpdate();
 
 			ps = con.prepareStatement(sql2);
 
@@ -64,12 +64,16 @@ public class EventDAO {
 			ps.setTimestamp(3, event.getEvTime().getEvBookStartTime());
 			ps.setTimestamp(4, event.getEvTime().getEvBookEndTime());
 
-			ps.addBatch();
-
-			result = ps.executeBatch()[0];
+			ps.executeUpdate();
+			
+			ps = con.prepareStatement("select evseq.currval from dual");
+			rs = ps.executeQuery();
+			
+			if(rs.next())
+				result = rs.getInt(1);
 
 		} finally {
-			DbUtil.dbClose(ps, con);
+			DbUtil.dbClose(rs, ps, con);
 		}
 
 		return result;
@@ -78,7 +82,10 @@ public class EventDAO {
 	public int updateEvent(Event event) throws Exception {
 
 		StringBuilder sqle = new StringBuilder();
-		sqle.append("update event set cateNo=?, evName=?, evAddr=?, evBookMax=?, evDescription=?, ");
+		sqle.append("update event set cateNo=?, evName=?, evBookMax=?, evDescription=?, ");
+		if (event.getEvAddr() != null) {
+			sqle.append("evAddr=?, ");
+		}
 		if (event.getEvImg() != null) {
 			sqle.append("evImg=?, ");
 		}
@@ -112,9 +119,11 @@ public class EventDAO {
 			int i = 0;
 			ps.setInt(++i, event.getCategory().getCateNo());
 			ps.setString(++i, event.getEvName());
-			ps.setString(++i, event.getEvAddr());
 			ps.setInt(++i, event.getEvBookMax());
 			ps.setString(++i, event.getEvDescription());
+			if (event.getEvImg() != null) {
+				ps.setString(++i, event.getEvAddr());
+			}
 			if (event.getEvImg() != null) {
 				ps.setString(++i, event.getEvImg());
 			}
@@ -198,7 +207,7 @@ public class EventDAO {
 				category = new Category(rs.getInt("cateNo"), rs.getString("cateName"));
 				user = new User(rs.getInt("userNo"), rs.getString("userName"), rs.getString("userPwd"),
 						rs.getString("userName"), rs.getString("userAddr"), rs.getString("userPhone"),
-						rs.getString("userEmaill"), rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
+						rs.getString("userEmail"), rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
 				channel = new Channel(rs.getInt("chNo"), user, rs.getString("chName"), rs.getString("chImg"),
 						rs.getInt("chStatus"), rs.getString("chDescription"));
 				evTime = new EvTime(rs.getInt("evNo"), rs.getTimestamp("evCreateTime"), rs.getTimestamp("evStartTime"),

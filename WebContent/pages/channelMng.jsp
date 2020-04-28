@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%@page import="java.util.List"%>
 <%@page import="kosta.mvc.service.ChannelService"%>
 <%@page import="kosta.mvc.vo.Channel"%>
@@ -5,21 +6,54 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
  
+=======
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+>>>>>>> branch 'master' of https://github.com/Sword-Is-Cat/MiniProject_myEvent.git
 
 <!DOCTYPE html>
-
-<html lang="zxx">
-
- 
-
+<html lang="ko">
 <head>
+	<meta charset="UTF-8">
+  <title>My Event :: 행사와 함께 하는 모든 순간</title>
 
-  <meta charset="utf-8">
+   <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+   <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+	<!-- FontAwesome -->
+  <link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
+	<!-- Animation -->
+	<link rel="stylesheet" href="plugins/animate.css">
+	<!-- Prettyphoto -->
+	<link rel="stylesheet" href="plugins/prettyPhoto.css">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="plugins/owl/owl.carousel.css">
+	<link rel="stylesheet" href="plugins/owl/owl.theme.css">
+	<!-- Flexslider -->
+	<link rel="stylesheet" href="plugins/flex-slider/flexslider.css">
+	<!-- Flexslider -->
+	<link rel="stylesheet" href="plugins/cd-hero/cd-hero.css">
+	<!-- Style Swicther -->
+	<link id="style-switch" href="css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
 
-  <title>채널관리</title>
-
-  <style>
-
+  <!-- Main Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/defaultStyle.css" rel="stylesheet">
+  <!--Favicon-->
+	<link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="./images/favicon/144.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="./images/favicon/72.png">
+	<link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
+ <!-- webFont -->
+ <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+ <style>
+/*---------원본css-----------------*/
   	#btn{
 
   		margin-right: 400px;
@@ -32,9 +66,7 @@
 
   		min-height: 350px;
 
-  		padding-top: 30px; 
-
-  		padding-left: 20px;
+  		padding : 30px;
 
   		text-align: left;
 
@@ -56,6 +88,72 @@
     padding-right: 50px;
     position: relative;
     top: -30px; }
+/*------------지안추가css----------------------*/
+	.mainContainer {
+	/* position: relative;
+	top:-50px; */
+	}
+.chSetting>i::before {
+    content: "\f013";
+   
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: 900;
+    margin:0 auto;
+    text-align:center;
+    padding-right:5px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	}
+	.chAuthor>i::before {
+    content: "\f234";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: 900;
+    margin:0 auto;
+    padding-right:5px;
+    text-align:center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	}
+	.chDel>i::before {
+    content: "\f1f8";
+    font-family: FontAwesome;
+    font-style: normal;
+	font-weight: 900;
+    margin:0 auto;
+    padding-right:5px;
+    text-align:center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	}
+	.chListMenu li {
+	padding: 10px 15px 10px 0px;
+	display:inline-block;
+	}
+	.bgPart {
+		margin-top:50px;
+		background:url("images/hostcenter_top_image.jpg") no-repeat;
+		background-position: center center;
+		background-size: cover;
+		//padding-top:50px;
+		
+	}
+	.bgImg {
+	
+		height:250px;
+	}
+	h4 .addCh::after {
+		 content: "\f055";
+	    font-family: FontAwesome;
+	    font-style: normal;
+		font-weight: 900;
+	    margin:0 auto;
+	    padding-right:20px;
+	    text-align:center;
+	    -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+	}
 
   </style>
 
@@ -66,20 +164,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-	<!-- <!-- 지혜 js -->
+
 	<script language=javascript>
-	function sendUpdate(){//수정폼
+	function sendUpdate(){//������
 		document.requestForm.key.value ="updateChannel";
 		document.requestForm.submit();
 	}
 
-	function sendDelete(){//삭제
+	function sendDelete(){//����
 		
 		document.requestForm.key.value ="deleteChannel";
 		document.requestForm.submit();
 	}
 	</script> -->
-  <!-- ** Plugins Needed for the Project ** -->
 
   <!-- Bootstrap -->
 
@@ -148,41 +245,24 @@
  
 
 </head>
-
  
 
 <body>
 
- 
+<!--subTopMenu-->
+<c:import url="headerTop.jsp"/>
+<!--subTopMenu end-->	
 
-	<!-- Style switcher start -->
+<c:import url="header.jsp"></c:import>
 
-	<div class="style-switch-wrapper">
+<!-- 채널메인 -->
 
-		<div class="style-switch-button">
-
-			<i class="fa fa-sliders"></i>
-
-		</div>
-
-		<h3>Style Options</h3>
-
-		<button id="preset1" class="btn btn-sm btn-primary"></button>
-
-		<button id="preset2" class="btn btn-sm btn-primary"></button>
-
-		<button id="preset3" class="btn btn-sm btn-primary"></button>
-
-		<button id="preset4" class="btn btn-sm btn-primary"></button>
-
-		<button id="preset5" class="btn btn-sm btn-primary"></button>
-
-		<button id="preset6" class="btn btn-sm btn-primary"></button>
-
-		<br/><br/>
-
-		<a class="btn btn-sm btn-primary close-styler float-right">Close X</a>
-
+<!-- 채널메인 end -->
+<!-- Main container start -->
+<div class="container-fluide bgPart">
+	<div class="bgImg">
+	
+	
 	</div>
 
 	<!-- Style switcher end -->
@@ -206,7 +286,7 @@
 
 			<div class="col-md-12 heading text-center">
 
-				<h2 class="title2" style="text-align: center; font-weight: bold">채널 관리
+				<h2 class="title2" style="text-align: center; font-weight: bold">梨��� 愿�由�
 
 				<span class="title-desc"></span>
 
@@ -216,25 +296,28 @@
 
 		</div><!-- Title row end -->
 
-		<!--Isotope filter start -->
+</div>
+<div class="Container mainContainer">
+>>>>>>> branch 'master' of https://github.com/Sword-Is-Cat/MiniProject_myEvent.git
 
+		<!--Isotope filter start -->
+<!-- 
 		<div class="row text-right">
 
 			<div class="col-12">
 
 				<div class="isotope-nav" data-isotope-nav="isotope">
+					<div class="crCh">
+						<a href="#" data-filter=".make-channel" id="btn">채널 개설</a>
+					</div>
 
-					<ul>
-
-						<li><a href="#" data-filter=".make-channel" id="btn">채널 개설</a></li>
-
-					</ul>
+	
 
 				</div>
 
 			</div>
 
-		</div><!-- Isotope filter end -->
+		</div> --><!-- Isotope filter end -->
 
 	<div class="container">
 
@@ -242,9 +325,13 @@
 
 			<div class="col-md-12 heading">
 
-				<span class="title-icon classic float-left"><i class="fa fa-users"></i></span>
+				<span class="title-icon classic float-left"></span>
 
+<<<<<<< HEAD
 				<h4 class="title classic">${channel.chName}</h4>
+=======
+				<h4 class="title classic">채널이름 <a class="addCh" href="#"></a></h4>
+>>>>>>> branch 'master' of https://github.com/Sword-Is-Cat/MiniProject_myEvent.git
 
 			</div>
 
@@ -291,39 +378,40 @@
 				</div>
 
 			</div>
-
+		
 			<!--/ Team 1 end -->
 
-			<div class="col-md-9 col-sm-6">
+	<div class="col-md-9 col-sm-6">
 
 			<div id="chDesc" class="team team-list wow slideInRight">
-			<%-- <!-- 지혜 연습 -->
-				<!-- 수정시 필요한 데이터들을 hidden으로 숨겨놓고 폼 데이터로 보내준다. -->
+			<%-- <!-- 吏��� �곗�� -->
+
 				<form name="requestForm" method=post action="<%=request.getContextPath() %>/front">
 				<input type=hidden name="chNo" value="${channel.chNo}">
 				<input type=hidden name="key" value="">
-				<input type=button value="수정하기" onClick="sendUpdate()">
-				<input type=button value="삭제하기" onClick="sendDelete()">
+				<input type=button value="������湲�" onClick="sendUpdate()">
+				<input type=button value="������湲�" onClick="sendDelete()">
 				</form>
-			<!-- 지혜 연습 끝 --> --%>
-				<h4>개설행사: n개</h4>
+			--%>
+				<h4>媛��ㅽ����: n媛�</h4>
 				<div class="cd-full-width btnOpen">
 
-					<a href="#0" id="makeEv" class="btn btn-primary solid cd-btn">행사개설</a>
+		<div id="chDesc" class="team team-list wow slideInRight">
 
-				</div> <!-- .cd-full-width -->	
+			<h4>개설행사: n개</h4>
+			<div class="cd-full-width btnOpen">
 
-				<a href=""><p id="p"><i class="fa fa-users"></i>&nbsp;&nbsp;채널설정</p></a>
+				<a href="#0" id="makeEv" class="btn btn-primary solid cd-btn">행사개설</a>
 
-				<p id="p">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-
-				<a href=""><p id="p"><i class="fa fa-users"></i>&nbsp;&nbsp;권한설정</p></a>
-
-				<p id="p">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-
-				<a href=""><p id="p"><i class="fa fa-users"></i>&nbsp;&nbsp;채널삭제</p></a><br>
-
-				<div class="col-sm-5 portfolio-static-item">
+			</div> <!-- .cd-full-width -->	
+				<ul class="list-unstyled chListMenu">
+					<li class=""><a class="chSetting" href="#"><i class="fa fa-users">채널설정</i></a></li>
+					<li class=""><a class="chAuthor" href="#"><i class="fa fa-users">권한설정</i></a></li>
+					<li class=""><a class="chDel" href="#"><i class="fa fa-users">채널삭제</i></a></li>
+				</ul>
+			
+ 		<div class="row d-flex justify-content-between">
+			<div class="col-sm-5 portfolio-static-item">
 				<div class="grid">
 					<figure class="m-0 effect-oscar">
 						<img src="images/thumnail/03.jpg" alt="">
@@ -359,89 +447,19 @@
 				</div>
 				<!--/ grid end -->
 			</div>
+			
+		</div> <!-- chDesc end -->
+			
+		</div><!-- row end -->
+	</div><!-- row text-center -->
 
-				<!-- <button><a href=""></a>행사 개설</button> -->
+</div><!--col-md-9 col-sm-6 end -->
 
-			</div>
+ </div>	<!--/ Container end -->
+ </div><!-- main div container end -->
 
-			<!--/ team team-list wow slideInRight end -->
-
-			</div>
-
-			<!--/ Team 2 end -->
-
-		</div>
-
-		<!--/ Content row end -->
-
- 
-
- 
-
-<!-- jQuery -->
-
-<script src="plugins/jQuery/jquery.min.js"></script>
-
-<!-- Bootstrap JS -->
-
-<script src="plugins/bootstrap/bootstrap.min.js"></script>
-
-<!-- Style Switcher -->
-
-<script type="text/javascript" src="plugins/style-switcher.js"></script>
-
-<!-- Owl Carousel -->
-
-<script type="text/javascript" src="plugins/owl/owl.carousel.js"></script>
-
-<!-- PrettyPhoto -->
-
-<script type="text/javascript" src="plugins/jquery.prettyPhoto.js"></script>
-
-<!-- Bxslider -->
-
-<script type="text/javascript" src="plugins/flex-slider/jquery.flexslider.js"></script>
-
-<!-- CD Hero slider -->
-
-<script type="text/javascript" src="plugins/cd-hero/cd-hero.js"></script>
-
-<!-- Isotope -->
-
-<script type="text/javascript" src="plugins/isotope.js"></script>
-
-<script type="text/javascript" src="plugins/ini.isotope.js"></script>
-
-<!-- Wow Animation -->
-
-<script type="text/javascript" src="plugins/wow.min.js"></script>
-
-<!-- Eeasing -->
-
-<script type="text/javascript" src="plugins/jquery.easing.1.3.js"></script>
-
-<!-- Counter -->
-
-<script type="text/javascript" src="plugins/jquery.counterup.min.js"></script>
-
-<!-- Waypoints -->
-
-<script type="text/javascript" src="plugins/waypoints.min.js"></script>
-
-<!-- google map -->
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
-
-<script src="plugins/google-map/gmap.js"></script>
-
- 
-
-<!-- Main Script -->
-
-<script src="js/script.js"></script>
-
- 
-
+<!-- footer -->
+<c:import url="footer.jsp"></c:import>
 </body>
 
 </html>

@@ -1,21 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="zxx">
-
+<html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <title>BizCraft - Responsive Html5 Template</title>
+  <meta charset="UTF-8">
+  <title>My Event :: 행사와 함께 하는 모든 순간</title>
 
-  <!-- mobile responsive meta -->
+   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <!-- ** Plugins Needed for the Project ** -->
+   <!-- ** Plugins Needed for the Project ** -->
   <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
   <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
 	<!-- FontAwesome -->
-  <link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
+    <link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
 	<!-- Animation -->
 	<link rel="stylesheet" href="plugins/animate.css">
 	<!-- Prettyphoto -->
@@ -30,20 +31,16 @@
 	<!-- Style Swicther -->
 	<link id="style-switch" href="css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
 
-	<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-    <!--[if lt IE 9]>
-      <script src="plugins/html5shiv.js"></script>
-      <script src="plugins/respond.min.js"></script>
-    <![endif]-->
-
   <!-- Main Stylesheet -->
   <link href="css/style.css" rel="stylesheet">
-  
+  <link href="css/defaultStyle.css" rel="stylesheet">
   <!--Favicon-->
-	<link rel="icon" href="img/favicon/favicon-32x32.png" type="image/x-icon" />
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/favicon/favicon-144x144.png">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/favicon/favicon-72x72.png">
-	<link rel="apple-touch-icon-precomposed" href="img/favicon/favicon-54x54.png">
+	<link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="./images/favicon/144.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="./images/favicon/72.png">
+	<link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
+  <!-- webFont -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 	<!-- jQuery -->
 	<script src="plugins/jQuery/jquery.min.js"></script>
 	<!-- Bootstrap JS -->
@@ -89,125 +86,18 @@
 </head>
 
 <body>
+<!--subTopMenu-->
+<c:import url="headerTop.jsp"/>
+<!--subTopMenu end-->	
 
-	<!-- Style switcher start -->
-	<div class="style-switch-wrapper">
-		<div class="style-switch-button">
-			<i class="fa fa-sliders"></i>
-		</div>
-		<h3>Style Options</h3>
-		<button id="preset1" class="btn btn-sm btn-primary"></button>
-		<button id="preset2" class="btn btn-sm btn-primary"></button>
-		<button id="preset3" class="btn btn-sm btn-primary"></button>
-		<button id="preset4" class="btn btn-sm btn-primary"></button>
-		<button id="preset5" class="btn btn-sm btn-primary"></button>
-		<button id="preset6" class="btn btn-sm btn-primary"></button>
-		<br/><br/>
-		<a class="btn btn-sm btn-primary close-styler float-right">Close X</a>
-	</div>
-	<!-- Style switcher end -->
-
-	<div class="body-inner">
-
-<!-- Header start -->
-<header id="header" class="fixed-top header" role="banner">
-	<a class="navbar-brand navbar-bg" href="index.html"><img class="img-fluid float-right" src="images/logo.png" alt="logo"></a>
-	<div class="container">
-		<nav class="navbar navbar-expand-lg navbar-dark">
-			<button class="navbar-toggler ml-auto border-0 rounded-0 text-white" type="button" data-toggle="collapse"
-				data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="fa fa-bars"></span>
-			</button>
-
-			<div class="collapse navbar-collapse text-center" id="navigation">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item dropdown active">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">
-							Home
-						</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="index.html">Homepage 1</a>
-							<a class="dropdown-item" href="index-2.html">Homepage 2</a>
-							<a class="dropdown-item" href="index-3.html">Homepage 3</a>
-							<a class="dropdown-item" href="index-4.html">Homepage 4</a>
-						</div>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">
-							Company
-						</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="about.html">About Us</a>
-							<a class="dropdown-item" href="service.html">Services</a>
-							<a class="dropdown-item" href="career.html">Career</a>
-							<a class="dropdown-item" href="testimonial.html">Testimonials</a>
-							<a class="dropdown-item" href="faq.html">Faq</a>
-						</div>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">
-							Portfolio
-						</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="portfolio-classic.html">Portfolio Classic</a>
-							<a class="dropdown-item" href="portfolio-static.html">Portfolio Static</a>
-							<a class="dropdown-item" href="portfolio-item.html">Portfolio Single</a>
-						</div>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">
-							Pages
-						</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="team.html">Our Team</a>
-							<a class="dropdown-item" href="about2.html">About Us - 2</a>
-							<a class="dropdown-item" href="service2.html">Services - 2</a>
-							<a class="dropdown-item" href="service-single.html">Services Single</a>
-							<a class="dropdown-item" href="pricing.html">Pricing Table</a>
-							<a class="dropdown-item" href="404.html">404 Page</a>
-						</div>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">
-							Blog
-						</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="blog-rightside.html">Blog with Sidebar</a>
-							<a class="dropdown-item" href="blog-item.html">Blog Single</a>
-						</div>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">
-							Features
-						</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="typography.html">Typography</a>
-							<a class="dropdown-item" href="elements.html">Elements</a>
-						</div>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="contact.html">Contact</a></a>
-					</li>
-				</ul>
-			</div>
-		</nav>
-	</div>
-</header>
-<!--/ Header end -->
-
+<c:import url="header.jsp"></c:import>
 <div id="banner-area">
 	<img src="images/banner/banner1.jpg" alt="" />
 	<div class="parallax-overlay"></div>
 	<!-- Subpage title start -->
 	<div class="banner-title-content">
 		<div class="text-center">
-			<h2>행사이름 들어갈 곳</h2>
+			<h2>${requestScope.event.evName}</h2>
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb justify-content-center">
 					<li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -227,11 +117,7 @@
 			<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 				<div class="portfolio-slider">
 					<div class="flexportfolio flexslider">
-						<ul class="slides">
-							<li><img src="images/portfolio/portfolio-bg1.jpg" alt=""></li>
-							<li><img src="images/portfolio/portfolio-bg2.jpg" alt="" /></li>
-							<li><img src="images/portfolio/portfolio-bg3.jpg" alt="" /></li>
-						</ul>
+						<img src="eventImage/${requestScope.event.evImg}" alt="">
 					</div>
 				</div>
 			</div>
@@ -241,12 +127,12 @@
 			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" id="sideBar">
 				<div class="sidebar">
 					<div class="portfolio-desc">
-						<h3 class="widget-title">행사이름aaa</h3>
-						<p>행사카테고리
+						<h3 class="widget-title">${requestScope.event.evName}</h3>
+						<p>${requestScope.event.category.cateName}
 						</p>
 						<br />
-						<h3 class="widget-title">채널이름aaa</h3>
-						<p>채널설명</p>
+						<h3 class="widget-title">${requestScope.event.channel.chName}</h3>
+						<p>${requestScope.event.channel.chDescription}</p>
 						<br />
 						<p><a href="#" class="project-btn btn btn-primary">신청하기</a></p>
 					</div>
@@ -255,21 +141,21 @@
 			<!-- sidebar end -->
 			<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id="evInfo">
 				<div class="col-lg-6 col-md-6 col-sm-8 col-xs-8 float-left">
-					<p>일시</p>
-					<p>일시</p>
-					<p>일시</p>
+					<p>접수</p>
+					<p>${requestScope.event.evTime.evBookStartTime}</p>
+					<p>${requestScope.event.evTime.evBookEndTime}</p>
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-4 col-xs-8 float-left">
-					<p>일시</p>
-					<p>일시</p>
-					<p>일시</p>
+					<p>행사</p>
+					<p>${requestScope.event.evTime.evStartTime}</p>
+					<p>${requestScope.event.evTime.evEndTime}</p>
 				</div>
 				<div class="row" style="border:2px solid; height:800px;">
-					상세내용 div 나중에 확인용 style삭제하기
+					${requestScope.event.evDescription}
 				</div>
 			</div>
 			<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id="qnaBoard" style="border:2px solid; height:200px;">
-				적당한 qnaBoard 나중에 Style지우기
+				${requestScope.event.evAddr}
 				</div>
 		</div><!-- Portfolio item row end -->
 	</div><!-- Container end -->
@@ -436,7 +322,8 @@
 	<!--/ Copyright end -->
 
 </div><!-- Body inner end -->
-
+<!-- footer -->
+<c:import url="footer.jsp"></c:import>
 </body>
 
 </html>

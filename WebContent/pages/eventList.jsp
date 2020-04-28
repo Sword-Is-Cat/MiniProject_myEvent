@@ -1,12 +1,46 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="zxx">
-
+<html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <title>행사 검색</title>
+  <meta charset="UTF-8">
+  <title>My Event :: 행사와 함께 하는 모든 순간</title>
+
+   <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+   <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+	<!-- FontAwesome -->
+    <link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
+	<!-- Animation -->
+	<link rel="stylesheet" href="plugins/animate.css">
+	<!-- Prettyphoto -->
+	<link rel="stylesheet" href="plugins/prettyPhoto.css">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="plugins/owl/owl.carousel.css">
+	<link rel="stylesheet" href="plugins/owl/owl.theme.css">
+	<!-- Flexslider -->
+	<link rel="stylesheet" href="plugins/flex-slider/flexslider.css">
+	<!-- Flexslider -->
+	<link rel="stylesheet" href="plugins/cd-hero/cd-hero.css">
+	<!-- Style Swicther -->
+	<link id="style-switch" href="css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
+
+  <!-- Main Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/defaultStyle.css" rel="stylesheet">
+  <!--Favicon-->
+	<link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="./images/favicon/144.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="./images/favicon/72.png">
+	<link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
+  <!-- webFont -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
   	<!--졔가 만든 style -->
   <style>
   	.option{
@@ -20,7 +54,7 @@
   		text-decoration: none;
   		color: inherit;
 	}
-	img{
+	img.chImg{
 		width: 200px;
 		height: 180px;
 	}
@@ -77,38 +111,11 @@
 </head>
 
 <body>
+<!--subTopMenu-->
+<c:import url="headerTop.jsp"/>
+<!--subTopMenu end-->	
 
-	<!-- Style switcher start -->
-	<div class="style-switch-wrapper">
-		<div class="style-switch-button">
-			<i class="fa fa-sliders"></i>
-		</div>
-		<h3>Style Options</h3>
-		<button id="preset1" class="btn btn-sm btn-primary"></button>
-		<button id="preset2" class="btn btn-sm btn-primary"></button>
-		<button id="preset3" class="btn btn-sm btn-primary"></button>
-		<button id="preset4" class="btn btn-sm btn-primary"></button>
-		<button id="preset5" class="btn btn-sm btn-primary"></button>
-		<button id="preset6" class="btn btn-sm btn-primary"></button>
-		<br/><br/>
-		<a class="btn btn-sm btn-primary close-styler float-right">Close X</a>
-	</div>
-	<!-- Style switcher end -->
-
-	<div class="body-inner">
-
-
-<!-- event top -->
-		<div class="row">
-			<div class="col-md-12 heading text-center">
-				<h2 class="title2" style="font-weight: bold">행사 목록<span class="title-desc"></span></h2>
-				<select id="select" class="select">
-					<option id="option" class="option" selected="selected">행사 분야&nbsp;&nbsp;</option>
-				</select>
-			</div>
-			
-		</div><!-- Title row end -->
-<br>
+<c:import url="header.jsp"></c:import>
 
 <h4 style="margin-left:15%">총 n개의 검색 결과가 있습니다.</h4>
 <!-- Portfolio start -->
@@ -118,7 +125,7 @@
 			<div class="col-sm-4 portfolio-static-item">
 				<div class="grid">
 					<figure class="m-0 effect-oscar">
-						<img src="https://eventusstorage.blob.core.windows.net/evs/Image/event/16764/ProjectInfo/Cover/e3f492fb160d420ca4483e56964b710d.jpg?fixed" alt="">
+						<img class="chImg" src="https://eventusstorage.blob.core.windows.net/evs/Image/event/16764/ProjectInfo/Cover/e3f492fb160d420ca4483e56964b710d.jpg?fixed" alt="">
 						<figcaption>
 							<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a>
 							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/portfolio/portfolio-bg1.jpg"><i
@@ -141,7 +148,7 @@
 			<div class="col-sm-4 portfolio-static-item">
 				<div class="grid">
 					<figure class="m-0 effect-oscar">
-						<img src="https://eventusstorage.blob.core.windows.net/evs/Image/tentuplay/16716/ProjectInfo/Cover/a447a98ed1c142359cf6444ace7908ac.jpg?fixed" alt="">
+						<img class="chImg" src="https://eventusstorage.blob.core.windows.net/evs/Image/tentuplay/16716/ProjectInfo/Cover/a447a98ed1c142359cf6444ace7908ac.jpg?fixed" alt="">
 						<figcaption>
 							<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a>
 							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/portfolio/portfolio-bg2.jpg"><i
@@ -163,7 +170,7 @@
 			<div class="col-sm-4 portfolio-static-item">
 				<div class="grid">
 					<figure class="m-0 effect-oscar">
-						<img src="https://eventusstorage.blob.core.windows.net/evs/Image/dreamplusgangnam/16372/ProjectInfo/Cover/489df4119075489c986f6ea646545124.jpg?fixed" alt="">
+						<img class="chImg"  src="https://eventusstorage.blob.core.windows.net/evs/Image/dreamplusgangnam/16372/ProjectInfo/Cover/489df4119075489c986f6ea646545124.jpg?fixed" alt="">
 						<figcaption>
 							<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a>
 							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/portfolio/portfolio-bg3.jpg"><i
@@ -182,7 +189,7 @@
 			<div class="col-sm-4 portfolio-static-item">
 				<div class="grid">
 					<figure class="m-0 effect-oscar">
-						<img src="images/portfolio/portfolio4.jpg" alt="">
+						<img class="chImg"  src="images/portfolio/portfolio4.jpg" alt="">
 						<figcaption>
 							<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a>
 							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/portfolio/portfolio-bg1.jpg"><i
@@ -201,7 +208,7 @@
 			<div class="col-sm-4 portfolio-static-item">
 				<div class="grid">
 					<figure class="m-0 effect-oscar">
-						<img src="images/portfolio/portfolio5.jpg" alt="">
+						<img class="chImg"  src="images/portfolio/portfolio5.jpg" alt="">
 						<figcaption>
 							<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a>
 							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/portfolio/portfolio-bg2.jpg"><i
@@ -220,7 +227,7 @@
 			<div class="col-sm-4 portfolio-static-item">
 				<div class="grid">
 					<figure class="m-0 effect-oscar">
-						<img src="images/portfolio/portfolio6.jpg" alt="">
+						<img class="chImg"  src="images/portfolio/portfolio6.jpg" alt="">
 						<figcaption>
 							<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a>
 							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/portfolio/portfolio-bg3.jpg"><i
@@ -239,7 +246,7 @@
 			<div class="col-sm-4 portfolio-static-item">
 				<div class="grid">
 					<figure class="m-0 effect-oscar">
-						<img src="images/portfolio/portfolio7.jpg" alt="">
+						<img class="chImg"  src="images/portfolio/portfolio7.jpg" alt="">
 						<figcaption>
 							<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a>
 							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/portfolio/portfolio-bg1.jpg"><i
@@ -258,7 +265,7 @@
 			<div class="col-sm-4 portfolio-static-item">
 				<div class="grid">
 					<figure class="m-0 effect-oscar">
-						<img src="images/portfolio/portfolio8.jpg" alt="">
+						<img class="chImg"  src="images/portfolio/portfolio8.jpg" alt="">
 						<figcaption>
 							<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a>
 							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/portfolio/portfolio-bg2.jpg"><i
@@ -280,35 +287,8 @@
 
 <div class="gap-40"></div>
 </div><!-- Body inner end -->
-
-<!-- jQuery -->
-<script src="plugins/jQuery/jquery.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="plugins/bootstrap/bootstrap.min.js"></script>
-<!-- Style Switcher -->
-<script type="text/javascript" src="plugins/style-switcher.js"></script>
-<!-- PrettyPhoto -->
-<script type="text/javascript" src="plugins/jquery.prettyPhoto.js"></script>
-<!-- Bxslider -->
-<script type="text/javascript" src="plugins/flex-slider/jquery.flexslider.js"></script>
-<!-- Isotope -->
-<script type="text/javascript" src="plugins/isotope.js"></script>
-<script type="text/javascript" src="plugins/ini.isotope.js"></script>
-<!-- Wow Animation -->
-<script type="text/javascript" src="plugins/wow.min.js"></script>
-<!-- Eeasing -->
-<script type="text/javascript" src="plugins/jquery.easing.1.3.js"></script>
-<!-- Counter -->
-<script type="text/javascript" src="plugins/jquery.counterup.min.js"></script>
-<!-- Waypoints -->
-<script type="text/javascript" src="plugins/waypoints.min.js"></script>
-<!-- google map -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
-<script src="plugins/google-map/gmap.js"></script>
-
-<!-- Main Script -->
-<script src="js/script.js"></script>
-
+<!-- footer -->
+<c:import url="footer.jsp"></c:import>
 </body>
 
 </html>

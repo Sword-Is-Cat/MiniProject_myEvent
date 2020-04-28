@@ -14,29 +14,30 @@ import kosta.mvc.vo.Channel;
 import kosta.mvc.vo.EvTime;
 import kosta.mvc.vo.Event;
 
-public class CreateEventController implements Controller {
+public class UpdateEventController implements Controller {
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse rsponse) throws Exception {
 
 		String saveDir = request.getServletContext().getRealPath("/eventImage");
 
-		int maxSize = 1024 * 1024 * 50;// 50M
+		int maxSize = 1024 * 1024 * 100;// 100M
 		String encoding = "UTF-8";
 
 		MultipartRequest m = new MultipartRequest(request, saveDir, maxSize, encoding, new DefaultFileRenamePolicy());
 
-		String evName = m.getParameter("evName");
+		String evName = m.getParameter("eventName");
 		int cateNo = Integer.parseInt(m.getParameter("cateNo"));
 		int chNo = Integer.parseInt(m.getParameter("chNo"));
 		int evBookMax = Integer.parseInt(m.getParameter("evBookMax"));
-		String evDescription = m.getParameter("evDescription");
+		String evDescription = m.getParameter("description");
 		String evBookStarts = m.getParameter("evBookStart");
 		String evBookEnds = m.getParameter("evBookEnd");
 		String evStarts = m.getParameter("evStart");
 		String evEnds = m.getParameter("evEnd");
 		String postalCode = m.getParameter("postalCode");
 		String roadAddress = m.getParameter("roadAddress");
+		String jibunAddress = m.getParameter("jibunAddress");
 		String detailAddress = m.getParameter("detailAddress");
 		String extraAddress = m.getParameter("extraAddress");
 		String evPhone = m.getParameter("evPhone");
@@ -48,9 +49,6 @@ public class CreateEventController implements Controller {
 
 			throw new RuntimeException("입력값부족");
 		}
-		
-		evStarts = evStarts.replace('T', ' ')+":00";
-		evEnds = evEnds.replace('T', ' ')+":00";
 
 		Category category = new Category();
 		category.setCateNo(cateNo);
@@ -58,11 +56,11 @@ public class CreateEventController implements Controller {
 		channel.setChNo(chNo);
 
 		if (postalCode == null || postalCode.equals("")) {
-			evAddr = "Online";
+			evAddr = null;
 		} else {
 			evAddr = postalCode + roadAddress + detailAddress + extraAddress;
 		}
-		System.out.println(evStarts);
+
 		Timestamp evStart = Timestamp.valueOf(evStarts);
 		Timestamp evEnd = Timestamp.valueOf(evEnds);
 		Timestamp evBookStart;
@@ -71,13 +69,13 @@ public class CreateEventController implements Controller {
 		if (evBookStarts == null || evBookStarts.equals("")) {
 			evBookStart = new Timestamp(System.currentTimeMillis());
 		} else {
-			evBookStart = Timestamp.valueOf(evBookStarts.replace('T', ' ')+":00");
+			evBookStart = Timestamp.valueOf(evBookStarts);
 
 		}
 		if (evBookEnds == null || evBookEnds.equals("")) {
 			evBookEnd = evStart;
 		} else {
-			evBookEnd = Timestamp.valueOf(evBookEnds.replace('T', ' ')+":00");
+			evBookEnd = Timestamp.valueOf(evBookEnds);
 		}
 
 		EvTime evTime = new EvTime(evStart, evEnd, evBookStart, evBookEnd);
@@ -87,21 +85,15 @@ public class CreateEventController implements Controller {
 
 		if (m.getFilesystemName("evImage") != null) {
 			event.setEvImg(m.getFilesystemName("evImage"));
-		}else {
-			event.setEvImg("sample.png");
 		}
 
 		if (m.getFilesystemName("evImageDetail") != null) {
 			event.setEvImgDetail(m.getFilesystemName("evImageDetail"));
-		}else {
-			event.setEvImg("sample.png");
 		}
 
-		
-		int evNo = new EventDAO().insertEvent(event);
+		new EventDAO().updateEvent(event);
 
-		System.out.println("createEv가 뱉어주는 evNo = "+evNo);
-		ModelAndView mv = new ModelAndView(true, "front?key=selectEvent&evNo="+evNo);
+		ModelAndView mv = new ModelAndView(true, "front");
 		return mv;
 	}
 
