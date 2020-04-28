@@ -21,80 +21,84 @@ public class UpdateEventController implements Controller {
 
 		String saveDir = request.getServletContext().getRealPath("/eventImage");
 
-		int maxSize = 1024 * 1024 * 100;// 100M
+		int maxSize = 1024 * 1024 * 50;// 50M
 		String encoding = "UTF-8";
 
 		MultipartRequest m = new MultipartRequest(request, saveDir, maxSize, encoding, new DefaultFileRenamePolicy());
 
-		String evName = m.getParameter("eventName");
+		int evNo = Integer.parseInt(m.getParameter("evNo"));
+		String evName = m.getParameter("evName");
 		int cateNo = Integer.parseInt(m.getParameter("cateNo"));
 		int chNo = Integer.parseInt(m.getParameter("chNo"));
 		int evBookMax = Integer.parseInt(m.getParameter("evBookMax"));
-		String evDescription = m.getParameter("description");
+		String evDescription = m.getParameter("evDescription");
 		String evBookStarts = m.getParameter("evBookStart");
 		String evBookEnds = m.getParameter("evBookEnd");
 		String evStarts = m.getParameter("evStart");
 		String evEnds = m.getParameter("evEnd");
-		String postalCode = m.getParameter("postalCode");
-		String roadAddress = m.getParameter("roadAddress");
-		String jibunAddress = m.getParameter("jibunAddress");
-		String detailAddress = m.getParameter("detailAddress");
-		String extraAddress = m.getParameter("extraAddress");
+		String evAddr = m.getParameter("evAddr");
 		String evPhone = m.getParameter("evPhone");
 		String evEmail = m.getParameter("evEmail");
-		String evAddr = "";
 
-		if (evName == null || evName.equals("") || evDescription == null || evDescription.equals("") || evStarts == null
-				|| evStarts.equals("") || evEnds == null || evEnds.equals("")) {
+		if (evName == null || evName.equals("") || evDescription == null || evDescription.equals("")) {
 
 			throw new RuntimeException("입력값부족");
 		}
-
+		
 		Category category = new Category();
 		category.setCateNo(cateNo);
 		Channel channel = new Channel();
 		channel.setChNo(chNo);
 
-		if (postalCode == null || postalCode.equals("")) {
-			evAddr = null;
-		} else {
-			evAddr = postalCode + roadAddress + detailAddress + extraAddress;
-		}
-
-		Timestamp evStart = Timestamp.valueOf(evStarts);
-		Timestamp evEnd = Timestamp.valueOf(evEnds);
+		Timestamp evStart;
+		Timestamp evEnd;
 		Timestamp evBookStart;
 		Timestamp evBookEnd;
-
-		if (evBookStarts == null || evBookStarts.equals("")) {
-			evBookStart = new Timestamp(System.currentTimeMillis());
+		
+		if (evStarts == null || evStarts.equals("")) {
+			evStart = null;
 		} else {
-			evBookStart = Timestamp.valueOf(evBookStarts);
+			evStart = Timestamp.valueOf(evStarts.replace('T', ' ')+":00");
+			
+		}
+		if (evEnds == null || evEnds.equals("")) {
+			evEnd = null;
+		} else {
+			evEnd = Timestamp.valueOf(evEnds.replace('T', ' ')+":00");
+			
+		}
+		if (evBookStarts == null || evBookStarts.equals("")) {
+			evBookStart = null;
+		} else {
+			evBookStart = Timestamp.valueOf(evBookStarts.replace('T', ' ')+":00");
 
 		}
 		if (evBookEnds == null || evBookEnds.equals("")) {
-			evBookEnd = evStart;
+			evBookEnd = null;
 		} else {
-			evBookEnd = Timestamp.valueOf(evBookEnds);
+			evBookEnd = Timestamp.valueOf(evBookEnds.replace('T', ' ')+":00");
 		}
 
 		EvTime evTime = new EvTime(evStart, evEnd, evBookStart, evBookEnd);
 
-		Event event = new Event(category, channel, evName, evAddr, evBookMax, evDescription, null, null, evPhone,
-				evEmail, evTime);
+		Event event = new Event(evNo, category, channel, evName, evAddr, evBookMax, evDescription, null, null, evPhone, evEmail, evTime, 1);
 
 		if (m.getFilesystemName("evImage") != null) {
 			event.setEvImg(m.getFilesystemName("evImage"));
+		}else {
+			event.setEvImg(null);
 		}
 
 		if (m.getFilesystemName("evImageDetail") != null) {
 			event.setEvImgDetail(m.getFilesystemName("evImageDetail"));
+		}else {
+			event.setEvImgDetail(null);
 		}
 
+		
 		new EventDAO().updateEvent(event);
 
-		ModelAndView mv = new ModelAndView(true, "front");
+		ModelAndView mv = new ModelAndView(true, "front?key=selectEvent&evNo="+evNo);
 		return mv;
 	}
-
 }
