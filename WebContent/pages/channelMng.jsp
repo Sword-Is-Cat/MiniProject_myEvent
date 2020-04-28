@@ -320,7 +320,6 @@
 				<span class="title-icon classic float-left"></span>
 
 				<h4 class="title classic">${channel.chName}</h4>
-				<h4 class="title classic">梨����대� <a class="addCh" href="#"></a></h4>
 
 			</div>
 
@@ -412,25 +411,6 @@
 					</figure>
 					<div class="portfolio-static-desc">
 						<h3>[��由쇳���ъ�� ��媛� IT �몃����] �명����, �� �몃��� ����</h3>
-						<span><a href="#">Ui Elements</a></span>
-					</div>
-				</div>
-				<!--/ grid end -->
-			</div>
-			
-			<div class="row d-flex justify-content-between">
-			<div class="col-sm-5 portfolio-static-item">
-				<div class="grid">
-					<figure class="m-0 effect-oscar">
-						<img src="images/thumnail/03.jpg" alt="">
-						<figcaption>
-							<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a>
-							<a class="view icon-pentagon" data-rel="prettyPhoto" href="images/thumnail/03.jpg"><i
-									class="fa fa-search"></i></a>
-						</figcaption>
-					</figure>
-					<div class="portfolio-static-desc">
-						<h3>[드림플러스 월간 IT 트렌드] 언택트, 뉴 노멀의 시대</h3>
 						<span><a href="#">Ui Elements</a></span>
 					</div>
 				</div>

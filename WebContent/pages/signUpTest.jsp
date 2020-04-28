@@ -207,8 +207,13 @@ select {
 
 button#idChk {margin-top:25px; width:100%;} 
 button#userAddrBtn {margin-top:32px; width:100%;}
-
-	
+	.btn.signBtn:hover {
+    	background-color:#fff!important;
+    	border-color:#5c3fbf!important;
+    	color:#5c3fbf!important;
+    	transition:0.2s;
+	}
+.chkIdBtn {width:100%;}	
 
 </style>
 	
@@ -279,23 +284,14 @@ button#userAddrBtn {margin-top:32px; width:100%;}
 						<label for="userEmail">Email</label>
 						<input type="text" class="form-control" id="userEmail" name="userEmail" placeholder="E-mail을 입력해 주세요">
 					</div>
-					<div class="checkbox">
+					<div class="chkCategory">
 						<label for="userCategory">선호 카테고리를 선택해주세요</label>
 						<%List<Category> cateList = CategoryService.selectAll();%>
 						<%Category cate = cateList.get(0); %>
 						${cate.cateNo}
-				
 					</div>
-					
 
-					<h5>약관동의</h5>
-					<div class="checkbox">
-						<label>
-							<input type="checkbox"> [필수] 이용약관 및 개인정보 수집 관련 동의
-							<span class="checkmark"></span>
-						</label>
-					</div>
-					<fieldset>
+			<fieldset>
 				<c:forEach items="<%=cateList%>" var="category" varStatus="status">
 					<input type="checkbox" id="cate${category.cateNo}" name="cate${category.cateNo}" value="${category.cateNo}">
 					<label for="cate${category.cateNo}">${category.cateName}</label>
@@ -304,7 +300,15 @@ button#userAddrBtn {margin-top:32px; width:100%;}
 			<input type="hidden" name="key" value="signUp">
 			<input type="hidden" name="cateCount" value="<%=cateList.size()%>"><!-- 카테고리 카운트 value에 넣어야함 -->
 			
-			<button class="btn btn-info signBtn" id="submit" type="submit" disabled>아이디 중복체크를 해주세요</button> 
+			
+			<!-- <h5>약관동의</h5>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> [필수] 이용약관 및 개인정보 수집 관련 동의
+							<span class="checkmark"></span>
+						</label>
+					</div> -->
+			<button class="btn btn-info signBtn chkIdBtn" id="submit" type="submit" disabled>아이디 중복체크를 해주세요</button> 
 <!-- <button>회원가입</button> -->
 				</form><!-- SignUp Form end -->
 	

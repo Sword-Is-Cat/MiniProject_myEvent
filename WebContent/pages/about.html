@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
   <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
 	<!-- FontAwesome -->
-  <link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
+    <link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
 	<!-- Animation -->
 	<link rel="stylesheet" href="plugins/animate.css">
 	<!-- Prettyphoto -->
@@ -32,12 +32,6 @@
 	<!-- Style Swicther -->
 	<link id="style-switch" href="css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
 
-	<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-    <!--[if lt IE 9]>
-      <script src="plugins/html5shiv.js"></script>
-      <script src="plugins/respond.min.js"></script>
-    <![endif]-->
-
   <!-- Main Stylesheet -->
   <link href="css/style.css" rel="stylesheet">
   <link href="css/defaultStyle.css" rel="stylesheet">
@@ -49,466 +43,181 @@
  <!-- webFont -->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <style>
-	*,.title-desc,h1,h2,h3,h4,h5,h6,p {
-		//font-family: 'Noto Sans KR', sans-serif ;
-	}
+.parallax {
+  /* The image used */
+  background-image: url("./images/aboutBg.jpg");
+
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bgBlack {background:rgba(0,0,0,0.7);}
+.aboutIntro { margin: 0 auto; }
+.aboutIntro>p{font-size : 1.7em;}
+/*-----------------------탐라-----------------------------------*/
+.circle {
+  padding: 13px 20px;
+  border-radius: 50%;
+  background-color: #ED8D8D;
+  color: #fff;
+  max-height: 50px;
+  z-index: 2;
+}
+
+.how-it-works.row .col-2 {
+  align-self: stretch;
+}
+.how-it-works.row .col-2::after {
+  content: "";
+  position: absolute;
+  border-left: 3px solid #ED8D8D;
+  z-index: 1;
+}
+.how-it-works.row .col-2.bottom::after {
+  height: 50%;
+  left: 50%;
+  top: 50%;
+}
+.how-it-works.row .col-2.full::after {
+  height: 100%;
+  left: calc(50% - 3px);
+}
+.how-it-works.row .col-2.top::after {
+  height: 50%;
+  left: 50%;
+  top: 0;
+}
+
+
+.timeline div {
+  padding: 0;
+  height: 40px;
+}
+.timeline hr {
+  border-top: 3px solid #ED8D8D;
+  margin: 0;
+  top: 17px;
+  position: relative;
+}
+.timeline .col-2 {
+  display: flex;
+  overflow: hidden;
+}
+.timeline .corner {
+  border: 3px solid #ED8D8D;
+  width: 100%;
+  position: relative;
+  border-radius: 15px;
+}
+.timeline .top-right {
+  left: 50%;
+  top: -50%;
+}
+.timeline .left-bottom {
+  left: -50%;
+  top: calc(50% - 3px);
+}
+.timeline .top-left {
+  left: -50%;
+  top: -50%;
+}
+.timeline .right-bottom {
+  left: 50%;
+  top: calc(50% - 3px);
+}
 </style>
 </head>
 
 <body>
-	<div class="body-inner">
 <!--subTopMenu-->
-<div class="container">
-			<div class="cols 12">
-				<div class="subTopMenu d-flex justify-content-end">
-					<ul class="subMenu">
-					<li class="nav-item active"><a class="nav-link" href="#" role="button" href="#">로그인</a></li>
-					<li class="nav-item active"><a class="nav-link" href="#" role="button" href="#">로그아웃</a></li>
-					<li class="nav-item active"><a class="nav-link" href="#" role="button"  href="#">회원가입</a></li>
-					<li class="nav-item dropdown active">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">
-							마이페이지
-						</a>
-						<div class="dropdown-menu" style="border: 1.5px solid #222; border-radius: 10px;">
-							<a class="dropdown-item" href="index.html">전체 신청내역</a>
-							<a class="dropdown-item" href="index-2.html">관심 행사 목록</a>
-							<a class="dropdown-item" href="index-3.html">내가 쓴 글</a>
-							<a class="dropdown-item" href="index-4.html">회원 정보 수정</a>
-						</div>
-					</li>
-				</ul>
-			</div><!--subTopMenu-->
-		</div><!--cols12 end-->
-	</div><!--container end-->
+<c:import url="headerTop.jsp"/>
 <!--subTopMenu end-->	
+<c:import url="header.jsp"/>
 
-<div id="banner-area">
-	<img src="images/banner/banner1.jpg" alt="" />
-	<div class="parallax-overlay"></div>
-	<!-- Subpage title start -->
-	<div class="banner-title-content">
-		<div class="text-center">
-			<h2>About Us</h2>
-			<nav aria-label="breadcrumb">
-				<ol class="breadcrumb justify-content-center">
-					<li class="breadcrumb-item"><a href="#">Home</a></li>
-					<li class="breadcrumb-item text-white" aria-current="page">About Us</li>
-				</ol>
-			</nav>
-		</div>
-	</div><!-- Subpage title end -->
-</div><!-- Banner area end -->
-
-<!-- Main container start -->
-<section id="main-container">
-	<div class="container">
-
-		<!-- Company Profile -->
-		<div class="row">
-			<div class="col-md-12 heading">
-				<span class="title-icon classic float-left"><i class="fa fa-suitcase"></i></span>
-				<h2 class="title classic">Company Profile</h2>
-			</div>
-		</div><!-- Title row end -->
-
-		<div class="row landing-tab">
-			<div class="col-md-3 col-sm-5">
-				<div class="nav flex-column nav-pills border-right" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-					<a class="animated fadeIn nav-link py-4 active d-flex align-items-center" data-toggle="pill" href="#tab_1"
-						role="tab" aria-selected="true">
-						<i class="fa fa-info-circle mr-4"></i>
-						<span class="h4 mb-0 font-weight-bold">My Event</span>
-					</a>
-					<a class="animated fadeIn nav-link py-4 d-flex align-items-center" data-toggle="pill" href="#tab_2" role="tab"
-						aria-selected="true">
-						<i class="fa fa-briefcase mr-4"></i>
-						<span class="h4 mb-0 font-weight-bold">OUR COMPANY</span>
-					</a>
-					<a class="animated fadeIn nav-link py-4 d-flex align-items-center" data-toggle="pill" href="#tab_3" role="tab"
-						aria-selected="true">
-						<i class="fa fa-android mr-4"></i>
-						<span class="h4 mb-0 font-weight-bold">What We Do</span>
-					</a>
-					<a class="animated fadeIn nav-link py-4 d-flex align-items-center" data-toggle="pill" href="#tab_4" role="tab"
-						aria-selected="true">
-						<i class="fa fa-pagelines mr-4"></i>
-						<span class="h4 mb-0 font-weight-bold">Modern Design</span>
-					</a>
-					<a class="animated fadeIn nav-link py-4 d-flex align-items-center" data-toggle="pill" href="#tab_5" role="tab"
-						aria-selected="true">
-						<i class="fa fa-support mr-4"></i>
-						<span class="h4 mb-0 font-weight-bold">Dedicated Support</span>
-					</a>
-				</div>
-			</div>
-			<div class="col-md-9 col-sm-7">
-				<div class="tab-content" id="v-pills-tabContent">
-					<div class="tab-pane pl-sm-5 fade show active animated fadeInLeft" id="tab_1" role="tabpanel">
-						<i class="fa fa-trophy icon-xl text-primary mb-4"></i>
-						<h3>최고의 행사 개최 플랫폼</h3>
-						<p>마이이벤트는 2020년에 설립된 이벤트 테크 프로젝트입니다. 
-							기존의 행사 시장에 IT와 플랫폼을 접목해 혁신을 만들어가고 싶습니다. 
-							내가 원하는 행사를 개최하거나 참여할 수 있는 플랫폼 "마이이벤트"를 운영하고 있습니다.</p>
-					</div>
-					<div class="tab-pane pl-sm-5 fade animated fadeInLeft" id="tab_2" role="tabpanel">
-						<i class="fa fa-briefcase icon-xl text-primary mb-4"></i>
-						<h3>We Have Worldwide Business</h3>
-						<p>Helvetica cold-pressed lomo messenger bag ugh. Vinyl jean shorts Austin pork belly PBR retro, Etsy VHS
-							kitsch actually messenger bag pug. Pbrb semiotics try-hard, Schlitz occupy dreamcatcher master cleanse
-							Marfa Vice tofu. </p>
-					</div>
-					<div class="tab-pane pl-sm-5 fade animated fadeInLeft" id="tab_3" role="tabpanel">
-						<i class="fa fa-android icon-xl text-primary mb-4"></i>
-						<h3>We Build Readymade Applications</h3>
-						<p>Over the year we have lots of experience in our field. In sit amet massa sapien. Vestibulum diam turpis,
-							gravida in lobortis id, ornare a eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-							sagittis nulla non elit dignissim suscipit. Duis lorem nulla, eleifend.</p>
-					</div>
-					<div class="tab-pane pl-sm-5 fade animated fadeInLeft" id="tab_4" role="tabpanel">
-						<i class="fa fa-pagelines icon-xl text-primary mb-4"></i>
-						<h3>Clean and Modern Design</h3>
-						<p>Over the year we have lots of experience in our field. In sit amet massa sapien. Vestibulum diam turpis,
-							gravida in lobortis id, ornare a eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-							sagittis nulla non elit dignissim suscipit. Duis lorem nulla, eleifend.</p>
-					</div>
-					<div class="tab-pane pl-sm-5 fade animated fadeInLeft" id="tab_5" role="tabpanel">
-						<i class="fa fa-support icon-xl text-primary mb-4"></i>
-						<h3>24/7 Dedicated Support</h3>
-						<p>Occupy selfies Tonx, +1 Truffaut beard organic normcore tilde flannel artisan squid cray single-origin
-							coffee. Master cleanse vinyl Austin kogi, semiotics skateboard fap wayfarers health goth. Helvetica cray
-							church-key hashtag Carles. Four dollar toast meggings seitan, Tonx pork belly VHS Bushwick. Chambray banh
-							mi cornhole. Locavore messenger bag seitan.</p>
-					</div>
-				</div>
+<div class="container-fluide">
+	
+	<!-- Container element -->
+	<div class="parallax">
+		<div class="row bgBlack">
+			<div class="aboutIntro">
+				<p>마이이벤트는 2014년 9월에 설립된 이벤트 테크 스타트업입니다. </p>
+				<p>기존의 행사 시장에 IT와 플랫폼을 접목해 혁신을 만들어가고 있습니다. </p>
+				<p>내가 원하는 행사를 개최하거나 참여할 수 있는 플랫폼 &quot;마이이벤트&quot;를 운영하고 있습니다.</p>
 			</div>
 		</div>
-		<!--/ Content row end -->
-	</div>
-	<!--/ 1st container end -->
+	
 
-	<div class="gap-60"></div>
-
-
-	<div class="container">
-		<!-- 2nd container start -->
-
-		<!-- Team start -->
-		<div class="team">
-
-			<div class="row">
-				<div class="col-md-12 heading">
-					<span class="title-icon classic float-left"><i class="fa fa-weixin"></i></span>
-					<h2 class="title classic">Meet with our Team</h2>
-				</div>
-			</div><!-- Title row end -->
-
-			<div class="row text-center">
-				<div class="col-md-3 col-sm-6">
-					<div class="team wow slideInLeft">
-						<div class="img-hexagon">
-							<img src="images/team/team1.jpg" alt="">
-							<span class="img-top"></span>
-							<span class="img-bottom"></span>
-						</div>
-						<div class="team-content">
-							<h3>배지혜</h3>
-							<p>Web Designer</p>
-							<div class="team-social">
-								<a class="fb" href="#"><i class="fa fa-facebook"></i></a>
-								<a class="twt" href="#"><i class="fa fa-twitter"></i></a>
-								<a class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
-								<a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a>
-								<a class="dribble" href="#"><i class="fa fa-dribbble"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--/ Team 1 end -->
-				<div class="col-md-3 col-sm-6">
-					<div class="team wow slideInLeft">
-						<div class="img-hexagon">
-							<img src="images/team/team2.jpg" alt="">
-							<span class="img-top"></span>
-							<span class="img-bottom"></span>
-						</div>
-						<div class="team-content">
-							<h3>장홍범</h3>
-							<p>Web Designer</p>
-							<div class="team-social">
-								<a class="fb" href="#"><i class="fa fa-facebook"></i></a>
-								<a class="twt" href="#"><i class="fa fa-twitter"></i></a>
-								<a class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
-								<a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a>
-								<a class="dribble" href="#"><i class="fa fa-dribbble"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--/ Team 2 end -->
-				<div class="col-md-3 col-sm-6">
-					<div class="team wow slideInRight">
-						<div class="img-hexagon">
-							<img src="images/team/team3.jpg" alt="">
-							<span class="img-top"></span>
-							<span class="img-bottom"></span>
-						</div>
-						<div class="team-content">
-							<h3>김지안</h3>
-							<p>Web Designer</p>
-							<div class="team-social">
-								<a class="fb" href="#"><i class="fa fa-facebook"></i></a>
-								<a class="twt" href="#"><i class="fa fa-twitter"></i></a>
-								<a class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
-								<a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a>
-								<a class="dribble" href="#"><i class="fa fa-dribbble"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--/ Team 3 end -->
-				<div class="col-md-3 col-sm-6">
-					<div class="team animate wow slideInRight">
-						<div class="img-hexagon">
-							<img src="images/team/team4.jpg" alt="">
-							<span class="img-top"></span>
-							<span class="img-bottom"></span>
-						</div>
-						<div class="team-content">
-							<h3>김효진</h3>
-							<p>Web Designer</p>
-							<div class="team-social">
-								<a class="fb" href="#"><i class="fa fa-facebook"></i></a>
-								<a class="twt" href="#"><i class="fa fa-twitter"></i></a>
-								<a class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
-								<a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a>
-								<a class="dribble" href="#"><i class="fa fa-dribbble"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--/ Team 4 end -->
-				<div class="col-md-3 col-sm-6">
-					<div class="team animate wow slideInRight">
-						<div class="img-hexagon">
-							<img src="images/team/team4.jpg" alt="">
-							<span class="img-top"></span>
-							<span class="img-bottom"></span>
-						</div>
-						<div class="team-content">
-							<h3>박정의</h3>
-							<p>Web Designer</p>
-							<div class="team-social">
-								<a class="fb" href="#"><i class="fa fa-facebook"></i></a>
-								<a class="twt" href="#"><i class="fa fa-twitter"></i></a>
-								<a class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
-								<a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a>
-								<a class="dribble" href="#"><i class="fa fa-dribbble"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--/ Team 5 end -->
-			</div>
-			<!--/ Content row end -->
-
-		</div><!-- Team end -->
-
-	</div><!-- 2nd container end -->
-</section>
-<!--/ Main container end -->
-
-	<!-- Footer start -->
-	<footer id="footer" class="footer">
-	  <div class="container">
-	    <div class="row">
-	      <div class="col-md-4 col-sm-12 footer-widget">
-	        <h3 class="widget-title">Recent Posts</h3>
-	        <div class="latest-post-items media">
-	          <div class="latest-post-content media-body">
-	            <h4><a href="#">Bulgaria claims to find Europe's 'oldest town'</a></h4>
-	            <p class="post-meta">
-	              <span class="author">Posted by John Doe</span>
-	              <span class="post-meta-cat">in<a href="#"> Blog</a></span>
-	            </p>
-	          </div>
-	        </div><!-- 1st Latest Post end -->
-
-	        <div class="latest-post-items media">
-	          <div class="latest-post-content media-body">
-	            <h4><a href="#">Few Answers in Case of Murdered Law Professor</a></h4>
-	            <p class="post-meta">
-	              <span class="date"><i class="icon icon-calendar"></i> Mar 15, 2015</span>
-	              <span class="post-meta-comments"><i class="icon icon-bubbles4"></i> <a href="#">03</a></span>
-	            </p>
-	          </div>
-	        </div><!-- 2nd Latest Post end -->
-
-	        <div class="latest-post-items media">
-	          <div class="latest-post-content media-body">
-	            <h4><a href="#">Over the year we have lots of experience in our field</a></h4>
-	            <p class="post-meta">
-	              <span class="date"><i class="icon icon-calendar"></i> Apr 17, 2015</span>
-	              <span class="post-meta-comments"><i class="icon icon-bubbles4"></i> <a href="#">14</a></span>
-	            </p>
-	          </div>
-	        </div><!-- 3rd Latest Post end -->
-
-	      </div>
-	      <!--/ End Recent Posts-->
+	
+	
+	</div><!-- parallax end -->
+	<div class="container timeLine">
+    <h2 class="pb-3 pt-2 border-bottom mb-5">타임라인 웅앵웅</h2>
+    <!--first section-->
+    <div class="row align-items-center how-it-works d-flex">
+      <div class="col-2 text-center bottom d-inline-flex justify-content-center align-items-center">
+        <div class="circle font-weight-bold">1</div>
+      </div>
+      <div class="col-6">
+        <h5>Fully Responsive</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus.</p>
+      </div>
+    </div>
+    <!--path between 1-2-->
+    <div class="row timeline">
+      <div class="col-2">
+        <div class="corner top-right"></div>
+      </div>
+      <div class="col-8">
+        <hr/>
+      </div>
+      <div class="col-2">
+        <div class="corner left-bottom"></div>
+      </div>
+    </div>
+    <!--second section-->
+    <div class="row align-items-center justify-content-end how-it-works d-flex">
+      <div class="col-6 text-right">
+        <h5>Using Bootstrap</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus.</p>
+      </div>
+      <div class="col-2 text-center full d-inline-flex justify-content-center align-items-center">
+        <div class="circle font-weight-bold">2</div>
+      </div>
+    </div>
+    <!--path between 2-3-->
+    <div class="row timeline">
+      <div class="col-2">
+        <div class="corner right-bottom"></div>
+      </div>
+      <div class="col-8">
+        <hr/>
+      </div>
+      <div class="col-2">
+        <div class="corner top-left"></div>
+      </div>
+    </div>
+    <!--third section-->
+    <div class="row align-items-center how-it-works d-flex">
+      <div class="col-2 text-center top d-inline-flex justify-content-center align-items-center">
+        <div class="circle font-weight-bold">3</div>
+      </div>
+      <div class="col-6">
+        <h5>Now with Pug and Sass</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus.</p>
+      </div>
+    </div>
+  </div>
 
 
-	      <div class="col-md-4 col-sm-12 footer-widget">
-	        <h3 class="widget-title">Flickr Photos</h3>
 
-	        <div class="img-gallery">
-	          <div class="img-container">
-	            <a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/1.jpg">
-	              <img src="images/gallery/1.jpg" alt="">
-	            </a>
-	            <a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/2.jpg">
-	              <img src="images/gallery/2.jpg" alt="">
-	            </a>
-	            <a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/3.jpg">
-	              <img src="images/gallery/3.jpg" alt="">
-	            </a>
-	            <a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/4.jpg">
-	              <img src="images/gallery/4.jpg" alt="">
-	            </a>
-	            <a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/5.jpg">
-	              <img src="images/gallery/5.jpg" alt="">
-	            </a>
-	            <a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/6.jpg">
-	              <img src="images/gallery/6.jpg" alt="">
-	            </a>
-	            <a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/6.jpg">
-	              <img src="images/gallery/7.jpg" alt="">
-	            </a>
-	            <a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/6.jpg">
-	              <img src="images/gallery/8.jpg" alt="">
-	            </a>
-	            <a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/6.jpg">
-	              <img src="images/gallery/9.jpg" alt="">
-	            </a>
-	          </div>
-	        </div>
-	      </div>
-	      <!--/ end flickr -->
+</div><!-- container end -->
 
-	      <div class="col-md-3 col-sm-12 footer-widget footer-about-us">
-	        <h3 class="widget-title">About Craft</h3>
-	        <p>We are a awward winning multinational company. We believe in quality and standard worldwide.</p>
-	        <h4>Address</h4>
-	        <p>1102 Saint Marys, Junction City, KS</p>
-	        <div class="row">
-	          <div class="col-md-6">
-	            <h4>Email:</h4>
-	            <p>info@craftbd.com</p>
-	          </div>
-	          <div class="col-md-6">
-	            <h4>Phone No.</h4>
-	            <p>+(785) 238-4131</p>
-	          </div>
-	        </div>
-	        <form action="#" role="form">
-	          <div class="input-group subscribe">
-	            <input type="email" class="form-control" placeholder="Email Address" required="">
-	            <span class="input-group-addon">
-	              <button class="btn" type="submit"><i class="fa fa-envelope-o"> </i></button>
-	            </span>
-	          </div>
-	        </form>
-	      </div>
-	      <!--/ end about us -->
-
-	    </div><!-- Row end -->
-	  </div><!-- Container end -->
-	</footer><!-- Footer end -->
-
-
-	<!-- Copyright start -->
-	<section id="copyright" class="copyright angle">
-	  <div class="container">
-	    <div class="row">
-	      <div class="col-md-12 text-center">
-	        <ul class="footer-social unstyled">
-	          <li>
-	            <a title="Twitter" href="#">
-	              <span class="icon-pentagon wow bounceIn"><i class="fa fa-twitter"></i></span>
-	            </a>
-	            <a title="Facebook" href="#">
-	              <span class="icon-pentagon wow bounceIn"><i class="fa fa-facebook"></i></span>
-	            </a>
-	            <a title="Google+" href="#">
-	              <span class="icon-pentagon wow bounceIn"><i class="fa fa-google-plus"></i></span>
-	            </a>
-	            <a title="linkedin" href="#">
-	              <span class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
-	            </a>
-	            <a title="Pinterest" href="#">
-	              <span class="icon-pentagon wow bounceIn"><i class="fa fa-pinterest"></i></span>
-	            </a>
-	            <a title="Skype" href="#">
-	              <span class="icon-pentagon wow bounceIn"><i class="fa fa-skype"></i></span>
-	            </a>
-	            <a title="Dribble" href="#">
-	              <span class="icon-pentagon wow bounceIn"><i class="fa fa-dribbble"></i></span>
-	            </a>
-	          </li>
-	        </ul>
-	      </div>
-	    </div>
-	    <!--/ Row end -->
-	    <div class="row">
-	      <div class="col-md-12 text-center">
-	        <div class="copyright-info">
-	          &copy; Copyright 2019 Themefisher. <span>Designed by <a
-	              href="https://themefisher.com">Themefisher.com</a></span>
-	        </div>
-	      </div>
-	    </div>
-	    <!--/ Row end -->
-	    <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix position-fixed">
-	      <button class="btn btn-primary" title="Back to Top"><i class="fa fa-angle-double-up"></i></button>
-	    </div>
-	  </div>
-	  <!--/ Container end -->
-	</section>
-	<!--/ Copyright end -->
-
-</div><!-- Body inner end -->
-
-<!-- jQuery -->
-<script src="plugins/jQuery/jquery.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="plugins/bootstrap/bootstrap.min.js"></script>
-<!-- Style Switcher -->
-<script type="text/javascript" src="plugins/style-switcher.js"></script>
-<!-- Owl Carousel -->
-<script type="text/javascript" src="plugins/owl/owl.carousel.js"></script>
-<!-- PrettyPhoto -->
-<script type="text/javascript" src="plugins/jquery.prettyPhoto.js"></script>
-<!-- Bxslider -->
-<script type="text/javascript" src="plugins/flex-slider/jquery.flexslider.js"></script>
-<!-- CD Hero slider -->
-<script type="text/javascript" src="plugins/cd-hero/cd-hero.js"></script>
-<!-- Isotope -->
-<script type="text/javascript" src="plugins/isotope.js"></script>
-<script type="text/javascript" src="plugins/ini.isotope.js"></script>
-<!-- Wow Animation -->
-<script type="text/javascript" src="plugins/wow.min.js"></script>
-<!-- Eeasing -->
-<script type="text/javascript" src="plugins/jquery.easing.1.3.js"></script>
-<!-- Counter -->
-<script type="text/javascript" src="plugins/jquery.counterup.min.js"></script>
-<!-- Waypoints -->
-<script type="text/javascript" src="plugins/waypoints.min.js"></script>
-<!-- google map -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
-<script src="plugins/google-map/gmap.js"></script>
-
-<!-- Main Script -->
-<script src="js/script.js"></script>
+<c:import url="footer.jsp"/>
 
 </body>
 
