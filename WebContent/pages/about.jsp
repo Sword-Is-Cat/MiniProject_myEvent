@@ -10,13 +10,11 @@
 
 <!-- mobile responsive meta -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <!-- ** Plugins Needed for the Project ** -->
 <!-- Bootstrap -->
-<link rel="stylesheet"
-	href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
 <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
 <!-- FontAwesome -->
 <link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
@@ -32,18 +30,15 @@
 <!-- Flexslider -->
 <link rel="stylesheet" href="plugins/cd-hero/cd-hero.css">
 <!-- Style Swicther -->
-<link id="style-switch" href="css/presets/preset3.css" media="screen"
-	rel="stylesheet" type="text/css">
+<link id="style-switch" href="css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
 
 <!-- Main Stylesheet -->
 <link href="css/style.css" rel="stylesheet">
 <link href="css/defaultStyle.css" rel="stylesheet">
 <!--Favicon-->
 <link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
-<link rel="apple-touch-icon-precomposed" sizes="144x144"
-	href="./images/favicon/144.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72"
-	href="./images/favicon/72.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="./images/favicon/144.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="./images/favicon/72.png">
 <link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
 <!-- webFont -->
 <link

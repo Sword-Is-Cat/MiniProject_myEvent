@@ -148,10 +148,13 @@
 								<a href="#" class="project-btn btn btn-primary">신청하기</a>
 							</p>
 							<p>
-								<a href="front?key=enterUpdateEvent&evNo=${requestScope.event.evNo}" class="project-btn btn btn-primary">수정하기</a>
+								<a
+									href="front?key=enterUpdateEvent&evNo=${requestScope.event.evNo}"
+									class="project-btn btn btn-primary">수정하기</a>
 							</p>
 							<p>
-								<a href="front?key=deleteEvent&evNo=${requestScope.event.evNo}" class="project-btn btn btn-primary">삭제하기</a>
+								<a href="front?key=deleteEvent&evNo=${requestScope.event.evNo}"
+									class="project-btn btn btn-primary">삭제하기</a>
 							</p>
 						</div>
 					</div>

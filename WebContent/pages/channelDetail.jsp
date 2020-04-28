@@ -1,58 +1,65 @@
 <%@page import="kosta.mvc.vo.User"%>
 <%@page import="kosta.mvc.vo.Channel"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<meta charset="UTF-8">
-  <title>My Event :: 행사와 함께하는 모든 순간</title>
+<meta charset="UTF-8">
+<title>My Event :: 행사와 함께하는 모든 순간</title>
 
-   <!-- mobile responsive meta -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-   <!-- ** Plugins Needed for the Project ** -->
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
-  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-	<!-- FontAwesome -->
-    <link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
-	<!-- Animation -->
-	<link rel="stylesheet" href="plugins/animate.css">
-	<!-- Prettyphoto -->
-	<link rel="stylesheet" href="plugins/prettyPhoto.css">
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="plugins/owl/owl.carousel.css">
-	<link rel="stylesheet" href="plugins/owl/owl.theme.css">
-	<!-- Flexslider -->
-	<link rel="stylesheet" href="plugins/flex-slider/flexslider.css">
-	<!-- Flexslider -->
-	<link rel="stylesheet" href="plugins/cd-hero/cd-hero.css">
-	<!-- Style Swicther -->
-	<link id="style-switch" href="css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
+<!-- mobile responsive meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <!-- Main Stylesheet -->
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/defaultStyle.css" rel="stylesheet">
-  <!--Favicon-->
-	<link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="./images/favicon/144.png">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="./images/favicon/72.png">
-	<link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
- <!-- webFont -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<!-- ** Plugins Needed for the Project ** -->
+<!-- Bootstrap -->
+<link rel="stylesheet"
+	href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+<link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+<!-- FontAwesome -->
+<link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
+<!-- Animation -->
+<link rel="stylesheet" href="plugins/animate.css">
+<!-- Prettyphoto -->
+<link rel="stylesheet" href="plugins/prettyPhoto.css">
+<!-- Owl Carousel -->
+<link rel="stylesheet" href="plugins/owl/owl.carousel.css">
+<link rel="stylesheet" href="plugins/owl/owl.theme.css">
+<!-- Flexslider -->
+<link rel="stylesheet" href="plugins/flex-slider/flexslider.css">
+<!-- Flexslider -->
+<link rel="stylesheet" href="plugins/cd-hero/cd-hero.css">
+<!-- Style Swicther -->
+<link id="style-switch" href="css/presets/preset3.css" media="screen"
+	rel="stylesheet" type="text/css">
+
+<!-- Main Stylesheet -->
+<link href="css/style.css" rel="stylesheet">
+<link href="css/defaultStyle.css" rel="stylesheet">
+<!--Favicon-->
+<link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144"
+	href="./images/favicon/144.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72"
+	href="./images/favicon/72.png">
+<link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
+<!-- webFont -->
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+	rel="stylesheet">
 
 </head>
 
 <body>
-<!--subTopMenu-->
-<c:import url="headerTop.jsp"/>
-<!-- mainMenu -->
-<c:import url="header.jsp"/>
+	<!--subTopMenu-->
+	<c:import url="headerTop.jsp" />
+	<!-- mainMenu -->
+	<c:import url="header.jsp" />
 	<div id="banner-area">
 		<img src="images/banner/banner1.jpg" alt="" />
 		<div class="parallax-overlay"></div>
@@ -99,9 +106,7 @@
 						<div class="sidebar">
 							<div class="portfolio-desc">
 								<h3 class="widget-title">${channel.chName}</h3>
-								<p>
-									${channel.chDescription }
-								</p>
+								<p>${channel.chDescription }</p>
 								<br />
 
 								<h3 class="widget-title">개설자</h3>
@@ -217,7 +222,7 @@
 				<!-- Content row end -->
 			</div>
 			<!-- Container end -->
-		
+
 			<div class="container">
 				<div class="row">
 					<h2 class="widget-title">종료된 행사</h2>
@@ -228,8 +233,7 @@
 							<figure class="m-0 effect-oscar">
 								<img src="images/portfolio/portfolio5.jpg" alt="">
 								<figcaption>
-									<a class="view icon-pentagon"
-										data-rel="prettyPhoto"
+									<a class="view icon-pentagon" data-rel="prettyPhoto"
 										href="images/portfolio/portfolio-bg2.jpg"><i
 										class="fa fa-search"></i></a>
 								</figcaption>
@@ -248,8 +252,7 @@
 							<figure class="m-0 effect-oscar">
 								<img src="images/portfolio/portfolio6.jpg" alt="">
 								<figcaption>
-									 <a class="view icon-pentagon"
-										data-rel="prettyPhoto"
+									<a class="view icon-pentagon" data-rel="prettyPhoto"
 										href="images/portfolio/portfolio-bg3.jpg"><i
 										class="fa fa-search"></i></a>
 								</figcaption>
@@ -268,8 +271,7 @@
 							<figure class="m-0 effect-oscar">
 								<img src="images/portfolio/portfolio7.jpg" alt="">
 								<figcaption>
-									<a class="view icon-pentagon"
-										data-rel="prettyPhoto"
+									<a class="view icon-pentagon" data-rel="prettyPhoto"
 										href="images/portfolio/portfolio-bg1.jpg"><i
 										class="fa fa-search"></i></a>
 								</figcaption>
@@ -288,8 +290,7 @@
 							<figure class="m-0 effect-oscar">
 								<img src="images/portfolio/portfolio8.jpg" alt="">
 								<figcaption>
-									<a class="view icon-pentagon"
-										data-rel="prettyPhoto"
+									<a class="view icon-pentagon" data-rel="prettyPhoto"
 										href="images/portfolio/portfolio-bg2.jpg"><i
 										class="fa fa-search"></i></a>
 								</figcaption>
