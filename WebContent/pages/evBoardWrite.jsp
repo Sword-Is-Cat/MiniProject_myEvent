@@ -54,47 +54,61 @@
     
 </head>
 <body>
+
+ 
+ <h3>
+<!--  1. 등록 -->
+<%-- <%  --%>
+<!-- //  EvBoardDAO dao =new EvBoardDAO(); -->
+ 		
+<!-- //    int result  = dao.insert(EvBoard); -->
+<%-- %> --%>
+<!-- <script language=javascript> -->
+<!-- //    self.window.alert("입력한 글을 저장하였습니다."); -->
+<!-- //    location.href="EvBoard.jsp"; -->
+ 
+<!--   </script> -->
+
+</h3>
+
+ 
+ 
+
  <c:import url="headerTop.jsp"/>
 <!--subTopMenu end-->	
 
 <c:import url="header.jsp"/>
+
     <br>
     <b><font size="8"  color="#000000">QNA등록</font></b>
     <br>
     
-    <form method="post" action="../front?key=EvBoard" name="board" enctype="multipart/form-data">
+    <form method="post" action="../front?key=insertEvBoard" name="board" enctype="multipart/form-data">
     <input type="hidden" name="command" value="evBoaradinsert"/>
-    <input type="hidden" name="User_id" value="${sessionScope.sessionID}">
+    <input type="hidden" name="userId" value="${user.userId}">
     <table width="700" border="3" bordercolor="lightgray" align="center">
         <tr>
-            <td id="title">작성자</td>
-            <td>${sessionScope.sessionID}</td>
+            <td id="name">작성자</td>
+            <td>${user.userId}</td>
         </tr>
-<!--         <td id="title">행사종류</td> -->
-<!--        		  <td><input type="radio" name="chclass" value=""/>행사종류 -->
-<!--         	<input type="radio" name="chclass" value=""/>행사종류 -->
-<!--         	<input type="radio" name="chclass" value=""/>행사종류 -->
-<!--         	<input type="radio" name="chclass" value=""/>행사종류 -->
-<!--         	<input type="radio" name="chclass" value=""/>행사종류 -->
-<!--         	<input type="radio" name="chclass" value=""/>행사종류 -->
-<!--        </td>  -->
+  
             <tr>
          	
             <td id="title">
-                제 목
+                제목
             </td>
           
             <td>
-                <input name="board_subject" type="text" size="70" maxlength="100" value=""/>
+                <input name="subject" type="text" size="70" maxlength="100" value=""/>
             </td>        
         </tr>
             
         <tr>
-            <td id="title">
+            <td id="Content" ${evBoard.Content}>
                 내 용
             </td>
             <td>
-                <textarea name="board_content" cols="72" rows="20"></textarea>            
+                <textarea name="evBoardcontent" cols="72" rows="20"></textarea>            
             </td>        
         </tr>
 
@@ -103,14 +117,18 @@
             <td colspan="5">
                 <input type="reset" value="작성취소" >
                 <input type="submit" value="등록" >
-                <input type="button" onClick="EvBoard()" value="목록" >            
+                <input type="button" onClick="EvBoard.jsp" value="목록" >            
             </td>
         </tr>
     </table>    
     </form>
 
+
+
+
 <!-- footer -->
 <c:import url="footer.jsp"></c:import>
+
 
 </body>
 </html>

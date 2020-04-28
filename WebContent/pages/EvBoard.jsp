@@ -68,18 +68,23 @@
     
 </head>
 <body>    
+
+<%--   <% EvBoardDAO dao = new EvBoardDAO(); --%>
+<%--  	 dao.insert("EvBoard");%> --%>
+
  <c:import url="headerTop.jsp"/>
 <!--subTopMenu end-->	
 
 <c:import url="header.jsp"></c:import>
 
 
+
 <div id="wrap">
     <br>
     <div id="evboard">
         <c:if test="${sessionScope.sessionID!=null}">
-            <input type="button" value="글쓰기" onclick="evBoardWrite()"; >
-        
+
+        	<td><input type=button value="글쓰기" OnClick="window.location='evBoardWrite.jsp'"></td>
         </c:if>    
     </div>
     <br>
@@ -87,11 +92,12 @@
         <table id="bList" width="800" border="3" bordercolor="lightgray">
             <tr heigh="30">
                 <td>글번호</td>
-                 <td>종류</td>
-                <td>제목</td>
-                <td>작성자</td>
-                <td>작성일</td>
-                <td>조회수</td>
+                 <td>아이디</td>
+                <td>내용</td>
+                <td>시간</td>
+               
+<!--                 <td>작성일</td> -->
+<!--                 <td>조회수</td> -->
             </tr>    
            
         </table>
@@ -103,9 +109,10 @@
 			<c:forEach items="${list}"  var="notice" varStatus="state">
 			<tr class="accordion-toggle" data-toggle="collapse" data-target="#no${EvBoard.no}" >
 				<td>${EvBoard.no}</td>
-				<td>${EvBoard.title}</td>
-				<td>${EvBoard.user}</td>
-				<td>${EvBoard.date}</td>
+				<td>${user.userId}</td>
+				<td>${EvBoard.Content}</td>
+				<td>${EvBoard.Time}</td>
+				 
 <%-- 				<td>${EvBoard.}</td> --%>
 <%-- 				<td>${EvBoard.delete}</td> --%>
 				
@@ -130,10 +137,10 @@
     <div id="evb">
         <form>
             <select name="opt">
-            	<option value="1">전체${evBoardAll }</option>
-                <option value="2">글번호${evBoardNo }</option>
-                <option value="3">제목${evBoardtitle }</option>
-                <option value="4">작성자${evBoardUser }</option>
+            	<option value="1">전체</option>
+                <option value="2">글번호</option>
+                <option value="3">제목</option>
+                <option value="4">작성자</option>
             </select>
             <input type="text" size="20" name="condition"/>&nbsp;
             <input type="submit" value="검색"/>
