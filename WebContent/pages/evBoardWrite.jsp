@@ -80,44 +80,46 @@
 <c:import url="header.jsp"/>
 
     <br>
-    <b><font size="8"  color="#000000">QNA등록</font></b>
+    <b><font size="6" color="gray">글쓰기</font></b>
     <br>
     
-    <form method="post" action="../front?key=insertEvBoard" name="board" enctype="multipart/form-data">
-    <input type="hidden" name="command" value="evBoaradinsert"/>
-    <input type="hidden" name="userId" value="${user.userId}">
+    <form method="post" action="../front?key=insertEvBoard" name="boardForm" enctype="multipart/form-data">
+    <input type="hidden" name="board_id" value="${sessionScope.sessionID}">
     <table width="700" border="3" bordercolor="lightgray" align="center">
         <tr>
-            <td id="name">작성자</td>
-            <td>${user.userId}</td>
+            <td id="title">작성자</td>
+            <td>${sessionScope.sessionID}</td>
         </tr>
-  
             <tr>
-         	
             <td id="title">
-                제목
+                제 목
             </td>
-          
             <td>
-                <input name="subject" type="text" size="70" maxlength="100" value=""/>
+                <input name="board_subject" type="text" size="70" maxlength="100" value=""/>
             </td>        
         </tr>
-            
         <tr>
-            <td id="Content" ${evBoard.Content}>
+            <td id="title">
                 내 용
             </td>
             <td>
-                <textarea name="evBoardcontent" cols="72" rows="20"></textarea>            
+                <textarea name="board_content" cols="72" rows="20"></textarea>            
             </td>        
         </tr>
-
+        <tr>
+            <td id="title">
+                파일첨부
+            </td>
+            <td>
+                <input type="file" name="board_file" />
+            </td>    
+        </tr>
  
         <tr align="center" valign="middle">
             <td colspan="5">
                 <input type="reset" value="작성취소" >
                 <input type="submit" value="등록" >
-                <input type="button" onClick="EvBoard.jsp" value="목록" >            
+                <input type="button" value="목록" >            
             </td>
         </tr>
     </table>    

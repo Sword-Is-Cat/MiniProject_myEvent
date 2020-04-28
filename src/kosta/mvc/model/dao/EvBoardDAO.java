@@ -38,22 +38,22 @@ public class EvBoardDAO {
    /**
     * 1.게시물등록
     * */
-   public int insert(EvBoard evBoard) throws SQLException {
-	   int result=0;
-	      String sql = pro.getProperty("insertEvBoard");   
-	   try {
-	         con=DbUtil.getConnection();
-	         ps = con.prepareStatement(sql);
-	         ps.setInt(1, evBoard.getEvBoardNo());
-	         ps.setInt(2, evBoard.getEvBoardParentNo());
-	         ps.setString(3, evBoard.getEvBoardContent());
-	         ps.setTimestamp(4, evBoard.getEvBoardTime());
-	     
-	           result = ps.executeUpdate();
-	   }finally {
-	      DbUtil.dbClose( ps, con);
-	   }
-	   return result;
+   public int evBoardinsert(EvBoard evBoard) throws SQLException {
+		int result=0;
+	    String sql = pro.getProperty("insertEvBoard");   
+	 try {
+	       con=DbUtil.getConnection();
+	       ps = con.prepareStatement(sql);
+	       ps.setInt(1, evBoard.getEvBoardNo());
+	       ps.setInt(2, evBoard.getEvBoardParentNo());
+	       ps.setString(3, evBoard.getEvBoardContent());
+	       ps.setTimestamp(4, evBoard.getEvBoardTime());
+	   
+	         result = ps.executeUpdate();
+	 }finally {
+	    DbUtil.dbClose( ps, con);
+	 }
+	 return result;
 	}
    		
    
@@ -119,16 +119,6 @@ public class EvBoardDAO {
 
 
 
-public int insertEvBoard(EvBoard evBoard) {
-	// TODO Auto-generated method stub
-	return 0;
-}
-
-
-public int increamentByReadnum(int evBoardNo) {
-	// TODO Auto-generated method stub
-	return 0;
-}
 
 
 
