@@ -1,16 +1,9 @@
-<<<<<<< HEAD
 <%@page import="java.util.List"%>
 <%@page import="kosta.mvc.service.ChannelService"%>
 <%@page import="kosta.mvc.vo.Channel"%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
- 
-=======
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
->>>>>>> branch 'master' of https://github.com/Sword-Is-Cat/MiniProject_myEvent.git
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -53,7 +46,7 @@
  <!-- webFont -->
  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
  <style>
-/*---------원본css-----------------*/
+/*---------��蹂�css-----------------*/
   	#btn{
 
   		margin-right: 400px;
@@ -88,7 +81,7 @@
     padding-right: 50px;
     position: relative;
     top: -30px; }
-/*------------지안추가css----------------------*/
+/*------------吏���異�媛�css----------------------*/
 	.mainContainer {
 	/* position: relative;
 	top:-50px; */
@@ -166,12 +159,12 @@
   
 
 	<script language=javascript>
-	function sendUpdate(){//������
+	function sendUpdate(){//占쏙옙占쏙옙占쏙옙
 		document.requestForm.key.value ="updateChannel";
 		document.requestForm.submit();
 	}
 
-	function sendDelete(){//����
+	function sendDelete(){//占쏙옙占쏙옙
 		
 		document.requestForm.key.value ="deleteChannel";
 		document.requestForm.submit();
@@ -255,9 +248,9 @@
 
 <c:import url="header.jsp"></c:import>
 
-<!-- 채널메인 -->
+<!-- 梨���硫��� -->
 
-<!-- 채널메인 end -->
+<!-- 梨���硫��� end -->
 <!-- Main container start -->
 <div class="container-fluide bgPart">
 	<div class="bgImg">
@@ -286,7 +279,7 @@
 
 			<div class="col-md-12 heading text-center">
 
-				<h2 class="title2" style="text-align: center; font-weight: bold">梨��� 愿�由�
+				<h2 class="title2" style="text-align: center; font-weight: bold">筌�占쏙옙占� �울옙�깍옙
 
 				<span class="title-desc"></span>
 
@@ -308,7 +301,7 @@
 
 				<div class="isotope-nav" data-isotope-nav="isotope">
 					<div class="crCh">
-						<a href="#" data-filter=".make-channel" id="btn">채널 개설</a>
+						<a href="#" data-filter=".make-channel" id="btn">梨��� 媛���</a>
 					</div>
 
 	
@@ -330,7 +323,7 @@
 <<<<<<< HEAD
 				<h4 class="title classic">${channel.chName}</h4>
 =======
-				<h4 class="title classic">채널이름 <a class="addCh" href="#"></a></h4>
+				<h4 class="title classic">梨����대� <a class="addCh" href="#"></a></h4>
 >>>>>>> branch 'master' of https://github.com/Sword-Is-Cat/MiniProject_myEvent.git
 
 			</div>
@@ -355,9 +348,9 @@
 
 					<div class="team-content">
 
-						<h3>개설자 이름</h3>
+						<h3>媛��ㅼ�� �대�</h3>
 
-						<p>개설자 email</p>
+						<p>媛��ㅼ�� email</p>
 
 						<div class="team-social">
 
@@ -384,30 +377,30 @@
 	<div class="col-md-9 col-sm-6">
 
 			<div id="chDesc" class="team team-list wow slideInRight">
-			<%-- <!-- 吏��� �곗�� -->
+			<%-- <!-- 筌�占쏙옙占� 占쎄�占쏙옙 -->
 
 				<form name="requestForm" method=post action="<%=request.getContextPath() %>/front">
 				<input type=hidden name="chNo" value="${channel.chNo}">
 				<input type=hidden name="key" value="">
-				<input type=button value="������湲�" onClick="sendUpdate()">
-				<input type=button value="������湲�" onClick="sendDelete()">
+				<input type=button value="占쏙옙占쏙옙占쏙옙疫뀐옙" onClick="sendUpdate()">
+				<input type=button value="占쏙옙占쏙옙占쏙옙疫뀐옙" onClick="sendDelete()">
 				</form>
 			--%>
-				<h4>媛��ㅽ����: n媛�</h4>
+				<h4>揶�占쏙옙�쏙옙占쏙옙占�: n揶�占�</h4>
 				<div class="cd-full-width btnOpen">
 
 		<div id="chDesc" class="team team-list wow slideInRight">
 
-			<h4>개설행사: n개</h4>
+			<h4>媛��ㅽ����: n媛�</h4>
 			<div class="cd-full-width btnOpen">
 
-				<a href="#0" id="makeEv" class="btn btn-primary solid cd-btn">행사개설</a>
+				<a href="#0" id="makeEv" class="btn btn-primary solid cd-btn">���ш���</a>
 
 			</div> <!-- .cd-full-width -->	
 				<ul class="list-unstyled chListMenu">
-					<li class=""><a class="chSetting" href="#"><i class="fa fa-users">채널설정</i></a></li>
-					<li class=""><a class="chAuthor" href="#"><i class="fa fa-users">권한설정</i></a></li>
-					<li class=""><a class="chDel" href="#"><i class="fa fa-users">채널삭제</i></a></li>
+					<li class=""><a class="chSetting" href="#"><i class="fa fa-users">梨����ㅼ��</i></a></li>
+					<li class=""><a class="chAuthor" href="#"><i class="fa fa-users">沅����ㅼ��</i></a></li>
+					<li class=""><a class="chDel" href="#"><i class="fa fa-users">梨�������</i></a></li>
 				</ul>
 			
  		<div class="row d-flex justify-content-between">
@@ -422,7 +415,7 @@
 						</figcaption>
 					</figure>
 					<div class="portfolio-static-desc">
-						<h3>[드림플러스 월간 IT 트렌드] 언택트, 뉴 노멀의 시대</h3>
+						<h3>[��由쇳���ъ�� ��媛� IT �몃����] �명����, �� �몃��� ����</h3>
 						<span><a href="#">Ui Elements</a></span>
 					</div>
 				</div>
@@ -441,7 +434,7 @@
 						</figcaption>
 					</figure>
 					<div class="portfolio-static-desc">
-						<h3>렉처시리즈#1(작은 팀으로 큰 일을 한다는 것)</h3>
+						<h3>��泥���由ъ�#1(���� ���쇰� �� �쇱�� ���ㅻ�� 寃�)</h3>
 						<span><a href="#">Media Elements</a></span>
 					</div>
 				</div>

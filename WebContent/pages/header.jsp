@@ -130,12 +130,12 @@
 						</a>
 					</li>
 					<li class="nav-item active">
-						<a class="nav-link" href="#" role="button">
+						<a class="nav-link" href="bookHistory.jsp" role="button">
 							신청내역확인
 						</a>
 					</li>
 					<li class="nav-item active">
-						<a class="nav-link" href="createEvent.html" role="button">
+						<a class="nav-link" href="createEvent.jsp" role="button">
 							행사개설
 						</a>
 					</li>
