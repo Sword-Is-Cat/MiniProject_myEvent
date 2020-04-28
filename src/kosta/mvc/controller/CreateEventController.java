@@ -62,7 +62,7 @@ public class CreateEventController implements Controller {
 		} else {
 			evAddr = postalCode + roadAddress + detailAddress + extraAddress;
 		}
-		System.out.println(evStarts);
+		
 		Timestamp evStart = Timestamp.valueOf(evStarts);
 		Timestamp evEnd = Timestamp.valueOf(evEnds);
 		Timestamp evBookStart;
@@ -100,7 +100,6 @@ public class CreateEventController implements Controller {
 		
 		int evNo = new EventDAO().insertEvent(event);
 
-		System.out.println("createEv가 뱉어주는 evNo = "+evNo);
 		ModelAndView mv = new ModelAndView(true, "front?key=selectEvent&evNo="+evNo);
 		return mv;
 	}

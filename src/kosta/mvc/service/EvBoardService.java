@@ -19,20 +19,10 @@ public class EvBoardService {
       return list;
    }
    //상세검색
-   public static EvBoard selectByEvBoardNo(int EvBoardNo, boolean flag) 
-           throws SQLException{
-if(flag) {
-if(EvBoardDAO.increamentByReadnum(EvBoardNo) == 0)
-throw new SQLException("조회수 증가에 오류가 발생했습니다.");
-}
-
-EvBoard DbUtil = EvBoardDAO.selectByEvBoardNo(EvBoardNo);
-throw new SQLException("모델번호에 해당하는 정보를 검색할수 없습니다.");
-
-
-}
+   
+   
    //등록
-   public static void evBoardinsert(EvBoard evBoard) throws SQLException{
+   public static void insert(EvBoard evBoard) throws SQLException{
 		int result = EvBoardDAO.evBoardinsert(evBoard);
 		if (result==0) {
 			throw new SQLException("등록되지않음");
