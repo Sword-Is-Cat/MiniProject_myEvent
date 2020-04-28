@@ -74,9 +74,6 @@
                     <h3 class="signUpTitle"> 회원가입</h3>
                 </div>
             </div>
-			<label class="textLabel" for="userId">아이디</label><br>
-			<input class="form-control form-control-lg col-lg-4 col-md-4 col-sm-8 col-xs-8" id="userId" name="userId" placeholder="아이디" type="text">
-	<div class="container">
 		<form class="contact-form" id="signUpForm" action="${pageContext.request.contextPath}/front" method="post"><!-- SignUp Form start -->
 			<label class="textLabel" for="userId">아이디</label>
 			<input class="form-control form-control-lg col-lg-4 col-md-4 col-sm-8 col-xs-8" id="userId" name="userId" placeholder="아이디를 입력해 주세요" type="text">

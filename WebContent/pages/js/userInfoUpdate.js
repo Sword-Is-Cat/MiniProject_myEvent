@@ -58,7 +58,7 @@ $(function(){
 		return location.href.substring( hostIndex, location.href.indexOf('/', hostIndex + 1) );
 	};
 	
-	$('#userPwd').on('change', function(){
+	$('#userPwd').on('keyup', function(){
 		if($('#userPwd').val() == $('#userPwdChk').val()){
 			$('#userPwdChkResult').css('visibility' ,'hidden');
 			$('#submit').attr('disabled', false);
@@ -70,7 +70,7 @@ $(function(){
 		}
 	});
 	
-	$('#userPwdChk').on('change', function(){
+	$('#userPwdChk').on('keyup', function(){
 		if($('#userPwd').val() == $('#userPwdChk').val()){
 			$('#userPwdChkResult').css('visibility' ,'hidden');
 			$('#submit').attr('disabled', false);
@@ -81,6 +81,7 @@ $(function(){
 			$('#submit').text('비밀번호를 확인해 주세요');
 		}	
 	});	
+	
 	
 	$('#submit').on("click", function(){
 		if(	$('#userPwd').val() == null || $('#userPwd').val() == "" ||
