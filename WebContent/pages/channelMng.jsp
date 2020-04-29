@@ -1,3 +1,4 @@
+
 <%@page import="java.util.List"%>
 <%@page import="kosta.mvc.service.ChannelService"%>
 <%@page import="kosta.mvc.vo.Channel"%>
@@ -58,23 +59,19 @@
 #btn {
 	margin-right: 400px;
 }
-
 #chDesc {
 	background-color: #f6f6f6;
 	min-height: 350px;
 	padding: 30px;
 	text-align: left;
 }
-
 #p {
 	float: left;
 	margin-left: 10px;
 }
-
 #makeEv {
 	margin: 0px;
 }
-
 .btnOpen {
 	float: right;
 	padding-right: 50px;
@@ -87,7 +84,6 @@
    top:-50px; */
 	
 }
-
 .chSetting>i::before {
 	content: "\f013";
 	font-family: FontAwesome;
@@ -99,7 +95,6 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-
 .chAuthor>i::before {
 	content: "\f234";
 	font-family: FontAwesome;
@@ -111,7 +106,6 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-
 .chDel>i::before {
 	content: "\f1f8";
 	font-family: FontAwesome;
@@ -123,12 +117,10 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-
 .chListMenu li {
 	padding: 10px 15px 10px 0px;
 	display: inline-block;
 }
-
 .bgPart {
 	margin-top: 50px;
 	background: url("images/hostcenter_top_image.jpg") no-repeat;
@@ -136,11 +128,9 @@
 	background-size: cover; //
 	padding-top: 50px;
 }
-
 .bgImg { //
 	height: 250px;
 }
-
 h4 .addCh::after {
 	content: "\f055";
 	font-family: FontAwesome;
@@ -168,7 +158,6 @@ h4 .addCh::after {
       document.requestForm.key.value ="updateChannelForm";
       document.requestForm.submit();
    }
-
    function sendDelete(){//����
       
       document.requestForm.key.value ="deleteChannel";
@@ -216,11 +205,8 @@ h4 .addCh::after {
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
 
 <!--[if lt IE 9]>
-
       <script src="plugins/html5shiv.js"></script>
-
       <script src="plugins/respond.min.js"></script>
-
     <![endif]-->
 
 
@@ -332,16 +318,16 @@ h4 .addCh::after {
 
 									<div class="img-hexagon">
 
-										<img src="images/team/team1.jpg" alt=""> <span
+										<img src="channelImg/${channel.chImg}" alt=""> <span
 											class="img-top"></span> <span class="img-bottom"></span>
 
 									</div>
 
 									<div class="team-content">
 
-										<h3>개설자 이름</h3>
+										<h3>${channel.user.userName }</h3>
 
-										<p>개설자 email</p>
+										<p>${channel.user.userEmail }</p>
 
 										<div class="team-social">
 
@@ -379,22 +365,19 @@ h4 .addCh::after {
 
 											</div>
 											<!-- .cd-full-width -->
-											<form name="requestForm" method=post
-												action="<%=request.getContextPath() %>/front">
-												<input type=hidden name="chNo" value="${channel.chNo}">
-												<input type=hidden name="key" value=""> <input
-													type=button value="수정하기" onClick="sendUpdate()"> <input
-													type=button value="삭제하기" onClick="sendDelete()">
-											</form>
+										
 											<ul class="list-unstyled chListMenu">
 												<li class=""><a class="chSetting"
-													href="${pageContext.request.contextPath}/front?key=updateChannelForm"><i
+													href="${pageContext.request.contextPath}/front?key=updateChannelForm&chNo=${channel.chNo}"><i
 														class="fa fa-users">채널설정</i></a></li>
 												<li class=""><a class="chAuthor" href="#"><i
 														class="fa fa-users">권한설정</i></a></li>
 												<li class=""><a class="chDel"
 													href="${pageContext.request.contextPath}/front?key=deleteChannel&chNo=${channel.chNo}"><i
 														class="fa fa-users">채널삭제</i></a></li>
+												<li class=""><a class="chDetail"
+													href="${pageContext.request.contextPath}/front?key=channelDetail&chNo=${channel.chNo}"><i
+														class="fa fa-users">채널상세</i></a></li>
 											</ul>
 
 

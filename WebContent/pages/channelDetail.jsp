@@ -95,7 +95,7 @@
 					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 						<div class="portfolio-slider">
 							<div class="flexportfolio flexslider">
-								<img src="images/portfolio/portfolio-bg1.jpg" alt="">
+								<img src="channelImg/${requestScope.channel.chImg}" alt="">
 							</div>
 						</div>
 					</div>
@@ -110,11 +110,10 @@
 								<br />
 
 								<h3 class="widget-title">개설자</h3>
-								<p>${user.userNo}</p>
-								<p>${channel.user.userId}</p>
-								<p><%=request.getParameter("userId")%></p>
+								<p>${channel.user.userNo}</p>
+								<p>${channel.user.userName }</p>
 								<p>
-									<a href="#" class="project-btn btn btn-primary">채널 관리</a>
+									<a href="pages/channelList.jsp" class="project-btn btn btn-primary">채널 목록</a>
 								</p>
 							</div>
 						</div>

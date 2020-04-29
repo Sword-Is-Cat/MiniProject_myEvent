@@ -122,8 +122,8 @@
 							</div>
 							<div class="form-wrapper col-md-4">
 								<div class="form-group">
-									<label>개설자</label> <input class="form-control" name="userNo"
-										type="text" required="required" value='${sessionScope.userNo}'
+									<label>개설자</label> <input class="form-control" name="userName"
+										type="text" required="required" value='${sessionScope.userName}'
 										readonly />
 								</div>
 							</div>
@@ -143,18 +143,19 @@
 							<textarea class="form-control" name="chDescription"
 								id="chDescription" placeholder="" rows="10" required></textarea>
 						</div>
+						
+						<input type="hidden" name="userNo" value="${sessionScope.userNo}"/>
 
-						<!-- 	<div class="text-right">
-		<br>
-			<button class="btn btn-primary solid blank" type="submit">채널 생성 신청</button>
-		</div> -->
-
-					</form>
-					<!-- form end -->
-				</div>
 				<!-- 채널개설 end -->
-
-
+				<div class="row" style="margin-top: 40px">
+					<div class="col s12">
+	
+							<button type="submit" class="btn btn-info channelBtn">개설하기</button>
+						</div>
+					</div>
+				</form>
+				<!-- form end -->
+				
 				<!-- 주의사항 start -->
 				<div class="col-md-5">
 					<div class="contact-info">
@@ -172,16 +173,13 @@
 							<br>
 							<li>할말이 더 있던가요..☆</li>
 						</ul>
-						<div class="row" style="margin-top: 40px">
-							<div class="col s12">
-
-								<button type="submit" class="btn btn-info channelBtn">개설하기</button>
-							</div>
-						</div>
+						
 
 					</div>
 				</div>
 				<!-- 주의사항 end -->
+					
+				</div>
 			</div>
 			<!--row end -->
 		</div>
