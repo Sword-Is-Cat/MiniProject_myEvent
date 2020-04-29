@@ -52,13 +52,6 @@
   <script	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   <script src="js/signUp.js"></script>
   <script src="./plugins/jQuery/jquery.min.js"></script>
-<script>
-	$(function(){
-		$('button[type=submit]').click(function(){
-			$('#contact-form').submit();
-		});
-	});
-</script>
 </head>
 
 <body>
@@ -227,12 +220,12 @@
 						<div class="form-group d-flex ">
 							<div class="form-wrapper addPadding">
 								<input type="text" class="form-control" id="roadAddress"
-									name="reaodAddress" placeholder="도로명주소" readonly>
+									name="roadAddress" placeholder="도로명주소" readonly>
 							</div>
 							<div class="form-wrapper addPaddingLeft">
 								<span id="guide" style="color: #999; display: none"></span> <input
 									class="form-control" id="extraAddress" name="extraAddress"
-									type="text" disabled>
+									type="text" readonly>
 							</div>
 						</div>
 					<div class="form-wrapper">

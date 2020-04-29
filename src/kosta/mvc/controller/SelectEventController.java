@@ -15,7 +15,20 @@ public class SelectEventController implements Controller {
 		
 		Event event = new EventDAO().selectEventByEvNo(evNo);
 		
+		String[] addrArr = event.getEvAddr().split(",");
+		StringBuilder evAddr = new StringBuilder();
+		
+		evAddr.append("(");
+		evAddr.append(addrArr[0]);
+		evAddr.append(") ");
+		evAddr.append(addrArr[1]);
+		evAddr.append(" ");
+		evAddr.append(addrArr[2]);
+		evAddr.append("<br>");
+		evAddr.append(addrArr[3]);
+		
 		request.setAttribute("event", event);
+		request.setAttribute("evAddr", evAddr.toString());
 		
 		ModelAndView mv = new ModelAndView(false, "pages/event.jsp");
 		return mv;

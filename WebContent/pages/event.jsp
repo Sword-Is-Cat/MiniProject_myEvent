@@ -182,7 +182,7 @@
 				</div>
 				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id="qnaBoard"
 					style="border: 2px solid; height: 200px;">
-					${requestScope.event.evAddr}</div>
+					${requestScope.evAddr}</div>
 			</div>
 			<!-- Portfolio item row end -->
 		</div>

@@ -4,60 +4,54 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-<!DOCTYPE html>
-<html lang="ko">
-<head>
 <meta charset="UTF-8">
-<title>My Event :: 행사와 함께하는 모든 순간</title>
+  <title>My Event :: 행사와 함께 하는 모든 순간</title>
 
-<!-- mobile responsive meta -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1">
+   <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+   <!-- ** Plugins Needed for the Project ** -->
+   <!-- jQuery -->
+<script src="plugins/jQuery/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
 
-<!-- ** Plugins Needed for the Project ** -->
-<!-- Bootstrap -->
-<link rel="stylesheet"
-	href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
-<link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-<!-- FontAwesome -->
-<link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
-<!-- Animation -->
-<link rel="stylesheet" href="plugins/animate.css">
-<!-- Prettyphoto -->
-<link rel="stylesheet" href="plugins/prettyPhoto.css">
-<!-- Owl Carousel -->
-<link rel="stylesheet" href="plugins/owl/owl.carousel.css">
-<link rel="stylesheet" href="plugins/owl/owl.theme.css">
-<!-- Flexslider -->
-<link rel="stylesheet" href="plugins/flex-slider/flexslider.css">
-<!-- Flexslider -->
-<link rel="stylesheet" href="plugins/cd-hero/cd-hero.css">
-<!-- Style Swicther -->
-<link id="style-switch" href="css/presets/preset3.css" media="screen"
-	rel="stylesheet" type="text/css">
+	<!-- FontAwesome -->
+    <link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
+	<!-- Animation -->
+	<link rel="stylesheet" href="plugins/animate.css">
+	<!-- Prettyphoto -->
+	<link rel="stylesheet" href="plugins/prettyPhoto.css">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="plugins/owl/owl.carousel.css">
+	<link rel="stylesheet" href="plugins/owl/owl.theme.css">
+	<!-- Flexslider -->
+	<link rel="stylesheet" href="plugins/flex-slider/flexslider.css">
+	<!-- Flexslider -->
+	<link rel="stylesheet" href="plugins/cd-hero/cd-hero.css">
+	<!-- Style Swicther -->
+	<link id="style-switch" href="css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
+	
 
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-<!--[if lt IE 9]>
-      <script src="plugins/html5shiv.js"></script>
-      <script src="plugins/respond.min.js"></script>
-    <![endif]-->
+  <!-- Main Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/defaultStyle.css" rel="stylesheet">
+  
+  <link href="css/createEvent.css" rel="stylesheet">
 
-<!-- Main Stylesheet -->
-<link href="css/style.css" rel="stylesheet">
-<link href="css/defaultStyle.css" rel="stylesheet">
-<!--Favicon-->
-<link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
-<link rel="apple-touch-icon-precomposed" sizes="144x144"
-	href="./images/favicon/144.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72"
-	href="./images/favicon/72.png">
-<link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
-<!-- webFont -->
-<link
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
-	rel="stylesheet">
+ <!--Favicon-->
+	<link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="./images/favicon/144.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="./images/favicon/72.png">
+	<link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
+  <!-- webFont -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <!-- KAKAO -->
+  <script	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <script src="js/signUp.js"></script>
+  <script src="./plugins/jQuery/jquery.min.js"></script>
 </head>
 
 <body>
@@ -206,14 +200,32 @@
 									</div>
 								</div>
 							</div>
-							<div class="row">
-								<div class="col-md-12">
-									<div class="form-group">
-										<label> 주소</label><input id="evAddr" name="evAddr"
-											value="${requestScope.event.evAddr}" placeholder="상세주소">
-									</div>
+							<div class="form-group d-flex ">
+								<div class="form-wrapper addPadding">
+									<label for="postalcode">주소</label> <input type="text"
+										class="form-control" id="postcode" name="postalCode"
+										placeholder="우편번호" value='${requestScope.evAddress[0]}' readonly>
+								</div>
+								<div class="form-wrapper addPaddingLeft">
+									<button class="btn btn-info signBtn" id="userAddrBtn" type="button">우편번호
+										찾기</button>
 								</div>
 							</div>
+						<div class="form-group d-flex ">
+							<div class="form-wrapper addPadding">
+								<input type="text" class="form-control" id="roadAddress"
+									name="roadAddress" placeholder="도로명주소" value='${requestScope.evAddress[1]}' readonly>
+							</div>
+							<div class="form-wrapper addPaddingLeft">
+								<span id="guide" style="color: #999; display: none"></span> <input
+									class="form-control" id="extraAddress" name="extraAddress"
+									type="text" value='${requestScope.evAddress[2]}' readonly>
+							</div>
+						</div>
+					<div class="form-wrapper">
+						<input class="form-control" id="detailAddress" name="detailAddress"
+							placeholder="상세주소" value='${requestScope.evAddress[3]}' type="text">
+					</div>
 							<h3>행사 담당자 연락처</h3>
 							<div class="row">
 								<div class="col-md-6">
