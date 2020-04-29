@@ -25,7 +25,6 @@ public class UpdateChannelController implements Controller {
 		String userNo = m.getParameter("userNo");
 		String chName = m.getParameter("chName");
 		String chImg = m.getParameter("chImg");
-		int chStatus = Integer.parseInt(m.getParameter("chStatus"));
 		String chDescription = m.getParameter("chDescription");
 		
 		if(chNo==0 ||
@@ -37,12 +36,20 @@ public class UpdateChannelController implements Controller {
 		User user = new User();
 		user.setUserNo(Integer.parseInt(userNo));
 		
-		Channel channel = new Channel(chNo, user, chName, chImg, chStatus, chDescription);
+		Channel channel2 = new Channel();
+		
+		if(m.getFilesystemName("chImg")!=null) {
+			channel2.setChlmg(m.getFilesystemName("chImg"));
+		} else {
+			channel2.setChlmg("channelSample.jpg");
+		}
+		
+		Channel channel = new Channel(chNo, user, chName, chImg, 1, chDescription);
 		
 		ChannelService.updateChannel(channel);
 		ModelAndView mv = new ModelAndView();
 		mv.setRedirect(true);
-		mv.setViewName("front?key=updateChannel&chNo="+chNo);
+		mv.setViewName("front?key=channelDetail&chNo="+chNo);
 		
 		return mv;
 	}

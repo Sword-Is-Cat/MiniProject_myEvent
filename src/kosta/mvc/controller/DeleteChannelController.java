@@ -16,9 +16,8 @@ public class DeleteChannelController implements Controller {
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setRedirect(true);
-		mv.setViewName("front"); // 내 채널 리스트로 수정해야됨.
+		mv.setViewName("pages/index.jsp"); // 내 채널 리스트로 수정해야됨.
 		
 		return mv;
 	}
-
 }

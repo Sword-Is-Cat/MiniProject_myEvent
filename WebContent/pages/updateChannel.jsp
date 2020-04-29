@@ -90,20 +90,22 @@
 
 				<div class="row">
 					<div class="col-md-7">
-						<form name=updateForm id="contact-form" action="front" method="post"
+						<form name=updateForm id="contact-form" action="front?key=updateChannel" method="post"
 							role="form" enctype="multipart/form-data">
 							<div class="row">
 								<div class="col-md-8">
 									<div class="form-group">
 										<label> 채널명 </label> <input class="form-control" name="chName"
 											id="chName" type="text" required value=${channel.chName}>
+											<input class="form-control" name="chNo"
+											id="chNo" type="hidden" required value=${channel.chNo}>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label> 개설자 </label> <input class="form-control" name="userNo"
+										<label> 개설자 </label> <input class="form-control" name="userName"
 											id="userNo" type="text" required
-											readonly placeholder=${channel.userNo}>
+											readonly placeholder=${channel.user.userName}>
 									</div>
 								</div>
 							</div>
@@ -125,6 +127,7 @@
 								<button class="btn btn-primary solid blank" type="submit">
 									채널 정보 수정</button>
 							</div>
+							<input type="hidden" name="userNo" value="${channel.user.userNo}"/>
 						</form>
 					</div>
 

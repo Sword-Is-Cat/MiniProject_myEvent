@@ -42,6 +42,8 @@ public class CreateChannelController implements Controller{
 		
 		if(m.getFilesystemName("chImg")!=null) {
 			chan.setChlmg(m.getFilesystemName("chImg"));
+		} else {
+			chan.setChlmg("channelSample.jpg");
 		}
 		
 		ChannelService.insertChannel(chan);

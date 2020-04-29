@@ -156,21 +156,6 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
-
-	<script language=javascript>
-	function sendUpdate(){//������
-		document.requestForm.key.value ="updateChannel";
-		document.requestForm.submit();
-	}
-
-	function sendDelete(){//����
-		
-		document.requestForm.key.value ="deleteChannel";
-		document.requestForm.submit();
-	}
-	</script>
-
   <!-- Bootstrap -->
 
   <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
@@ -291,26 +276,17 @@
 
 </div>
 <div class="Container mainContainer">
+<c:choose>
+   <c:when test="${empty requestScope.chList}">
+   <tr>
+       <td colspan="5">
+           <p align="center"><b><span style="font-size:9pt;">등록된 채널이 없습니다.</span></b></p>
+           <a href="#0" id="makeEv" class="btn btn-primary solid cd-btn">채널개설</a>
+       </td>
+   </tr>
+   </c:when>
+<c:otherwise>
 <c:forEach items="${requestScope.chList}" var="channel">
-
-		<!--Isotope filter start -->
-<!-- 
-		<div class="row text-right">
-
-			<div class="col-12">
-
-				<div class="isotope-nav" data-isotope-nav="isotope">
-					<div class="crCh">
-						<a href="#" data-filter=".make-channel" id="btn">채널 개설</a>
-					</div>
-
-	
-
-				</div>
-
-			</div>
-
-		</div> --><!-- Isotope filter end -->
 
 	<div class="container">
 
@@ -333,7 +309,7 @@
 
 					<div class="img-hexagon">
 
-						<img src="images/team/team1.jpg" alt="">
+						<img src="channelImg/${channel.chImg}" alt="">
 
 						<span class="img-top"></span>
 
@@ -343,9 +319,10 @@
 
 					<div class="team-content">
 
-						<h3>개설자 이름</h3>
+						<h3>${channel.user.userName}</h3>
 
-						<p>개설자 email</p>
+						<p>${channel.user.userEmail}</p>
+						
 
 						<div class="team-social">
 
@@ -383,15 +360,12 @@
 				<a href="#0" id="makeEv" class="btn btn-primary solid cd-btn">행사개설</a>
 
 			</div> <!-- .cd-full-width -->	
-			<form name="requestForm" method=post action="<%=request.getContextPath() %>/front">
-				<ul class="list-unstyled chListMenu">
-				<input type=hidden name="chNo" value="${channel.chNo}">
-				<input type=hidden name="key" value="">
-					<li class=""><a class="chSetting" href="${pageContext.request.contextPath}/front?key=updateChannel&chNo=${channel.chNo}"><i class="fa fa-users" onclick="sendUpdate()">채널설정</i></a></li>
+				<ul class="list-unstyled chListMenu">		
+					<li class=""><a class="chSetting" href="${pageContext.request.contextPath}/front?key=updateChannelForm&chNo=${channel.chNo}"><i class="fa fa-users">채널설정</i></a></li>	
 					<li class=""><a class="chAuthor" href="#"><i class="fa fa-users">권한설정</i></a></li>
-					<li class=""><a class="chDel" href="${pageContext.request.contextPath}/front?key=deleteChannel&chNo=${channel.chNo}"><i class="fa fa-users" onClick="sendDelete()">채널삭제</i></a></li>
+					<li class=""><a class="chDel" href="${pageContext.request.contextPath}/front?key=deleteChannel&chNo=${channel.chNo}"><i class="fa fa-users">채널삭제</i></a></li>
 				</ul>
-			</form>
+			
 			
  		<div class="row d-flex justify-content-between">
 			<div class="col-sm-5 portfolio-static-item">
@@ -440,6 +414,8 @@
 
  </div>	<!--/ Container end -->
 </c:forEach>
+</c:otherwise>
+</c:choose>
  </div><!-- main div container end -->
 
 <!-- footer -->
