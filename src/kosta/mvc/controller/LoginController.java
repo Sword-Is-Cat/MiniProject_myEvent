@@ -31,7 +31,7 @@ public class LoginController implements Controller {
 			session.setAttribute("userName", dbUser.getUserName());
 			session.setAttribute("status", dbUser.getUserStatus());			
 			 
-			return new ModelAndView(true, request.getContextPath()+"front?key=index");
+			return new ModelAndView(true, request.getContextPath()+"/front?key=index");
 		}else {
 			
 			return new ModelAndView(true, request.getContextPath()+"/pages/loginFail.jsp");

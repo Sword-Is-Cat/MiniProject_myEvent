@@ -50,7 +50,7 @@ public class DoSignUpController implements Controller {
 		
 		UserService.signUp(user, cateNo);		
 		
-		ModelAndView mv = new ModelAndView(true, request.getServletContext().getContextPath()+"/pages/index.jsp");
+		ModelAndView mv = new ModelAndView(true, request.getServletContext().getContextPath()+"/front?key=index");
 		return mv;
 	}
 
