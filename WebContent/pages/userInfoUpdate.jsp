@@ -58,8 +58,7 @@
 <link href="css/userInfoUpdate.css" rel="stylesheet">
 <!-- KAKAO 주소 API -->
 <script src="./js/userInfoUpdate.js"></script>
-<script
-	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
 
 <script>
@@ -162,7 +161,7 @@
 					<div class="form-wrapper">
 						<span id="guide" style="color: #999; display: none"></span> <input
 							class="form-control" id="extraAddress" name="extraAddress"
-							type="text" disabled>
+							type="text" readonly>
 					</div>
 				</div>
 				<div class="form-wrapper">

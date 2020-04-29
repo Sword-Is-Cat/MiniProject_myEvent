@@ -4,6 +4,7 @@ import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -551,6 +552,78 @@ public class EventDAO {
 
 				list.add(event);
 			}
+		} finally {
+			DbUtil.dbClose(rs, ps, con);
+		}
+
+		if (list.size() == 0)
+			throw new Exception("검색결과가없습니다");
+
+		return list;
+	}
+
+	public List<Event> selectEventByCateNoList(List<Integer> myCateNo) throws Exception {
+		List<Event> list = new ArrayList<>();
+		String sql = pro.getProperty("selectNewEventsByCateNo");
+		boolean flag = false;
+		for(int cateNo : myCateNo) {
+			if(flag) sql += " OR";
+			sql+=" cateNo="+cateNo;
+			flag=true;
+		}
+		
+		Map<Integer, User> userMap = new HashMap<>();
+		Map<Integer, Channel> chMap = new HashMap<>();
+
+		Category category = null;
+		Channel channel = null;
+		User user = null;
+		EvTime evTime = null;
+		Event event = null;
+
+		try {
+			con = DbUtil.getConnection();
+			ps = con.prepareStatement(sql);
+
+			rs = ps.executeQuery();
+
+			while (rs.next()) {
+
+				if (category == null) {
+					category = new Category(rs.getInt("cateNo"), rs.getString("cateName"));
+				}
+
+				int userNo = rs.getInt("userNo");
+				if (userMap.containsKey(userNo)) {
+					user = userMap.get(userNo);
+				} else {
+					user = new User(rs.getInt("userNo"), rs.getString("userName"), rs.getString("userPwd"),
+							rs.getString("userName"), rs.getString("userAddr"), rs.getString("userPhone"),
+							rs.getString("userEmaill"), rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
+					userMap.put(userNo, user);
+				}
+
+				int chNo = rs.getInt("chNo");
+				if (chMap.containsKey(chNo)) {
+					channel = chMap.get(chNo);
+				} else {
+					channel = new Channel(rs.getInt("chNo"), user, rs.getString("chName"), rs.getString("chImg"),
+							rs.getInt("chStatus"), rs.getString("chDescription"));
+					chMap.put(chNo, channel);
+				}
+
+				evTime = new EvTime(rs.getInt("evNo"), rs.getTimestamp("evCreateTime"), rs.getTimestamp("evStartTime"),
+						rs.getTimestamp("evEndTime"), rs.getTimestamp("evBookStartTime"),
+						rs.getTimestamp("evBookEndTime"));
+				event = new Event(rs.getInt("evNo"), category, channel, rs.getString("evName"), rs.getString("evAddr"),
+						rs.getInt("evBookMax"), rs.getString("evDescription"), rs.getString("evImg"),
+						rs.getString("evImgDetail"), rs.getString("evPhone"), rs.getString("evEmail"), evTime,
+						rs.getInt("evStatus"));
+
+				list.add(event);
+
+			}
+
 		} finally {
 			DbUtil.dbClose(rs, ps, con);
 		}
