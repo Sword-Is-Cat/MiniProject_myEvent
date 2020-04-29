@@ -243,3 +243,75 @@ button.channelBtn {margin-top:32px; width:100%;}
 .contact-info {
 	padding-top:45px;
 }
+/*------------파일업로드 버튼 수정-------------------*/
+/* 
+.btn-file {
+  padding: 8px 10px;
+  background-color: #5c3fbf;
+  border-radius: 3px;
+  color: #fff;
+  margin-right: 8px;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+    cursor: pointer;
+}
+
+.btn-file span .selectFile {
+  display: block;
+  color: #777;
+} */
+.fileUpload {
+  border: 1px solid #000;
+  padding-bottom: 50px;
+}
+.chkList li {padding-top:15px;}
+
+.form-group {
+	//display: flex;
+}
+
+.form-group .form-wrapper {
+	width: 50%;
+}
+.form-wrapper.addPadding {
+	padding-right : 15px;
+}
+.form-wrapper.addPaddingLeft {
+	padding-left : 15px;
+}
+.btn.btn-info {
+	border-radius: 5px !important;
+	padding: 10px 30px !important;
+	background-color: #5c3fbf !important;
+	border-color: #5c3fbf !important;
+}
+.btn.signBtn {
+	margin-top: 30px;
+	width: 100%;
+	padding: 8px 30px !important;
+}
+.btn.signBtn:hover {
+	background-color: #fff !important;
+	border-color: #5c3fbf !important;
+	color: #5c3fbf !important;
+	transition: 0.2s;
+}
+.btn.eventBtn {
+	margin: o auto;
+	width:100%;
+	
+}

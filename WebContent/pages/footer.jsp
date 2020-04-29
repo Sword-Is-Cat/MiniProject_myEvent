@@ -63,7 +63,7 @@
 					<div class="latest-post-items media">
 						<div class="latest-post-content media-body">
 							<h4>
-								<a href="about.jsp" onclick="alert('준비중입니다.');return false;">서비스소개</a>
+								<a href="#" onclick="alert('준비중입니다.');">서비스소개</a>
 							</h4>
 
 						</div>
@@ -73,7 +73,7 @@
 					<div class="latest-post-items media">
 						<div class="latest-post-content media-body">
 							<h4>
-								<a href="#" onclick="alert('준비중입니다.');return false;">호스트센터</a>
+								<a href="#" onclick="alert('준비중입니다.');">호스트센터</a>
 							</h4>
 						</div>
 					</div>
