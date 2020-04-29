@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>My Event :: Çà»ç¿Í ÇÔ²² ÇÏ´Â ¸ğµç ¼ø°£</title>
+  <title>My Event :: í–‰ì‚¬ì™€ í•¨ê»˜ í•˜ëŠ” ëª¨ë“  ìˆœê°„</title>
 
    <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -78,7 +78,7 @@
     <br>
     <div id="evboard">
         <c:if test="${sessionScope.sessionID!=null}">
-            <input type="button" value="±Û¾²±â" onclick="evBoardWrite()"; >
+            <input type="button" value="ê¸€ì“°ê¸°" onclick="evBoardWrite()"; >
         
         </c:if>    
     </div>
@@ -86,12 +86,12 @@
     <div id="board">
         <table id="bList" width="800" border="3" bordercolor="lightgray">
             <tr heigh="30">
-                <td>±Û¹øÈ£</td>
-                 <td>Á¾·ù</td>
-                <td>Á¦¸ñ</td>
-                <td>ÀÛ¼ºÀÚ</td>
-                <td>ÀÛ¼ºÀÏ</td>
-                <td>Á¶È¸¼ö</td>
+                <td>ê¸€ë²ˆí˜¸</td>
+                 <td>ì¢…ë¥˜</td>
+                <td>ì œëª©</td>
+                <td>ì‘ì„±ì</td>
+                <td>ì‘ì„±ì¼</td>
+                <td>ì¡°íšŒìˆ˜</td>
             </tr>    
            
         </table>
@@ -130,13 +130,13 @@
     <div id="evb">
         <form>
             <select name="opt">
-            	<option value="1">ÀüÃ¼${evBoardAll }</option>
-                <option value="2">±Û¹øÈ£${evBoardNo }</option>
-                <option value="3">Á¦¸ñ${evBoardtitle }</option>
-                <option value="4">ÀÛ¼ºÀÚ${evBoardUser }</option>
+            	<option value="1">ì „ì²´${evBoardAll }</option>
+                <option value="2">ê¸€ë²ˆí˜¸${evBoardNo }</option>
+                <option value="3">ì œëª©${evBoardtitle }</option>
+                <option value="4">ì‘ì„±ì${evBoardUser }</option>
             </select>
             <input type="text" size="20" name="condition"/>&nbsp;
-            <input type="submit" value="°Ë»ö"/>
+            <input type="submit" value="ê²€ìƒ‰"/>
         </form>    
     </div>
 </div>       
