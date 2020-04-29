@@ -319,9 +319,9 @@ public class EventDAO {
 				if (userMap.containsKey(userNo)) {
 					user = userMap.get(userNo);
 				} else {
-					user = new User(rs.getInt("userNo"), rs.getString("userName"), rs.getString("userPwd"),
-							rs.getString("userName"), rs.getString("userAddr"), rs.getString("userPhone"),
-							rs.getString("userEmaill"), rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
+					user = new User(userNo, rs.getString("userName"), rs.getString("userPwd"), rs.getString("userName"),
+							rs.getString("userAddr"), rs.getString("userPhone"), rs.getString("userEmaill"),
+							rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
 					userMap.put(userNo, user);
 				}
 
@@ -329,7 +329,7 @@ public class EventDAO {
 				if (chMap.containsKey(chNo)) {
 					channel = chMap.get(chNo);
 				} else {
-					channel = new Channel(rs.getInt("chNo"), user, rs.getString("chName"), rs.getString("chImg"),
+					channel = new Channel(chNo, user, rs.getString("chName"), rs.getString("chImg"),
 							rs.getInt("chStatus"), rs.getString("chDescription"));
 					chMap.put(chNo, channel);
 				}
@@ -390,9 +390,9 @@ public class EventDAO {
 				if (userMap.containsKey(userNo)) {
 					user = userMap.get(userNo);
 				} else {
-					user = new User(rs.getInt("userNo"), rs.getString("userName"), rs.getString("userPwd"),
-							rs.getString("userName"), rs.getString("userAddr"), rs.getString("userPhone"),
-							rs.getString("userEmaill"), rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
+					user = new User(userNo, rs.getString("userName"), rs.getString("userPwd"), rs.getString("userName"),
+							rs.getString("userAddr"), rs.getString("userPhone"), rs.getString("userEmaill"),
+							rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
 					userMap.put(userNo, user);
 				}
 
@@ -400,7 +400,7 @@ public class EventDAO {
 				if (chMap.containsKey(chNo)) {
 					channel = chMap.get(chNo);
 				} else {
-					channel = new Channel(rs.getInt("chNo"), user, rs.getString("chName"), rs.getString("chImg"),
+					channel = new Channel(chNo, user, rs.getString("chName"), rs.getString("chImg"),
 							rs.getInt("chStatus"), rs.getString("chDescription"));
 					chMap.put(chNo, channel);
 				}
@@ -465,9 +465,9 @@ public class EventDAO {
 				if (userMap.containsKey(userNo)) {
 					user = userMap.get(userNo);
 				} else {
-					user = new User(rs.getInt("userNo"), rs.getString("userName"), rs.getString("userPwd"),
-							rs.getString("userName"), rs.getString("userAddr"), rs.getString("userPhone"),
-							rs.getString("userEmaill"), rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
+					user = new User(userNo, rs.getString("userName"), rs.getString("userPwd"), rs.getString("userName"),
+							rs.getString("userAddr"), rs.getString("userPhone"), rs.getString("userEmaill"),
+							rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
 					userMap.put(userNo, user);
 				}
 
@@ -475,7 +475,7 @@ public class EventDAO {
 				if (chMap.containsKey(chNo)) {
 					channel = chMap.get(chNo);
 				} else {
-					channel = new Channel(rs.getInt("chNo"), user, rs.getString("chName"), rs.getString("chImg"),
+					channel = new Channel(chNo, user, rs.getString("chName"), rs.getString("chImg"),
 							rs.getInt("chStatus"), rs.getString("chDescription"));
 					chMap.put(chNo, channel);
 				}
@@ -502,12 +502,14 @@ public class EventDAO {
 		return list;
 
 	}
-	
-	public List<Event> selectRecentEvents() throws Exception {
+
+	public List<Event> selectEventByEvName(String evName) throws Exception {
 
 		List<Event> list = new ArrayList<>();
-		String sql = pro.getProperty("selectRecentEv");
+		String sql = pro.getProperty("selectEventByEvName");
 
+		Map<Integer, User> userMap = new HashMap<>();
+		Map<Integer, Channel> chMap = new HashMap<>();
 		Map<Integer, Category> cateMap = new HashMap<>();
 
 		Category category = null;
@@ -517,21 +519,14 @@ public class EventDAO {
 		Event event = null;
 
 		try {
-
 			con = DbUtil.getConnection();
 			ps = con.prepareStatement(sql);
-			ps.setInt(1, 4);
+
+			ps.setString(1, "%" + evName + "%");
+
 			rs = ps.executeQuery();
 
 			while (rs.next()) {
-
-				if (channel == null) {
-					user = new User(rs.getInt("userNo"), rs.getString("userName"), rs.getString("userPwd"),
-							rs.getString("userName"), rs.getString("userAddr"), rs.getString("userPhone"),
-							rs.getString("userEmail"), rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
-					channel = new Channel(rs.getInt("chNo"), user, rs.getString("chName"), rs.getString("chImg"),
-							rs.getInt("chStatus"), rs.getString("chDescription"));
-				}
 
 				int cateNo = rs.getInt("cateNo");
 				if (cateMap.containsKey(cateNo)) {
@@ -539,6 +534,25 @@ public class EventDAO {
 				} else {
 					category = new Category(cateNo, rs.getString("cateName"));
 					cateMap.put(cateNo, category);
+				}
+
+				int userNo = rs.getInt("userNo");
+				if (userMap.containsKey(userNo)) {
+					user = userMap.get(userNo);
+				} else {
+					user = new User(userNo, rs.getString("userName"), rs.getString("userPwd"), rs.getString("userName"),
+							rs.getString("userAddr"), rs.getString("userPhone"), rs.getString("userEmaill"),
+							rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
+					userMap.put(userNo, user);
+				}
+
+				int chNo = rs.getInt("chNo");
+				if (chMap.containsKey(chNo)) {
+					channel = chMap.get(chNo);
+				} else {
+					channel = new Channel(chNo, user, rs.getString("chName"), rs.getString("chImg"),
+							rs.getInt("chStatus"), rs.getString("chDescription"));
+					chMap.put(chNo, channel);
 				}
 
 				evTime = new EvTime(rs.getInt("evNo"), rs.getTimestamp("evCreateTime"), rs.getTimestamp("evStartTime"),
@@ -550,6 +564,82 @@ public class EventDAO {
 						rs.getInt("evStatus"));
 
 				list.add(event);
+
+			}
+
+		} finally {
+			DbUtil.dbClose(rs, ps, con);
+		}
+
+		if (list.size() == 0)
+			throw new Exception("검색결과가없습니다");
+
+		return list;
+
+	}
+
+	public List<Event> selectRecentEvents() throws Exception {
+
+		List<Event> list = new ArrayList<>();
+		String sql = pro.getProperty("selectRecentEv");
+
+		Map<Integer, User> userMap = new HashMap<>();
+		Map<Integer, Channel> chMap = new HashMap<>();
+		Map<Integer, Category> cateMap = new HashMap<>();
+
+		Category category = null;
+		Channel channel = null;
+		User user = null;
+		EvTime evTime = null;
+		Event event = null;
+
+		try {
+			con = DbUtil.getConnection();
+			ps = con.prepareStatement(sql);
+
+			ps.setInt(1, 4);
+
+			rs = ps.executeQuery();
+
+			while (rs.next()) {
+
+				int cateNo = rs.getInt("cateNo");
+				if (cateMap.containsKey(cateNo)) {
+					category = cateMap.get(cateNo);
+				} else {
+					category = new Category(cateNo, rs.getString("cateName"));
+					cateMap.put(cateNo, category);
+				}
+
+				int userNo = rs.getInt("userNo");
+				if (userMap.containsKey(userNo)) {
+					user = userMap.get(userNo);
+				} else {
+					user = new User(userNo, rs.getString("userName"), rs.getString("userPwd"), rs.getString("userName"),
+							rs.getString("userAddr"), rs.getString("userPhone"), rs.getString("userEmaill"),
+							rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
+					userMap.put(userNo, user);
+				}
+
+				int chNo = rs.getInt("chNo");
+				if (chMap.containsKey(chNo)) {
+					channel = chMap.get(chNo);
+				} else {
+					channel = new Channel(chNo, user, rs.getString("chName"), rs.getString("chImg"),
+							rs.getInt("chStatus"), rs.getString("chDescription"));
+					chMap.put(chNo, channel);
+				}
+
+				evTime = new EvTime(rs.getInt("evNo"), rs.getTimestamp("evCreateTime"), rs.getTimestamp("evStartTime"),
+						rs.getTimestamp("evEndTime"), rs.getTimestamp("evBookStartTime"),
+						rs.getTimestamp("evBookEndTime"));
+				event = new Event(rs.getInt("evNo"), category, channel, rs.getString("evName"), rs.getString("evAddr"),
+						rs.getInt("evBookMax"), rs.getString("evDescription"), rs.getString("evImg"),
+						rs.getString("evImgDetail"), rs.getString("evPhone"), rs.getString("evEmail"), evTime,
+						rs.getInt("evStatus"));
+
+				list.add(event);
+
 			}
 		} finally {
 			DbUtil.dbClose(rs, ps, con);

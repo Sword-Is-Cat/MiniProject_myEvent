@@ -52,6 +52,15 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
+
+<script src="./plugins/jQuery/jquery.min.js"></script>
+<script>
+	$(function(){
+		$('button[type=submit]').click(function(){
+			$('#contact-form').submit();
+		});
+	});
+</script>
 </head>
 
 <body>
@@ -106,8 +115,8 @@
 							</div>
 						</div>
 						<%
-								List<Category> cateList = CategoryService.selectAll();
-							%>
+							List<Category> cateList = CategoryService.selectAll();
+						%>
 						<div class="row">
 							<div class="col-md-8">
 								<div class="form-group">
@@ -208,8 +217,8 @@
 							</div>
 						</div>
 
-
 					</form>
+
 				</div>
 
 
