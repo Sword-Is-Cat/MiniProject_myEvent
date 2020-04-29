@@ -17,7 +17,7 @@ public class SelectEventController implements Controller {
 
 		if (event.getEvAddr().equals("Online")) {
 			request.setAttribute("evAddr", "Online");
-			
+
 		} else {
 
 			String[] addrArr = event.getEvAddr().split(",");
@@ -31,10 +31,10 @@ public class SelectEventController implements Controller {
 			evAddr.append(addrArr[2]);
 			evAddr.append("<br>");
 			evAddr.append(addrArr[3]);
-
-			request.setAttribute("event", event);
 			request.setAttribute("evAddr", evAddr.toString());
 		}
+		
+		request.setAttribute("event", event);
 		ModelAndView mv = new ModelAndView(false, "pages/event.jsp");
 		return mv;
 	}
