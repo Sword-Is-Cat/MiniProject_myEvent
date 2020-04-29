@@ -41,7 +41,7 @@
               maxWaitMillis="-1"/>  -->
 
 
-    <Resource name="jdbc/myOracle"
+    <Resource name="jdbc/myOracle" 
               auth="Container"
               type="javax.sql.DataSource" 
               driverClassName="oracle.jdbc.OracleDriver"

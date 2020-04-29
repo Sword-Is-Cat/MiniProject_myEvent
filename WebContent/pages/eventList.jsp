@@ -79,6 +79,20 @@ eTitle {
 	text-decoration: none;
 	color: inherit;
 }
+#eventTab{
+	color: #5c3fbf;
+	font-weight: bold;
+	margin-left: 15%;
+	border-bottom: 5px solid #5c3fbf;
+}
+#channelTab{
+	font-weight: bold;
+	margin-left: 10%;
+}
+hr{
+	margin-left: 15%;
+	width:70%
+}
 </style>
 <!-- mobile responsive meta -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -132,8 +146,14 @@ eTitle {
 	<!--subTopMenu end-->
 
 	<c:import url="header.jsp"></c:import>
-
+	<br>
+	<h3 id="tab">
+	<a id="eventTab" href="eventList.jsp">행사</a>
+	<a id="channelTab" href="channelList.jsp">채널</a>
+	</h3>
+	<br>
 	<h4 style="margin-left: 15%">총 n개의 검색 결과가 있습니다.</h4>
+	<hr id="line" color="#5c3fbf"/>
 	<!-- Portfolio start -->
 	<section id="main-container" class="portfolio-static">
 		<div class="container">
