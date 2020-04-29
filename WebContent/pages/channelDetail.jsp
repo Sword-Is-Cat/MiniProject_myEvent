@@ -53,6 +53,17 @@
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
 
+<!-- 지혜 css -->
+<style>
+hr{
+	margin-left: 15%;
+	width:70%;
+	border: solid 2px #5c3fbf;
+}
+#ahead{
+	background-color: rgb(240, 237, 250)
+}
+</style>
 </head>
 
 <body>
@@ -309,8 +320,65 @@
 			<!-- Container end -->
 		</section>
 		<!-- Portfolio end -->
+		
+		<!-- 지혜 채널리뷰 부분 -->
+		<hr id="line" />
+		<br>
+		<div class="container">
+			<div class="row">
+				<h2 class="widget-title">채널 리뷰</h2>
+			</div>			
+			<a href="pages/createChBoard.jsp?chNo=${channel.chNo}" class="project-btn btn btn-primary review">리뷰 등록</a>
+			
+			<br><br>
+			<div class="accordion" id="accordion">
+					<div class="card border rounded mb-2">
+						<div class="card-header p-0">
+							<a id="ahead" class="h4 mb-0 font-weight-bold text-uppercase d-block p-2 pl-5" data-toggle="collapse"
+								data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								게시글 번호, 작성자 이름, 별점</a>
+						</div>
+						<div id="collapseOne" class="collapse show" data-parent="#accordion">
+							<div class="card-body">
+								<p>게시글 내용</p>
+							</div>
+						</div>
+					</div>
+					<!--/ Panel 1 end-->
+
+					<div class="card border rounded mb-2">
+						<div class="card-header p-0">
+							<a id="ahead" class="h4 collapsed mb-0 font-weight-bold text-uppercase d-block p-2 pl-5" data-toggle="collapse"
+								data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">Collapsible Group Item #
+								2</a>
+						</div>
+						<div id="collapseTwo" class="collapse" data-parent="#accordion">
+							<div class="card-body">
+								<p>Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id
+									elit. Proin gravida nibh vel velit auctor</p>
+							</div>
+						</div>
+					</div>
+					<!--/ Panel 2 end-->
 
 
+					<div class="card border rounded mb-2">
+						<div class="card-header p-0">
+							<a id="ahead" class="h4 collapsed mb-0 font-weight-bold text-uppercase d-block p-2 pl-5" data-toggle="collapse"
+								data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Collapsible Group Item #
+								3</a>
+						</div>
+						<div id="collapseThree" class="collapse" data-parent="#accordion">
+							<div class="card-body">
+								<p>Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id
+									elit. Proin gravida nibh vel velit auctor</p>
+							</div>
+						</div>
+					</div>
+					<!--/ Panel 3 end-->
+				<!--/ Accordion end -->
+		</div>
+		<!-- Container end -->
 	</div>
 	<!-- Body inner end -->
 
@@ -347,7 +415,7 @@
 
 	<!-- Main Script -->
 	<script src="js/script.js"></script>
-
+	<br><br>
 </body>
-
+<c:import url="footer.jsp"></c:import>
 </html>
