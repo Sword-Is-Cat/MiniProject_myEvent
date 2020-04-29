@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
@@ -40,7 +41,7 @@ public class EvBoardDAO {
     * */
    public int evBoardinsert(EvBoard evBoard) throws SQLException {
 		int result=0;
-	    String sql = pro.getProperty("insertEvBoard");   
+	    String sql = pro.getProperty("InsertEvBoard");   
 	 try {
 	       con=DbUtil.getConnection();
 	       ps = con.prepareStatement(sql);
@@ -104,9 +105,27 @@ public class EvBoardDAO {
    /***
     * 2.전체검색
     * */
-   public List<EvBoard> selectAll() throws SQLException {
-	return null;
-   }
+   public List<EvBoard> selectAllEvBoard() throws SQLException {
+
+		List<EvBoard> list = new ArrayList<EvBoard>();
+		String sql = pro.getProperty("EvBoardList");
+		try {
+			con=DbUtil.getConnection();
+			ps = con.prepareStatement(sql);
+		
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				EvBoard evBoard = 
+					
+			
+				list.add(evBoard);
+			}
+		} finally {
+			DbUtil.dbClose(rs, ps, con);
+		}
+		return list;
+	}//end
    /**
     * 3. evBoardNo에 해당하는 게시물 검색
     * */
