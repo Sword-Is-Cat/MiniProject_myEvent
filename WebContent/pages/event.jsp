@@ -5,7 +5,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>My Event :: 행사와 함께 하는 모든 순간</title>
+<title>My Event :: 행사와 함께하는 모든 순간</title>
 
 <!-- mobile responsive meta -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -148,10 +148,13 @@
 								<a href="#" class="project-btn btn btn-primary">신청하기</a>
 							</p>
 							<p>
-								<a href="front?key=enterUpdateEvent&evNo=${requestScope.event.evNo}" class="project-btn btn btn-primary">수정하기</a>
+								<a
+									href="front?key=enterUpdateEvent&evNo=${requestScope.event.evNo}"
+									class="project-btn btn btn-primary">수정하기</a>
 							</p>
 							<p>
-								<a href="front?key=deleteEvent&evNo=${requestScope.event.evNo}" class="project-btn btn btn-primary">삭제하기</a>
+								<a href="front?key=deleteEvent&evNo=${requestScope.event.evNo}"
+									class="project-btn btn btn-primary">삭제하기</a>
 							</p>
 						</div>
 					</div>

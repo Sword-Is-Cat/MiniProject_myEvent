@@ -24,10 +24,10 @@ form{
         height: 50px;
     }
 
-    .input-field .prefix ~ input {
+.input-field .prefix ~ input {
         margin-left: 0;
         padding-left: 3rem;
-    }
+}
 .form-control.fcMyEvent {
 	border-radius: 5px;
 }
@@ -39,7 +39,12 @@ form{
     	border-color:#5c3fbf!important;
     	width:100%;
     }
-
+.btn.loginBtn:hover {
+    	background-color:#fff!important;
+    	border-color:#5c3fbf!important;
+    	color:#5c3fbf!important;
+    	transition:0.2s;
+	}
     button:focus {
         outline: none;
         background-color: #ffffff;

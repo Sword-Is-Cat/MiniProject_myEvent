@@ -502,4 +502,62 @@ public class EventDAO {
 		return list;
 
 	}
+	
+	public List<Event> selectRecentEvents() throws Exception {
+
+		List<Event> list = new ArrayList<>();
+		String sql = pro.getProperty("selectRecentEv");
+
+		Map<Integer, Category> cateMap = new HashMap<>();
+
+		Category category = null;
+		Channel channel = null;
+		User user = null;
+		EvTime evTime = null;
+		Event event = null;
+
+		try {
+
+			con = DbUtil.getConnection();
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, 4);
+			rs = ps.executeQuery();
+
+			while (rs.next()) {
+
+				if (channel == null) {
+					user = new User(rs.getInt("userNo"), rs.getString("userName"), rs.getString("userPwd"),
+							rs.getString("userName"), rs.getString("userAddr"), rs.getString("userPhone"),
+							rs.getString("userEmail"), rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
+					channel = new Channel(rs.getInt("chNo"), user, rs.getString("chName"), rs.getString("chImg"),
+							rs.getInt("chStatus"), rs.getString("chDescription"));
+				}
+
+				int cateNo = rs.getInt("cateNo");
+				if (cateMap.containsKey(cateNo)) {
+					category = cateMap.get(cateNo);
+				} else {
+					category = new Category(cateNo, rs.getString("cateName"));
+					cateMap.put(cateNo, category);
+				}
+
+				evTime = new EvTime(rs.getInt("evNo"), rs.getTimestamp("evCreateTime"), rs.getTimestamp("evStartTime"),
+						rs.getTimestamp("evEndTime"), rs.getTimestamp("evBookStartTime"),
+						rs.getTimestamp("evBookEndTime"));
+				event = new Event(rs.getInt("evNo"), category, channel, rs.getString("evName"), rs.getString("evAddr"),
+						rs.getInt("evBookMax"), rs.getString("evDescription"), rs.getString("evImg"),
+						rs.getString("evImgDetail"), rs.getString("evPhone"), rs.getString("evEmail"), evTime,
+						rs.getInt("evStatus"));
+
+				list.add(event);
+			}
+		} finally {
+			DbUtil.dbClose(rs, ps, con);
+		}
+
+		if (list.size() == 0)
+			throw new Exception("검색결과가없습니다");
+
+		return list;
+	}
 }

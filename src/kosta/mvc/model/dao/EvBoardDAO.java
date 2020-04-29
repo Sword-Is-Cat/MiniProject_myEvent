@@ -8,13 +8,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Properties;
-
-
 import kosta.mvc.util.DbUtil;
 import kosta.mvc.vo.EvBoard;
 import kosta.mvc.vo.Event;
+import kosta.mvc.vo.Notice;
 import kosta.mvc.vo.User;
 
 
@@ -27,10 +27,10 @@ public class EvBoardDAO {
    
    public EvBoardDAO() {
 
-      InputStream input = getClass().getClassLoader().getResourceAsStream("kosta/mvc/model/dao/sqlQuery.properties");
+      final InputStream input = getClass().getClassLoader().getResourceAsStream("kosta/mvc/model/dao/sqlQuery.properties");
       try {
          pro.load(input);
-      } catch (Exception e) {
+      } catch (final Exception e) {
          e.printStackTrace();
       }
    }
@@ -39,9 +39,10 @@ public class EvBoardDAO {
    /**
     * 1.게시물등록
     * */
-   public int evBoardinsert(EvBoard evBoard) throws SQLException {
+   public int evBoardinsert(final EvBoard evBoard) throws SQLException {
+
 		int result=0;
-	    String sql = pro.getProperty("InsertEvBoard");   
+	    final String sql = pro.getProperty("InsertEvBoard");   
 	 try {
 	       con=DbUtil.getConnection();
 	       ps = con.prepareStatement(sql);
@@ -56,15 +57,16 @@ public class EvBoardDAO {
 	 }
 	 return result;
 	}
-   		
+   		     
+
    
    
       /**
        * 수정하기
        */
-   public int Update(EvBoard evBoard) throws SQLException {
+   public int Update(final EvBoard evBoard) throws SQLException {
       int result=0;
-      String sql = pro.getProperty("UpdateEvBoard");   
+      final String sql = pro.getProperty("UpdateEvBoard");   
    try {
          con=DbUtil.getConnection();
          ps = con.prepareStatement(sql);
@@ -82,23 +84,23 @@ public class EvBoardDAO {
    /**
     * 삭제하기
     */
-   public int Delete (EvBoard evBoard ) throws SQLException {
-	   int result=0;
-	      String sql = pro.getProperty("DeleteEvBoard");   
-	   try {
-	         con=DbUtil.getConnection();
-	         ps = con.prepareStatement(sql);
-	         ps.setInt(1, evBoard.getEvBoardNo());
-	         ps.setInt(2, evBoard.getEvBoardParentNo());
-	         ps.setString(3, evBoard.getEvBoardContent());
-	         ps.setTimestamp(4, evBoard.getEvBoardTime());
-	        
-	           result = ps.executeUpdate();
-	   }finally {
-	      DbUtil.dbClose( ps, con);
-	   }
-	   return result;
-	}
+   public int Delete (final EvBoard evBoard ) throws SQLException {
+      int result=0;
+         final String sql = pro.getProperty("DeleteEvBoard");   
+      try {
+            con=DbUtil.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, evBoard.getEvBoardNo());
+            ps.setInt(2, evBoard.getEvBoardParentNo());
+            ps.setString(3, evBoard.getEvBoardContent());
+            ps.setTimestamp(4, evBoard.getEvBoardTime());
+           
+              result = ps.executeUpdate();
+      }finally {
+         DbUtil.dbClose( ps, con);
+      }
+      return result;
+   }
    
 
    
@@ -107,8 +109,8 @@ public class EvBoardDAO {
     * */
    public List<EvBoard> selectAllEvBoard() throws SQLException {
 
-		List<EvBoard> list = new ArrayList<EvBoard>();
-		String sql = pro.getProperty("EvBoardList");
+		final List<EvBoard> list = new ArrayList<EvBoard>();
+		final String sql = pro.getProperty("EvBoardList");
 		try {
 			con=DbUtil.getConnection();
 			ps = con.prepareStatement(sql);
@@ -116,8 +118,9 @@ public class EvBoardDAO {
 			rs = ps.executeQuery();
 			
 			while(rs.next()) {
-				EvBoard evBoard = 
-					
+				final EvBoard evBoard =
+						new EvBoard ();
+						list.add(evBoard);
 			
 				list.add(evBoard);
 			}
@@ -126,19 +129,14 @@ public class EvBoardDAO {
 		}
 		return list;
 	}//end
+
+
    /**
     * 3. evBoardNo에 해당하는 게시물 검색
     * */
-  public EvBoard selectByEvBoardNo(int evBoardNo) throws SQLException {
-	return null;
-	 
+  public EvBoard selectByEvBoardNo(final int evBoardNo) throws SQLException {
+   return null;
+    
   }
-
-
-
-
-
-
-
 
 }

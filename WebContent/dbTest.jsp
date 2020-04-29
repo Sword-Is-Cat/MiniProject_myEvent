@@ -2,44 +2,44 @@
 <%@page import="kosta.mvc.vo.User"%>
 <%@page import="kosta.mvc.vo.Channel"%>
 <%@page import="kosta.mvc.model.dao.ChannelDAO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@page import="kosta.mvc.util.DbUtil"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 <h1>
- 1. ¿¬°á test: <%=DbUtil.getConnection() %><br>
- 2. Ã¤³Î°Ë»ö: 
+ 1. ì—°ê²° test: <%=DbUtil.getConnection() %><br>
+ 2. ì±„ë„ê²€ìƒ‰: 
 <%--  	<%
  	ChannelDAO dao = new ChannelDAO();
  	out.print(dao.selectAllChannel());
 	%> --%>
 	<%ChannelDAO dao = new ChannelDAO();
 	out.print(dao.selectAllChannel());%><br>
-3. Ã¤³Î¼öÁ¤
+3. ì±„ë„ìˆ˜ì •
 <%--  	<%
 		User user = new User();
 		user.setUserNo(1);
-		Channel c = new Channel(16, user, "¼öÁ¤µÇ³ª", null, 1, "¼öÁ¤");
+		Channel c = new Channel(16, user, "ìˆ˜ì •ë˜ë‚˜", null, 1, "ìˆ˜ì •");
 		try{
 			dao.updateChannel(c);
-			out.print("¼öÁ¤¼º°ø");
+			out.print("ìˆ˜ì •ì„±ê³µ");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	%> --%>
 <br>
-4. Ã¤³Î»èÁ¦
+4. ì±„ë„ì‚­ì œ
 <%--  	<%
 		try{
 			dao.deleteChannel(16);
-			out.print("»èÁ¦¼º°ø");
+			out.print("ì‚­ì œì„±ê³µ");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
