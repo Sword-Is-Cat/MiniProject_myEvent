@@ -120,7 +120,7 @@ img.chImg {
 							<div class="grid">
 								<figure class="m-0 effect-oscar">
 									<img class="chImg"
-										src="https://eventusstorage.blob.core.windows.net/evs/Image/event/16764/ProjectInfo/Cover/e3f492fb160d420ca4483e56964b710d.jpg?fixed"
+										src="${pageContext.request.contextPath}/channelImg/${channel.chImg}"
 										alt="">
 									<figcaption>
 										<a class="view icon-pentagon" data-rel="prettyPhoto"

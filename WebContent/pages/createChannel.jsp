@@ -122,8 +122,8 @@
 							</div>
 							<div class="form-wrapper col-md-4">
 								<div class="form-group">
-									<label>개설자</label> <input class="form-control" name="userNo"
-										type="text" required="required" value='${sessionScope.userNo}'
+									<label>개설자</label> <input class="form-control" name="userName"
+										type="text" required="required" value='${sessionScope.userName}'
 										readonly />
 								</div>
 							</div>
@@ -143,6 +143,8 @@
 							<textarea class="form-control" name="chDescription"
 								id="chDescription" placeholder="" rows="10" required></textarea>
 						</div>
+						
+						<input type="hidden" name="userNo" value="${sessionScope.userNo}"/>
 
 						<!-- 	<div class="text-right">
 		<br>
@@ -157,10 +159,8 @@
 
 					</form>
 					<!-- form end -->
-				</div>
-				<!-- 채널개설 end -->
 
-
+				
 				<!-- 주의사항 start -->
 				<div class="col-md-5">
 					<div class="contact-info">
@@ -183,6 +183,8 @@
 					</div>
 				</div>
 				<!-- 주의사항 end -->
+					
+				</div>
 			</div>
 			<!--row end -->
 		</div>

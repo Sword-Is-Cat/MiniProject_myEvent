@@ -24,14 +24,13 @@ public class ChannelService {
 	}
 
 	public static Channel selectByChNo(int chNo) throws SQLException{
-		
 		Channel dbChannel = ChanDAO.selectByChNo(chNo);
 		if(dbChannel==null) throw new SQLException("채널이 없습니다.");
 		return dbChannel;
 	}
 
 	public static void updateChannel(Channel channel) throws Exception{
-		Channel dbChannel = ChanDAO.selectByChNo(channel.getChNo());
+		//Channel dbChannel = ChanDAO.selectByChNo(channel.getChNo());
 		
 		int result = ChanDAO.updateChannel(channel);
 		if(result == 0) throw new SQLException("수정 실패했습니다.");

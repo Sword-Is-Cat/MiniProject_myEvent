@@ -46,7 +46,7 @@ public class ChannelDAO {
 	}
 	
 	public int updateChannel(Channel channel) throws Exception{
-		Connection con = null;
+		Connection con = DbUtil.getConnection();
 		PreparedStatement ps = null;
 		
 		/*
@@ -60,7 +60,6 @@ public class ChannelDAO {
 		
 		int result = 0;
 		try {
-			con = DbUtil.getConnection();
 			//ps = con.prepareStatement(sqlc.toString());
 			ps = con.prepareStatement(sql);
 			
@@ -147,26 +146,24 @@ public class ChannelDAO {
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, chNo);
 			rs = ps.executeQuery();
-			
 			/*
 			 * User userId = null; UsersDAO usersDAO = new UsersDAO(); User user =
 			 * usersDAO.selectById(userId.getUserId());
 			 */
 			
 			if(rs.next()) {
-				
-				int userNo = rs.getInt(2);
-				String chName = rs.getString(3);
-				String chImg = rs.getString(4);
-				int chStatus = rs.getInt(5);
-				String chDescription = rs.getString(6);
+				int userNo = rs.getInt("userNo");
+				String chName = rs.getString("chName");
+				String chImg = rs.getString("chImg");
+				int chStatus = rs.getInt("chStatus");
+				String chDescription = rs.getString("chDescription");
 				
 				User user2 = new User(userNo);
-				
+				user2.setUserName(rs.getString("userName"));
 				channel = new Channel(chNo, user2, chName, chImg, chStatus, chDescription);
 			}
 		} finally {
-			DbUtil.dbClose(ps, con);
+			DbUtil.dbClose(rs, ps, con);
 		}
 		return channel;
 	}
@@ -183,14 +180,15 @@ public class ChannelDAO {
 			ps.setInt(1, userNo);
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				int chNo = rs.getInt(2);
-				String chName = rs.getString(3);
-				String chImg = rs.getString(4);
-				int chStatus = rs.getInt(5);
-				String chDescription = rs.getString(6);
+				int chNo = rs.getInt("chNo");
+				String chName = rs.getString("chName");
+				String chImg = rs.getString("chImg");
+				int chStatus = rs.getInt("chStatus");
+				String chDescription = rs.getString("chDescription");
 				
 				User user2 = new User(userNo);
-				
+				user2.setUserName(rs.getString("userName"));
+				user2.setUserEmail(rs.getString("userEmail"));
 				channel = new Channel(chNo, user2, chName, chImg, chStatus, chDescription);
 				list.add(channel);
 			}
