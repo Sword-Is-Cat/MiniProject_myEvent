@@ -77,7 +77,7 @@ img.mainLogo {
 			<div class="nav justify-content-end">
 				<a class="navbar-brand navbar-bg" href="index.jsp"><img
 					class="mainLogo d-flex justify-content-end"
-					src="images/mainLogo2.jpg" width="40%" alt="logo"></a>
+					src="pages/images/mainLogo2.jpg" width="40%" alt="logo"></a>
 			</div>
 			<div class="container">
 

@@ -19,6 +19,7 @@
 	content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <!-- ** Plugins Needed for the Project ** -->
+<script src="pages/plugins/jQuery/jquery.min.js"></script>
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
@@ -42,7 +43,7 @@
 
 <!-- Main Stylesheet -->
 <link href="css/style.css" rel="stylesheet">
-<link href="css/defaultStyle.css" rel="stylesheet">
+<link href="pages/css/defaultStyle.css" rel="stylesheet">
 <!--Favicon-->
 <link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144"
@@ -54,6 +55,23 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
+	
+<script>
+$(function(){
+/* 	if(${sessionScope.userStatus}==2) {
+		${'.mainTable'}.append("<th class="noticeDelete">삭제</th>");
+		${'.delectSpace'}.append("<td class="noticeDelete"><input type="button" value="삭제" /></td>");
+	} */
+	
+	$('.deleteBtn').click(function(){
+		
+	});//delete end
+});//end
+</script>
+<style>
+table {text-align: center;}
+.mainContainer {margin-top:50px; padding-top:50px; border-top:1px solid #e5e5e5;}
+</style>
 </head>
 <body>
 	<!--subTopMenu-->
@@ -65,15 +83,16 @@
 
 	<!-- channalList start -->
 	<%-- <%List<Notice> notice = NoticeService.selectAll();%> --%>
-
-	<div class="gap-50 p-3"></div>
+<div class="container-fluide mainContainer"></div><!-- container end -->
+	
+	<div class="container">
 	<div class="row justify-content-center">
-		<div class="col-md-8">
+		<div class="col s12">
 			<caption>공지사항</caption>
 			<table class="table table-hover">
 
 				<thead>
-					<tr>
+					<tr class="mainTable">
 						<th>번호</th>
 						<th>제목</th>
 						<th>날짜</th>
@@ -84,19 +103,19 @@
 
 
 					<c:forEach items="${list}" var="notice" varStatus="state">
-						<tr class="accordion-toggle" data-toggle="collapse"
-							data-target="#no${notice.no}">
-							<td>${notice.no}</td>
-							<td>${notice.title}</td>
-							<td>${notice.date}</td>
-							<td class="noticeDelete"><input type="button" value="삭제" /></td>
-
+						<tr class="accordion-toggle delectSpace" data-toggle="collapse"
+							data-target="#no${notice.noticeNo}">
+							<td>${notice.noticeNo}</td>
+							<td>${notice.noticeSubject}</td>
+							<td><fmt:formatDate value="${notice.noticeTime}" type="date"/></td>
+							<td>　</td>
+							
 						</tr>
-						<tr class="accordion-body collapse" id="no5">
+						<tr class="accordion-body collapse" id="no${notice.noticeNo}">
 							<td></td>
-							<td>${notice.contents}</td>
+							<td>${notice.noticeContent}</td>
 							<td></td>
-							<td class="noticeDelete"></td>
+							<td class="noticeDelete"><input type="button" class="deleteBtn" value="삭제" /></td>
 						</tr>
 					</c:forEach>
 
@@ -106,6 +125,7 @@
 
 		</div>
 	</div>
+</div>
 	<!-- footer -->
 
 	<c:import url="footer.jsp"></c:import>

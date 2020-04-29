@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -36,7 +35,7 @@ public class NoticeDAO {
 	public List<Notice> selectAll() throws SQLException {
 
 		List<Notice> list = new ArrayList<Notice>();
-		String sql = pro.getProperty("noticeList");
+		String sql = pro.getProperty("noticeSelectAll");
 		try {
 			con=DbUtil.getConnection();
 			ps = con.prepareStatement(sql);
@@ -61,23 +60,33 @@ public class NoticeDAO {
 	 */
 	public int insert(Notice notice) throws SQLException {
 		int result=0;
-		String sql = pro.getProperty("noticeInsert");
+		String sql = pro.getProperty("insertNotice");
 		
 		try {
 			 con=DbUtil.getConnection();
 			  ps = con.prepareStatement(sql);
-			  ps.setInt(1, notice.getNoticeNo());
-			  ps.setString(2, notice.getNoticeSubject());
-			  ps.setString(3, notice.getNoticeContent());
-			  ps.setTimestamp(4, notice.getNoticeTime());
-			  ps.setInt(5, notice.getNoticeStatus());
 			  
-			  return ps.executeUpdate();
+//			  ps.setInt(1, notice.getNoticeNo());
+//			  ps.setString(2, notice.getNoticeSubject());
+//			  ps.setString(3, notice.getNoticeContent());
+//			  ps.setTimestamp(4, notice.getNoticeTime());
+//			  ps.setInt(5, notice.getNoticeStatus());
+			 // INSERT INTO (noticeNo, noticeSubject, noticeContent, noticeTime, noticeStatus ) 
+			  //values (NOTICESEQ.nextval,?,?,sysdate,1)
+	
+			  ps.setString(1, notice.getNoticeSubject());
+			  ps.setString(2, notice.getNoticeContent());
+
+			  result=ps.executeUpdate();
 		}finally {
 			DbUtil.dbClose(ps, con);
 		}
 
+		return result;
 	}//inset end
+	
+	
+	
 	
 	/**
 	 * 수정하기
