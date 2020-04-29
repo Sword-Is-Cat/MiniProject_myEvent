@@ -4,20 +4,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kosta.mvc.service.ChannelService;
+import kosta.mvc.vo.Channel;
 
-public class DeleteChannelController implements Controller {
+public class UpdateChannelFormController implements Controller {
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		int chNo = Integer.parseInt(request.getParameter("chNo"));
-		String path = request.getServletContext().getRealPath("/channelImg");
 		
-		ChannelService.deleteChannel(chNo, path);
+		if(chNo==0) {
+			throw new RuntimeException("수정할 수 없습니다");
+		}
 		
+		Channel channel = ChannelService.selectByChNo(chNo);
+		request.setAttribute("channel", channel);
 		ModelAndView mv = new ModelAndView();
-		mv.setRedirect(true);
-		mv.setViewName("pages/index.jsp"); // 내 채널 리스트로 수정해야됨.
-		
+		System.out.println("updatehannelFormController: " + channel);
+		mv.setViewName("pages/updateChannel.jsp");
 		return mv;
 	}
+
 }

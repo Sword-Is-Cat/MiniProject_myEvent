@@ -122,8 +122,8 @@
 							</div>
 							<div class="form-wrapper col-md-4">
 								<div class="form-group">
-									<label>개설자</label> <input class="form-control" name="userNo"
-										type="text" required="required" value='${sessionScope.userNo}'
+									<label>개설자</label> <input class="form-control" name="userName"
+										type="text" required="required" value='${sessionScope.userName}'
 										readonly />
 								</div>
 							</div>
@@ -143,45 +143,48 @@
 							<textarea class="form-control" name="chDescription"
 								id="chDescription" placeholder="" rows="10" required></textarea>
 						</div>
+						
+						<input type="hidden" name="userNo" value="${sessionScope.userNo}"/>
 
 						<!-- 	<div class="text-right">
 		<br>
 			<button class="btn btn-primary solid blank" type="submit">채널 생성 신청</button>
 		</div> -->
-
-					</form>
-					<!-- form end -->
-				</div>
-				<!-- 채널개설 end -->
-
-
-				<!-- 주의사항 start -->
-				<div class="col-md-5">
-					<div class="contact-info">
-						<div class="pageTitle">
-							<h3 class="createChTitle">주의사항</h3>
-						</div>
-						<ul>
-							<li>채널명은 한글 15자까지 입력</li>
-							<br>
-							<li>이미지는 *** Mb 까지 업로드</li>
-							<br>
-							<li>이미지는 jpg, png, gif 파일만 등록할 수 있습니다</li>
-							<br>
-							<li>채널 설명은 한글 250자까지 입력</li>
-							<br>
-							<li>할말이 더 있던가요..☆</li>
-						</ul>
-						<div class="row" style="margin-top: 40px">
+		<div class="row" style="margin-top: 40px">
 							<div class="col s12">
 
 								<button type="submit" class="btn btn-info channelBtn">개설하기</button>
 							</div>
 						</div>
 
+					</form>
+					<!-- form end -->
+
+				
+				<!-- 주의사항 start -->
+				<div class="col-md-5">
+					<div class="contact-info">
+						<div class="pageTitle">
+							<h3 class="createChTitle">주의사항</h3>
+						</div>
+						<ul class="chList">
+							<li>채널명은 한글 15자까지 입력</li>
+					
+							<li>이미지는 *** Mb 까지 업로드</li>
+				
+							<li>이미지는 jpg, png, gif 파일만 등록할 수 있습니다</li>
+					
+							<li>채널 설명은 한글 250자까지 입력</li>
+					
+							<li>할말이 더 있던가요..☆</li>
+						</ul>
+						
+
 					</div>
 				</div>
 				<!-- 주의사항 end -->
+					
+				</div>
 			</div>
 			<!--row end -->
 		</div>

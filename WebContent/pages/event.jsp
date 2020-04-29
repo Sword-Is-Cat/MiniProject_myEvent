@@ -153,7 +153,7 @@
 									class="project-btn btn btn-primary">수정하기</a>
 							</p>
 							<p>
-								<a href="front?key=deleteEvent&evNo=${requestScope.event.evNo}"
+								<a href="front?key=deleteEvent&chNo=${requestScope.event.channel.chNo}&evNo=${requestScope.event.evNo}"
 									class="project-btn btn btn-primary">삭제하기</a>
 							</p>
 						</div>
@@ -182,7 +182,7 @@
 				</div>
 				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id="qnaBoard"
 					style="border: 2px solid; height: 200px;">
-					${requestScope.event.evAddr}</div>
+					${requestScope.evAddr}</div>
 			</div>
 			<!-- Portfolio item row end -->
 		</div>

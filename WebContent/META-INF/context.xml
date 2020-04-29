@@ -28,16 +28,15 @@
     -->
     
     <!-- DBCP기술 적용하기 -->
-
-    <!-- <Resource name="jdbc/myOracle" 
-
+<!-- 	<Resource name="jdbc/myOracle" 
               auth="Container"
               type="javax.sql.DataSource" 
               driverClassName="oracle.jdbc.OracleDriver"
-              url="jdbc:oracle:thin:@192.168.0.145:1521:XE"
-              username="jang" 
-              password="jang" 
+              url="jdbc:oracle:thin:@127.0.0.1:1521:xe"
+              username="localevent" 
+              password="localevent" 
               maxTotal="20" 
+
               maxIdle="10"
               maxWaitMillis="-1"/>  -->
 
@@ -46,12 +45,12 @@
               auth="Container"
               type="javax.sql.DataSource" 
               driverClassName="oracle.jdbc.OracleDriver"
-              url="jdbc:oracle:thin:@localhost:1521:XE"
-              username="localevent" 
-              password="localevent" 
+              url="jdbc:oracle:thin:@192.168.0.145:1521:XE"
+              username="jang" 
+              password="jang" 
               maxTotal="20" 
               maxIdle="10"
-              maxWaitMillis="-1"/>
+              maxWaitMillis="-1"/> 
               
 
 </Context>
