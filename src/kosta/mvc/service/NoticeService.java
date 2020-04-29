@@ -8,7 +8,7 @@ import kosta.mvc.vo.Notice;
 
 public class NoticeService {
 	
-	private static NoticeDAO noticeDAO ;
+	private static NoticeDAO noticeDAO = new NoticeDAO() ;
 	
 	public static List<Notice> selectAll() throws SQLException {
 		List<Notice> list = noticeDAO.selectAll();
@@ -18,7 +18,7 @@ public class NoticeService {
 	public static void insert(Notice notice) throws SQLException{
 		int result = noticeDAO.insert(notice);
 		if (result==0) {
-			throw new SQLException("등록되지않았음");
+			throw new SQLException("등록되지않음");
 		}
 	}
 	public static void delete(int noticeNo) throws SQLException{

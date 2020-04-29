@@ -65,19 +65,19 @@
 		<div class="row justify-content-center">
 
 			<div class="col-md-6">
-				<form id="contact-form" action="front?key=insertNotice"
+				<form id="contact-form" action="../front?key=insertNotice"
 					method="post" role="form">
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group">
-								<label>제목</label> <input class="form-control" name="subject"
+								<label>제목</label> <input class="form-control" name="noticeSubject"
 									id="subject" placeholder="" required>
 							</div>
 						</div>
 					</div>
 					<div class="form-group">
 						<label>내용</label>
-						<textarea class="form-control" name="message" id="message"
+						<textarea class="form-control" name="noticeContent" id="message"
 							placeholder="" rows="10" required></textarea>
 					</div>
 					<div class="text-center">
