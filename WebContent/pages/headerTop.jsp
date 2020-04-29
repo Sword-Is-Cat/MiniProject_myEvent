@@ -1,20 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="utf-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 
 
 </head>
 
 <body>
-<!--subTopMenu-->
-<div class="container">
-			<div class="cols 12">
-				<div class="subTopMenu d-flex justify-content-end">
+	<!--subTopMenu-->
+	<div class="container">
+		<div class="cols 12">
+			<div class="subTopMenu d-flex justify-content-end">
 				<ul class="subMenu">
 					<li class="nav-item active"><a class="nav-link" href="login.jsp" role="button" >로그인</a></li>
 					<li class="nav-item active"><a class="nav-link" href="#" role="button">로그아웃</a></li>
@@ -32,7 +32,10 @@
 						</div>
 					</li>
 				</ul>
-			</div><!--subTopMenu-->
-		</div><!--cols12 end-->
-	</div><!--container end-->
-<!--subTopMenu end-->	
+			</div>
+			<!--subTopMenu-->
+		</div>
+		<!--cols12 end-->
+	</div>
+	<!--container end-->
+	<!--subTopMenu end-->
