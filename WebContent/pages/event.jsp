@@ -153,7 +153,7 @@
 									class="project-btn btn btn-primary">수정하기</a>
 							</p>
 							<p>
-								<a href="front?key=deleteEvent&evNo=${requestScope.event.evNo}"
+								<a href="front?key=deleteEvent&chNo=${requestScope.event.channel.chNo}&evNo=${requestScope.event.evNo}"
 									class="project-btn btn btn-primary">삭제하기</a>
 							</p>
 						</div>

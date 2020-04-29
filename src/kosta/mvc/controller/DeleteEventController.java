@@ -12,10 +12,11 @@ public class DeleteEventController implements Controller {
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		int evNo = Integer.parseInt(request.getParameter("evNo"));
+		int chNo = Integer.parseInt(request.getParameter("chNo"));
 
 		new EventDAO().deleteEvent(evNo);
 
-		ModelAndView mv = new ModelAndView(true, "pages/index.jsp");
+		ModelAndView mv = new ModelAndView(true, "pages/channelDetail.jsp?chNo="+chNo);
 		return mv;
 	}
 
