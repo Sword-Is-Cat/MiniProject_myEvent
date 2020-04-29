@@ -26,7 +26,8 @@
 						</a>
 						<div class="dropdown-menu" style="border: 1.5px solid #222; border-radius: 10px;">
 							<a class="dropdown-item" href="channelMng.jsp">채널 관리</a>
-							<a class="dropdown-item" href="bookHistory.jsp">신청 행사 목록</a>
+							<a class="dropdown-item" href="bookHistory.jsp">신청 행사 관리</a>
+							<a class="dropdown-item" href="interestEvent.jsp">관심 행사 목록</a>
 							<a class="dropdown-item" href="userInfoUpdate.jsp">회원 정보 수정</a>
 						</div>
 					</li>
