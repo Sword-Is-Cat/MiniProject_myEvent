@@ -86,6 +86,20 @@ img.chImg {
 	word-wrap: normal !important;
 	display: block;
 }
+#eventTab{
+	font-weight: bold;
+	margin-left: 15%;
+}
+#channelTab{
+	color: #5c3fbf;
+	font-weight: bold;
+	margin-left: 10%;
+	border-bottom: 5px solid #5c3fbf;
+}
+hr{
+	margin-left: 15%;
+	width:70%
+}
 </style>
 </head>
 
@@ -95,18 +109,14 @@ img.chImg {
 	<div class="body-inner">
 		<!-- mainMenu -->
 		<c:import url="header.jsp" />
-
-		<!-- channel list top -->
-		<div class="row">
-			<div class="col-md-12 heading text-center">
-				<h2 class="title2" style="text-align: center; font-weight: bold;">
-					채널 목록<span class="title-desc"></span>
-				</h2>
-			</div>
-		</div>
-		<!-- Title row end -->
 		<br>
-
+		<h3 id="tab">
+		<a id="eventTab" href="eventList.jsp">행사</a>
+		<a id="channelTab" href="channelList.jsp">채널</a>
+		</h3>
+		<br>
+		<h4 style="margin-left: 15%">총 n개의 검색 결과가 있습니다.</h4>
+		<hr id="line" color="#5c3fbf"/>
 		<!-- channalList start -->
 		<%
 			List<Channel> chList = ChannelService.selectAll();
