@@ -617,7 +617,7 @@ public class EventDAO {
 					user = userMap.get(userNo);
 				} else {
 					user = new User(userNo, rs.getString("userName"), rs.getString("userPwd"), rs.getString("userName"),
-							rs.getString("userAddr"), rs.getString("userPhone"), rs.getString("userEmaill"),
+							rs.getString("userAddr"), rs.getString("userPhone"), rs.getString("userEmail"),
 							rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
 					userMap.put(userNo, user);
 				}
@@ -652,15 +652,8 @@ public class EventDAO {
 		return list;
 	}
 
-	public List<Event> selectEventByCateNoList(List<Integer> myCateNo) throws Exception {
+	public List<Event> selectEventByCateNoList(List<Integer> myCateNo, int count) throws Exception {
 		List<Event> list = new ArrayList<>();
-		String sql = pro.getProperty("selectNewEventsByCateNo");
-		boolean flag = false;
-		for(int cateNo : myCateNo) {
-			if(flag) sql += " OR";
-			sql+=" cateNo="+cateNo;
-			flag=true;
-		}
 		
 		Map<Integer, User> userMap = new HashMap<>();
 		Map<Integer, Channel> chMap = new HashMap<>();
@@ -670,15 +663,26 @@ public class EventDAO {
 		User user = null;
 		EvTime evTime = null;
 		Event event = null;
+		
+		String sql = pro.getProperty("selectEventByMyCateNoList");
+		boolean flag = false;
+		sql += " (";
+		for(int cateNo : myCateNo) {
+			sql += flag ? " OR cateNo="+cateNo : "cateNo="+cateNo;
+			flag=true;
+		}
+		sql += ")";
 
 		try {
 			con = DbUtil.getConnection();
 			ps = con.prepareStatement(sql);
-
+			
 			rs = ps.executeQuery();
-
+			
+			int stop = 0;
 			while (rs.next()) {
-
+				if(stop>=count)break;
+				
 				if (category == null) {
 					category = new Category(rs.getInt("cateNo"), rs.getString("cateName"));
 				}
@@ -689,7 +693,7 @@ public class EventDAO {
 				} else {
 					user = new User(rs.getInt("userNo"), rs.getString("userName"), rs.getString("userPwd"),
 							rs.getString("userName"), rs.getString("userAddr"), rs.getString("userPhone"),
-							rs.getString("userEmaill"), rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
+							rs.getString("userEmail"), rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
 					userMap.put(userNo, user);
 				}
 
@@ -711,7 +715,7 @@ public class EventDAO {
 						rs.getInt("evStatus"));
 
 				list.add(event);
-
+				stop++;
 			}
 
 		} finally {

@@ -409,7 +409,7 @@ h4 .addCh::after {
 															<figcaption>
 																<a class="link icon-pentagon" href="portfolio-item.html"><i
 																	class="fa fa-link"></i></a> <a class="view icon-pentagon"
-																	data-rel="prettyPhoto" href="images/thumnail/04.jpg"><i
+																	data-rel="prettyPhoto" href="/pages/images/thumnail/04.jpg"><i
 																	class="fa fa-search"></i></a>
 															</figcaption>
 														</figure>

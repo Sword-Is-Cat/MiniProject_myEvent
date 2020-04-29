@@ -13,20 +13,24 @@ public class IndexController implements Controller {
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		HttpSession session =  request.getSession();
-		int userNo = (int) session.getAttribute("userNo");
-		//최근항목들
+		HttpSession session = request.getSession();
+		// 최근항목들
 		List<Event> recentEvList = EvService.selectRecentEvents();
 		
-		for(Event ev : recentEvList) {
-			System.out.println("recent : "+ev.getEvNo());
-		}
-		//내 카테고리에 맞는 항목들
-		List<Event> myCategoryEvList = EvService.selectRecentEventByMyCategory(userNo);
-		for(Event ev : myCategoryEvList) {
-			System.out.println("recent : "+ev.getEvNo());
+		List<Event> myCategoryEvList = null;
+
+		// 내 카테고리에 맞는 항목들 or 비로그인시 랜덤하나 찍어주기
+		if(session.getAttribute("userNo")!=null) {
+			int userNo = (int) session.getAttribute("userNo");
+			myCategoryEvList = EvService.selectRecentEventByMyCategory(userNo);
+		}else {
+			myCategoryEvList = EvService.selectRecentEventByRandomCategory();
 		}
 		
+
+		request.setAttribute("RecentEvList", recentEvList);
+		request.setAttribute("myCategoryEvList", myCategoryEvList);
+
 		return new ModelAndView(false, "/pages/index.jsp");
 	}
 
