@@ -17,7 +17,7 @@ public class UpdateChannelController implements Controller {
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String saveDir = request.getServletContext().getRealPath("/channelImg");
 		int maxSize = 1024 * 1024 * 100;
-		String encoding = "euc-kr";
+		String encoding = "utf-8";
 		
 		MultipartRequest m = new MultipartRequest(request, saveDir, maxSize, encoding, new DefaultFileRenamePolicy());
 		
@@ -44,7 +44,7 @@ public class UpdateChannelController implements Controller {
 			channel2.setChlmg("channelSample.jpg");
 		}
 		
-		Channel channel = new Channel(chNo, user, chName, chImg, 1, chDescription);
+		Channel channel = new Channel(chNo, user, chName, channel2.getChImg(), 1, chDescription);
 		
 		ChannelService.updateChannel(channel);
 		ModelAndView mv = new ModelAndView();

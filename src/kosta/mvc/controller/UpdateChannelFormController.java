@@ -13,7 +13,7 @@ public class UpdateChannelFormController implements Controller {
 		int chNo = Integer.parseInt(request.getParameter("chNo"));
 		
 		if(chNo==0) {
-			throw new RuntimeException("수정할 수 없습니다..");
+			throw new RuntimeException("수정할 수 없습니다");
 		}
 		
 		Channel channel = ChannelService.selectByChNo(chNo);
