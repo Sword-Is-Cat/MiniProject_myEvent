@@ -57,7 +57,7 @@
   	$(function(){
   		if(${sessionScope.status} != null) {
   			alert("이미 로그인 된 상태입니다");
-  			location.href="${pageContext.request.contextPath}/pages/index.jsp";
+  			location.href="${pageContext.request.contextPath}/front?key=index";
   		}
 
   	});

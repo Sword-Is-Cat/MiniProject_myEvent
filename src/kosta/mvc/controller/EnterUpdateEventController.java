@@ -14,8 +14,10 @@ public class EnterUpdateEventController implements Controller {
 		int evNo = Integer.parseInt(request.getParameter("evNo"));
 		
 		Event event = new EventDAO().selectEventByEvNo(evNo);
+		String[] evAddress = event.getEvAddr().split(",");
 		
 		request.setAttribute("event", event);
+		request.setAttribute("evAddress", evAddress);
 		
 		ModelAndView mv = new ModelAndView(false, "pages/updateEvent.jsp");
 		return mv;

@@ -54,7 +54,7 @@
 					<div class="latest-post-items media">
 						<div class="latest-post-content media-body">
 							<h4>
-								<a href="about.jsp">회사소개</a>
+								<a href="${pageContext.request.contextPath}/pages/about.jsp">회사소개</a>
 							</h4>
 						</div>
 					</div>
@@ -81,7 +81,7 @@
 					<div class="latest-post-items media">
 						<div class="latest-post-content media-body">
 							<h4>
-								<a href="notice.jsp">공지사항</a>
+								<a href="${pageContext.request.contextPath}/pages/notice.jsp">공지사항</a>
 							</h4>
 						</div>
 					</div>
@@ -89,7 +89,7 @@
 					<div class="latest-post-items media">
 						<div class="latest-post-content media-body">
 							<h4>
-								<a href="EvBoard.jsp">자주묻는질문</a>
+								<a href="${pageContext.request.contextPath}/pages/EvBoard.jsp">자주묻는질문</a>
 							</h4>
 						</div>
 					</div>
@@ -226,38 +226,38 @@
 	<script
 		src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
 	<!-- jQuery -->
-	<script src="plugins/jQuery/jquery.min.js"></script>
+	<script src="${pageContext.request.contextPath}/pages/plugins/jQuery/jquery.min.js"></script>
 	<!-- Bootstrap JS -->
-	<script src="plugins/bootstrap/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/pages/plugins/bootstrap/bootstrap.min.js"></script>
 	<!-- Style Switcher -->
-	<script type="text/javascript" src="plugins/style-switcher.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/style-switcher.js"></script>
 	<!-- Owl Carousel -->
-	<script type="text/javascript" src="plugins/owl/owl.carousel.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/owl/owl.carousel.js"></script>
 	<!-- PrettyPhoto -->
-	<script type="text/javascript" src="plugins/jquery.prettyPhoto.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/jquery.prettyPhoto.js"></script>
 	<!-- Bxslider -->
 	<script type="text/javascript"
 		src="plugins/flex-slider/jquery.flexslider.js"></script>
 	<!-- CD Hero slider -->
-	<script type="text/javascript" src="plugins/cd-hero/cd-hero.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/cd-hero/cd-hero.js"></script>
 	<!-- Isotope -->
-	<script type="text/javascript" src="plugins/isotope.js"></script>
-	<script type="text/javascript" src="plugins/ini.isotope.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/isotope.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/ini.isotope.js"></script>
 	<!-- Wow Animation -->
-	<script type="text/javascript" src="plugins/wow.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/wow.min.js"></script>
 	<!-- Eeasing -->
-	<script type="text/javascript" src="plugins/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/jquery.easing.1.3.js"></script>
 	<!-- Counter -->
-	<script type="text/javascript" src="plugins/jquery.counterup.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/jquery.counterup.min.js"></script>
 	<!-- Waypoints -->
-	<script type="text/javascript" src="plugins/waypoints.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/waypoints.min.js"></script>
 	<!-- google map -->
 	<script
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
 	<script src="plugins/google-map/gmap.js"></script>
 
 	<!-- Main Script -->
-	<script src="js/script.js"></script>
+	<script src="${pageContext.request.contextPath}/pages/js/script.js"></script>
 </body>
 
 </html>

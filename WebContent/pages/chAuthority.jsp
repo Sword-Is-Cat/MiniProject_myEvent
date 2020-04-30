@@ -1,0 +1,402 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+<meta charset="utf-8">
+<title>My Event :: 행사와 함께 하는 모든 순간</title>
+
+<!-- mobile responsive meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- ** Plugins Needed for the Project ** -->
+<!-- Bootstrap -->
+<link rel="stylesheet"
+	href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+<link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+<!-- FontAwesome -->
+<link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
+<!-- Animation -->
+<link rel="stylesheet" href="plugins/animate.css">
+<!-- Prettyphoto -->
+<link rel="stylesheet" href="plugins/prettyPhoto.css">
+<!-- Owl Carousel -->
+<link rel="stylesheet" href="plugins/owl/owl.carousel.css">
+<link rel="stylesheet" href="plugins/owl/owl.theme.css">
+<!-- Flexslider -->
+<link rel="stylesheet" href="plugins/flex-slider/flexslider.css">
+<!-- Flexslider -->
+<link rel="stylesheet" href="plugins/cd-hero/cd-hero.css">
+<!-- Style Swicther -->
+<link id="style-switch" href="css/presets/preset3.css" media="screen"
+	rel="stylesheet" type="text/css">
+
+
+<!-- Main Stylesheet -->
+<link href="css/style.css" rel="stylesheet">
+<link href="css/defaultStyle.css" rel="stylesheet">
+<!--Favicon-->
+<link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144"
+	href="./images/favicon/144.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72"
+	href="./images/favicon/72.png">
+<link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
+<!-- webFont -->
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+	rel="stylesheet">
+
+</head>
+
+<body>
+
+	<!--subTopMenu-->
+	<c:import url="headerTop.jsp" />
+	<!-- mainMenu -->
+	<c:import url="header.jsp" />
+	<!-- 상단 메뉴 -->
+		
+
+		<!-- Main container start -->
+		<main align=center>
+
+			<div class="conainter-fluid">
+				<form action="/App/UserAuthAdd?subdomain=Justice" data-ajax="true"
+					data-ajax-method="POST" data-ajax-success="Success" id="form0"
+					method="post">
+					<div class="card" style="overflow: visible">
+						<div class="card-content">
+							<div class="conainter-fluid">
+
+								<div class="col s12">
+									<div>권한을 할당 받을 계정 ID를 입력하세요.</div>
+									<input id="id" name="id" placeholder="id 입력">
+								</div>
+								<br>
+
+								<div class="col s12 mt3c">
+									<div>추가하려는 권한의 범위를 선택하세요.</div>
+									
+										<div class="card-content">
+											<input type="radio" id="newProject" name="setAuth"
+												value="Project"> <label class="black-text"
+												for="newProject">채널 관리 : 채널과 채널에 신규 개설되는 행사의 관리 권한을
+												공유.</label>
+										</div>
+										<div class="card-content">
+											<input type="radio" id="existingProject" name="setAuth"
+												value="Project_Manager"> <label class="black-text"
+												for="existingProject">행사 관리 : 특정 행사의 관리 권한을 공유.</label>
+										</div>
+									
+								</div>
+								<div class="col s12">
+									<input id="projectid" name="projectid"
+										placeholder="행사코드 입력(행사페이지 도메인의 마지막 숫자)" hidden="">
+								</div>
+
+							</div>
+						</div>
+						<div class="card-action">
+							<button class="waves-effect waves-light btn blue darken-4"
+								type="submit">추가</button>
+						</div>
+					</div>
+				</form>
+				<div style="height: 20px"></div>
+				<div class="card">
+					<div class="card-content">
+						<table class="striped responsive-table">
+							<thead>
+								<tr>
+									<th></th>
+									<th data-field="name">이름</th>
+									<th data-field="email">아이디</th>
+									<th data-field="date">권한</th>
+									<th></th>
+								</tr>
+							</thead>
+
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<script src="/Scripts/jquery.unobtrusive-ajax.js"></script>
+			<!-- 수정 -->
+
+			<script>
+				$('input:radio').click(function(e) {
+					//true => 새로운 프로젝트에 권한 할당
+					//false => 기존 프로젝트에 권한 할당
+					var radio = e.target.value;
+					if (radio == "Project") {
+						$('#projectid').attr('hidden', 'hidden');
+					} else {
+						$('#projectid').removeAttr('hidden');
+					}
+
+				});
+				function Success(Result) {
+					var title = "";
+					var type = "";
+					if (Result.success) {
+						title = "성공";
+						type = "success";
+					} else {
+						title = "실패";
+						type = "error";
+					}
+					swal({
+						title : title,
+						text : Result.msg,
+						type : type
+					}, function() {
+						location.reload();
+					});
+				}
+
+				//
+				function deluser(userId, auth) {
+					//userId => 선택된 유저 아이디
+					//auth => 선택된 유저의 권한
+					swal(
+							{
+								title : "삭제하시겠습니까?",
+								type : "warning",
+								showCancelButton : true,
+								confirmButtonColor : "#DD6B55",
+								confirmButtonText : "확인",
+								cancelButtonText : "취소",
+								closeOnConfirm : false
+							},
+							function() {
+								$
+										.ajax({
+											type : "POST",
+											url : "/App/UserAuthDelete",
+											data : {
+												__RequestVerificationToken : $(
+														"input[name='__RequestVerificationToken']")
+														.val(),
+												subdomain : "Justice",
+												auth : auth,
+												userId : userId
+											},
+											success : function(result) {
+												if (result.success) {
+													swal({
+														title : "삭제되었습니다!",
+														type : "success"
+													}, function() {
+														location.reload();
+													});
+												}
+											}
+										});
+							});
+				}
+			</script>
+
+			<!-- END MAIN -->
+
+		</main>
+
+		<!--/ container end -->
+		</section>
+		<!--/ Main container end -->
+
+		<!-- Footer start -->
+		<footer id="footer" class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-sm-12 footer-widget">
+						<h3 class="widget-title">Recent Posts</h3>
+						<div class="latest-post-items media">
+							<div class="latest-post-content media-body">
+								<h4>
+									<a href="#">Bulgaria claims to find Europe's 'oldest town'</a>
+								</h4>
+								<p class="post-meta">
+									<span class="author">Posted by John Doe</span> <span
+										class="post-meta-cat">in<a href="#"> Blog</a></span>
+								</p>
+							</div>
+						</div>
+						<!-- 1st Latest Post end -->
+
+						<div class="latest-post-items media">
+							<div class="latest-post-content media-body">
+								<h4>
+									<a href="#">Few Answers in Case of Murdered Law Professor</a>
+								</h4>
+								<p class="post-meta">
+									<span class="date"><i class="icon icon-calendar"></i>
+										Mar 15, 2015</span> <span class="post-meta-comments"><i
+										class="icon icon-bubbles4"></i> <a href="#">03</a></span>
+								</p>
+							</div>
+						</div>
+						<!-- 2nd Latest Post end -->
+
+						<div class="latest-post-items media">
+							<div class="latest-post-content media-body">
+								<h4>
+									<a href="#">Over the year we have lots of experience in our
+										field</a>
+								</h4>
+								<p class="post-meta">
+									<span class="date"><i class="icon icon-calendar"></i>
+										Apr 17, 2015</span> <span class="post-meta-comments"><i
+										class="icon icon-bubbles4"></i> <a href="#">14</a></span>
+								</p>
+							</div>
+						</div>
+						<!-- 3rd Latest Post end -->
+
+					</div>
+					<!--/ End Recent Posts-->
+
+
+					<div class="col-md-4 col-sm-12 footer-widget">
+						<h3 class="widget-title">Flickr Photos</h3>
+
+						<div class="img-gallery">
+							<div class="img-container">
+								<a class="thumb-holder" data-rel="prettyPhoto"
+									href="images/gallery/1.jpg"> <img
+									src="images/gallery/1.jpg" alt="">
+								</a> <a class="thumb-holder" data-rel="prettyPhoto"
+									href="images/gallery/2.jpg"> <img
+									src="images/gallery/2.jpg" alt="">
+								</a> <a class="thumb-holder" data-rel="prettyPhoto"
+									href="images/gallery/3.jpg"> <img
+									src="images/gallery/3.jpg" alt="">
+								</a> <a class="thumb-holder" data-rel="prettyPhoto"
+									href="images/gallery/4.jpg"> <img
+									src="images/gallery/4.jpg" alt="">
+								</a> <a class="thumb-holder" data-rel="prettyPhoto"
+									href="images/gallery/5.jpg"> <img
+									src="images/gallery/5.jpg" alt="">
+								</a> <a class="thumb-holder" data-rel="prettyPhoto"
+									href="images/gallery/6.jpg"> <img
+									src="images/gallery/6.jpg" alt="">
+								</a> <a class="thumb-holder" data-rel="prettyPhoto"
+									href="images/gallery/6.jpg"> <img
+									src="images/gallery/7.jpg" alt="">
+								</a> <a class="thumb-holder" data-rel="prettyPhoto"
+									href="images/gallery/6.jpg"> <img
+									src="images/gallery/8.jpg" alt="">
+								</a> <a class="thumb-holder" data-rel="prettyPhoto"
+									href="images/gallery/6.jpg"> <img
+									src="images/gallery/9.jpg" alt="">
+								</a>
+							</div>
+						</div>
+					</div>
+					<!--/ end flickr -->
+
+					<div class="col-md-3 col-sm-12 footer-widget footer-about-us">
+						<h3 class="widget-title">About Craft</h3>
+						<p>We are a awward winning multinational company. We believe
+							in quality and standard worldwide.</p>
+						<h4>Address</h4>
+						<p>1102 Saint Marys, Junction City, KS</p>
+						<div class="row">
+							<div class="col-md-6">
+								<h4>Email:</h4>
+								<p>info@craftbd.com</p>
+							</div>
+							<div class="col-md-6">
+								<h4>Phone No.</h4>
+								<p>+(785) 238-4131</p>
+							</div>
+						</div>
+						<form action="#" role="form">
+							<div class="input-group subscribe">
+								<input type="email" class="form-control"
+									placeholder="Email Address" required=""> <span
+									class="input-group-addon">
+									<button class="btn" type="submit">
+										<i class="fa fa-envelope-o"> </i>
+									</button>
+								</span>
+							</div>
+						</form>
+					</div>
+					<!--/ end about us -->
+
+				</div>
+				<!-- Row end -->
+			</div>
+			<!-- Container end -->
+		</footer>
+		<!-- Footer end -->
+
+
+		<!-- Copyright start -->
+		<section id="copyright" class="copyright angle">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<ul class="footer-social unstyled">
+							<li><a title="Twitter" href="#"> <span
+									class="icon-pentagon wow bounceIn"><i
+										class="fa fa-twitter"></i></span>
+							</a> <a title="Facebook" href="#"> <span
+									class="icon-pentagon wow bounceIn"><i
+										class="fa fa-facebook"></i></span>
+							</a> <a title="Google+" href="#"> <span
+									class="icon-pentagon wow bounceIn"><i
+										class="fa fa-google-plus"></i></span>
+							</a> <a title="linkedin" href="#"> <span
+									class="icon-pentagon wow bounceIn"><i
+										class="fa fa-linkedin"></i></span>
+							</a> <a title="Pinterest" href="#"> <span
+									class="icon-pentagon wow bounceIn"><i
+										class="fa fa-pinterest"></i></span>
+							</a> <a title="Skype" href="#"> <span
+									class="icon-pentagon wow bounceIn"><i
+										class="fa fa-skype"></i></span>
+							</a> <a title="Dribble" href="#"> <span
+									class="icon-pentagon wow bounceIn"><i
+										class="fa fa-dribbble"></i></span>
+							</a></li>
+						</ul>
+					</div>
+				</div>
+				<!--/ Row end -->
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<div class="copyright-info">
+							&copy; Copyright 2019 Themefisher. <span>Designed by <a
+								href="https://themefisher.com">Themefisher.com</a></span>
+						</div>
+					</div>
+				</div>
+				<!--/ Row end -->
+				<div id="back-to-top" data-spy="affix" data-offset-top="10"
+					class="back-to-top affix position-fixed">
+					<button class="btn btn-primary" title="Back to Top">
+						<i class="fa fa-angle-double-up"></i>
+					</button>
+				</div>
+			</div>
+			<!--/ Container end -->
+		</section>
+		<!--/ Copyright end -->
+
+	</div>
+	<!-- Body inner end -->
+
+<!-- footer -->
+<c:import url="footer.jsp"></c:import>
+
+</body>
+
+</html>
