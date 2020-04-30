@@ -25,7 +25,11 @@ public class Channel {
       this.chStatus = chStatus;
    }
 
-   public int getChNo() {
+   public Channel(int chNo) {
+	this.chNo = chNo;
+   }
+
+public int getChNo() {
       return chNo;
    }
 
