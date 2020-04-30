@@ -15,14 +15,11 @@ public class SelectChBoardController implements Controller {
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		int chNo = Integer.parseInt(request.getParameter("chNo"));
-		
 		List<ChBoard> list = ChBoardService.selectChBoard(chNo);
 		request.setAttribute("chB", list);
-		
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName(""); // 설정
-		
+		ModelAndView mv = new ModelAndView(false, "/pages/chBoardList.jsp");
 		return mv;
+		
 	}
 
 }

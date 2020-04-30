@@ -1,17 +1,17 @@
+<%@page import="kosta.mvc.service.ChBoardService"%>
+<%@page import="kosta.mvc.vo.ChBoard"%>
 <%@page import="java.util.List"%>
-<%@page import="kosta.mvc.vo.User"%>
-<%@page import="kosta.mvc.vo.Channel"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<c:set var="path" value="${pageContext.request.contextPath}"
+	scope="application" />
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
 <meta charset="UTF-8">
 <title>My Event :: 행사와 함께하는 모든 순간</title>
-
 <!-- mobile responsive meta -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="viewport"
@@ -53,82 +53,57 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
+<!-- 지혜 css -->
+<style>
+hr{
+	margin-left: 15%;
+	width:70%;
+	border: solid 2px #5c3fbf;
+}
+#ahead{
+	background-color: rgb(240, 237, 250);
+}
+</style>
 </head>
-
 <body>
-	<!--subTopMenu-->
-	<c:import url="headerTop.jsp" />
-	<!-- mainMenu -->
-	<c:import url="header.jsp" />
-	<div id="banner-area">
-		<img src="images/banner/banner1.jpg" alt="" />
-		<div class="parallax-overlay"></div>
-		<!-- Subpage title start -->
-		<div class="banner-title-content">
-			<div class="text-center">
-				<h2>${channel.chName}</h2>
-				<nav aria-label="breadcrumb">
-					<ol class="breadcrumb justify-content-center">
-						<li class="breadcrumb-item"><a href="#"> 홈으로 </a></li>
-						<li class="breadcrumb-item text-white" aria-current="page">
-							${channel.chNo}</li>
-					</ol>
-				</nav>
-			</div>
+<!-- 지혜 채널리뷰 부분 -->
+	<hr id="line" />
+	<br>
+	<div class="container">
+		<div class="row">
+			<h2 class="widget-title">채널 리뷰</h2>
+		</div>			
+		<a href="pages/createChBoard.jsp?chNo=${chBoard.chNo}" class="project-btn btn btn-primary review">리뷰 등록</a>
+		<%
+			int chNo = Integer.parseInt(request.getParameter("chNo")); 
+			List<ChBoard> chBoardList = ChBoardService.selectChBoard(chNo);
+		%>
+		<br><br>
+		
+		<div class="accordion" id="accordion">
+		<div class="card-header p-0">
+			<h4 style="font-weight: bold">리뷰 번호 | 작성자 이름 | 별점</h4>
 		</div>
-		<!-- Subpage title end -->
-	</div>
-	<!-- Banner area end -->
-
-
-	<div class="body-inner">
-
-
-
-		<!-- Portfolio item start -->
-		<section id="portfolio-item">
-			<div class="container">
-
-				<!-- Portfolio item row start -->
-				<div class="row">
-					<!-- Portfolio item slider start -->
-					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-						<div class="portfolio-slider">
-							<div class="flexportfolio flexslider">
-								<img src="channelImg/${requestScope.channel.chImg}" alt="">
-							</div>
+		<c:forEach items="<%=chBoardList%>" var="chBoard">
+				<div class="card border rounded mb-2">
+					<div class="card-header p-0">
+						<a id="ahead" class="h4 mb-0 font-weight-bold text-uppercase d-block p-2 pl-5" data-toggle="collapse"
+							data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							${chBoard.chBoardNo} | ${chBoard.user.userName} | ${chBoard.chBoardStar}</a>
+					</div>
+					<div id="collapseOne" class="collapse show" data-parent="#accordion">
+						<div class="card-body">
+							<p>${chBoard.chBoardContent }</p>
 						</div>
 					</div>
-					<!-- Portfolio item slider end -->
-
-					<!-- sidebar start -->
-					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-						<div class="sidebar">
-							<div class="portfolio-desc">
-								<h3 class="widget-title">${channel.chName}</h3>
-								<p>${channel.chDescription }</p>
-								<br />
-
-								<h3 class="widget-title">개설자</h3>
-								<p>${channel.user.userNo}</p>
-								<p>${channel.user.userName }</p>
-								<p>
-									<a href="pages/channelList.jsp" class="project-btn btn btn-primary">채널 목록</a>
-								</p>
-							</div>
-						</div>
-					</div>
-					<!-- sidebar end -->
 				</div>
-				<!-- Portfolio item row end -->
+				<!--/ Panel 1 end-->
+				</c:forEach>
+			<!--/ Accordion end -->
 			</div>
-			<!-- Container end -->
-		</section>
-		<!-- Portfolio item end -->
-<%--  		<c:import url="/front?key=selectChBoard&chNo=${channel.chNo}" /> --%>
+			
 	</div>
-	
-	<!-- Body inner end -->
+	<!-- Container end -->
 	
 	<!-- jQuery -->
 	<script src="plugins/jQuery/jquery.min.js"></script>
@@ -163,7 +138,5 @@
 
 	<!-- Main Script -->
 	<script src="js/script.js"></script>
-	<br><br>
 </body>
-<c:import url="footer.jsp"></c:import>
 </html>

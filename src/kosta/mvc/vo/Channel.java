@@ -29,6 +29,10 @@ public class Channel {
 	this.chNo = chNo;
    }
 
+	public Channel(String chName) {
+		this.chName = chName;
+	}
+
 public int getChNo() {
       return chNo;
    }

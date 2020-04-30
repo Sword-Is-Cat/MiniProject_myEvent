@@ -91,7 +91,7 @@ star-input>.input.focus{outline:1px dotted #ddd;}
                <div class="row">
                   <div class="col-md-12">
                      <div class="form-group">
-                        <label>채널이름 <h3 style="font-weight: bold">채널이름 자동으로 올 수 있게</h3></label>
+                        <label>채널이름 <h3 style="font-weight: bold">${channel.chNo}</h3></label>
                      </div>
                   </div>
                </div>

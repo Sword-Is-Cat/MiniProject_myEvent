@@ -74,6 +74,7 @@ public class ChBoardDAO {
 				Channel channel = new Channel(chNo);
 				user.setUserName(rs.getString("userName"));
 				chBoard = new ChBoard(chBoardNo, user, channel, chBoardContent, chBoardStar, chBoardStatus, chBoardTime);
+				list.add(chBoard);
 			}
 		} finally {
 			DbUtil.dbClose(rs, ps, con);
