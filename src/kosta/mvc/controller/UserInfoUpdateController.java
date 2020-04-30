@@ -11,7 +11,7 @@ public class UserInfoUpdateController implements Controller {
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		HttpSession session = request.getSession();
-		if(session.getAttribute("status")==null)return new ModelAndView(true, "pages/loginFirst.html");
+		if(session.getAttribute("status")==null)return new ModelAndView(true, "pages/loginFirst.jsp");
 		String userId = (String) session.getAttribute("userId");
 		
 		//가입하는 서비스 구문 넣기
