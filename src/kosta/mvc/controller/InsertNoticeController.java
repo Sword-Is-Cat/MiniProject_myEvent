@@ -20,7 +20,7 @@ public class InsertNoticeController implements Controller {
 		Notice notice = new Notice(noticeSubject, noticeContent);
 
 		NoticeService.insert(notice);
-		ModelAndView mv = new ModelAndView(true, "notice"); //생성자 통해서 초기화할것인지
+		ModelAndView mv = new ModelAndView(true, "viewToNotice"); 
 
 		return mv;
 	}

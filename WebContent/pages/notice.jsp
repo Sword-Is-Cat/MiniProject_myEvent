@@ -61,6 +61,10 @@ $(function(){
 /* 	if(${sessionScope.userStatus}==2) {
 		${'.mainTable'}.append("<th class="noticeDelete">삭제</th>");
 		${'.delectSpace'}.append("<td class="noticeDelete"><input type="button" value="삭제" /></td>");
+								<div class="editBtns">
+									<input type="button" class="btn btn-info modifyBtn" value="수정" onClick="sendDelete()"/>
+									<input type="button" class="btn btn-info deleteBtn" value="삭제" onClick="sendDelete()"/>
+								</div>
 	} */
 	
 	$('.deleteBtn').click(function(){
@@ -71,14 +75,15 @@ $(function(){
 <style>
 table {text-align: center;}
 .mainContainer {margin-top:50px; padding-top:50px; border-top:1px solid #e5e5e5;}
+.editBtns {text-align:right;}
 </style>
 </head>
 <body>
 	<!--subTopMenu-->
-	<c:import url="headerTop.jsp" />
+	<c:import url="./headerTop.jsp" />
 	<!--subTopMenu end-->
 
-	<c:import url="header.jsp" />
+	<c:import url="./header.jsp" />
 
 
 	<!-- channalList start -->
@@ -96,7 +101,7 @@ table {text-align: center;}
 						<th>번호</th>
 						<th>제목</th>
 						<th>날짜</th>
-						<th class="noticeDelete">삭제</th>
+						<!-- <th class="noticeDelete">삭제</th> -->
 					</tr>
 				</thead>
 				<tbody>
@@ -108,14 +113,22 @@ table {text-align: center;}
 							<td>${notice.noticeNo}</td>
 							<td>${notice.noticeSubject}</td>
 							<td><fmt:formatDate value="${notice.noticeTime}" type="date"/></td>
-							<td>　</td>
+				
 							
 						</tr>
 						<tr class="accordion-body collapse" id="no${notice.noticeNo}">
 							<td></td>
-							<td>${notice.noticeContent}</td>
-							<td></td>
-							<td class="noticeDelete"><input type="button" class="deleteBtn" value="삭제" /></td>
+							<td>${notice.noticeContent}
+								<div class="gap-40"></div>
+								<div class="editBtns">
+									<input type="button" class="btn btn-info modifyBtn" value="수정" onClick="sendDelete()"/>
+									<input type="button" class="btn btn-info deleteBtn" value="삭제" onClick="sendDelete()"/>
+								</div>
+							
+							</td>
+							<td class="noticeDelete">
+								
+							</td>
 						</tr>
 					</c:forEach>
 
@@ -128,7 +141,7 @@ table {text-align: center;}
 </div>
 	<!-- footer -->
 
-	<c:import url="footer.jsp"></c:import>
+	<c:import url="./footer.jsp"></c:import>
 
 </body>
 </html>
