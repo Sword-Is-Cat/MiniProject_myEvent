@@ -18,12 +18,12 @@ public class DoUserInfoUpdateController implements Controller {
 		String userPwd = request.getParameter("userPwd");
 		String userName = request.getParameter("userName");
 		
-		String reaodAddress = request.getParameter("reaodAddress");
+		String roadAddress = request.getParameter("roadAddress");
 		String postalCode = request.getParameter("postalCode");
 		String extraAddress = request.getParameter("extraAddress");
 		String detailAddress = request.getParameter("detailAddress");
 		
-		String userAddr = postalCode+","+reaodAddress+","+extraAddress+","+detailAddress; //우편번호,도로명주소,상세주소
+		String userAddr = postalCode+","+roadAddress+","+extraAddress+","+detailAddress; //우편번호,도로명주소,상세주소
 		String userPhone = request.getParameter("userPhone");
 		String userEmail = request.getParameter("userEmail");
 		
@@ -33,7 +33,7 @@ public class DoUserInfoUpdateController implements Controller {
 		
 		//유효성체크
 		if(userId.equals("") || userId==null || userPwd.equals("") || userPwd==null || userName.equals("") || userName==null 
-			|| reaodAddress.equals("") || reaodAddress==null || postalCode.equals("") || postalCode==null || detailAddress.equals("") || detailAddress==null
+			|| roadAddress.equals("") || roadAddress==null || postalCode.equals("") || postalCode==null || detailAddress.equals("") || detailAddress==null
 			|| userPhone.equals("") || userPhone==null || userEmail.equals("") || userEmail==null)throw new RuntimeException("입력값이 부족합니다.");
 		//아이디는 소문자로만
 		userId = userId.toLowerCase();

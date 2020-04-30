@@ -58,7 +58,7 @@
 <!-- KAKAO 주소 API -->
 <script	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
-<script src="js/signUp.js"></script>
+<script src="./js/signUp.js"></script>
 <style>
 
 </style>
@@ -107,7 +107,7 @@
 					확인해 주세요</span>
 			</div>
 			<div class="form-wrapper">
-				<label for="userName">이름</label> <input type="password"
+				<label for="userName">이름</label> <input type="text"
 					class="form-control" id="userName" name="userName"
 					placeholder="이름을 입력해 주세요">
 			</div>
@@ -161,7 +161,7 @@
 					<label for="cate${category.cateNo}">${category.cateName}</label>
 				</c:forEach>
 			</fieldset>
-			<input type="hidden" name="key" value="signUp"> <input
+			<input type="hidden" name="key" value="doSignUp"> <input
 				type="hidden" name="cateCount" value="<%=cateList.size()%>">
 			<!-- 카테고리 카운트 value에 넣어야함 -->
 

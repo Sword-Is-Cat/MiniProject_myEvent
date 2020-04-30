@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <!-- jQuery -->
 <script src="plugins/jQuery/jquery.min.js"></script>
-<script src="./js/subMenu.js"></script>
+<script src="${pageContext.request.contextPath}/pages/js/subMenu.js"></script>
 
 <style>
 .menuSubnav {

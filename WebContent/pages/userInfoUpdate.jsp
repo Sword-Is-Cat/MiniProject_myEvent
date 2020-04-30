@@ -57,7 +57,7 @@
 <!-- userInfoUpdate css -->
 <link href="${pageContext.request.contextPath}/pages/css/userInfoUpdate.css" rel="stylesheet">
 <!-- KAKAO 주소 API -->
-<script src="./js/userInfoUpdate.js"></script>
+<script src="${pageContext.request.contextPath}/pages/js/userInfoUpdate.js"></script>
 <script	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
 
@@ -138,14 +138,14 @@
 				</div>
 
 				<div class="form-wrapper">
-					<label for="userName">이름</label> <input type="password"
+					<label for="userName">이름</label> <input type="text"
 						class="form-control" id="userName" name="userName"
 						placeholder="이름을 입력해 주세요">
 				</div>
 				<div class="form-group">
 					<div class="form-wrapper">
-						<label for="postalcode">주소</label> <input type="text"
-							class="form-control" id="postcode" name="postalCode"
+						<label for="postalCode">주소</label> <input type="text"
+							class="form-control" id="postalCode" name="postalCode"
 							placeholder="우편번호" readonly>
 					</div>
 					<div class="form-wrapper">
@@ -156,7 +156,7 @@
 				<div class="form-group">
 					<div class="form-wrapper">
 						<input type="text" class="form-control" id="roadAddress"
-							name="reaodAddress" placeholder="도로명주소" readonly>
+							name="roadAddress" placeholder="도로명주소" readonly>
 					</div>
 					<div class="form-wrapper">
 						<span id="guide" style="color: #999; display: none"></span> <input
@@ -196,7 +196,7 @@
 						<label for="cate${category.cateNo}">${category.cateName}</label>
 					</c:forEach>
 				</fieldset>
-				<input type="hidden" name="key" value="signUp"> <input
+				<input type="hidden" name="key" value=doUserInfoUpdate> <input
 					type="hidden" name="cateCount" value="<%=cateList.size()%>">
 				<!-- 카테고리 카운트 value에 넣어야함 -->
 
