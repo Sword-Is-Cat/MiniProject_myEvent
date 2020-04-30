@@ -28,7 +28,7 @@ public class IndexController implements Controller {
 		}
 		
 
-		request.setAttribute("RecentEvList", recentEvList);
+		request.setAttribute("recentEvList", recentEvList);
 		request.setAttribute("myCategoryEvList", myCategoryEvList);
 
 		return new ModelAndView(false, "/pages/index.jsp");

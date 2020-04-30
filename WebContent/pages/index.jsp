@@ -269,91 +269,30 @@
 			</div>
 			<!-- Title row end -->
 			<!-- img start-->
-			<div class="row">
-				<div class="col-sm-3 portfolio-static-item wow fadeInUp"
-					data-wow-delay=".5s">
-					<div class="grid">
-						<figure class="m-0 effect-oscar">
-							<img src="${pageContext.request.contextPath}/pages/images/thumnail/01.jpg" alt="">
-							<figcaption>
-								<a class="link icon-pentagon" href="portfolio-item.html"><i
-									class="fa fa-link"></i></a> <a class="view icon-pentagon"
-									data-rel="prettyPhoto" href="${pageContext.request.contextPath}/pages/images/thumnail/01.jpg"><i
-									class="fa fa-search"></i></a>
-							</figcaption>
-						</figure>
-						<div class="portfolio-static-desc">
-							<h3>이벤터스 웨비나, 하루만에 뽀개기!</h3>
-							<span><a href="#"></a></span>
-						</div>
-					</div>
-					<!--/ grid end -->
+				<div class="row">
+					<c:forEach items="${recentEvList}" var="recentEv" varStatus="status">
+							<div class="col-sm-3 portfolio-static-item wow fadeInUp"
+								data-wow-delay="${status.count * 0.27}s">
+								<div class="grid">
+									<figure class="m-0 effect-oscar">
+										<img src="${pageContext.request.contextPath}/eventImage/${recentEv.evImg}" alt="${recentEv.evImg}">
+										<figcaption>
+											<a class="link icon-pentagon" href="portfolio-item.html"><i
+												class="fa fa-link"></i></a> <a class="view icon-pentagon"
+												data-rel="prettyPhoto" href="${pageContext.request.contextPath}/pages/images/thumnail/01.jpg"><i
+												class="fa fa-search"></i></a>
+										</figcaption>
+									</figure>
+									<div class="portfolio-static-desc">
+										<h3>${recentEv.evName}</h3>
+										<span><a href="#"></a></span>
+									</div>
+								</div>
+								<!--/ grid end -->
+							</div>
+					</c:forEach>
 				</div>
-				<!--/ item 1 end -->
-
-				<div class="col-sm-3 portfolio-static-item  wow fadeInUp"
-					data-wow-delay="1s">
-					<div class="grid">
-						<figure class="m-0 effect-oscar">
-							<img src="${pageContext.request.contextPath}/pages/images/thumnail/02.jpg" alt="">
-							<figcaption>
-								<a class="link icon-pentagon" href="portfolio-item.html"><i
-									class="fa fa-link"></i></a> <a class="view icon-pentagon"
-									data-rel="prettyPhoto" href="${pageContext.request.contextPath}/pages/images/thumnail/02.jpg"><i
-									class="fa fa-search"></i></a>
-							</figcaption>
-						</figure>
-						<div class="portfolio-static-desc">
-							<h3>[플리토] 외국계 취업 컨설턴트 '마차카피'의 합격하는 레쥬메 & 커버레터</h3>
-							<span><a href="#"></a></span>
-						</div>
-					</div>
-					<!--/ grid end -->
-				</div>
-				<!--/ item 2 end -->
-
-				<div class="col-sm-3 portfolio-static-item wow fadeInUp"
-					data-wow-delay="1.4s">
-					<div class="grid">
-						<figure class="m-0 effect-oscar">
-							<img src="${pageContext.request.contextPath}/pages/images/thumnail/03.jpg" alt="">
-							<figcaption>
-								<a class="link icon-pentagon" href="portfolio-item.html"><i
-									class="fa fa-link"></i></a> <a class="view icon-pentagon"
-									data-rel="prettyPhoto" href="${pageContext.request.contextPath}/pages/images/thumnail/03.jpg"><i
-									class="fa fa-search"></i></a>
-							</figcaption>
-						</figure>
-						<div class="portfolio-static-desc">
-							<h3>[드림플러스 월간 IT 트렌드] 언택트, 뉴 노멀의 시대</h3>
-							<span><a href="#"> </a></span>
-						</div>
-					</div>
-					<!--/ grid end -->
-				</div>
-				<!--/ item 3 end -->
-
-				<div class="col-sm-3 portfolio-static-item  wow fadeInUp"
-					data-wow-delay="1.6s">
-					<div class="grid">
-						<figure class="m-0 effect-oscar">
-							<img src="${pageContext.request.contextPath}/pages/images/thumnail/04.jpg" alt="">
-							<figcaption>
-								<a class="link icon-pentagon" href="portfolio-item.html"><i
-									class="fa fa-link"></i></a> <a class="view icon-pentagon"
-									data-rel="prettyPhoto" href="${pageContext.request.contextPath}/pages/images/thumnail/04.jpg"><i
-									class="fa fa-search"></i></a>
-							</figcaption>
-						</figure>
-						<div class="portfolio-static-desc">
-							<h3>렉처시리즈#1(작은 팀으로 큰 일을 한다는 것)</h3>
-							<span><a href="#"> </a></span>
-						</div>
-					</div>
-					<!--/ grid end -->
-				</div>
-				<!--/ item 4 end -->
-
+				<!--/ items end -->
 			</div>
 			<!--/ Container end -->
 	</section>
@@ -376,95 +315,34 @@
 					<!-- Title row end -->
 					<!-- img start-->
 					<div class="row">
-						<div class="col-sm-3 portfolio-static-item  wow fadeInUp"
-							data-wow-delay=".5s">
-							<div class="grid">
-								<figure class="m-0 effect-oscar">
-									<img src="${pageContext.request.contextPath}/pages/images/thumnail/01.jpg" alt="">
-									<figcaption>
-										<a class="link icon-pentagon" href="portfolio-item.html"><i
-											class="fa fa-link"></i></a> <a class="view icon-pentagon"
-											data-rel="prettyPhoto" href="${pageContext.request.contextPath}/pages/images/thumnail/01.jpg"><i
-											class="fa fa-search"></i></a>
-									</figcaption>
-								</figure>
-								<div class="portfolio-static-desc">
-									<h3>이벤터스 웨비나, 하루만에 뽀개기!</h3>
-									<span><a href="#"></a></span>
+						<c:forEach items="${myCategoryEvList}" var="recentEv" varStatus="status">
+							<div class="col-sm-3 portfolio-static-item wow fadeInUp"
+								data-wow-delay="${status.count * 0.27}s">
+								<div class="grid">
+									<figure class="m-0 effect-oscar">
+										<img src="${pageContext.request.contextPath}/eventImage/${recentEv.evImg}" alt="${recentEv.evImg}">
+										<figcaption>
+											<a class="link icon-pentagon" href="portfolio-item.html"><i
+												class="fa fa-link"></i></a> <a class="view icon-pentagon"
+												data-rel="prettyPhoto" href="${pageContext.request.contextPath}/pages/images/thumnail/01.jpg"><i
+												class="fa fa-search"></i></a>
+										</figcaption>
+									</figure>
+									<div class="portfolio-static-desc">
+										<h3>${recentEv.evName}</h3>
+										<span><a href="#"></a></span>
+									</div>
 								</div>
+								<!--/ grid end -->
 							</div>
-							<!--/ grid end -->
-						</div>
-						<!--/ item 1 end -->
-
-						<div class="col-sm-3 portfolio-static-item  wow fadeInUp"
-							data-wow-delay="1s">
-							<div class="grid">
-								<figure class="m-0 effect-oscar">
-									<img src="${pageContext.request.contextPath}/pages/images/thumnail/02.jpg" alt="">
-									<figcaption>
-										<a class="link icon-pentagon" href="portfolio-item.html"><i
-											class="fa fa-link"></i></a> <a class="view icon-pentagon"
-											data-rel="prettyPhoto" href="${pageContext.request.contextPath}/pages/images/thumnail/02.jpg"><i
-											class="fa fa-search"></i></a>
-									</figcaption>
-								</figure>
-								<div class="portfolio-static-desc">
-									<h3>[플리토] 외국계 취업 컨설턴트 '마차카피'의 합격하는 레쥬메 & 커버레터</h3>
-									<span><a href="#"></a></span>
-								</div>
-							</div>
-							<!--/ grid end -->
-						</div>
-						<!--/ item 2 end -->
-
-						<div class="col-sm-3 portfolio-static-item  wow fadeInUp"
-							data-wow-delay="1.4s">
-							<div class="grid">
-								<figure class="m-0 effect-oscar">
-									<img src="${pageContext.request.contextPath}/pages/images/thumnail/03.jpg" alt="">
-									<figcaption>
-										<a class="link icon-pentagon" href="portfolio-item.html"><i
-											class="fa fa-link"></i></a> <a class="view icon-pentagon"
-											data-rel="prettyPhoto" href="${pageContext.request.contextPath}/pages/images/thumnail/03.jpg"><i
-											class="fa fa-search"></i></a>
-									</figcaption>
-								</figure>
-								<div class="portfolio-static-desc">
-									<h3>[드림플러스 월간 IT 트렌드] 언택트, 뉴 노멀의 시대</h3>
-									<span><a href="#"></a></span>
-								</div>
-							</div>
-							<!--/ grid end -->
-						</div>
-						<!--/ item 3 end -->
-
-						<div class="col-sm-3 portfolio-static-item  wow fadeInUp"
-							data-wow-delay="1.6s">
-							<div class="grid">
-								<figure class="m-0 effect-oscar">
-									<img src="${pageContext.request.contextPath}/pages/images/thumnail/04.jpg" alt="">
-									<figcaption>
-										<a class="link icon-pentagon" href="portfolio-item.html"><i
-											class="fa fa-link"></i></a> <a class="view icon-pentagon"
-											data-rel="prettyPhoto" href="${pageContext.request.contextPath}/pages/images/thumnail/04.jpg"><i
-											class="fa fa-search"></i></a>
-									</figcaption>
-								</figure>
-								<div class="portfolio-static-desc">
-									<h3>렉처시리즈#1(작은 팀으로 큰 일을 한다는 것)</h3>
-									<span><a href="#"></a></span>
-								</div>
-							</div>
-							<!--/ grid end -->
-						</div>
-						<!--/ item 4 end -->
-
+					</c:forEach>
+						<!--/ items end -->
 					</div>
 					<!--/ Container end -->
 				</div>
 				<!-- Content row end -->
 
+				</div>
 			</div>
 			<!--/ Container end -->
 	</section>
