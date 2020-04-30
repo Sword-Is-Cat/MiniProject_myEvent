@@ -95,12 +95,8 @@ public class NoticeDAO {
 		int result=0;
 		String sql=pro.getProperty("noticeUpdate");
 		try {
-			ps = con.prepareStatement(sql);
-			ps.setInt(1, notice.getNoticeNo());
-			ps.setString(2, notice.getNoticeSubject());
-			ps.setString(3, notice.getNoticeContent());
-			ps.setTimestamp(4, notice.getNoticeTime());
-			ps.setInt(5, notice.getNoticeStatus());
+			 ps.setString(1, notice.getNoticeSubject());
+			 ps.setString(2, notice.getNoticeContent());
 			
 			result = ps.executeUpdate();
 		}finally {
