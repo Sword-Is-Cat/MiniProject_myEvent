@@ -75,10 +75,10 @@ table {text-align: center;}
 </head>
 <body>
 	<!--subTopMenu-->
-	<c:import url="headerTop.jsp" />
+	<c:import url="./headerTop.jsp" />
 	<!--subTopMenu end-->
 
-	<c:import url="header.jsp" />
+	<c:import url="./header.jsp" />
 
 
 	<!-- channalList start -->
@@ -115,7 +115,7 @@ table {text-align: center;}
 							<td></td>
 							<td>${notice.noticeContent}</td>
 							<td></td>
-							<td class="noticeDelete"><input type="button" class="deleteBtn" value="삭제" /></td>
+							<td class="noticeDelete"><input type="button" class="deleteBtn" value="삭제" onClick="sendDelete()"/></td>
 						</tr>
 					</c:forEach>
 
@@ -128,7 +128,7 @@ table {text-align: center;}
 </div>
 	<!-- footer -->
 
-	<c:import url="footer.jsp"></c:import>
+	<c:import url="./footer.jsp"></c:import>
 
 </body>
 </html>

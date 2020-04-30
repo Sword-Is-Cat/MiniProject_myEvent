@@ -17,27 +17,27 @@
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
-<link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="./plugins/bootstrap/bootstrap.min.css">
 <!-- FontAwesome -->
-<link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
+<link rel="stylesheet" href="./plugins/fontawesome/font-awesome.min.css">
 <!-- Animation -->
-<link rel="stylesheet" href="plugins/animate.css">
+<link rel="stylesheet" href="./plugins/animate.css">
 <!-- Prettyphoto -->
-<link rel="stylesheet" href="plugins/prettyPhoto.css">
+<link rel="stylesheet" href="./plugins/prettyPhoto.css">
 <!-- Owl Carousel -->
-<link rel="stylesheet" href="plugins/owl/owl.carousel.css">
-<link rel="stylesheet" href="plugins/owl/owl.theme.css">
+<link rel="stylesheet" href="./plugins/owl/owl.carousel.css">
+<link rel="stylesheet" href="./plugins/owl/owl.theme.css">
 <!-- Flexslider -->
-<link rel="stylesheet" href="plugins/flex-slider/flexslider.css">
+<link rel="stylesheet" href="./plugins/flex-slider/flexslider.css">
 <!-- Flexslider -->
-<link rel="stylesheet" href="plugins/cd-hero/cd-hero.css">
+<link rel="stylesheet" href="./plugins/cd-hero/cd-hero.css">
 <!-- Style Swicther -->
-<link id="style-switch" href="css/presets/preset3.css" media="screen"
+<link id="style-switch" href="./css/presets/preset3.css" media="screen"
 	rel="stylesheet" type="text/css">
 
 <!-- Main Stylesheet -->
-<link href="css/style.css" rel="stylesheet">
-<link href="css/defaultStyle.css" rel="stylesheet">
+<link href="./css/style.css" rel="stylesheet">
+<link href="./css/defaultStyle.css" rel="stylesheet">
 <!--Favicon-->
 <link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144"
@@ -53,10 +53,10 @@
 
 <body>
 	<!--subTopMenu-->
-	<c:import url="headerTop.jsp" />
+	<c:import url="./headerTop.jsp" />
 	<!--subTopMenu end-->
 
-	<c:import url="header.jsp" />
+	<c:import url="./header.jsp" />
 
 	<div class="gap-50 p-3">
 		<div class="row justify-content-center p-3">
@@ -99,7 +99,7 @@
 	<!-- Body inner end -->
 
 	<!-- footer -->
-	<c:import url="footer.jsp"></c:import>
+	<c:import url="./footer.jsp"></c:import>
 </body>
 
 </html>
