@@ -64,7 +64,7 @@
 		<div class="row justify-content-center">
 
 			<div class="col-md-6">
-				<form id="contact-form" action="/front?key=insertNotice"
+				<form id="contact-form" action="../front?key=insertNotice"
 					method="post" role="form">
 					<div class="row">
 						<div class="col-md-12">

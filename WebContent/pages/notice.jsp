@@ -70,6 +70,17 @@ $(function(){
 	$('.deleteBtn').click(function(){
 		
 	});//delete end
+	
+	function sendUpdate(){//수정
+		document.requestForm.key.value ="updateNotice";
+		document.requestForm.submit();
+	}
+
+	function sendDelete(){//삭제
+		document.requestForm.key.value ="deleteNotice";
+		document.requestForm.submit();
+	}
+	
 });//end
 </script>
 <style>
@@ -121,8 +132,20 @@ table {text-align: center;}
 							<td>${notice.noticeContent}
 								<div class="gap-40"></div>
 								<div class="editBtns">
-									<input type="button" class="btn btn-info modifyBtn" value="수정" onClick="sendDelete()"/>
-									<input type="button" class="btn btn-info deleteBtn" value="삭제" onClick="sendDelete()"/>
+									<!-- <input type="button" class="btn btn-info modifyBtn" value="수정" onClick="sendDelete()"/>
+									<input type="button" class="btn btn-info deleteBtn" value="삭제" onClick="sendDelete()"/> -->
+									
+									<form name="requestForm" method=post action="${path}/front?key=viteToNotice">
+      
+									<!-- 수정시 필요한 데이터들을 hidden으로 숨겨놓고 폼 데이터로 보내준다. -->
+										<input type=hidden name="noticeSubject" value="${notice.noticeSubject}">
+										<input type=hidden name="noticeSubject" value="${notice.noticeContent}">
+										<input type=hidden name="key" value="">
+										<input type=button value="수정하기" onClick="sendUpdate()">
+										<input type=button value="삭제하기" onClick="sendDelete()">
+						    		</form>
+														
+								
 								</div>
 							
 							</td>
