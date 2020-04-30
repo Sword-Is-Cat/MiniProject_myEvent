@@ -15,7 +15,7 @@ public class NoticeController implements Controller {
 		request.setAttribute("list", list);
 		//request.setAttribute("test", "test");
 		
-		ModelAndView mv = new ModelAndView(false, "./pages/front?key=viewToNotice");
+		ModelAndView mv = new ModelAndView(false, "./pages/notice.jsp");
 		return mv;
 	}
 
