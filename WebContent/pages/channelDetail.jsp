@@ -125,7 +125,7 @@
 			<!-- Container end -->
 		</section>
 		<!-- Portfolio item end -->
-<%--  		<c:import url="/front?key=selectChBoard&chNo=${channel.chNo}" /> --%>
+ 		<c:import url="/front?key=selectChBoard&chNo=${channel.chNo}" />
 	</div>
 	
 	<!-- Body inner end -->
