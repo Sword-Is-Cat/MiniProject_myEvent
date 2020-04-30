@@ -6,10 +6,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
 import kosta.mvc.util.DbUtil;
+import kosta.mvc.vo.Category;
 
 public class FavoriteCateDAO {
 	Connection con;
@@ -100,5 +102,43 @@ public class FavoriteCateDAO {
 			DbUtil.dbClose(ps);
 		}
 		return result;
+	}
+
+	public List<Integer> selectByUserNo(int userNo) throws SQLException {
+		List<Integer> list = new ArrayList<>();
+		try {
+			String sql=pro.getProperty("selectCategoryByUserNo");
+			con=DbUtil.getConnection();
+			ps=con.prepareStatement(sql);
+			
+			ps.setInt(1, userNo);
+			rs=ps.executeQuery();
+			
+			while(rs.next()) {
+				list.add(rs.getInt("cateNo"));
+			}
+			
+			return list;
+		}finally {
+			DbUtil.dbClose(rs, ps, con);
+		}
+	}
+
+	public int selectCateCount() throws SQLException {
+		int result=0;
+		try {
+			String sql=pro.getProperty("selectCategoryCount");
+			con=DbUtil.getConnection();
+			ps=con.prepareStatement(sql);
+			
+			rs=ps.executeQuery();
+			if(rs.next()) {
+				result=rs.getInt(1);
+			}
+			
+			return result;
+		}finally {
+			DbUtil.dbClose(rs, st, con);
+		}
 	}
 }

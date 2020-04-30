@@ -75,9 +75,9 @@ img.mainLogo {
 		<!-- Header start -->
 		<header id="header" class="header" role="banner">
 			<div class="nav justify-content-end">
-				<a class="navbar-brand navbar-bg" href="index.jsp"><img
+				<a class="navbar-brand navbar-bg" href="${pageContext.request.contextPath}/front?key=index"><img
 					class="mainLogo d-flex justify-content-end"
-					src="images/mainLogo2.jpg" width="40%" alt="logo"></a>
+					src="${pageContext.request.contextPath}/pages/images/mainLogo2.jpg" width="40%" alt="logo"></a>
 			</div>
 			<div class="container">
 
@@ -114,13 +114,13 @@ img.mainLogo {
 						<div class="row d-flex justify-content-end">
 							<ul class="nav navbar-nav navbar-right mr-auto ">
 								<li class="nav-item active"><a class="nav-link"
-									href="eventList.jsp" role="button"> 행사검색 </a></li>
+									href="${pageContext.request.contextPath}/pages/eventList.jsp" role="button"> 행사검색 </a></li>
 								<li class="nav-item active"><a class="nav-link"
-									href="about.jsp" role="button"> 회사소개 </a></li>
+									href="${pageContext.request.contextPath}/pages/about.jsp" role="button"> 회사소개 </a></li>
 								<li class="nav-item active"><a class="nav-link"
-									href="bookHistory.jsp" role="button"> 신청내역확인 </a></li>
+									href="${pageContext.request.contextPath}/pages/bookHistory.jsp" role="button"> 신청내역확인 </a></li>
 								<li class="nav-item active"><a class="nav-link"
-									href="createEvent.jsp" role="button"> 행사개설 </a></li>
+									href="${pageContext.request.contextPath}/pages/createEvent.jsp" role="button"> 행사개설 </a></li>
 
 							</ul>
 						</div>

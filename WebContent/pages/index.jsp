@@ -17,22 +17,22 @@
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
-<link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/bootstrap/bootstrap.min.css">
 <!-- FontAwesome -->
-<link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/fontawesome/font-awesome.min.css">
 <!-- Animation -->
-<link rel="stylesheet" href="plugins/animate.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/animate.css">
 <!-- Prettyphoto -->
-<link rel="stylesheet" href="plugins/prettyPhoto.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/prettyPhoto.css">
 <!-- Owl Carousel -->
-<link rel="stylesheet" href="plugins/owl/owl.carousel.css">
-<link rel="stylesheet" href="plugins/owl/owl.theme.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.carousel.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.theme.css">
 <!-- Flexslider -->
-<link rel="stylesheet" href="plugins/flex-slider/flexslider.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/flex-slider/flexslider.css">
 <!-- Flexslider -->
-<link rel="stylesheet" href="plugins/cd-hero/cd-hero.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/cd-hero/cd-hero.css">
 <!-- Style Swicther -->
-<link id="style-switch" href="css/presets/preset3.css" media="screen"
+<link id="style-switch" href="${pageContext.request.contextPath}/pages/css/presets/preset3.css" media="screen"
 	rel="stylesheet" type="text/css">
 
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
@@ -42,15 +42,15 @@
     <![endif]-->
 
 <!-- Main Stylesheet -->
-<link href="css/style.css" rel="stylesheet">
-<link href="css/defaultStyle.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/pages/css/style.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/pages/css/defaultStyle.css" rel="stylesheet">
 <!--Favicon-->
-<link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
+<link rel="icon" href="${pageContext.request.contextPath}/pages/images/favicon/32.png" type="image/x-icon" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144"
-	href="./images/favicon/144.png">
+	href="${pageContext.request.contextPath}/pages/images/favicon/144.png">
 <link rel="apple-touch-icon-precomposed" sizes="72x72"
-	href="./images/favicon/72.png">
-<link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
+	href="${pageContext.request.contextPath}/pages/images/favicon/72.png">
+<link rel="apple-touch-icon-precomposed" href="${pageContext.request.contextPath}/pages/images/favicon/54.png">
 <!-- webFont -->
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
@@ -82,35 +82,35 @@
 				</ol>
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<img class="d-block w-100" src="images/mainSlider/01.jpg"
+						<img class="d-block w-100" src="${pageContext.request.contextPath}/pages/images/mainSlider/01.jpg"
 							alt="First slide">
 					</div>
 					<div class="carousel-item">
-						<img class="d-block w-100" src="images/mainSlider/02.png"
+						<img class="d-block w-100" src="${pageContext.request.contextPath}/pages/images/mainSlider/02.png"
 							alt="Second slide">
 					</div>
 					<div class="carousel-item">
-						<img class="d-block w-100" src="images/mainSlider/03.jpg"
+						<img class="d-block w-100" src="${pageContext.request.contextPath}/pages/images/mainSlider/03.jpg"
 							alt="Third slide">
 					</div>
 					<div class="carousel-item">
-						<img class="d-block w-100" src="images/mainSlider/04.jpg"
+						<img class="d-block w-100" src="${pageContext.request.contextPath}/pages/images/mainSlider/04.jpg"
 							alt="Third slide">
 					</div>
 					<div class="carousel-item">
-						<img class="d-block w-100" src="images/mainSlider/05.jpg"
+						<img class="d-block w-100" src="${pageContext.request.contextPath}/pages/images/mainSlider/05.jpg"
 							alt="Third slide">
 					</div>
 					<div class="carousel-item">
-						<img class="d-block w-100" src="images/mainSlider/06.jpg"
+						<img class="d-block w-100" src="${pageContext.request.contextPath}/pages/images/mainSlider/06.jpg"
 							alt="Third slide">
 					</div>
 					<div class="carousel-item">
-						<img class="d-block w-100" src="images/mainSlider/07.jpg"
+						<img class="d-block w-100" src="${pageContext.request.contextPath}/pages/images/mainSlider/07.jpg"
 							alt="Third slide">
 					</div>
 					<div class="carousel-item">
-						<img class="d-block w-100" src="images/mainSlider/08.jpg"
+						<img class="d-block w-100" src="${pageContext.request.contextPath}/pages/images/mainSlider/08.jpg"
 							alt="Third slide">
 					</div>
 				</div>
@@ -153,7 +153,7 @@
 									style="width: 70px">
 									<div class="service-content text-center">
 										<a href="#"> <img
-											src="images/category/category-business-hover2.svg"></span>
+											src="${pageContext.request.contextPath}/pages/images/category/category-business-hover2.svg"></span>
 											<h3>사업/창업</h3>
 										</a>
 									</div>
@@ -164,7 +164,7 @@
 									style="width: 70px">
 									<div class="service-content text-center">
 										<a href="#"> <img
-											src="images/category/category-culture-hover2.svg"></span>
+											src="${pageContext.request.contextPath}/pages/images/category/category-culture-hover2.svg"></span>
 											<h3>문화/예술</h3>
 										</a>
 
@@ -176,7 +176,7 @@
 									style="width: 70px">
 									<div class="service-content text-center">
 										<a href="#"> <img
-											src="images/category/category-marketing-hover2.svg"></span>
+											src="${pageContext.request.contextPath}/pages/images/category/category-marketing-hover2.svg"></span>
 											<h3>마케팅/홍보</h3>
 										</a>
 
@@ -188,7 +188,7 @@
 									style="width: 70px">
 									<div class="service-content text-center">
 										<a href="#"> <img
-											src="images/category/category-tech-hover2.svg"></span>
+											src="${pageContext.request.contextPath}/pages/images/category/category-tech-hover2.svg"></span>
 											<h3>과학/기술</h3>
 										</a>
 
@@ -203,7 +203,7 @@
 									style="width: 70px">
 									<div class="service-content text-center">
 										<a href="#"> <img
-											src="images/category/category-communite-hover2.svg"></span>
+											src="${pageContext.request.contextPath}/pages/images/category/category-communite-hover2.svg"></span>
 											<h3>커뮤니티</h3>
 										</a>
 
@@ -215,7 +215,7 @@
 									style="width: 70px">
 									<div class="service-content text-center">
 										<a href="#"> <img
-											src="images/category/category-social-hover2.svg"></span>
+											src="${pageContext.request.contextPath}/pages/images/category/category-social-hover2.svg"></span>
 											<h3>비영리/소셜</h3>
 										</a>
 
@@ -227,7 +227,7 @@
 									style="width: 70px">
 									<div class="service-content text-center">
 										<a href="#"> <img
-											src="images/category/category-youth-hover2.svg"></span>
+											src="${pageContext.request.contextPath}/pages/images/category/category-youth-hover2.svg"></span>
 											<h3>청춘/청년</h3>
 										</a>
 									</div>
@@ -238,7 +238,7 @@
 									style="width: 70px">
 									<div class="service-content text-center" style="width: 70px;">
 										<a href="#"> <img
-											src="images/category/category-it-hover2.svg"></span>
+											src="${pageContext.request.contextPath}/pages/images/category/category-it-hover2.svg"></span>
 											<h3>IT/개발</h3>
 										</a>
 									</div>
@@ -274,11 +274,11 @@
 					data-wow-delay=".5s">
 					<div class="grid">
 						<figure class="m-0 effect-oscar">
-							<img src="images/thumnail/01.jpg" alt="">
+							<img src="${pageContext.request.contextPath}/pages/images/thumnail/01.jpg" alt="">
 							<figcaption>
 								<a class="link icon-pentagon" href="portfolio-item.html"><i
 									class="fa fa-link"></i></a> <a class="view icon-pentagon"
-									data-rel="prettyPhoto" href="images/thumnail/01.jpg"><i
+									data-rel="prettyPhoto" href="${pageContext.request.contextPath}/pages/images/thumnail/01.jpg"><i
 									class="fa fa-search"></i></a>
 							</figcaption>
 						</figure>
@@ -295,11 +295,11 @@
 					data-wow-delay="1s">
 					<div class="grid">
 						<figure class="m-0 effect-oscar">
-							<img src="images/thumnail/02.jpg" alt="">
+							<img src="${pageContext.request.contextPath}/pages/images/thumnail/02.jpg" alt="">
 							<figcaption>
 								<a class="link icon-pentagon" href="portfolio-item.html"><i
 									class="fa fa-link"></i></a> <a class="view icon-pentagon"
-									data-rel="prettyPhoto" href="images/thumnail/02.jpg"><i
+									data-rel="prettyPhoto" href="${pageContext.request.contextPath}/pages/images/thumnail/02.jpg"><i
 									class="fa fa-search"></i></a>
 							</figcaption>
 						</figure>
@@ -316,11 +316,11 @@
 					data-wow-delay="1.4s">
 					<div class="grid">
 						<figure class="m-0 effect-oscar">
-							<img src="images/thumnail/03.jpg" alt="">
+							<img src="${pageContext.request.contextPath}/pages/images/thumnail/03.jpg" alt="">
 							<figcaption>
 								<a class="link icon-pentagon" href="portfolio-item.html"><i
 									class="fa fa-link"></i></a> <a class="view icon-pentagon"
-									data-rel="prettyPhoto" href="images/thumnail/03.jpg"><i
+									data-rel="prettyPhoto" href="${pageContext.request.contextPath}/pages/images/thumnail/03.jpg"><i
 									class="fa fa-search"></i></a>
 							</figcaption>
 						</figure>
@@ -337,11 +337,11 @@
 					data-wow-delay="1.6s">
 					<div class="grid">
 						<figure class="m-0 effect-oscar">
-							<img src="images/thumnail/04.jpg" alt="">
+							<img src="${pageContext.request.contextPath}/pages/images/thumnail/04.jpg" alt="">
 							<figcaption>
 								<a class="link icon-pentagon" href="portfolio-item.html"><i
 									class="fa fa-link"></i></a> <a class="view icon-pentagon"
-									data-rel="prettyPhoto" href="images/thumnail/04.jpg"><i
+									data-rel="prettyPhoto" href="${pageContext.request.contextPath}/pages/images/thumnail/04.jpg"><i
 									class="fa fa-search"></i></a>
 							</figcaption>
 						</figure>
@@ -380,11 +380,11 @@
 							data-wow-delay=".5s">
 							<div class="grid">
 								<figure class="m-0 effect-oscar">
-									<img src="images/thumnail/01.jpg" alt="">
+									<img src="${pageContext.request.contextPath}/pages/images/thumnail/01.jpg" alt="">
 									<figcaption>
 										<a class="link icon-pentagon" href="portfolio-item.html"><i
 											class="fa fa-link"></i></a> <a class="view icon-pentagon"
-											data-rel="prettyPhoto" href="images/thumnail/01.jpg"><i
+											data-rel="prettyPhoto" href="${pageContext.request.contextPath}/pages/images/thumnail/01.jpg"><i
 											class="fa fa-search"></i></a>
 									</figcaption>
 								</figure>
@@ -401,11 +401,11 @@
 							data-wow-delay="1s">
 							<div class="grid">
 								<figure class="m-0 effect-oscar">
-									<img src="images/thumnail/02.jpg" alt="">
+									<img src="${pageContext.request.contextPath}/pages/images/thumnail/02.jpg" alt="">
 									<figcaption>
 										<a class="link icon-pentagon" href="portfolio-item.html"><i
 											class="fa fa-link"></i></a> <a class="view icon-pentagon"
-											data-rel="prettyPhoto" href="images/thumnail/02.jpg"><i
+											data-rel="prettyPhoto" href="${pageContext.request.contextPath}/pages/images/thumnail/02.jpg"><i
 											class="fa fa-search"></i></a>
 									</figcaption>
 								</figure>
@@ -422,11 +422,11 @@
 							data-wow-delay="1.4s">
 							<div class="grid">
 								<figure class="m-0 effect-oscar">
-									<img src="images/thumnail/03.jpg" alt="">
+									<img src="${pageContext.request.contextPath}/pages/images/thumnail/03.jpg" alt="">
 									<figcaption>
 										<a class="link icon-pentagon" href="portfolio-item.html"><i
 											class="fa fa-link"></i></a> <a class="view icon-pentagon"
-											data-rel="prettyPhoto" href="images/thumnail/03.jpg"><i
+											data-rel="prettyPhoto" href="${pageContext.request.contextPath}/pages/images/thumnail/03.jpg"><i
 											class="fa fa-search"></i></a>
 									</figcaption>
 								</figure>
@@ -443,11 +443,11 @@
 							data-wow-delay="1.6s">
 							<div class="grid">
 								<figure class="m-0 effect-oscar">
-									<img src="images/thumnail/04.jpg" alt="">
+									<img src="${pageContext.request.contextPath}/pages/images/thumnail/04.jpg" alt="">
 									<figcaption>
 										<a class="link icon-pentagon" href="portfolio-item.html"><i
 											class="fa fa-link"></i></a> <a class="view icon-pentagon"
-											data-rel="prettyPhoto" href="images/thumnail/04.jpg"><i
+											data-rel="prettyPhoto" href="${pageContext.request.contextPath}/pages/images/thumnail/04.jpg"><i
 											class="fa fa-search"></i></a>
 									</figcaption>
 								</figure>
@@ -476,14 +476,14 @@
 			<div class="row">
 				<div class="col s12 m6 l6 wow slideInLeft">
 					<a href="/Account/Login?ReturnUrl=CreateEvent" target="_blank">
-						<img class="py-1" src="images/footer_banner_eventcreate01.png"
+						<img class="py-1" src="${pageContext.request.contextPath}/pages/images/footer_banner_eventcreate01.png"
 						width="100%" alt="행사개설! 이벤터스로 간편하게 행사 모집을 시작하세요!"
 						style="max-height: 205px; height: 100%" />
 					</a>
 				</div>
 				<div class="col s12 m6 l6 wow slideInRight">
 					<a href="/l/NewsLetter" target="_blank"> <img class="py-1"
-						src="images/footer_banner_newletter01.png" width="100%"
+						src="${pageContext.request.contextPath}/pages/images/footer_banner_newletter01.png" width="100%"
 						alt="뉴스레터 신청하기! 관심분야의 행사 소식을 가장 먼저 접하세요!"
 						style="max-height: 205px; height: 100%" />
 					</a>

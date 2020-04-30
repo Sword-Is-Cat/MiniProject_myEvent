@@ -1,22 +1,24 @@
 package kosta.mvc.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kosta.mvc.model.dao.EventDAO;
 import kosta.mvc.vo.Event;
 
-public class DeleteEventController implements Controller {
+public class SelectNewEventsController implements Controller {
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		List<Event> list = new EventDAO().selectNewEvents(4);
 		
-		int evNo = Integer.parseInt(request.getParameter("evNo"));
-		int chNo = Integer.parseInt(request.getParameter("chNo"));
-
-		new EventDAO().deleteEvent(evNo);
-
-		ModelAndView mv = new ModelAndView(true, "pages/channelDetail.jsp?chNo="+chNo);
+		request.setAttribute("list", list);
+		
+		ModelAndView mv = new ModelAndView(false, "☆★ 어디로 가야하오 ☆★");
+		
 		return mv;
 	}
 

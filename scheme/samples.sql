@@ -18,6 +18,7 @@ SELECT userSeq.CURRVAL FROM DUAL;
 
 SELECT userNo, userId, userPwd, userName, userAddr, userPhone, userEmail, userJoinDate, userStatus FROM users WHERE userId='jang';
 commit
+select * from notice
 
 CREATE SEQUENCE bookseq NOCACHE;
 CREATE SEQUENCE cateseq NOCACHE;
@@ -463,6 +464,13 @@ ALTER TABLE notice
 		PRIMARY KEY (
 			noticeNo
 		);
+/*쟌 연습~_~*/		
+SELECT * FROM notice ORDER BY noticeNo DESC
+select noticeseq.nextval from dual;
+		
+		
+		
+		
 
 /* 행사시간 */
 CREATE TABLE evTime (

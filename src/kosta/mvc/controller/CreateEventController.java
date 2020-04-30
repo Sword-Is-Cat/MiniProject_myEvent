@@ -57,10 +57,14 @@ public class CreateEventController implements Controller {
 		Channel channel = new Channel();
 		channel.setChNo(chNo);
 
+		if(detailAddress==null || detailAddress.equals("")){
+			detailAddress = "-";
+		}
+		
 		if (postalCode == null || postalCode.equals("")) {
 			evAddr = "Online";
 		} else {
-			evAddr = postalCode + roadAddress + detailAddress + extraAddress;
+			evAddr = postalCode+"," + roadAddress +"," + extraAddress+ "," + detailAddress;
 		}
 		
 		Timestamp evStart = Timestamp.valueOf(evStarts);

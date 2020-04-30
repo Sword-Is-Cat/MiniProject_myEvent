@@ -10,7 +10,7 @@ public class LogoutController implements Controller {
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		HttpSession session = request.getSession();
 		session.invalidate();
-		return new ModelAndView(true, "pages/index.jsp");
+		return new ModelAndView(true, "front?key=index");
 	}
 
 }

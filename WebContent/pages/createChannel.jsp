@@ -146,15 +146,20 @@
 						
 						<input type="hidden" name="userNo" value="${sessionScope.userNo}"/>
 
-				<!-- 채널개설 end -->
-				<div class="row" style="margin-top: 40px">
-					<div class="col s12">
-	
-							<button type="submit" class="btn btn-info channelBtn">개설하기</button>
+						<!-- 	<div class="text-right">
+		<br>
+			<button class="btn btn-primary solid blank" type="submit">채널 생성 신청</button>
+		</div> -->
+		<div class="row" style="margin-top: 40px">
+							<div class="col s12">
+
+								<button type="submit" class="btn btn-info channelBtn">개설하기</button>
+							</div>
 						</div>
-					</div>
-				</form>
-				<!-- form end -->
+
+					</form>
+					<!-- form end -->
+
 				
 				<!-- 주의사항 start -->
 				<div class="col-md-5">
@@ -162,15 +167,15 @@
 						<div class="pageTitle">
 							<h3 class="createChTitle">주의사항</h3>
 						</div>
-						<ul>
+						<ul class="chList">
 							<li>채널명은 한글 15자까지 입력</li>
-							<br>
+					
 							<li>이미지는 *** Mb 까지 업로드</li>
-							<br>
+				
 							<li>이미지는 jpg, png, gif 파일만 등록할 수 있습니다</li>
-							<br>
+					
 							<li>채널 설명은 한글 250자까지 입력</li>
-							<br>
+					
 							<li>할말이 더 있던가요..☆</li>
 						</ul>
 						
