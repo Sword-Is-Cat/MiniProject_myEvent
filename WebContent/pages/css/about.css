@@ -11,6 +11,7 @@ p {font-size:1.2em;}
 .tlImg.tl01, .tlImg.tl02 {width:70%;}
 .tlImg.tl04, .tlImg.tl03 {width:50%;}
 .timeline-article .content-box.contentNo02 {top:35%;}
+.content-left-container .content-box.contentNo02:before {top:52%}
 .main-timeline-section{
     position: relative;
     width: 100%;  
