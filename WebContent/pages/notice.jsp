@@ -58,14 +58,17 @@
 	
 <script>
 $(function(){
-/* 	if(${sessionScope.userStatus}==2) {
-		${'.mainTable'}.append("<th class="noticeDelete">삭제</th>");
-		${'.delectSpace'}.append("<td class="noticeDelete"><input type="button" value="삭제" /></td>");
+	alert(${sessionScope.userStatus});
+ 	if(${sessionScope.userStatus}==2) {
+		${'.writeBtn'}.show();
+		/* ${'.delectSpace'}.append("<td class="noticeDelete"><input type="button" value="삭제" /></td>
 								<div class="editBtns">
 									<input type="button" class="btn btn-info modifyBtn" value="수정" onClick="sendDelete()"/>
 									<input type="button" class="btn btn-info deleteBtn" value="삭제" onClick="sendDelete()"/>
-								</div>
-	} */
+								</div>"); */
+	}else {
+		${'.writeBtn'}.hide();
+	};
 	
 	$('.deleteBtn').click(function(){
 		
@@ -87,6 +90,23 @@ $(function(){
 table {text-align: center;}
 .mainContainer {margin-top:50px; padding-top:50px; border-top:1px solid #e5e5e5;}
 .editBtns {text-align:right;}
+.noticeTitle {
+	/* font-size: 16px; */
+	color: #8d71dd !important;
+	text-align:center;
+}
+.writeBtn, .modifyBtn, .deleteBtn{
+	background-color: #5c3fbf !important;
+	border-color: #5c3fbf !important;
+	text-align:right;
+	margin-bottom:30px;
+}
+.btn.writeBtn:hover, .modifyBtn:hover, .deleteBtn:hover {
+	background-color: #fff !important;
+	border-color: #5c3fbf !important;
+	color: #5c3fbf !important;
+	transition: 0.2s;
+}
 </style>
 </head>
 <body>
@@ -104,19 +124,21 @@ table {text-align: center;}
 	<div class="container">
 	<div class="row justify-content-center">
 		<div class="col s12">
-			<caption>공지사항</caption>
+			<h3 class="noticeTitle">공지사항</h3>
+			<input type="button" class="btn btn-info writeBtn float-right" value="공지작성" onClick="location.href='./noticeWrite.jsp'"/>
+		</div>
+		
 			<table class="table table-hover">
 
 				<thead>
 					<tr class="mainTable">
-						<th>번호</th>
-						<th>제목</th>
-						<th>날짜</th>
+						<th class="w-25">번호</th>
+						<th class="w-50">제목</th>
+						<th class="w-25">날짜</th>
 						<!-- <th class="noticeDelete">삭제</th> -->
 					</tr>
 				</thead>
 				<tbody>
-
 
 					<c:forEach items="${list}" var="notice" varStatus="state">
 						<tr class="accordion-toggle delectSpace" data-toggle="collapse"
@@ -141,8 +163,8 @@ table {text-align: center;}
 										<input type=hidden name="noticeSubject" value="${notice.noticeSubject}">
 										<input type=hidden name="noticeSubject" value="${notice.noticeContent}">
 										<input type=hidden name="key" value="">
-										<input type=button value="수정하기" onClick="sendUpdate()">
-										<input type=button value="삭제하기" onClick="sendDelete()">
+										<input type="button" class="btn btn-info modifyBtn" value="수정" onClick="sendDelete()"/>
+										<input type="button" class="btn btn-info deleteBtn" value="삭제" onClick="sendDelete()"/>
 						    		</form>
 														
 								
@@ -159,7 +181,7 @@ table {text-align: center;}
 
 			</table>
 
-		</div>
+		
 	</div>
 </div>
 	<!-- footer -->

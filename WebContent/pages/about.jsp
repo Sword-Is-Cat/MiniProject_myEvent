@@ -1,165 +1,157 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="utf-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>My Event :: í–‰ì‚¬ì™€ í•¨ê»˜í•˜ëŠ” ëª¨ë“  ìˆœê°„</title>
+	<meta charset="UTF-8">
+  <title>My Event :: Çà»ç¿Í ÇÔ²² ÇÏ´Â ¸ğµç ¼ø°£</title>
 
-<!-- mobile responsive meta -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+   <!-- ** Plugins Needed for the Project ** -->
+  <script src="./pages/plugins/jQuery/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+  <link rel="stylesheet" href="./plugins/bootstrap/bootstrap.min.css">
+	<!-- FontAwesome -->
+    <link rel="stylesheet" href="./plugins/fontawesome/font-awesome.min.css">
+	<!-- Animation -->
+	<link rel="stylesheet" href="./plugins/animate.css">
+	<!-- Prettyphoto -->
+	<link rel="stylesheet" href="./plugins/prettyPhoto.css">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="./plugins/owl/owl.carousel.css">
+	<link rel="stylesheet" href="./plugins/owl/owl.theme.css">
+	<!-- Flexslider -->
+	<link rel="stylesheet" href="./plugins/flex-slider/flexslider.css">
+	<!-- Flexslider -->
+	<link rel="stylesheet" href="./plugins/cd-hero/cd-hero.css">
+	<!-- Style Swicther -->
+	<link id="style-switch" href="./css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
 
-<!-- ** Plugins Needed for the Project ** -->
-<!-- Bootstrap -->
-<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
-<link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-<!-- FontAwesome -->
-<link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
-<!-- Animation -->
-<link rel="stylesheet" href="plugins/animate.css">
-<!-- Prettyphoto -->
-<link rel="stylesheet" href="plugins/prettyPhoto.css">
-<!-- Owl Carousel -->
-<link rel="stylesheet" href="plugins/owl/owl.carousel.css">
-<link rel="stylesheet" href="plugins/owl/owl.theme.css">
-<!-- Flexslider -->
-<link rel="stylesheet" href="plugins/flex-slider/flexslider.css">
-<!-- Flexslider -->
-<link rel="stylesheet" href="plugins/cd-hero/cd-hero.css">
-<!-- Style Swicther -->
-<link id="style-switch" href="css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
+  <!-- Main Stylesheet -->
+  <link href="./css/style.css" rel="stylesheet">
+  <link href="./css/defaultStyle.css" rel="stylesheet">
+  <link href="./css/about.css" rel="stylesheet">
+  <!--Favicon-->
+	<link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="./images/favicon/144.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="./images/favicon/72.png">
+	<link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
+ <!-- webFont -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<style>
+.parallax {
+   background: linear-gradient(
+      rgba(0, 0, 0, 0.45), 
+      rgba(0, 0, 0, 0.45)
+   ),
+   url(./images/aboutBg.jpg);
 
-<!-- Main Stylesheet -->
-<link href="css/style.css" rel="stylesheet">
-<link href="css/defaultStyle.css" rel="stylesheet">
-<!--Favicon-->
-<link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="./images/favicon/144.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="./images/favicon/72.png">
-<link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
-<!-- webFont -->
-<link
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
-	rel="stylesheet">
+  min-height: 350px; 
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+</style>
 
 </head>
 
 <body>
-	<div class="body-inner">
-		<!--subTopMenu-->
-		<c:import url="headerTop.jsp" />
-		<!--subTopMenu end-->
-		<c:import url="header.jsp" />
+<!--subTopMenu-->
+<c:import url="./headerTop.jsp"/>
+<!--subTopMenu end-->	
+<c:import url="./header.jsp"/>
 
-
-		<!-- Main container start -->
-		<section id="main-container">
-			<div class="container">
-
-				<!-- Company Profile -->
-				<div class="row">
-					<div class="col-md-12 heading">
-						<span class="title-icon classic float-left"><i
-							class="fa fa-suitcase"></i></span>
-						<h2 class="title classic">Company Profile</h2>
-					</div>
-				</div>
-				<!-- Title row end -->
-
-				<div class="row landing-tab">
-					<div class="col-md-3 col-sm-5">
-						<div class="nav flex-column nav-pills border-right"
-							id="v-pills-tab" role="tablist" aria-orientation="vertical">
-							<a
-								class="animated fadeIn nav-link py-4 active d-flex align-items-center"
-								data-toggle="pill" href="#tab_1" role="tab" aria-selected="true">
-								<i class="fa fa-info-circle mr-4"></i> <span
-								class="h4 mb-0 font-weight-bold">My Event</span>
-							</a> <a
-								class="animated fadeIn nav-link py-4 d-flex align-items-center"
-								data-toggle="pill" href="#tab_2" role="tab" aria-selected="true">
-								<i class="fa fa-briefcase mr-4"></i> <span
-								class="h4 mb-0 font-weight-bold">OUR COMPANY</span>
-							</a> <a
-								class="animated fadeIn nav-link py-4 d-flex align-items-center"
-								data-toggle="pill" href="#tab_3" role="tab" aria-selected="true">
-								<i class="fa fa-android mr-4"></i> <span
-								class="h4 mb-0 font-weight-bold">What We Do</span>
-							</a> <a
-								class="animated fadeIn nav-link py-4 d-flex align-items-center"
-								data-toggle="pill" href="#tab_4" role="tab" aria-selected="true">
-								<i class="fa fa-pagelines mr-4"></i> <span
-								class="h4 mb-0 font-weight-bold">Modern Design</span>
-							</a> <a
-								class="animated fadeIn nav-link py-4 d-flex align-items-center"
-								data-toggle="pill" href="#tab_5" role="tab" aria-selected="true">
-								<i class="fa fa-support mr-4"></i> <span
-								class="h4 mb-0 font-weight-bold">Dedicated Support</span>
-							</a>
-						</div>
-					</div>
-					<div class="col-md-9 col-sm-7">
-						<div class="tab-content" id="v-pills-tabContent">
-							<div
-								class="tab-pane pl-sm-5 fade show active animated fadeInLeft"
-								id="tab_1" role="tabpanel">
-								<i class="fa fa-trophy icon-xl text-primary mb-4"></i>
-								<h3>ìµœê³ ì˜ í–‰ì‚¬ ê°œìµœ í”Œë«í¼</h3>
-								<p>ë§ˆì´ì´ë²¤íŠ¸ëŠ” 2020ë…„ì— ì„¤ë¦½ëœ ì´ë²¤íŠ¸ í…Œí¬ í”„ë¡œì íŠ¸ì…ë‹ˆë‹¤. ê¸°ì¡´ì˜ í–‰ì‚¬ ì‹œì¥ì— ITì™€ í”Œë«í¼ì„ ì ‘ëª©í•´
-									í˜ì‹ ì„ ë§Œë“¤ì–´ê°€ê³  ì‹¶ìŠµë‹ˆë‹¤. ë‚´ê°€ ì›í•˜ëŠ” í–‰ì‚¬ë¥¼ ê°œìµœí•˜ê±°ë‚˜ ì°¸ì—¬í•  ìˆ˜ ìˆëŠ” í”Œë«í¼ "ë§ˆì´ì´ë²¤íŠ¸"ë¥¼ ìš´ì˜í•˜ê³ 
-									ìˆìŠµë‹ˆë‹¤.</p>
-							</div>
-							<div class="tab-pane pl-sm-5 fade animated fadeInLeft" id="tab_2"
-								role="tabpanel">
-								<i class="fa fa-briefcase icon-xl text-primary mb-4"></i>
-								<h3>We Have Worldwide Business</h3>
-								<p>Helvetica cold-pressed lomo messenger bag ugh. Vinyl jean
-									shorts Austin pork belly PBR retro, Etsy VHS kitsch actually
-									messenger bag pug. Pbrb semiotics try-hard, Schlitz occupy
-									dreamcatcher master cleanse Marfa Vice tofu.</p>
-							</div>
-							<div class="tab-pane pl-sm-5 fade animated fadeInLeft" id="tab_3"
-								role="tabpanel">
-								<i class="fa fa-android icon-xl text-primary mb-4"></i>
-								<h3>We Build Readymade Applications</h3>
-								<p>Over the year we have lots of experience in our field. In
-									sit amet massa sapien. Vestibulum diam turpis, gravida in
-									lobortis id, ornare a eros. Lorem ipsum dolor sit amet,
-									consectetur adipiscing elit. Aliquam sagittis nulla non elit
-									dignissim suscipit. Duis lorem nulla, eleifend.</p>
-							</div>
-							<div class="tab-pane pl-sm-5 fade animated fadeInLeft" id="tab_4"
-								role="tabpanel">
-								<i class="fa fa-pagelines icon-xl text-primary mb-4"></i>
-								<h3>Clean and Modern Design</h3>
-								<p>Over the year we have lots of experience in our field. In
-									sit amet massa sapien. Vestibulum diam turpis, gravida in
-									lobortis id, ornare a eros. Lorem ipsum dolor sit amet,
-									consectetur adipiscing elit. Aliquam sagittis nulla non elit
-									dignissim suscipit. Duis lorem nulla, eleifend.</p>
-							</div>
-							<div class="tab-pane pl-sm-5 fade animated fadeInLeft" id="tab_5"
-								role="tabpanel">
-								<i class="fa fa-support icon-xl text-primary mb-4"></i>
-								<h3>24/7 Dedicated Support</h3>
-								<p>Occupy selfies Tonx, +1 Truffaut beard organic normcore
-									tilde flannel artisan squid cray single-origin coffee. Master
-									cleanse vinyl Austin kogi, semiotics skateboard fap wayfarers
-									health goth. Helvetica cray church-key hashtag Carles. Four
-									dollar toast meggings seitan, Tonx pork belly VHS Bushwick.
-									Chambray banh mi cornhole. Locavore messenger bag seitan.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--/ Content row end -->
+<div class="container-fluide">
+	
+	<!-- Container element -->
+	<div class="parallax">
+		<div class="row ">
+      	<div class="bgBlack">
+			<div class="aboutIntro">
+				<p>¸¶ÀÌÀÌº¥Æ®´Â 2014³â 9¿ù¿¡ ¼³¸³µÈ ÀÌº¥Æ® Å×Å© ½ºÅ¸Æ®¾÷ÀÔ´Ï´Ù. </p>
+				<p>±âÁ¸ÀÇ Çà»ç ½ÃÀå¿¡ IT¿Í ÇÃ·§ÆûÀ» Á¢¸ñÇØ Çõ½ÅÀ» ¸¸µé¾î°¡°í ÀÖ½À´Ï´Ù. </p>
+				<p>³»°¡ ¿øÇÏ´Â Çà»ç¸¦ °³ÃÖÇÏ°Å³ª Âü¿©ÇÒ ¼ö ÀÖ´Â ÇÃ·§Æû &quot;¸¶ÀÌÀÌº¥Æ®&quot;¸¦ ¿î¿µÇÏ°í ÀÖ½À´Ï´Ù.</p>
 			</div>
-			<!--/ 1st container end -->
+      </div>
+		</div>
 
-			<div class="gap-60"></div>
+	</div><!-- parallax end -->
+	<div class="gap-30"></div>
+<div class="tlTitle">
+  <h2># History Timeline</h2>
+</div>
+<div class="gap-30"></div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<section class="main-timeline-section">
+			    <div class="timeline-start"></div>
+			    <div class="conference-center-line"></div>
+			    <div class="conference-timeline-content">
+
+				    <div class="timeline-article content-right-container">
+				        <div class="content-date">
+			          		
+			        	</div>
+			        	<div class="meta-date"></div>
+				        <div class="content-box">
+				        <span>05/07</span>
+				        	<p>ÇÁ·ÎÁ§Æ® ¹ßÇ¥</p>
+     						 <img src="./images/timeLine01.jpg"/>
+				        </div>
+				    </div>
+
+				    <div class="timeline-article content-left-container">
+				        <div class="content-date">
+			          		
+			        	</div>
+			        	<div class="meta-date"></div>
+				        <div class="content-box">
+				        <span>04/29</span>
+				        	<p>ÇÁ·ÎÁ§Æ® ¹ßÇ¥ ¿¬±â</p>
+    						<img src="./images/timeLine02.jpg"/>
+				        </div>
+				    </div>
+
+				    <div class="timeline-article content-right-container">
+				        <div class="content-date">
+			          		
+			        	</div>
+			        	<div class="meta-date"></div>
+				        <div class="content-box">
+				        <span>04/17~</span>
+				        	<p>ÇÁ·ÎÁ§Æ® ÁøÇà</p>
+     						<img src="./images/timeLine03.gif"/>
+				        </div>
+				    </div>
+
+				    <div class="timeline-article content-left-container">
+				        <div class="content-date">
+			          		
+			        	</div>
+			        	<div class="meta-date"></div>
+				        <div class="content-box">
+				        <span>04/08</span>
+				        	<p>ÇÁ·ÎÁ§Æ® Á¶ Æí¼º</p>
+				        	<img src="./images/timeLine04.jpg"/>
+				        	
+				        </div>
+				    </div>
+				    
+				</div>
+			   	<div class="timeline-end"></div>
+		  	</section>
+		</div>
+	</div><!-- row end -->
+<div class="gap-60"></div>
 
 
 			<div class="container">
@@ -168,12 +160,8 @@
 				<!-- Team start -->
 				<div class="team">
 
-					<div class="row">
-						<div class="col-md-12 heading">
-							<span class="title-icon classic float-left"><i
-								class="fa fa-weixin"></i></span>
-							<h2 class="title classic">Meet with our Team</h2>
-						</div>
+					<div class="tlTitle">
+  						<h2># The Team</h2>
 					</div>
 					<!-- Title row end -->
 
@@ -185,7 +173,7 @@
 										class="img-top"></span> <span class="img-bottom"></span>
 								</div>
 								<div class="team-content">
-									<h3>ë°°ì§€í˜œ</h3>
+									<h3>¹èÁöÇı</h3>
 									<p>Web Designer</p>
 									<div class="team-social">
 										<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a
@@ -205,7 +193,7 @@
 										class="img-top"></span> <span class="img-bottom"></span>
 								</div>
 								<div class="team-content">
-									<h3>ì¥í™ë²”</h3>
+									<h3>ÀåÈ«¹ü</h3>
 									<p>Web Designer</p>
 									<div class="team-social">
 										<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a
@@ -225,7 +213,7 @@
 										class="img-top"></span> <span class="img-bottom"></span>
 								</div>
 								<div class="team-content">
-									<h3>ê¹€ì§€ì•ˆ</h3>
+									<h3>±èÁö¾È</h3>
 									<p>Web Designer</p>
 									<div class="team-social">
 										<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a
@@ -245,7 +233,7 @@
 										class="img-top"></span> <span class="img-bottom"></span>
 								</div>
 								<div class="team-content">
-									<h3>ê¹€íš¨ì§„</h3>
+									<h3>±èÈ¿Áø</h3>
 									<p>Web Designer</p>
 									<div class="team-social">
 										<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a
@@ -265,7 +253,7 @@
 										class="img-top"></span> <span class="img-bottom"></span>
 								</div>
 								<div class="team-content">
-									<h3>ë°•ì •ì˜</h3>
+									<h3>¹ÚÁ¤ÀÇ</h3>
 									<p>Web Designer</p>
 									<div class="team-social">
 										<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a
@@ -283,14 +271,14 @@
 
 				</div>
 				<!-- Team end -->
+				</div>
 
-			</div>
-			<!-- 2nd container end -->
-		</section>
-		<!--/ Main container end -->
-		<!-- footer -->
-		<c:import url="footer.jsp"></c:import>
-	</div>
+
+
+</div><!-- container end -->
+
+<c:import url="./footer.jsp"/>
+
 </body>
 
 </html>

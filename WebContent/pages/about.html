@@ -13,28 +13,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
    <!-- ** Plugins Needed for the Project ** -->
+  <script src="./pages/plugins/jQuery/jquery.min.js"></script>
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
-  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="./plugins/bootstrap/bootstrap.min.css">
 	<!-- FontAwesome -->
-    <link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
+    <link rel="stylesheet" href="./plugins/fontawesome/font-awesome.min.css">
 	<!-- Animation -->
-	<link rel="stylesheet" href="plugins/animate.css">
+	<link rel="stylesheet" href="./plugins/animate.css">
 	<!-- Prettyphoto -->
-	<link rel="stylesheet" href="plugins/prettyPhoto.css">
+	<link rel="stylesheet" href="./plugins/prettyPhoto.css">
 	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="plugins/owl/owl.carousel.css">
-	<link rel="stylesheet" href="plugins/owl/owl.theme.css">
+	<link rel="stylesheet" href="./plugins/owl/owl.carousel.css">
+	<link rel="stylesheet" href="./plugins/owl/owl.theme.css">
 	<!-- Flexslider -->
-	<link rel="stylesheet" href="plugins/flex-slider/flexslider.css">
+	<link rel="stylesheet" href="./plugins/flex-slider/flexslider.css">
 	<!-- Flexslider -->
-	<link rel="stylesheet" href="plugins/cd-hero/cd-hero.css">
+	<link rel="stylesheet" href="./plugins/cd-hero/cd-hero.css">
 	<!-- Style Swicther -->
-	<link id="style-switch" href="css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
+	<link id="style-switch" href="./css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
 
   <!-- Main Stylesheet -->
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/defaultStyle.css" rel="stylesheet">
+  <link href="./css/style.css" rel="stylesheet">
+  <link href="./css/defaultStyle.css" rel="stylesheet">
+  <link href="./css/about.css" rel="stylesheet">
   <!--Favicon-->
 	<link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="./images/favicon/144.png">
@@ -44,107 +46,35 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <style>
 .parallax {
-  /* The image used */
-  background-image: url("./images/aboutBg.jpg");
+   background: linear-gradient(
+      rgba(0, 0, 0, 0.45), 
+      rgba(0, 0, 0, 0.45)
+   ),
+   url(./images/aboutBg.jpg);
 
-  /* Set a specific height */
-  min-height: 500px; 
-
-  /* Create the parallax scrolling effect */
+  min-height: 350px; 
   background-attachment: fixed;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-.bgBlack {background:rgba(0,0,0,0.6); height:500px;}
-.aboutIntro { margin: 0 auto; }
-.aboutIntro>p{font-size : 1.7em;}
-/*-----------------------탐라-----------------------------------*/
-.circle {
-  padding: 13px 20px;
-  border-radius: 50%;
-  background-color: #ED8D8D;
-  color: #fff;
-  max-height: 50px;
-  z-index: 2;
-}
 
-.how-it-works.row .col-2 {
-  align-self: stretch;
-}
-.how-it-works.row .col-2::after {
-  content: "";
-  position: absolute;
-  border-left: 3px solid #ED8D8D;
-  z-index: 1;
-}
-.how-it-works.row .col-2.bottom::after {
-  height: 50%;
-  left: 50%;
-  top: 50%;
-}
-.how-it-works.row .col-2.full::after {
-  height: 100%;
-  left: calc(50% - 3px);
-}
-.how-it-works.row .col-2.top::after {
-  height: 50%;
-  left: 50%;
-  top: 0;
-}
-
-
-.timeline div {
-  padding: 0;
-  height: 40px;
-}
-.timeline hr {
-  border-top: 3px solid #ED8D8D;
-  margin: 0;
-  top: 17px;
-  position: relative;
-}
-.timeline .col-2 {
-  display: flex;
-  overflow: hidden;
-}
-.timeline .corner {
-  border: 3px solid #ED8D8D;
-  width: 100%;
-  position: relative;
-  border-radius: 15px;
-}
-.timeline .top-right {
-  left: 50%;
-  top: -50%;
-}
-.timeline .left-bottom {
-  left: -50%;
-  top: calc(50% - 3px);
-}
-.timeline .top-left {
-  left: -50%;
-  top: -50%;
-}
-.timeline .right-bottom {
-  left: 50%;
-  top: calc(50% - 3px);
-}
 </style>
+
 </head>
 
 <body>
 <!--subTopMenu-->
-<c:import url="headerTop.jsp"/>
+<c:import url="./headerTop.jsp"/>
 <!--subTopMenu end-->	
-<c:import url="header.jsp"/>
+<c:import url="./header.jsp"/>
 
 <div class="container-fluide">
 	
 	<!-- Container element -->
 	<div class="parallax">
 		<div class="row ">
-      <div class="bgBlack">
+      	<div class="bgBlack">
 			<div class="aboutIntro">
 				<p>마이이벤트는 2014년 9월에 설립된 이벤트 테크 스타트업입니다. </p>
 				<p>기존의 행사 시장에 IT와 플랫폼을 접목해 혁신을 만들어가고 있습니다. </p>
@@ -152,74 +82,202 @@
 			</div>
       </div>
 		</div>
-	
 
-	
-	
 	</div><!-- parallax end -->
-	<div class="container timeLine">
-    <h2 class="pb-3 pt-2 border-bottom mb-5">타임라인 웅앵웅</h2>
-    <!--first section-->
-    <div class="row align-items-center how-it-works d-flex">
-      <div class="col-2 text-center bottom d-inline-flex justify-content-center align-items-center">
-        <div class="circle font-weight-bold">1</div>
-      </div>
-      <div class="col-6">
-        <h5>Fully Responsive</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus.</p>
-      </div>
-    </div>
-    <!--path between 1-2-->
-    <div class="row timeline">
-      <div class="col-2">
-        <div class="corner top-right"></div>
-      </div>
-      <div class="col-8">
-        <hr/>
-      </div>
-      <div class="col-2">
-        <div class="corner left-bottom"></div>
-      </div>
-    </div>
-    <!--second section-->
-    <div class="row align-items-center justify-content-end how-it-works d-flex">
-      <div class="col-6 text-right">
-        <h5>Using Bootstrap</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus.</p>
-      </div>
-      <div class="col-2 text-center full d-inline-flex justify-content-center align-items-center">
-        <div class="circle font-weight-bold">2</div>
-      </div>
-    </div>
-    <!--path between 2-3-->
-    <div class="row timeline">
-      <div class="col-2">
-        <div class="corner right-bottom"></div>
-      </div>
-      <div class="col-8">
-        <hr/>
-      </div>
-      <div class="col-2">
-        <div class="corner top-left"></div>
-      </div>
-    </div>
-    <!--third section-->
-    <div class="row align-items-center how-it-works d-flex">
-      <div class="col-2 text-center top d-inline-flex justify-content-center align-items-center">
-        <div class="circle font-weight-bold">3</div>
-      </div>
-      <div class="col-6">
-        <h5>Now with Pug and Sass</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus.</p>
-      </div>
-    </div>
-  </div>
+	<div class="gap-30"></div>
+<div class="tlTitle">
+  <h2># History Timeline</h2>
+</div>
+<div class="gap-30"></div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<section class="main-timeline-section">
+			    <div class="timeline-start"></div>
+			    <div class="conference-center-line"></div>
+			    <div class="conference-timeline-content">
+
+				    <div class="timeline-article content-right-container">
+				        <div class="content-date">
+			          		
+			        	</div>
+			        	<div class="meta-date"></div>
+				        <div class="content-box">
+				        <span>05/07</span>
+				        	<p>프로젝트 발표</p>
+     						 <img src="./images/timeLine01.jpg"/>
+				        </div>
+				    </div>
+
+				    <div class="timeline-article content-left-container">
+				        <div class="content-date">
+			          		
+			        	</div>
+			        	<div class="meta-date"></div>
+				        <div class="content-box">
+				        <span>04/29</span>
+				        	<p>프로젝트 발표 연기</p>
+    						<img src="./images/timeLine02.jpg"/>
+				        </div>
+				    </div>
+
+				    <div class="timeline-article content-right-container">
+				        <div class="content-date">
+			          		
+			        	</div>
+			        	<div class="meta-date"></div>
+				        <div class="content-box">
+				        <span>04/17~</span>
+				        	<p>프로젝트 진행</p>
+     						<img src="./images/timeLine03.gif"/>
+				        </div>
+				    </div>
+
+				    <div class="timeline-article content-left-container">
+				        <div class="content-date">
+			          		
+			        	</div>
+			        	<div class="meta-date"></div>
+				        <div class="content-box">
+				        <span>04/08</span>
+				        	<p>프로젝트 조 편성</p>
+				        	<img src="./images/timeLine04.jpg"/>
+				        	
+				        </div>
+				    </div>
+				    
+				</div>
+			   	<div class="timeline-end"></div>
+		  	</section>
+		</div>
+	</div><!-- row end -->
+<div class="gap-60"></div>
+
+
+			<div class="container">
+				<!-- 2nd container start -->
+
+				<!-- Team start -->
+				<div class="team">
+
+					<div class="tlTitle">
+  						<h2># The Team</h2>
+					</div>
+					<!-- Title row end -->
+
+					<div class="row text-center">
+						<div class="col-md-3 col-sm-6">
+							<div class="team wow slideInLeft">
+								<div class="img-hexagon">
+									<img src="images/team/team1.jpg" alt=""> <span
+										class="img-top"></span> <span class="img-bottom"></span>
+								</div>
+								<div class="team-content">
+									<h3>배지혜</h3>
+									<p>Web Designer</p>
+									<div class="team-social">
+										<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a
+											class="twt" href="#"><i class="fa fa-twitter"></i></a> <a
+											class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
+										<a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a>
+										<a class="dribble" href="#"><i class="fa fa-dribbble"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--/ Team 1 end -->
+						<div class="col-md-3 col-sm-6">
+							<div class="team wow slideInLeft">
+								<div class="img-hexagon">
+									<img src="images/team/team2.jpg" alt=""> <span
+										class="img-top"></span> <span class="img-bottom"></span>
+								</div>
+								<div class="team-content">
+									<h3>장홍범</h3>
+									<p>Web Designer</p>
+									<div class="team-social">
+										<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a
+											class="twt" href="#"><i class="fa fa-twitter"></i></a> <a
+											class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
+										<a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a>
+										<a class="dribble" href="#"><i class="fa fa-dribbble"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--/ Team 2 end -->
+						<div class="col-md-3 col-sm-6">
+							<div class="team wow slideInRight">
+								<div class="img-hexagon">
+									<img src="images/team/team3.jpg" alt=""> <span
+										class="img-top"></span> <span class="img-bottom"></span>
+								</div>
+								<div class="team-content">
+									<h3>김지안</h3>
+									<p>Web Designer</p>
+									<div class="team-social">
+										<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a
+											class="twt" href="#"><i class="fa fa-twitter"></i></a> <a
+											class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
+										<a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a>
+										<a class="dribble" href="#"><i class="fa fa-dribbble"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--/ Team 3 end -->
+						<div class="col-md-3 col-sm-6">
+							<div class="team animate wow slideInRight">
+								<div class="img-hexagon">
+									<img src="images/team/team4.jpg" alt=""> <span
+										class="img-top"></span> <span class="img-bottom"></span>
+								</div>
+								<div class="team-content">
+									<h3>김효진</h3>
+									<p>Web Designer</p>
+									<div class="team-social">
+										<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a
+											class="twt" href="#"><i class="fa fa-twitter"></i></a> <a
+											class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
+										<a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a>
+										<a class="dribble" href="#"><i class="fa fa-dribbble"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--/ Team 4 end -->
+						<div class="col-md-3 col-sm-6">
+							<div class="team animate wow slideInRight">
+								<div class="img-hexagon">
+									<img src="images/team/team4.jpg" alt=""> <span
+										class="img-top"></span> <span class="img-bottom"></span>
+								</div>
+								<div class="team-content">
+									<h3>박정의</h3>
+									<p>Web Designer</p>
+									<div class="team-social">
+										<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a
+											class="twt" href="#"><i class="fa fa-twitter"></i></a> <a
+											class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
+										<a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a>
+										<a class="dribble" href="#"><i class="fa fa-dribbble"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--/ Team 5 end -->
+					</div>
+					<!--/ Content row end -->
+
+				</div>
+				<!-- Team end -->
+				</div>
 
 
 
 </div><!-- container end -->
 
-<c:import url="footer.jsp"/>
+<c:import url="./footer.jsp"/>
 
 </body>
 
