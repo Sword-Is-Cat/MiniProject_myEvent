@@ -8,7 +8,9 @@
 /*------------timeline-----------------*/
 span {font-size:1.5em;}
 p {font-size:1.2em;}
-img {width:65%;}
+.tlImg.tl01, .tlImg.tl02 {width:70%;}
+.tlImg.tl04, .tlImg.tl03 {width:50%;}
+.timeline-article .content-box.contentNo02 {top:35%;}
 .main-timeline-section{
     position: relative;
     width: 100%;  

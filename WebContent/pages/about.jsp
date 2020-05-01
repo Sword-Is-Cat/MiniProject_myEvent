@@ -105,7 +105,7 @@
 				        <div class="content-box">
 				        <span>05/07</span>
 				        	<p>프로젝트 발표</p>
-     						 <img src="./images/timeLine01.jpg"/>
+     						 <img class="tlImg tl01" src="./images/timeLine01.jpg"/>
 				        </div>
 				    </div>
 
@@ -114,10 +114,10 @@
 			          		
 			        	</div>
 			        	<div class="meta-date"></div>
-				        <div class="content-box">
+				        <div class="content-box contentNo02">
 				        <span>04/29</span>
 				        	<p>프로젝트 발표 연기</p>
-    						<img src="./images/timeLine02.jpg"/>
+    						<img class="tlImg tl02" src="./images/timeLine02.jpg"/>
 				        </div>
 				    </div>
 
@@ -129,7 +129,7 @@
 				        <div class="content-box">
 				        <span>04/17~</span>
 				        	<p>프로젝트 진행</p>
-     						<img src="./images/timeLine03.gif"/>
+     						<img class="tlImg tl03" src="./images/timeLine03.gif"/>
 				        </div>
 				    </div>
 
@@ -141,7 +141,7 @@
 				        <div class="content-box">
 				        <span>04/08</span>
 				        	<p>프로젝트 조 편성</p>
-				        	<img src="./images/timeLine04.jpg"/>
+				        	<img class="tlImg tl04" src="./images/timeLine04.jpg"/>
 				        	
 				        </div>
 				    </div>
@@ -151,12 +151,12 @@
 		  	</section>
 		</div>
 	</div><!-- row end -->
-<div class="gap-60"></div>
+
 
 
 			<div class="container">
 				<!-- 2nd container start -->
-
+<div class="gap-60"></div>
 				<!-- Team start -->
 				<div class="team">
 
@@ -164,7 +164,7 @@
   						<h2># The Team</h2>
 					</div>
 					<!-- Title row end -->
-
+					<div class="gap-60"></div>
 					<div class="row text-center">
 						<div class="col-md-3 col-sm-6">
 							<div class="team wow slideInLeft">
@@ -274,7 +274,7 @@
 				</div>
 
 
-
+<div class="gap-60"></div>
 </div><!-- container end -->
 
 <c:import url="./footer.jsp"/>
