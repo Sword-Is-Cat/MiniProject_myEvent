@@ -141,21 +141,30 @@
 							<h3 class="widget-title">${requestScope.event.channel.chName}</h3>
 							<p>${requestScope.event.channel.chDescription}</p>
 							<br />
-							<%if((boolean)request.getAttribute("isManager")==true){ %>
-							<p>
-								<a href="#" class="project-btn btn btn-primary">신청하기</a>
-							</p>
-							<%} else{ %>
+							<% if ((boolean) request.getAttribute("isManager") == true) { %>
 							<p>
 								<a
 									href="front?key=enterUpdateEvent&evNo=${requestScope.event.evNo}"
 									class="project-btn btn btn-primary">수정하기</a>
 							</p>
 							<p>
-								<a href="front?key=deleteEvent&chNo=${requestScope.event.channel.chNo}&evNo=${requestScope.event.evNo}"
+								<a
+									href="front?key=deleteEvent&chNo=${requestScope.event.channel.chNo}&evNo=${requestScope.event.evNo}"
 									class="project-btn btn btn-primary">삭제하기</a>
 							</p>
-							<%} %>
+							<% } else if((boolean) request.getAttribute("isBook") == true) { %>
+							<p>
+								<a
+									href="front?key=deleteBookController&evNo=${requestScope.event.evNo}"
+									class="project-btn btn btn-primary">취소하기</a>
+							</p>
+							<% } else {%>
+							<p>
+								<a
+									href="front?key=insertBookController&evNo=${requestScope.event.evNo}"
+									class="project-btn btn btn-primary">신청하기</a>
+							</p>
+							<% } %>
 						</div>
 					</div>
 				</div>
