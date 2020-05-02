@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kosta.mvc.model.dao.EventDAO;
+import kosta.mvc.model.dao.ManagerDAO;
 import kosta.mvc.vo.Event;
 
 public class SelectEventController implements Controller {
@@ -34,7 +35,15 @@ public class SelectEventController implements Controller {
 			request.setAttribute("evAddr", evAddr.toString());
 		}
 		
+		int chNo = Integer.parseInt(request.getParameter("chNo"));
+		int userNo = (int)request.getSession().getAttribute("userNo");
+		boolean isManager = false;
+		if(new ManagerDAO().isManager(chNo, userNo)==1)
+			isManager=true;
+		
 		request.setAttribute("event", event);
+		request.setAttribute("isManager", isManager);
+		
 		ModelAndView mv = new ModelAndView(false, "pages/event.jsp");
 		return mv;
 	}
