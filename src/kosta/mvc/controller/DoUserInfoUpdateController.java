@@ -29,7 +29,6 @@ public class DoUserInfoUpdateController implements Controller {
 		
 		User user = new User(userId, userPwd, userName, userAddr, userPhone, userEmail); //유저생성
 		user.setUserNo(userNo);
-		System.out.println(userNo+" usrNo");
 		
 		//유효성체크
 		if(userId.equals("") || userId==null || userPwd.equals("") || userPwd==null || userName.equals("") || userName==null 

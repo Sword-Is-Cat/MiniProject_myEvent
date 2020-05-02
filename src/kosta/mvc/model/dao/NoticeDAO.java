@@ -83,7 +83,7 @@ public class NoticeDAO {
 		}
 
 		return result;
-	}//inset end
+	}//insert end
 	
 	
 	

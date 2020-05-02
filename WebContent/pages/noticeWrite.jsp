@@ -54,10 +54,9 @@
 <body>
 	<!--subTopMenu-->
 	<c:import url="./headerTop.jsp" />
+	
 	<!--subTopMenu end-->
-
-	<c:import url="./header.jsp" />
-
+	<c:import url="./header.jsp"/>
 	<div class="gap-50 p-3">
 		<div class="row justify-content-center p-3">
 			<caption>공지사항 등록</caption>

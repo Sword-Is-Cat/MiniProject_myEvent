@@ -66,6 +66,28 @@ img.mainLogo {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+
+@media(min-width: 991px){
+  #pcMenu {
+	display:block!important;
+	}
+	
+	#mobileMenu{
+	display: none;
+	}
+}
+
+@media (max-width: 991px) {
+  #pcMenu {
+	display:none!important;
+	}
+	
+	#mobileMenu{
+	display: block;
+	}
+}
+
+
 </style>
 </head>
 
@@ -89,10 +111,8 @@ img.mainLogo {
 						aria-label="Toggle navigation">
 						<span class="fa fa-bars"></span>
 					</button>
-
 					<div
-						class="collapse navbar-collapse text-center d-flex justify-content-between"
-						id="navigation">
+						class="navbar-collapse text-center d-flex justify-content-between">
 						<div class="row col s2"></div>
 						<div class="row col s5 p-3 align-self-center">
 							<form class="form-inline my-2 navbar-left searchForm">
@@ -111,7 +131,7 @@ img.mainLogo {
 								</div>
 							</form>
 						</div>
-						<div class="row d-flex justify-content-end">
+						<div id = "pcMenu" class="row d-flex justify-content-end">
 							<ul class="nav navbar-nav navbar-right mr-auto ">
 								<li class="nav-item active"><a class="nav-link"
 									href="${pageContext.request.contextPath}/pages/eventList.jsp" role="button"> 행사검색 </a></li>
@@ -121,8 +141,21 @@ img.mainLogo {
 									href="${pageContext.request.contextPath}/pages/bookHistory.jsp" role="button"> 신청내역확인 </a></li>
 								<li class="nav-item active"><a class="nav-link"
 									href="${pageContext.request.contextPath}/pages/createEvent.jsp" role="button"> 행사개설 </a></li>
-
 							</ul>
+						</div>
+						<div class="collapse" id="navigation">
+							<div id = "mobileMenu" class="row d-flex justify-content-end">
+							<ul class="nav navbar-nav navbar-right mr-auto ">
+								<li class="nav-item active"><a class="nav-link"
+									href="${pageContext.request.contextPath}/pages/eventList.jsp" role="button"> 행사검색 </a></li>
+								<li class="nav-item active"><a class="nav-link"
+									href="${pageContext.request.contextPath}/pages/about.jsp" role="button"> 회사소개 </a></li>
+								<li class="nav-item active"><a class="nav-link"
+									href="${pageContext.request.contextPath}/pages/bookHistory.jsp" role="button"> 신청내역확인 </a></li>
+								<li class="nav-item active"><a class="nav-link"
+									href="${pageContext.request.contextPath}/pages/createEvent.jsp" role="button"> 행사개설 </a></li>
+							</ul>
+						</div>
 						</div>
 					</div>
 				</nav>

@@ -20,7 +20,7 @@ public class InsertNoticeController implements Controller {
 		Notice notice = new Notice(noticeSubject, noticeContent);
 
 		NoticeService.insert(notice);
-		ModelAndView mv = new ModelAndView(true, "viewToNotice"); 
+		ModelAndView mv = new ModelAndView(true, "front?key=viewToNotice"); 
 
 		return mv;
 	}

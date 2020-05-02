@@ -708,7 +708,7 @@ blockquote {
 /*-- Header style 1 --*/
 @media (max-width: 991px) {
   .header {
-    background: #191919;
+    background: #fff!important;
     box-shadow: 0px 1px 7px 0 rgba(0, 0, 0, 0.2);
   }
 }
@@ -720,7 +720,7 @@ blockquote {
 }
 
 .header-solid {
-  background: #191919;
+  background: #fff;
   box-shadow: 0px 1px 7px 0 rgba(0, 0, 0, 0.2);
 }
 
