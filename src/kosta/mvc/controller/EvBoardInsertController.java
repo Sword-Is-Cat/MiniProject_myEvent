@@ -7,29 +7,31 @@ import javax.servlet.http.HttpServletResponse;
 
 import kosta.mvc.service.EvBoardService;
 import kosta.mvc.vo.EvBoard;
+import kosta.mvc.vo.Event;
+import kosta.mvc.vo.User;
 
 public class EvBoardInsertController implements Controller {
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String evBoardNo = request.getParameter("evBoardNo");
-		String userName = request.getParameter("name");
-		String evBoardConten = request.getParameter("evBoardConten");
-		String evBoardTime = request.getParameter("evBoardTime");
+		int evNo = Integer.parseInt(request.getParameter("evNo"));
+		int userNo =Integer.parseInt(request.getParameter("userNo"));
+		int evBoardParentNo = Integer.parseInt(request.getParameter("evBoardParentNo"));
+		String evBoardContent = request.getParameter("evBoardContent");
+	
 		
-		if(evBoardNo==null || evBoardNo.equals("") ||
-				userName==null || userName.equals("") ||
-				evBoardConten == null || evBoardConten.equals("") || evBoardTime == null || evBoardTime.equals("")) {
-		} else {
+		if( evBoardContent==null|| evBoardContent.equals("")) {
+			throw new RuntimeException("입력값부족");
+		} 
+		
+		Event event = new Event();
+		event.setEvNo(evNo);
+		User user = new User();
+		user.setUserNo(userNo);
+		EvBoard evBoard = new EvBoard(event, user, evBoardParentNo, evBoardContent);
 
-		}
-		if (evBoardConten.equals("evBoardConten")) {
-			throw new RuntimeException("입력값이 충분하지 않습니다");
-		}
-		EvBoard elec = new EvBoard();
-
-		EvBoardService.insert(elec);
-		ModelAndView mv = new ModelAndView(true, "elec");
+		EvBoardService.insert(evBoard);
+		ModelAndView mv = new ModelAndView(true, "");
 		return mv;
 	}
 

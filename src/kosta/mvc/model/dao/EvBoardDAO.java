@@ -14,7 +14,6 @@ import java.util.Properties;
 import kosta.mvc.util.DbUtil;
 import kosta.mvc.vo.EvBoard;
 import kosta.mvc.vo.Event;
-import kosta.mvc.vo.Notice;
 import kosta.mvc.vo.User;
 
 
@@ -39,18 +38,18 @@ public class EvBoardDAO {
    /**
     * 1.게시물등록
     * */
-   public int evBoardinsert(final EvBoard evBoard) throws SQLException {
+   public int evBoardinsert( EvBoard evBoard) throws SQLException {
 
 		int result=0;
-	    final String sql = pro.getProperty("InsertEvBoard");   
+	     String sql = pro.getProperty("InsertEvBoard");   
 	 try {
 	       con=DbUtil.getConnection();
 	       ps = con.prepareStatement(sql);
-	       ps.setInt(1, evBoard.getEvBoardNo());
-	       ps.setInt(2, evBoard.getEvBoardParentNo());
-	       ps.setString(3, evBoard.getEvBoardContent());
-	       ps.setTimestamp(4, evBoard.getEvBoardTime());
-	   
+	       ps.setInt(1,evBoard.getEvent().getEvNo());
+	       ps.setInt(2, evBoard.getUser().getUserNo());
+	       ps.setInt(3, evBoard.getEvBoardParentNo());
+	       ps.setString(4,evBoard.getEvBoardContent());
+	       
 	         result = ps.executeUpdate();
 	 }finally {
 	    DbUtil.dbClose( ps, con);
@@ -58,6 +57,9 @@ public class EvBoardDAO {
 	 return result;
 	}
    		     
+//   InsertEvBoard=insert into evBoard
+//		   (evBoardNo, evNo, userNo, evBoardParentNo, evBoardContent,evBoardTime,
+//				   evBoardStatus)values(evBoardSeq.nextval, ?, ?, ?, ?, sysdate, 1)
 
    
    
@@ -66,34 +68,36 @@ public class EvBoardDAO {
        */
    public int Update(final EvBoard evBoard) throws SQLException {
       int result=0;
-      final String sql = pro.getProperty("UpdateEvBoard");   
+      String sql = pro.getProperty("UpdateEvBoard");   
    try {
-         con=DbUtil.getConnection();
-         ps = con.prepareStatement(sql);
-         ps.setInt(1, evBoard.getEvBoardNo());
-         ps.setInt(2, evBoard.getEvBoardParentNo());
-         ps.setString(3, evBoard.getEvBoardContent());
-         ps.setTimestamp(4, evBoard.getEvBoardTime());
-        
+	   con=DbUtil.getConnection();
+       ps = con.prepareStatement(sql);
+       
+       ps.setString(1,evBoard.getEvBoardContent());
+       
            result = ps.executeUpdate();
    }finally {
       DbUtil.dbClose( ps, con);
    }
    return result;
 }
+   
+   //updateEvBoard=update evBoard set evBoardContent=?
+   
+   
    /**
     * 삭제하기
     */
    public int Delete (final EvBoard evBoard ) throws SQLException {
       int result=0;
-         final String sql = pro.getProperty("DeleteEvBoard");   
+         final String sql = pro.getProperty("deleteEvBoard");   
       try {
-            con=DbUtil.getConnection();
-            ps = con.prepareStatement(sql);
-            ps.setInt(1, evBoard.getEvBoardNo());
-            ps.setInt(2, evBoard.getEvBoardParentNo());
-            ps.setString(3, evBoard.getEvBoardContent());
-            ps.setTimestamp(4, evBoard.getEvBoardTime());
+    	  con=DbUtil.getConnection();
+	       ps = con.prepareStatement(sql);
+	       ps.setInt(1,evBoard.getEvent().getEvNo());
+	       ps.setInt(2, evBoard.getUser().getUserNo());
+	       ps.setInt(3, evBoard.getEvBoardParentNo());
+	       ps.setString(4,evBoard.getEvBoardContent());
            
               result = ps.executeUpdate();
       }finally {
@@ -102,41 +106,48 @@ public class EvBoardDAO {
       return result;
    }
    
-
+  // deleteEvBoard=update evBoard set 
    
    /***
     * 2.전체검색
     * */
-   public List<EvBoard> selectAllEvBoard() throws SQLException {
+   public List<EvBoard> selectEvBoardByEvNo(int evNo) throws SQLException {
 
-		final List<EvBoard> list = new ArrayList<EvBoard>();
-		final String sql = pro.getProperty("EvBoardList");
+		List<EvBoard> list = new ArrayList<EvBoard>();
+		String sql = pro.getProperty("selectEvBoardByEvNo");
+		
 		try {
 			con=DbUtil.getConnection();
 			ps = con.prepareStatement(sql);
-		
+			ps.setInt(1,evNo);
 			rs = ps.executeQuery();
 			
 			while(rs.next()) {
-				final EvBoard evBoard =
-						new EvBoard ();
-						list.add(evBoard);
-			
-				list.add(evBoard);
+				 int evBoardNo = rs.getInt("evBoardNo");
+				 Event event = new Event();
+				 event.setEvNo(evNo);
+				 User user = new User();
+				 int userNo = rs.getInt("userNo");
+				 user.setUserNo(userNo);
+				 int evBoardParentNo = rs.getInt("evBoardParentNo");
+				 String evBoardContent = rs.getString("evBoardContent");
+				 Timestamp evBoardTime = rs.getTimestamp("evBoardTime");
+				 int evBoardStatus = rs.getInt("evBoardStatus");
+				 EvBoard evBoard = new EvBoard(evBoardNo, event, user, evBoardParentNo, evBoardContent, evBoardTime, evBoardStatus);
+				 list.add(evBoard);
+				
 			}
 		} finally {
 			DbUtil.dbClose(rs, ps, con);
 		}
 		return list;
 	}//end
+   //selectEvBoardByEvNo=select * from  evBoard where evNo=?
 
 
-   /**
-    * 3. evBoardNo에 해당하는 게시물 검색
-    * */
-  public EvBoard selectByEvBoardNo(final int evBoardNo) throws SQLException {
-   return null;
-    
-  }
+
+
+
+  
 
 }

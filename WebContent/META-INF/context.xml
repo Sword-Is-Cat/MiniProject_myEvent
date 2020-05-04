@@ -47,9 +47,9 @@
               auth="Container"
               type="javax.sql.DataSource" 
               driverClassName="oracle.jdbc.OracleDriver"
-              url="jdbc:oracle:thin:@192.168.0.145:1521:XE"
-              username="jang" 
-              password="jang" 
+              url="jdbc:oracle:thin:@localhost:1521:XE"
+              username="localevent" 
+              password="localevent" 
               maxTotal="20" 
               maxIdle="10"
               maxWaitMillis="-1"/>  -->
