@@ -15,18 +15,9 @@ public class InsertBookController implements Controller {
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		int evNo = Integer.parseInt(request.getParameter("evNo"));
-		HttpSession session = request.getSession();
-		int userNo = (int)session.getAttribute("userNo");
+		int userNo = (int)request.getSession().getAttribute("userNo");
 		
-		Event event = new Event();
-		event.setEvNo(evNo);
-		User user = new User();
-		user.setUserNo(userNo);
-		
-		Book book = new Book(user, event);
-		request.setAttribute("book", book);
-		
-		new BookDAO().insertBook(book);
+		new BookDAO().insertBook(userNo, evNo);
 		
 		ModelAndView mv = new ModelAndView(true, "front?key=selectEvent&evNo="+evNo);
 		
