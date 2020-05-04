@@ -15,7 +15,7 @@ public class EvBoardService {
    
    //전체검색
    public static List<EvBoard> selectAll() throws SQLException {
-      List<EvBoard> list = EvBoardDAO.selectAllEvBoard();
+      List<EvBoard> list = EvBoardDAO.selectEvBoardByEvNo(0);
       return list;
    }
    //상세검색

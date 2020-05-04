@@ -111,7 +111,7 @@ h2.entry-title a:hover{
 
 /*-- Header --*/
 .header{
-	//border-top: 5px solid #5c3fbf;
+	/* border-top: 5px solid #5c3fbf; */
 }
 
 .header-solid ul.navbar-nav > li:hover > a, .header-solid ul.navbar-nav > li.active > a {

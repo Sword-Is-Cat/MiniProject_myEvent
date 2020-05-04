@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>My Event :: Çà»ç¿Í ÇÔ²² ÇÏ´Â ¸ğµç ¼ø°£</title>
+  <title>My Event :: í–‰ì‚¬ì™€ í•¨ê»˜ í•˜ëŠ” ëª¨ë“  ìˆœê°„</title>
 
    <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -69,8 +69,7 @@
 </head>
 <body>    
 
-<%--   <% EvBoardDAO dao = new EvBoardDAO(); --%>
-<%--      dao.insert("EvBoard");%> --%>
+ 
 
  <c:import url="headerTop.jsp"/>
 <!--subTopMenu end-->   
@@ -85,17 +84,17 @@
            
     </div>
     <br>
-    <td><input  type=button value="±Û¾²±â" OnClick="window.location='evBoardWrite.jsp'"></td>
+    <td><input  type=button value="ê¸€ì“°ê¸°" OnClick="window.location='evBoardWrite.jsp'"></td>
     <div id="board">
         <table id="bList" width="800" border="3" bordercolor="lightgray">
             <tr heigh="30">
-                <td>±Û¹øÈ£</td>
-                 <td>È¸¿ø¹øÈ£</td>
-                <td>³»¿ë</td>
-                <td>½Ã°£</td>
+                <td>ê¸€ë²ˆí˜¸</td>
+                 <td>íšŒì›ë²ˆí˜¸</td>
+                <td>ë‚´ìš©</td>
+                <td>ì‹œê°„</td>
             </tr>    
             <tr heigh="30">
-                <td>${evBard.evBardNo}</td>
+                <td>${event.evNo}</td>
                  <td>${user.userNo}</td>
                 <td>${evBard.evBardConten}</td>
                 <td>${evBoard.evBardTime}</td>
@@ -112,13 +111,13 @@
     <div id="evb">
         <form align="center" >
             <select name="opt">
-               <option value="1">ÀüÃ¼</option>
-                <option value="2">±Û¹øÈ£</option>
-                <option value="3">Á¦¸ñ</option>
-                <option value="4">ÀÛ¼ºÀÚ</option>
+               <option value="1">ì „ì²´</option>
+                <option value="2">ê¸€ë²ˆí˜¸</option>
+                <option value="3">ì œëª©</option>
+                <option value="4">ì‘ì„±ì</option>
             </select>
             <input type="text" size="20" name="condition"/>&nbsp;
-            <input type="submit" value="°Ë»ö"/>
+            <input type="submit" value="ê²€ìƒ‰"/>
         </form>    
     </div>
 </div>       

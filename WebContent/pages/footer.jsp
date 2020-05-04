@@ -251,10 +251,8 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/jquery.counterup.min.js"></script>
 	<!-- Waypoints -->
 	<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/waypoints.min.js"></script>
-	<!-- google map -->
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
-	<script src="plugins/google-map/gmap.js"></script>
+	
+
 
 	<!-- Main Script -->
 	<script src="${pageContext.request.contextPath}/pages/js/script.js"></script>

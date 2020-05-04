@@ -61,7 +61,15 @@
 </head>
 
 <body>
-
+로그인된 사용자가 아니라면 로그인창으로 돌려줌
+<%
+	if(session.getAttribute("userId") == null) { 
+ 		session.setAttribute("  ", "게시물 작성은<br>로그인이 필요합니다.");
+ 		response.sendRedirect("../pages/login.jsp"); 
+		
+		return; 
+	} 
+%>
 
 	<h3>
 		<!--  1. 등록 -->
