@@ -15,4 +15,14 @@ public class FavoriteEvService {
 		return set;
 	}
 
+	public static void insert(int userNo, int evNo) throws SQLException {
+		int result = favoriteEvDAO.insert(userNo, evNo);
+		if(result==0)throw new SQLException("찜목록 등록에 실패하였습니다");		
+	}
+
+	public static void delete(int userNo, int evNo) throws SQLException {
+		int result = favoriteEvDAO.delete(userNo, evNo);
+		if(result==0)throw new SQLException("찜목록을 지우는데 실패하였습니다");
+	}
+
 }

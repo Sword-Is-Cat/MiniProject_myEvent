@@ -49,4 +49,40 @@ public class FavoriteEvDAO {
 			DbUtil.dbClose(rs, st, con);
 		}
 	}
+
+	public int delete(int userNo, int evNo) throws SQLException {
+		int result=0;
+		try {
+			String sql = pro.getProperty("deleteFavoriteEv");
+			con=DbUtil.getConnection();
+			ps=con.prepareStatement(sql);
+			
+			ps.setInt(1, userNo);
+			ps.setInt(2, evNo);
+			
+			result = ps.executeUpdate();
+			
+			return result;
+		}finally {
+			DbUtil.dbClose(ps, con);
+		}
+	}
+
+	public int insert(int userNo, int evNo) throws SQLException {
+		int result=0;
+		try {
+			String sql = pro.getProperty("insertFavoriteEv");
+			con=DbUtil.getConnection();
+			ps=con.prepareStatement(sql);
+			
+			ps.setInt(1, userNo);
+			ps.setInt(2, evNo);
+			
+			result = ps.executeUpdate();
+			
+			return result;
+		}finally {
+			DbUtil.dbClose(ps, con);
+		}
+	}
 }

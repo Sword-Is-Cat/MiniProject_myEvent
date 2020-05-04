@@ -57,11 +57,31 @@
 	rel="stylesheet">
 <script src="${pageContext.request.contextPath}/pages/plugins/jQuery/jquery.min.js"></script>
 <script>
+	function toggleFavoriteEvent(evNo){
+		$.ajax({
+			type : "GET",
+			url : "front?key=toggleFavoriteEvent&evNo="+evNo,
+			dataType : "text",
+		    success : function(result){
+		    	if(result.trim() == 'insert'){
+		    		$('.favEventIcon'+evNo).addClass('text-danger');
+		    	}else{
+		    		$('.favEventIcon'+evNo).removeClass('text-danger');
+		    	}
+		    },
+		    error: function(result){
+		    	console.log('result', result);
+		    	console.log('result.responseText', result.responseText);
+		    	console.log('result.error', result.error);
+		    }
+		});
+	}
+	
 	$(function(){
 		<c:forEach items='${favoriteEventsNo}' var='favEvNo' varStatus='status'>
 			if($('.favEventIcon${favEvNo}').length > 0){
 				$('.favEventIcon${favEvNo}').addClass('text-danger');
-				}
+			}
 		</c:forEach>
 	});
 </script>
@@ -289,8 +309,8 @@
 										<figcaption>
 											<a class="link icon-pentagon" href="portfolio-item.html"><i
 												class="fa fa-link"></i></a> <a class="view icon-pentagon"
-												data-rel="prettyPhoto" href="${pageContext.request.contextPath}/pages/images/thumnail/01.jpg"><i
-												class="fa fa-search favEventIcon${recentEv.evNo}"></i></a>
+												style="cursor:pointer;" onclick="toggleFavoriteEvent(${recentEv.evNo})"><i
+												class="favEventIcon${recentEv.evNo}"></i></a>
 										</figcaption>
 									</figure>
 									<div class="portfolio-static-desc">
@@ -335,7 +355,7 @@
 											<a class="link icon-pentagon" href="portfolio-item.html"><i
 												class="fa fa-link"></i></a> <a class="view icon-pentagon"
 												data-rel="prettyPhoto" href="${pageContext.request.contextPath}/pages/images/thumnail/01.jpg"><i
-												class="fa fa-search"></i></a>
+												class="fa fa-search favEventIcon${recentEv.evNo}"></i></a>
 										</figcaption>
 									</figure>
 									<div class="portfolio-static-desc">
