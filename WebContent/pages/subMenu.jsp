@@ -85,6 +85,9 @@
 						<div class="mypage-topnav__tab ">
 							<a class="subMenuList" href="interestEvent.jsp"> 관심 행사 목록 </a>
 						</div>
+						<div class="mypage-topnav__tab ">
+							<a class="subMenuList" href="#"> 내가 쓴 글 </a>
+						</div>
 						<div class="mypage-topnav__tab">
 							<a class="subMenuList" href="userInfoUpdate.jsp"> 회원정보 설정 </a>
 						</div>
