@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -17,27 +18,27 @@
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
-<link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/bootstrap/bootstrap.min.css">
 <!-- FontAwesome -->
-<link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/fontawesome/font-awesome.min.css">
 <!-- Animation -->
-<link rel="stylesheet" href="plugins/animate.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/animate.css">
 <!-- Prettyphoto -->
-<link rel="stylesheet" href="plugins/prettyPhoto.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/prettyPhoto.css">
 <!-- Owl Carousel -->
-<link rel="stylesheet" href="plugins/owl/owl.carousel.css">
-<link rel="stylesheet" href="plugins/owl/owl.theme.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.carousel.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.theme.css">
 <!-- Flexslider -->
-<link rel="stylesheet" href="plugins/flex-slider/flexslider.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/flex-slider/flexslider.css">
 <!-- Flexslider -->
-<link rel="stylesheet" href="plugins/cd-hero/cd-hero.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/cd-hero/cd-hero.css">
 <!-- Style Swicther -->
-<link id="style-switch" href="css/presets/preset3.css" media="screen"
+<link id="style-switch" href="${pageContext.request.contextPath}/pages/css/presets/preset3.css" media="screen"
 	rel="stylesheet" type="text/css">
 
 <!-- Main Stylesheet -->
-<link href="css/style.css" rel="stylesheet">
-<link href="css/defaultStyle.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/pages/css/style.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/pages/css/defaultStyle.css" rel="stylesheet">
 <!--Favicon-->
 <link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144"
@@ -111,7 +112,7 @@
 
 	<!-- interestEvent item start -->
 	<section id="portfolio-item">
-
+		<c:forEach items="${EventList}" var="event">
 		<div class="container mainContainer">
 			<!-- interestEvent item row start -->
 			<div class="row">
@@ -121,7 +122,7 @@
 						<div class="flexportfolio flexslider">
 							<ul class="slides">
 								<li><a href=""><img id="listImg"
-										src="https://eventusstorage.blob.core.windows.net/evs/Image/fintechkisa/16666/ProjectInfo/Cover/b3448c29214445e2a3a7033ab6242ef7.jpg?fixed"
+										src="${pageContext.request.contextPath}/eventImage/${event.evImg}?fixed"
 										alt=""></a></li>
 							</ul>
 						</div>
@@ -134,14 +135,14 @@
 					<div class="sidebar">
 						<div class="portfolio-desc">
 							<br>
-							<h4 class="widget-title">행사이름</h4>
-							<h5 class="widget-title">채널이름</h5>
-							<p>기간</p>
-							<p>유/무료</p>
-							<p>
-								<a href="#" class="project-btn btn btn-primary">참가신청</a> <a
-									href="#" class="project-btn btn btn-primary">삭제</a>
-							</p>
+							<h4 class="widget-title">행사 : ${event.evName}</h4>
+							<h5 class="widget-title">채널 : ${event.channel.chName}</h5>
+							<p>기간 : <fmt:formatDate value="${event.evTime.evStartTime}" type="both"/> ~ <fmt:formatDate value="${event.evTime.evEndTime}" type="both"/></p>
+							<p>장소 : ${event.evAddr}</p>
+							<div style="text-align:center;">
+								<a href="${pageContext.request.contextPath}/front?key=insertBookController&evNo=${event.evNo}" class="project-btn btn btn-primary">참가</a>&emsp;&emsp;&emsp; <a
+									href="${pageContext.request.contextPath}/front?key=deleteFavoriteEvent&evNo=${event.evNo}" class="project-btn btn btn-primary">삭제</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -149,45 +150,7 @@
 			</div>
 			<!-- interestEvent item row end -->
 		</div>
-		<!-- Container end -->
-		<br>
-		<div class="container">
-			<!-- interestEvent item row start -->
-			<div class="row">
-				<!-- interestEvent item img start -->
-				<div class="col-md-6 col-sm-12 col-xs-12">
-					<div class="portfolio-slider">
-						<div class="flexportfolio flexslider">
-							<ul class="slides">
-								<li><a href=""><img id="listImg"
-										src="https://eventusstorage.blob.core.windows.net/evs/Image/wisdom2korea/15201/ProjectInfo/Cover/88481d0ea4d1417cabe87f1a63a2a3b5.jpg?fixed"
-										alt=""></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<!-- interestEvent item img end-->
-
-				<!-- sidebar start -->
-				<div class="col-md-6 col-sm-12 col-xs-12">
-					<div class="sidebar">
-						<div class="portfolio-desc">
-							<br>
-							<h4 class="widget-title">행사이름</h4>
-							<h5 class="widget-title">채널이름</h5>
-							<p>기간</p>
-							<p>유/무료</p>
-							<p>
-								<a href="#" class="project-btn btn btn-primary">참가신청</a> <a
-									href="#" class="project-btn btn btn-primary">삭제</a>
-							</p>
-						</div>
-					</div>
-				</div>
-				<!-- sidebar end -->
-			</div>
-			<!-- interestEvent item row end -->
-		</div>
+		</c:forEach>
 		<!-- Container end -->
 	</section>
 	<!-- interestEvent item end -->

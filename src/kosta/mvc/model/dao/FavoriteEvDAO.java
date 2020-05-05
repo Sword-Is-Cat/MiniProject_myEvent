@@ -99,6 +99,7 @@ public class FavoriteEvDAO {
 	public List<Event> selectEventByEventNumbers(Set<Integer> set) throws SQLException {
 		int result=0;
 		
+		Iterator<Integer> iter = null;
 		List<Event> list = new ArrayList<>();
 
 		Map<Integer, User> userMap = new HashMap<>();
@@ -110,7 +111,12 @@ public class FavoriteEvDAO {
 		EvTime evTime = null;
 		Event event = null;
 		
-		Iterator<Integer> iter = set.iterator();
+		if(set!=null) {
+			iter = set.iterator();
+		}else {
+			return null;
+		}
+		
 		try {
 			boolean flag=false;
 			String sql=pro.getProperty("selectEventByEventNumbers");
@@ -121,8 +127,6 @@ public class FavoriteEvDAO {
 				flag=true;
 			}
 			sql+=")";
-			
-			System.out.println(sql);
 			
 			con=DbUtil.getConnection();
 			ps=con.prepareStatement(sql);

@@ -23,6 +23,9 @@ set.add(1);
 set.add(5);
 set.add(6);
 favEvDAO.selectEventByEventNumbers(set);
+
+Set<Integer> set2 = null;
+Set<Integer> set3 = (Set<Integer>) set2;
 %>
 </body>
 </html>
