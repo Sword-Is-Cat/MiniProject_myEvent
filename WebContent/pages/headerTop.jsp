@@ -30,7 +30,7 @@
 								<div class="dropdown-menu" style="border: 1.5px solid #222; border-radius: 10px;">
 									<a class="dropdown-item" href="${pageContext.request.contextPath}/pages/channelMng.jsp">채널 관리</a>
 									<a class="dropdown-item" href="${pageContext.request.contextPath}/pages/bookHistory.jsp">신청 행사 관리</a>
-									<a class="dropdown-item" href="${pageContext.request.contextPath}/pages/interestEvent.jsp">관심 행사 목록</a>
+									<a class="dropdown-item" href="${pageContext.request.contextPath}/front?key=favoriteEvent">관심 행사 목록</a>
 									<a class="dropdown-item" href="#">내가 쓴 글</a>
 									<a class="dropdown-item" href="${pageContext.request.contextPath}/front?key=userInfoUpdate">회원 정보 수정</a>
 								</div>
