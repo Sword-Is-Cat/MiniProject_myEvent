@@ -12,8 +12,8 @@ public class EvService {
 	private static EventDAO evDAO = new EventDAO();
 	private static FavoriteCateDAO favCateDAO = new FavoriteCateDAO();
 	
-	public static List<Event> selectRecentEvents() throws Exception {
-		List<Event> list = evDAO.selectRecentEvents();
+	public static List<Event> selectRecentEvents(int quentity) throws Exception {
+		List<Event> list = evDAO.selectRecentEvents(quentity);
 		if(list.size()==0) throw new SQLException("최근 이벤트 목록을 불러오는데 실패하였습니다");
 		
 		return list;

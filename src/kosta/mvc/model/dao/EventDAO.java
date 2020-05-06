@@ -641,7 +641,7 @@ public class EventDAO {
 
 	}
 
-	public List<Event> selectRecentEvents() throws Exception {
+	public List<Event> selectRecentEvents(int quntity) throws Exception {
 
 		List<Event> list = new ArrayList<>();
 		String sql = pro.getProperty("selectRecentEv");
@@ -660,7 +660,7 @@ public class EventDAO {
 			con = DbUtil.getConnection();
 			ps = con.prepareStatement(sql);
 
-			ps.setInt(1, 4);
+			ps.setInt(1, quntity);
 
 			rs = ps.executeQuery();
 

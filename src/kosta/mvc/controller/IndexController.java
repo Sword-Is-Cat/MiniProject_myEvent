@@ -17,7 +17,7 @@ public class IndexController implements Controller {
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		HttpSession session = request.getSession();
 		// 최근항목들
-		List<Event> recentEvList = EvService.selectRecentEvents();
+		List<Event> recentEvList = EvService.selectRecentEvents(4);
 		
 		List<Event> myCategoryEvList = null;
 
