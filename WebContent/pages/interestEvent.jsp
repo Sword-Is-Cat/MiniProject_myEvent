@@ -57,27 +57,7 @@
 	height: 270px;
 }
 
-.sidebar {
-	min-height: 270px;
-	width: 100%;
-	background-color: #f6f6f6;
-	padding-left: 10px;
-}
 
-.mainContainer {
-	padding: 50px 0px;
-}
-
-.menuSubnav__tab--active {
-	padding: 10px 20px;
-	border-bottom: 5px solid #8d71dd;
-	margin-bottom: -2px;
-	font-size: 16px;
-}
-
-.menuSubnav__tab {
-	padding: 10px 20px;
-}
 </style>
 
 </head>

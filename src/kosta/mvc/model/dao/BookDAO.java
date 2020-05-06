@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Properties;
 
 import kosta.mvc.util.DbUtil;
+import kosta.mvc.vo.Book;
+import kosta.mvc.vo.Event;
 import kosta.mvc.vo.User;
 
 public class BookDAO {
@@ -127,5 +129,39 @@ public class BookDAO {
 		
 		return list;
 		
+	}
+	
+	public List<Book> selectBookByUserNo(int userNo) throws Exception{
+		List<Book> list = new ArrayList<>();
+		Book book = null;
+		Event event = null;
+		String sql = pro.getProperty("selectBookByUserNo");
+		
+		try {
+			
+			con = DbUtil.getConnection();
+			ps = con.prepareStatement(sql);
+			
+			ps.setInt(1, userNo);
+			
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				event = new Event();
+				event.setEvName(rs.getString("evName"));
+				book = new Book(0, null, event, rs.getTimestamp("bookTime"), 0);
+				
+				list.add(book);
+				
+			}
+			
+			
+		}finally {
+			DbUtil.dbClose(rs, ps, con);
+			
+		}
+		
+		
+		return list;
 	}
 }
