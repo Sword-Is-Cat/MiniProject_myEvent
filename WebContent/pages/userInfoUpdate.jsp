@@ -84,25 +84,7 @@
 		<c:import url="header.jsp" />
 		<c:import url="subMenu.jsp" />
 
-		<div id="banner-area">
-			<img src="images/banner/banner1.jpg" alt="" />
-			<div class="parallax-overlay"></div>
-			<!-- Subpage title start -->
-			<div class="banner-title-content">
-				<div class="text-center">
-					<h2>내 정보 수정</h2>
-					<nav aria-label="breadcrumb">
-						<ol class="breadcrumb justify-content-center">
-							<li class="breadcrumb-item"><a href="#">모든 행사를</a></li>
-							<li class="breadcrumb-item text-white" aria-current="page">한곳에서
-								만나보세요</li>
-						</ol>
-					</nav>
-				</div>
-			</div>
-			<!-- Subpage title end -->
-		</div>
-		<!-- Banner area end -->
+	
 
 		<!-- 회원정보 변경 -->
 

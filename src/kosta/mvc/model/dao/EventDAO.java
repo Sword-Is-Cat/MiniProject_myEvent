@@ -283,6 +283,7 @@ public class EventDAO {
 		} finally {
 			DbUtil.dbClose(rs, ps, con);
 		}
+
 		return list;
 	}
 	

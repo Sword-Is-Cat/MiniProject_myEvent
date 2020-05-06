@@ -6,7 +6,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>My Event :: 행사와 함께 하는 모든 순간</title>
+<title>My Event :: 행사와 함께하는 모든 순간</title>
 
 <!-- mobile responsive meta -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,7 +44,6 @@
 	href="${pageContext.request.contextPath}/pages/css/presets/preset3.css"
 	media="screen" rel="stylesheet" type="text/css">
 
-
 <!-- Main Stylesheet -->
 <link href="${pageContext.request.contextPath}/pages/css/style.css"
 	rel="stylesheet">
@@ -62,23 +61,57 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
+<!-- jQuery -->
+<script
+	src="${pageContext.request.contextPath}/pages/plugins/jQuery/jquery.min.js"></script>
+<!-- Bootstrap JS -->
+<script
+	src="${pageContext.request.contextPath}/pages/plugins/bootstrap/bootstrap.min.js"></script>
+<!-- Style Switcher -->
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pages/plugins/style-switcher.js"></script>
+<!-- Owl Carousel -->
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pages/plugins/owl/owl.carousel.js"></script>
+<!-- PrettyPhoto -->
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pages/plugins/jquery.prettyPhoto.js"></script>
+<!-- Bxslider -->
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pages/plugins/flex-slider/jquery.flexslider.js"></script>
+<!-- CD Hero slider -->
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pages/plugins/cd-hero/cd-hero.js"></script>
+<!-- Isotope -->
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pages/plugins/isotope.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pages/plugins/ini.isotope.js"></script>
+<!-- Wow Animation -->
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pages/plugins/wow.min.js"></script>
+<!-- Eeasing -->
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pages/plugins/jquery.easing.1.3.js"></script>
+<!-- Counter -->
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pages/plugins/jquery.counterup.min.js"></script>
+<!-- Waypoints -->
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pages/plugins/waypoints.min.js"></script>
+
+
+<!-- Main Script -->
+<script src="${pageContext.request.contextPath}/pages/js/script.js"></script>
 
 <style>
-.mainContainer {
-	padding: 50px 0px;
+#qnaBoard {
+	margin-top: 1em;
 }
 
-.menuSubnav__tab--active {
-	padding: 10px 20px;
-	border-bottom: 5px solid #8d71dd;
-	margin-bottom: -2px;
-	font-size: 16px;
+#evInfo {
+	margin-top: 1em;
 }
-
-.menuSubnav__tab {
-	padding: 10px 20px;
-}
-/*------------------기존CSS---------------------------*/
 table {
 	width: 100%;
 	/*margin:0 auto;
@@ -91,64 +124,49 @@ thead {
 	text-align: center;
 	font-weight: bold;
 }
+h3{
+	margin-left: 45%;
+	color: #5c3fbf;
+	font-weight: bold;
+}
 </style>
 
 </head>
+
 <body>
 	<!--subTopMenu-->
 	<c:import url="headerTop.jsp" />
-	<!-- mainMenu -->
-	<c:import url="header.jsp" />
-	<!-- 상단 메뉴 -->
+	<!--subTopMenu end-->
 
-	
-	<c:import url="subMenu.jsp" />
-	<!-- subnav start -->
-	<div class="menuSubnav__section mt-xl-4">
-		<div class="container">
-			<div class="row">
-				<div class="col s12">
-					<div class="menuSubnav d-flex flex-row align-items-start">
-
-						<div class="menuSubnav__tab--active">
-							<a href="#">신청 행사 목록</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- subnav end -->
-
-	<!-- 서브메뉴ㄱㄱ -->
-	<!-- 서브메뉴 끝 -->
-
-
-	<!-- 여기서부터 원본 -->
-
-
+	<c:import url="header.jsp"></c:import>
+	<br><br>
+	<h3>신청자 목록</h3><br>
 	<div class="container mainContainer">
 		<div class="col s12 d-flex justify-content-between">
 			<table>
-				<thread>
-					<th>신청일</th>
-					<th>신청행사</th>
-				</thread>
+				<thead>
+					<th>ID</th>
+					<th>성명</th>
+					<th>전화번호</th>
+					<th>이메일</th>
+				</thead>
 				<tbody>
-					<c:forEach items="${requestScope.list}" var="book">
-						<tr>
-							<td><fmt:formatDate value="${requestScope.book.bookTime}"
-									pattern="yyyy/MM/dd hh:mm" /></td>
-							<td>${book.event.evName}</td>
-						</tr>
-					</c:forEach>
+					<c:forEach items="${requestScope.list}" var="user">
+					<tr style="text-align: center;">
+						<td>${user.userId}</td>
+						<td>${user.userName}</td>
+						<td>${user.userPhone}</td>
+						<td>${user.userEmail}</td>
+					</tr>
+					<!--/ Panel 1 end-->
+				</c:forEach>
 				</tbody>
 			</table>
 		</div>
 	</div>
 	<!-- container end -->
-
 	<!-- footer -->
+	<br><br>
 	<c:import url="footer.jsp"></c:import>
 </body>
 </html>

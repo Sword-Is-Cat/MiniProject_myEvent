@@ -35,12 +35,6 @@
 <link id="style-switch" href="${pageContext.request.contextPath}/pages/css/presets/preset3.css" media="screen"
 	rel="stylesheet" type="text/css">
 
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-<!--[if lt IE 9]>
-      <script src="plugins/html5shiv.js"></script>
-      <script src="plugins/respond.min.js"></script>
-    <![endif]-->
-
 <!-- Main Stylesheet -->
 <link href="${pageContext.request.contextPath}/pages/css/style.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/pages/css/defaultStyle.css" rel="stylesheet">
@@ -232,7 +226,7 @@
 								<div class=" wow fadeInDown" data-wow-delay=".5s"
 									style="width: 70px">
 									<div class="service-content text-center">
-										<a href="${pageContext.request.contextPath}/front?key=selectEventByCateNo=&cateNo5"> <img
+										<a href="${pageContext.request.contextPath}/front?key=selectEventByCateNo=&cateNo=5"> <img
 											src="${pageContext.request.contextPath}/pages/images/category/category-communite-hover2.svg"></span>
 											<h3>커뮤니티</h3>
 										</a>

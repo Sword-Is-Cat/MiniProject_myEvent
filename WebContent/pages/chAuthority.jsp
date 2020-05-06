@@ -137,7 +137,7 @@ hr{
 								<div class="col s12">
 									<div><h4>권한을 할당 받을 계정 ID를 입력하세요.</h4></div><br>
 									<input id="userId" name="userId" placeholder="id 입력">
-									<button id="idChk" type="button">중복 확인</button>
+									<button id="idChk" type="button">유저 확인</button>
 								</div>
 								<br>
 

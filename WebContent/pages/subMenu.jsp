@@ -52,14 +52,16 @@
 	color: #5c3fbf !important;
 }
 
-/*   .mypage-topnav__tab--active {
+   .mypage-topnav__tab:hover {
         width: 168px;
         font-size: 18px;
         font-weight: bold;
         padding: 20px;
         background-color: white;
-        border-bottom: 3px solid #ffc200;
-    } */
+        //border-bottom: 3px solid #ffc200;
+        color: #5c3fbf!important;
+        transition:0.2s;
+    } 
 .subMenuActive {
 	width: 168px;
 	font-size: 18px;
