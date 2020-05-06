@@ -56,6 +56,67 @@
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
 <script src="${pageContext.request.contextPath}/pages/plugins/jQuery/jquery.min.js"></script>
+
+<!-- mobile responsive meta -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<!-- Bootstrap -->
+
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/bootstrap/bootstrap.min.css">
+
+<!-- FontAwesome -->
+
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/fontawesome/font-awesome.min.css">
+
+<!-- Animation -->
+
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/animate.css">
+
+<!-- Prettyphoto -->
+
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/prettyPhoto.css">
+
+<!-- Owl Carousel -->
+
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.carousel.css">
+
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.theme.css">
+
+<!-- Flexslider -->
+
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/flex-slider/flexslider.css">
+
+<!-- Flexslider -->
+
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/cd-hero/cd-hero.css">
+
+<!-- Style Swicther -->
+
+<link id="style-switch" href="${pageContext.request.contextPath}/pages/css/presets/preset3.css" media="screen"
+	rel="stylesheet" type="text/css">
+
+
+<!-- Main Stylesheet -->
+
+<link href="${pageContext.request.contextPath}/pages/css/style.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/pages/css/defaultStyle.css" rel="stylesheet">
+
+<!--Favicon-->
+<link rel="icon" href="${pageContext.request.contextPath}/pages/images/favicon/32.png" type="image/x-icon" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144"
+	href="${pageContext.request.contextPath}/pages/images/favicon/144.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72"
+	href="${pageContext.request.contextPath}/pages/images/favicon/72.png">
+<link rel="apple-touch-icon-precomposed" href="${pageContext.request.contextPath}/pages/images/favicon/54.png">
+
+
+
 <style>
 /*---------원본css-----------------*/
 #btn {
@@ -118,107 +179,7 @@
 .chListMenu li {
 	padding: 10px 15px 10px 0px;
 	display: inline-block;
-}/* 
-.bgPart {
-	margin-top: 50px;
-	background: url("${pageContext.request.contextPath}/pages/images/hostcenter_top_image.jpg") no-repeat;
-	background-position: center center;
-	background-size: cover; //
-	padding-top: 50px;
 }
-.bgImg { //
-	height: 250px;
-}
-h4 .addCh::after {
-	content: "\f055";
-	font-family: FontAwesome;
-	font-style: normal;
-	font-weight: 900;
-	margin: 0 auto;
-	padding-right: 20px;
-	text-align: center;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-} */
-</style>
-
-<!-- mobile responsive meta -->
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1">
-
-
-
-<!-- Bootstrap -->
-
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/bootstrap/bootstrap.min.css">
-
-<!-- FontAwesome -->
-
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/fontawesome/font-awesome.min.css">
-
-<!-- Animation -->
-
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/animate.css">
-
-<!-- Prettyphoto -->
-
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/prettyPhoto.css">
-
-<!-- Owl Carousel -->
-
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.carousel.css">
-
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.theme.css">
-
-<!-- Flexslider -->
-
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/flex-slider/flexslider.css">
-
-<!-- Flexslider -->
-
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/cd-hero/cd-hero.css">
-
-<!-- Style Swicther -->
-
-<link id="style-switch" href="${pageContext.request.contextPath}/pages/css/presets/preset3.css" media="screen"
-	rel="stylesheet" type="text/css">
-
-
-
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-
-<!--[if lt IE 9]>
-      <script src="plugins/html5shiv.js"></script>
-      <script src="plugins/respond.min.js"></script>
-    <![endif]-->
-
-
-
-<!-- Main Stylesheet -->
-
-<link href="${pageContext.request.contextPath}/pages/css/style.css" rel="stylesheet">
-
-
-
-<!--Favicon-->
-
-<link rel="icon" href="img/favicon/favicon-32x32.png"
-	type="image/x-icon" />
-
-<link rel="apple-touch-icon-precomposed" sizes="144x144"
-	href="img/favicon/favicon-144x144.png">
-
-<link rel="apple-touch-icon-precomposed" sizes="72x72"
-	href="img/favicon/favicon-72x72.png">
-
-<link rel="apple-touch-icon-precomposed"
-	href="img/favicon/favicon-54x54.png">
-
-
-<style>
 #makeCh{
   background-color: #5c3fbf; 
   border: none;
@@ -253,6 +214,9 @@ h4 .addCh::after {
 						<div class="menuSubnav__tab--active">
 							<a href="channelMng.jsp">  채널 관리 </a>
 						</div>
+						<div class="menuSubnav__tab">
+							<a href="${pageContext.request.contextPath}/pages/createChannel.jsp">  채널 개설 </a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -273,16 +237,11 @@ h4 .addCh::after {
 					<td colspan="5">
 						<p align="center">
 							<b><span style="font-size: 9pt;">등록된 채널이 없습니다.</span></b>
-
 						</p> 
 						
 						<p align="center">
-							<a href="${pageContext.request.contextPath}/pages/createChannel.jsp" id="makeEv" class="btn btn-primary solid cd-btn align-self-center ">채널개설</a>
-						</p>
-						
-
-						
-
+							<a href="" id="makeEv" class="btn btn-primary solid cd-btn align-self-center ">채널개설</a>
+						</p> 
 					</td>
 				</tr>
 			</c:when>
