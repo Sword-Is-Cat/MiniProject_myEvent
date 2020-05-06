@@ -48,8 +48,8 @@
               type="javax.sql.DataSource" 
               driverClassName="oracle.jdbc.OracleDriver"
               url="jdbc:oracle:thin:@localhost:1521:XE"
-              username="localevent" 
-              password="localevent" 
+              username="jang" 
+              password="jang" 
               maxTotal="20" 
               maxIdle="10"
               maxWaitMillis="-1"/>
