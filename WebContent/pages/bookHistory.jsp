@@ -130,10 +130,10 @@ thead {
 	<div class="container mainContainer">
 		<div class="col s12 d-flex justify-content-between">
 			<table>
-				<thead>
-					<td>신청일</td>
-					<td>신청행사</td>
-				</thead>
+				<thread>
+					<th>신청일</th>
+					<th>신청행사</th>
+				</thread>
 				<tbody>
 					<c:forEach items="${requestScope.list}" var="book">
 						<tr>
