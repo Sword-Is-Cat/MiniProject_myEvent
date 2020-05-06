@@ -91,6 +91,12 @@ thead {
 	text-align: center;
 	font-weight: bold;
 }
+th{
+	text-align:center;
+}
+td{
+	text-align:center;
+}
 </style>
 
 </head>
@@ -131,15 +137,23 @@ thead {
 		<div class="col s12 d-flex justify-content-between">
 			<table>
 				<thread>
-					<th>신청일</th>
 					<th>신청행사</th>
+					<th>제목</th>
+					<th>기간</th>
+					<th>삭제</th>
 				</thread>
 				<tbody>
 					<c:forEach items="${requestScope.list}" var="book">
 						<tr>
-							<td><fmt:formatDate value="${requestScope.book.bookTime}"
-									pattern="yyyy/MM/dd hh:mm" /></td>
+							<td><a href="./front?key=selectEvent&evNo=${book.event.evNo}"><img src="${pageContext.request.contextPath}/eventImage/${book.event.evImg}" alt="" width="250" height="150"></a></td>
 							<td>${book.event.evName}</td>
+							<td><fmt:formatDate value="${book.event.evTime.evStartTime}"
+								pattern="yyyy/MM/dd hh:mm" />
+								~
+								<fmt:formatDate value="${book.event.evTime.evStartTime}"
+								pattern="yyyy/MM/dd hh:mm" />
+							</td>
+							<td><a href="${pageContext.request.contextPath}/front?key=deleteBookController&evNo=${book.event.evNo}">삭제</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

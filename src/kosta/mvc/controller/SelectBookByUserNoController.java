@@ -12,9 +12,7 @@ import kosta.mvc.vo.Book;
 public class SelectBookByUserNoController implements Controller {
 
 	@Override
-	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		// TODO Auto-generated method stub
-		
+	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {		
 		HttpSession session = request.getSession();
 		int userNo = (int)session.getAttribute("userNo");
 		

@@ -9,13 +9,12 @@ public class DeleteBookController implements Controller {
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		// TODO Auto-generated method stub
 		int evNo = Integer.parseInt(request.getParameter("evNo"));
 		int userNo = (int)request.getSession().getAttribute("userNo");
 		
 		new BookDAO().deleteBook(userNo, evNo);
 		
-		ModelAndView mv = new ModelAndView(true, "front?key=selectEvent&evNo="+evNo);
+		ModelAndView mv = new ModelAndView(true, "front?key=selectBookByUserNo");
 		
 		return mv;
 	}
