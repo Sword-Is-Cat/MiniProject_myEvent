@@ -1,12 +1,15 @@
 package kosta.mvc.controller;
 
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kosta.mvc.model.dao.EventDAO;
 import kosta.mvc.service.ChannelService;
 import kosta.mvc.vo.Channel;
-import kosta.mvc.vo.User;
+import kosta.mvc.vo.Event;
 
 public class ChannelDetailController implements Controller{
 
@@ -21,8 +24,14 @@ public class ChannelDetailController implements Controller{
 		//Channel channel = ChannelService.selectByChNo(chNo, state, userId);
 		Channel channel = ChannelService.selectByChNo(chNo);
 		request.setAttribute("channel", channel);
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/pages/channelDetail.jsp");
+		
+		List<Event> newList = new EventDAO().selectNewEventByChNo(chNo);
+		List<Event> endList = new EventDAO().selectEndEventByChNo(chNo);
+		
+		request.setAttribute("newList", newList);
+		request.setAttribute("endList", endList);
+		
+		ModelAndView mv = new ModelAndView(false, "/pages/channelDetail.jsp");
 		
 		return mv;
 	}
