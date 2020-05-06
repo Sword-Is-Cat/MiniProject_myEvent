@@ -5,10 +5,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import kosta.mvc.util.DbUtil;
-import kosta.mvc.vo.Book;
+import kosta.mvc.vo.User;
 
 public class BookDAO {
 	Connection con;
@@ -93,5 +95,37 @@ public class BookDAO {
 		}
 
 		return result;
+	}
+	
+	public List<User> selectUserByBookedEvNo(int evNo) throws Exception{
+		
+		List<User> list = new ArrayList<>();
+		User user = null;
+		String sql = pro.getProperty("selectUserByBookedEvNo");
+		
+		try {
+			
+			con = DbUtil.getConnection();
+			ps = con.prepareStatement(sql);
+			
+			ps.setInt(1, evNo);
+			
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				
+				user = new User(rs.getInt("userNo"), rs.getString("userId"), rs.getString("userPwd"), 
+						rs.getString("userName"), rs.getString("userAddr"), rs.getString("userPhone"), 
+						rs.getString("userEmail"), rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
+				list.add(user);
+				
+			}
+			
+		}finally {
+			DbUtil.dbClose(rs, ps, con);
+		}
+		
+		return list;
+		
 	}
 }
