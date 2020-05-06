@@ -74,6 +74,10 @@
 </head>
 
 <body>
+	<!--subTopMenu-->
+	<c:import url="headerTop.jsp" />
+	<!-- mainMenu -->
+	<c:import url="header.jsp" />
 	
 	<div id="banner-area">
 		<img src="images/banner/banner1.jpg" alt="" />
@@ -175,9 +179,7 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/jquery.counterup.min.js"></script>
 	<!-- Waypoints -->
 	<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/waypoints.min.js"></script>
-	<!-- google map -->
-	<script
-		src="${pageContext.request.contextPath}/pages/https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
+	
 	<script src="${pageContext.request.contextPath}/pages/plugins/google-map/gmap.js"></script>
 	
 	<!-- Main Script -->

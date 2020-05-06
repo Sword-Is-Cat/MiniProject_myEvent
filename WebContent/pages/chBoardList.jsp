@@ -85,7 +85,8 @@
 							class="h4 mb-0 font-weight-bold text-uppercase d-block p-2 pl-5"
 							data-toggle="collapse" data-target="#collapseOne"
 							aria-expanded="true" aria-controls="collapseOne">
-							${chBoard.chBoardNo}번 | ${chBoard.user.userName} | ${chBoard.chBoardTime } |
+							
+							${chBoard.chBoardNo}번 | ${chBoard.user.userName} | <fmt:formatDate value="${chBoard.chBoardTime }" pattern="yyyy-MM-dd"/> |
 							${chBoard.chBoardStar}점</a>
 					</div>
 					<div id="collapseOne" class="collapse show"
@@ -129,9 +130,7 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/jquery.counterup.min.js"></script>
 	<!-- Waypoints -->
 	<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/waypoints.min.js"></script>
-	<!-- google map -->
-	<script
-		src="${pageContext.request.contextPath}/pages/https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
+	
 	<script src="${pageContext.request.contextPath}/pages/plugins/google-map/gmap.js"></script>
 	<script type="text/javascript" src="plugins/waypoints.min.js"></script>
 

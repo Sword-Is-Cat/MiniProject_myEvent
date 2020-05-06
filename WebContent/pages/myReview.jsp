@@ -130,6 +130,7 @@ thead {
 					<td>채널 이름</td>
 					<td>상세내용</td>
 					<td>별점</td>
+					<td>날짜</td>
 				</thead>
 				<c:forEach items="${myChB}" var="myChBoard">
 				<tbody>
@@ -138,6 +139,7 @@ thead {
 							<td>${myChBoard.channel.chName}</td>
 							<td>${myChBoard.chBoardContent}</td>
 							<td>${myChBoard.chBoardStar}점</td>			
+							<td><fmt:formatDate value="${chBoard.chBoardTime }" pattern="yyyy-MM-dd"/></td>
 						</tr>
 					
 				</tbody>
