@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import kosta.mvc.model.dao.BookDAO;
 import kosta.mvc.model.dao.EventDAO;
+import kosta.mvc.model.dao.FavoriteEvDAO;
 import kosta.mvc.model.dao.ManagerDAO;
 import kosta.mvc.vo.Event;
 
@@ -51,9 +52,14 @@ public class SelectEventController implements Controller {
 		if(new BookDAO().checkBook(userNo, evNo)==1)
 			isBook = true;
 		
+		boolean isFavor = false;
+		if(new FavoriteEvDAO().checkFavorite(userNo, evNo)==1)
+			isFavor = true;
+		
 		request.setAttribute("event", event);
 		request.setAttribute("isManager", isManager);
 		request.setAttribute("isBook", isBook);
+		request.setAttribute("isFavor", isFavor);
 		
 		ModelAndView mv = new ModelAndView(false, "pages/event.jsp");
 		return mv;

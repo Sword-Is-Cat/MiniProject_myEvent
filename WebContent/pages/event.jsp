@@ -16,27 +16,39 @@
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/bootstrap/bootstrap.min.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/pages/plugins/bootstrap/bootstrap.min.css">
 <!-- FontAwesome -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/fontawesome/font-awesome.min.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/pages/plugins/fontawesome/font-awesome.min.css">
 <!-- Animation -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/animate.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/pages/plugins/animate.css">
 <!-- Prettyphoto -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/prettyPhoto.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/pages/plugins/prettyPhoto.css">
 <!-- Owl Carousel -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.carousel.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.theme.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/pages/plugins/owl/owl.carousel.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/pages/plugins/owl/owl.theme.css">
 <!-- Flexslider -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/flex-slider/flexslider.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/pages/plugins/flex-slider/flexslider.css">
 <!-- Flexslider -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/cd-hero/cd-hero.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/pages/plugins/cd-hero/cd-hero.css">
 <!-- Style Swicther -->
-<link id="style-switch" href="${pageContext.request.contextPath}/pages/css/presets/preset3.css" media="screen"
-	rel="stylesheet" type="text/css">
+<link id="style-switch"
+	href="${pageContext.request.contextPath}/pages/css/presets/preset3.css"
+	media="screen" rel="stylesheet" type="text/css">
 
 <!-- Main Stylesheet -->
-<link href="${pageContext.request.contextPath}/pages/css/style.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/pages/css/defaultStyle.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/pages/css/style.css"
+	rel="stylesheet">
+<link
+	href="${pageContext.request.contextPath}/pages/css/defaultStyle.css"
+	rel="stylesheet">
 <!--Favicon-->
 <link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144"
@@ -49,31 +61,43 @@
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
 <!-- jQuery -->
-<script src="${pageContext.request.contextPath}/pages/plugins/jQuery/jquery.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/pages/plugins/jQuery/jquery.min.js"></script>
 <!-- Bootstrap JS -->
-<script src="${pageContext.request.contextPath}/pages/plugins/bootstrap/bootstrap.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/pages/plugins/bootstrap/bootstrap.min.js"></script>
 <!-- Style Switcher -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/style-switcher.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pages/plugins/style-switcher.js"></script>
 <!-- Owl Carousel -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/owl/owl.carousel.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pages/plugins/owl/owl.carousel.js"></script>
 <!-- PrettyPhoto -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/jquery.prettyPhoto.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pages/plugins/jquery.prettyPhoto.js"></script>
 <!-- Bxslider -->
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/pages/plugins/flex-slider/jquery.flexslider.js"></script>
 <!-- CD Hero slider -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/cd-hero/cd-hero.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pages/plugins/cd-hero/cd-hero.js"></script>
 <!-- Isotope -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/isotope.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/ini.isotope.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pages/plugins/isotope.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pages/plugins/ini.isotope.js"></script>
 <!-- Wow Animation -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/wow.min.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pages/plugins/wow.min.js"></script>
 <!-- Eeasing -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/jquery.easing.1.3.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pages/plugins/jquery.easing.1.3.js"></script>
 <!-- Counter -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/jquery.counterup.min.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pages/plugins/jquery.counterup.min.js"></script>
 <!-- Waypoints -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/waypoints.min.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pages/plugins/waypoints.min.js"></script>
 
 
 <!-- Main Script -->
@@ -123,30 +147,57 @@
 							<h3 class="widget-title">${requestScope.event.channel.chName}</h3>
 							<p>${requestScope.event.channel.chDescription}</p>
 							<br />
-							<% if ((boolean) request.getAttribute("isManager") == true) { %>
+							<%
+								if ((boolean) request.getAttribute("isManager") == true) {
+							%>
 							<p>
 								<a
 									href="front?key=enterUpdateEvent&evNo=${requestScope.event.evNo}"
-									class="project-btn btn btn-primary">수정하기</a>
+									class="project-btn btn btn-primary">행사수정하기</a>
 							</p>
 							<p>
 								<a
 									href="front?key=deleteEvent&chNo=${requestScope.event.channel.chNo}&evNo=${requestScope.event.evNo}"
-									class="project-btn btn btn-primary">삭제하기</a>
+									class="project-btn btn btn-primary">행사삭제하기</a>
 							</p>
-							<% } else if((boolean) request.getAttribute("isBook") == true) { %>
+							<%
+								} else {
+									if ((boolean) request.getAttribute("isBook") == true) {
+							%>
 							<p>
 								<a
 									href="front?key=deleteBookController&evNo=${requestScope.event.evNo}"
-									class="project-btn btn btn-primary">취소하기</a>
+									class="project-btn btn btn-primary">행사신청취소</a>
 							</p>
-							<% } else {%>
+							<%
+								} else {
+							%>
 							<p>
 								<a
 									href="front?key=insertBookController&evNo=${requestScope.event.evNo}"
-									class="project-btn btn btn-primary">신청하기</a>
+									class="project-btn btn btn-primary">행사신청하기</a>
 							</p>
-							<% } %>
+							<%
+								}
+									if ((boolean) request.getAttribute("isFavor") == true) {
+							%>
+							<p>
+								<a
+									href="front?key=favoriteEvent&evNo=${requestScope.event.evNo}"
+									class="project-btn btn btn-primary">관심행사취소</a>
+							</p>
+							<%
+								} else {
+							%>
+							<p>
+								<a
+									href="front?key=deleteFavoriteEvent&evNo=${requestScope.event.evNo}"
+									class="project-btn btn btn-primary">관심행사등록</a>
+							</p>
+							<%
+								}
+								}
+							%>
 						</div>
 					</div>
 				</div>

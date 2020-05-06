@@ -60,14 +60,14 @@
 /*$(function(){
 	
 		if(${sessionScope.userStatus}==2) {
-		${'.writeBtn'}.show();
-		 ${'.delectSpace'}.append("<td class="noticeDelete"><input type="button" value="삭제" /></td>
+		$('.writeBtn').show();
+		 $('.delectSpace').append("<td class="noticeDelete"><input type="button" value="삭제" /></td>
 								<div class="editBtns">
 									<input type="button" class="btn btn-info modifyBtn" value="수정" onClick="sendDelete()"/>
 									<input type="button" class="btn btn-info deleteBtn" value="삭제" onClick="sendDelete()"/>
 								</div>");
 	}else {
-		${'.writeBtn'}.hide();
+		$('.writeBtn').hide();
 	}; 
 	
 	function sendUpdate(){//수정
@@ -128,7 +128,8 @@ table {text-align: center;}
 	<div class="row justify-content-center">
 		<div class="col s12">
 			<h3 class="noticeTitle">공지사항</h3>
-			<input type="button" class="btn btn-info writeBtn float-right" value="공지작성" onclick="location.href='./pages/noticeWrite.jsp'"/>
+			<input type="button" class="btn btn-info writeBtn float-right" value="글쓰기" onclick="location.href='${pageContext.request.contextPath}/pages/noticeWrite.jsp'"/>
+
 		</div>
 		
 			<table class="table table-hover">
@@ -147,7 +148,7 @@ table {text-align: center;}
 						<tr class="accordion-toggle delectSpace" data-toggle="collapse"
 							data-target="#no${notice.noticeNo}">
 							<td>${notice.noticeNo}</td>
-							<td><a href="./front?key=viewToNotice?noticeNo=${notice.noticeNo}">${notice.noticeSubject}</a></td>
+							<td><%-- <a href="${pageContext.request.contextPath}/front?key=viewToNotice?noticeNo=${notice.noticeNo}"> --%>${notice.noticeSubject}<!-- </a> --></td>
 							<td><fmt:formatDate value="${notice.noticeTime}" type="date"/></td>
 				
 							
@@ -157,19 +158,9 @@ table {text-align: center;}
 							<td>${notice.noticeContent}
 								<div class="gap-40"></div>
 								<div class="editBtns">
-									<!-- <input type="button" class="btn btn-info modifyBtn" value="수정" onClick="sendDelete()"/>
-									<input type="button" class="btn btn-info deleteBtn" value="삭제" onClick="sendDelete()"/> -->
-									
-									<form name="requestForm" method=post action="${path}/front">
-      
-									<!-- 수정시 필요한 데이터들을 hidden으로 숨겨놓고 폼 데이터로 보내준다. -->
-										<input type=hidden name="noticeSubject" value="${notice.noticeNo}">
-										<input type=hidden name="key" value="">
-										<input type="button" class="btn btn-info modifyBtn" value="수정" onClick="location.href='front?key=updateNotice?noticeNo=${noticeNo}'">
-										<input type="button" class="btn btn-info deleteBtn" value="삭제" onClick="location.href='front?key=deleteNotice?noticeNo=${noticeNo}'">
-						    		</form>
-														
-								
+									<input type="button" class="btn btn-info modifyBtn" value="수정" onClick="location.href='${pageContext.request.contextPath}/front?key=updateNotice?noticeNo=${notice.noticeNo}'">
+									<input type="button" class="btn btn-info deleteBtn" value="삭제" onClick="location.href='${pageContext.request.contextPath}/front?key=deleteNotice?noticeNo=${notice.noticeNo}'">
+
 								</div>
 							
 							</td>
@@ -186,17 +177,19 @@ table {text-align: center;}
 		
 	</div>
 </div>
-<script type="text/javascript">
 
-/* $('.deleteBtn').click(function(){
-	document.requestForm.key.value ="deleteNotice";
-	document.requestForm.submit();
+<script>
+	$('.deleteBtn').click(function() {
+		var r = confirm("해당 공지를 삭제하시겠습니까?");
+		  if (r == true) {
+		   
+		  } else {
+		    location.href='${pageContext.request.contextPath}/front?key=viewToNotice';
+		  }
+	});
 	
-});
- */
+	
 </script>
-
-
 	<!-- footer -->
 
 	<c:import url="./footer.jsp"></c:import>

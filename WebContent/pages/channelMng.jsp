@@ -279,7 +279,7 @@ h4 .addCh::after {
 					<td colspan="5">
 						<p align="center">
 							<b><span style="font-size: 9pt;">등록된 채널이 없습니다.</span></b>
-						</p> <a href="#0" id="makeEv" class="btn btn-primary solid cd-btn">채널개설</a>
+						</p> <a href="${pageContext.request.contextPath}/pages/createChannel.jsp" id="makeEv" class="btn btn-primary solid cd-btn">채널개설</a>
 					</td>
 				</tr>
 			</c:when>
@@ -343,12 +343,11 @@ h4 .addCh::after {
 							<div class="col-md-9 col-sm-6">
 
 								<div id="chDesc" class="team team-list wow slideInRight">
-									<h4>媛��ㅽ����: n媛�</h4>
 									<div class="cd-full-width btnOpen">
 
 										<div id="chDesc" class="team team-list wow slideInRight">
 
-											<h4>개설행사: n개</h4>
+											<h4> </h4>
 											<div class="cd-full-width btnOpen">
 
 												<a href="#0" id="makeEv"
