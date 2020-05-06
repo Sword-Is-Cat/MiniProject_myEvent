@@ -40,11 +40,9 @@ public class CreateChBoardController implements Controller {
 		chBoard.setChBoardContent(chBoardContent);
 		chBoard.setChBoardStar(chBoardStar);
 		chBoard.setChBoardTime(chBoardTime);
-		System.out.println("controller service 넘어가기 전");
 		
 		ChBoardService.insertChBoard(chBoard);
 		
-		System.out.println("controller service에서 넘어옴");
 		ModelAndView mv = new ModelAndView(true, request.getServletContext().getContextPath()+"/front?key=channelDetail&chNo="+chNo);
 		// viewName을 바꿔야됨 채널 디테일로
 		

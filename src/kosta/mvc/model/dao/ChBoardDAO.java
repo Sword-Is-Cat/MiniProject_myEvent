@@ -32,7 +32,6 @@ public class ChBoardDAO {
 		Connection con = DbUtil.getConnection();
 		PreparedStatement ps = null;
 		int result = 0;
-		System.out.println("DAO 도착, try 가기 전");
 		try {
 			String sql = pro.getProperty("createChBoard");
 			ps = con.prepareStatement(sql);
@@ -73,6 +72,38 @@ public class ChBoardDAO {
 				User user = new User(userNo);
 				Channel channel = new Channel(chNo);
 				user.setUserName(rs.getString("userName"));
+				chBoard = new ChBoard(chBoardNo, user, channel, chBoardContent, chBoardStar, chBoardStatus, chBoardTime);
+				list.add(chBoard);
+			}
+		} finally {
+			DbUtil.dbClose(rs, ps, con);
+		}
+		return list;
+	}
+
+	public List<ChBoard> selectChBoardByUserNo(int userNo) throws SQLException {
+		Connection con = DbUtil.getConnection();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<ChBoard> list = new ArrayList<>();
+		ChBoard chBoard = null;
+		String sql=pro.getProperty("selectChBoardByUserNo");
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, userNo);
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				int chBoardNo = rs.getInt("chBoardNo");
+				int chNo = rs.getInt("chNo");
+				String chBoardContent = rs.getString("chBoardContent");
+				int chBoardStar = rs.getInt("chBoardStar");
+				int chBoardStatus = rs.getInt("chBoardStatus");
+				Timestamp chBoardTime = rs.getTimestamp("chBoardTime");
+				
+				User user = new User(userNo);
+				Channel channel = new Channel(chNo);
+				channel.setChName(rs.getString("chName"));
 				chBoard = new ChBoard(chBoardNo, user, channel, chBoardContent, chBoardStar, chBoardStatus, chBoardTime);
 				list.add(chBoard);
 			}
