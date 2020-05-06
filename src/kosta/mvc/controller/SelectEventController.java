@@ -2,6 +2,7 @@ package kosta.mvc.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kosta.mvc.model.dao.BookDAO;
 import kosta.mvc.model.dao.EventDAO;
@@ -12,10 +13,13 @@ public class SelectEventController implements Controller {
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
+		HttpSession session = request.getSession();
 		int evNo = Integer.parseInt(request.getParameter("evNo"));
-		int userNo = (int)request.getSession().getAttribute("userNo");
-
+		int userNo = -1;
+		if(request.getSession().getAttribute("userNo")!=null) {
+			userNo = (int)request.getSession().getAttribute("userNo");
+		}
+		
 		Event event = new EventDAO().selectEventByEvNo(evNo);
 
 		if (event.getEvAddr().equals("Online")) {

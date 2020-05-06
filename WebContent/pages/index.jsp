@@ -307,7 +307,7 @@
 									<figure class="m-0 effect-oscar">
 										<img src="${pageContext.request.contextPath}/eventImage/${recentEv.evImg}" alt="${recentEv.evImg}">
 										<figcaption>
-											<a class="link icon-pentagon" href="portfolio-item.html"><i
+											<a class="link icon-pentagon" href="./front?key=selectEvent&evNo=${recentEv.evNo}"><i
 												class="fa fa-link"></i></a> <a class="view icon-pentagon"
 												style="cursor:pointer;" onclick="toggleFavoriteEvent(${recentEv.evNo})"><i
 												class="favEventIcon${recentEv.evNo}"></i></a>
@@ -352,10 +352,10 @@
 									<figure class="m-0 effect-oscar">
 										<img src="${pageContext.request.contextPath}/eventImage/${recentEv.evImg}" alt="${recentEv.evImg}">
 										<figcaption>
-											<a class="link icon-pentagon" href="portfolio-item.html"><i
+											<a class="link icon-pentagon" href="./front?key=selectEvent&evNo=${recentEv.evNo}"><i
 												class="fa fa-link"></i></a> <a class="view icon-pentagon"
-												data-rel="prettyPhoto" href="${pageContext.request.contextPath}/pages/images/thumnail/01.jpg"><i
-												class="fa fa-search favEventIcon${recentEv.evNo}"></i></a>
+												style="cursor:pointer;" onclick="toggleFavoriteEvent(${recentEv.evNo})"><i
+												class="favEventIcon${recentEv.evNo}"></i></a>
 										</figcaption>
 									</figure>
 									<div class="portfolio-static-desc">

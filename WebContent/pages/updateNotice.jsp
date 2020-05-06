@@ -92,13 +92,6 @@
 
 		</div>
 	</div>
-	</div>
-	<!--/ container end -->
-	</section>
-	<!--/ Main container end -->
-
-
-	</div>
 	<!-- Body inner end -->
 
 	<!-- footer -->
