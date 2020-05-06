@@ -129,7 +129,7 @@
 }
 .bgPart {
 	margin-top: 50px;
-	background: url("images/hostcenter_top_image.jpg") no-repeat;
+	background: url("${pageContext.request.contextPath}/pages/images/hostcenter_top_image.jpg") no-repeat;
 	background-position: center center;
 	background-size: cover; //
 	padding-top: 50px;
@@ -207,7 +207,7 @@ h4 .addCh::after {
 
 <!-- Main Stylesheet -->
 
-<link href="css/style.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/pages/css/style.css" rel="stylesheet">
 
 
 
@@ -375,11 +375,11 @@ h4 .addCh::after {
 												<div class="col-sm-5 portfolio-static-item">
 													<div class="grid">
 														<figure class="m-0 effect-oscar">
-															<img src="images/thumnail/03.jpg" alt="">
+															<img src="${pageContext.request.contextPath}/pages/images/thumnail/03.jpg" alt="">
 															<figcaption>
 																<a class="link icon-pentagon" href="portfolio-item.html"><i
 																	class="fa fa-link"></i></a> <a class="view icon-pentagon"
-																	data-rel="prettyPhoto" href="images/thumnail/03.jpg"><i
+																	data-rel="prettyPhoto" href="${pageContext.request.contextPath}/pages/images/thumnail/03.jpg"><i
 																	class="fa fa-search"></i></a>
 															</figcaption>
 														</figure>
@@ -395,11 +395,11 @@ h4 .addCh::after {
 												<div class="col-sm-5 portfolio-static-item">
 													<div class="grid">
 														<figure class="m-0 effect-oscar">
-															<img src="images/thumnail/04.jpg" alt="">
+															<img src="${pageContext.request.contextPath}/pages/images/thumnail/04.jpg" alt="">
 															<figcaption>
 																<a class="link icon-pentagon" href="portfolio-item.html"><i
 																	class="fa fa-link"></i></a> <a class="view icon-pentagon"
-																	data-rel="prettyPhoto" href="/pages/images/thumnail/04.jpg"><i
+																	data-rel="prettyPhoto" href="${pageContext.request.contextPath}/pages/images/thumnail/04.jpg"><i
 																	class="fa fa-search"></i></a>
 															</figcaption>
 														</figure>

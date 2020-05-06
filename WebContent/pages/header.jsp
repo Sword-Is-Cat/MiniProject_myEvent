@@ -21,7 +21,7 @@
 	font-size: 12px !important;
 	position: fixed;
 }
-/*--寃���李�--*/
+
 .form-control:focus {
 	box-shadow: none;
 }
@@ -138,9 +138,9 @@ img.mainLogo {
 								<li class="nav-item active"><a class="nav-link"
 									href="${pageContext.request.contextPath}/pages/about.jsp" role="button"> 회사소개 </a></li>
 								<li class="nav-item active"><a class="nav-link"
-									href="${pageContext.request.contextPath}/pages/bookHistory.jsp" role="button"> 신청내역확인 </a></li>
+									href="${pageContext.request.contextPath}/pages/bookHistory.jsp" role="button"> 신청내역확인 (미구현) </a></li>
 								<li class="nav-item active"><a class="nav-link"
-									href="${pageContext.request.contextPath}/pages/createEvent.jsp" role="button"> 행사개설 </a></li>
+									href="${pageContext.request.contextPath}/pages/createEvent.jsp" role="button"> 채널/행사개설 작업예정 </a></li>
 							</ul>
 						</div>
 						<div class="collapse" id="navigation">
@@ -151,9 +151,9 @@ img.mainLogo {
 								<li class="nav-item active"><a class="nav-link"
 									href="${pageContext.request.contextPath}/pages/about.jsp" role="button"> 회사소개 </a></li>
 								<li class="nav-item active"><a class="nav-link"
-									href="${pageContext.request.contextPath}/pages/bookHistory.jsp" role="button"> 신청내역확인 </a></li>
+									href="${pageContext.request.contextPath}/pages/bookHistory.jsp" role="button"> 신청내역확인 (미구현) </a></li>
 								<li class="nav-item active"><a class="nav-link"
-									href="${pageContext.request.contextPath}/pages/createEvent.jsp" role="button"> 행사개설 </a></li>
+									href="${pageContext.request.contextPath}/pages/createEvent.jsp" role="button"> 채널/행사개설 작업예정 </a></li>
 							</ul>
 						</div>
 						</div>

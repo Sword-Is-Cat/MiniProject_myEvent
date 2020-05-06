@@ -19,7 +19,7 @@ public class SelectEventByCateNoController implements Controller {
 
 		request.setAttribute("list", list);
 
-		ModelAndView mv = new ModelAndView(true, "☆★☆★어디로가야하오☆★☆★");
+		ModelAndView mv = new ModelAndView(false, "/pages/eventList.jsp");
 		return mv;
 	}
 
