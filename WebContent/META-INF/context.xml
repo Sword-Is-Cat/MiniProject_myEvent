@@ -29,20 +29,20 @@
     
     <!-- DBCP기술 적용하기 -->
 
- 	<!-- <Resource name="jdbc/myOracle" 
+ 	<Resource name="jdbc/myOracle" 
 
               auth="Container"
               type="javax.sql.DataSource" 
               driverClassName="oracle.jdbc.OracleDriver"
-              url="jdbc:oracle:thin:@127.0.0.1:1521:xe"
+              url="jdbc:oracle:thin:@192.168.0.145:1521:xe"
               username="jang" 
               password="jang" 
               maxTotal="20" 
               maxIdle="10"
-              maxWaitMillis="-1"/>   -->
+              maxWaitMillis="-1"/>  
 
 
- <Resource name="jdbc/myOracle"
+<!--  <Resource name="jdbc/myOracle"
 
               auth="Container"
               type="javax.sql.DataSource" 
@@ -52,7 +52,7 @@
               password="localevent" 
               maxTotal="20" 
               maxIdle="10"
-              maxWaitMillis="-1"/>
+              maxWaitMillis="-1"/> -->
               
 
 </Context>

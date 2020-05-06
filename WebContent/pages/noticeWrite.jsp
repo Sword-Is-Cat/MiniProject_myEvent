@@ -81,7 +81,8 @@
 					</div>
 					<div class="text-center">
 						<br>
-						<button class="btn btn-primary solid blank" type="submit">등록하기</button>
+						<button class="btn btn-primary solid blank" type="submit">등록</button>
+						<button class="btn btn-primary solid blank cancelBtn" type="button" onclick="javascript:history.back()">취소</button>
 					</div>
 				</form>
 			</div>

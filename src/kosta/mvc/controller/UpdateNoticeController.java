@@ -12,7 +12,6 @@ public class UpdateNoticeController implements Controller {
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String noticeSubject = request.getParameter("noticeSubject");
 		String noticeContent = request.getParameter("noticeContent");
-		String noticeNo = request.getParameter("noticeNo");
 		
 		if(noticeSubject==null || noticeSubject.equals("") ||noticeContent==null || noticeContent.equals("") ) {
 			throw new RuntimeException("입력값이 충분하지 않습니다");
