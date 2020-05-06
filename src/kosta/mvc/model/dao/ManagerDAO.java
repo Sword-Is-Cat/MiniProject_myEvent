@@ -6,10 +6,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import kosta.mvc.util.DbUtil;
+import kosta.mvc.vo.ChBoard;
+import kosta.mvc.vo.Channel;
 import kosta.mvc.vo.Manager;
+import kosta.mvc.vo.User;
 
 public class ManagerDAO {
 	
@@ -69,6 +74,40 @@ public class ManagerDAO {
 		}
 		
 		return result;
+	}
+
+	public List<Manager> selectManager(int chNo) throws SQLException {
+		Connection con = DbUtil.getConnection();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<Manager> list = new ArrayList<>();
+		Manager manager = null;
+		String sql=pro.getProperty("selectManager");
+		System.out.println("dao 들어옴");
+		System.out.println(sql);
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, chNo);
+			System.out.println(chNo);
+			rs = ps.executeQuery();
+			System.out.println("try 안");
+			System.out.println(chNo);
+			while(rs.next()) {
+				int userNo = rs.getInt("userNo");
+				int grade = rs.getInt("grade");
+				User user = new User(userNo);
+				Channel channel = new Channel(chNo);
+				
+				user.setUserId(rs.getString("userId"));
+				user.setUserName(rs.getString("userName"));
+				manager = new Manager(channel, user, grade);
+				list.add(manager);
+			}
+		} finally {
+			DbUtil.dbClose(rs, ps, con);
+		}
+		System.out.println(list.size());
+		return list;
 	}
 
 }

@@ -17,8 +17,8 @@ public class SelectMyReviewController implements Controller {
 		int userNo = (int)session.getAttribute("userNo");
 		List<ChBoard> list = ChBoardService.selectChBoardByUserNo(userNo);
 		request.setAttribute("myChB", list);
-		ModelAndView mv = new ModelAndView(false, "front?key=selectMyReview&userNo="+userNo);
-		//ModelAndView mv = new ModelAndView(false, "/pages/myReview.jsp");
+		//ModelAndView mv = new ModelAndView(false, "front?key=selectMyReview&userNo="+userNo);
+		ModelAndView mv = new ModelAndView(false, "/pages/myReview.jsp");
 		
 		return mv;
 	}

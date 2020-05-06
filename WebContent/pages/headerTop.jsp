@@ -29,7 +29,7 @@
 									<a class="dropdown-item" href="${pageContext.request.contextPath}/front?key=manageChannel">채널 관리</a>
 									<a class="dropdown-item" href="${pageContext.request.contextPath}/pages/bookHistory.jsp">신청 행사 관리</a>
 									<a class="dropdown-item" href="${pageContext.request.contextPath}/front?key=favoriteEvent">관심 행사 목록</a>
-									<a class="dropdown-item" href="#">내가 쓴 글</a>
+									<a class="dropdown-item" href="${pageContext.request.contextPath}/front?key=selectMyReview">내가 쓴 글</a>
 									<a class="dropdown-item" href="${pageContext.request.contextPath}/front?key=userInfoUpdate">회원 정보 수정</a>
 								</div>
 							</li>
