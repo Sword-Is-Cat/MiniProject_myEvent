@@ -83,7 +83,6 @@ public class ManagerDAO {
 		List<Manager> list = new ArrayList<>();
 		Manager manager = null;
 		String sql=pro.getProperty("selectManager");
-		System.out.println(sql);
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, chNo);
