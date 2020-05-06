@@ -232,7 +232,7 @@
 								<div class=" wow fadeInDown" data-wow-delay=".5s"
 									style="width: 70px">
 									<div class="service-content text-center">
-										<a href="${pageContext.request.contextPath}/front?key=selectEventByCateNo=&cateNo5"> <img
+										<a href="${pageContext.request.contextPath}/front?key=selectEventByCateNo=&cateNo=5"> <img
 											src="${pageContext.request.contextPath}/pages/images/category/category-communite-hover2.svg"></span>
 											<h3>커뮤니티</h3>
 										</a>
@@ -410,7 +410,7 @@
 						<span class="txt-14 font-weight-500"> <a
 							class="eventus-purple-text" href="${pageContext.request.contextPath}/front?key=viewToNotice">공지사항</a> <span
 							class="px-3 black-text">|</span> <a class="black-text"
-							href="${pageContext.request.contextPath}/front?key=viewToNotice"> 메일 발송 지연 복구 안내 </a>
+							href="${pageContext.request.contextPath}/front?key=viewToNotice"> ${recentNotice.noticeSubject} </a>
 						</span>
 					</div>
 				</div>

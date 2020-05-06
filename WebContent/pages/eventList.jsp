@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -193,8 +194,7 @@ hr{
 					<div class="grid">
 						<figure class="m-0 effect-oscar">
 							<img class="chImg"
-								src="https://eventusstorage.blob.core.windows.net/evs/Image/event/16764/ProjectInfo/Cover/e3f492fb160d420ca4483e56964b710d.jpg?fixed"
-								alt="">
+								src="${pageContext.request.contextPath}/eventImage/${event.evImg}" alt="${event.evImg}">
 							<figcaption>
 								<a class="link icon-pentagon" href="./front?key=selectEvent&evNo=${event.evNo}"><i
 									class="fa fa-link"></i></a> <a class="view icon-pentagon"
@@ -205,15 +205,14 @@ hr{
 						<div class="portfolio-static-desc">
 							<table>
 								<tr>
-									<td><a href="#"><h3 id="eTitle" class="eTitle">[EVENT-US]
-												이벤터스 웨비나, 하루만에 뽀개기!</h3></a></td>
+									<td><a><h3 id="eTitle" class="eTitle">${event.evName}</h3></a></td>
 								</tr>
 								<tr>
-									<td><a href="#">행사기간</a></td>
+									<td><a>행사기간<br> <fmt:formatDate value="${event.evTime.evStartTime}" pattern = "yyyy/MM/dd HH:mm"/> ~ <fmt:formatDate value="${event.evTime.evEndTime}" pattern = "yyyy/MM/dd HH:mm"/></a></td>
 								</tr>
-								<tr>
-									<td><a href="#">유/무료</a></td>
-								</tr>
+								<!-- <tr>
+									<td></td>
+								</tr> -->
 							</table>
 
 						</div>

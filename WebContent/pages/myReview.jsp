@@ -144,10 +144,8 @@ thead {
 							<td style="text-align: center;">${myChBoard.chBoardNo}</td>
 							<td style="text-align: center;">${myChBoard.channel.chName}</td>
 							<td>${myChBoard.chBoardContent}</td>
-
-							<td>${myChBoard.chBoardStar}점</td>			
-							<td><fmt:formatDate value="${chBoard.chBoardTime}" pattern="yyyy-MM-dd"/></td>
-
+							<td style="text-align: center;">${myChBoard.chBoardStar}점</td>			
+							<td style="text-align: center;"><fmt:formatDate value="${myChBoard.chBoardTime }" pattern="yyyy-MM-dd"/></td>
 						</tr>
 					
 				</tbody>
