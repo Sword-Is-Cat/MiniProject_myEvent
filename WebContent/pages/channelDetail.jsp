@@ -183,10 +183,6 @@
 	<!-- Main Script -->
 	<script src="${pageContext.request.contextPath}/pages/js/script.js"></script>
 	<br><br>
-	<!--subTopMenu-->
-	<c:import url="headerTop.jsp" />
-	<!-- mainMenu -->
-	<c:import url="header.jsp" />
 </body>
 	
 <c:import url="footer.jsp"></c:import>

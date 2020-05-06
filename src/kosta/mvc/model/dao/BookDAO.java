@@ -16,7 +16,7 @@ public class BookDAO {
 	PreparedStatement ps;
 	ResultSet rs;
 	Properties pro = new Properties();
-	
+
 	public BookDAO() {
 
 		InputStream input = getClass().getClassLoader().getResourceAsStream("kosta/mvc/model/dao/sqlQuery.properties");
@@ -26,29 +26,72 @@ public class BookDAO {
 			e.printStackTrace();
 		}
 	}
-	
-	public int insertBook(Book book) throws Exception{
-		
+
+	public int insertBook(int userNo, int evNo) throws Exception {
+
 		int result = 0;
 		String sql = pro.getProperty("insertBook");
-		
+//		insertBook=insert into book(bookNo, userNo, evNo, bookTime, bookStatus)
+//		values (bookseq.nextval, ?, ?, SYSDATE, 1)
+
 		try {
-			
+
 			con = DbUtil.getConnection();
 			ps = con.prepareStatement(sql);
-			
-//			insert into book(bookno, userno, evno, booktime, bookstatus) 
-//			values (bookseq.nextval, ?, ?, sysdate, 1)
-			
-			ps.setInt(1, book.getUser().getUserNo());
-			ps.setInt(2, book.getEvent().getEvNo());
-			
+
+			ps.setInt(1, userNo);
+			ps.setInt(2, evNo);
+
 			result = ps.executeUpdate();
-			
-		}finally {
+
+		} finally {
 			DbUtil.dbClose(ps, con);
 		}
-		
+
+		return result;
+	}
+
+	public int checkBook(int userNo, int evNo) throws Exception {
+		int result = 0;
+		String sql = pro.getProperty("checkBook");
+//		checkBook=select * from book where userNo=? and evNo=? and bookStatus=1
+
+		try {
+
+			con = DbUtil.getConnection();
+			ps = con.prepareStatement(sql);
+
+			ps.setInt(1, userNo);
+			ps.setInt(2, evNo);
+
+			result = ps.executeUpdate();
+
+		} finally {
+			DbUtil.dbClose(ps, con);
+		}
+
+		return result;
+	}
+
+	public int deleteBook(int userNo, int evNo) throws Exception {
+		int result = 0;
+		String sql = pro.getProperty("deleteBook");
+//		deleteBook=update book set bookStatus=0 where userNo=? and evNo=?
+
+		try {
+
+			con = DbUtil.getConnection();
+			ps = con.prepareStatement(sql);
+
+			ps.setInt(1, userNo);
+			ps.setInt(2, evNo);
+
+			result = ps.executeUpdate();
+
+		} finally {
+			DbUtil.dbClose(ps, con);
+		}
+
 		return result;
 	}
 }

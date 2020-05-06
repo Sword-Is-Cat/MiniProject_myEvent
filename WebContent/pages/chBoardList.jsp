@@ -133,6 +133,7 @@
 	<script
 		src="${pageContext.request.contextPath}/pages/https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
 	<script src="${pageContext.request.contextPath}/pages/plugins/google-map/gmap.js"></script>
+	<script type="text/javascript" src="plugins/waypoints.min.js"></script>
 
 	<!-- Main Script -->
 	<script src="${pageContext.request.contextPath}/pages/js/script.js"></script>

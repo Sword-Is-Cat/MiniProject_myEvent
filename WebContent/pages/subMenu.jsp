@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <!-- jQuery -->
 <script src="plugins/jQuery/jquery.min.js"></script>
-<script src="./js/subMenu.js"></script>
+<script src="${pageContext.request.contextPath}/pages/js/subMenu.js"></script>
 
 <style>
 .menuSubnav {
@@ -84,6 +84,9 @@
 						</div>
 						<div class="mypage-topnav__tab ">
 							<a class="subMenuList" href="interestEvent.jsp"> 관심 행사 목록 </a>
+						</div>
+						<div class="mypage-topnav__tab ">
+							<a class="subMenuList" href="#"> 내가 쓴 글 </a>
 						</div>
 						<div class="mypage-topnav__tab">
 							<a class="subMenuList" href="userInfoUpdate.jsp"> 회원정보 설정 </a>

@@ -30,6 +30,29 @@ public class NoticeDAO {
 		}
 	}
 	/**
+	 * 글번호 가져오기 
+	 * @throws SQLException 
+	 */
+	public int getSeq() throws RuntimeException, SQLException {
+        int result = 1;
+        String sql = pro.getProperty("getNoticeNo");
+        try {
+            con = DbUtil.getConnection();
+            
+            ps = con.prepareStatement(sql.toString());
+            // 쿼리 실행
+            rs = ps.executeQuery();
+            
+            if(rs.next()) result = rs.getInt(1);
+ 
+        } finally {
+        	DbUtil.dbClose(rs, st, con);
+        }
+        return result;    
+    } // end getSeq
+
+	
+	/**
 	 * 전체보기
 	 */
 	public List<Notice> selectAll() throws SQLException {
@@ -44,7 +67,7 @@ public class NoticeDAO {
 			
 			while(rs.next()) {
 				Notice notice = 
-					new Notice(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getTimestamp(4), rs.getInt(5));
+					new Notice(rs.getInt("noticeNo"),rs.getString(2), rs.getString(3), rs.getTimestamp(4), rs.getInt(5));
 			
 				list.add(notice);
 			}
@@ -63,7 +86,7 @@ public class NoticeDAO {
 		String sql = pro.getProperty("insertNotice");
 		
 		try {
-			 con=DbUtil.getConnection();
+			  con=DbUtil.getConnection();
 			  ps = con.prepareStatement(sql);
 			  
 //			  ps.setInt(1, notice.getNoticeNo());
@@ -73,7 +96,10 @@ public class NoticeDAO {
 //			  ps.setInt(5, notice.getNoticeStatus());
 			 // INSERT INTO (noticeNo, noticeSubject, noticeContent, noticeTime, noticeStatus ) 
 			  //values (NOTICESEQ.nextval,?,?,sysdate,1)
-	
+			  	
+			/* int noticeNo = notice.getNoticeNo(); */
+			  
+			  //ps.setInt(1, notice.getNoticeNo());
 			  ps.setString(1, notice.getNoticeSubject());
 			  ps.setString(2, notice.getNoticeContent());
 
@@ -81,9 +107,8 @@ public class NoticeDAO {
 		}finally {
 			DbUtil.dbClose(ps, con);
 		}
-
 		return result;
-	}//inset end
+	}//insert end
 	
 	
 	
@@ -95,12 +120,8 @@ public class NoticeDAO {
 		int result=0;
 		String sql=pro.getProperty("noticeUpdate");
 		try {
-			ps = con.prepareStatement(sql);
-			ps.setInt(1, notice.getNoticeNo());
-			ps.setString(2, notice.getNoticeSubject());
-			ps.setString(3, notice.getNoticeContent());
-			ps.setTimestamp(4, notice.getNoticeTime());
-			ps.setInt(5, notice.getNoticeStatus());
+			 ps.setString(1, notice.getNoticeSubject());
+			 ps.setString(2, notice.getNoticeContent());
 			
 			result = ps.executeUpdate();
 		}finally {
@@ -125,6 +146,7 @@ public class NoticeDAO {
 		}
 		return result;
 	}
+	
 	
 }//end
 

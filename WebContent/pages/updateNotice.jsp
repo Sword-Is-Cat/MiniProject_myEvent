@@ -1,3 +1,5 @@
+<%@page import="kosta.mvc.vo.Notice"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -59,29 +61,31 @@
 	<c:import url="./header.jsp"/>
 	<div class="gap-50 p-3">
 		<div class="row justify-content-center p-3">
-			<caption>공지사항 등록</caption>
+			<caption>공지사항 수정</caption>
 		</div>
 		<div class="row justify-content-center">
 
 			<div class="col-md-6">
-				<form id="contact-form" action="../front?key=insertNotice"
+				<form id="contact-form" name="updateNotice" action="front?key=updateNotice"
 					method="post" role="form">
+					<!-- <input type="hidden" name="key" value="updateNotice" >어떤컨트롤러를 실행해야하는지에 대한 키값 -->
+				    <input type='hidden' name='noticeNo' value="${notice.noticeNo}">
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group">
 								<label>제목</label> <input class="form-control" name="noticeSubject"
-									id="subject" placeholder="" required>
+									id="subject" value="${notice.noticeSubject}" placeholder="" required>
 							</div>
 						</div>
 					</div>
 					<div class="form-group">
 						<label>내용</label>
-						<textarea class="form-control" name="noticeContent" id="message"
+						<textarea class="form-control" name="noticeContent" id="message" value="${notice.noticeContent}"
 							placeholder="" rows="10" required></textarea>
 					</div>
 					<div class="text-center">
 						<br>
-						<button class="btn btn-primary solid blank" type="submit">등록하기</button>
+						<button class="btn btn-primary solid blank" type="submit">수정하기</button>
 					</div>
 				</form>
 			</div>

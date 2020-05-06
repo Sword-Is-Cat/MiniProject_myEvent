@@ -20,35 +20,35 @@
 <!-- JQuery -->
 <script src="plugins/jQuery/jquery.min.js"></script>
 <!-- Bootstrap -->
-<link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/bootstrap/bootstrap.min.css">
 <!-- FontAwesome -->
-<link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/fontawesome/font-awesome.min.css">
 <!-- Animation -->
-<link rel="stylesheet" href="plugins/animate.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/animate.css">
 <!-- Prettyphoto -->
-<link rel="stylesheet" href="plugins/prettyPhoto.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/prettyPhoto.css">
 <!-- Owl Carousel -->
-<link rel="stylesheet" href="plugins/owl/owl.carousel.css">
-<link rel="stylesheet" href="plugins/owl/owl.theme.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.carousel.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.theme.css">
 <!-- Flexslider -->
-<link rel="stylesheet" href="plugins/flex-slider/flexslider.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/flex-slider/flexslider.css">
 <!-- Flexslider -->
-<link rel="stylesheet" href="plugins/cd-hero/cd-hero.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/cd-hero/cd-hero.css">
 
 
 <!-- Main Stylesheet -->
 <link href="css/style.css" rel="stylesheet">
-<link href="css/defaultStyle.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/pages/css/defaultStyle.css" rel="stylesheet">
 
 <link href="css/signUp.css" rel="stylesheet">
 <!-- SignUp.css -->
 <!--  <link rel="stylesheet" href="css/signUp.css"> -->
 <!--Favicon-->
-<link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
+<link rel="icon" href="${pageContext.request.contextPath}/pages/images/favicon/32.png" type="image/x-icon" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144"
-	href="./images/favicon/144.png">
+	href="${pageContext.request.contextPath}/pages/images/favicon/144.png">
 <link rel="apple-touch-icon-precomposed" sizes="72x72"
-	href="./images/favicon/72.png">
+	href="${pageContext.request.contextPath}/pages/images/favicon/72.png">
 <link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
 <!-- webFont -->
 <link
@@ -58,7 +58,7 @@
 <!-- KAKAO 주소 API -->
 <script	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
-<script src="js/signUp.js"></script>
+<script src="${pageContext.request.contextPath}/pages/js/signUp.js"></script>
 <style>
 
 </style>
@@ -107,7 +107,7 @@
 					확인해 주세요</span>
 			</div>
 			<div class="form-wrapper">
-				<label for="userName">이름</label> <input type="password"
+				<label for="userName">이름</label> <input type="text"
 					class="form-control" id="userName" name="userName"
 					placeholder="이름을 입력해 주세요">
 			</div>
@@ -161,7 +161,7 @@
 					<label for="cate${category.cateNo}">${category.cateName}</label>
 				</c:forEach>
 			</fieldset>
-			<input type="hidden" name="key" value="signUp"> <input
+			<input type="hidden" name="key" value="doSignUp"> <input
 				type="hidden" name="cateCount" value="<%=cateList.size()%>">
 			<!-- 카테고리 카운트 value에 넣어야함 -->
 
