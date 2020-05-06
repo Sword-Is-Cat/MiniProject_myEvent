@@ -381,7 +381,7 @@ public class EventDAO {
 					user = userMap.get(userNo);
 				} else {
 					user = new User(userNo, rs.getString("userName"), rs.getString("userPwd"), rs.getString("userName"),
-							rs.getString("userAddr"), rs.getString("userPhone"), rs.getString("userEmaill"),
+							rs.getString("userAddr"), rs.getString("userPhone"), rs.getString("userEmail"),
 							rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
 					userMap.put(userNo, user);
 				}
@@ -781,9 +781,6 @@ public class EventDAO {
 		} finally {
 			DbUtil.dbClose(rs, ps, con);
 		}
-
-		if (list.size() == 0)
-			throw new Exception("검색결과가없습니다");
 
 		return list;
 	}

@@ -182,7 +182,7 @@
 								<div class="wow fadeInDown" data-wow-delay=".5s"
 									style="width: 70px">
 									<div class="service-content text-center">
-										<a href="#"> <img
+										<a href="${pageContext.request.contextPath}/front?key=selectEventByCateNo&cateNo=1"> <img
 											src="${pageContext.request.contextPath}/pages/images/category/category-business-hover2.svg"></span>
 											<h3>사업/창업</h3>
 										</a>
@@ -193,7 +193,7 @@
 								<div class="wow fadeInDown" data-wow-delay=".5s"
 									style="width: 70px">
 									<div class="service-content text-center">
-										<a href="#"> <img
+										<a href="${pageContext.request.contextPath}/front?key=selectEventByCateNo&cateNo=2"> <img
 											src="${pageContext.request.contextPath}/pages/images/category/category-culture-hover2.svg"></span>
 											<h3>문화/예술</h3>
 										</a>
@@ -205,7 +205,7 @@
 								<div class="wow fadeInDown" data-wow-delay=".5s"
 									style="width: 70px">
 									<div class="service-content text-center">
-										<a href="#"> <img
+										<a href="${pageContext.request.contextPath}/front?key=selectEventByCateNo&cateNo=3"> <img
 											src="${pageContext.request.contextPath}/pages/images/category/category-marketing-hover2.svg"></span>
 											<h3>마케팅/홍보</h3>
 										</a>
@@ -217,7 +217,7 @@
 								<div class="wow fadeInDown" data-wow-delay=".5s"
 									style="width: 70px">
 									<div class="service-content text-center">
-										<a href="#"> <img
+										<a href="${pageContext.request.contextPath}/front?key=selectEventByCateNo&cateNo=4"> <img
 											src="${pageContext.request.contextPath}/pages/images/category/category-tech-hover2.svg"></span>
 											<h3>과학/기술</h3>
 										</a>
@@ -232,7 +232,7 @@
 								<div class=" wow fadeInDown" data-wow-delay=".5s"
 									style="width: 70px">
 									<div class="service-content text-center">
-										<a href="#"> <img
+										<a href="${pageContext.request.contextPath}/front?key=selectEventByCateNo=&cateNo5"> <img
 											src="${pageContext.request.contextPath}/pages/images/category/category-communite-hover2.svg"></span>
 											<h3>커뮤니티</h3>
 										</a>
@@ -244,7 +244,7 @@
 								<div class="wow fadeInDown" data-wow-delay=".5s"
 									style="width: 70px">
 									<div class="service-content text-center">
-										<a href="#"> <img
+										<a href="${pageContext.request.contextPath}/front?key=selectEventByCateNo&cateNo=6"> <img
 											src="${pageContext.request.contextPath}/pages/images/category/category-social-hover2.svg"></span>
 											<h3>비영리/소셜</h3>
 										</a>
@@ -256,7 +256,7 @@
 								<div class=" wow fadeInDown" data-wow-delay=".5s"
 									style="width: 70px">
 									<div class="service-content text-center">
-										<a href="#"> <img
+										<a href="${pageContext.request.contextPath}/front?key=selectEventByCateNo&cateNo=7"> <img
 											src="${pageContext.request.contextPath}/pages/images/category/category-youth-hover2.svg"></span>
 											<h3>청춘/청년</h3>
 										</a>
@@ -267,7 +267,7 @@
 								<div class="wow fadeInDown" data-wow-delay=".5s"
 									style="width: 70px">
 									<div class="service-content text-center" style="width: 70px;">
-										<a href="#"> <img
+										<a href="${pageContext.request.contextPath}/front?key=selectEventByCateNo&cateNo=8"> <img
 											src="${pageContext.request.contextPath}/pages/images/category/category-it-hover2.svg"></span>
 											<h3>IT/개발</h3>
 										</a>
