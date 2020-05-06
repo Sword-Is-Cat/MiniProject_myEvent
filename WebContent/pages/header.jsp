@@ -92,7 +92,7 @@ img.mainLogo {
 </head>
 
 <body>
-	<div class="body-inner">
+	
 
 		<!-- Header start -->
 		<header id="header" class="header" role="banner">
@@ -163,7 +163,6 @@ img.mainLogo {
 			<!--container end-->
 		</header>
 		<!--/ Header end -->
-	</div>
-	<!--/ innerbody end -->
+
 </body>
 </html>

@@ -23,4 +23,10 @@ public class ChBoardService {
 		if(dbChBoard==null) throw new SQLException("채널 리뷰가 없습니다.");
 		return dbChBoard;
 	}
+
+	public static List<ChBoard> selectChBoardByUserNo(int userNo) throws SQLException {
+		List<ChBoard> dbMyChBoard = chBDAO.selectChBoardByUserNo(userNo);
+		if(dbMyChBoard==null) throw new SQLException("채널 리뷰가 없습니다.");
+		return dbMyChBoard;
+	}
 }

@@ -15,7 +15,7 @@ public class SelectEventByChNoController implements Controller {
 		
 		int chNo = Integer.parseInt(request.getParameter("chNo"));
 		
-		List<Event> list = new EventDAO().selectEventByChNo(chNo);
+		List<Event> list = new EventDAO().selectNewEventByChNo(chNo);
 		
 		request.setAttribute("list", list);
 
