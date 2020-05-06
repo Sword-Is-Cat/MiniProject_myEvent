@@ -9,6 +9,7 @@ import java.sql.Statement;
 import java.util.Properties;
 
 import kosta.mvc.util.DbUtil;
+import kosta.mvc.vo.Manager;
 
 public class ManagerDAO {
 	
@@ -49,6 +50,25 @@ public class ManagerDAO {
 		}
 		
 		return answer;
+	}
+
+	public int insertChMng(Manager manager) throws SQLException{
+		Connection con = DbUtil.getConnection();
+		PreparedStatement ps = null;
+		int result = 0;
+		try {
+			String sql = pro.getProperty("insertChManager");
+			ps = con.prepareStatement(sql);
+			
+			ps.setInt(1, manager.getChannel().getChNo());
+			ps.setInt(2, manager.getUser().getUserNo());
+			
+			result = ps.executeUpdate();
+		} finally {
+			DbUtil.dbClose(ps, con);
+		}
+		
+		return result;
 	}
 
 }

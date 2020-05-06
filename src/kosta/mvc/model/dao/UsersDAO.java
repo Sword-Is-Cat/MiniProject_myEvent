@@ -16,7 +16,7 @@ public class UsersDAO {
 	Statement st;
 	PreparedStatement ps;
 	ResultSet rs;
-	Properties pro = new Properties();
+	static Properties pro = new Properties();
 	
 	public UsersDAO() {
 
@@ -125,5 +125,27 @@ public class UsersDAO {
 		}
 		
 		return result;
+	}
+
+	public static User selectUserNoByUserId(String userId) throws SQLException {
+		// 지헤 진행중
+		User userInfo = null;
+		try {
+			Connection con = null;
+			PreparedStatement ps = null;
+			ResultSet rs = null;
+			
+			String sql = pro.getProperty("selectUserNoByUserId");
+			ps=con.prepareStatement(sql);
+			
+			ps.setString(1, userId);
+			rs = ps.executeQuery();
+			
+			////////
+			
+		} finally {
+			//DbUtil.dbClose(rs, ps, con);
+		}
+		return null;
 	}
 }

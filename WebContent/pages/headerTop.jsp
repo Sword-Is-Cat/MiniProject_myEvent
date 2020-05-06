@@ -6,8 +6,6 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-
-
 </head>
 
 <body>
@@ -28,7 +26,7 @@
 									마이페이지
 								</a>
 								<div class="dropdown-menu" style="border: 1.5px solid #222; border-radius: 10px;">
-									<a class="dropdown-item" href="${pageContext.request.contextPath}/pages/channelMng.jsp">채널 관리</a>
+									<a class="dropdown-item" href="${pageContext.request.contextPath}/front?key=manageChannel">채널 관리</a>
 									<a class="dropdown-item" href="${pageContext.request.contextPath}/pages/bookHistory.jsp">신청 행사 관리</a>
 									<a class="dropdown-item" href="${pageContext.request.contextPath}/pages/interestEvent.jsp">관심 행사 목록</a>
 									<a class="dropdown-item" href="${pageContext.request.contextPath}/front?key=userInfoUpdate">회원 정보 수정</a>
