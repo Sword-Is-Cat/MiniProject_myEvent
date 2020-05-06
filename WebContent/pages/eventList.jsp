@@ -16,27 +16,27 @@
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
-<link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/bootstrap/bootstrap.min.css">
 <!-- FontAwesome -->
-<link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/fontawesome/font-awesome.min.css">
 <!-- Animation -->
-<link rel="stylesheet" href="plugins/animate.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/animate.css">
 <!-- Prettyphoto -->
-<link rel="stylesheet" href="plugins/prettyPhoto.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/prettyPhoto.css">
 <!-- Owl Carousel -->
-<link rel="stylesheet" href="plugins/owl/owl.carousel.css">
-<link rel="stylesheet" href="plugins/owl/owl.theme.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.carousel.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.theme.css">
 <!-- Flexslider -->
-<link rel="stylesheet" href="plugins/flex-slider/flexslider.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/flex-slider/flexslider.css">
 <!-- Flexslider -->
-<link rel="stylesheet" href="plugins/cd-hero/cd-hero.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/cd-hero/cd-hero.css">
 <!-- Style Swicther -->
-<link id="style-switch" href="css/presets/preset3.css" media="screen"
+<link id="style-switch" href="${pageContext.request.contextPath}/pages/css/presets/preset3.css" media="screen"
 	rel="stylesheet" type="text/css">
 
 <!-- Main Stylesheet -->
-<link href="css/style.css" rel="stylesheet">
-<link href="css/defaultStyle.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/pages/css/style.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/pages/css/defaultStyle.css" rel="stylesheet">
 <!--Favicon-->
 <link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144"
@@ -101,22 +101,22 @@ hr{
 
 <!-- ** Plugins Needed for the Project ** -->
 <!-- Bootstrap -->
-<link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/bootstrap/bootstrap.min.css">
 <!-- FontAwesome -->
-<link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/fontawesome/font-awesome.min.css">
 <!-- Animation -->
-<link rel="stylesheet" href="plugins/animate.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/animate.css">
 <!-- Prettyphoto -->
-<link rel="stylesheet" href="plugins/prettyPhoto.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/prettyPhoto.css">
 <!-- Owl Carousel -->
-<link rel="stylesheet" href="plugins/owl/owl.carousel.css">
-<link rel="stylesheet" href="plugins/owl/owl.theme.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.carousel.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.theme.css">
 <!-- Flexslider -->
-<link rel="stylesheet" href="plugins/flex-slider/flexslider.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/flex-slider/flexslider.css">
 <!-- Flexslider -->
-<link rel="stylesheet" href="plugins/cd-hero/cd-hero.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/cd-hero/cd-hero.css">
 <!-- Style Swicther -->
-<link id="style-switch" href="css/presets/preset3.css" media="screen"
+<link id="style-switch" href="${pageContext.request.contextPath}/pages/css/presets/preset3.css" media="screen"
 	rel="stylesheet" type="text/css">
 
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
@@ -126,7 +126,7 @@ hr{
     <![endif]-->
 
 <!-- Main Stylesheet -->
-<link href="css/style.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/pages/css/style.css" rel="stylesheet">
 
 <!--Favicon-->
 <link rel="icon" href="img/favicon/favicon-32x32.png"
@@ -138,6 +138,36 @@ hr{
 <link rel="apple-touch-icon-precomposed"
 	href="img/favicon/favicon-54x54.png">
 
+<script src="${pageContext.request.contextPath}/pages/plugins/jQuery/jquery.min.js"></script>
+<script>
+	function toggleFavoriteEvent(evNo){
+		$.ajax({
+			type : "GET",
+			url : "front?key=toggleFavoriteEvent&evNo="+evNo,
+			dataType : "text",
+		    success : function(result){
+		    	if(result.trim() == 'insert'){
+		    		$('.favEventIcon'+evNo).addClass('text-danger');
+		    	}else{
+		    		$('.favEventIcon'+evNo).removeClass('text-danger');
+		    	}
+		    },
+		    error: function(result){
+		    	console.log('result', result);
+		    	console.log('result.responseText', result.responseText);
+		    	console.log('result.error', result.error);
+		    }
+		});
+	}
+	
+	$(function(){
+		<c:forEach items='${favoriteEventsNo}' var='favEvNo' varStatus='status'>
+			if($('.favEventIcon${favEvNo}').length > 0){
+				$('.favEventIcon${favEvNo}').addClass('text-danger');
+			}
+		</c:forEach>
+	});
+</script>
 </head>
 
 <body>
@@ -158,6 +188,7 @@ hr{
 	<section id="main-container" class="portfolio-static">
 		<div class="container">
 			<div class="row">
+			<c:forEach items="${list}" var="event" varStatus="status" >
 				<div class="col-sm-4 portfolio-static-item">
 					<div class="grid">
 						<figure class="m-0 effect-oscar">
@@ -165,11 +196,10 @@ hr{
 								src="https://eventusstorage.blob.core.windows.net/evs/Image/event/16764/ProjectInfo/Cover/e3f492fb160d420ca4483e56964b710d.jpg?fixed"
 								alt="">
 							<figcaption>
-								<a class="link icon-pentagon" href="portfolio-item.html"><i
+								<a class="link icon-pentagon" href="./front?key=selectEvent&evNo=${event.evNo}"><i
 									class="fa fa-link"></i></a> <a class="view icon-pentagon"
-									data-rel="prettyPhoto"
-									href="images/portfolio/portfolio-bg1.jpg"><i
-									class="fa fa-search"></i></a>
+									style="cursor:pointer;" onclick="toggleFavoriteEvent(${event.evNo})"><i
+									class="favEventIcon${event.evNo}"></i></a>
 							</figcaption>
 						</figure>
 						<div class="portfolio-static-desc">
@@ -191,168 +221,7 @@ hr{
 					<!--/ grid end -->
 				</div>
 				<!--/ item 1 end -->
-
-				<div class="col-sm-4 portfolio-static-item">
-					<div class="grid">
-						<figure class="m-0 effect-oscar">
-							<img class="chImg"
-								src="https://eventusstorage.blob.core.windows.net/evs/Image/tentuplay/16716/ProjectInfo/Cover/a447a98ed1c142359cf6444ace7908ac.jpg?fixed"
-								alt="">
-							<figcaption>
-								<a class="link icon-pentagon" href="portfolio-item.html"><i
-									class="fa fa-link"></i></a> <a class="view icon-pentagon"
-									data-rel="prettyPhoto"
-									href="images/portfolio/portfolio-bg2.jpg"><i
-									class="fa fa-search"></i></a>
-							</figcaption>
-						</figure>
-						<div class="portfolio-static-desc">
-							<table>
-								<tr>
-									<td><a href="#"><h3 id="eTitle" class="eTitle">[DREAMPLUS
-												Insight Night(인싸 나잇)] 인싸 스타트업 대표님들의 인사이트 강연(키튼플래닛, 홈핏)</h3></a></td>
-								</tr>
-								<tr>
-									<td><a href="#">행사기간</a></td>
-								</tr>
-								<tr>
-									<td><a href="#">유/무료</a></td>
-								</tr>
-							</table>
-						</div>
-					</div>
-					<!--/ grid end -->
-				</div>
-				<!--/ item 2 end -->
-
-				<div class="col-sm-4 portfolio-static-item">
-					<div class="grid">
-						<figure class="m-0 effect-oscar">
-							<img class="chImg"
-								src="https://eventusstorage.blob.core.windows.net/evs/Image/dreamplusgangnam/16372/ProjectInfo/Cover/489df4119075489c986f6ea646545124.jpg?fixed"
-								alt="">
-							<figcaption>
-								<a class="link icon-pentagon" href="portfolio-item.html"><i
-									class="fa fa-link"></i></a> <a class="view icon-pentagon"
-									data-rel="prettyPhoto"
-									href="images/portfolio/portfolio-bg3.jpg"><i
-									class="fa fa-search"></i></a>
-							</figcaption>
-						</figure>
-						<div class="portfolio-static-desc">
-							<h3>Your Business</h3>
-							<span><a href="#">Ui Elements</a></span>
-						</div>
-					</div>
-					<!--/ grid end -->
-				</div>
-				<!--/ item 3 end -->
-
-				<div class="col-sm-4 portfolio-static-item">
-					<div class="grid">
-						<figure class="m-0 effect-oscar">
-							<img class="chImg" src="images/portfolio/portfolio4.jpg" alt="">
-							<figcaption>
-								<a class="link icon-pentagon" href="portfolio-item.html"><i
-									class="fa fa-link"></i></a> <a class="view icon-pentagon"
-									data-rel="prettyPhoto"
-									href="images/portfolio/portfolio-bg1.jpg"><i
-									class="fa fa-search"></i></a>
-							</figcaption>
-						</figure>
-						<div class="portfolio-static-desc">
-							<h3>Prego Match</h3>
-							<span><a href="#">Media Elements</a></span>
-						</div>
-					</div>
-					<!--/ grid end -->
-				</div>
-				<!--/ item 4 end -->
-
-				<div class="col-sm-4 portfolio-static-item">
-					<div class="grid">
-						<figure class="m-0 effect-oscar">
-							<img class="chImg" src="images/portfolio/portfolio5.jpg" alt="">
-							<figcaption>
-								<a class="link icon-pentagon" href="portfolio-item.html"><i
-									class="fa fa-link"></i></a> <a class="view icon-pentagon"
-									data-rel="prettyPhoto"
-									href="images/portfolio/portfolio-bg2.jpg"><i
-									class="fa fa-search"></i></a>
-							</figcaption>
-						</figure>
-						<div class="portfolio-static-desc">
-							<h3>Fashion Brand</h3>
-							<span><a href="#">Graphics Media</a></span>
-						</div>
-					</div>
-					<!--/ grid end -->
-				</div>
-				<!--/ item 5 end -->
-
-				<div class="col-sm-4 portfolio-static-item">
-					<div class="grid">
-						<figure class="m-0 effect-oscar">
-							<img class="chImg" src="images/portfolio/portfolio6.jpg" alt="">
-							<figcaption>
-								<a class="link icon-pentagon" href="portfolio-item.html"><i
-									class="fa fa-link"></i></a> <a class="view icon-pentagon"
-									data-rel="prettyPhoto"
-									href="images/portfolio/portfolio-bg3.jpg"><i
-									class="fa fa-search"></i></a>
-							</figcaption>
-						</figure>
-						<div class="portfolio-static-desc">
-							<h3>The Insidage</h3>
-							<span><a href="#">Material Design</a></span>
-						</div>
-					</div>
-					<!--/ grid end -->
-				</div>
-				<!--/ item 6 end -->
-
-				<div class="col-sm-4 portfolio-static-item">
-					<div class="grid">
-						<figure class="m-0 effect-oscar">
-							<img class="chImg" src="images/portfolio/portfolio7.jpg" alt="">
-							<figcaption>
-								<a class="link icon-pentagon" href="portfolio-item.html"><i
-									class="fa fa-link"></i></a> <a class="view icon-pentagon"
-									data-rel="prettyPhoto"
-									href="images/portfolio/portfolio-bg1.jpg"><i
-									class="fa fa-search"></i></a>
-							</figcaption>
-						</figure>
-						<div class="portfolio-static-desc">
-							<h3>Light Carpet</h3>
-							<span><a href="#">Mockup</a></span>
-						</div>
-					</div>
-					<!--/ grid end -->
-				</div>
-				<!--/ item 7 end -->
-
-				<div class="col-sm-4 portfolio-static-item">
-					<div class="grid">
-						<figure class="m-0 effect-oscar">
-							<img class="chImg" src="images/portfolio/portfolio8.jpg" alt="">
-							<figcaption>
-								<a class="link icon-pentagon" href="portfolio-item.html"><i
-									class="fa fa-link"></i></a> <a class="view icon-pentagon"
-									data-rel="prettyPhoto"
-									href="images/portfolio/portfolio-bg2.jpg"><i
-									class="fa fa-search"></i></a>
-							</figcaption>
-						</figure>
-						<div class="portfolio-static-desc">
-							<h3>Amazing Keyboard</h3>
-							<span><a href="#">Photography</a></span>
-						</div>
-					</div>
-					<!--/ grid end -->
-				</div>
-				<!--/ item 8 end -->
-
+			</c:forEach>
 			</div>
 			<!-- Content row end -->
 		</div>
@@ -361,7 +230,6 @@ hr{
 	<!-- Portfolio end -->
 
 	<div class="gap-40"></div>
-	</div>
 	<!-- Body inner end -->
 	<!-- footer -->
 	<c:import url="footer.jsp"></c:import>

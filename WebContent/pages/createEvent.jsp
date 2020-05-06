@@ -16,30 +16,30 @@
 <script src="plugins/jQuery/jquery.min.js"></script>
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
-  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/bootstrap/bootstrap.min.css">
 
 	<!-- FontAwesome -->
-    <link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/fontawesome/font-awesome.min.css">
 	<!-- Animation -->
-	<link rel="stylesheet" href="plugins/animate.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/animate.css">
 	<!-- Prettyphoto -->
-	<link rel="stylesheet" href="plugins/prettyPhoto.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/prettyPhoto.css">
 	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="plugins/owl/owl.carousel.css">
-	<link rel="stylesheet" href="plugins/owl/owl.theme.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.carousel.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.theme.css">
 	<!-- Flexslider -->
-	<link rel="stylesheet" href="plugins/flex-slider/flexslider.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/flex-slider/flexslider.css">
 	<!-- Flexslider -->
-	<link rel="stylesheet" href="plugins/cd-hero/cd-hero.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/cd-hero/cd-hero.css">
 	<!-- Style Swicther -->
-	<link id="style-switch" href="css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
+	<link id="style-switch" href="${pageContext.request.contextPath}/pages/css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
 	
 
   <!-- Main Stylesheet -->
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/defaultStyle.css" rel="stylesheet">
+  <link href="${pageContext.request.contextPath}/pages/css/style.css" rel="stylesheet">
+  <link href="${pageContext.request.contextPath}/pages/css/defaultStyle.css" rel="stylesheet">
   
-  <link href="css/createEvent.css" rel="stylesheet">
+  <link href="${pageContext.request.contextPath}/pages/css/createEvent.css" rel="stylesheet">
 
  <!--Favicon-->
 	<link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
@@ -50,8 +50,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
   <!-- KAKAO -->
   <script	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-  <script src="js/signUp.js"></script>
-  <script src="./plugins/jQuery/jquery.min.js"></script>
+  <script src="${pageContext.request.contextPath}/pages/js/signUp.js"></script>
+  <script src="${pageContext.request.contextPath}/pages/plugins/jQuery/jquery.min.js"></script>
 </head>
 
 <body>
@@ -59,7 +59,7 @@
 	<c:import url="header.jsp" />
 
 	<div id="banner-area">
-		<img src="images/banner/banner1.jpg" alt="" />
+		<img src="${pageContext.request.contextPath}/pages/images/banner/banner1.jpg" alt="" />
 		<div class="parallax-overlay"></div>
 		<!-- Subpage title start -->
 		<div class="banner-title-content">
@@ -281,12 +281,11 @@
 
 
 							
-							</p>
+							
 
 						</div>
 					</div>
-				</div>
-			</div>
+			
 			<!--/ container end -->
 		</section>
 		<!--/ Main container end -->

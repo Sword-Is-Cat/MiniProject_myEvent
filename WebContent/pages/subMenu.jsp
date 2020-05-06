@@ -6,7 +6,7 @@
 <head>
 <meta charset="utf-8">
 <!-- jQuery -->
-<script src="plugins/jQuery/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/pages/plugins/jQuery/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/pages/js/subMenu.js"></script>
 
 <style>
@@ -83,13 +83,13 @@
 							<a class="subMenuList" href="bookHistory.jsp"> 신청 행사 목록 </a>
 						</div>
 						<div class="mypage-topnav__tab ">
-							<a class="subMenuList" href="interestEvent.jsp"> 관심 행사 목록 </a>
+							<a class="subMenuList" href="${pageContext.request.contextPath}/front?key=favoriteEvent"> 관심 행사 목록 </a>
 						</div>
 						<div class="mypage-topnav__tab ">
 							<a class="subMenuList" href="#"> 내가 쓴 글 </a>
 						</div>
 						<div class="mypage-topnav__tab">
-							<a class="subMenuList" href="userInfoUpdate.jsp"> 회원정보 설정 </a>
+							<a class="subMenuList" href="${pageContext.request.contextPath}/front?key=userInfoUpdate"> 회원정보 설정 </a>
 						</div>
 					</div>
 				</div>

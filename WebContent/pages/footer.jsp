@@ -218,7 +218,7 @@
 
 
 
-	</div>
+	
 	<!-- Body inner end -->
 
 	<!-- Bootstrap Table jQuery-->

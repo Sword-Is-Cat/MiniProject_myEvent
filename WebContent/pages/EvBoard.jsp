@@ -15,26 +15,26 @@
    <!-- ** Plugins Needed for the Project ** -->
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
-  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/bootstrap/bootstrap.min.css">
    <!-- FontAwesome -->
-    <link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/fontawesome/font-awesome.min.css">
    <!-- Animation -->
-   <link rel="stylesheet" href="plugins/animate.css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/animate.css">
    <!-- Prettyphoto -->
-   <link rel="stylesheet" href="plugins/prettyPhoto.css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/prettyPhoto.css">
    <!-- Owl Carousel -->
-   <link rel="stylesheet" href="plugins/owl/owl.carousel.css">
-   <link rel="stylesheet" href="plugins/owl/owl.theme.css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.carousel.css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.theme.css">
    <!-- Flexslider -->
-   <link rel="stylesheet" href="plugins/flex-slider/flexslider.css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/flex-slider/flexslider.css">
    <!-- Flexslider -->
-   <link rel="stylesheet" href="plugins/cd-hero/cd-hero.css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/cd-hero/cd-hero.css">
    <!-- Style Swicther -->
-   <link id="style-switch" href="css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
+   <link id="style-switch" href="${pageContext.request.contextPath}/pages/css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
 
   <!-- Main Stylesheet -->
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/defaultStyle.css" rel="stylesheet">
+  <link href="${pageContext.request.contextPath}/pages/css/style.css" rel="stylesheet">
+  <link href="${pageContext.request.contextPath}/pages/css/defaultStyle.css" rel="stylesheet">
   <!--Favicon-->
    <link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./images/favicon/144.png">
@@ -84,7 +84,7 @@
            
     </div>
     <br>
-    <td><input  type=button value="글쓰기" OnClick="window.location='evBoardWrite.jsp'"></td>
+    <input  type=button value="글쓰기" OnClick="window.location='evBoardWrite.jsp'">
     <div id="board">
         <table id="bList" width="800" border="3" bordercolor="lightgray">
             <tr heigh="30">
@@ -104,7 +104,7 @@
     </div>
    
       
-   </table>
+   
     <br>
 
     <br>

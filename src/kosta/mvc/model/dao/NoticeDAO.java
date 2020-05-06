@@ -147,6 +147,28 @@ public class NoticeDAO {
 		return result;
 	}
 	
-	
+	/**
+	 * 번호로검색
+	 */
+	public Notice selectByNoticeNo(int noticeNo) throws SQLException {
+		Notice notice =null;
+		String sql=pro.getProperty("noticeSelecyByNo");
+		
+		try{
+			 con = DbUtil.getConnection();
+			 ps = con.prepareStatement( sql);
+			 ps.setInt(1, noticeNo);
+			 
+			 rs = ps.executeQuery();
+			 
+			 while(rs.next()) {
+				notice= new Notice(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getTimestamp(4), rs.getInt(5));
+			 }
+		
+		}finally{
+			DbUtil.dbClose(rs, ps, con);
+		}
+		return notice;
+	}
 }//end
 

@@ -81,12 +81,6 @@
 		alert("asdfsaf");
 	}); 
 	
-		
-		
-	
-	
-
-	
 });*///end
 </script>
 <style>
@@ -110,6 +104,8 @@ table {text-align: center;}
 	color: #5c3fbf !important;
 	transition: 0.2s;
 }
+td.alignLeft {padding-left:80px; text-align:left;}
+th.displayHidden, td.displayHidden {display: none;}
 </style>
 </head>
 <body>
@@ -136,9 +132,10 @@ table {text-align: center;}
 
 				<thead>
 					<tr class="mainTable">
-						<th class="w-25">번호</th>
+						<th class="w-30"></th>
+						<th class="w-15 displayHidden">번호</th>
 						<th class="w-50">제목</th>
-						<th class="w-25">날짜</th>
+						<th class="w-30">날짜</th>
 						<!-- <th class="noticeDelete">삭제</th> -->
 					</tr>
 				</thead>
@@ -147,26 +144,25 @@ table {text-align: center;}
 					<c:forEach items="${list}" var="notice" varStatus="state">
 						<tr class="accordion-toggle delectSpace" data-toggle="collapse"
 							data-target="#no${notice.noticeNo}">
-							<td>${notice.noticeNo}</td>
-							<td><%-- <a href="${pageContext.request.contextPath}/front?key=viewToNotice?noticeNo=${notice.noticeNo}"> --%>${notice.noticeSubject}<!-- </a> --></td>
+							<td></td>
+							<td class="displayHidden">${notice.noticeNo}</td>
+							<td class="alignLeft"><%-- <a href="${pageContext.request.contextPath}/front?key=viewToNotice?noticeNo=${notice.noticeNo}"> --%>${notice.noticeSubject}<!-- </a> --></td>
 							<td><fmt:formatDate value="${notice.noticeTime}" type="date"/></td>
-				
-							
 						</tr>
+						
 						<tr class="accordion-body collapse" id="no${notice.noticeNo}">
 							<td></td>
+							<td class="displayHidden"></td>
 							<td>${notice.noticeContent}
 								<div class="gap-40"></div>
 								<div class="editBtns">
-									<input type="button" class="btn btn-info modifyBtn" value="수정" onClick="location.href='${pageContext.request.contextPath}/front?key=updateNotice?noticeNo=${notice.noticeNo}'">
-									<input type="button" class="btn btn-info deleteBtn" value="삭제" onClick="location.href='${pageContext.request.contextPath}/front?key=deleteNotice?noticeNo=${notice.noticeNo}'">
+									<input type="button" class="btn btn-info modifyBtn" value="수정" onClick="location.href='${pageContext.request.contextPath}/front?key=updateNoticeEdit&noticeNo=${notice.noticeNo}'">
+									<input type="button" class="btn btn-info deleteBtn" value="삭제" onClick="location.href='${pageContext.request.contextPath}/front?key=deleteNotice&noticeNo=${notice.noticeNo}'">
 
 								</div>
 							
 							</td>
-							<td class="noticeDelete">
-								
-							</td>
+							<td></td>
 						</tr>
 					</c:forEach>
 

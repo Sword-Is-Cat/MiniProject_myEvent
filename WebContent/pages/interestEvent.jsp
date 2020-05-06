@@ -121,7 +121,7 @@
 					<div class="portfolio-slider">
 						<div class="flexportfolio flexslider">
 							<ul class="slides">
-								<li><a href=""><img id="listImg"
+								<li><a href="./front?key=selectEvent&evNo=${event.evNo}"><img id="listImg"
 										src="${pageContext.request.contextPath}/eventImage/${event.evImg}?fixed"
 										alt=""></a></li>
 							</ul>

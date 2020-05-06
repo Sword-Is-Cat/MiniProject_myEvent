@@ -132,7 +132,7 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/waypoints.min.js"></script>
 	
 	<script src="${pageContext.request.contextPath}/pages/plugins/google-map/gmap.js"></script>
-	<script type="text/javascript" src="plugins/waypoints.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/pages/plugins/waypoints.min.js"></script>
 
 	<!-- Main Script -->
 	<script src="${pageContext.request.contextPath}/pages/js/script.js"></script>
