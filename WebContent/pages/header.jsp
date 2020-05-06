@@ -61,7 +61,7 @@
 								<li class="nav-item active"><a class="nav-link"
 									href="${pageContext.request.contextPath}/pages/about.jsp" role="button"> 회사소개 </a></li>
 								<li class="nav-item active"><a class="nav-link"
-									href="${pageContext.request.contextPath}/pages/bookHistory.jsp" role="button"> 신청내역확인 (미구현) </a></li>
+									href="${pageContext.request.contextPath}/front?key=selectBookByUserNo" role="button"> 신청내역확인 </a></li>
 								<li class="nav-item active"><a class="nav-link"
 									href="${pageContext.request.contextPath}/front?key=manageChannel" role="button"> 채널/행사개설 </a></li>
 							</ul>

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kosta.mvc.model.dao.BookDAO;
 import kosta.mvc.vo.Book;
@@ -14,7 +15,8 @@ public class SelectBookByUserNoController implements Controller {
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		
-		int userNo = (int)request.getSession().getAttribute("userNo");
+		HttpSession session = request.getSession();
+		int userNo = (int)session.getAttribute("userNo");
 		
 		List<Book> list = new BookDAO().selectBookByUserNo(userNo);
 		

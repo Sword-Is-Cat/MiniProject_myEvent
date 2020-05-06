@@ -148,10 +148,11 @@ public class BookDAO {
 			
 			while(rs.next()) {
 				event = new Event();
-				event.setEvName(rs.getString("e.evName"));
-				book = new Book(0, null, event, rs.getTimestamp("b.bookTime"), 0);
+				event.setEvName(rs.getString("evName"));
+				book = new Book(0, null, event, rs.getTimestamp("bookTime"), 0);
 				
 				list.add(book);
+				
 			}
 			
 			
