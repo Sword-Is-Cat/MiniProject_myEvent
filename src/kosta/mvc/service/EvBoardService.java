@@ -11,19 +11,20 @@ import kosta.mvc.vo.EvBoard;
 public class EvBoardService {
 
    
-   private static EvBoardDAO EvBoardDAO;
+   private static EvBoardDAO evBoardDAO = new EvBoardDAO();
    
    //전체검색
    public static List<EvBoard> selectAll() throws SQLException {
-      List<EvBoard> list = EvBoardDAO.selectEvBoardByEvNo(0);
+      List<EvBoard> list = evBoardDAO.selectEvBoard();
       return list;
    }
-   //상세검색
+  
+  
    
    
    //등록
    public static void insert(EvBoard evBoard) throws SQLException{
-		int result = EvBoardDAO.evBoardinsert(evBoard);
+		int result = evBoardDAO.evBoardinsert(evBoard);
 		if (result==0) {
 			throw new SQLException("등록되지않음");
 		}

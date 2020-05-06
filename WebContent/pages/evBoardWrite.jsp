@@ -61,15 +61,16 @@
 </head>
 
 <body>
-로그인된 사용자가 아니라면 로그인창으로 돌려줌
+<!-- 로그인된 사용자가 아니라면 로그인창으로 감 -->
 <%
-	if(session.getAttribute("userId") == null) { 
- 		session.setAttribute("  ", "게시물 작성은<br>로그인이 필요합니다.");
- 		response.sendRedirect("../pages/login.jsp"); 
-		
-		return; 
-	} 
+ 	if(session.getAttribute("userId") == null) {  
+  		session.setAttribute("  ", "게시물 작성은<br>로그인이 필요합니다."); 
+ 		response.sendRedirect("../pages/login.jsp");  
+ 		
+		return ;  
+ 	} 
 %>
+
 
 	<h3>
 		<!--  1. 등록 -->
@@ -92,30 +93,32 @@
 
 	<c:import url="header.jsp" />
 
-	<br>
-	<b><font size="6" color="gray">글쓰기</font></b>
-	<br>
+	
 
     
 	<form method="post" action="../front?key=insertEvBoard"
-		name="boardForm" enctype="../elec?command=insert">
-		<input type="hidden" name="boardWrite" value="${sessionScope.sessionID}">
+		name="insertEvBoard" enctype="../elec?command=insert">
+		<input type="hidden" name="boardWrite" value="${sessionScope.sessionID == evBoard.userNo}">
 		<table width="700" border="3" bordercolor="lightgray" align="center">
 			<tr>
+				<td id="title">이벤트번호</td>
+				<td>${sessionScope.sessionID ==evBoard.evNo}</td>				
+			</tr>
+			<tr>
 				<td id="title">작성자</td>
-				<td>${sessionScope.sessionID}</td>
-		
+				<td>${sessionScope.sessionID == evBoard.userNo}</td>
+			</tr>
 			<tr>
 				<td id="title">내 용</td>
-				<td><textarea name="board_content" cols="72" rows="20"></textarea>
+				<td><textarea name="evBoardContent" cols="72" rows="20"></textarea>
 				
 				</td>
 			</tr>
 				
 			<tr align="center" valign="middle">
 				<td colspan="5"><input type="reset" value="작성취소">
-				 <input	type="submit" value="등록"> 
-				 <input type="button" value="목록">
+				 <input	type="submit" value="등록"onClick=""> 
+				 <input type="button" value="목록"onClick="../pages/evBoard.jsp">
 				</td>
 			</tr>
 		</table>
