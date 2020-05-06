@@ -115,10 +115,11 @@ img.mainLogo {
 						class="navbar-collapse text-center d-flex justify-content-between">
 						<div class="row col s2"></div>
 						<div class="row col s5 p-3 align-self-center">
-							<form class="form-inline my-2 navbar-left searchForm">
+							<form class="form-inline my-2 navbar-left searchForm" method="get" action="${pageContext.request.contextPath}/front">
+								<input type="hidden" name="key" value="selectEventByEvName">
 								<div class="bg-light rounded rounded-pill ">
 									<div class="input-group">
-										<input type="search" placeholder="검색어를 입력해주세요."
+										<input type="search" name="search" placeholder="검색어를 입력해주세요."
 											aria-describedby="button-addon1"
 											class="form-control border-0 bg-light schWindow">
 										<div class="input-group-append">
@@ -134,26 +135,26 @@ img.mainLogo {
 						<div id = "pcMenu" class="row d-flex justify-content-end">
 							<ul class="nav navbar-nav navbar-right mr-auto ">
 								<li class="nav-item active"><a class="nav-link"
-									href="${pageContext.request.contextPath}/pages/eventList.jsp" role="button"> 행사검색 </a></li>
+									href="${pageContext.request.contextPath}/front?key=searchRecentEvent" role="button"> 행사검색 </a></li>
 								<li class="nav-item active"><a class="nav-link"
 									href="${pageContext.request.contextPath}/pages/about.jsp" role="button"> 회사소개 </a></li>
 								<li class="nav-item active"><a class="nav-link"
 									href="${pageContext.request.contextPath}/pages/bookHistory.jsp" role="button"> 신청내역확인 (미구현) </a></li>
 								<li class="nav-item active"><a class="nav-link"
-									href="${pageContext.request.contextPath}/pages/createEvent.jsp" role="button"> 채널/행사개설 작업예정 </a></li>
+									href="${pageContext.request.contextPath}/front?key=manageChannel" role="button"> 채널/행사개설 </a></li>
 							</ul>
 						</div>
 						<div class="collapse" id="navigation">
 							<div id = "mobileMenu" class="row d-flex justify-content-end">
 							<ul class="nav navbar-nav navbar-right mr-auto ">
 								<li class="nav-item active"><a class="nav-link"
-									href="${pageContext.request.contextPath}/pages/eventList.jsp" role="button"> 행사검색 </a></li>
+									href="${pageContext.request.contextPath}/front?key=searchRecentEvent" role="button"> 행사검색 </a></li>
 								<li class="nav-item active"><a class="nav-link"
 									href="${pageContext.request.contextPath}/pages/about.jsp" role="button"> 회사소개 </a></li>
 								<li class="nav-item active"><a class="nav-link"
 									href="${pageContext.request.contextPath}/pages/bookHistory.jsp" role="button"> 신청내역확인 (미구현) </a></li>
 								<li class="nav-item active"><a class="nav-link"
-									href="${pageContext.request.contextPath}/pages/createEvent.jsp" role="button"> 채널/행사개설 작업예정 </a></li>
+									href="${pageContext.request.contextPath}/front?key=manageChannel" role="button"> 채널/행사개설 </a></li>
 							</ul>
 						</div>
 						</div>

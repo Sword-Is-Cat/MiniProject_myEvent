@@ -232,7 +232,7 @@
 								<div class=" wow fadeInDown" data-wow-delay=".5s"
 									style="width: 70px">
 									<div class="service-content text-center">
-										<a href="${pageContext.request.contextPath}/front?key=selectEventByCateNo=&cateNo5"> <img
+										<a href="${pageContext.request.contextPath}/front?key=selectEventByCateNo=&cateNo=5"> <img
 											src="${pageContext.request.contextPath}/pages/images/category/category-communite-hover2.svg"></span>
 											<h3>커뮤니티</h3>
 										</a>
