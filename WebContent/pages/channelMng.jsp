@@ -339,7 +339,7 @@ h4 .addCh::after {
 														class="fa fa-users">채널설정</i></a></li>
 												<li class=""><a class="chAuthor"
 													href="${pageContext.request.contextPath}/pages/chAuthority.jsp?chNo=${channel.chNo}"><i
-														class="fa fa-users">권한설정<% List<Channel> chlist= (List<Channel>)request.getAttribute("chList");out.print(chlist.size()); %></i></a></li>
+														class="fa fa-users">권한설정</i></a></li>
 												<li class=""><a class="chDel"
 													href="${pageContext.request.contextPath}/front?key=deleteChannel&chNo=${channel.chNo}"><i
 														class="fa fa-users">채널삭제</i></a></li>
