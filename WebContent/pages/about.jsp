@@ -273,6 +273,48 @@
 				<!-- Team end -->
 				</div>
 
+			</div>
+			<!-- 2nd container end -->
+		</section>
+		
+		<div id="map" style="width:60%; margin-left: 20%; height:350px;"></div>
+
+		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b90bc4dfc8f3d9e3716cfb69ea67a34a"></script>
+		<script>
+		var mapContainer = document.getElementById('map'), 
+		    mapOption = { 
+		        center: new kakao.maps.LatLng(37.402287, 127.107260), 
+		        level: 3 
+		    };
+		
+		var map = new kakao.maps.Map(mapContainer, mapOption); 
+		
+		var markerPosition  = new kakao.maps.LatLng(37.402287, 127.107260); 
+		
+		var marker = new kakao.maps.Marker({
+		    position: markerPosition
+		});
+		
+		marker.setMap(map);
+		
+		var iwContent = '<div style="padding:5px;">MY EVENT</div>'; 
+
+		var infowindow = new kakao.maps.InfoWindow({
+		    content : iwContent
+		});
+
+		kakao.maps.event.addListener(marker, 'mouseover', function() {
+		    infowindow.open(map, marker);
+		});
+
+		kakao.maps.event.addListener(marker, 'mouseout', function() {
+		    infowindow.close();
+		});
+		</script>
+		<!--/ Main container end -->
+		<br><br>
+	</div>
+
 
 <div class="gap-60"></div>
 </div><!-- container end -->

@@ -16,8 +16,9 @@ public class Notice {
 	 * @param noticeSubject
 	 * @param noticeContent
 	 */
-	public Notice(String noticeSubject, String noticeContent) {
+	public Notice( String noticeSubject, String noticeContent) {
 		//super();
+	
 		this.noticeSubject = noticeSubject;
 		this.noticeContent = noticeContent;
 	}

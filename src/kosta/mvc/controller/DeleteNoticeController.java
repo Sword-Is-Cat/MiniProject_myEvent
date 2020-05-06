@@ -14,7 +14,8 @@ public class DeleteNoticeController implements Controller {
 		
 		NoticeService.delete(noticeNo);
 		
-		ModelAndView mv = new ModelAndView(true, "./pages/notice.jsp?noticeNo="+noticeNo);
+//		ModelAndView mv = new ModelAndView(true, "./pages/notice.jsp?noticeNo="+noticeNo);
+		ModelAndView mv = new ModelAndView(true, "./front?key=viewToNotice");
 	
 		return mv;
 	}
