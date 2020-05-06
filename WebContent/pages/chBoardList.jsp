@@ -55,6 +55,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="72x72"
 	href="${pageContext.request.contextPath}/pages/images/favicon/72.png">
 <link rel="apple-touch-icon-precomposed" href="${pageContext.request.contextPath}/pages/images/favicon/54.png">
+
 <!-- webFont -->
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"

@@ -83,15 +83,10 @@ public class ManagerDAO {
 		List<Manager> list = new ArrayList<>();
 		Manager manager = null;
 		String sql=pro.getProperty("selectManager");
-		System.out.println("dao 들어옴");
-		System.out.println(sql);
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, chNo);
-			System.out.println(chNo);
 			rs = ps.executeQuery();
-			System.out.println("try 안");
-			System.out.println(chNo);
 			while(rs.next()) {
 				int userNo = rs.getInt("userNo");
 				int grade = rs.getInt("grade");
@@ -106,7 +101,6 @@ public class ManagerDAO {
 		} finally {
 			DbUtil.dbClose(rs, ps, con);
 		}
-		System.out.println(list.size());
 		return list;
 	}
 

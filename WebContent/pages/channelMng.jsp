@@ -48,11 +48,6 @@
 	href="${pageContext.request.contextPath}/pages/css/presets/preset3.css"
 	media="screen" rel="stylesheet" type="text/css">
 
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-<!--[if lt IE 9]>
-      <script src="plugins/html5shiv.js"></script>
-      <script src="plugins/respond.min.js"></script>
-    <![endif]-->
 
 <!-- Main Stylesheet -->
 <link href="${pageContext.request.contextPath}/pages/css/style.css"
@@ -68,8 +63,8 @@
 	href="${pageContext.request.contextPath}/pages/images/favicon/144.png">
 <link rel="apple-touch-icon-precomposed" sizes="72x72"
 	href="${pageContext.request.contextPath}/pages/images/favicon/72.png">
-<link rel="apple-touch-icon-precomposed"
-	href="${pageContext.request.contextPath}/pages/images/favicon/54.png">
+<link rel="apple-touch-icon-precomposed" href="${pageContext.request.contextPath}/pages/images/favicon/54.png">
+
 <!-- webFont -->
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
@@ -85,7 +80,7 @@
 #chDesc {
 	background-color: #f6f6f6;
 	min-height: 350px;
-	padding: 30px;
+	padding: 35px;
 	text-align: left;
 }
 
@@ -105,11 +100,6 @@
 	top: -30px;
 }
 /*------------지안추가css----------------------*/
-.mainContainer {
-	/* position: relative;
-   top:-50px; */
-	
-}
 
 .chSetting>i::before {
 	content: "\f013";
@@ -151,121 +141,19 @@
 	padding: 10px 15px 10px 0px;
 	display: inline-block;
 }
-
-.bgPart {
-	margin-top: 50px;
-	background:
-		url("${pageContext.request.contextPath}/pages/images/hostcenter_top_image.jpg")
-		no-repeat;
-	background-position: center center;
-	background-size: cover; //
-	padding-top: 50px;
-}
-
-.bgImg { //
-	height: 250px;
-}
-
-h4 .addCh::after {
-	content: "\f055";
-	font-family: FontAwesome;
-	font-style: normal;
-	font-weight: 900;
-	margin: 0 auto;
-	padding-right: 20px;
-	text-align: center;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+#makeCh{
+  background-color: #5c3fbf; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 </style>
-
-<!-- mobile responsive meta -->
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1">
-
-
-
-<!-- Bootstrap -->
-
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/pages/plugins/bootstrap/bootstrap.min.css">
-
-<!-- FontAwesome -->
-
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/pages/plugins/fontawesome/font-awesome.min.css">
-
-<!-- Animation -->
-
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/pages/plugins/animate.css">
-
-<!-- Prettyphoto -->
-
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/pages/plugins/prettyPhoto.css">
-
-<!-- Owl Carousel -->
-
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/pages/plugins/owl/owl.carousel.css">
-
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/pages/plugins/owl/owl.theme.css">
-
-<!-- Flexslider -->
-
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/pages/plugins/flex-slider/flexslider.css">
-
-<!-- Flexslider -->
-
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/pages/plugins/cd-hero/cd-hero.css">
-
-<!-- Style Swicther -->
-
-<link id="style-switch"
-	href="${pageContext.request.contextPath}/pages/css/presets/preset3.css"
-	media="screen" rel="stylesheet" type="text/css">
-
-
-
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-
-<!--[if lt IE 9]>
-      <script src="plugins/html5shiv.js"></script>
-      <script src="plugins/respond.min.js"></script>
-    <![endif]-->
-
-
-
-<!-- Main Stylesheet -->
-
-<link href="${pageContext.request.contextPath}/pages/css/style.css"
-	rel="stylesheet">
-
-
-
-<!--Favicon-->
-
-<link rel="icon" href="img/favicon/favicon-32x32.png"
-	type="image/x-icon" />
-
-<link rel="apple-touch-icon-precomposed" sizes="144x144"
-	href="img/favicon/favicon-144x144.png">
-
-<link rel="apple-touch-icon-precomposed" sizes="72x72"
-	href="img/favicon/favicon-72x72.png">
-
-<link rel="apple-touch-icon-precomposed"
-	href="img/favicon/favicon-54x54.png">
-
-
-
 </head>
 
 
@@ -280,8 +168,7 @@ h4 .addCh::after {
 
 	<!-- 채널메인 end -->
 	<!-- Main container start -->
-	<!-- 작업중 -->
-	<section class="main-container" style="margin-top: 3em;">
+	<section class="main-container">
 		<c:choose>
 			<c:when test="${empty requestScope.chList}">
 				<tr>
@@ -293,7 +180,7 @@ h4 .addCh::after {
 						id="makeEv" class="btn btn-primary solid cd-btn">채널개설</a>
 					</td>
 				</tr>
-			</c:when>
+			</c:when>			
 			<c:otherwise>
 				<c:forEach items="${requestScope.chList}" var="channel">
 					<div class="container">
@@ -347,9 +234,7 @@ h4 .addCh::after {
 													href="${pageContext.request.contextPath}/front?key=channelDetail&chNo=${channel.chNo}"><i
 														class="fa fa-users">채널상세</i></a></li>
 											</ul>
-
-										</div>
-										
+										</div>										
 										<img src="channelImg/${channel.chImg}" alt="" style="width:350px; height:250px;">
 										<div class="btnOpen">
 										<br><br><br><br><br>
@@ -368,9 +253,6 @@ h4 .addCh::after {
 			</c:otherwise>
 		</c:choose>
 	</section>
-
-
-	<!-- 작업중 -->
 
 
 

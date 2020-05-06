@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -16,28 +17,40 @@
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/bootstrap/bootstrap.min.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/pages/plugins/bootstrap/bootstrap.min.css">
 <!-- FontAwesome -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/fontawesome/font-awesome.min.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/pages/plugins/fontawesome/font-awesome.min.css">
 <!-- Animation -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/animate.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/pages/plugins/animate.css">
 <!-- Prettyphoto -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/prettyPhoto.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/pages/plugins/prettyPhoto.css">
 <!-- Owl Carousel -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.carousel.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.theme.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/pages/plugins/owl/owl.carousel.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/pages/plugins/owl/owl.theme.css">
 <!-- Flexslider -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/flex-slider/flexslider.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/pages/plugins/flex-slider/flexslider.css">
 <!-- Flexslider -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/cd-hero/cd-hero.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/pages/plugins/cd-hero/cd-hero.css">
 <!-- Style Swicther -->
-<link id="style-switch" href="${pageContext.request.contextPath}/pages/css/presets/preset3.css" media="screen"
-	rel="stylesheet" type="text/css">
+<link id="style-switch"
+	href="${pageContext.request.contextPath}/pages/css/presets/preset3.css"
+	media="screen" rel="stylesheet" type="text/css">
 
 
 <!-- Main Stylesheet -->
-<link href="${pageContext.request.contextPath}/pages/css/style.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/pages/css/defaultStyle.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/pages/css/style.css"
+	rel="stylesheet">
+<link
+	href="${pageContext.request.contextPath}/pages/css/defaultStyle.css"
+	rel="stylesheet">
 <!--Favicon-->
 <link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144"
@@ -88,7 +101,7 @@ thead {
 	<c:import url="header.jsp" />
 	<!-- 상단 메뉴 -->
 
-
+	
 	<c:import url="subMenu.jsp" />
 	<!-- subnav start -->
 	<div class="menuSubnav__section mt-xl-4">
@@ -120,16 +133,15 @@ thead {
 				<thead>
 					<td>신청일</td>
 					<td>신청행사</td>
-					<td>상세내용</td>
-					<td>상태</td>
 				</thead>
 				<tbody>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
+					<c:forEach items="${requestScope.list}" var="book">
+						<tr>
+							<td><fmt:formatDate value="${requestScope.book.bookTime}"
+									pattern="yyyy/MM/dd hh:mm" /></td>
+							<td>${book.event.evName}</td>
+						</tr>
+					</c:forEach>
 				</tbody>
 			</table>
 		</div>

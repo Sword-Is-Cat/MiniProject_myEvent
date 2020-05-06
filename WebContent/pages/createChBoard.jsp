@@ -70,6 +70,12 @@ star-input>.input.focus{outline:1px dotted #ddd;}
 .star-input>.input>label[for="p4"]{width:120px;z-index:2;}
 .star-input>.input>label[for="p5"]{width:150px;z-index:1;}
 .star-input>output{display:inline-block;width:60px; font-size:18px;text-align:right; vertical-align:middle;}
+
+h3{
+	margin-left: 45%;
+	color: #5c3fbf;
+	font-weight: bold;
+}
 </style>
 
 </head>
@@ -80,9 +86,8 @@ star-input>.input.focus{outline:1px dotted #ddd;}
 	<!-- mainMenu -->
 	<c:import url="header.jsp" />
 	
-	<div class="row justify-content-center p-3">
-         <caption>채널리뷰 등록</caption>
-      </div>
+	  <br><br>	
+      <h3>채널리뷰 등록</h3>
       <div class="row justify-content-center">
 
          <div class="col-md-6">
@@ -91,7 +96,7 @@ star-input>.input.focus{outline:1px dotted #ddd;}
                <div class="row">
                   <div class="col-md-12">
                      <div class="form-group">
-                        <label>채널이름 <h3 style="font-weight: bold">${channel.chNo}</h3></label>
+                        <label>${chBoard.channel.chName }<h3 style="font-weight: bold">${channel.chNo}</h3></label>
                      </div>
                   </div>
                </div>

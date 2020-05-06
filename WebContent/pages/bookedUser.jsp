@@ -112,6 +112,23 @@
 #evInfo {
 	margin-top: 1em;
 }
+table {
+	width: 100%;
+	/*margin:0 auto;
+		margin-left:15%; */
+}
+
+thead {
+	background-color: rgb(240, 237, 250);
+	color: rgb(92, 98, 208);
+	text-align: center;
+	font-weight: bold;
+}
+h3{
+	margin-left: 45%;
+	color: #5c3fbf;
+	font-weight: bold;
+}
 </style>
 
 </head>
@@ -122,46 +139,34 @@
 	<!--subTopMenu end-->
 
 	<c:import url="header.jsp"></c:import>
-
-	<div class="container">
-
-		<div>
-			<table style="border: 1px; bordercolor: blue; align: center;">
-				<tr>
+	<br><br>
+	<h3>신청자 목록</h3><br>
+	<div class="container mainContainer">
+		<div class="col s12 d-flex justify-content-between">
+			<table>
+				<thead>
 					<th>ID</th>
 					<th>성명</th>
 					<th>전화번호</th>
 					<th>이메일</th>
-				</tr>
-				<c:forEach items="${requestScope.list}" var="user">
-					<tr>
-						<td class="col-md-1">${user.userId}</td>
-						<td class="col-md-1">${user.userName}</td>
-						<td class="col-md-1">${user.userPhone}</td>
-						<td class="col-md-1">${user.userEmail}</td>
+				</thead>
+				<tbody>
+					<c:forEach items="${requestScope.list}" var="user">
+					<tr style="text-align: center;">
+						<td>${user.userId}</td>
+						<td>${user.userName}</td>
+						<td>${user.userPhone}</td>
+						<td>${user.userEmail}</td>
 					</tr>
 					<!--/ Panel 1 end-->
 				</c:forEach>
-				<tr>
-					<td>Gildong</td>
-					<td>고길동</td>
-					<td>010-1234-5678</td>
-					<td>swordmaster@naver.com</td>
-				</tr>
-				<!--/ Panel 1 end-->
+				</tbody>
 			</table>
-			<!--/ Accordion end -->
 		</div>
-
 	</div>
-	<!-- Container end -->
-
-
-
+	<!-- container end -->
 	<!-- footer -->
+	<br><br>
 	<c:import url="footer.jsp"></c:import>
-
-
-
 </body>
 </html>
