@@ -91,6 +91,7 @@ $(function(){
 });
 </script>
 
+
 </head>
 <style>
 #chAuthority{
@@ -255,6 +256,12 @@ hr{
 		</main>
 
 		<!--/ container end -->
+		
+		<!--/ Main container end -->
+
+		
+
+	
 
 	<!-- Body inner end -->
 

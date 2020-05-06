@@ -7,7 +7,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import kosta.mvc.service.EvService;
+import kosta.mvc.service.NoticeService;
 import kosta.mvc.vo.Event;
+import kosta.mvc.vo.Notice;
 
 public class IndexController implements Controller {
 
@@ -15,7 +17,7 @@ public class IndexController implements Controller {
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		HttpSession session = request.getSession();
 		// 최근항목들
-		List<Event> recentEvList = EvService.selectRecentEvents();
+		List<Event> recentEvList = EvService.selectRecentEvents(4);
 		
 		List<Event> myCategoryEvList = null;
 
@@ -27,9 +29,12 @@ public class IndexController implements Controller {
 			myCategoryEvList = EvService.selectRecentEventByRandomCategory();
 		}
 		
+		Notice recentNotice = NoticeService.selectRecentOne();
+		
 
 		request.setAttribute("recentEvList", recentEvList);
 		request.setAttribute("myCategoryEvList", myCategoryEvList);
+		request.setAttribute("recentNotice", recentNotice);
 
 		return new ModelAndView(false, "/pages/index.jsp");
 	}

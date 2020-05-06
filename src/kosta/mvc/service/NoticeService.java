@@ -44,5 +44,10 @@ public class NoticeService {
 			
 			return noticeUpdate;
 		}//
+	 
+	 public static Notice selectRecentOne() throws SQLException {
+		 Notice notice = noticeDAO.selectRecentOne();
+		 return notice;
+	 }
 	
 }//end
