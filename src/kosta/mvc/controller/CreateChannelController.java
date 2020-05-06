@@ -21,7 +21,7 @@ public class CreateChannelController implements Controller{
 		
 		MultipartRequest m = new MultipartRequest(request, saveDir, maxSize, encoding, new DefaultFileRenamePolicy());
 		
-		String userNo = m.getParameter("userNo");
+		int userNo = (int)request.getSession().getAttribute("userNo");
 		String chName = m.getParameter("chName");
 		String chImg = m.getParameter("chImg");
 		String chDescription = m.getParameter("chDescription");
@@ -32,7 +32,7 @@ public class CreateChannelController implements Controller{
 		}
 		
 		User user = new User();
-		user.setUserNo(Integer.parseInt(userNo));
+		user.setUserNo(userNo);
 		
 		Channel chan = new Channel();
 		chan.setUser(user);
