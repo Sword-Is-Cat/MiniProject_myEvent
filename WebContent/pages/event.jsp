@@ -183,7 +183,7 @@
 							%>
 							<p>
 								<a
-									href="front?key=favoriteEvent&evNo=${requestScope.event.evNo}"
+									href="front?key=deleteFavoriteEvent&evNo=${requestScope.event.evNo}"
 									class="project-btn btn btn-primary">관심행사취소</a>
 							</p>
 							<%
@@ -191,7 +191,7 @@
 							%>
 							<p>
 								<a
-									href="front?key=deleteFavoriteEvent&evNo=${requestScope.event.evNo}"
+									href="front?key=favoriteEvent&evNo=${requestScope.event.evNo}"
 									class="project-btn btn btn-primary">관심행사등록</a>
 							</p>
 							<%

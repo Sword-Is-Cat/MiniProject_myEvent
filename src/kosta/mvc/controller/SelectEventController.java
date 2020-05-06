@@ -41,15 +41,15 @@ public class SelectEventController implements Controller {
 		int chNo = event.getChannel().getChNo();
 		
 		boolean isManager = false;
-		if(new ManagerDAO().isManager(chNo, userNo)==1)
+		if(new ManagerDAO().isManager(chNo, userNo)!=0)
 			isManager=true;
 		
 		boolean isBook = false;
-		if(new BookDAO().checkBook(userNo, evNo)==1)
+		if(new BookDAO().checkBook(userNo, evNo)!=0)
 			isBook = true;
 		
 		boolean isFavor = false;
-		if(new FavoriteEvDAO().checkFavorite(userNo, evNo)==1)
+		if(new FavoriteEvDAO().checkFavorite(userNo, evNo)!=0)
 			isFavor = true;
 		
 		request.setAttribute("event", event);

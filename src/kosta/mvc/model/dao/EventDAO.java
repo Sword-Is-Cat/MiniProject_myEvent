@@ -255,7 +255,9 @@ public class EventDAO {
 				if (channel == null) {
 					user = new User(rs.getInt("userNo"), rs.getString("userName"), rs.getString("userPwd"),
 							rs.getString("userName"), rs.getString("userAddr"), rs.getString("userPhone"),
-							rs.getString("userEmaill"), rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
+							rs.getString("userEmail"), 
+							rs.getTimestamp("userJoinDate"), 
+							rs.getInt("userStatus"));
 					channel = new Channel(rs.getInt("chNo"), user, rs.getString("chName"), rs.getString("chImg"),
 							rs.getInt("chStatus"), rs.getString("chDescription"));
 				}
@@ -315,7 +317,7 @@ public class EventDAO {
 				if (channel == null) {
 					user = new User(rs.getInt("userNo"), rs.getString("userName"), rs.getString("userPwd"),
 							rs.getString("userName"), rs.getString("userAddr"), rs.getString("userPhone"),
-							rs.getString("userEmaill"), rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
+							rs.getString("userEmail"), rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
 					channel = new Channel(rs.getInt("chNo"), user, rs.getString("chName"), rs.getString("chImg"),
 							rs.getInt("chStatus"), rs.getString("chDescription"));
 				}
@@ -381,7 +383,7 @@ public class EventDAO {
 					user = userMap.get(userNo);
 				} else {
 					user = new User(userNo, rs.getString("userName"), rs.getString("userPwd"), rs.getString("userName"),
-							rs.getString("userAddr"), rs.getString("userPhone"), rs.getString("userEmaill"),
+							rs.getString("userAddr"), rs.getString("userPhone"), rs.getString("userEmail"),
 							rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
 					userMap.put(userNo, user);
 				}
@@ -452,7 +454,7 @@ public class EventDAO {
 					user = userMap.get(userNo);
 				} else {
 					user = new User(userNo, rs.getString("userName"), rs.getString("userPwd"), rs.getString("userName"),
-							rs.getString("userAddr"), rs.getString("userPhone"), rs.getString("userEmaill"),
+							rs.getString("userAddr"), rs.getString("userPhone"), rs.getString("userEmail"),
 							rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
 					userMap.put(userNo, user);
 				}
@@ -527,7 +529,7 @@ public class EventDAO {
 					user = userMap.get(userNo);
 				} else {
 					user = new User(userNo, rs.getString("userName"), rs.getString("userPwd"), rs.getString("userName"),
-							rs.getString("userAddr"), rs.getString("userPhone"), rs.getString("userEmaill"),
+							rs.getString("userAddr"), rs.getString("userPhone"), rs.getString("userEmail"),
 							rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
 					userMap.put(userNo, user);
 				}
@@ -602,7 +604,7 @@ public class EventDAO {
 					user = userMap.get(userNo);
 				} else {
 					user = new User(userNo, rs.getString("userName"), rs.getString("userPwd"), rs.getString("userName"),
-							rs.getString("userAddr"), rs.getString("userPhone"), rs.getString("userEmaill"),
+							rs.getString("userAddr"), rs.getString("userPhone"), rs.getString("userEmail"),
 							rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));
 					userMap.put(userNo, user);
 				}
