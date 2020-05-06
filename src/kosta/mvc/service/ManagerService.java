@@ -17,10 +17,8 @@ public class ManagerService{
 	private static ManagerDAO mngDAO = new ManagerDAO();
 
 	public static List<Manager> selectManager(int chNo) throws SQLException {
-		System.out.println("서비스 시작");
 		List<Manager> dbManager = mngDAO.selectManager(chNo);
 		if(dbManager==null) throw new SQLException("채널 리뷰가 없습니다.");
-		System.out.println("서비스 끝");
 		return dbManager;
 	}
 
