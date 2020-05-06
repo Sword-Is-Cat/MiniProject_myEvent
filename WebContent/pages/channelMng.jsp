@@ -226,7 +226,20 @@ h4 .addCh::after {
 	href="img/favicon/favicon-54x54.png">
 
 
-
+<style>
+#makeCh{
+  background-color: #5c3fbf; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
 </head>
 
 
@@ -279,13 +292,16 @@ h4 .addCh::after {
 					<td colspan="5">
 						<p align="center">
 							<b><span style="font-size: 9pt;">등록된 채널이 없습니다.</span></b>
-						</p> <a href="${pageContext.request.contextPath}/pages/createChannel.jsp" id="makeEv" class="btn btn-primary solid cd-btn">채널개설</a>
+						</p> <a style="margin-left: 50%" href="${pageContext.request.contextPath}/pages/createChannel.jsp" id="makeEv" class="btn btn-primary solid cd-btn">채널개설</a>
 					</td>
 				</tr>
 			</c:when>
+			
 			<c:otherwise>
+			<br><br>
+			<a style="margin-left: 50%" href="${pageContext.request.contextPath}/pages/createChannel.jsp" id="makeCh">채널개설</a>
 				<c:forEach items="${requestScope.chList}" var="channel">
-
+				
 					<div class="container">
 
 						<div class="row">
