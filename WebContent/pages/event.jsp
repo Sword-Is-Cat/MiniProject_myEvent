@@ -61,48 +61,6 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
-<!-- jQuery -->
-<script
-	src="${pageContext.request.contextPath}/pages/plugins/jQuery/jquery.min.js"></script>
-<!-- Bootstrap JS -->
-<script
-	src="${pageContext.request.contextPath}/pages/plugins/bootstrap/bootstrap.min.js"></script>
-<!-- Style Switcher -->
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/pages/plugins/style-switcher.js"></script>
-<!-- Owl Carousel -->
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/pages/plugins/owl/owl.carousel.js"></script>
-<!-- PrettyPhoto -->
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/pages/plugins/jquery.prettyPhoto.js"></script>
-<!-- Bxslider -->
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/pages/plugins/flex-slider/jquery.flexslider.js"></script>
-<!-- CD Hero slider -->
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/pages/plugins/cd-hero/cd-hero.js"></script>
-<!-- Isotope -->
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/pages/plugins/isotope.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/pages/plugins/ini.isotope.js"></script>
-<!-- Wow Animation -->
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/pages/plugins/wow.min.js"></script>
-<!-- Eeasing -->
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/pages/plugins/jquery.easing.1.3.js"></script>
-<!-- Counter -->
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/pages/plugins/jquery.counterup.min.js"></script>
-<!-- Waypoints -->
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/pages/plugins/waypoints.min.js"></script>
-
-
-<!-- Main Script -->
-<script src="${pageContext.request.contextPath}/pages/js/script.js"></script>
 
 <style>
 #qnaBoard {
@@ -132,7 +90,7 @@
 				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 					<div class="portfolio-slider">
 						<div class="flexportfolio flexslider">
-							<img src="eventImage/${requestScope.event.evImg}" alt="">
+							<img src="eventImage/${requestScope.event.evImg}" alt="mainImg">
 						</div>
 					</div>
 				</div>

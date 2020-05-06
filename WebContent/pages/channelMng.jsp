@@ -248,7 +248,7 @@
 			
 			<c:otherwise>
 			<br><br>
-			<a style="margin-left: 50%" href="${pageContext.request.contextPath}/pages/createChannel.jsp" id="makeCh">채널개설</a>
+			<%-- <a style="margin-left: 50%" href="${pageContext.request.contextPath}/pages/createChannel.jsp" id="makeCh">채널개설</a> --%>
 				<c:forEach items="${requestScope.chList}" var="channel">
 				
 					<div class="container">
@@ -324,7 +324,7 @@
 											<ul class="list-unstyled chListMenu">
 												<li class=""><a class="chSetting"
 													href="${pageContext.request.contextPath}/front?key=updateChannelForm&chNo=${channel.chNo}"><i
-														class="fa fa-users">채널설정</i></a></li>
+														class="fa fa-users">채널수정</i></a></li>
 												<li class=""><a class="chAuthor" href="${pageContext.request.contextPath}/pages/chAuthority.jsp?chNo=${channel.chNo}"><i
 														class="fa fa-users">권한설정</i></a></li>
 												<li class=""><a class="chDel"
