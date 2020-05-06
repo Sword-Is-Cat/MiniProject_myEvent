@@ -28,7 +28,7 @@ public class FavoriteEvDAO {
 	PreparedStatement ps;
 	ResultSet rs;
 	Properties pro = new Properties();
-	
+
 	public FavoriteEvDAO() {
 
 		InputStream input = getClass().getClassLoader().getResourceAsStream("kosta/mvc/model/dao/sqlQuery.properties");
@@ -41,64 +41,64 @@ public class FavoriteEvDAO {
 
 	public Set<Integer> selectByUserNo(int userNo) throws SQLException {
 		Set<Integer> set = new HashSet<>();
-		
+
 		try {
 			String sql = pro.getProperty("selectFavoriteEvByUserNo");
 			con = DbUtil.getConnection();
 			ps = con.prepareStatement(sql);
-			
+
 			ps.setInt(1, userNo);
 			rs = ps.executeQuery();
-			
-			while(rs.next()) {
+
+			while (rs.next()) {
 				set.add(rs.getInt("evNo"));
 			}
-			
+
 			return set;
-		}finally {
+		} finally {
 			DbUtil.dbClose(rs, st, con);
 		}
 	}
 
 	public int delete(int userNo, int evNo) throws SQLException {
-		int result=0;
+		int result = 0;
 		try {
 			String sql = pro.getProperty("deleteFavoriteEv");
-			con=DbUtil.getConnection();
-			ps=con.prepareStatement(sql);
-			
+			con = DbUtil.getConnection();
+			ps = con.prepareStatement(sql);
+
 			ps.setInt(1, userNo);
 			ps.setInt(2, evNo);
-			
+
 			result = ps.executeUpdate();
-			
+
 			return result;
-		}finally {
+		} finally {
 			DbUtil.dbClose(ps, con);
 		}
 	}
 
 	public int insert(int userNo, int evNo) throws SQLException {
-		int result=0;
+		int result = 0;
 		try {
 			String sql = pro.getProperty("insertFavoriteEv");
-			con=DbUtil.getConnection();
-			ps=con.prepareStatement(sql);
-			
+			con = DbUtil.getConnection();
+			ps = con.prepareStatement(sql);
+
 			ps.setInt(1, userNo);
 			ps.setInt(2, evNo);
-			
+
 			result = ps.executeUpdate();
-			
+
 			return result;
-		}finally {
+		} finally {
 			DbUtil.dbClose(ps, con);
 		}
 	}
-	
+
 	public List<Event> selectEventByEventNumbers(Set<Integer> set) throws SQLException {
-		int result=0;
-		
+		int result = 0;
+
 		Iterator<Integer> iter = null;
 		List<Event> list = new ArrayList<>();
 
@@ -110,29 +110,30 @@ public class FavoriteEvDAO {
 		User user = null;
 		EvTime evTime = null;
 		Event event = null;
-		
-		if(set!=null) {
+
+		if (set != null) {
 			iter = set.iterator();
-		}else {
+		} else {
 			return null;
 		}
-		
+
 		try {
-			boolean flag=false;
-			String sql=pro.getProperty("selectEventByEventNumbers");
-			sql+=" (";
-			while(iter.hasNext()) {
-				if(flag)sql+=", ";
-				sql+=iter.next();
-				flag=true;
+			boolean flag = false;
+			String sql = pro.getProperty("selectEventByEventNumbers");
+			sql += " (";
+			while (iter.hasNext()) {
+				if (flag)
+					sql += ", ";
+				sql += iter.next();
+				flag = true;
 			}
-			sql+=")";
-			
-			con=DbUtil.getConnection();
-			ps=con.prepareStatement(sql);
-			
-			rs=ps.executeQuery();
-			
+			sql += ")";
+
+			con = DbUtil.getConnection();
+			ps = con.prepareStatement(sql);
+
+			rs = ps.executeQuery();
+
 			while (rs.next()) {
 
 				if (category == null) {
@@ -169,12 +170,31 @@ public class FavoriteEvDAO {
 				list.add(event);
 
 			}
-			
-			
-		}finally {
+
+		} finally {
 			DbUtil.dbClose(rs, ps, con);
 		}
 		return list;
 	}
-	
+
+	public int checkFavorite(int userNo, int evNo) throws Exception {
+
+		int result = 0;
+		String sql = pro.getProperty("checkFavor");
+
+		try {
+			con = DbUtil.getConnection();
+			ps = con.prepareStatement(sql);
+
+			ps.setInt(1, userNo);
+			ps.setInt(2, evNo);
+
+			result = ps.executeUpdate();
+
+		} finally {
+			DbUtil.dbClose(ps, con);
+		}
+		return result;
+	}
+
 }
