@@ -6,21 +6,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import kosta.mvc.service.ChannelService;
-import kosta.mvc.vo.Channel;
+import kosta.mvc.model.dao.BookDAO;
+import kosta.mvc.vo.Book;
 
-public class ManageChannelController implements Controller {
+public class SelectBookByUserNoController implements Controller {
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		// TODO Auto-generated method stub
 		
 		HttpSession session = request.getSession();
 		int userNo = (int)session.getAttribute("userNo");
 		
-		List<Channel> list = ChannelService.manageChannel(userNo);
-		request.setAttribute("chList", list);
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/pages/channelMng.jsp");
+		List<Book> list = new BookDAO().selectBookByUserNo(userNo);
+		
+		request.setAttribute("list", list);
+		
+		ModelAndView mv	= new ModelAndView(false, "pages/bookHistory.jsp");
 		
 		return mv;
 	}

@@ -21,30 +21,44 @@
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/bootstrap/bootstrap.min.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/pages/plugins/bootstrap/bootstrap.min.css">
 <!-- FontAwesome -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/fontawesome/font-awesome.min.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/pages/plugins/fontawesome/font-awesome.min.css">
 <!-- Animation -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/animate.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/pages/plugins/animate.css">
 <!-- Prettyphoto -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/prettyPhoto.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/pages/plugins/prettyPhoto.css">
 <!-- Owl Carousel -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.carousel.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.theme.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/pages/plugins/owl/owl.carousel.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/pages/plugins/owl/owl.theme.css">
 <!-- Flexslider -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/flex-slider/flexslider.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/pages/plugins/flex-slider/flexslider.css">
 <!-- Flexslider -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/cd-hero/cd-hero.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/pages/plugins/cd-hero/cd-hero.css">
 <!-- Style Swicther -->
-<link id="style-switch" href="${pageContext.request.contextPath}/pages/css/presets/preset3.css" media="screen"
-	rel="stylesheet" type="text/css">
+<link id="style-switch"
+	href="${pageContext.request.contextPath}/pages/css/presets/preset3.css"
+	media="screen" rel="stylesheet" type="text/css">
 
 
 <!-- Main Stylesheet -->
-<link href="${pageContext.request.contextPath}/pages/css/style.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/pages/css/defaultStyle.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/pages/css/style.css"
+	rel="stylesheet">
+<link
+	href="${pageContext.request.contextPath}/pages/css/defaultStyle.css"
+	rel="stylesheet">
 <!--Favicon-->
-<link rel="icon" href="${pageContext.request.contextPath}/pages/images/favicon/32.png" type="image/x-icon" />
+<link rel="icon"
+	href="${pageContext.request.contextPath}/pages/images/favicon/32.png"
+	type="image/x-icon" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144"
 	href="${pageContext.request.contextPath}/pages/images/favicon/144.png">
 <link rel="apple-touch-icon-precomposed" sizes="72x72"
@@ -55,86 +69,30 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
-<script src="${pageContext.request.contextPath}/pages/plugins/jQuery/jquery.min.js"></script>
-
-<!-- mobile responsive meta -->
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1">
-
-
-
-<!-- Bootstrap -->
-
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/bootstrap/bootstrap.min.css">
-
-<!-- FontAwesome -->
-
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/fontawesome/font-awesome.min.css">
-
-<!-- Animation -->
-
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/animate.css">
-
-<!-- Prettyphoto -->
-
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/prettyPhoto.css">
-
-<!-- Owl Carousel -->
-
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.carousel.css">
-
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.theme.css">
-
-<!-- Flexslider -->
-
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/flex-slider/flexslider.css">
-
-<!-- Flexslider -->
-
-<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/cd-hero/cd-hero.css">
-
-<!-- Style Swicther -->
-
-<link id="style-switch" href="${pageContext.request.contextPath}/pages/css/presets/preset3.css" media="screen"
-	rel="stylesheet" type="text/css">
-
-
-<!-- Main Stylesheet -->
-
-<link href="${pageContext.request.contextPath}/pages/css/style.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/pages/css/defaultStyle.css" rel="stylesheet">
-
-<!--Favicon-->
-<link rel="icon" href="${pageContext.request.contextPath}/pages/images/favicon/32.png" type="image/x-icon" />
-<link rel="apple-touch-icon-precomposed" sizes="144x144"
-	href="${pageContext.request.contextPath}/pages/images/favicon/144.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72"
-	href="${pageContext.request.contextPath}/pages/images/favicon/72.png">
-<link rel="apple-touch-icon-precomposed" href="${pageContext.request.contextPath}/pages/images/favicon/54.png">
-
-
-
+<script
+	src="${pageContext.request.contextPath}/pages/plugins/jQuery/jquery.min.js"></script>
 <style>
 /*---------원본css-----------------*/
 #btn {
 	margin-right: 400px;
 }
+
 #chDesc {
 	background-color: #f6f6f6;
 	min-height: 350px;
 	padding: 35px;
 	text-align: left;
 }
+
 #p {
 	float: left;
 	margin-left: 10px;
 }
+
 #makeEv {
 	margin: 0px;
 }
+
 .btnOpen {
 	float: right;
 	padding-right: 50px;
@@ -154,6 +112,7 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+
 .chAuthor>i::before {
 	content: "\f234";
 	font-family: FontAwesome;
@@ -165,6 +124,7 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+
 .chDel>i::before {
 	content: "\f1f8";
 	font-family: FontAwesome;
@@ -176,6 +136,7 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+
 .chListMenu li {
 	padding: 10px 15px 10px 0px;
 	display: inline-block;
@@ -205,122 +166,60 @@
 	<c:import url="subMenu.jsp" />
 	<!-- 채널메인 -->
 
-	<div class="menuSubnav__section mt-xl-4">
-		<div class="container">
-			<div class="row">
-				<div class="col s12">
-					<div class="menuSubnav d-flex flex-row align-items-start">
-
-						<div class="menuSubnav__tab--active">
-							<a href="channelMng.jsp">  채널 관리 </a>
-						</div>
-						<div class="menuSubnav__tab">
-							<a href="${pageContext.request.contextPath}/pages/createChannel.jsp">  채널 개설 </a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- subnav end -->
-	
-	
-	
-	
-	
-	
-	
-	<div class="Container mainContainer">
+	<!-- 채널메인 end -->
+	<!-- Main container start -->
+	<section class="main-container">
 		<c:choose>
 			<c:when test="${empty requestScope.chList}">
 				<tr>
 					<td colspan="5">
 						<p align="center">
 							<b><span style="font-size: 9pt;">등록된 채널이 없습니다.</span></b>
-						</p> 
-						
-						<p align="center">
-							<a href="" id="makeEv" class="btn btn-primary solid cd-btn align-self-center ">채널개설</a>
-						</p> 
+						</p> <a
+						href="${pageContext.request.contextPath}/pages/createChannel.jsp"
+						id="makeEv" class="btn btn-primary solid cd-btn">채널개설</a>
 					</td>
 				</tr>
-			</c:when>
-			
+			</c:when>			
 			<c:otherwise>
-			<br><br>
-			<%-- <a style="margin-left: 50%" href="${pageContext.request.contextPath}/pages/createChannel.jsp" id="makeCh">채널개설</a> --%>
 				<c:forEach items="${requestScope.chList}" var="channel">
-				
 					<div class="container">
-
 						<div class="row">
-
 							<div class="col-md-12 heading">
-
 								<span class="title-icon classic float-left"></span>
-
 								<h4 class="title classic">${channel.chName}<a class="addCh"
 										href="#"></a>
 								</h4>
 							</div>
-
 						</div>
-
-						<div class="row text-center">
-
-							<div class="col-md-3 col-sm-6">
-
-								<div class="team wow slideInLeft">
-
-									<div class="img-hexagon">
-
-										<img src="channelImg/${channel.chImg}" alt=""> <span
-											class="img-top"></span> <span class="img-bottom"></span>
-
-									</div>
-
-									<div class="team-content">
-
-										<h3>${channel.user.userName }</h3>
-
-										<p>${channel.user.userEmail }</p>
-
-										<div class="team-social">
-
-											<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a
-												class="twt" href="#"><i class="fa fa-twitter"></i></a> <a
-												class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
-
-											<a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a>
-
-											<a class="dribble" href="#"><i class="fa fa-dribbble"></i></a>
-
+						<div class="row">							
+							<div class="container col-md-3 col-sm-6 text-center float-left">
+								<div class="col-md-3 col-sm-6">
+									<div class="team wow slideInLeft">
+										<div class="img-hexagon">
+											<img
+												src="${pageContext.request.contextPath}/pages/images/userIcon.png"
+												alt=""> <span class="img-top"></span> <span
+												class="img-bottom"></span>
 										</div>
-
-									</div>
-
-								</div>
-
-							</div>
-
-							<!--/ Team 1 end -->
-
-							<div class="col-md-9 col-sm-6">
-
-								
-									<div class="cd-full-width btnOpen">
-
-										<div id="chDesc" class="team team-list wow slideInRight">
-
-											<h4> </h4>
-											<div class="cd-full-width btnOpen">
-
-												<a href="${pageContext.request.contextPath}/pages/createEvent.jsp?chNo=${channel.chNo}&chName=${channel.chName}" id="makeEv"
-													class="btn btn-primary solid cd-btn">행사개설</a>
-
+										<div class="team-content" style="width: 240px;">
+											<h3>${channel.user.userName}</h3>
+											<p>${channel.user.userEmail}</p>
+											<div class="team-social">
+												<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a
+													class="twt" href="#"><i class="fa fa-twitter"></i></a> <a
+													class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
+												<a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a>
+												<a class="dribble" href="#"><i class="fa fa-dribbble"></i></a>
 											</div>
-											<!-- .cd-full-width -->
-										
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="container col-md-9 col-sm-6 float-left">
+								<div id="chDesc" class="team team-list wow slideInRight">
+									<div id="chDesc" class="team team-list wow slideInRight">
+										<div class="container row">
 											<ul class="list-unstyled chListMenu">
 												<li class=""><a class="chSetting"
 													href="${pageContext.request.contextPath}/front?key=updateChannelForm&chNo=${channel.chNo}"><i
@@ -334,65 +233,30 @@
 													href="${pageContext.request.contextPath}/front?key=channelDetail&chNo=${channel.chNo}"><i
 														class="fa fa-users">채널상세</i></a></li>
 											</ul>
-
-
-											<div class="row d-flex justify-content-between">
-												<div class="col-sm-5 portfolio-static-item">
-													<div class="grid">
-														<figure class="m-0 effect-oscar">
-															<img src="${pageContext.request.contextPath}/pages/images/thumnail/03.jpg" alt="">
-															<figcaption>
-																<a class="link icon-pentagon" href="portfolio-item.html"><i
-																	class="fa fa-link"></i></a> <a class="view icon-pentagon"
-																	data-rel="prettyPhoto" href="${pageContext.request.contextPath}/pages/images/thumnail/03.jpg"><i
-																	class="fa fa-search"></i></a>
-															</figcaption>
-														</figure>
-														<div class="portfolio-static-desc">
-															<h3>[드림플러스 월간 IT 트렌드] 언택트, 뉴 노멀의 시대</h3>
-															<span><a href="#">Ui Elements</a></span>
-														</div>
-													</div>
-													<!--/ grid end -->
-												</div>
-												<!--/ item 3 end -->
-
-												<div class="col-sm-5 portfolio-static-item">
-													<div class="grid">
-														<figure class="m-0 effect-oscar">
-															<img src="${pageContext.request.contextPath}/pages/images/thumnail/04.jpg" alt="">
-															<figcaption>
-																<a class="link icon-pentagon" href="portfolio-item.html"><i
-																	class="fa fa-link"></i></a> <a class="view icon-pentagon"
-																	data-rel="prettyPhoto" href="${pageContext.request.contextPath}/pages/images/thumnail/04.jpg"><i
-																	class="fa fa-search"></i></a>
-															</figcaption>
-														</figure>
-														<div class="portfolio-static-desc">
-															<h3>렉처시리즈#1(작은 팀으로 큰 일을 한다는 것)</h3>
-															<span><a href="#">Media Elements</a></span>
-														</div>
-													</div>
-													<!--/ grid end -->
-												</div>
-
-											</div>
-											<!-- chDesc end -->
-
+										</div>										
+										<img src="channelImg/${channel.chImg}" alt="" style="width:350px; height:250px;">
+										<div class="btnOpen">
+										<br><br><br><br><br>
+											<a
+												href="${pageContext.request.contextPath}/pages/createEvent.jsp?chNo=${channel.chNo}&chName=${channel.chName}"
+												id="makeEv" class="btn btn-primary solid cd-btn" style="margin-top:200;">행사개설</a>
 										</div>
-										<!-- row end -->
 									</div>
-									<!-- row text-center -->
-
+									<!-- row end -->
 								</div>
 								<!--col-md-9 col-sm-6 end -->
-
 							</div>
-							<!--/ Container end -->
+						</div>
+					</div>
 				</c:forEach>
 			</c:otherwise>
 		</c:choose>
-	</div>
+	</section>
+
+
+
+
+
 	<!-- main div container end -->
 
 	<!-- footer -->

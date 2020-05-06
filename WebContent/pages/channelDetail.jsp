@@ -18,8 +18,6 @@
 	content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <!-- ** Plugins Needed for the Project ** -->
-<script
-	src="${pageContext.request.contextPath}/pages/plugins/jQuery/jquery.min.js"></script>
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
@@ -52,16 +50,21 @@
 
 
 <!-- Main Stylesheet -->
-<link href="${pageContext.request.contextPath}/pages/css/style.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/pages/css/defaultStyle.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/pages/css/style.css"
+	rel="stylesheet">
+<link
+	href="${pageContext.request.contextPath}/pages/css/defaultStyle.css"
+	rel="stylesheet">
 <!--Favicon-->
-<link rel="icon" href="${pageContext.request.contextPath}/pages/images/favicon/32.png" type="image/x-icon" />
+<link rel="icon"
+	href="${pageContext.request.contextPath}/pages/images/favicon/32.png"
+	type="image/x-icon" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144"
 	href="${pageContext.request.contextPath}/pages/images/favicon/144.png">
 <link rel="apple-touch-icon-precomposed" sizes="72x72"
 	href="${pageContext.request.contextPath}/pages/images/favicon/72.png">
-<link rel="apple-touch-icon-precomposed" href="${pageContext.request.contextPath}/pages/images/favicon/54.png">
-
+<link rel="apple-touch-icon-precomposed"
+	href="${pageContext.request.contextPath}/pages/images/favicon/54.png">
 <!-- webFont -->
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
@@ -84,7 +87,7 @@ img.chImg {
 	<!--subTopMenu-->
 	<c:import url="headerTop.jsp" />
 	<!-- mainMenu -->
-	
+	<c:import url="header.jsp" />
 
 <%-- 	<div id="banner-area">
 		<img src="images/banner/banner1.jpg" alt="" />
@@ -108,7 +111,6 @@ img.chImg {
 
 
 	<div class="body-inner">
-	<c:import url="header.jsp" />
 		<!-- Portfolio item start -->
 		<section id="portfolio-item">
 			<div class="container">
@@ -136,7 +138,7 @@ img.chImg {
 								<h3 class="widget-title">개설자</h3>
 								<p>${channel.user.userName}</p>
 								<p>
-									<a href="${pageContext.request.contextPath}/pages/channelList.jsp"
+									<a href="pages/channelList.jsp"
 										class="project-btn btn btn-primary">채널 목록</a>
 								</p>
 							</div>
@@ -169,7 +171,7 @@ img.chImg {
 										<a class="link icon-pentagon" href="portfolio-item.html"><i
 											class="fa fa-link"></i></a> <a class="view icon-pentagon"
 											data-rel="prettyPhoto"
-											href="${pageContext.request.contextPath}/pages/images/portfolio/portfolio-bg1.jpg"><i
+											href="images/portfolio/portfolio-bg1.jpg"><i
 											class="fa fa-search"></i></a>
 									</figcaption>
 								</figure>
@@ -246,7 +248,7 @@ img.chImg {
 			<h2 style="margin-left: 15%" class="widget-title">채널 리뷰</h2>
 		</div>
 		<a style="margin-left: 15%"
-			href="${pageContext.request.contextPath}/pages/createChBoard.jsp?chNo=${channel.chNo}"
+			href="pages/createChBoard.jsp?chNo=${channel.chNo}"
 			class="project-btn btn btn-primary review">리뷰 등록</a><Br>
 		<c:import url="/front?key=selectChBoard&chNo=${channel.chNo}" />
 	</div>

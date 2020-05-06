@@ -77,7 +77,8 @@
 <c:import url="header.jsp"></c:import>
 
 
-
+<%-- \${name}=${name}  --%>
+<%-- \${list} =${list} --%>
 <div id="wrap">
     <br>
     <div id="evboard">
@@ -88,17 +89,20 @@
     <div id="board">
         <table id="bList" width="800" border="3" bordercolor="lightgray">
             <tr heigh="30">
-                <td>글번호</td>
-                 <td>회원번호</td>
-                <td>내용</td>
-                <td>시간</td>
-            </tr>    
-            <tr heigh="30">
-                <td>${event.evNo}</td>
-                 <td>${user.userNo}</td>
+                <td width="60">글번호</td>
+                 <td width="70">회원번호</td>
+                	<td>내용</td>
+                <td width="200">시간</td>
+            </tr>   
+            <c:forEach items="${list}" var="evBoard">
+               <tr heigh="30">
+                <td >${evBoard.evBoardNo}</td>
+                 <td >${user.userNo}</td>
                 <td>${evBard.evBardConten}</td>
-                <td>${evBoard.evBardTime}</td>
-            </tr>    
+                <td >${evBoard.evBardTime}</td>
+            </tr> 
+            </c:forEach> 
+               
            
         </table>
     </div>

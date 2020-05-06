@@ -112,8 +112,8 @@ hr{
 		<c:import url="header.jsp" />
 		<br>
 		<h3 id="tab">
-		<a id="eventTab" href="eventList.jsp">행사</a>
-		<a id="channelTab" href="channelList.jsp">채널</a>
+		<a id="eventTab" href="${pageContext.request.contextPath}/front?key=searchRecentEvent">행사</a>
+		<a id="channelTab" href="${pageContext.request.contextPath}/pages/channelList.jsp">채널</a>
 		</h3>
 		<br>
 		<h4 style="margin-left: 15%">총 n개의 검색 결과가 있습니다.</h4>
