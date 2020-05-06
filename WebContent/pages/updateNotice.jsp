@@ -85,7 +85,8 @@
 					</div>
 					<div class="text-center">
 						<br>
-						<button class="btn btn-primary solid blank" type="submit">수정하기</button>
+						<button class="btn btn-primary solid blank" type="submit">수정</button>
+						<button class="btn btn-primary solid blank" type="button" onclick="javascript:history.back()">취소</button>
 					</div>
 				</form>
 			</div>

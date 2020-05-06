@@ -35,6 +35,14 @@ public class NoticeService {
 		if(result==0)throw new SQLException("수정되지 않았습니다.");
 			  return result;
 	}
+	
+	 
+	 public static Notice selectByNoticeNo(int noticeNo) throws SQLException {
 
+			Notice noticeUpdate = noticeDAO.selectByNoticeNo(noticeNo);
+			if(noticeUpdate==null)throw new SQLException("입력 제대로 하세요");
+			
+			return noticeUpdate;
+		}//
 	
 }//end

@@ -350,7 +350,7 @@ h4 .addCh::after {
 											<h4> </h4>
 											<div class="cd-full-width btnOpen">
 
-												<a href="#0" id="makeEv"
+												<a href="${pageContext.request.contextPath}/pages/createEvent.jsp?chNo=${channel.chNo}&chName=${channel.chName}" id="makeEv"
 													class="btn btn-primary solid cd-btn">행사개설</a>
 
 											</div>
@@ -360,7 +360,7 @@ h4 .addCh::after {
 												<li class=""><a class="chSetting"
 													href="${pageContext.request.contextPath}/front?key=updateChannelForm&chNo=${channel.chNo}"><i
 														class="fa fa-users">채널설정</i></a></li>
-												<li class=""><a class="chAuthor" href="#"><i
+												<li class=""><a class="chAuthor" href="${pageContext.request.contextPath}/pages/chAuthority.jsp?chNo=${channel.chNo}"><i
 														class="fa fa-users">권한설정</i></a></li>
 												<li class=""><a class="chDel"
 													href="${pageContext.request.contextPath}/front?key=deleteChannel&chNo=${channel.chNo}"><i

@@ -1,16 +1,11 @@
-<%@page import="kosta.mvc.service.ChBoardService"%>
-<%@page import="kosta.mvc.vo.ChBoard"%>
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<c:set var="path" value="${pageContext.request.contextPath}"
-	scope="application" />
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="zxx">
+
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <title>My Event :: 행사와 함께 하는 모든 순간</title>
 
 <!-- mobile responsive meta -->
@@ -62,22 +57,22 @@
 	rel="stylesheet">
 <script src="${pageContext.request.contextPath}/pages/plugins/jQuery/jquery.min.js"></script>
 
+</head>
 <style>
-.mainContainer {
-	padding: 50px 0px;
+#chAuthority{
+	font-weight: bold;
+	margin-left: 15%;
 }
-
-.menuSubnav__tab--active {
-	padding: 10px 20px;
-	border-bottom: 5px solid #8d71dd;
-	margin-bottom: -2px;
-	font-size: 16px;
+#chAuthorityList{
+	color: #5c3fbf;
+	font-weight: bold;
+	margin-left: 10%;
+	border-bottom: 5px solid #5c3fbf;
 }
-
-.menuSubnav__tab {
-	padding: 10px 20px;
+hr{
+	margin-left: 15%;
+	width:70%
 }
-/*------------------기존CSS---------------------------*/
 table {
 	width: 100%;
 	/*margin:0 auto;
@@ -91,73 +86,46 @@ thead {
 	font-weight: bold;
 }
 </style>
-
-</head>
 <body>
+
 	<!--subTopMenu-->
 	<c:import url="headerTop.jsp" />
 	<!-- mainMenu -->
 	<c:import url="header.jsp" />
 	<!-- 상단 메뉴 -->
-
-
-	<c:import url="subMenu.jsp" />
-	<!-- subnav start -->
-	<div class="menuSubnav__section mt-xl-4">
-		<div class="container">
-			<div class="row">
-				<div class="col s12">
-					<div class="menuSubnav d-flex flex-row align-items-start">
-
-						<div class="menuSubnav__tab--active">
-							<a href="#">채널 리뷰</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- subnav end -->
-
-	<!-- 서브메뉴ㄱㄱ -->
-	<!-- 서브메뉴 끝 -->
-
-	<!-- 여기서부터 원본 -->
-<%-- 	<%
-			int userNo = (int)session.getAttribute("userNo");
-			List<ChBoard> chBList = ChBoardService.selectChBoardByUserNo(userNo);
-	%> --%>
-
+	<br>
+		<h3 id="tab">
+		<a id="chAuthority" href="${pageContext.request.contextPath}/pages/chAuthority.jsp?chNo=${param.chNo}">권한 할당</a>
+		<a id="chAuthorityList" href="${pageContext.request.contextPath}/front?key=selectChAuthority&chNo=${param.chNo}">권한 사용자 목록</a>
+		</h3>
+		<br>	
+	
+	
+	<br><br>
 	<div class="container mainContainer">
 		<div class="col s12 d-flex justify-content-between">
 			<table>
 				<thead>
-					<td>글 번호</td>
-					<td>채널 이름</td>
-					<td>상세내용</td>
-					<td>별점</td>
-					<td>날짜</td>
+					<td>관리자 id</td>
+					<td>관리자 이름</td>
+					<td>관리자 등급</td>
 				</thead>
-				<c:forEach items="${myChB}" var="myChBoard">
 				<tbody>
-						<tr>
-							<td style="text-align: center;">${myChBoard.chBoardNo}</td>
-							<td style="text-align: center;">${myChBoard.channel.chName}</td>
-							<td>${myChBoard.chBoardContent}</td>
-
-							<td>${myChBoard.chBoardStar}점</td>			
-							<td><fmt:formatDate value="${chBoard.chBoardTime}" pattern="yyyy-MM-dd"/></td>
-
-						</tr>
-					
-				</tbody>
+				<c:forEach items="${manager}" var="manager">
+					<tr style="text-align: center">
+						<td>${manager.user.userId}</td>
+						<td>${manager.user.userName }</td>
+						<td>${manager.grade}</td>
+					</tr>
 				</c:forEach>
+				</tbody>
 			</table>
 		</div>
 	</div>
-	<!-- container end -->
+<br><br>
+<!-- footer -->
+<c:import url="footer.jsp"></c:import>
 
-	<!-- footer -->
-	<c:import url="footer.jsp"></c:import>
 </body>
+
 </html>

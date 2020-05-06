@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -183,7 +184,7 @@
 							%>
 							<p>
 								<a
-									href="front?key=favoriteEvent&evNo=${requestScope.event.evNo}"
+									href="front?key=deleteFavoriteEvent&evNo=${requestScope.event.evNo}"
 									class="project-btn btn btn-primary">관심행사취소</a>
 							</p>
 							<%
@@ -191,7 +192,7 @@
 							%>
 							<p>
 								<a
-									href="front?key=deleteFavoriteEvent&evNo=${requestScope.event.evNo}"
+									href="front?key=favoriteEvent&evNo=${requestScope.event.evNo}"
 									class="project-btn btn btn-primary">관심행사등록</a>
 							</p>
 							<%
@@ -204,27 +205,42 @@
 				<!-- sidebar end -->
 				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id="evInfo">
 					<div class="col-lg-6 col-md-6 col-sm-8 col-xs-8 float-left">
-						<p>접수</p>
-						<p>${requestScope.event.evTime.evBookStartTime}</p>
-						${
-					requestScope.event.evTime.evBookEndTime}
+						<p>접수 기간</p>
+						<p>
+							시작:
+							<fmt:formatDate
+								value="${requestScope.event.evTime.evBookStartTime}"
+								pattern="yyyy/MM/dd hh:mm" />
+						</p>
+						<p>
+							종료:
+							<fmt:formatDate
+								value="${requestScope.event.evTime.evBookEndTime}"
+								pattern="yyyy/MM/dd hh:mm" />
 						</p>
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-4 col-xs-8 float-left">
-						<p>행사</p>
-						<p>${requestScope.event.evTime.evStartTime}</p>
-						<p>${requestScope.event.evTime.evEndTime}</p>
+						<p>행사 기간</p>
+						<p>
+							시작:
+							<fmt:formatDate value="${requestScope.event.evTime.evStartTime}"
+								pattern="yyyy/MM/dd hh:mm" />
+						</p>
+						<p>
+							종료:
+							<fmt:formatDate value="${requestScope.event.evTime.evEndTime}"
+								pattern="yyyy/MM/dd hh:mm" />
+						</p>
 					</div>
-					<div class="row" style="border: 2px solid;">
+					<div class="row">
 						<img src="eventImage/${requestScope.event.evImgDetail}" alt="">
 					</div>
-					<div class="row" style="border: 2px solid; height: 800px;">
-						<p>${requestScope.event.evDescription}</p>
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id="qnaBoard">
+						<p>상세내용<br>${requestScope.event.evDescription}</p>
 					</div>
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id="qnaBoard">
+						주소: ${requestScope.evAddr}</div>
 				</div>
-				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id="qnaBoard"
-					style="border: 2px solid; height: 200px;">
-					${requestScope.evAddr}</div>
 			</div>
 			<!-- Portfolio item row end -->
 		</div>

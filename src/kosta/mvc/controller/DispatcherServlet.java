@@ -32,8 +32,8 @@ public class DispatcherServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String key = request.getParameter("key");
-		
 		if(key==null || key.equals(""))key="list";
+		
 		Controller controller= map.get(key);
 		try {
 			ModelAndView mv = controller.handleRequest(request, response);

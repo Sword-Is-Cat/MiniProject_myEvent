@@ -60,11 +60,5 @@ public class UserService {
 		}
 		return result;
 	}
-
-	public static User selectUserNoByUserId(String userId) throws Exception {
-		// user 정보 가져오기
-		User userInfo = UsersDAO.selectUserNoByUserId(userId);
-		return userInfo;
-	}
 	
 }
