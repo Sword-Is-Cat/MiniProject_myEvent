@@ -14,10 +14,11 @@ public class SelectEventByEvNameController implements Controller {
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
 		
-		String evName = request.getParameter("evName");
+		String evName = request.getParameter("search");
 		List<Event> list = new EventDAO().selectEventByEvName(evName);
 		
-		ModelAndView mv = new ModelAndView(false, "☆★ where i have to go? ☆★");
+		request.setAttribute("list", list);
+		ModelAndView mv = new ModelAndView(false, "/pages/eventList.jsp");
 		
 		return mv;
 	}

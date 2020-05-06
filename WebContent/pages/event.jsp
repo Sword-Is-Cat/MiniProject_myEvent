@@ -153,6 +153,11 @@
 							%>
 							<p>
 								<a
+									href="front?key=selectUserByBookedEvNo&evNo=${requestScope.event.evNo}"
+									class="project-btn btn btn-primary">행사 참여자</a>
+							</p>
+							<p>
+								<a
 									href="front?key=enterUpdateEvent&evNo=${requestScope.event.evNo}"
 									class="project-btn btn btn-primary">행사수정하기</a>
 							</p>

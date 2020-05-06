@@ -42,14 +42,14 @@
               maxWaitMillis="-1"/>  
 
 
-<!--  <Resource name="jdbc/myOracle"
+<!--   <Resource name="jdbc/myOracle"
 
               auth="Container"
               type="javax.sql.DataSource" 
               driverClassName="oracle.jdbc.OracleDriver"
               url="jdbc:oracle:thin:@localhost:1521:XE"
-              username="jang" 
-              password="jang" 
+              username="localevent" 
+              password="localevent" 
               maxTotal="20" 
               maxIdle="10"
               maxWaitMillis="-1"/> -->

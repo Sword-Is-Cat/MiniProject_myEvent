@@ -284,9 +284,6 @@ public class EventDAO {
 			DbUtil.dbClose(rs, ps, con);
 		}
 
-		if (list.size() == 0)
-			throw new Exception("검색결과가없습니다");
-
 		return list;
 	}
 	
@@ -344,8 +341,6 @@ public class EventDAO {
 			DbUtil.dbClose(rs, ps, con);
 		}
 		
-		if (list.size() == 0)
-			throw new Exception("검색결과가없습니다");
 		
 		return list;
 	}
@@ -413,8 +408,6 @@ public class EventDAO {
 			DbUtil.dbClose(rs, ps, con);
 		}
 
-		if (list.size() == 0)
-			throw new Exception("검색결과가없습니다");
 
 		return list;
 
@@ -484,8 +477,6 @@ public class EventDAO {
 			DbUtil.dbClose(rs, ps, con);
 		}
 
-		if (list.size() == 0)
-			throw new Exception("검색결과가없습니다");
 
 		return list;
 
@@ -559,9 +550,6 @@ public class EventDAO {
 			DbUtil.dbClose(rs, ps, con);
 		}
 
-		if (list.size() == 0)
-			throw new Exception("검색결과가없습니다");
-
 		return list;
 
 	}
@@ -634,8 +622,6 @@ public class EventDAO {
 			DbUtil.dbClose(rs, ps, con);
 		}
 
-		if (list.size() == 0)
-			throw new Exception("검색결과가없습니다");
 
 		return list;
 
@@ -708,8 +694,6 @@ public class EventDAO {
 			DbUtil.dbClose(rs, ps, con);
 		}
 
-		if (list.size() == 0)
-			throw new Exception("검색결과가없습니다");
 
 		return list;
 	}

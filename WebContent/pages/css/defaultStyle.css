@@ -94,7 +94,11 @@
 .ipSearch {
 	width: 80% !important;
 }
-
+/* btn hover */
+.btn.btn-primary.solid:hover {
+	color:#5c3fbf!important;
+}	
+	
 	
 /*-----------mainLOGO----------*/
  	.navbar-brand.navbar-bg {
@@ -142,6 +146,7 @@
     figure.effect-oscar figcaption, figure.effect-oscar figcaption {
     	/* padding:0!important; */
     }
+    .grid figure figcaption {padding:0!important;}
     .glyphicon-search:before {
     content: "\f002";
     font-family: FontAwesome;
