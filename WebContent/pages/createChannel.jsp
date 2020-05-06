@@ -108,7 +108,7 @@
 				<!-- 채널 전체 -->
 
 				<!-- 채널개설part -->
-				<div class="col-md-7">
+				<div class="col-md-7" style="margin:auto;">
 					<form id="contact-form" class="contact-form"
 						action="../front?key=createChannel" method="post" role="form"
 						enctype="multipart/form-data">
@@ -162,21 +162,17 @@
 
 				
 				<!-- 주의사항 start -->
-				<div class="col-md-5">
+				<div class="col-md-12">
 					<div class="contact-info">
 						<div class="pageTitle">
 							<h3 class="createChTitle">주의사항</h3>
 						</div>
 						<ul class="chList">
-							<li>채널명은 한글 15자까지 입력</li>
-					
-							<li>이미지는 *** Mb 까지 업로드</li>
+							<li>채널명은 한글 15자까지 가능</li>
 				
 							<li>이미지는 jpg, png, gif 파일만 등록할 수 있습니다</li>
 					
-							<li>채널 설명은 한글 250자까지 입력</li>
-					
-							<li>할말이 더 있던가요..☆</li>
+							<li>채널 설명은 한글 250자까지 가능</li>
 						</ul>
 						
 
