@@ -35,12 +35,6 @@
 <link id="style-switch" href="${pageContext.request.contextPath}/pages/css/presets/preset3.css" media="screen"
 	rel="stylesheet" type="text/css">
 
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-<!--[if lt IE 9]>
-      <script src="plugins/html5shiv.js"></script>
-      <script src="plugins/respond.min.js"></script>
-    <![endif]-->
-
 <!-- Main Stylesheet -->
 <link href="${pageContext.request.contextPath}/pages/css/style.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/pages/css/defaultStyle.css" rel="stylesheet">

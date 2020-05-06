@@ -10,84 +10,6 @@
 *, .title-desc, h1, h2, h3, h4, h5, h6, p {
 	font-family: 'Noto Sans KR', sans-serif;
 }
-
-.navbar-nav .nav-link {
-	color: #000;
-	padding: 15px 15px 10px !important;
-	font-weight: 400;
-}
-
-.navbar-nav .nav-link .subMenu {
-	font-size: 12px !important;
-	position: fixed;
-}
-
-.form-control:focus {
-	box-shadow: none;
-}
-
-.form-control-underlined {
-	border-width: 0;
-	border-bottom-width: 1px;
-	border-radius: 0;
-	padding-left: 0;
-}
-
-.form-control::placeholder {
-	font-size: 0.95rem;
-	color: #aaa;
-	font-style: italic;
-}
-
-.searchForm {
-	margin-left: 0%;
-	width: auto;
-	padding-left: 0;
-}
-
-.schWindow {
-	margin-left: 20px;
-	padding-left: 10px;
-}
-
-.ipSearch {
-	width: 80% !important;
-}
-
-img.mainLogo {
-	padding-top: 10px;
-}
-
-.glyphicon-search:before {
-	content: "\f002";
-	font-family: FontAwesome;
-	font-style: normal;
-	font-weight: normal;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-@media(min-width: 991px){
-  #pcMenu {
-	display:block!important;
-	}
-	
-	#mobileMenu{
-	display: none;
-	}
-}
-
-@media (max-width: 991px) {
-  #pcMenu {
-	display:none!important;
-	}
-	
-	#mobileMenu{
-	display: block;
-	}
-}
-
-
 </style>
 </head>
 
@@ -163,6 +85,6 @@ img.mainLogo {
 			<!--container end-->
 		</header>
 		<!--/ Header end -->
-
+<!-- 
 </body>
-</html>
+</html> -->
