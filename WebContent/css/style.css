@@ -31,24 +31,24 @@
 22. Blog
 23. Landing page
 24.	Style Swithcer (you can delete the css) */
-@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 @font-face {
-  font-family: 'JaapokkiRegular';
-  src: url("../fonts/jaapokki/jaapokki-regular.eot");
-  src: url("../fonts/jaapokki/jaapokki-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/jaapokki/jaapokki-regular.woff") format("woff"), url("../fonts/jaapokki/jaapokki-regular.ttf") format("truetype"), url("../fonts/jaapokki/jaapokki-regular.svg#JaapokkiRegular") format("svg");
+  font-family: 'Noto Sans KR', sans-serif;
+  //src: url("../fonts/jaapokki/jaapokki-regular.eot");
+  //src: url("../fonts/jaapokki/jaapokki-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/jaapokki/jaapokki-regular.woff") format("woff"), url("../fonts/jaapokki/jaapokki-regular.ttf") format("truetype"), url("../fonts/jaapokki/jaapokki-regular.svg#JaapokkiRegular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 body, p {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
   font-size: 15px;
   line-height: 1.6em;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'JaapokkiRegular';
+  font-family: 'Noto Sans KR', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -708,7 +708,7 @@ blockquote {
 /*-- Header style 1 --*/
 @media (max-width: 991px) {
   .header {
-    background: #191919;
+    background: #fff!important;
     box-shadow: 0px 1px 7px 0 rgba(0, 0, 0, 0.2);
   }
 }
@@ -720,7 +720,7 @@ blockquote {
 }
 
 .header-solid {
-  background: #191919;
+  background: #fff;
   box-shadow: 0px 1px 7px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -810,7 +810,7 @@ blockquote {
 }
 
 #main-slide .carousel-item .slider-content {
-  z-index: 1;
+  //z-index: 1;
   opacity: 0;
   transition: opacity 500ms;
 }
@@ -1330,8 +1330,8 @@ figure.effect-oscar h3 {
   transition: -webkit-transform 0.35s;
   transition: transform 0.35s;
   transition: transform 0.35s, -webkit-transform 0.35s;
-  -webkit-transform: translate3d(0, 100%, 0);
-  transform: translate3d(0, 100%, 0);
+/*   //-webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0); */
 }
 
 figure.effect-oscar a {
@@ -1360,8 +1360,8 @@ figure.effect-oscar a {
 }
 
 figure.effect-oscar:hover h3 {
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+/*   //-webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); */
 }
 
 figure.effect-oscar:hover figcaption::before,
@@ -1806,31 +1806,31 @@ figure.effect-oscar:hover img {
   transition: -webkit-transform 0.35s;
   transition: transform 0.35s;
   transition: transform 0.35s, -webkit-transform 0.35s;
-  -webkit-transform: translate3d(100%, 0, 0);
-  transform: translate3d(100%, 0, 0);
+/*   //-webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0); */
 }
 
 .post-img-overlay:hover a.link {
   left: 0;
   right: auto;
   opacity: 1;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+/*   -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); */
 }
 
 .post-img-overlay a.view {
   transition: -webkit-transform 0.35s;
   transition: transform 0.35s;
   transition: transform 0.35s, -webkit-transform 0.35s;
-  -webkit-transform: translate3d(0, -100%, 0);
-  transform: translate3d(0, -100%, 0);
+/*   -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0); */
 }
 
 .post-img-overlay:hover a.view {
   bottom: 0;
   opacity: 1;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+/*   -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); */
 }
 
 .recent-post {
@@ -2940,7 +2940,7 @@ a.close-styler {
 }
 
 .style-switch-wrapper #preset3 {
-  background-color: #ee3b24;
+  background-color: #5c3fbf;
 }
 
 .style-switch-wrapper #preset4 {
