@@ -134,9 +134,8 @@ hr{
 										src="${pageContext.request.contextPath}/channelImg/${channel.chImg}"
 										alt="">
 									<figcaption>
-										<a class="view icon-pentagon" data-rel="prettyPhoto"
-											href="${pageContext.request.contextPath}/front?key=channelDetail&chNo=${channel.chNo}"><i
-											class="fa fa-search"></i></a>
+										<a class="link icon-pentagon" href="${pageContext.request.contextPath}/front?key=channelDetail&chNo=${channel.chNo}"><i
+													class="fa fa-link"></i></a>
 									</figcaption>
 								</figure>
 								<div class="portfolio-static-desc">

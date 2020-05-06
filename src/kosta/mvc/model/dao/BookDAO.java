@@ -11,6 +11,7 @@ import java.util.Properties;
 
 import kosta.mvc.util.DbUtil;
 import kosta.mvc.vo.Book;
+import kosta.mvc.vo.EvTime;
 import kosta.mvc.vo.Event;
 import kosta.mvc.vo.User;
 
@@ -136,7 +137,6 @@ public class BookDAO {
 		Book book = null;
 		Event event = null;
 		String sql = pro.getProperty("selectBookByUserNo");
-		
 		try {
 			
 			con = DbUtil.getConnection();
@@ -149,10 +149,15 @@ public class BookDAO {
 			while(rs.next()) {
 				event = new Event();
 				event.setEvName(rs.getString("evName"));
+				event.setEvImg(rs.getString("evImg"));
+				event.setEvNo(rs.getInt("evNo"));
+				EvTime evTime = new EvTime();
+				evTime.setEvStartTime(rs.getTimestamp("evStartTime"));
+				evTime.setEvEndTime(rs.getTimestamp("evEndTime"));
+				event.setEvTime(evTime);
 				book = new Book(0, null, event, rs.getTimestamp("bookTime"), 0);
 				
-				list.add(book);
-				
+				list.add(book);				
 			}
 			
 			

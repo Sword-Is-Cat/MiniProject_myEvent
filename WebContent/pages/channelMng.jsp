@@ -171,15 +171,13 @@
 	<section class="main-container">
 		<c:choose>
 			<c:when test="${empty requestScope.chList}">
-				<tr>
-					<td colspan="5">
+					<div class="container" style="text-align:center;">
 						<p align="center">
 							<b><span style="font-size: 9pt;">등록된 채널이 없습니다.</span></b>
 						</p> <a
 						href="${pageContext.request.contextPath}/pages/createChannel.jsp"
 						id="makeEv" class="btn btn-primary solid cd-btn">채널개설</a>
-					</td>
-				</tr>
+					</div>
 			</c:when>			
 			<c:otherwise>
 				<c:forEach items="${requestScope.chList}" var="channel">
