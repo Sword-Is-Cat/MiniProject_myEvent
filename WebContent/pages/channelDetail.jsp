@@ -142,6 +142,9 @@
 		</section>
 		<!-- Portfolio item end -->
 		<hr id="line" />
+		
+		<!-- 여기에 진행중 / 종료된 이벤트 목록 삽입 -->
+		
 		<div class="row">
 <!-- 		<br><br> -->
 			<h2 style="margin-left: 15%" class="widget-title">채널 리뷰</h2>
