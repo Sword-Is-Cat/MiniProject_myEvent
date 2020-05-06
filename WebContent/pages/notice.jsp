@@ -81,12 +81,6 @@
 		alert("asdfsaf");
 	}); 
 	
-		
-		
-	
-	
-
-	
 });*///end
 </script>
 <style>
