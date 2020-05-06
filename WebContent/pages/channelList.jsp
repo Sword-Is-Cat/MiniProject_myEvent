@@ -47,12 +47,13 @@
 <link href="${pageContext.request.contextPath}/pages/css/style.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/pages/css/defaultStyle.css" rel="stylesheet">
 <!--Favicon-->
-<link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
+<link rel="icon" href="${pageContext.request.contextPath}/pages/images/favicon/32.png" type="image/x-icon" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144"
-	href="./images/favicon/144.png">
+	href="${pageContext.request.contextPath}/pages/images/favicon/144.png">
 <link rel="apple-touch-icon-precomposed" sizes="72x72"
-	href="./images/favicon/72.png">
-<link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
+	href="${pageContext.request.contextPath}/pages/images/favicon/72.png">
+<link rel="apple-touch-icon-precomposed" href="${pageContext.request.contextPath}/pages/images/favicon/54.png">
+
 <!-- webFont -->
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"

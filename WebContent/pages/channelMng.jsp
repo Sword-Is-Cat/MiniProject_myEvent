@@ -39,11 +39,6 @@
 <link id="style-switch" href="${pageContext.request.contextPath}/pages/css/presets/preset3.css" media="screen"
 	rel="stylesheet" type="text/css">
 
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-<!--[if lt IE 9]>
-      <script src="plugins/html5shiv.js"></script>
-      <script src="plugins/respond.min.js"></script>
-    <![endif]-->
 
 <!-- Main Stylesheet -->
 <link href="${pageContext.request.contextPath}/pages/css/style.css" rel="stylesheet">
@@ -55,100 +50,12 @@
 <link rel="apple-touch-icon-precomposed" sizes="72x72"
 	href="${pageContext.request.contextPath}/pages/images/favicon/72.png">
 <link rel="apple-touch-icon-precomposed" href="${pageContext.request.contextPath}/pages/images/favicon/54.png">
+
 <!-- webFont -->
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
 <script src="${pageContext.request.contextPath}/pages/plugins/jQuery/jquery.min.js"></script>
-<style>
-/*---------원본css-----------------*/
-#btn {
-	margin-right: 400px;
-}
-#chDesc {
-	background-color: #f6f6f6;
-	min-height: 350px;
-	padding: 30px;
-	text-align: left;
-}
-#p {
-	float: left;
-	margin-left: 10px;
-}
-#makeEv {
-	margin: 0px;
-}
-.btnOpen {
-	float: right;
-	padding-right: 50px;
-	position: relative;
-	top: -30px;
-}
-/*------------지안추가css----------------------*/
-.mainContainer {
-	/* position: relative;
-   top:-50px; */
-	
-}
-.chSetting>i::before {
-	content: "\f013";
-	font-family: FontAwesome;
-	font-style: normal;
-	font-weight: 900;
-	margin: 0 auto;
-	text-align: center;
-	padding-right: 5px;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-.chAuthor>i::before {
-	content: "\f234";
-	font-family: FontAwesome;
-	font-style: normal;
-	font-weight: 900;
-	margin: 0 auto;
-	padding-right: 5px;
-	text-align: center;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-.chDel>i::before {
-	content: "\f1f8";
-	font-family: FontAwesome;
-	font-style: normal;
-	font-weight: 900;
-	margin: 0 auto;
-	padding-right: 5px;
-	text-align: center;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-.chListMenu li {
-	padding: 10px 15px 10px 0px;
-	display: inline-block;
-}
-.bgPart {
-	margin-top: 50px;
-	background: url("${pageContext.request.contextPath}/pages/images/hostcenter_top_image.jpg") no-repeat;
-	background-position: center center;
-	background-size: cover; //
-	padding-top: 50px;
-}
-.bgImg { //
-	height: 250px;
-}
-h4 .addCh::after {
-	content: "\f055";
-	font-family: FontAwesome;
-	font-style: normal;
-	font-weight: 900;
-	margin: 0 auto;
-	padding-right: 20px;
-	text-align: center;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-</style>
 
 <!-- mobile responsive meta -->
 
@@ -195,38 +102,97 @@ h4 .addCh::after {
 	rel="stylesheet" type="text/css">
 
 
-
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-
-<!--[if lt IE 9]>
-      <script src="plugins/html5shiv.js"></script>
-      <script src="plugins/respond.min.js"></script>
-    <![endif]-->
-
-
-
 <!-- Main Stylesheet -->
 
 <link href="${pageContext.request.contextPath}/pages/css/style.css" rel="stylesheet">
-
-
+<link href="${pageContext.request.contextPath}/pages/css/defaultStyle.css" rel="stylesheet">
 
 <!--Favicon-->
-
-<link rel="icon" href="img/favicon/favicon-32x32.png"
-	type="image/x-icon" />
-
+<link rel="icon" href="${pageContext.request.contextPath}/pages/images/favicon/32.png" type="image/x-icon" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144"
-	href="img/favicon/favicon-144x144.png">
-
+	href="${pageContext.request.contextPath}/pages/images/favicon/144.png">
 <link rel="apple-touch-icon-precomposed" sizes="72x72"
-	href="img/favicon/favicon-72x72.png">
-
-<link rel="apple-touch-icon-precomposed"
-	href="img/favicon/favicon-54x54.png">
+	href="${pageContext.request.contextPath}/pages/images/favicon/72.png">
+<link rel="apple-touch-icon-precomposed" href="${pageContext.request.contextPath}/pages/images/favicon/54.png">
 
 
 
+<style>
+/*---------원본css-----------------*/
+#btn {
+	margin-right: 400px;
+}
+#chDesc {
+	background-color: #f6f6f6;
+	min-height: 350px;
+	padding: 35px;
+	text-align: left;
+}
+#p {
+	float: left;
+	margin-left: 10px;
+}
+#makeEv {
+	margin: 0px;
+}
+.btnOpen {
+	float: right;
+	padding-right: 50px;
+	position: relative;
+	top: -30px;
+}
+/*------------지안추가css----------------------*/
+
+.chSetting>i::before {
+	content: "\f013";
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: 900;
+	margin: 0 auto;
+	text-align: center;
+	padding-right: 5px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.chAuthor>i::before {
+	content: "\f234";
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: 900;
+	margin: 0 auto;
+	padding-right: 5px;
+	text-align: center;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.chDel>i::before {
+	content: "\f1f8";
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: 900;
+	margin: 0 auto;
+	padding-right: 5px;
+	text-align: center;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.chListMenu li {
+	padding: 10px 15px 10px 0px;
+	display: inline-block;
+}
+#makeCh{
+  background-color: #5c3fbf; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
 </head>
 
 
@@ -239,39 +205,31 @@ h4 .addCh::after {
 	<c:import url="subMenu.jsp" />
 	<!-- 채널메인 -->
 
-	<!-- 채널메인 end -->
-	<!-- Main container start -->
-	<div class="container-fluide bgPart">
-		<div class="bgImg"></div>
-
-		<!-- Style switcher end -->
-
-
-
-		<!-- Main container start -->
-
-		<section id="main-container">
-
-			<!-- channel list start -->
-			<%--        
-       <%
-       int userNo = (int)session.getAttribute("userNo");
-       List<Channel> chList = ChannelService.manageChannel(userNo); 
-       %> --%>
-
-			<!-- channel manage top -->
-
+	<div class="menuSubnav__section mt-xl-4">
+		<div class="container">
 			<div class="row">
+				<div class="col s12">
+					<div class="menuSubnav d-flex flex-row align-items-start">
 
-				<div class="col-md-12 heading text-center">
-
-					<h2 class="title2" style="text-align: center; font-weight: bold">
-						채널 관리 <span class="title-desc"></span>
-					</h2>
+						<div class="menuSubnav__tab--active">
+							<a href="channelMng.jsp">  채널 관리 </a>
+						</div>
+						<div class="menuSubnav__tab">
+							<a href="${pageContext.request.contextPath}/pages/createChannel.jsp">  채널 개설 </a>
+						</div>
+					</div>
 				</div>
 			</div>
-			<!-- Title row end -->
+		</div>
 	</div>
+	<!-- subnav end -->
+	
+	
+	
+	
+	
+	
+	
 	<div class="Container mainContainer">
 		<c:choose>
 			<c:when test="${empty requestScope.chList}">
@@ -279,13 +237,20 @@ h4 .addCh::after {
 					<td colspan="5">
 						<p align="center">
 							<b><span style="font-size: 9pt;">등록된 채널이 없습니다.</span></b>
-						</p> <a href="${pageContext.request.contextPath}/pages/createChannel.jsp" id="makeEv" class="btn btn-primary solid cd-btn">채널개설</a>
+						</p> 
+						
+						<p align="center">
+							<a href="" id="makeEv" class="btn btn-primary solid cd-btn align-self-center ">채널개설</a>
+						</p> 
 					</td>
 				</tr>
 			</c:when>
+			
 			<c:otherwise>
+			<br><br>
+			<a style="margin-left: 50%" href="${pageContext.request.contextPath}/pages/createChannel.jsp" id="makeCh">채널개설</a>
 				<c:forEach items="${requestScope.chList}" var="channel">
-
+				
 					<div class="container">
 
 						<div class="row">
@@ -342,7 +307,7 @@ h4 .addCh::after {
 
 							<div class="col-md-9 col-sm-6">
 
-								<div id="chDesc" class="team team-list wow slideInRight">
+								
 									<div class="cd-full-width btnOpen">
 
 										<div id="chDesc" class="team team-list wow slideInRight">
