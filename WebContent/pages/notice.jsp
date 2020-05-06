@@ -19,38 +19,38 @@
 	content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <!-- ** Plugins Needed for the Project ** -->
-<script src="./pages/plugins/jQuery/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/pages/plugins/jQuery/jquery.min.js"></script>
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
-<link rel="stylesheet" href="./plugins/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/bootstrap/bootstrap.min.css">
 <!-- FontAwesome -->
-<link rel="stylesheet" href="./plugins/fontawesome/font-awesome.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/fontawesome/font-awesome.min.css">
 <!-- Animation -->
-<link rel="stylesheet" href="./plugins/animate.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/animate.css">
 <!-- Prettyphoto -->
-<link rel="stylesheet" href="./plugins/prettyPhoto.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/prettyPhoto.css">
 <!-- Owl Carousel -->
-<link rel="stylesheet" href="./plugins/owl/owl.carousel.css">
-<link rel="stylesheet" href="./plugins/owl/owl.theme.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.carousel.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.theme.css">
 <!-- Flexslider -->
-<link rel="stylesheet" href="./plugins/flex-slider/flexslider.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/flex-slider/flexslider.css">
 <!-- Flexslider -->
-<link rel="stylesheet" href="./plugins/cd-hero/cd-hero.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/cd-hero/cd-hero.css">
 <!-- Style Swicther -->
-<link id="style-switch" href="./css/presets/preset3.css" media="screen"
+<link id="style-switch" href="${pageContext.request.contextPath}/pages/css/presets/preset3.css" media="screen"
 	rel="stylesheet" type="text/css">
 
 <!-- Main Stylesheet -->
-<link href="./css/style.css" rel="stylesheet">
-<link href="./pages/css/defaultStyle.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/pages/css/style.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/pages/css/defaultStyle.css" rel="stylesheet">
 <!--Favicon-->
-<link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
+<link rel="icon" href="${pageContext.request.contextPath}/pages/images/favicon/32.png" type="image/x-icon" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144"
-	href="./images/favicon/144.png">
+	href="${pageContext.request.contextPath}/pages/images/favicon/144.png">
 <link rel="apple-touch-icon-precomposed" sizes="72x72"
-	href="./images/favicon/72.png">
-<link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
+	href="${pageContext.request.contextPath}/pages/images/favicon/72.png">
+<link rel="apple-touch-icon-precomposed" href="${pageContext.request.contextPath}/pages/images/favicon/54.png">
 <!-- webFont -->
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
@@ -110,10 +110,10 @@ th.displayHidden, td.displayHidden {display: none;}
 </head>
 <body>
 	<!--subTopMenu-->
-	<c:import url="./headerTop.jsp" />
+	<c:import url="headerTop.jsp" />
 	<!--subTopMenu end-->
 
-	<c:import url="./header.jsp" />
+	<c:import url="header.jsp" />
 
 
 	<!-- channalList start -->
@@ -124,8 +124,9 @@ th.displayHidden, td.displayHidden {display: none;}
 	<div class="row justify-content-center">
 		<div class="col s12">
 			<h3 class="noticeTitle">공지사항</h3>
-			<input type="button" class="btn btn-info writeBtn float-right" value="글쓰기" onclick="location.href='${pageContext.request.contextPath}/pages/noticeWrite.jsp'"/>
-
+			<c:if test="${sessionScope.userNo == 0}">
+				<input type="button" class="btn btn-info writeBtn float-right" value="글쓰기" onclick="location.href='${pageContext.request.contextPath}/pages/noticeWrite.jsp'"/>
+			</c:if>
 		</div>
 		
 			<table class="table table-hover">
@@ -156,9 +157,10 @@ th.displayHidden, td.displayHidden {display: none;}
 							<td>${notice.noticeContent}
 								<div class="gap-40"></div>
 								<div class="editBtns">
-									<input type="button" class="btn btn-info modifyBtn" value="수정" onClick="location.href='${pageContext.request.contextPath}/front?key=updateNoticeEdit&noticeNo=${notice.noticeNo}'">
-									<input type="button" class="btn btn-info deleteBtn" value="삭제" onClick="location.href='${pageContext.request.contextPath}/front?key=deleteNotice&noticeNo=${notice.noticeNo}'">
-
+									<c:if test="${sessionScope.userNo == 0}">
+										<input type="button" class="btn btn-info modifyBtn" value="수정" onClick="location.href='${pageContext.request.contextPath}/front?key=updateNoticeEdit&noticeNo=${notice.noticeNo}'">
+										<input type="button" class="btn btn-info deleteBtn" value="삭제" onClick="location.href='${pageContext.request.contextPath}/front?key=deleteNotice&noticeNo=${notice.noticeNo}'">
+									</c:if>
 								</div>
 							
 							</td>

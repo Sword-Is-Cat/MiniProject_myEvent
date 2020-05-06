@@ -17,8 +17,8 @@ public class UpdateNoticeEditController implements Controller {
 		}
 		
 		Notice notice = NoticeService.selectByNoticeNo(noticeNo);
-		
-		ModelAndView mv = new ModelAndView(true,"pages/updateNotice.jsp");
+		request.setAttribute("notice", notice);
+		ModelAndView mv = new ModelAndView(false,"pages/updateNotice.jsp");
 
 		return mv;
 	}

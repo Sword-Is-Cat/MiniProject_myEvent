@@ -31,12 +31,19 @@ public class ChannelDAO {
 		PreparedStatement ps = null;
 		int result = 0;
 		try {
-			String sql = pro.getProperty("insertChannel");
-			ps = con.prepareStatement(sql);
+			String sql1 = pro.getProperty("insertChannel");
+			ps = con.prepareStatement(sql1);
 			ps.setInt(1, channel.getUser().getUserNo());
 			ps.setString(2, channel.getChName());
 			ps.setString(3, channel.getChImg());
 			ps.setString(4, channel.getChDescription());
+			
+			ps.executeUpdate();
+			
+			String sql2 = pro.getProperty("insertManager");
+			ps = con.prepareStatement(sql2);
+			ps.setInt(1, channel.getUser().getUserNo());
+			
 			
 			result = ps.executeUpdate();
 		} finally {

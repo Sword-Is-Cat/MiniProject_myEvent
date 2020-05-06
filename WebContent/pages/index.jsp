@@ -410,7 +410,7 @@
 						<span class="txt-14 font-weight-500"> <a
 							class="eventus-purple-text" href="${pageContext.request.contextPath}/front?key=viewToNotice">공지사항</a> <span
 							class="px-3 black-text">|</span> <a class="black-text"
-							href="${pageContext.request.contextPath}/front?key=viewToNotice"> 메일 발송 지연 복구 안내 </a>
+							href="${pageContext.request.contextPath}/front?key=viewToNotice"> ${recentNotice.noticeSubject} </a>
 						</span>
 					</div>
 				</div>

@@ -120,8 +120,12 @@ public class NoticeDAO {
 		int result=0;
 		String sql=pro.getProperty("noticeUpdate");
 		try {
+			con = DbUtil.getConnection();
+			ps = con.prepareStatement(sql);
+			
 			 ps.setString(1, notice.getNoticeSubject());
 			 ps.setString(2, notice.getNoticeContent());
+			 ps.setInt(3, notice.getNoticeNo());
 			
 			result = ps.executeUpdate();
 		}finally {
@@ -158,6 +162,26 @@ public class NoticeDAO {
 			 con = DbUtil.getConnection();
 			 ps = con.prepareStatement( sql);
 			 ps.setInt(1, noticeNo);
+			 
+			 rs = ps.executeQuery();
+			 
+			 while(rs.next()) {
+				notice= new Notice(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getTimestamp(4), rs.getInt(5));
+			 }
+		
+		}finally{
+			DbUtil.dbClose(rs, ps, con);
+		}
+		return notice;
+	}
+	
+	public Notice selectRecentOne() throws SQLException {
+		Notice notice =null;
+		String sql=pro.getProperty("selectRecentSingleNotice");
+		
+		try{
+			 con = DbUtil.getConnection();
+			 ps = con.prepareStatement( sql);
 			 
 			 rs = ps.executeQuery();
 			 

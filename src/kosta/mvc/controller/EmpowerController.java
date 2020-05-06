@@ -15,10 +15,9 @@ public class EmpowerController implements Controller {
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		String userId = request.getParameter("userId");
-		int chNo = Integer.parseInt(request.getParameter("chNo"));
-		
-		User user = UserService.selectUserNoByUserId(userId);
+		User user = UserService.selectById(userId);
 		int userNo = user.getUserNo();
+		int chNo = Integer.parseInt(request.getParameter("chNo"));
 		
 		Manager manager = new Manager();
 		
@@ -26,11 +25,13 @@ public class EmpowerController implements Controller {
 		channel.setChNo(chNo);
 		
 		manager.setChannel(channel);
-		manager.setUser(user);///// userNo에 대해서
 		
+		User user2 = new User();
+		user2.setUserNo(userNo);	
+		manager.setUser(user);
 		EmpowerService.insertChMng(manager);
 		
-		ModelAndView mv = new ModelAndView(true, "");
+		ModelAndView mv = new ModelAndView(true, "front?key=selectChAuthority&chNo="+chNo);
 		// viewName을 바꿔야됨 
 		
 		return mv;

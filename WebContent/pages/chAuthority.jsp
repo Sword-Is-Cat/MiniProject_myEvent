@@ -35,24 +35,78 @@
 <link id="style-switch" href="${pageContext.request.contextPath}/pages/css/presets/preset3.css" media="screen"
 	rel="stylesheet" type="text/css">
 
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+<!--[if lt IE 9]>
+      <script src="plugins/html5shiv.js"></script>
+      <script src="plugins/respond.min.js"></script>
+    <![endif]-->
 
 <!-- Main Stylesheet -->
 <link href="${pageContext.request.contextPath}/pages/css/style.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/pages/css/defaultStyle.css" rel="stylesheet">
 <!--Favicon-->
-<link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
+<link rel="icon" href="${pageContext.request.contextPath}/pages/images/favicon/32.png" type="image/x-icon" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144"
-	href="./images/favicon/144.png">
+	href="${pageContext.request.contextPath}/pages/images/favicon/144.png">
 <link rel="apple-touch-icon-precomposed" sizes="72x72"
-	href="./images/favicon/72.png">
-<link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
+	href="${pageContext.request.contextPath}/pages/images/favicon/72.png">
+<link rel="apple-touch-icon-precomposed" href="${pageContext.request.contextPath}/pages/images/favicon/54.png">
 <!-- webFont -->
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
 <script src="${pageContext.request.contextPath}/pages/plugins/jQuery/jquery.min.js"></script>
-</head>
+<script>
+$(function(){
+	//아이디 중복체크
+	$('#idChk').click(function(){
+		if($('#userId').val() == null || $('#userId').val() == ""){
+			alert('아이디를 입력해주세요');
+			return false;
+		}
+		
+		let params = "key=idChk&userId="+$('#userId').val();
+		
+		$.ajax({
+			dataType : "text",
+			url : "${pageContext.request.contextPath}/front?"+params,
+			success : function(result){
+				console.log('in jxax');
+				if(result==1){
+					$("#submit").removeAttr("disabled");
+					$("#submit").html("등록");
+					alert("등록 가능한 아이디입니다.");					
+				}else{
+					alert("없는 사용자입니다.");
+				}
+			}
+		});
+	});
+	
+	$('#userId').on("change", function(){
+		$("#submit").attr("disabled", true);
+		$("#submit").html("아이디 체크를 해주세요");
+	});
+});
+</script>
 
+</head>
+<style>
+#chAuthority{
+	color: #5c3fbf;
+	font-weight: bold;
+	margin-left: 15%;
+	border-bottom: 5px solid #5c3fbf;
+}
+#chAuthorityList{
+	font-weight: bold;
+	margin-left: 10%;
+}
+hr{
+	margin-left: 15%;
+	width:70%
+}
+</style>
 <body>
 
 	<!--subTopMenu-->
@@ -60,36 +114,33 @@
 	<!-- mainMenu -->
 	<c:import url="header.jsp" />
 	<!-- 상단 메뉴 -->
-		
-	<div id="banner-area">
-		<div class="parallax-overlay"></div>
-		<!-- Subpage title start -->
-		<div class="banner-title-content">
-			<div class="text-center">
-				<h2 style="color:black">권한 부여</h2>
-			</div>
-		</div>
-		<!-- Subpage title end -->
-	</div>
+	<br>
+		<h3 id="tab">
+		<a id="chAuthority" href="${pageContext.request.contextPath}/pages/chAuthority.jsp?chNo=${param.chNo}">권한 할당</a>
+		<a id="chAuthorityList" href="${pageContext.request.contextPath}/front?key=selectChAuthority&chNo=${param.chNo}">권한 사용자 목록</a>
+		</h3>
+		<br>	
+	
 		<!-- Main container start -->
 		<main align=center>
 
 			<div class="conainter-fluid">
-				<form action="/App/UserAuthAdd?subdomain=Justice" data-ajax="true"
+				<form action="${pageContext.request.contextPath}/front?key=empower" data-ajax="true"
 					data-ajax-method="POST" data-ajax-success="Success" id="form0"
 					method="post">
 					<div class="card" style="overflow: visible">
 						<div class="card-content">
 							<div class="conainter-fluid">
-
+								<br><br>
 								<div class="col s12">
-									<div>권한을 할당 받을 계정 ID를 입력하세요.</div>
-									<input id="id" name="id" placeholder="id 입력">
+									<div><h4>권한을 할당 받을 계정 ID를 입력하세요.</h4></div><br>
+									<input id="userId" name="userId" placeholder="id 입력">
+									<button id="idChk" type="button">중복 확인</button>
 								</div>
 								<br>
 
 								<div class="col s12 mt3c">
-									<div>추가하려는 권한의 범위를 선택하세요.</div>
+									<div><h4>추가하려는 권한의 범위를 선택하세요.</h4></div>
 									
 										<div class="card-content">
 											<input type="radio" id="newProject" name="setAuth"
@@ -110,11 +161,14 @@
 								</div>
 
 							</div>
+							<input type="hidden" name="chNo" value="${param.chNo}">
 						</div>
+						<br>
 						<div class="card-action">
-							<button class="waves-effect waves-light btn blue darken-4"
-								type="submit">추가</button>
+							<button id="submit" class="project-btn btn btn-primary"
+								type="submit" disabled>ID확인을 해주세요</button>
 						</div>
+						<br><br>
 					</div>
 				</form>		
 			</div>
