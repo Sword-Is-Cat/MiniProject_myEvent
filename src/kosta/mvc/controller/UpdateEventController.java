@@ -39,10 +39,24 @@ public class UpdateEventController implements Controller {
 		String evAddr = m.getParameter("evAddr");
 		String evPhone = m.getParameter("evPhone");
 		String evEmail = m.getParameter("evEmail");
+		String postalCode = m.getParameter("postalCode");
+		String roadAddress = m.getParameter("roadAddress");
+		String detailAddress = m.getParameter("detailAddress");
+		String extraAddress = m.getParameter("extraAddress");
 
 		if (evName == null || evName.equals("") || evDescription == null || evDescription.equals("")) {
 
 			throw new RuntimeException("입력값부족");
+		}
+		
+		if(detailAddress==null || detailAddress.equals("")){
+			detailAddress = "-";
+		}
+		
+		if (postalCode == null || postalCode.equals("")) {
+			evAddr = "Online";
+		} else {
+			evAddr = postalCode+"," + roadAddress +"," + extraAddress+ "," + detailAddress;
 		}
 		
 		Category category = new Category();

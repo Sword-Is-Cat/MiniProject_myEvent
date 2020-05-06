@@ -48,7 +48,7 @@ public class CreateChannelController implements Controller{
 		
 		ChannelService.insertChannel(chan);
 		
-		ModelAndView mv = new ModelAndView(true, request.getServletContext().getContextPath()+"/pages/channelList.jsp");
+		ModelAndView mv = new ModelAndView(true, "front?key=manageChannel");
 		
 		return mv;
 	}

@@ -51,7 +51,7 @@
   <!-- KAKAO -->
   <script	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   <script src="${pageContext.request.contextPath}/pages/js/signUp.js"></script>
-  <script src="./plugins/jQuery/jquery.min.js"></script>
+  <script src="${pageContext.request.contextPath}/pages/plugins/jQuery/jquery.min.js"></script>
 </head>
 
 <body>
