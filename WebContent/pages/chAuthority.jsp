@@ -56,6 +56,7 @@
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
 <script src="${pageContext.request.contextPath}/pages/plugins/jQuery/jquery.min.js"></script>
+
 <script>
 $(function(){
 	//아이디 중복체크
@@ -89,6 +90,7 @@ $(function(){
 	});
 });
 </script>
+
 
 </head>
 <style>
@@ -260,6 +262,7 @@ hr{
 		
 
 	
+
 	<!-- Body inner end -->
 
 <!-- footer -->

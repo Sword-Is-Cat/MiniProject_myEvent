@@ -58,7 +58,7 @@
 	<c:import url="headerTop.jsp" />
 	<c:import url="header.jsp" />
 
-	<div id="banner-area">
+<%-- 	<div id="banner-area">
 		<img src="${pageContext.request.contextPath}/pages/images/banner/banner1.jpg" alt="" />
 		<div class="parallax-overlay"></div>
 		<!-- Subpage title start -->
@@ -75,7 +75,7 @@
 			</div>
 		</div>
 		<!-- Subpage title end -->
-	</div>
+	</div> --%>
 	<!-- Banner area end -->
 
 

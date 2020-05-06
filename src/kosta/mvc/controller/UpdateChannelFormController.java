@@ -19,7 +19,6 @@ public class UpdateChannelFormController implements Controller {
 		Channel channel = ChannelService.selectByChNo(chNo);
 		request.setAttribute("channel", channel);
 		ModelAndView mv = new ModelAndView();
-		System.out.println("updatehannelFormController: " + channel);
 		mv.setViewName("pages/updateChannel.jsp");
 		return mv;
 	}
