@@ -129,6 +129,7 @@ table {text-align: center;}
 		<div class="col s12">
 			<h3 class="noticeTitle">공지사항</h3>
 			<input type="button" class="btn btn-info writeBtn float-right" value="글쓰기" onclick="location.href='./noticeWrite.jsp'"/>
+
 		</div>
 		
 			<table class="table table-hover">
