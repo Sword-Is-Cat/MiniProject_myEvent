@@ -13,10 +13,10 @@ public class DeleteEventController implements Controller {
 		
 		int evNo = Integer.parseInt(request.getParameter("evNo"));
 		int chNo = Integer.parseInt(request.getParameter("chNo"));
-
+		
 		new EventDAO().deleteEvent(evNo);
 
-		ModelAndView mv = new ModelAndView(true, "pages/channelDetail.jsp?chNo="+chNo);
+		ModelAndView mv = new ModelAndView(true, "front?key=channelDetail&chNo="+chNo);
 		return mv;
 	}
 

@@ -344,7 +344,7 @@
 								data-wow-delay="${status.count * 0.27}s">
 								<div class="grid">
 									<figure class="m-0 effect-oscar">
-										<img src="${pageContext.request.contextPath}/eventImage/${recentEv.evImg}" alt="${recentEv.evImg}">
+										<img src="${pageContext.request.contextPath}/eventImage/${recentEv.evImg}" alt="${recentEv.evImg}" width="255" height="170.14">
 										<figcaption>
 											<a class="link icon-pentagon" href="./front?key=selectEvent&evNo=${recentEv.evNo}"><i
 												class="fa fa-link"></i></a> <a class="view icon-pentagon"

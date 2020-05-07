@@ -1,3 +1,5 @@
+<%@page import="kosta.mvc.vo.Event"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -92,7 +94,7 @@
 
 	<!-- interestEvent item start -->
 	<section id="portfolio-item">
-		<c:forEach items="${EventList}" var="event">
+		<c:forEach items="${eventList}" var="event">
 		<div class="container mainContainer">
 			<!-- interestEvent item row start -->
 			<div class="row">
