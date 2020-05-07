@@ -14,7 +14,7 @@ public class DeleteBookController implements Controller {
 		
 		new BookDAO().deleteBook(userNo, evNo);
 		
-		ModelAndView mv = new ModelAndView(true, "front?key=selectBookByUserNo");
+		ModelAndView mv = new ModelAndView(true, "front?key=selectEvent&evNo="+evNo);
 		
 		return mv;
 	}
