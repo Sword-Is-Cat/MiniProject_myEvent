@@ -1,49 +1,55 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
- 
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<meta charset="UTF-8">
-  <title>My Event :: Çà»ç¿Í ÇÔ²² ÇÏ´Â ¸ðµç ¼ø°£</title>
+<meta charset="UTF-8">
+<title>My Event :: í–‰ì‚¬ì™€ í•¨ê»˜í•˜ëŠ” ëª¨ë“  ìˆœê°„</title>
 
-   <!-- mobile responsive meta -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-   <!-- ** Plugins Needed for the Project ** -->
-  <script src="./pages/plugins/jQuery/jquery.min.js"></script>
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
-  <link rel="stylesheet" href="./plugins/bootstrap/bootstrap.min.css">
-	<!-- FontAwesome -->
-    <link rel="stylesheet" href="./plugins/fontawesome/font-awesome.min.css">
-	<!-- Animation -->
-	<link rel="stylesheet" href="./plugins/animate.css">
-	<!-- Prettyphoto -->
-	<link rel="stylesheet" href="./plugins/prettyPhoto.css">
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="./plugins/owl/owl.carousel.css">
-	<link rel="stylesheet" href="./plugins/owl/owl.theme.css">
-	<!-- Flexslider -->
-	<link rel="stylesheet" href="./plugins/flex-slider/flexslider.css">
-	<!-- Flexslider -->
-	<link rel="stylesheet" href="./plugins/cd-hero/cd-hero.css">
-	<!-- Style Swicther -->
-	<link id="style-switch" href="./css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
+<!-- mobile responsive meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <!-- Main Stylesheet -->
-  <link href="./css/style.css" rel="stylesheet">
-  <link href="./css/defaultStyle.css" rel="stylesheet">
-  <link href="./css/about.css" rel="stylesheet">
-  <!--Favicon-->
-	<link rel="icon" href="./images/favicon/32.png" type="image/x-icon" />
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="./images/favicon/144.png">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="./images/favicon/72.png">
-	<link rel="apple-touch-icon-precomposed" href="./images/favicon/54.png">
- <!-- webFont -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<!-- ** Plugins Needed for the Project ** -->
+<!-- Bootstrap -->
+<link rel="stylesheet"
+	href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/bootstrap/bootstrap.min.css">
+<!-- FontAwesome -->
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/fontawesome/font-awesome.min.css">
+<!-- Animation -->
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/animate.css">
+<!-- Prettyphoto -->
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/prettyPhoto.css">
+<!-- Owl Carousel -->
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.carousel.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/owl/owl.theme.css">
+<!-- Flexslider -->
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/flex-slider/flexslider.css">
+<!-- Flexslider -->
+<link rel="stylesheet" href="${pageContext.request.contextPath}/pages/plugins/cd-hero/cd-hero.css">
+<!-- Style Swicther -->
+<link id="style-switch" href="${pageContext.request.contextPath}/pages/css/presets/preset3.css" media="screen"
+	rel="stylesheet" type="text/css">
+
+<!-- Main Stylesheet -->
+<link href="${pageContext.request.contextPath}/pages/css/style.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/pages/css/defaultStyle.css" rel="stylesheet">
+<!--Favicon-->
+<link rel="icon" href="${pageContext.request.contextPath}/pages/images/favicon/32.png" type="image/x-icon" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144"
+	href="${pageContext.request.contextPath}/pages/images/favicon/144.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72"
+	href="${pageContext.request.contextPath}/pages/images/favicon/72.png">
+<link rel="apple-touch-icon-precomposed" href="${pageContext.request.contextPath}/pages/images/favicon/54.png">
+<!-- webFont -->
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+	rel="stylesheet">
+<script src="${pageContext.request.contextPath}/pages/plugins/jQuery/jquery.min.js"></script>
 <style>
 .parallax {
    background: linear-gradient(
@@ -76,9 +82,9 @@
 		<div class="row ">
       	<div class="bgBlack">
 			<div class="aboutIntro">
-				<p>¸¶ÀÌÀÌº¥Æ®´Â 2014³â 9¿ù¿¡ ¼³¸³µÈ ÀÌº¥Æ® Å×Å© ½ºÅ¸Æ®¾÷ÀÔ´Ï´Ù. </p>
-				<p>±âÁ¸ÀÇ Çà»ç ½ÃÀå¿¡ IT¿Í ÇÃ·§ÆûÀ» Á¢¸ñÇØ Çõ½ÅÀ» ¸¸µé¾î°¡°í ÀÖ½À´Ï´Ù. </p>
-				<p>³»°¡ ¿øÇÏ´Â Çà»ç¸¦ °³ÃÖÇÏ°Å³ª Âü¿©ÇÒ ¼ö ÀÖ´Â ÇÃ·§Æû &quot;¸¶ÀÌÀÌº¥Æ®&quot;¸¦ ¿î¿µÇÏ°í ÀÖ½À´Ï´Ù.</p>
+				<p>ë§ˆì´ì´ë²¤íŠ¸ëŠ” 2014ë…„ 9ì›”ì— ì„¤ë¦½ëœ ì´ë²¤íŠ¸ í…Œí¬ ìŠ¤íƒ€íŠ¸ì—…ìž…ë‹ˆë‹¤. </p>
+				<p>ê¸°ì¡´ì˜ í–‰ì‚¬ ì‹œìž¥ì— ITì™€ í”Œëž«í¼ì„ ì ‘ëª©í•´ í˜ì‹ ì„ ë§Œë“¤ì–´ê°€ê³  ìžˆìŠµë‹ˆë‹¤. </p>
+				<p>ë‚´ê°€ ì›í•˜ëŠ” í–‰ì‚¬ë¥¼ ê°œìµœí•˜ê±°ë‚˜ ì°¸ì—¬í•  ìˆ˜ ìžˆëŠ” í”Œëž«í¼ &quot;ë§ˆì´ì´ë²¤íŠ¸&quot;ë¥¼ ìš´ì˜í•˜ê³  ìžˆìŠµë‹ˆë‹¤.</p>
 			</div>
       </div>
 		</div>
@@ -104,7 +110,7 @@
 			        	<div class="meta-date"></div>
 				        <div class="content-box">
 				        <span>05/07</span>
-				        	<p>ÇÁ·ÎÁ§Æ® ¹ßÇ¥</p>
+				        	<p>í”„ë¡œì íŠ¸ ë°œí‘œ</p>
      						 <img class="tlImg tl01" src="./images/timeLine01.jpg"/>
 				        </div>
 				    </div>
@@ -116,7 +122,7 @@
 			        	<div class="meta-date"></div>
 				        <div class="content-box contentNo02">
 				        <span>04/29</span>
-				        	<p>ÇÁ·ÎÁ§Æ® ¹ßÇ¥ ¿¬±â</p>
+				        	<p>í”„ë¡œì íŠ¸ ë°œí‘œ ì—°ê¸°</p>
     						<img class="tlImg tl02" src="./images/timeLine02.jpg"/>
 				        </div>
 				    </div>
@@ -128,7 +134,7 @@
 			        	<div class="meta-date"></div>
 				        <div class="content-box">
 				        <span>04/17~</span>
-				        	<p>ÇÁ·ÎÁ§Æ® ÁøÇà</p>
+				        	<p>í”„ë¡œì íŠ¸ ì§„í–‰</p>
      						<img class="tlImg tl03" src="./images/timeLine03.gif"/>
 				        </div>
 				    </div>
@@ -140,7 +146,7 @@
 			        	<div class="meta-date"></div>
 				        <div class="content-box">
 				        <span>04/08</span>
-				        	<p>ÇÁ·ÎÁ§Æ® Á¶ Æí¼º</p>
+				        	<p>í”„ë¡œì íŠ¸ ì¡° íŽ¸ì„±</p>
 				        	<img class="tlImg tl04" src="./images/timeLine04.jpg"/>
 				        	
 				        </div>
@@ -173,7 +179,7 @@
 										class="img-top"></span> <span class="img-bottom"></span>
 								</div>
 								<div class="team-content">
-									<h3>¹èÁöÇý</h3>
+									<h3>ë°°ì§€í˜œ</h3>
 									<p>Web Designer</p>
 									<div class="team-social">
 										<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a
@@ -193,7 +199,7 @@
 										class="img-top"></span> <span class="img-bottom"></span>
 								</div>
 								<div class="team-content">
-									<h3>ÀåÈ«¹ü</h3>
+									<h3>ìž¥í™ë²”</h3>
 									<p>Web Designer</p>
 									<div class="team-social">
 										<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a
@@ -213,7 +219,7 @@
 										class="img-top"></span> <span class="img-bottom"></span>
 								</div>
 								<div class="team-content">
-									<h3>±èÁö¾È</h3>
+									<h3>ê¹€ì§€ì•ˆ</h3>
 									<p>Web Designer</p>
 									<div class="team-social">
 										<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a
@@ -233,7 +239,7 @@
 										class="img-top"></span> <span class="img-bottom"></span>
 								</div>
 								<div class="team-content">
-									<h3>±èÈ¿Áø</h3>
+									<h3>ê¹€íš¨ì§„</h3>
 									<p>Web Designer</p>
 									<div class="team-social">
 										<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a
@@ -253,7 +259,7 @@
 										class="img-top"></span> <span class="img-bottom"></span>
 								</div>
 								<div class="team-content">
-									<h3>¹ÚÁ¤ÀÇ</h3>
+									<h3>ë°•ì •ì˜</h3>
 									<p>Web Designer</p>
 									<div class="team-social">
 										<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a
