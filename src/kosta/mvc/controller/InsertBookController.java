@@ -18,7 +18,7 @@ public class InsertBookController implements Controller {
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		HttpSession session = request.getSession();
 		int evNo = Integer.parseInt(request.getParameter("evNo"));
-		int userNo = (int)request.getSession().getAttribute("userNo");
+		int userNo = (int)session.getAttribute("userNo");
 		
 		new BookDAO().insertBook(userNo, evNo);
 		
