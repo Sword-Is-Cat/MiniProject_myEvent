@@ -107,14 +107,12 @@ img.chImg {
 						width="100%" height="300px">
 				</div>
 				<div class="col-md-4">
-					<h4>Channel</h4>
+					<h3>Channel</h3>
 					<h5>${channel.chName}</h5>
-					<br>
-					<h4>개설자</h4>
+					<h3>개설자</h3>
 					<h5>${channel.user.userName}</h5>
-					<br>
-					<br>
-					<br>
+					<h3>채널설명</h3>
+					<h5>${channel.chDescription}</h5>
 					<br> <a style=""
 						href="pages/createChBoard.jsp?chNo=${channel.chNo}"
 						class="project-btn btn btn-primary review">리뷰 등록</a>
