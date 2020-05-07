@@ -117,6 +117,7 @@ public class BookDAO {
 			
 			while(rs.next()) {
 				
+				
 				user = new User(rs.getInt("userNo"), rs.getString("userId"), rs.getString("userPwd"), 
 						rs.getString("userName"), rs.getString("userAddr"), rs.getString("userPhone"), 
 						rs.getString("userEmail"), rs.getTimestamp("userJoinDate"), rs.getInt("userStatus"));

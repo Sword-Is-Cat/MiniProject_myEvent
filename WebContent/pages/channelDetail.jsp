@@ -1,3 +1,4 @@
+<%@page import="kosta.mvc.vo.Event"%>
 <%@page import="java.util.List"%>
 <%@page import="kosta.mvc.vo.User"%>
 <%@page import="kosta.mvc.vo.Channel"%>
@@ -69,6 +70,11 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
+<link href="${pageContext.request.contextPath}/pages/css/style.css"
+	rel="stylesheet">
+<link
+	href="${pageContext.request.contextPath}/pages/css/defaultStyle.css"
+	rel="stylesheet">
 <style>
 hr {
 	margin-left: 15%;
@@ -80,6 +86,10 @@ img.chImg {
 	width: 593px;
 	height: 400px;
 }
+
+#ahead {
+	background-color: rgb(240, 237, 250);
+}
 </style>
 </head>
 
@@ -89,28 +99,153 @@ img.chImg {
 	<!-- mainMenu -->
 	<c:import url="header.jsp" />
 
-<%-- 	<div id="banner-area">
-		<img src="images/banner/banner1.jpg" alt="" />
-		<div class="parallax-overlay"></div>
-		<!-- Subpage title start -->
-		<div class="banner-title-content">
-			<div class="text-center">
-				<h2>${channel.chName}</h2>
-				<nav aria-label="breadcrumb">
-					<ol class="breadcrumb justify-content-center">
-						<li class="breadcrumb-item"><a href="#"> 홈으로 </a></li>
-						<li class="breadcrumb-item text-white" aria-current="page">
-							${channel.chNo}</li>
-					</ol>
-				</nav>
+	<section>
+		<div class="container">
+			<div class="row justify-content-around">
+				<div class="col-md-6">
+					<img src="channelImg/${requestScope.channel.chImg}" alt=""
+						width="100%" height="300px">
+				</div>
+				<div class="col-md-4">
+					<h3>Channel</h3>
+					<h5>${channel.chName}</h5>
+					<h3>개설자</h3>
+					<h5>${channel.user.userName}</h5>
+					<h3>채널설명</h3>
+					<h5>${channel.chDescription}</h5>
+					<br> <a style=""
+						href="pages/createChBoard.jsp?chNo=${channel.chNo}"
+						class="project-btn btn btn-primary review">리뷰 등록</a>
+				</div>
 			</div>
 		</div>
-		<!-- Subpage title end -->
-	</div> --%>
-	<!-- Banner area end -->
+	</section>
+	<section id="portfolio" class="portfolio">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 heading">
+					<h2 class="title">진행/모집중인 행사 목록</h2>
+
+				</div>
+			</div>
+			<!-- Title row end -->
+			<!-- img start-->
+			<div class="row">
+				<c:forEach items="${requestScope.newList}" var="recentEv"
+					varStatus="status">
+					<div class="col-sm-3 portfolio-static-item wow fadeInUp"
+						data-wow-delay="${status.count * 0.27}s">
+						<div class="grid">
+							<figure class="m-0 effect-oscar">
+								<img
+									src="${pageContext.request.contextPath}/eventImage/${recentEv.evImg}"
+									alt="${recentEv.evImg}" width="255" height="170.14">
+								<figcaption>
+									<a class="link icon-pentagon"
+										href="./front?key=selectEvent&evNo=${recentEv.evNo}"><i
+										class="fa fa-link"></i></a> <a class="view icon-pentagon"
+										style="cursor: pointer;"
+										onclick="toggleFavoriteEvent(${recentEv.evNo})"><i
+										class="favEventIcon${recentEv.evNo}"></i></a>
+								</figcaption>
+							</figure>
+							<div class="portfolio-static-desc">
+								<h3>${recentEv.evName}</h3>
+								<span><a href="#"></a></span>
+							</div>
+						</div>
+						<!--/ grid end -->
+					</div>
+				</c:forEach>
+			</div>
+			<!--/ items end -->
+		</div>
+		<!--/ Container end -->
+	</section>
+	<!--/ Counter end -->
+
+	<!-- Feature box start -->
+	<section id="feature" class="feature">
+		<div class="container">
+			<div class="row">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 heading">
+							<h2 class="title">종료된 행사 목록</h2>
+
+						</div>
+					</div>
+					<!-- Title row end -->
+					<!-- img start-->
+					<div class="row">
+						<c:forEach items="${requestScope.endList}" var="recentEv"
+							varStatus="status">
+							<div class="col-sm-3 portfolio-static-item wow fadeInUp"
+								data-wow-delay="${status.count * 0.27}s">
+								<div class="grid">
+									<figure class="m-0 effect-oscar">
+										<img
+											src="${pageContext.request.contextPath}/eventImage/${recentEv.evImg}"
+											alt="${recentEv.evImg}" width="255" height="170.14">
+										<figcaption>
+											<a class="link icon-pentagon"
+												href="./front?key=selectEvent&evNo=${recentEv.evNo}"><i
+												class="fa fa-link"></i></a> <a class="view icon-pentagon"
+												style="cursor: pointer;"
+												onclick="toggleFavoriteEvent(${recentEv.evNo})"><i
+												class="favEventIcon${recentEv.evNo}"></i></a>
+										</figcaption>
+									</figure>
+									<div class="portfolio-static-desc">
+										<h3>${recentEv.evName}</h3>
+										<span><a href="#"></a></span>
+									</div>
+								</div>
+								<!--/ grid end -->
+							</div>
+						</c:forEach>
+						<!--/ items end -->
+					</div>
+					<!--/ Container end -->
+				</div>
+				<!-- Content row end -->
+
+			</div>
+		</div>
+		<!--/ Container end -->
+		<div class="container" style="margin-top:100px;">
+			<div class="accordion" id="accordion">
+				<c:forEach items="${chBoard}" var="chBoard">
+					<div class="card border rounded mb-2">
+						<div class="card-header p-0">
+							<a id="ahead"
+								class="h4 mb-0 font-weight-bold text-uppercase d-block p-2 pl-5"
+								data-toggle="collapse" data-target="#collapseOne"
+								aria-expanded="true" aria-controls="collapseOne">
+
+								${chBoard.user.userName} | <fmt:formatDate
+									value="${chBoard.chBoardTime }" pattern="yyyy-MM-dd" /> |
+								평점:${chBoard.chBoardStar}
+							</a>
+						</div>
+						<div id="collapseOne" class="collapse show"
+							data-parent="#accordion">
+							<div class="card-body">
+								<p>${chBoard.chBoardContent }</p>
+							</div>
+						</div>
+					</div>
+					<!--/ Panel 1 end-->
+				</c:forEach>
+				<!--/ Accordion end -->
+			</div>
+
+		</div>
+	</section>
+	<!--/ Feature box end -->
 
 
-	<div class="body-inner">
+	<%-- <div class="body-inner">
 		<!-- Portfolio item start -->
 		<section id="portfolio-item">
 			<div class="container">
@@ -252,10 +387,10 @@ img.chImg {
 			class="project-btn btn btn-primary review">리뷰 등록</a><Br>
 		<c:import url="/front?key=selectChBoard&chNo=${channel.chNo}" />
 	</div>
-
+ --%>
 	<!-- Body inner end -->
 
-<c:import url="footer.jsp"></c:import>
+	<c:import url="footer.jsp"></c:import>
 </body>
 
 
