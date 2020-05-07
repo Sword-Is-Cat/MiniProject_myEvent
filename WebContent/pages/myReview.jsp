@@ -132,7 +132,6 @@ thead {
 		<div class="col s12 d-flex justify-content-between">
 			<table>
 				<thead>
-					<td>글 번호</td>
 					<td>채널 이름</td>
 					<td>상세내용</td>
 					<td>별점</td>
@@ -141,10 +140,9 @@ thead {
 				<c:forEach items="${myChB}" var="myChBoard">
 				<tbody>
 						<tr>
-							<td style="text-align: center;">${myChBoard.chBoardNo}</td>
 							<td style="text-align: center;">${myChBoard.channel.chName}</td>
-							<td>${myChBoard.chBoardContent}</td>
-							<td style="text-align: center;">${myChBoard.chBoardStar}점</td>			
+							<td style="text-align: center;">${myChBoard.chBoardContent}</td>
+							<td style="text-align: center;">${myChBoard.chBoardStar}</td>			
 							<td style="text-align: center;"><fmt:formatDate value="${myChBoard.chBoardTime }" pattern="yyyy-MM-dd"/></td>
 						</tr>
 					
