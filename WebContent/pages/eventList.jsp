@@ -183,7 +183,6 @@ hr{
 	<a id="channelTab" href="${pageContext.request.contextPath}/pages/channelList.jsp">채널</a>
 	</h3>
 	<br>
-	<h4 style="margin-left: 15%">총 n개의 검색 결과가 있습니다.</h4>
 	<hr id="line" color="#5c3fbf"/>
 	<!-- Portfolio start -->
 	<section id="main-container" class="portfolio-static">
