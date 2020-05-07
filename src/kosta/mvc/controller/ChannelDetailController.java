@@ -7,7 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kosta.mvc.model.dao.EventDAO;
+import kosta.mvc.service.ChBoardService;
 import kosta.mvc.service.ChannelService;
+import kosta.mvc.vo.ChBoard;
 import kosta.mvc.vo.Channel;
 import kosta.mvc.vo.Event;
 
@@ -27,7 +29,9 @@ public class ChannelDetailController implements Controller{
 		
 		List<Event> newList = new EventDAO().selectNewEventByChNo(chNo);
 		List<Event> endList = new EventDAO().selectEndEventByChNo(chNo);
+		List<ChBoard> chBoard = ChBoardService.selectChBoard(chNo);
 		
+		request.setAttribute("chBoard", chBoard);
 		request.setAttribute("newList", newList);
 		request.setAttribute("endList", endList);
 		
