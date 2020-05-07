@@ -108,10 +108,10 @@ img.chImg {
 				</div>
 				<div class="col-md-4">
 					<h4>Channel</h4>
-					<h5>김채널</h5>
+					<h5>${channel.chName}</h5>
 					<br>
 					<h4>개설자</h4>
-					<h5>김설자</h5>
+					<h5>${channel.user.userName}</h5>
 					<br>
 					<br>
 					<br>
