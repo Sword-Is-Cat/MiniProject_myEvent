@@ -233,7 +233,7 @@
 					    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#detail" role="tab" aria-controls="detail" aria-selected="true">상세정보</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link" id="cancel-tab" data-toggle="tab" href="#cancel" role="tab" aria-controls="cancel" aria-selected="false">취소 및 환불 규정</a>
+					    <a class="nav-link" id="cancel-tab" data-toggle="tab" href="#cancel" role="tab" aria-controls="cancel" aria-selected="false">취소안내</a>
 					  </li>
 					  <li class="nav-item">
 					    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">문의하기</a>
@@ -255,13 +255,11 @@
 					<div class="tab-pane fade" id="cancel" role="tabpanel" aria-labelledby="cancel-tab">
 						
 						
-							-행사의 취소/환불 기간은 행사 호스트가 설정한 신청기간과 동일합니다.<br/>
-							-신청한 행사의 신청 정보 수정 및 취소/환불은 ‘마이페이지-신청내역관리’에서 할 수 있습니다.<br/>
-							-결제 수단, 환불 신청 시점, 환불 사유에 따라 환불 수수료가 부과될 수 있습니다.<br/>
-							-위에 대한 자세한 내용은 ‘취소 및 환불규정’에서 확인할 수 있습니다.<br/>
-							-신청기간 마감 이후의 신청 정보 수정 및 취소/환불은 행사 호스트에게 문의 부탁드립니다.<br/>
-							-행사에 관련된 사항은 하단의 ‘문의하기’를 통해 행사 호스트에게 문의 부탁드립니다.<br/>
-							*이벤터스는 통신판매 중개자이며, 해당 행사의 호스트가 아닙니다.<br/>
+							-행사의 취소 가능 기간은 행사 호스트가 설정한 신청기간과 동일합니다.<br/>
+							-화면 우측의 ‘행사신청취소’를 통해 참여신청을 취소할 수 있습니다.<br/>
+							-신청기간 마감 이후의 신청 정보 수정 및 취소는 행사 호스트에게 문의 부탁드립니다.<br/>
+							-행사에 관련된 사항은 ‘문의하기’를 통해 행사 호스트에게 문의 부탁드립니다.<br/>
+							*마이이벤트는 통신판매 중개자이며, 해당 행사의 호스트가 아닙니다.<br/>
 
 					</div>
 					
@@ -270,19 +268,14 @@
                             <table class="txt-14" style="border:1px solid #e5e5e5">
                                 <tbody>
                                     <tr style="border-bottom:1px solid #e5e5e5">
-                                        <td style="padding:20px;background-color:#d4d8d8;width:167px">담당자</td>
-                                        <td style="padding:20px">토르</td>
-                                    </tr>
-                                    <tr style="border-bottom:1px solid #e5e5e5">
                                         <td style="padding:20px;background-color:#d4d8d8;width:167px">이메일</td>
-                                        <td style="padding:20px">another11@email</td>
+                                        <td style="padding:20px">${requestScope.event.evEmail}</td>
                                     </tr>
                                     <tr v-if="projectData.ManagerNumber">
                                         <td style="padding:20px;background-color:#d4d8d8;width:167px">전화번호</td>
                                         <td style="padding:20px">
                                             <div class="d-flex align-items-center">
-                                                <span>000-0000-0000</span>
-                                                <a :class="{'pl-2':ManagerNumber}" @click="ManagerNumber = projectData.ManagerNumber" v-if="!ManagerNumber">확인하기</a>
+                                                <span>${requestScope.event.evPhone}</span>
                                             </div>
                                         </td>
                                     </tr>
@@ -310,7 +303,7 @@
 						<div class="product-desc">${requestScope.event.category.cateName}</div>
 
 						<div class="product-price">${requestScope.event.channel.chName}</div>
-						<div class="product-stock">${requestScope.event.channel.chDescription} 행사설명</div>
+						<div class="product-stock">${requestScope.event.channel.chDescription}</div>
 						<hr>
 					
 							

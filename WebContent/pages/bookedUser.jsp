@@ -112,6 +112,7 @@
 #evInfo {
 	margin-top: 1em;
 }
+
 table {
 	width: 100%;
 	/*margin:0 auto;
@@ -124,7 +125,8 @@ thead {
 	text-align: center;
 	font-weight: bold;
 }
-h3{
+
+h3 {
 	margin-left: 45%;
 	color: #5c3fbf;
 	font-weight: bold;
@@ -139,8 +141,10 @@ h3{
 	<!--subTopMenu end-->
 
 	<c:import url="header.jsp"></c:import>
-	<br><br>
-	<h3>신청자 목록</h3><br>
+	<br>
+	<br>
+	<h3>신청자 목록</h3>
+	<br>
 	<div class="container mainContainer">
 		<div class="col s12 d-flex justify-content-between">
 			<table>
@@ -152,21 +156,22 @@ h3{
 				</thead>
 				<tbody>
 					<c:forEach items="${requestScope.list}" var="user">
-					<tr style="text-align: center;">
-						<td>${user.userId}</td>
-						<td>${user.userName}</td>
-						<td>${user.userPhone}</td>
-						<td>${user.userEmail}</td>
-					</tr>
-					<!--/ Panel 1 end-->
-				</c:forEach>
+						<tr style="text-align: center;">
+							<td>${user.userId}</td>
+							<td>${user.userName}</td>
+							<td>${user.userPhone}</td>
+							<td>${user.userEmail}</td>
+						</tr>
+						<!--/ Panel 1 end-->
+					</c:forEach>
 				</tbody>
 			</table>
 		</div>
 	</div>
 	<!-- container end -->
 	<!-- footer -->
-	<br><br>
+	<br>
+	<br>
 	<c:import url="footer.jsp"></c:import>
 </body>
 </html>
