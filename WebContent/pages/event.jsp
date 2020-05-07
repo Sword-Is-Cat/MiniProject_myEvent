@@ -329,7 +329,7 @@
 						<div class="product-title">${requestScope.event.evName}</div>
 						<div class="product-desc">${requestScope.event.category.cateName}</div>
 
-						<div class="product-price">${requestScope.event.channel.chName}<span class="addCh"></span></div>
+						<div class="product-price"><a href = "${pageContext.request.contextPath}/front?key=channelDetail&chNo=${requestScope.event.channel.chNo}">${requestScope.event.channel.chName}</a><span class="addCh"></span></div>
 						<div class="product-stock">${requestScope.event.channel.chDescription} </div>
 
 						<hr>
