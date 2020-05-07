@@ -55,34 +55,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
-	
-<script>
-/*$(function(){
-	
-		if(${sessionScope.userStatus}==2) {
-		$('.writeBtn').show();
-		 $('.delectSpace').append("<td class="noticeDelete"><input type="button" value="삭제" /></td>
-								<div class="editBtns">
-									<input type="button" class="btn btn-info modifyBtn" value="수정" onClick="sendDelete()"/>
-									<input type="button" class="btn btn-info deleteBtn" value="삭제" onClick="sendDelete()"/>
-								</div>");
-	}else {
-		$('.writeBtn').hide();
-	}; 
-	
-	function sendUpdate(){//수정
-		document.requestForm.key.value ="updateNotice";
-		document.requestForm.submit();
-	}
 
-	
-
-	/* $('.deleteBtn').click(function() {
-		alert("asdfsaf");
-	}); 
-	
-});*///end
-</script>
 <style>
 table {text-align: center;}
 .mainContainer {margin-top:50px; padding-top:50px; border-top:1px solid #e5e5e5;}
@@ -118,7 +91,7 @@ th.displayHidden, td.displayHidden {display: none;}
 
 	<!-- channalList start -->
 	<%-- <%List<Notice> notice = NoticeService.selectAll();%> --%>
-<div class="container-fluide mainContainer"></div><!-- container end -->
+<div class="container-fluide mainContainer">
 	
 	<div class="container">
 	<div class="row justify-content-center">
@@ -147,14 +120,14 @@ th.displayHidden, td.displayHidden {display: none;}
 							data-target="#no${notice.noticeNo}">
 							<td></td>
 							<td class="displayHidden">${notice.noticeNo}</td>
-							<td class="alignLeft"><%-- <a href="${pageContext.request.contextPath}/front?key=viewToNotice?noticeNo=${notice.noticeNo}"> --%>${notice.noticeSubject}<!-- </a> --></td>
+							<td class="alignLeft">${notice.noticeSubject}<!-- </a> --></td>
 							<td><fmt:formatDate value="${notice.noticeTime}" type="date"/></td>
 						</tr>
 						
 						<tr class="accordion-body collapse" id="no${notice.noticeNo}">
 							<td></td>
 							<td class="displayHidden"></td>
-							<td>${notice.noticeContent}
+							<td style="text-align:justify;">${notice.noticeContent}
 								<div class="gap-40"></div>
 								<div class="editBtns">
 									<c:if test="${sessionScope.userNo == 0}">
@@ -175,7 +148,7 @@ th.displayHidden, td.displayHidden {display: none;}
 		
 	</div>
 </div>
-
+</div><!-- main container end -->
 <script>
 	$('.deleteBtn').click(function() {
 		var r = confirm("해당 공지를 삭제하시겠습니까?");

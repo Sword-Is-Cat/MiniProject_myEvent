@@ -16,10 +16,11 @@ public class SelectUserByBookedEvNoController implements Controller {
 		int evNo = Integer.parseInt(request.getParameter("evNo"));
 		
 		List<User> list = new BookDAO().selectUserByBookedEvNo(evNo);
-		request.setAttribute("List", list);
+		request.setAttribute("list", list);
 		
-		ModelAndView mv = new ModelAndView(true, "front?key=selectEvent&evNo="+evNo);
-		return null;
+		
+		ModelAndView mv = new ModelAndView(false, "pages/bookedUser.jsp");
+		return mv;
 	}
 
 }

@@ -77,7 +77,16 @@
 				$('.favEventIcon${favEvNo}').addClass('text-danger');
 			}
 		</c:forEach>
+		
+		$('.service-content').hover(function(){
+			$(this).find('h3').css('color','#ffc200');
+			$(this).find('h3').css('transition','0.2s');
+		}, function(){
+			$(this).find('h3').css('color','#323232');
+		});
+
 	});
+	
 </script>
 
 </head>
