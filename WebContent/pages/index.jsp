@@ -38,6 +38,7 @@
 <!-- Main Stylesheet -->
 <link href="${pageContext.request.contextPath}/pages/css/style.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/pages/css/defaultStyle.css" rel="stylesheet">
+
 <!--Favicon-->
 <link rel="icon" href="${pageContext.request.contextPath}/pages/images/favicon/32.png" type="image/x-icon" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144"

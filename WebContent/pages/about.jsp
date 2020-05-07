@@ -38,6 +38,7 @@
 <!-- Main Stylesheet -->
 <link href="${pageContext.request.contextPath}/pages/css/style.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/pages/css/defaultStyle.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/pages/css/about.css" rel="stylesheet">
 <!--Favicon-->
 <link rel="icon" href="${pageContext.request.contextPath}/pages/images/favicon/32.png" type="image/x-icon" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144"
@@ -175,7 +176,7 @@
 						<div class="col-md-3 col-sm-6">
 							<div class="team wow slideInLeft">
 								<div class="img-hexagon">
-									<img src="images/team/team1.jpg" alt=""> <span
+									<img src="./images/team/team1.png" alt=""> <span
 										class="img-top"></span> <span class="img-bottom"></span>
 								</div>
 								<div class="team-content">
@@ -195,7 +196,7 @@
 						<div class="col-md-3 col-sm-6">
 							<div class="team wow slideInLeft">
 								<div class="img-hexagon">
-									<img src="images/team/team2.jpg" alt=""> <span
+									<img src="./images/team/team2.png" alt=""> <span
 										class="img-top"></span> <span class="img-bottom"></span>
 								</div>
 								<div class="team-content">
@@ -215,7 +216,7 @@
 						<div class="col-md-3 col-sm-6">
 							<div class="team wow slideInRight">
 								<div class="img-hexagon">
-									<img src="images/team/team3.jpg" alt=""> <span
+									<img src="./images/team/team3.png" alt=""> <span
 										class="img-top"></span> <span class="img-bottom"></span>
 								</div>
 								<div class="team-content">
@@ -235,7 +236,7 @@
 						<div class="col-md-3 col-sm-6">
 							<div class="team animate wow slideInRight">
 								<div class="img-hexagon">
-									<img src="images/team/team4.jpg" alt=""> <span
+									<img src="./images/team/team4.png" alt=""> <span
 										class="img-top"></span> <span class="img-bottom"></span>
 								</div>
 								<div class="team-content">
@@ -255,7 +256,7 @@
 						<div class="col-md-3 col-sm-6">
 							<div class="team animate wow slideInRight">
 								<div class="img-hexagon">
-									<img src="images/team/team4.jpg" alt=""> <span
+									<img src="./images/team/team5.png" alt=""> <span
 										class="img-top"></span> <span class="img-bottom"></span>
 								</div>
 								<div class="team-content">
@@ -282,7 +283,12 @@
 			</div>
 			<!-- 2nd container end -->
 		</section>
-		
+		<div class=gap-60></div>
+		<div class=gap-60></div>
+		<div class="tlTitle">
+  						<h2># Location</h2>
+					</div>
+		<div class=gap-30></div>
 		<div id="map" style="width:60%; margin-left: 20%; height:350px;"></div>
 
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b90bc4dfc8f3d9e3716cfb69ea67a34a"></script>
