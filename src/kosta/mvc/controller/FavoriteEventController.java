@@ -17,10 +17,12 @@ public class FavoriteEventController implements Controller {
 		HttpSession session = request.getSession();
 		Set<Integer> set = (Set<Integer>) session.getAttribute("favoriteEventsNo");
 		List<Event> list = null;
+		
 		if(set.size()!=0) {
 			list = FavoriteEvService.selectEventByEventNumbers(set);
 		}
-		request.setAttribute("EventList", list);
+		
+		request.setAttribute("eventList", list);
 		
 		ModelAndView mv = new ModelAndView(false, "/pages/interestEvent.jsp");
 		return mv;

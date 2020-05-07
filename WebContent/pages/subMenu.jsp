@@ -82,7 +82,7 @@
 							<a class="subMenuList" href="${pageContext.request.contextPath}/front?key=manageChannel"> 채널 관리 </a>
 						</div>
 						<div class="mypage-topnav__tab ">
-							<a class="subMenuList" href="bookHistory.jsp"> 신청 행사 목록 </a>
+							<a class="subMenuList" href="${pageContext.request.contextPath}/front?key=selectBookByUserNo"> 신청 행사 목록 </a>
 						</div>
 						<div class="mypage-topnav__tab ">
 							<a class="subMenuList" href="${pageContext.request.contextPath}/front?key=favoriteEvent"> 관심 행사 목록 </a>
@@ -91,7 +91,7 @@
 							<a class="subMenuList" href="${pageContext.request.contextPath}/front?key=selectMyReview"> 내가 쓴 글 </a>
 						</div>
 						<div class="mypage-topnav__tab">
-							<a class="subMenuList" href="${pageContext.request.contextPath}/front?key=userInfoUpdate"> 회원정보 설정 </a>
+							<a class="subMenuList" href="${pageContext.request.contextPath}/front?key=userInfoUpdate"> 회원정보 수정 </a>
 						</div>
 					</div>
 				</div>

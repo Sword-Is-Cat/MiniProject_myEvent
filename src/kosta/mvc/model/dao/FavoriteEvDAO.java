@@ -110,7 +110,7 @@ public class FavoriteEvDAO {
 		User user = null;
 		EvTime evTime = null;
 		Event event = null;
-
+		
 		if (set != null) {
 			iter = set.iterator();
 		} else {
@@ -128,14 +128,13 @@ public class FavoriteEvDAO {
 				flag = true;
 			}
 			sql += ")";
-
+			
 			con = DbUtil.getConnection();
 			ps = con.prepareStatement(sql);
 
 			rs = ps.executeQuery();
 
 			while (rs.next()) {
-
 				if (category == null) {
 					category = new Category(rs.getInt("cateNo"), rs.getString("cateName"));
 				}
@@ -166,7 +165,7 @@ public class FavoriteEvDAO {
 						rs.getInt("evBookMax"), rs.getString("evDescription"), rs.getString("evImg"),
 						rs.getString("evImgDetail"), rs.getString("evPhone"), rs.getString("evEmail"), evTime,
 						rs.getInt("evStatus"));
-
+				
 				list.add(event);
 
 			}

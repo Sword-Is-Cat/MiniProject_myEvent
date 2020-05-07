@@ -141,7 +141,7 @@ hr{
 								</div>
 								<br>
 
-								<div class="col s12 mt3c">
+								<!-- <div class="col s12 mt3c">
 									<div><h4>추가하려는 권한의 범위를 선택하세요.</h4></div>
 									
 										<div class="card-content">
@@ -156,7 +156,7 @@ hr{
 												for="existingProject">행사 관리 : 특정 행사의 관리 권한을 공유.</label>
 										</div>
 									
-								</div>
+								</div> -->
 								<div class="col s12">
 									<input id="projectid" name="projectid"
 										placeholder="행사코드 입력(행사페이지 도메인의 마지막 숫자)" hidden="">
